@@ -1,4 +1,4 @@
-FROM python-nodejs
+FROM nikolaik/python-nodejs:python3.7-nodejs12
 
 # Install prereqs
 RUN apt-get update
