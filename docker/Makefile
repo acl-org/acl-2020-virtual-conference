@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 APP_NAME = mini-conf/default
-VERSION = 1.6.0
+VERSION = 1.0
 COMMIT_SHA1 = $(shell git rev-parse HEAD)
 DOCKER_REPO = acl2020
 # relative path to the root directories
