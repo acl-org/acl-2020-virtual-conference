@@ -10,5 +10,7 @@ RUN apt-get -y install git
 # Install Python dev dependencies
 COPY ./requirements.txt ./
 COPY ./requirements-dev.txt ./
+RUN mkdir ./scripts/
+COPY ./scripts/requirements-dev.txt ./scripts/
 RUN pip3 --default-timeout=1000 install -r requirements.txt
 RUN pip3 --default-timeout=1000 install -r requirements-dev.txt
