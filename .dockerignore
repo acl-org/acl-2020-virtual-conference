@@ -2,8 +2,10 @@
 **
 
 # Except
+!/docker/**
 !requirements.txt
 !requirements-dev.txt
 !package.json
 !package-lock.json
-
+!/Makefile
+!/.dockerignore
