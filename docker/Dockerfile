@@ -11,6 +11,6 @@ RUN apt-get -y install git
 COPY ./requirements.txt ./
 COPY ./requirements-dev.txt ./
 RUN mkdir ./scripts/
-COPY ./scripts/requirements-dev.txt ./scripts/
+COPY ./scripts/requirements.txt ./scripts/
 RUN pip3 --default-timeout=1000 install -r requirements.txt
 RUN pip3 --default-timeout=1000 install -r requirements-dev.txt
