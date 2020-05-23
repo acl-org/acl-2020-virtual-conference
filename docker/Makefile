@@ -13,7 +13,7 @@ DEPENDENT_FILES += $(ROOT_DIR)/requirements.txt
 DEPENDENT_FILES += $(ROOT_DIR)/scripts/requirements.txt
 DEPENDENT_FILES += $(ROOT_DIR)/Makefile
 
-.PHONY: git-status git-archive build tag publish
+.PHONY: git-status build publish login
 
 # check if relevant changes are committed
 git-status: $(DEPENDENT_FILES)
@@ -35,7 +35,11 @@ build: git-status
 		.
 
 # publish the docker image
-publish: build
+publish: build login
 	@echo 'publish $(VERSION) $(COMMIT_SHA1) to $(DOCKER_REPO)'
 	docker push $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
 	docker push $(DOCKER_REPO)/$(APP_NAME):$(COMMIT_SHA1)
+
+# login to Docker Hub
+login:
+	docker login
