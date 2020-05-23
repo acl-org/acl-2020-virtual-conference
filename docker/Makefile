@@ -1,5 +1,5 @@
 SHELL = /bin/bash
-APP_NAME = mini-conf/default
+APP_NAME = mini-conf
 VERSION = 1.0
 COMMIT_SHA1 = $(shell git rev-parse HEAD)
 DOCKER_REPO = acl2020
