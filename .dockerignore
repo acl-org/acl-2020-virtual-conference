@@ -1,0 +1,9 @@
+# Ignore everything
+**
+
+# Except
+!requirements.txt
+!requirements-dev.txt
+!package.json
+!package-lock.json
+
