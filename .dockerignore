@@ -5,6 +5,7 @@
 !/docker/**
 !requirements.txt
 !requirements-dev.txt
+!scripts/requirements.txt
 !package.json
 !package-lock.json
 !/Makefile
