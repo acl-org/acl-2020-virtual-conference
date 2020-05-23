@@ -22,10 +22,10 @@ git-status: $(DEPENDENT_FILES)
 # build the docker image
 build: git-status
 	cd ..; docker build \
+		-t $(APP_NAME):$(VERSION) \
 		-t $(APP_NAME):$(COMMIT_SHA1) \
-		-t $(APP_NAME):$(BRANCH_NAME) \
+		-t $(DOCKER_REPO)/$(APP_NAME):$(VERSION) \
 		-t $(DOCKER_REPO)/$(APP_NAME):$(COMMIT_SHA1) \
-		-t $(DOCKER_REPO)/$(APP_NAME):$(BRANCH_NAME) \
 		--label branch=$(BRANCH_NAME) \
 		--label commit=$(COMMIT_SHA1) \
 		-f docker/Dockerfile \
@@ -36,6 +36,6 @@ build: git-status
 
 # publish the docker image
 publish: build
-	@echo 'publish $(BRANCH_NAME) $(COMMIT_SHA1) to $(DOCKER_REPO)'
+	@echo 'publish $(VERSION) $(COMMIT_SHA1) to $(DOCKER_REPO)'
+	docker push $(DOCKER_REPO)/$(APP_NAME):$(VERSION)
 	docker push $(DOCKER_REPO)/$(APP_NAME):$(COMMIT_SHA1)
-	docker push $(DOCKER_REPO)/$(APP_NAME):$(BRANCH_NAME)
