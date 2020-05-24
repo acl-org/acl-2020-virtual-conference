@@ -6,6 +6,7 @@ logo:
   image: static/images/acl-logo.png
   height: 45px
 site_title: ACL2020
+background_image: static/images/unsplash.jpg
 organization: Association for Computational Linguistics
 calendar:
   colors: #  Colors for the different event hashtags:
