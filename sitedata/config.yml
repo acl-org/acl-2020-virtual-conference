@@ -3,7 +3,8 @@ tagline: 2020 Annual Conference of the Association for Computational Linguistics
 data: July 2020
 analytics: UA-
 logo: static/images/acl-logo.png
-title: ACL2020
+  height: 45px
+  title: ACL2020
 organization: Association for Computational Linguistics
 calendar:
   colors: #  Colors for the different event hashtags:
