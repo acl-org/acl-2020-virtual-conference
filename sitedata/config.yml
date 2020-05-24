@@ -1,10 +1,10 @@
-name: MiniConf
-tagline: MINICONF <br> CONFERENCE <br> MANAGEMENT
-data: May 2020
+name: 2020 Annual Conference of the Association for Computational Linguistics
+tagline: 2020 Annual Conference of the Association for Computational Linguistics
+data: July 2020
 analytics: UA-
 logo: static/images/acl-logo.png
 title: ACL2020
-organization:
+organization: Association for Computational Linguistics
 calendar:
   colors: #  Colors for the different event hashtags:
     ---: '#bed972'
