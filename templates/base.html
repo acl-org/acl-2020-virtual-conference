@@ -70,7 +70,7 @@
       rel="stylesheet"
     />
 
-    <title>{{config.page_title}}</title>
+    <title>{{config.page_title.prefix}}{% if page_title %}{{config.page_title.separator}}{{page_title}}{% endif %}</title>
     {% endblock %}
   </head>
 
@@ -91,7 +91,11 @@
     >
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img class="logo" src="{{config.logo.image}}" height="{{config.logo.height}}" />
+          <img
+             class="logo" src="{{config.logo.image}}"
+             height={{config.logo.height | default("auto") | tojson}}
+             width={{config.logo.width | default("auto") | tojson}}
+          />
         </a>
         {% if config.site_title %}
         <a class="navbar-brand" href="index.html">{{config.site_title}}</a>

@@ -1,11 +1,15 @@
 name: ACL2020
 tagline: 2020 Annual Conference of the Association for Computational Linguistics
-data: July 2020
+date: July 2020
+proceedings_title: Proceedings of the First MiniCon Conference
 analytics: UA-
 logo:
   image: static/images/acl-logo.png
   height: 45px
 site_title: ACL2020
+page_title:
+  prefix: 'ACL2020'
+  separator: ': '
 background_image: static/images/unsplash.jpg
 organization: Association for Computational Linguistics
 calendar:
@@ -14,4 +18,3 @@ calendar:
     qa: '#4FCAEB'
     talk: '#ccc'
   sunday_saturday: false  #  Include Sunday and Saturday
-
