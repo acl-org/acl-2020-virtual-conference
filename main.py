@@ -139,6 +139,7 @@ def format_paper(v):
         },
     }
 
+
 def format_workshop(v):
     list_keys = ["authors"]
     list_fields = {}
@@ -163,6 +164,7 @@ def poster(poster):
     data = _data()
     data["paper"] = format_paper(v)
     return render_template("poster.html", **data)
+
 
 @app.route("/speaker_<speaker>.html")
 def speaker(speaker):
