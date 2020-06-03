@@ -2,10 +2,7 @@ PYTHON_FILES = main.py scripts/
 JS_FILES = $(shell find static/js -name "*.js")
 CSS_FILES = $(shell find static/css -name "*.css")
 .PHONY: format-python format-web format run freeze format-check
-<<<<<<< HEAD
-=======
 TEMP_DEPLOY_BRANCH = "temp-gh-pages"
->>>>>>> upstream/master
 
 all: format-check
 
