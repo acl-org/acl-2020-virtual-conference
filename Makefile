@@ -2,6 +2,10 @@ PYTHON_FILES = main.py scripts/
 JS_FILES = $(shell find static/js -name "*.js")
 CSS_FILES = $(shell find static/css -name "*.css")
 .PHONY: format-python format-web format run freeze format-check
+<<<<<<< HEAD
+=======
+TEMP_DEPLOY_BRANCH = "temp-gh-pages"
+>>>>>>> upstream/master
 
 all: format-check
 
@@ -16,9 +20,7 @@ format-web:
 format: format-python format-web
 
 run:
-	export FLASK_DEBUG=True
-	export FLASK_DEVELOPMENT=True
-	python3 main.py sitedata/
+	FLASK_DEBUG=True FLASK_DEVELOPMENT=True python3 main.py sitedata/
 
 freeze:
 	python3 main.py sitedata/ --build
@@ -31,3 +33,15 @@ format-check:
 	npx prettier $(JS_FILES) $(CSS_FILES) --check
 	npx eslint $(JS_FILES)
 	@echo "format-check passed"
+
+deploy: freeze
+	git branch -D gh-pages
+	git branch -D $(TEMP_DEPLOY_BRANCH)
+	git checkout -b $(TEMP_DEPLOY_BRANCH)
+	git add -f build
+	git commit -am "Deploy on gh-pages"
+	git subtree split --prefix build -b gh-pages
+	# git push --force "https://${GH_TOKEN}@${GH_REF}.git" $(TEMP_DEPLOY_BRANCH):gh-pages
+	git push --force origin gh-pages
+	git checkout @{-1}
+	@echo "Deployed to gh-pages 🚀"
