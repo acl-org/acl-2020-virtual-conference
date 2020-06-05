@@ -101,6 +101,12 @@ def schedule():
     return render_template("schedule.html", **data)
 
 
+@app.route("/livestream.html")
+def livestream():
+    data = _data()
+    return render_template("livestream.html", **data)
+
+
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
