@@ -37,98 +37,6 @@ def main(site_data_path):
     return extra_files
 
 
-# ------------- SERVER CODE -------------------->
-
-app = Flask(__name__)
-app.config.from_object(__name__)
-freezer = Freezer(app)
-markdown = Markdown(app)
-
-# MAIN PAGES
-
-
-def _data():
-    data = {}
-    data["config"] = site_data["config"]
-    return data
-
-
-@app.route("/")
-def index():
-    return redirect("/index.html")
-
-
-# TOP LEVEL PAGES
-
-
-@app.route("/index.html")
-def home():
-    data = _data()
-    data["readme"] = open("README.md").read()
-    data["committee"] = site_data["committee"]["committee"]
-    return render_template("index.html", **data)
-
-
-@app.route("/about.html")
-def about():
-    data = _data()
-    data["FAQ"] = site_data["faq"]["FAQ"]
-    return render_template("about.html", **data)
-
-
-@app.route("/papers.html")
-def papers():
-    data = _data()
-    data["papers"] = site_data["papers"]
-    return render_template("papers.html", **data)
-
-
-@app.route("/paper_vis.html")
-def paperVis():
-    data = _data()
-    return render_template("papers_vis.html", **data)
-
-
-@app.route("/calendar.html")
-def schedule():
-    data = _data()
-    data["day"] = {
-        "speakers": site_data["speakers"],
-        "highlighted": [
-            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        ],
-    }
-    return render_template("schedule.html", **data)
-
-
-@app.route("/livestream.html")
-def livestream():
-    data = _data()
-    return render_template("livestream.html", **data)
-
-
-@app.route("/tutorials.html")
-def tutorials():
-    data = _data()
-    return render_template("tutorials.html", **data)
-
-
-@app.route("/workshops.html")
-def workshops():
-    data = _data()
-    data["workshops"] = [
-        format_workshop(workshop) for workshop in site_data["workshops"]
-    ]
-    return render_template("workshops.html", **data)
-
-
-@app.route("/sponsors.html")
-def sponsors():
-    data = _data()
-    data["sponsors"] = site_data["sponsors"]
-    return render_template("sponsors.html", **data)
-
-
 def extract_list_field(v, key):
     value = v.get(key, "")
     if isinstance(value, list):
@@ -173,34 +81,130 @@ def format_workshop(v):
     }
 
 
+# ------------- SERVER CODE -------------------->
+
+app = Flask(__name__)
+app.config.from_object(__name__)
+freezer = Freezer(app)
+markdown = Markdown(app)
+
+# MAIN PAGES
+
+
+def _data():
+    data = {"config": site_data["config"]}
+    return data
+
+
+@app.route("/")
+def index():
+    return redirect("/index.html")
+
+
+# TOP LEVEL PAGES
+
+
+@app.route("/index.html")
+def home():
+    data = _data()
+    data["readme"] = open("README.md").read()
+    data["committee"] = site_data["committee"]["committee"]
+    return render_template("index.html", **data)
+
+
+@app.route("/about.html")
+def about():
+    data = _data()
+    data["FAQ"] = site_data["faq"]["FAQ"]
+    return render_template("about.html", **data)
+
+
+@app.route("/papers.html")
+def papers():
+    data = _data()
+    data["papers"] = site_data["papers"]
+    return render_template("papers.html", **data)
+
+
+@app.route("/paper_vis.html")
+def paper_vis():
+    data = _data()
+    return render_template("papers_vis.html", **data)
+
+
+@app.route("/calendar.html")
+def schedule():
+    data = _data()
+    data["day"] = {
+        "speakers": site_data["speakers"],
+        "highlighted": [
+            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
+        ],
+    }
+    return render_template("schedule.html", **data)
+
+
+@app.route("/livestream.html")
+def livestream():
+    data = _data()
+    return render_template("livestream.html", **data)
+
+
+@app.route("/tutorials.html")
+def tutorials():
+    data = _data()
+    return render_template("tutorials.html", **data)
+
+
+@app.route("/workshops.html")
+def workshops():
+    data = _data()
+    data["workshops"] = [
+        format_workshop(_workshop) for _workshop in site_data["workshops"]
+    ]
+    return render_template("workshops.html", **data)
+
+
+@app.route("/sponsors.html")
+def sponsors():
+    data = _data()
+    data["sponsors"] = site_data["sponsors"]
+    return render_template("sponsors.html", **data)
+
+
 # ITEM PAGES
 
 
-@app.route("/poster_<poster>.html")
-def poster(poster):
-    uid = poster
+@app.route("/poster_<uid>.html")
+def poster(uid):
     v = by_uid["papers"][uid]
     data = _data()
     data["paper"] = format_paper(v)
     return render_template("poster.html", **data)
 
 
-@app.route("/speaker_<speaker>.html")
-def speaker(speaker):
-    uid = speaker
+@app.route("/speaker_<uid>.html")
+def speaker(uid):
     v = by_uid["speakers"][uid]
     data = _data()
     data["speaker"] = v
     return render_template("speaker.html", **data)
 
 
-@app.route("/workshop_<workshop>.html")
-def workshop(workshop):
-    uid = workshop
+@app.route("/workshop_<uid>.html")
+def workshop(uid):
     v = by_uid["workshops"][uid]
     data = _data()
     data["workshop"] = format_workshop(v)
     return render_template("workshop.html", **data)
+
+
+@app.route("/sponsor_<uid>.html")
+def sponsor(uid):
+    v = by_uid["sponsors"][uid]
+    data = _data()
+    data["sponsor"] = v
+    return render_template("sponsor.html", **data)
 
 
 @app.route("/chat.html")
@@ -250,14 +254,12 @@ def generator():
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="MiniConf Portal Command Line")
-
     parser.add_argument(
         "--build",
         action="store_true",
         default=False,
         help="Convert the site to static assets",
     )
-
     parser.add_argument(
         "-b",
         action="store_true",
@@ -265,18 +267,15 @@ def parse_arguments():
         dest="build",
         help="Convert the site to static assets",
     )
-
     parser.add_argument("path", help="Pass the JSON data path and run the server")
 
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_arguments()
 
-    site_data_path = args.path
-    extra_files = main(site_data_path)
+    extra_files = main(args.path)
 
     if args.build:
         freezer.freeze()
