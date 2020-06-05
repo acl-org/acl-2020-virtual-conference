@@ -101,6 +101,15 @@ def schedule():
     return render_template("schedule.html", **data)
 
 
+@app.route("/tutorials.html")
+def tutorials():
+    data = _data()
+    data["tutorials"] = [
+        format_workshop(tutorial) for tutorial in site_data["tutorials"]
+    ]
+    return render_template("tutorials.html", **data)
+
+
 @app.route("/workshops.html")
 def workshops():
     data = _data()
@@ -108,6 +117,15 @@ def workshops():
         format_workshop(workshop) for workshop in site_data["workshops"]
     ]
     return render_template("workshops.html", **data)
+
+
+@app.route("/sponsors.html")
+def sponsors():
+    data = _data()
+    data["sponsors"] = [
+        format_workshop(sponsor) for sponsor in site_data["sponsors"]
+    ]
+    return render_template("sponsors.html", **data)
 
 
 def extract_list_field(v, key):

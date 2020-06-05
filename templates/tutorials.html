@@ -1,0 +1,15 @@
+{% set active_page = "Tutorials" %}
+{% set page_title = "Tutorials" %}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+  <div id="day">
+    <!-- Tutorials -->
+    {{ components.section("Tutorials") }}
+    <div class="speakers">
+      {{ components.workshopgroup(tutorials) }}
+    </div>
+  </div>
+</div>
+{% endblock %}
