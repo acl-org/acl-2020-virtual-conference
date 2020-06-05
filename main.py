@@ -110,9 +110,6 @@ def livestream():
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
-    data["tutorials"] = [
-        format_workshop(tutorial) for tutorial in site_data["tutorials"]
-    ]
     return render_template("tutorials.html", **data)
 
 
@@ -128,9 +125,7 @@ def workshops():
 @app.route("/sponsors.html")
 def sponsors():
     data = _data()
-    data["sponsors"] = [
-        format_workshop(sponsor) for sponsor in site_data["sponsors"]
-    ]
+    data["sponsors"] = site_data["sponsors"]
     return render_template("sponsors.html", **data)
 
 
