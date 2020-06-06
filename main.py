@@ -33,6 +33,13 @@ def main(site_data_path):
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
 
+    # TODO: should assign UID by sponsor name? What about sponsors with multiple levels?
+    by_uid["sponsors"] = {
+        sponsor["UID"]: sponsor
+        for sponsors_at_level in site_data["sponsors"]
+        for sponsor in sponsors_at_level["sponsors"]
+    }
+
     print("Data Successfully Loaded")
     return extra_files
 
