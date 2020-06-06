@@ -228,7 +228,7 @@
 {% macro sponsorgroup(sponsors) -%}
   <div class="cards row">
   {% for tier, sponsors_for_tier in sponsors.items() %}
-    <div class="col-md-12 col-sm-12" style="border-bottom:1px solid">
+    <div class="col-md-12 col-sm-12" style="border-bottom:1px solid; bottom: 15px">
       <h1>{{ tier }}</h1>
     </div>
     {% for sponsor in sponsors_for_tier %}

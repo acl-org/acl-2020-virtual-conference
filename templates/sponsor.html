@@ -1,0 +1,21 @@
+{% set page_title = sponsor.name %}
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      {{sponsor.name}}
+    </h2>
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Presentation Embed -->
+
+{% endblock %}
