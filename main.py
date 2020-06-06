@@ -182,32 +182,36 @@ def sponsors():
 # ITEM PAGES
 
 
-@app.route("/poster_<uid>.html")
-def poster(uid):
+@app.route("/poster_<poster>.html")
+def poster(poster):
+    uid = poster
     v = by_uid["papers"][uid]
     data = _data()
     data["paper"] = format_paper(v)
     return render_template("poster.html", **data)
 
 
-@app.route("/speaker_<uid>.html")
-def speaker(uid):
+@app.route("/speaker_<speaker>.html")
+def speaker(speaker):
+    uid = speaker
     v = by_uid["speakers"][uid]
     data = _data()
     data["speaker"] = v
     return render_template("speaker.html", **data)
 
 
-@app.route("/workshop_<uid>.html")
-def workshop(uid):
+@app.route("/workshop_<workshop>.html")
+def workshop(workshop):
+    uid = workshop
     v = by_uid["workshops"][uid]
     data = _data()
     data["workshop"] = format_workshop(v)
     return render_template("workshop.html", **data)
 
 
-@app.route("/sponsor_<uid>.html")
-def sponsor(uid):
+@app.route("/sponsor_<sponsor>.html")
+def sponsor(sponsor):
+    uid = sponsor
     v = by_uid["sponsors"][uid]
     data = _data()
     data["sponsor"] = v
@@ -254,6 +258,10 @@ def generator():
         yield "speaker", {"speaker": str(speaker["UID"])}
     for workshop in site_data["workshops"]:
         yield "workshop", {"workshop": str(workshop["UID"])}
+
+    for sponsors_at_level in site_data["sponsors"]:
+        for sponsor in sponsors_at_level["sponsors"]:
+            yield "sponsor", {"sponsor": str(sponsor["UID"])}
 
     for key in site_data:
         yield "serve", {"path": key}
