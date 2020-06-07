@@ -20,6 +20,7 @@ run:
 	FLASK_DEBUG=True FLASK_DEVELOPMENT=True python3 main.py sitedata_acl2020/
 
 freeze:
+	rm -rf build/
 	python3 main.py sitedata_acl2020/ --build
 
 # check code format
