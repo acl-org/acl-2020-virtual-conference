@@ -123,7 +123,7 @@ def tutorials():
 def workshops():
     data = _data()
     data["workshops"] = [
-        format_workshop(_workshop) for _workshop in site_data["workshops"]
+        format_workshop(workshop) for workshop in site_data["workshops"]
     ]
     return render_template("workshops.html", **data)
 
