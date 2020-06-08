@@ -20,7 +20,7 @@
     ```bash
     npm install
     ```
-* Run `m********ake` to execute all tests.
+* Run `make` to execute all tests.
     
 ### IDE Setup
 * Setup the Python Interpreter
