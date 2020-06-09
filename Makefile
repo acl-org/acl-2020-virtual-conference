@@ -1,8 +1,10 @@
 PYTHON_FILES = main.py scripts/
 JS_FILES = $(shell find static/js -name "*.js")
 CSS_FILES = $(shell find static/css -name "*.css")
-.PHONY: format-python format-web format run freeze format-check
 TEMP_DEPLOY_BRANCH = "temp-gh-pages"
+AWS_S3_BUCKET = "s3://serverlessrepo-cloudfront-authorization-s3bucket-ptq3wqpecyie"
+
+.PHONY: format-python format-web format run freeze format-check
 
 all: format-check
 
@@ -43,4 +45,7 @@ deploy: freeze
 	git push --force origin gh-pages
 	git checkout @{-1}
 	@echo "Deployed to gh-pages 🚀"
+
+deploy-aws: freeze
+	aws s3 cp build/ $(AWS_S3_BUCKET) --recursive
 
