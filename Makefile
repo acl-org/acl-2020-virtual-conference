@@ -3,6 +3,8 @@ JS_FILES = $(shell find static/js -name "*.js")
 CSS_FILES = $(shell find static/css -name "*.css")
 TEMP_DEPLOY_BRANCH = "temp-gh-pages"
 AWS_S3_BUCKET = "s3://serverlessrepo-cloudfront-authorization-s3bucket-ptq3wqpecyie"
+AWS_CLOUDFRONT_DISTRIBUTION_ID = "E2CHQFFDISXGK5"
+
 
 .PHONY: format-python format-web format run freeze format-check
 
@@ -48,4 +50,6 @@ deploy: freeze
 
 deploy-aws: freeze
 	aws s3 cp build/ $(AWS_S3_BUCKET) --recursive
+	# invalidate caches so that new content are immediately available
+	aws cloudfront create-invalidation --distribution-id $(AWS_CLOUDFRONT_DISTRIBUTION_ID) --paths "/*"
 
