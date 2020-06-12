@@ -190,7 +190,9 @@ def poster(poster):
 
     data["openreview"] = format_paper(by_uid["papers"][uid])
     data["id"] = uid
-    data["paper_recs"] = [format_paper(by_uid["papers"][n]) for n in site_data["paper_recs"][uid]][1:]
+    data["paper_recs"] = [
+        format_paper(by_uid["papers"][n]) for n in site_data["paper_recs"][uid]
+    ][1:]
 
     data["paper"] = format_paper(v)
     return render_template("poster.html", **data)
