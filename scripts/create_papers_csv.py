@@ -3,7 +3,9 @@ import pickle
 
 import numpy as np
 import openreview
+
 from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 OLD_HEADERS = ["Submission ID", "Title", "Authors", "Abstract", "Submission Type"]
 
