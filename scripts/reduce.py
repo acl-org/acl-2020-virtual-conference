@@ -2,10 +2,9 @@ import argparse
 import csv
 import json
 
-import umap
-
 import sklearn.manifold
 import torch
+import umap
 
 
 def parse_arguments():
@@ -20,18 +19,15 @@ def parse_arguments():
 if __name__ == "__main__":
     args = parse_arguments()
     emb = torch.load(args.embeddings)
-    if args.projection_method == 'tsne':
+    if args.projection_method == "tsne":
         out = sklearn.manifold.TSNE(n_components=2).fit_transform(emb.numpy())
-    elif args.projection_method == 'umap':
+    elif args.projection_method == "umap":
         out = umap.UMAP(
-            n_neighbors=5,
-            min_dist=0.3,
-            metric='correlation',
-            n_components=2
+            n_neighbors=5, min_dist=0.3, metric="correlation", n_components=2
         ).fit_transform(emb.numpy())
     else:
-        print('invalid projection-method: {}'.format(args.projection_method))
-        print('Falling back to T-SNE')
+        print("invalid projection-method: {}".format(args.projection_method))
+        print("Falling back to T-SNE")
         out = sklearn.manifold.TSNE(n_components=2).fit_transform(emb.numpy())
     d = []
     with open(args.papers, "r") as f:
