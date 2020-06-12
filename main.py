@@ -28,7 +28,7 @@ def main(site_data_path):
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
-    for typ in ["papers", "speakers", "workshops"]:
+    for typ in ["papers", "speakers", "workshops", "demos"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
@@ -161,6 +161,7 @@ def format_paper(v):
             "recs": [],
             "session": list_fields["session"],
             "pdf_url": v.get("pdf_url", ""),
+            "demo_url": by_uid["demos"].get(v["UID"], {}).get("demo_url", ""),
         },
     }
 
