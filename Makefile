@@ -1,8 +1,12 @@
-PYTHON_FILES = main.py scripts/ chat/
+PYTHON_FILES = main.py scripts/
 JS_FILES = $(shell find static/js -name "*.js")
 CSS_FILES = $(shell find static/css -name "*.css")
-.PHONY: format-python format-web format run freeze format-check
 TEMP_DEPLOY_BRANCH = "temp-gh-pages"
+AWS_S3_BUCKET = "s3://serverlessrepo-acl2020-virtual-conferenc-s3bucket-mlnhxyxwrhh2"
+AWS_CLOUDFRONT_DISTRIBUTION_ID = "EY8475KHJPSA0"
+
+
+.PHONY: format-python format-web format run freeze format-check
 
 all: format-check
 
@@ -17,10 +21,11 @@ format-web:
 format: format-python format-web
 
 run:
-	export FLASK_DEBUG=True; export FLASK_DEVELOPMENT=True; python3 main.py sitedata/
+	export FLASK_DEBUG=True; export FLASK_DEVELOPMENT=True; python3 main.py sitedata_acl2020/
 
 freeze:
-	python3 main.py sitedata/ --build
+	rm -rf build/
+	python3 main.py sitedata_acl2020/ --build
 
 # check code format
 format-check:
@@ -43,3 +48,7 @@ deploy: freeze
 	git checkout @{-1}
 	@echo "Deployed to gh-pages 🚀"
 
+deploy-aws: freeze
+	aws s3 cp build/ $(AWS_S3_BUCKET) --recursive
+	# invalidate caches so that new content are immediately available
+	aws cloudfront create-invalidation --distribution-id $(AWS_CLOUDFRONT_DISTRIBUTION_ID) --paths "/*"
