@@ -58,7 +58,6 @@ Miniconf is designed to be a completely static solution. However it is designed 
 
 * PDF.js: For conferences that use posters it is easy to include an embedded pdf on poster pages. An example is given. 
 
-6) For importing calendars as schedule see [scripts/README_Schedule.md](https://github.com/Mini-Conf/Mini-Conf/blob/master/scripts/README_Schedule.md)
 
 ### Example
 

@@ -33,7 +33,6 @@ def main(site_data_path):
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
 
-<<<<<<< HEAD
     # TODO: should assign UID by sponsor name? What about sponsors with multiple levels?
     by_uid["sponsors"] = {
         sponsor["UID"]: sponsor
@@ -41,8 +40,6 @@ def main(site_data_path):
         for sponsor in sponsors_at_level["sponsors"]
     }
 
-=======
->>>>>>> upstream/master
     print("Data Successfully Loaded")
     return extra_files
 
@@ -76,37 +73,22 @@ def home():
     data["readme"] = open("README.md").read()
     data["committee"] = site_data["committee"]["committee"]
     return render_template("index.html", **data)
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> upstream/master
 @app.route("/about.html")
 def about():
     data = _data()
     data["FAQ"] = site_data["faq"]["FAQ"]
     return render_template("about.html", **data)
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> upstream/master
 @app.route("/papers.html")
 def papers():
     data = _data()
     data["papers"] = site_data["papers"]
     return render_template("papers.html", **data)
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> upstream/master
 @app.route("/paper_vis.html")
 def paper_vis():
     data = _data()
@@ -301,8 +283,7 @@ def parse_arguments():
     )
     parser.add_argument("path", help="Pass the JSON data path and run the server")
 
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
