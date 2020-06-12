@@ -1,10 +1,9 @@
-PYTHON_FILES = main.py scripts/
+PYTHON_FILES = main.py scripts/ chat/
 JS_FILES = $(shell find static/js -name "*.js")
 CSS_FILES = $(shell find static/css -name "*.css")
 TEMP_DEPLOY_BRANCH = "temp-gh-pages"
 AWS_S3_BUCKET = "s3://serverlessrepo-acl2020-virtual-conferenc-s3bucket-mlnhxyxwrhh2"
 AWS_CLOUDFRONT_DISTRIBUTION_ID = "EY8475KHJPSA0"
-
 
 .PHONY: format-python format-web format run freeze format-check
 
