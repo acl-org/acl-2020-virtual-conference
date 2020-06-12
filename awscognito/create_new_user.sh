@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-AWS_USER_POOL_ID="us-east-1_lr10OX54W "
+AWS_USER_POOL_ID="us-east-1_lr10OX54W"
 AWS_PROFILE="virtual-acl2020"
 
 email=$1
