@@ -98,12 +98,14 @@ def paper_vis():
 @app.route("/calendar.html")
 def schedule():
     data = _data()
-    data["day"] = {
-        "speakers": site_data["speakers"],
-        "highlighted": [
-            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        ],
-    }
+    # FIXME: Need to update the sitedata_acl2020/highlighted.csv
+    data["day"] = {}
+    # data["day"] = {
+    #     "speakers": site_data["speakers"],
+    #     "highlighted": [
+    #         format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
+    #     ],
+    # }
     return render_template("schedule.html", **data)
 
 
