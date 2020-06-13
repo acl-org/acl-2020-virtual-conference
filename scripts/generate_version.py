@@ -1,7 +1,8 @@
-from time import strftime
 import json
 import subprocess
 import sys
+from time import strftime
+
 
 def getVersionInfo():
     now = strftime("%Y-%m-%d %H:%M:%S")
@@ -37,4 +38,3 @@ if __name__ == "__main__":
 
     json_string = getVersionInfo()
     writeFile(file_path, json_string)
-
