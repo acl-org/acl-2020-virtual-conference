@@ -3,5 +3,6 @@ static/js/ical.js
 static/js/calendar.js
 static/js/lazy_load.js
 static/js/paper_vis.js
+static/js/papers.js
 static/js/persistor.js
 static/js/schedule.js
