@@ -134,7 +134,7 @@ const start = () => {
 
 
     d3.json('papers.json').then(papers => {
-        console.log(papers, "--- papers");
+        // console.log(papers, "--- papers");
 
         shuffleArray(papers);
 
