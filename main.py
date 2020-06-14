@@ -163,16 +163,8 @@ def format_paper(v):
             "track": v.get("track", ""),
             # TODO: Fill this info in `main(sitedata)` using an external file.
             "sessions": [
-                {
-                    "time": "(01:00-02:00 PST)",
-                    "zoom_link": "",
-                    "ical_link": ""
-                },
-                {
-                    "time": "(13:00-14:00 PST)",
-                    "zoom_link": "",
-                    "ical_link": ""
-                }
+                {"time": "(01:00-02:00 PST)", "zoom_link": "", "ical_link": ""},
+                {"time": "(13:00-14:00 PST)", "zoom_link": "", "ical_link": ""},
             ],
             "recs": [],
         },
