@@ -20,5 +20,7 @@ module.exports = {
     "no-unused-vars": "off",
     "no-undef": "off",
     "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "no-use-before-define": "off",
   },
 };

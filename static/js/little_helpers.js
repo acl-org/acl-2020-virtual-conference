@@ -29,6 +29,7 @@ const initTypeAhead = (list, css_sel, name, callback) => {
     },
   });
   function bhDefaults(q, sync) {
+    // TODO: check if "session" is a valid key (ACL2020 uses "track")
     if (q === "" && name === "session") {
       sync(bh.all()); // This is the only change needed to get 'ALL' items as the defaults
     } else {
@@ -88,11 +89,11 @@ const calcAllKeys = function (allPapers, allKeys) {
   allPapers.forEach((d) => {
     d.content.authors.forEach((a) => collectAuthors.add(a));
     d.content.keywords.forEach((a) => collectKeywords.add(a));
-    d.content.session.forEach((a) => collectSessions.add(a));
+    d.content.sessions.forEach((a) => collectSessions.add(a));
     allKeys.titles.push(d.content.title);
   });
   allKeys.authors = Array.from(collectAuthors);
   allKeys.keywords = Array.from(collectKeywords);
-  allKeys.session = Array.from(collectSessions);
-  allKeys.session.sort();
+  allKeys.sessions = Array.from(collectSessions);
+  allKeys.sessions.sort();
 };
