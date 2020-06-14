@@ -162,8 +162,6 @@ def format_paper(v):
             "pdf_url": v.get("pdf_url", ""),
             "track": v.get("track", ""),
             # TODO: Fill this info in `main(sitedata)` using an external file.
-
-               "(02:00-03:00 PST)",
             "sessions": [
                 {
                     "time": "(01:00-02:00 PST)",
