@@ -2,7 +2,9 @@ import argparse
 import csv
 import pickle
 
-import openreview
+import openreview  # type: ignore
+
+# No type hints for openreview-py package. Ignore mypy
 
 
 def read_entries(papers_csv):

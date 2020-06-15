@@ -4,7 +4,9 @@ import json
 
 import sklearn.manifold
 import torch
-import umap
+import umap  # type: ignore
+
+# No type stubs for umap-learn. Ignore mypy
 
 
 def parse_arguments():
