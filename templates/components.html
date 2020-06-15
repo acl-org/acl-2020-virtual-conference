@@ -226,9 +226,9 @@
 {%- endmacro %}
 
 {% macro sponsorgroup(sponsors) -%}
-  <div class="cards row justify-content-md-center">
+  <div class="cards row">
   {% for sponsor_level in sponsors %}
-    <div class="col-md-12 col-sm-12" style="bottom: 15px; top: 15px;" align='center'>
+    <div class="col-md-12 col-sm-12" style="border-bottom:1px solid; bottom: 15px;">
       <h2 class='card-title'>{{ sponsor_level.level }}</h2>
     </div>
 
