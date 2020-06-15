@@ -1,7 +1,6 @@
 This directory contains extensions to help support the mini-conf library.
 
-Follow the procedure described in [this gist](https://gist.github.com/georgepar/3d5cda48c50c6ee57f56aaea9b99603d) to obtain
-the embeddings and the paper projections.
+For the updated procedure on getting similar papers + recommendations refer to README.recommendations.md
 
 
 These include:
