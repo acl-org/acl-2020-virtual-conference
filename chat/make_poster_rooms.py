@@ -44,6 +44,7 @@ if __name__ == "__main__":
 
         for paper in papers:
             channel_name = "paper_" + paper["UID"]
+            channel_name = channel_name.replace('.', '-')
             if not args.test:
                 created = rocket.channels_create(channel_name).json()
                 print(channel_name, created)
