@@ -45,12 +45,13 @@ def main(site_data_path):
             by_uid[typ][p["UID"]] = p
 
     display_time_format = "%H:%M"
-    for session_info in site_data["poster_schedule"].values():
+    for session_name, session_info in site_data["poster_schedule"].items():
         for paper in session_info["posters"]:
             if "sessions" not in by_uid["papers"][paper["id"]]:
                 by_uid["papers"][paper["id"]]["sessions"] = []
             time = datetime.strptime(session_info["date"], "%Y-%m-%d_%H:%M:%S")
             start_time = time.strftime(display_time_format)
+            start_day = time.strftime("%a")
             end_time = time + timedelta(hours=qa_session_length_hr)
             end_time = end_time.strftime(display_time_format)
             time_string = "({}-{} GMT)".format(start_time, end_time)
@@ -60,6 +61,7 @@ def main(site_data_path):
                 {
                     "time": time,
                     "time_string": time_string,
+                    "session": " ".join([start_day, "Session", session_name]),
                     "zoom_link": paper["join_link"],
                     "ical_link": calendar_stub
                     + "/poster_{}.{}.ics".format(paper["id"], current_num_sessions),
