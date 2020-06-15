@@ -32,6 +32,10 @@ def main(site_data_path):
     for f in glob.glob(site_data_path + "/*"):
         extra_files.append(f)
         name, typ = f.split("/")[-1].split(".")
+
+        if name == "acl2020_accepted_papers":
+            continue
+
         if typ == "json":
             site_data[name] = json.load(open(f))
         elif typ in {"csv", "tsv"}:
@@ -226,6 +230,13 @@ def poster(poster):
     uid = poster
     v = by_uid["papers"][uid]
     data = _data()
+
+    data["openreview"] = format_paper(by_uid["papers"][uid])
+    data["id"] = uid
+    data["paper_recs"] = [
+        format_paper(by_uid["papers"][n]) for n in site_data["paper_recs"][uid]
+    ][1:]
+
     data["paper"] = format_paper(v)
     return render_template("poster.html", **data)
 
