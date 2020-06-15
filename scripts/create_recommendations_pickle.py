@@ -2,9 +2,7 @@ import argparse
 import csv
 import pickle
 
-import numpy as np
 import openreview
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 def read_entries(papers_csv):
