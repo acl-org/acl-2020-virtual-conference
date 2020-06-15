@@ -6,6 +6,7 @@ import json
 import os
 from datetime import datetime, timedelta
 
+import pytz
 import yaml
 from flask import (
     Flask,
@@ -17,6 +18,7 @@ from flask import (
 )
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
+from icalendar import Calendar, Event
 
 site_data = {}
 by_uid = {}
@@ -226,6 +228,40 @@ def poster(poster):
     return render_template("poster.html", **data)
 
 
+@app.route("/poster_<poster>.<session>.ics")
+def poster_ics(poster, session):
+    session = int(session)
+    start = by_uid["papers"][poster]["sessions"][session]["time"]
+    start = start.replace(tzinfo=pytz.utc)
+
+    cal = Calendar()
+    cal.add("prodid", "-//ACL//acl2020.org//")
+    cal.add("version", "2.0")
+    cal["X-WR-TIMEZONE"] = "GMT"
+    cal["X-WR-CALNAME"] = "ACL: " + by_uid["papers"][poster]["title"]
+
+    event = Event()
+    link = (
+        '<a href="'
+        + site_data["config"]["site_url"]
+        + '/poster_%s.html">Poster Page</a>' % (poster)
+    )
+    event.add("summary", by_uid["papers"][poster]["title"])
+    event.add("description", link)
+    event.add("uid", "-".join(["ACL2020", poster, str(session)]))
+    event.add("dtstart", start)
+    event.add("dtend", start + timedelta(hours=qa_session_length_hr))
+    event.add("dtstamp", start)
+    cal.add_component(event)
+
+    response = make_response(cal.to_ical())
+    response.mimetype = "text/calendar"
+    response.headers["Content-Disposition"] = (
+        "attachment; filename=poster_" + poster + "." + str(session) + ".ics"
+    )
+    return response
+
+
 @app.route("/speaker_<speaker>.html")
 def speaker(speaker):
     uid = speaker
@@ -297,6 +333,10 @@ def generator():
     for sponsors_at_level in site_data["sponsors"]:
         for sponsor in sponsors_at_level["sponsors"]:
             yield "sponsor", {"sponsor": str(sponsor["UID"])}
+
+    for i in by_uid["papers"].keys():
+        for j in range(2):
+            yield "poster_ics", {"poster": i, "session": str(j)}
 
     for key in site_data:
         yield "serve", {"path": key}
