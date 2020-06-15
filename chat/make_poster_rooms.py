@@ -10,7 +10,9 @@ from rocketchat_API.rocketchat import RocketChat
 def parse_arguments():
     parser = argparse.ArgumentParser(description="MiniConf Portal Command Line")
     parser.add_argument("--config", default="config.yml", help="Configuration yaml")
-    parser.add_argument("--papers", default="../sitedata_acl2020/papers.csv", help="Papers CSV")
+    parser.add_argument(
+        "--papers", default="../sitedata_acl2020/papers.csv", help="Papers CSV"
+    )
     parser.add_argument("--test", action="store_true")
     return parser.parse_args()
 
@@ -44,7 +46,7 @@ if __name__ == "__main__":
 
         for paper in papers:
             channel_name = "paper_" + paper["UID"]
-            channel_name = channel_name.replace('.', '-')
+            channel_name = channel_name.replace(".", "-")
             if not args.test:
                 created = rocket.channels_create(channel_name).json()
                 print(channel_name, created)
@@ -53,7 +55,7 @@ if __name__ == "__main__":
             ]
 
             # Change to topic of papers.
-            author_string = paper["authors"].replace('|', ', ')
+            author_string = paper["authors"].replace("|", ", ")
             topic = "%s - %s" % (paper["title"], author_string,)
             if not args.test:
                 rocket.channels_set_topic(channel_id, topic).json()
