@@ -12,6 +12,7 @@ def parse_arguments():
     parser.add_argument("papers", default=False, help="paper file")
 
     parser.add_argument("embeddings", default=False, help="embeddings file to shrink")
+    parser.add_argument("--projection-method", default="tsne", help="[umap|tsne]")
 
     return parser.parse_args()
 

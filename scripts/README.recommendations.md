@@ -12,7 +12,7 @@ from [ICLR webpage](https://github.com/ICLR/iclr.github.io/tree/master/recommend
    from this branch or a more recent version and copy it to `sitedata_acl2020`.
 2. Run `python scripts/embeddings.py sitedata_acl2020/papers.csv` to produce the BERT embeddings
    for the paper abstracts.
-3. Run `python reduce.py ../acl-2020-virtual-conference-sitedata/papers.csv embeddings.torch > ../sitedata_acl2020/papers_projection.json --projection-method [tsne|umap]`
+3. Run `python scripts/reduce.py --projection-method [tsne|umap] acl-2020-virtual-conference-sitedata/papers.csv embeddings.torch > sitedata_acl2020/papers_projection.json`
    to produce a 2D projection of the BERT embeddings for visualization. `--projection-method`
    selects which dimensionality reduction technique to use.
 4. Rerun `make run` and go to the paper visualization page
