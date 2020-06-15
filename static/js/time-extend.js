@@ -8,13 +8,18 @@ add_local_tz = (selector) => {
     if (res) {
       const start_time = moment.utc(`2020-04-30 ${res[1]}`);
       const end_time = moment.utc(`2020-04-30 ${res[2]}`);
-      // console.log(start_time,end_time,"--- start_time,end_time");
-      // console.log(start_time.tz(guess_tz).format('h:mm A'),"--- start_time.");
-      // console.log(end_time.tz(guess_tz).format('h:mm A z'),"--- start_time.");
       const local_start = start_time.tz(guess_tz).format("HH:mm");
-      const local_end_and_tz = end_time.tz(guess_tz).format("HH:mm z");
+      const local_end = end_time.tz(guess_tz);
+      const local_end_and_tz = local_end.format("HH:mm z");
+      const dd = local_end.dayOfYear() - end_time.utc().dayOfYear();
+      let dd_str = "";
+      if (dd > 0) {
+        dd_str = ` +${dd}d`;
+      } else if (dd < 0) {
+        dd_str = ` ${dd}d`;
+      }
       $(this).text(
-        `(${res[1]}-${res[2]} ${res[3]} / ${local_start}-${local_end_and_tz})`
+        `(${res[1]}-${res[2]} ${res[3]} / ${local_start}-${local_end_and_tz}${dd_str})`
       );
     }
   });
