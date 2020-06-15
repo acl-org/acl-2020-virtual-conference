@@ -45,7 +45,7 @@ def main(site_data_path):
             by_uid[typ][p["UID"]] = p
 
     display_time_format = "%H:%M"
-    for session_name, session_info in site_data["poster_schedule"].items():
+    for session_info in site_data["poster_schedule"].values():
         for paper in session_info["posters"]:
             if "sessions" not in by_uid["papers"][paper["id"]]:
                 by_uid["papers"][paper["id"]]["sessions"] = []
