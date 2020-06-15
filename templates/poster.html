@@ -66,7 +66,7 @@
     {% for session in paper.content.sessions %}
       <div>
       {{paper.content.track}}
-      <span class="session_times">{{session.time}}</span>
+      <span class="session_times">{{session.time_string}}</span>
       [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Live QA</a>]
       [<a target="_blank" href="{{session.ical_link}}">Cal</a>]
       </div>

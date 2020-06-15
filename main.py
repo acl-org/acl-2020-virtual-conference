@@ -4,14 +4,23 @@ import csv
 import glob
 import json
 import os
+from datetime import datetime, timedelta
 
 import yaml
-from flask import Flask, jsonify, redirect, render_template, send_from_directory
+from flask import (
+    Flask,
+    jsonify,
+    make_response,
+    redirect,
+    render_template,
+    send_from_directory,
+)
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
 
 site_data = {}
 by_uid = {}
+qa_session_length_hr = 1
 
 
 def main(site_data_path):
@@ -32,6 +41,28 @@ def main(site_data_path):
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
+
+    display_time_format = "%H:%M"
+    for session_name, session_info in site_data["poster_schedule"].items():
+        for paper in session_info["posters"]:
+            if "sessions" not in by_uid["papers"][paper["id"]]:
+                by_uid["papers"][paper["id"]]["sessions"] = []
+            time = datetime.strptime(session_info["date"], "%Y-%m-%d_%H:%M:%S")
+            start_time = time.strftime(display_time_format)
+            end_time = time + timedelta(hours=qa_session_length_hr)
+            end_time = end_time.strftime(display_time_format)
+            time_string = "({}-{} GMT)".format(start_time, end_time)
+            current_num_sessions = len(by_uid["papers"][paper["id"]]["sessions"])
+            calendar_stub = site_data["config"]["site_url"].replace("https", "webcal")
+            by_uid["papers"][paper["id"]]["sessions"].append(
+                {
+                    "time": time,
+                    "time_string": time_string,
+                    "zoom_link": paper["join_link"],
+                    "ical_link": calendar_stub
+                    + "/poster_{}.{}.ics".format(paper["id"], current_num_sessions),
+                }
+            )
 
     # TODO: should assign UID by sponsor name? What about sponsors with multiple levels?
     by_uid["sponsors"] = {
@@ -163,10 +194,7 @@ def format_paper(v):
             "demo_url": by_uid["demos"].get(v["UID"], {}).get("demo_url", ""),
             "track": v.get("track", ""),
             # TODO: Fill this info in `main(sitedata)` using an external file.
-            "sessions": [
-                {"time": "(01:00-02:00 PST)", "zoom_link": "", "ical_link": ""},
-                {"time": "(13:00-14:00 PST)", "zoom_link": "", "ical_link": ""},
-            ],
+            "sessions": v["sessions"],
             "recs": [],
         },
     }
