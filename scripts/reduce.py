@@ -4,7 +4,6 @@ import json
 
 import sklearn.manifold
 import torch
-
 import umap  # type: ignore
 
 # No type stubs for umap-learn. Ignore mypy
