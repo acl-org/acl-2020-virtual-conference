@@ -82,7 +82,7 @@ def main(site_data_path):
     # Format the session start and end times
     for sponsor in by_uid["sponsors"].values():
         for zoom in sponsor.get("zooms", []):
-            start = zoom["start"].astimezone(pytz.timezone('GMT'))
+            start = zoom["start"].astimezone(pytz.timezone("GMT"))
             end = start + timedelta(hours=zoom["duration"])
             day = start.strftime("%a")
             start_time = start.strftime(display_time_format)
