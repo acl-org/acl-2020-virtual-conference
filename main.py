@@ -79,6 +79,17 @@ def main(site_data_path):
         for sponsor in sponsors_at_level["sponsors"]
     }
 
+    # Format the session start and end times
+    for sponsor in by_uid["sponsors"].values():
+        for zoom in sponsor.get("zooms", []):
+            start = zoom["start"].astimezone(pytz.timezone('GMT'))
+            end = start + timedelta(hours=zoom["duration"])
+            day = start.strftime("%a")
+            start_time = start.strftime(display_time_format)
+            end_time = end.strftime(display_time_format)
+            time_string = "{} {}-{} GMT".format(day, start_time, end_time)
+            zoom["time_string"] = time_string
+
     print("Data Successfully Loaded")
     return extra_files
 
