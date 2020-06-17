@@ -3,9 +3,8 @@ import re
 from collections import defaultdict
 from datetime import datetime
 
-import yaml
-
 import pandas as pd
+import yaml
 
 re_session_extract = re.compile(
     r"\w+ (\w+) (\d+), (\d+) (\d+\w) [\w\d\s:\-.,()]+-\d+ (\d+):(\d\d) UTC(.*)"
