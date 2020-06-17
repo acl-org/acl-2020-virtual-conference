@@ -57,11 +57,15 @@
       </div>
       <div class="card-body">
       <div class="card-text">
+        {% for day, zooms in sponsor.zoom_times.items() %}
+        <h5>{{ day }}</h5>
         <ul>
-        {% for zoom in sponsor.zooms %}
-            <li> [<span class="zoom_times">{{ zoom.time_string }}</span>] {{ zoom.label }} </li>
-        {% endfor %}
+            {% for (time_string, label) in zooms %}
+                <li> <span class="zoom_times">{{ time_string }}</span> {{     label }} </li>
+            {% endfor %}
         </ul>
+        {% endfor %}
+
       </div>
       </div>
     <br>
