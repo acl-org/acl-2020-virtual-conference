@@ -228,13 +228,13 @@
 {% macro sponsorgroup(sponsors) -%}
   <div class="cards row">
   {% for sponsor_level in sponsors %}
-    <div class="col-md-12 col-sm-12" style="border-bottom:1px solid; bottom: 15px;">
+    <div class="col-md-12 col-sm-12 sponsorLevel">
       <h2 class='card-title'>{{ sponsor_level.level }}</h2>
     </div>
 
     {% for sponsor in sponsor_level.sponsors %}
     <div class="col-md-4 col-sm-6 p3" style="box-sizing: border-box;">
-      <div class="card cards" style="display: block; min-height:100px; width: 100%; margin-bottom: 20px;">
+      <div class="card cards sponsorLogo" style="display: block; min-height:100px; width: 100%; ">
         <a class="text-muted" href="sponsor_{{sponsor.UID}}.html">
           <img class="card-img-top" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}">
         </a>

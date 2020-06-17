@@ -155,14 +155,31 @@ h3.card-subtitle.text-muted {
   background-color: rgba(255, 255, 255, 1);
 }
 
+.sponsorSubtitle {
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.sponsorLevel {
+  border-bottom:1px solid;
+  bottom: 15px;
+  padding-top: 15px;
+}
+
 .sponsorLogo {
   width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
+
+.sponsorLogo:hover {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
 
 .slp iframe {
   background: #fff;
