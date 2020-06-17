@@ -16,7 +16,6 @@
 <meta name="citation_keywords" content="{{keyword}}" />
 {% endfor %}
 <meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
-
 {% endblock %}
 
 {% block content %}
@@ -44,6 +43,10 @@
       >{{ "," if not loop.last }}
       {% endfor %}
     </p>
+    <p class="card-text text-center">
+      <span class="">Track:</span>
+      {{ paper.content.track }}
+    </p>
     <div class="text-center p-3">
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Abstract
@@ -56,7 +59,24 @@
         Code
       </a>
       {% endif %}
+      {% if paper.content.demo_url %}
+      <a href="{{paper.content.demo_url}}" target="_blank" class="card-link">
+        Demo
+      </a>
+      {% endif %}
     </div>
+
+    <div class=" text-center text-muted text-monospace ">
+    {% for session in paper.content.sessions %}
+      <div>
+      {{session.session}}
+      <span class="session_times">{{session.time_string}}</span>
+      [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Live QA</a>]
+      [<a target="_blank" href="{{session.ical_link}}">Cal</a>]
+      </div>
+    {% endfor %}
+    </div>
+
   </div>
 </div>
 <div id="details" class="pp-card m-3 collapse">
@@ -123,7 +143,40 @@
     })
 </script>
 
+<div class="container" style="padding-bottom: 30px; padding-top:30px">
+  <center>
+    <h2> Similar Papers </h2>
+  </center>
+</div>
+<p></p>
+<div  class="container" >
+  <div class="row">
+  {% for recommended in paper_recs %}
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="poster_{{recommended.id}}.html" class="text-muted">
+            <h5 class="card-title" align="center">{{recommended.content.title}}</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             {% for a in recommended.content.authors %}
+             {{a}},
+             {% endfor %}
+          </h6>
+          <center><img class="cards_img" src="{{config.image_path}}/{{recommended.id}}.png" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
 
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
 
 
 
