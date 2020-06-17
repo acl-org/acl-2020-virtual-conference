@@ -30,9 +30,11 @@
 
 <div class="col-md-12 col-xs-12 row">
   <!-- Video -->
+  {% if sponsor.youtube is defined %}
   <div class="col-md-6 col-xs-6">
-    <iframe width="525" height="301" src="{{ sponsor.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="525" height="301" src="{{ sponsor.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
+  {% endif %}
 
   <div class="col-md-6 col-xs-6">
     <!-- Contact -->
@@ -43,8 +45,9 @@
       <div class="card-body">
       <div class="card-text">
         <ul>
-          <li>Name: xxx</li>
-          <li>Email: xxx@xxx.com</li>
+          {% for contact in sponsor.contacts %}
+          <li>{{ contact.name }} &lt;<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>&gt;</li>
+          {% endfor %}
         </ul>
       </div>
       </div>
@@ -71,6 +74,7 @@
     <br>
 
     <!-- Resources -->
+    {% if sponsor.youtube is defined %}
     <div class="card">
       <div class="card-title main-title text-center" style="">
       Resources
@@ -86,13 +90,14 @@
       </div>
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
 
 <!-- Chat -->
 <div class="col-md-12 col-xs-12 p-2">
   <div id="gitter" class="slp">
-    <iframe frameborder="0" src="https://{{config.chat_server}}/channel/example_sponsor?layout=embedded" height="700px" width="100%" ></iframe>
+    <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.channel }}?layout=embedded" height="700px" width="100%" ></iframe>
   </div>
 </div>
 
