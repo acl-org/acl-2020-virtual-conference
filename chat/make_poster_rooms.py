@@ -38,8 +38,8 @@ if __name__ == "__main__":
 
     with sessions.Session() as session:
         rocket = RocketChat(
-            config["username"],
-            config["password"],
+            user_id=config["user_id"],
+            auth_token=config["auth_token"],
             server_url=config["server"],
             session=session,
         )
