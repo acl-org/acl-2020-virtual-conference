@@ -161,7 +161,7 @@ h3.card-subtitle.text-muted {
 }
 
 .sponsorLevel {
-  border-bottom:1px solid;
+  border-bottom: 1px solid;
   bottom: 15px;
   padding-top: 15px;
 }
@@ -177,9 +177,8 @@ h3.card-subtitle.text-muted {
 
 .sponsorLogo:hover {
   background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
-
 
 .slp iframe {
   background: #fff;
