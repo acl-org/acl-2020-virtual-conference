@@ -87,7 +87,7 @@ def main(site_data_path):
             day = start.strftime("%a")
             start_time = start.strftime(display_time_format)
             end_time = end.strftime(display_time_format)
-            time_string = "{} {}-{} GMT".format(day, start_time, end_time)
+            time_string = "({} {}-{} GMT)".format(day, start_time, end_time)
             zoom["time_string"] = time_string
 
     print("Data Successfully Loaded")
