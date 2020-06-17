@@ -234,9 +234,9 @@
 
     {% for sponsor in sponsor_level.sponsors %}
     <div class="col-md-4 col-sm-6 p3" style="box-sizing: border-box;">
-      <div class="card cards sponsorLogo" style="display: block; min-height:100px; width: 100%; ">
+      <div class="sponsorLogo">
         <a class="text-muted" href="sponsor_{{sponsor.UID}}.html">
-          <img class="card-img-top" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}">
+          <span class="sponsorHelper"></span><img class="card-img-top sponsorImg" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
         </a>
       </div>
     </div>
