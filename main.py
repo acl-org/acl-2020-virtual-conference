@@ -4,6 +4,7 @@ import csv
 import glob
 import json
 import os
+from collections import OrderedDict
 from datetime import datetime, timedelta
 
 import pytz
@@ -78,6 +79,22 @@ def main(site_data_path):
         for sponsors_at_level in site_data["sponsors"]
         for sponsor in sponsors_at_level["sponsors"]
     }
+
+    # Format the session start and end times
+    for sponsor in by_uid["sponsors"].values():
+        sponsor["zoom_times"] = OrderedDict()
+        for zoom in sponsor.get("zooms", []):
+            start = zoom["start"].astimezone(pytz.timezone("GMT"))
+            end = start + timedelta(hours=zoom["duration"])
+            day = start.strftime("%A")
+            start_time = start.strftime(display_time_format)
+            end_time = end.strftime(display_time_format)
+            time_string = "{} ({}-{} GMT)".format(day, start_time, end_time)
+
+            if day not in sponsor["zoom_times"]:
+                sponsor["zoom_times"][day] = []
+
+            sponsor["zoom_times"][day].append((time_string, zoom["label"]))
 
     print("Data Successfully Loaded")
     return extra_files
@@ -175,6 +192,13 @@ def sponsors():
     return render_template("sponsors.html", **data)
 
 
+@app.route("/socials.html")
+def socials():
+    data = _data()
+    data["socials"] = site_data["socials"]
+    return render_template("socials.html", **data)
+
+
 def extract_list_field(v, key):
     value = v.get(key, "")
     if isinstance(value, list):
@@ -197,11 +221,10 @@ def format_paper(v):
             "authors": list_fields["authors"],
             "keywords": list_fields["keywords"],
             "abstract": v["abstract"],
-            "TLDR": v["abstract"],
+            "TLDR": v["abstract"][:250] + "...",
             "pdf_url": v.get("pdf_url", ""),
             "demo_url": by_uid["demos"].get(v["UID"], {}).get("demo_url", ""),
             "track": v.get("track", ""),
-            # TODO: Fill this info in `main(sitedata)` using an external file.
             "sessions": v["sessions"],
             "recs": [],
         },
