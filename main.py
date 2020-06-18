@@ -234,6 +234,7 @@ def format_paper(v):
         },
     }
 
+
 def format_tutorial(v):
     list_keys = ["organizers"]
     list_fields = {}
@@ -247,6 +248,7 @@ def format_tutorial(v):
         "abstract": v["abstract"],
         "material": v["material"]
     }
+
 
 def format_workshop(v):
     list_keys = ["authors"]
@@ -323,6 +325,7 @@ def speaker(speaker):
     data["speaker"] = v
     return render_template("speaker.html", **data)
 
+
 @app.route("/tutorial_<tutorial>.html")
 def tutorial(tutorial):
     uid = tutorial
@@ -330,6 +333,7 @@ def tutorial(tutorial):
     data = _data()
     data["tutorial"] = format_tutorial(v)
     return render_template("tutorial.html", **data)
+
 
 @app.route("/workshop_<workshop>.html")
 def workshop(workshop):
