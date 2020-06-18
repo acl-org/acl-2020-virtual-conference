@@ -177,13 +177,16 @@ def paper_vis():
 @app.route("/calendar.html")
 def schedule():
     data = _data()
-    data["day"] = {
-        "speakers": site_data["speakers"],
-        # There is no "Highlighted Papers" for ACL2020.
-        # "highlighted": [
-        #     format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        # ],
-    }
+    days = ["Monday", "Tuesday", "Wednesday"]
+    for day in days:
+        data[day] = {
+            "speakers": [s for s in site_data["speakers"] if s["day"] == day],
+            # There is no "Highlighted Papers" for ACL2020.
+            # "highlighted": [
+            #     format_paper(by_uid["papers"][h["UID"]])
+            #     for h in site_data["highlighted"]
+            # ],
+        }
     return render_template("schedule.html", **data)
 
 
@@ -244,11 +247,10 @@ def format_paper(v):
             "authors": list_fields["authors"],
             "keywords": list_fields["keywords"],
             "abstract": v["abstract"],
-            "TLDR": v["abstract"],
+            "TLDR": v["abstract"][:250] + "...",
             "pdf_url": v.get("pdf_url", ""),
             "demo_url": by_uid["demos"].get(v["UID"], {}).get("demo_url", ""),
             "track": v.get("track", ""),
-            # TODO: Fill this info in `main(sitedata)` using an external file.
             "sessions": v["sessions"],
             "recs": [],
         },
