@@ -55,9 +55,9 @@ if __name__ == "__main__":
             author_string = paper["authors"].replace("|", ", ")
             topic = "%s - %s" % (paper["title"], author_string,)
             if not args.test:
-                channel_id = rocket.channels_info(channel=channel_name).json()["channel"][
-                    "_id"
-                ]
+                channel_id = rocket.channels_info(channel=channel_name).json()[
+                    "channel"
+                ]["_id"]
                 rocket.channels_set_topic(channel_id, topic).json()
                 rocket.channels_set_description(channel_id, paper["abstract"]).json()
 
