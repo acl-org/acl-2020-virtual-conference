@@ -83,17 +83,16 @@ git pull
 git checkout -b your_branch_name
 ```
 
-By now you have created a new local branch. Then you can make contributions to the content. Once you've finished, use the following command in the terminal to commit to the local branch
+By now you have created a new local branch. Then you can make contributions to the content. Once you've finished, use the following command in the terminal to commit to the local branch.
 
 ```shell
 git add . # add all files
 git add file_changed # only add file the named file_changed
 git commit -am 'your update logs'
 git push --set-upstream origin your_branch_name # setup the upstream
-git push
 ```
 
-Now you can open a pull request on the repo's website. A collaborator will review your changes and either approve it or communicate with you with additional changes.
+Now you can open a pull request on the repository's website. Additionally, on the repository's page, you should click ```New pull request``` button near the ```Branch: master```. Then it will redirect to a new page. On this page, you need to be very carefully for the choices of base repository and head repository. Following the example shown in this document, the head repository should be ```acl-org/acl-2020-virtual-conference```, and ```compare: your_branch_name``` next to the head repository menu. The base repository should be ```acl-org/acl-2020-virtual-conference```.  Then you can click the green button ```Create pull request```. By clicking this button, you have created a new pull request and a collaborator will be notified and review your changes. The collaborator will discuss any further changes for your contributions. Once approved, your branch will be merged into ```master``` branch. Before you make any further contributions, don't forget to ```git pull``` to update your local files.
 
 For more details about opening a pull request on the website, please check the  [GitHub help documentation](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
