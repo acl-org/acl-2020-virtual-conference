@@ -262,15 +262,12 @@
                 <div class="card-subtitle text-muted">
                     {{social.organizers|join(" & ")}}
                 </div>
+                {% if social.image %}
                 <div class="m-4">
-                    {% if social.image %}
                     <img height="100"
                         src="{{social.image}}"/>
-                    {% else %}
-                    <img height="100"
-                        src="ACL_social_temp.png"/>
-                    {% endif %}
                 </div>
+                {% endif %}
                 <div class="p-3 text-left card-subtitle text-muted">
 
                     <p>{{social.description|safe}}</p>
