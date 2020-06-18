@@ -22,6 +22,7 @@ from flaskext.markdown import Markdown
 from icalendar import Calendar, Event
 
 site_data = {}
+merged_committees = []
 by_uid = {}
 qa_session_length_hr = 1
 
@@ -100,6 +101,26 @@ def main(site_data_path):
     return extra_files
 
 
+def merge_committees():
+    global site_data, merged_committees
+    index = 0
+    tmp_data = {}
+    committees = site_data["committee"]["committee"]
+    for committee in committees:
+        name = committee["name"]
+        if name in tmp_data:
+            ### duplicated found ###
+            c_index = tmp_data[name]["index"]
+            role = merged_committees[c_index]["role"] + " & " + committee["role"]
+            merged_committees[c_index]["role"] = role
+            print("duplicated committee: %s" % name)
+        else:
+            tmp_data[name] = committee
+            tmp_data[name]["index"] = index
+            merged_committees.append(committee)
+            index = index + 1
+
+
 # ------------- SERVER CODE -------------------->
 
 app = Flask(__name__)
@@ -127,7 +148,8 @@ def index():
 def home():
     data = _data()
     data["readme"] = open("README.md").read()
-    data["committee"] = site_data["committee"]["committee"]
+    # data["committee"] = site_data["committee"]["committee"]
+    data["committee"] = merged_committees
     return render_template("index.html", **data)
 
 
@@ -403,6 +425,7 @@ if __name__ == "__main__":
     args = parse_arguments()
 
     extra_files = main(args.path)
+    merge_committees()
 
     if args.build:
         freezer.freeze()
