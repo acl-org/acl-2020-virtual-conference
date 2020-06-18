@@ -6,6 +6,7 @@ import json
 import os
 from collections import OrderedDict
 from datetime import datetime, timedelta
+from typing import List
 
 import pytz
 import yaml
@@ -22,9 +23,9 @@ from flaskext.markdown import Markdown
 from icalendar import Calendar, Event
 
 site_data = {}
-merged_committees = []
 by_uid = {}
 qa_session_length_hr = 1
+merged_committees: List[object] = []  # type "List[object]"
 
 
 def main(site_data_path):
