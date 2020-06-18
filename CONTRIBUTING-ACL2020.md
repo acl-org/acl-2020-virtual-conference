@@ -89,6 +89,7 @@ By now you have created a new local branch. Then you can make contributions to t
 git add . # add all files
 git add file_changed # only add file the named file_changed
 git commit -am 'your update logs'
+git push --set-upstream origin your_branch_name # setup the upstream
 git push
 ```
 
