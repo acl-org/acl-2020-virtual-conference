@@ -157,10 +157,7 @@ def schedule():
     days = ["Monday", "Tuesday", "Wednesday"]
     for day in days:
         data[day] = {
-            "speakers": [
-                s for s in site_data["speakers"]
-                if s["day"] == day
-            ],
+            "speakers": [s for s in site_data["speakers"] if s["day"] == day],
             # There is no "Highlighted Papers" for ACL2020.
             # "highlighted": [
             #     format_paper(by_uid["papers"][h["UID"]])
