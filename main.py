@@ -191,12 +191,14 @@ def sponsors():
     data["sponsors"] = site_data["sponsors"]
     return render_template("sponsors.html", **data)
 
+
 @app.route("/socials.html")
 def socials():
     data = _data()
     data["socials"] = site_data["socials"]
     print(site_data["socials"])
     return render_template("socials.html", **data)
+
 
 def extract_list_field(v, key):
     value = v.get(key, "")
