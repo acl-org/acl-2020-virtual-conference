@@ -196,7 +196,6 @@ def sponsors():
 def socials():
     data = _data()
     data["socials"] = site_data["socials"]
-    print(site_data["socials"])
     return render_template("socials.html", **data)
 
 
