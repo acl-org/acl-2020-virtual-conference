@@ -246,7 +246,7 @@ def format_tutorial(v):
         "title": v["title"],
         "organizers": list_fields["organizers"],
         "abstract": v["abstract"],
-        "material": v["material"]
+        "material": v["material"],
     }
 
 
