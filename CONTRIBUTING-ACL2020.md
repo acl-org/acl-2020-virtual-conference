@@ -15,6 +15,15 @@ git clone git@github.com:acl-org/acl-2020-virtual-conference.git
 
 By then, you will be able to download all content from ```acl-2020-virtual-conference``` repository to your local folder. If you are  not familiar with ```git```, you can also download the content by clicking the green button and the "Download ZIP" button and extract to your local folder.
 
+Run the command below check out the private [sitedata_acl2020](https://github.com/acl-org/acl-2020-virtual-conference-sitedata).
+
+```bash
+git submodule update --init --recursive
+```
+
+* You need to clone with SSH instead of HTTPS to get the git submodule working.
+* All ACL2020 sitedate are stored in this folder.
+
 
 
 ### Install Required Packages
@@ -70,25 +79,6 @@ Now the environment is activated.
 
 
 
-## Additional Instructions
-
-
-
-Here are additional instructions for working on the ACL2020 fork.
-
-1. Run the command below check out the private [sitedata_acl2020](https://github.com/acl-org/acl-2020-virtual-conference-sitedata).
-
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-   * You need to clone with SSH instead of HTTPS to get the git submodule working.
-   * All ACL2020 sitedate are stored in this folder.
-
-2. All images should be saved under [static/images/acl2020](./static/images/acl2020) folder.
-
-
-
 ## How to Create Pull Request
 
 
@@ -130,3 +120,10 @@ For more details about opening a pull request on the website, please check the  
 
 ## Deploy at AWS with login authentication
 TBD
+
+
+
+## FAQ
+
+Q: Where should I put images for ACL2020?
+A: All images should be saved under [static/images/acl2020](https://github.com/acl-org/acl-2020-virtual-conference/pull/114/files/static/images/acl2020) folder.
