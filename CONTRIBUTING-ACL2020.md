@@ -13,11 +13,11 @@ cd /path/to/the/local/folder
 git clone git@github.com:acl-org/acl-2020-virtual-conference.git
 ```
 
-By then, you will be able to download all content from ```acl-2020-virtual-conference``` repository to your local folder. If you are familiar with ```git```, you can also download the content by clicking the green button and the "Download ZIP" button and extract to your local folder.
+By then, you will be able to download all content from ```acl-2020-virtual-conference``` repository to your local folder. If you are  not familiar with ```git```, you can also download the content by clicking the green button and the "Download ZIP" button and extract to your local folder.
 
 
 
-### Install Required Package
+### Install Required Packages
 
 First, move to the repo folder:
 
@@ -70,7 +70,32 @@ Now the environment is activated.
 
 
 
+## Additional Instructions
+
+
+
+Here are additional instructions for working on the ACL2020 fork.
+
+1. Run the command below check out the private [sitedata_acl2020](https://github.com/acl-org/acl-2020-virtual-conference-sitedata).
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+   * You need to clone with SSH instead of HTTPS to get the git submodule working.
+   * All ACL2020 sitedate are stored in this folder.
+
+2. All images should be saved under [static/images/acl2020](./static/images/acl2020) folder.
+
+
+
 ## How to Create Pull Request
+
+
+
+### Create Pull Request in the Main Repository
+
+
 
 As mentioned in the [GitHub help documentation](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request), creating a pull request can propose and collaborate on changes to a repository. Those changes will be proposed to a *branch*, which ensures that the ```master``` branch only contains finished and approved works. 
 
@@ -94,22 +119,13 @@ git push --set-upstream origin your_branch_name # setup the upstream
 
 Now you can open a pull request on the repository's website. Additionally, on the repository's page, you should click ```New pull request``` button near the ```Branch: master```. Then it will redirect to a new page. On this page, you need to be very carefully for the choices of base repository and head repository. Following the example shown in this document, the head repository should be ```acl-org/acl-2020-virtual-conference```, and ```compare: your_branch_name``` next to the head repository menu. The base repository should be ```acl-org/acl-2020-virtual-conference```.  Then you can click the green button ```Create pull request```. By clicking this button, you have created a new pull request and a collaborator will be notified and review your changes. The collaborator will discuss any further changes for your contributions. Once approved, your branch will be merged into ```master``` branch. Before you make any further contributions, don't forget to ```git pull``` to update your local files.
 
+### Create a Pull Request with a Fork
+
+If you made your contributions with a forked repository, the process for adding and committing are the same. However, when you create a pull request, you need to change the head repository to your forked repository accordingly. For example, the head repository should be ```your_github_name/acl-2020-virtual-conference``` with the branch you made contributions to, whereas the base repository will be ```acl-org/acl-2020-virtual-conference``` with master branch. A collaborator will be notified and review your changes when you submit your pull request.
+
+
+
 For more details about opening a pull request on the website, please check the  [GitHub help documentation](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-
-
-
-## Additional Instructions
-
-
-
-Here are additional instructions for working on the ACL2020 fork.
-1. Run the command below check out the private [sitedata_acl2020](https://github.com/acl-org/acl-2020-virtual-conference-sitedata).
-    ```bash
-    git submodule update --init --recursive
-    ```
-   * You need to clone with SSH instead of HTTPS to get the git submodule working.
-   * All ACL2020 sitedate are stored in this folder.
-2. All images should be saved under [static/images/acl2020](./static/images/acl2020) folder.
 
 
 ## Deploy at AWS with login authentication
