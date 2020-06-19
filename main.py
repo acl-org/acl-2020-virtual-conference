@@ -28,7 +28,6 @@ qa_session_length_hr = 1
 merged_committees: List[object] = []  # type "List[object]"
 
 
-
 def main(site_data_path):
     global site_data, extra_files
     extra_files = ["README.md"]
