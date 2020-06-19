@@ -230,7 +230,7 @@
     <div class="card" style="display: block; overflow: hidden; width: 100%;">
       <div
         class="card-header text-center"
-        style="min-height: 200px; width: 100%;"
+        style="min-height: 100px; width: 100%;"
       >
         <a class="text-muted" href="workshop_{{workshop.id}}.html">
           <h3 class="card-title main-title">
@@ -240,9 +240,11 @@
         <div class="card-subtitle text-muted">
           {{ workshop.organizers | join(", ") }}
         </div>
+        <!--
         <div class="m-3 text-left card-subtitle">
           {{workshop.abstract|safe}}
         </div>
+        -->
       </div>
     </div>
   </div>
@@ -298,17 +300,14 @@
                     <br/>
                     <div class="text-center text-muted text-monospace">
                         {% for schedule in social.schedules %}
-
-                        <p>{{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span> [<a href="{{schedule.link}}" target="_blank">Live</a>] </p>
+                        <p>
+                          {{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span>
+                          {% if schedule.link %}
+                          [<a href="{{schedule.link}}" target="_blank">Live</a>]
+                          {% endif %}
+                        </p>
                         {% endfor %}
                     </div>
-
-                    <p class="text-center text-muted card-title">
-                        <a href="chat.html?room=channel/social_{{social.chat_id}}" target="_blank"> Chat </a>
-                        {% if social.website %}
-                        | <a href="{{social.website}}" target="_blank"> Website </a>
-                        {% endif %}
-                    </p>
                 </div>
             </div>
         </div>
