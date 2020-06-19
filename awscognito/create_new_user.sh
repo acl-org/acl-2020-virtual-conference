@@ -11,4 +11,5 @@ aws cognito-idp admin-create-user \
   --user-pool-id "${AWS_USER_POOL_ID}" \
   --username "${email}" \
   --user-attributes "Name=email,Value=${email}" \
-  --user-attributes "Name=custom:name,Value=${name}"
+  --user-attributes "Name=custom:name,Value=${name}" \
+  --user-attributes "Name=email_verified,Value=true"

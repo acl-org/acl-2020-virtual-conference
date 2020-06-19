@@ -6,6 +6,7 @@ import json
 import os
 from collections import OrderedDict
 from datetime import datetime, timedelta
+from typing import List
 
 import pytz
 import yaml
@@ -24,6 +25,7 @@ from icalendar import Calendar, Event
 site_data = {}
 by_uid = {}
 qa_session_length_hr = 1
+merged_committees: List[object] = []  # type "List[object]"
 
 
 def main(site_data_path):
@@ -44,7 +46,7 @@ def main(site_data_path):
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
-    for typ in ["papers", "speakers", "workshops", "demos"]:
+    for typ in ["papers", "speakers", "tutorials", "workshops", "demos"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
@@ -100,6 +102,26 @@ def main(site_data_path):
     return extra_files
 
 
+def merge_committees():
+    global site_data, merged_committees
+    index = 0
+    tmp_data = {}
+    committees = site_data["committee"]["committee"]
+    for committee in committees:
+        name = committee["name"]
+        if name in tmp_data:
+            ### duplicated found ###
+            c_index = tmp_data[name]["index"]
+            role = merged_committees[c_index]["role"] + " & " + committee["role"]
+            merged_committees[c_index]["role"] = role
+            print("duplicated committee: %s" % name)
+        else:
+            tmp_data[name] = committee
+            tmp_data[name]["index"] = index
+            merged_committees.append(committee)
+            index = index + 1
+
+
 # ------------- SERVER CODE -------------------->
 
 app = Flask(__name__)
@@ -127,7 +149,8 @@ def index():
 def home():
     data = _data()
     data["readme"] = open("README.md").read()
-    data["committee"] = site_data["committee"]["committee"]
+    # data["committee"] = site_data["committee"]["committee"]
+    data["committee"] = merged_committees
     return render_template("index.html", **data)
 
 
@@ -176,6 +199,9 @@ def livestream():
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
+    data["tutorials"] = [
+        format_tutorial(tutorial) for tutorial in site_data["tutorials"]
+    ]
     return render_template("tutorials.html", **data)
 
 
@@ -210,6 +236,10 @@ def extract_list_field(v, key):
         return value.split("|")
 
 
+def get_paper_rocketchat(paper_id):
+    return "paper-" + paper_id.replace(".", "-")
+
+
 def format_paper(v):
     list_keys = ["authors", "keywords"]
     list_fields = {}
@@ -219,6 +249,7 @@ def format_paper(v):
     return {
         "id": v["UID"],
         "forum": v["UID"],
+        "rocketchat_channel": get_paper_rocketchat(v["UID"]),
         "content": {
             "title": v["title"],
             "authors": list_fields["authors"],
@@ -234,8 +265,8 @@ def format_paper(v):
     }
 
 
-def format_workshop(v):
-    list_keys = ["authors"]
+def format_tutorial(v):
+    list_keys = ["organizers"]
     list_fields = {}
     for key in list_keys:
         list_fields[key] = extract_list_field(v, key)
@@ -243,8 +274,24 @@ def format_workshop(v):
     return {
         "id": v["UID"],
         "title": v["title"],
-        "organizers": list_fields["authors"],
+        "organizers": list_fields["organizers"],
         "abstract": v["abstract"],
+        "material": v["material"],
+    }
+
+
+def format_workshop(v):
+    list_keys = ["organizers"]
+    list_fields = {}
+    for key in list_keys:
+        list_fields[key] = extract_list_field(v, key)
+
+    return {
+        "id": v["UID"],
+        "title": v["title"],
+        "organizers": list_fields["organizers"],
+        "abstract": v["abstract"],
+        "material": v["material"],
     }
 
 
@@ -310,6 +357,15 @@ def speaker(speaker):
     return render_template("speaker.html", **data)
 
 
+@app.route("/tutorial_<tutorial>.html")
+def tutorial(tutorial):
+    uid = tutorial
+    v = by_uid["tutorials"][uid]
+    data = _data()
+    data["tutorial"] = format_tutorial(v)
+    return render_template("tutorial.html", **data)
+
+
 @app.route("/workshop_<workshop>.html")
 def workshop(workshop):
     uid = workshop
@@ -366,6 +422,8 @@ def generator():
         yield "poster", {"poster": str(paper["UID"])}
     for speaker in site_data["speakers"]:
         yield "speaker", {"speaker": str(speaker["UID"])}
+    for tutorial in site_data["tutorials"]:
+        yield "tutorial", {"tutorial": str(tutorial["UID"])}
     for workshop in site_data["workshops"]:
         yield "workshop", {"workshop": str(workshop["UID"])}
 
@@ -405,6 +463,7 @@ if __name__ == "__main__":
     args = parse_arguments()
 
     extra_files = main(args.path)
+    merge_committees()
 
     if args.build:
         freezer.freeze()

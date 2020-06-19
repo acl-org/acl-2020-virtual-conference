@@ -126,7 +126,7 @@
         data-parent="#accordionExample"
       >
         <div class="card-body">
-          {{qa.Answer}}
+          <div style="white-space: pre-wrap">{{qa.Answer|markdown}}</div>
         </div>
       </div>
     </div>
@@ -164,7 +164,7 @@
               <center>
                 <img
                   class="cards_img lazy-load-img"
-                  data-src="https://iclr.github.io/iclr-images/{{openreview.id}}.png"
+                  data-src="/static/images/acl2020/papers/{{openreview.id}}.png"
                   width="80%"
                 />
               </center>
@@ -198,6 +198,31 @@
 </div>
 {%- endmacro %}
 
+{% macro tutorialgroup(tutorials) -%}
+<div class="cards row">
+  {% for tutorial in tutorials %}
+  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
+    <div class="card" style="display: block; overflow: hidden; width: 100%;">
+      <div
+        class="card-header text-center"
+        style="min-height: 100px; width: 100%;"
+      >
+        <a class="text-muted" href="tutorial_{{tutorial.id}}.html">
+          <h3 class="card-title main-title">
+            {{tutorial.id}}: {{tutorial.title}}
+          </h3>
+        </a>
+        <div class="card-subtitle text-muted">
+          {{ tutorial.organizers | join(", ") }}
+        </div>        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{%- endmacro %}
+
+
 {% macro workshopgroup(workshops) -%}
 <div class="cards row">
   {% for workshop in workshops %}
@@ -205,7 +230,7 @@
     <div class="card" style="display: block; overflow: hidden; width: 100%;">
       <div
         class="card-header text-center"
-        style="min-height: 200px; width: 100%;"
+        style="min-height: 100px; width: 100%;"
       >
         <a class="text-muted" href="workshop_{{workshop.id}}.html">
           <h3 class="card-title main-title">
@@ -215,9 +240,11 @@
         <div class="card-subtitle text-muted">
           {{ workshop.organizers | join(", ") }}
         </div>
-        <div class="m-3 text-left card-subtitle font-italic">
+        <!--
+        <div class="m-3 text-left card-subtitle">
           {{workshop.abstract|safe}}
         </div>
+        -->
       </div>
     </div>
   </div>
@@ -255,7 +282,7 @@
             style="display:block; overflow:hidden; width:100%;">
             <div class="card-header text-center"
                 style="min-height: 400px; width:100%;">
-                    <h3 class="card-title">
+                    <h3 class="card-title main-title">
                         {{social.name}}
                     </h3>
                 <div class="card-subtitle text-muted">
@@ -267,23 +294,20 @@
                         src="{{social.image}}"/>
                 </div>
                 {% endif %}
-                <div class="p-3 text-left card-subtitle text-muted">
+                <div class="m-3 text-left card-subtitle">
 
                     <p>{{social.description|safe}}</p>
                     <br/>
                     <div class="text-center text-muted text-monospace">
                         {% for schedule in social.schedules %}
-
-                        <p>{{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span> [<a href="{{schedule.link}}" target="_blank">Live</a>] </p>
+                        <p>
+                          {{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span>
+                          {% if schedule.link %}
+                          [<a href="{{schedule.link}}" target="_blank">Live</a>]
+                          {% endif %}
+                        </p>
                         {% endfor %}
                     </div>
-
-                    <p class="text-center text-muted card-title">
-                        <a href="chat.html?room=channel/social_{{social.chat_id}}" target="_blank"> Chat </a>
-                        {% if social.website %}
-                        | <a href="{{social.website}}" target="_blank"> Website </a>
-                        {% endif %}
-                    </p>
                 </div>
             </div>
         </div>
