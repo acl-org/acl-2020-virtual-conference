@@ -1,15 +1,55 @@
 {% set active_page = "Tutorials" %}
 {% set page_title = "Tutorials" %}
 {% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% include 'tutorial_cal_head.html' %}
+{% endblock %}
+
 
 {% block content %}
 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
   <div id="day">
     <!-- Tutorials -->
-    {{ components.section("Tutorials") }}
+    <p>
+      <b>
+      Below is the schedule of the tutorial to be held on Sunday, July 5th, 2020. 
+      Tutorials held in parallel are shown one besides the other in the calendar.  
+      Some tutorials are held twice and some are held once.
+      Click on the tutorial to get more information about it. 
+    </b>
+    </p>
+    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+      <!-- Calender tab -->
+      <div
+        class="tab-pane active"
+        id="tab-calendar"
+        role="tabpanel"
+        aria-labelledby="nav-profile-tab"
+      >
+        <div class="form-group col">
+          <label for="tzOptions">Timezone:</label>
+          <select id="tzOptions" class="selectpicker" data-live-search="true">
+          </select>
+        </div>
+    
+        <!-- full cal for browser-->
+        <div id="calendar" class="d-none d-sm-block"></div>
+    
+        <!-- small cal for smart phones-->
+        <div id="calendar_small" class="d-sm-none"></div>
+    
+        <script type="text/javascript">
+          make_cal("serve_tutorial_calendar.json");
+        </script>
+      </div>
+    </div>
+    <!--
+    <br/>
     <div class="speakers">
       {{ components.tutorialgroup(tutorials) }}
     </div>
+    -->
   </div>
 </div>
 {% endblock %}
