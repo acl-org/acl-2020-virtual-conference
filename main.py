@@ -282,7 +282,7 @@ def format_tutorial(v):
 
 
 def format_workshop(v):
-    list_keys = ["authors"]
+    list_keys = ["organizers"]
     list_fields = {}
     for key in list_keys:
         list_fields[key] = extract_list_field(v, key)
@@ -290,8 +290,9 @@ def format_workshop(v):
     return {
         "id": v["UID"],
         "title": v["title"],
-        "organizers": list_fields["authors"],
+        "organizers": list_fields["organizers"],
         "abstract": v["abstract"],
+        "material": v["material"],
     }
 
 
