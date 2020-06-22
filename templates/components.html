@@ -18,9 +18,9 @@
 
 {% macro section(name) -%}
 <div class="border-top my-3"></div>
-<div class="row p-4" id="faq">
+<div class="row p-4">
   <div class="col-12 bd-content">
-    <h2 class="text-center">{{name}}</h2>
+    <h1 class="text-center">{{name}}</h1>
   </div>
 </div>
 {%- endmacro %}
@@ -126,7 +126,7 @@
         data-parent="#accordionExample"
       >
         <div class="card-body">
-          <div style="white-space: pre-wrap">{{qa.Answer|markdown}}</div>
+          <div>{{qa.Answer|markdown}}</div>
         </div>
       </div>
     </div>
@@ -226,24 +226,22 @@
 {% macro workshopgroup(workshops) -%}
 <div class="cards row">
   {% for workshop in workshops %}
-  <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box;">
-    <div class="card" style="display: block; overflow: hidden; width: 100%;">
-      <div
-        class="card-header text-center"
-        style="min-height: 200px; width: 100%;"
-      >
-        <a class="text-muted" href="workshop_{{workshop.id}}.html">
-          <h3 class="card-title main-title">
+  <div class="col-md-6 col-sm-12 p-2">
+    <div class="card p-1 text-center bg-light" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height:100%;">
+        <a class="card-title main-title" href="workshop_{{workshop.id}}.html">
             {{workshop.title}}
-          </h3>
         </a>
-        <div class="card-subtitle text-muted">
-          {{ workshop.organizers | join(", ") }}
-        </div>
-        <div class="m-3 text-left card-subtitle font-italic">
+      <div class="align-bottom card-body">
+        <h6 class="text-muted font-weight-light font-italic">
+            {{ workshop.organizers | join(", ") }}
+        </h6>
+      </div>
+        <!--
+        <div class="m-3 text-left card-subtitle">
           {{workshop.abstract|safe}}
         </div>
-      </div>
+        -->
     </div>
   </div>
   {% endfor %}
@@ -253,12 +251,13 @@
 {% macro sponsorgroup(sponsors) -%}
   <div class="cards row">
   {% for sponsor_level in sponsors %}
-    <div class="col-md-12 col-sm-12 sponsorLevel">
-      <h2 class='card-title'>{{ sponsor_level.level }}</h2>
+    <div class="col-12">
+      <h2>{{ sponsor_level.level }}</h2>
+      <hr />
     </div>
 
     {% for sponsor in sponsor_level.sponsors %}
-    <div class="col-md-4 col-sm-6 p3" style="box-sizing: border-box;">
+    <div class="col-md-3 col-sm-6">
       <div class="sponsorLogo">
         <a class="text-muted" href="sponsor_{{sponsor.UID}}.html">
           <span class="sponsorHelper"></span><img class="card-img-top sponsorImg" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
@@ -274,44 +273,37 @@
   <div class="cards row">
     {% for social in socials %}
     <div class="col-md-6 col-sm-12 p-3"
-        id='{{social.name|replace(" ", "_")|replace("?", "")}}'
-        style="box-sizing: border-box;">
-        <div class="card"
-            style="display:block; overflow:hidden; width:100%;">
-            <div class="card-header text-center"
-                style="min-height: 400px; width:100%;">
-                    <h3 class="card-title">
-                        {{social.name}}
-                    </h3>
-                <div class="card-subtitle text-muted">
+        id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
+        <div class="card p-3 text-center bg-light" 
+        style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        height:100%;">
+                <h3 class="card-title main-title">
+                    {{social.name}}
+                </h3>
+                <h6 class="text-muted font-italic">
                     {{social.organizers|join(" & ")}}
-                </div>
+                </h6>
                 {% if social.image %}
                 <div class="m-4">
                     <img height="100"
                         src="{{social.image}}"/>
                 </div>
                 {% endif %}
-                <div class="p-3 text-left card-subtitle text-muted">
-
+                <div class="mx-4 text-left card-subtitle">
                     <p>{{social.description|safe}}</p>
                     <br/>
                     <div class="text-center text-muted text-monospace">
                         {% for schedule in social.schedules %}
-
-                        <p>{{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span> [<a href="{{schedule.link}}" target="_blank">Live</a>] </p>
+                        <p>
+                          {{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span>
+                          {% if schedule.link %}
+                          [<a href="{{schedule.link}}" target="_blank">Live</a>]
+                          {% endif %}
+                        </p>
                         {% endfor %}
                     </div>
-
-                    <p class="text-center text-muted card-title">
-                        <a href="chat.html?room=channel/social_{{social.chat_id}}" target="_blank"> Chat </a>
-                        {% if social.website %}
-                        | <a href="{{social.website}}" target="_blank"> Website </a>
-                        {% endif %}
-                    </p>
                 </div>
             </div>
-        </div>
     </div>
     {% endfor %}
   </div>
