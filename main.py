@@ -17,10 +17,8 @@ from flaskext.markdown import Markdown
 from icalendar import Calendar, Event
 
 from miniconf.load_site_data import load_site_data
-from miniconf.site_data import Tutorial, Workshop, Poster
-from miniconf.utils import (
-    format_paper,
-)
+from miniconf.site_data import Poster, Tutorial, Workshop
+from miniconf.utils import format_paper
 
 site_data = {}
 by_uid = {}
@@ -126,9 +124,9 @@ def poster(uid):
     data["id"] = uid
     data["openreview"] = v
     data["paper"] = v
-    data["paper_recs"] = [
-        by_uid["posters"][n] for n in site_data["paper_recs"][uid]
-    ][1:]
+    data["paper_recs"] = [by_uid["posters"][n] for n in site_data["paper_recs"][uid]][
+        1:
+    ]
 
     return render_template("poster.html", **data)
 
