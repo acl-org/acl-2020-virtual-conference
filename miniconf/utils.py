@@ -19,7 +19,7 @@ def format_paper(v, by_uid):
             "abstract": v["abstract"],
             "TLDR": v["abstract"][:250] + "...",
             "pdf_url": v.get("pdf_url", ""),
-            "demo_url": by_uid["demos"].get(v["UID"], {}).get("demo_url", ""),
+            "demo_url": v.get("demo_url", ""),
             "track": v.get("track", ""),
             "sessions": v["sessions"],
             "recs": [],

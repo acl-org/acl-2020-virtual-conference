@@ -17,7 +17,7 @@ from flaskext.markdown import Markdown
 from icalendar import Calendar, Event
 
 from miniconf.load_site_data import load_site_data
-from miniconf.site_data import Tutorial, Workshop
+from miniconf.site_data import Tutorial, Workshop, Poster
 from miniconf.utils import (
     format_paper,
 )
@@ -53,7 +53,6 @@ def index():
 def home():
     data = _data()
     data["readme"] = open("README.md").read()
-    # data["committee"] = committee["committee"]["committee"]
     data["committee"] = site_data["committee"]
     return render_template("index.html", **data)
 
@@ -118,19 +117,19 @@ def socials():
 # ITEM PAGES
 
 
-@app.route("/poster_<poster>.html")
-def poster(poster):
-    uid = poster
-    v = by_uid["papers"][uid]
+@app.route("/poster_<uid>.html")
+def poster(uid):
     data = _data()
 
-    data["openreview"] = format_paper(by_uid["papers"][uid], by_uid)
+    v: Poster
+    v = by_uid["posters"][uid]
     data["id"] = uid
+    data["openreview"] = v
+    data["paper"] = v
     data["paper_recs"] = [
-        format_paper(by_uid["papers"][n], by_uid) for n in site_data["paper_recs"][uid]
+        by_uid["posters"][n] for n in site_data["paper_recs"][uid]
     ][1:]
 
-    data["paper"] = format_paper(v, by_uid)
     return render_template("poster.html", **data)
 
 
@@ -206,11 +205,8 @@ def chat():
 
 
 @app.route("/papers.json")
-def paper_json():
-    json = []
-    for v in site_data["papers"]:
-        json.append(format_paper(v, by_uid))
-    return jsonify(json)
+def papers_json():
+    return jsonify(site_data["posters"])
 
 
 @app.route("/static/<path:path>")
@@ -231,7 +227,7 @@ def serve(path):
 def generator():
 
     for paper in site_data["papers"]:
-        yield "poster", {"poster": str(paper["UID"])}
+        yield "poster", {"uid": str(paper["UID"])}
     for speaker in site_data["speakers"]:
         yield "speaker", {"uid": str(speaker["UID"])}
     tutorial: Tutorial

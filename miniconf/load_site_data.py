@@ -9,7 +9,8 @@ import jsons
 import pytz
 import yaml
 
-from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Keynote
+from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Keynote, Poster, \
+    PosterContent
 from miniconf.utils import extract_list_field
 
 
@@ -41,7 +42,7 @@ def load_site_data(
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
-    for typ in ["papers", "speakers", "tutorials", "workshops", "demos"]:
+    for typ in ["papers", "speakers"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
@@ -55,18 +56,33 @@ def load_site_data(
     site_data["schedule"] = build_plenary_sessions(site_data["speakers"])
 
     # tutorials.html
-    site_data["tutorials"] = build_tutorials(site_data["tutorials"])
-    # tutorial_<tutorial>.html
+    tutorials = build_tutorials(site_data["tutorials"])
+    site_data["tutorials"] = tutorials
+    # tutorial_<uid>.html
     by_uid["tutorials"] = {
         tutorial.id: tutorial
-        for tutorial in site_data["tutorials"]
+        for tutorial in tutorials
     }
 
     # papers.html
     build_papers(site_data, by_uid, display_time_format, qa_session_length_hr)
+    # poster_<uid>.html
+    posters = build_posters(site_data["papers"])
+    # papers.json
+    site_data["posters"] = posters
+    by_uid["posters"] = {
+        poster.id: poster
+        for poster in posters
+    }
 
     # workshops.html
-    site_data["workshops"] = build_workshops(site_data["workshops"])
+    workshops = build_workshops(site_data["workshops"])
+    site_data["workshops"] = workshops
+    # workshop_<uid>.html
+    by_uid["workshops"] = {
+        workshop.id: workshop
+        for workshop in workshops
+    }
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
@@ -116,6 +132,27 @@ def build_papers(site_data, by_uid, display_time_format: str, qa_session_length_
                     + "/poster_{}.{}.ics".format(paper["id"], current_num_sessions),
                 }
             )
+
+
+def build_posters(raw_papers: List[Dict[str, Any]]) -> List[Poster]:
+    return [
+        Poster(
+            id=item["UID"],
+            forum=item["UID"],
+            content=PosterContent(
+                title=item["title"],
+                authors=extract_list_field(item, "authors"),
+                keywords=extract_list_field(item, "keywords"),
+                abstract=item["abstract"],
+                pdf_url=item.get("pdf_url", ""),
+                demo_url=item.get("demo_url", ""),
+                track=item.get("track", ""),
+                sessions=item["sessions"],
+                recs=[]
+            )
+        )
+        for item in raw_papers
+    ]
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
