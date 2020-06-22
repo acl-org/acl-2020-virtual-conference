@@ -46,24 +46,26 @@
   {% endif %}
 
   <!-- Contact -->
-  <div class="card">
-    <div class="card-header" id="headingContact">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseContact" aria-expanded="true" aria-controls="collapseContact">
-            Contact
-        </button>
-      </h5>
-    </div>
-    <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordion">
-      <div class="card-body">
-        <ul>
-        {% for contact in sponsor.contacts %}
-          <li>{{ contact.name|safe }} &lt;<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>&gt;</li>
-        {% endfor %}
-        </ul>
+  {% if sponsor.contacts is defined %}
+    <div class="card">
+      <div class="card-header" id="headingContact">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseContact" aria-expanded="true" aria-controls="collapseContact">
+              Contact
+          </button>
+        </h5>
+      </div>
+      <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordion">
+        <div class="card-body">
+          <ul>
+          {% for contact in sponsor.contacts %}
+            <li>{{ contact.name|safe }} &lt;<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>&gt;</li>
+          {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 
   <!-- Zooms -->
   <div class="card">
@@ -111,24 +113,26 @@
   {% endif %}
 
   <!-- Chat -->
-  <div class="card">
-    <div class="card-header" id="headingChat">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseChat" aria-expanded="true" aria-controls="collapseChat">
-          Chat
-        </button>
-      </h5>
-    </div>
-    <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
-      <div class="card-body">
-        <div class="col-md-12 col-xs-12 p-2">
-          <div id="gitter" class="slp">
-            <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.channel }}?layout=embedded" height="700px" width="100%" ></iframe>
+  {% if sponsor.channel is defined %}
+    <div class="card">
+      <div class="card-header" id="headingChat">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseChat" aria-expanded="true" aria-controls="collapseChat">
+            Chat
+          </button>
+        </h5>
+      </div>
+      <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
+        <div class="card-body">
+          <div class="col-md-12 col-xs-12 p-2">
+            <div id="gitter" class="slp">
+              <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.channel }}?layout=embedded" height="700px" width="100%" ></iframe>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 
 </div>
 </div>
