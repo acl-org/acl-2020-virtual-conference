@@ -1,15 +1,10 @@
 # pylint: disable=global-statement,redefined-outer-name
 import argparse
-import csv
-import glob
-import json
 import os
-from collections import OrderedDict
-from datetime import datetime, timedelta
+from datetime import timedelta
 from typing import List
 
 import pytz
-import yaml
 from flask import (
     Flask,
     jsonify,
@@ -22,105 +17,16 @@ from flask_frozen import Freezer
 from flaskext.markdown import Markdown
 from icalendar import Calendar, Event
 
+from miniconf.load_site_data import load_site_data
+from miniconf.utils import (
+    format_paper,
+    format_tutorial,
+    format_workshop,
+)
+
 site_data = {}
 by_uid = {}
 qa_session_length_hr = 1
-merged_committees: List[object] = []  # type "List[object]"
-
-
-def main(site_data_path):
-    global site_data, extra_files
-    extra_files = ["README.md"]
-    # Load all for your sitedata one time.
-    for f in glob.glob(site_data_path + "/*"):
-        extra_files.append(f)
-        name, typ = f.split("/")[-1].split(".")
-
-        if name == "acl2020_accepted_papers":
-            continue
-
-        if typ == "json":
-            site_data[name] = json.load(open(f))
-        elif typ in {"csv", "tsv"}:
-            site_data[name] = list(csv.DictReader(open(f)))
-        elif typ == "yml":
-            site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
-
-    for typ in ["papers", "speakers", "tutorials", "workshops", "demos"]:
-        by_uid[typ] = {}
-        for p in site_data[typ]:
-            by_uid[typ][p["UID"]] = p
-
-    display_time_format = "%H:%M"
-    for session_name, session_info in site_data["poster_schedule"].items():
-        for paper in session_info["posters"]:
-            if "sessions" not in by_uid["papers"][paper["id"]]:
-                by_uid["papers"][paper["id"]]["sessions"] = []
-            time = datetime.strptime(session_info["date"], "%Y-%m-%d_%H:%M:%S")
-            start_time = time.strftime(display_time_format)
-            start_day = time.strftime("%a")
-            end_time = time + timedelta(hours=qa_session_length_hr)
-            end_time = end_time.strftime(display_time_format)
-            time_string = "({}-{} GMT)".format(start_time, end_time)
-            current_num_sessions = len(by_uid["papers"][paper["id"]]["sessions"])
-            calendar_stub = site_data["config"]["site_url"].replace("https", "webcal")
-            by_uid["papers"][paper["id"]]["sessions"].append(
-                {
-                    "time": time,
-                    "time_string": time_string,
-                    "session": " ".join([start_day, "Session", session_name]),
-                    "zoom_link": paper["join_link"],
-                    "ical_link": calendar_stub
-                    + "/poster_{}.{}.ics".format(paper["id"], current_num_sessions),
-                }
-            )
-
-    # TODO: should assign UID by sponsor name? What about sponsors with multiple levels?
-    by_uid["sponsors"] = {
-        sponsor["UID"]: sponsor
-        for sponsors_at_level in site_data["sponsors"]
-        for sponsor in sponsors_at_level["sponsors"]
-    }
-
-    # Format the session start and end times
-    for sponsor in by_uid["sponsors"].values():
-        sponsor["zoom_times"] = OrderedDict()
-        for zoom in sponsor.get("zooms", []):
-            start = zoom["start"].astimezone(pytz.timezone("GMT"))
-            end = start + timedelta(hours=zoom["duration"])
-            day = start.strftime("%A")
-            start_time = start.strftime(display_time_format)
-            end_time = end.strftime(display_time_format)
-            time_string = "{} ({}-{} GMT)".format(day, start_time, end_time)
-
-            if day not in sponsor["zoom_times"]:
-                sponsor["zoom_times"][day] = []
-
-            sponsor["zoom_times"][day].append((time_string, zoom["label"]))
-
-    print("Data Successfully Loaded")
-    return extra_files
-
-
-def merge_committees():
-    global site_data, merged_committees
-    index = 0
-    tmp_data = {}
-    committees = site_data["committee"]["committee"]
-    for committee in committees:
-        name = committee["name"]
-        if name in tmp_data:
-            ### duplicated found ###
-            c_index = tmp_data[name]["index"]
-            role = merged_committees[c_index]["role"] + " & " + committee["role"]
-            merged_committees[c_index]["role"] = role
-            print("duplicated committee: %s" % name)
-        else:
-            tmp_data[name] = committee
-            tmp_data[name]["index"] = index
-            merged_committees.append(committee)
-            index = index + 1
-
 
 # ------------- SERVER CODE -------------------->
 
@@ -150,7 +56,7 @@ def home():
     data = _data()
     data["readme"] = open("README.md").read()
     # data["committee"] = site_data["committee"]["committee"]
-    data["committee"] = merged_committees
+    data["committee"] = site_data["committee"]
     return render_template("index.html", **data)
 
 
@@ -229,73 +135,6 @@ def socials():
     return render_template("socials.html", **data)
 
 
-def extract_list_field(v, key):
-    value = v.get(key, "")
-    if isinstance(value, list):
-        return value
-    else:
-        return value.split("|")
-
-
-def get_paper_rocketchat(paper_id):
-    return "paper-" + paper_id.replace(".", "-")
-
-
-def format_paper(v):
-    list_keys = ["authors", "keywords"]
-    list_fields = {}
-    for key in list_keys:
-        list_fields[key] = extract_list_field(v, key)
-
-    return {
-        "id": v["UID"],
-        "forum": v["UID"],
-        "rocketchat_channel": get_paper_rocketchat(v["UID"]),
-        "content": {
-            "title": v["title"],
-            "authors": list_fields["authors"],
-            "keywords": list_fields["keywords"],
-            "abstract": v["abstract"],
-            "TLDR": v["abstract"][:250] + "...",
-            "pdf_url": v.get("pdf_url", ""),
-            "demo_url": by_uid["demos"].get(v["UID"], {}).get("demo_url", ""),
-            "track": v.get("track", ""),
-            "sessions": v["sessions"],
-            "recs": [],
-        },
-    }
-
-
-def format_tutorial(v):
-    list_keys = ["organizers"]
-    list_fields = {}
-    for key in list_keys:
-        list_fields[key] = extract_list_field(v, key)
-
-    return {
-        "id": v["UID"],
-        "title": v["title"],
-        "organizers": list_fields["organizers"],
-        "abstract": v["abstract"],
-        "material": v["material"],
-    }
-
-
-def format_workshop(v):
-    list_keys = ["organizers"]
-    list_fields = {}
-    for key in list_keys:
-        list_fields[key] = extract_list_field(v, key)
-
-    return {
-        "id": v["UID"],
-        "title": v["title"],
-        "organizers": list_fields["organizers"],
-        "abstract": v["abstract"],
-        "material": v["material"],
-    }
-
-
 # ITEM PAGES
 
 
@@ -305,13 +144,13 @@ def poster(poster):
     v = by_uid["papers"][uid]
     data = _data()
 
-    data["openreview"] = format_paper(by_uid["papers"][uid])
+    data["openreview"] = format_paper(by_uid["papers"][uid], by_uid)
     data["id"] = uid
     data["paper_recs"] = [
-        format_paper(by_uid["papers"][n]) for n in site_data["paper_recs"][uid]
+        format_paper(by_uid["papers"][n], by_uid) for n in site_data["paper_recs"][uid]
     ][1:]
 
-    data["paper"] = format_paper(v)
+    data["paper"] = format_paper(v, by_uid)
     return render_template("poster.html", **data)
 
 
@@ -398,7 +237,7 @@ def chat():
 def paper_json():
     json = []
     for v in site_data["papers"]:
-        json.append(format_paper(v))
+        json.append(format_paper(v, by_uid))
     return jsonify(json)
 
 
@@ -463,8 +302,7 @@ def parse_arguments():
 if __name__ == "__main__":
     args = parse_arguments()
 
-    extra_files = main(args.path)
-    merge_committees()
+    extra_files = load_site_data(args.path, site_data, by_uid, qa_session_length_hr)
 
     if args.build:
         freezer.freeze()
