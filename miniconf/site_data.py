@@ -5,7 +5,7 @@ from typing import List, Optional
 
 @dataclass(frozen=True)
 class SessionInfo:
-    """The session information for a poster."""
+    """The session information for a paper."""
     session_name: str
     start_time: datetime
     end_time: datetime

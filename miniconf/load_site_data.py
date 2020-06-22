@@ -40,7 +40,7 @@ def load_site_data(
         "main_papers",
         "paper_recs",
         "papers_projection",
-        "poster_schedule",
+        "paper_schedule",
         # "srw_papers",
         # socials.html
         "socials",
@@ -97,7 +97,7 @@ def load_site_data(
     # papers.{html,json}
     papers = build_papers(
         raw_papers=site_data["main_papers"],
-        poster_schedule=site_data["poster_schedule"],
+        paper_schedule=site_data["paper_schedule"],
         qa_session_length_hr=qa_session_length_hr,
         # TODO: Should add a `webcal_url` to config instead? Is there a better way?
         calendar_stub=site_data["config"]["site_url"].replace("https", "webcal"),
@@ -147,7 +147,7 @@ def build_plenary_sessions(raw_keynotes: List[Dict[str, Any]]) -> Dict[str, Dict
 
 def build_papers(
     raw_papers: List[Dict[str, str]],
-    poster_schedule: Dict[str, Dict[str, Any]],
+    paper_schedule: Dict[str, Dict[str, Any]],
     qa_session_length_hr: int,
     calendar_stub: str,
     paper_recs: Dict[str, List[str]],
@@ -162,19 +162,19 @@ def build_papers(
     - track: str
     - paper_type: str (i.e., "Long", "Short", "SRW", "Demo")
 
-    The poster_schedule file contains the live QA session slots and corresponding Zoom links for each paper.
-    An example poster_schedule.yml file is shown below.
+    The paper_schedule file contains the live QA session slots and corresponding Zoom links for each paper.
+    An example paper_schedule.yml file is shown below.
     ```yaml
     1A:
       date: 2020-07-06_05:00:00
-      posters:
+      papers:
       - id: main.1
         join_link: https://www.google.com/
       - id: main.2
         join_link: https://www.google.com/
     2A:
       date: 2020-07-06_08:00:00
-      posters:
+      papers:
       - id: main.17
         join_link: https://www.google.com/
       - id: main.19
@@ -183,20 +183,21 @@ def build_papers(
     """
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
-    for session_name, session_info in poster_schedule.items():
+    for session_name, session_info in paper_schedule.items():
         date = session_info["date"]
-        for item in session_info["posters"]:
-            poster_id = item["id"]
+        for item in session_info["papers"]:
+            paper_id = item["id"]
             start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
             end_time = start_time + timedelta(hours=qa_session_length_hr),
-            session_offset = len(sessions_for_paper[poster_id])
-            sessions_for_paper[poster_id].append(
+            session_offset = len(sessions_for_paper[paper_id])
+            sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
                     start_time=start_time,
                     end_time=end_time,
                     zoom_link=item["join_link"],
-                    ical_link=f"{calendar_stub}/poster_{poster_id}.{session_offset}.ics",
+                    # TODO: the prefix should be configurable?
+                    ical_link=f"{calendar_stub}/paper_{paper_id}.{session_offset}.ics",
                 )
             )
 
