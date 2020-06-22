@@ -34,23 +34,8 @@
       >{{ "," if not loop.last }}
       {% endfor %}
     </h3>
-    <p class="card-text text-center">
-      {% set key_title = "Keywords:"%}
-      {% if paper.content.keywords != blank %}
-      <span class="">{{ key_title }}</span>
-      {% endif %}
-      {% for keyword in paper.content.keywords %}
-      <a
-        href="papers.html?filter=keywords&search={{keyword}}"
-        class="text-secondary text-decoration-none"
-        >{{keyword}}</a
-      >{{ "," if not loop.last }}
-      {% endfor %}
-    </p>
-    <p class="card-text text-center">
-      <span class="">Track:</span>
-      {{ paper.content.track }}
-    </p>
+
+   
     <div class="text-center p-3">
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Abstract
@@ -69,6 +54,10 @@
       </a>
       {% endif %}
     </div>
+     <p class="card-text text-center h5">
+    
+      {{ paper.content.track }}
+    </p>
 
     <div class=" text-center text-muted text-monospace ">
     {% for session in paper.content.sessions %}
@@ -171,7 +160,6 @@
     add_local_tz('.session_times');
   })
 </script>
-
 
 
 
