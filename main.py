@@ -2,7 +2,6 @@
 import argparse
 import os
 from datetime import timedelta
-from typing import List
 
 import pytz
 from flask import (
@@ -55,7 +54,7 @@ def index():
 def home():
     data = _data()
     data["readme"] = open("README.md").read()
-    # data["committee"] = site_data["committee"]["committee"]
+    # data["committee"] = committee["committee"]["committee"]
     data["committee"] = site_data["committee"]
     return render_template("index.html", **data)
 
@@ -91,7 +90,7 @@ def schedule():
             # There is no "Highlighted Papers" for ACL2020.
             # "highlighted": [
             #     format_paper(by_uid["papers"][h["UID"]])
-            #     for h in site_data["highlighted"]
+            #     for h in committee["highlighted"]
             # ],
         }
     return render_template("schedule.html", **data)

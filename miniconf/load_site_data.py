@@ -5,10 +5,11 @@ from collections import OrderedDict
 from datetime import datetime, timedelta
 from typing import Dict, Any, List
 
+import jsons
 import pytz
 import yaml
 
-from miniconf.utils import merge_committees
+from miniconf.site_data import CommitteeMember
 
 
 def load_site_data(
@@ -19,7 +20,7 @@ def load_site_data(
 ) -> List[str]:
     """Loads all site data at once.
 
-    Populates the `site_data` and `by_uid` using files under `site_data_path`.
+    Populates the `committee` and `by_uid` using files under `site_data_path`.
     """
     extra_files = ["README.md"]
     # Load all for your sitedata one time.
@@ -89,7 +90,15 @@ def load_site_data(
 
             sponsor["zoom_times"][day].append((time_string, zoom["label"]))
 
-    site_data["committee"] = merge_committees(site_data)
+    # site_data[filename][field]
+    site_data["committee"] = build_committee(site_data["committee"]["committee"])
 
     print("Data Successfully Loaded")
     return extra_files
+
+
+def build_committee(committee_members: List[Dict[str, Any]]) -> List[CommitteeMember]:
+    return [
+        jsons.load(item, cls=CommitteeMember)
+        for item in committee_members
+    ]

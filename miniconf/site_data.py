@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 
 @dataclass(frozen=True)
@@ -11,3 +11,12 @@ class Paper:
     keywords: List[str]
     track: str
     paper_type: str
+
+
+@dataclass(frozen=True)
+class CommitteeMember:
+    role: str
+    name: str
+    aff: str
+    im: Optional[str]
+    tw: Optional[str]

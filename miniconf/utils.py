@@ -1,6 +1,3 @@
-from typing import Dict, Any, List
-
-
 def get_paper_rocketchat(paper_id):
     return "paper-" + paper_id.replace(".", "-")
 
@@ -68,23 +65,3 @@ def extract_list_field(v, key):
         return value.split("|")
 
 
-def merge_committees(site_data: Dict[str, Any]) -> List[Dict[str, Any]]:
-    index = 0
-    tmp_data = {}
-    committees = site_data["committee"]["committee"]
-    merged_committees = []
-    for committee in committees:
-        name = committee["name"]
-        if name in tmp_data:
-            ### duplicated found ###
-            c_index = tmp_data[name]["index"]
-            role = merged_committees[c_index]["role"] + " & " + committee["role"]
-            merged_committees[c_index]["role"] = role
-            print("duplicated committee: %s" % name)
-        else:
-            tmp_data[name] = committee
-            tmp_data[name]["index"] = index
-            merged_committees.append(committee)
-            index = index + 1
-
-    return merged_committees
