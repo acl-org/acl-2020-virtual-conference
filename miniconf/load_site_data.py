@@ -161,6 +161,8 @@ def build_papers(
     - keywords: str (separated by '|')
     - track: str
     - paper_type: str (i.e., "Long", "Short", "SRW", "Demo")
+    - pdf_url: str
+    - demo_url: str
 
     The paper_schedule file contains the live QA session slots and corresponding Zoom links for each paper.
     An example paper_schedule.yml file is shown below.
