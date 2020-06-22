@@ -20,6 +20,7 @@ from flask import (
 )
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
+
 from icalendar import Calendar, Event
 
 site_data = {}
