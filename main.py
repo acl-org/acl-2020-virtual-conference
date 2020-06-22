@@ -2,6 +2,7 @@
 import argparse
 import os
 from datetime import timedelta
+from typing import Any, Dict
 
 import pytz
 from flask import (
@@ -18,10 +19,9 @@ from icalendar import Calendar, Event
 
 from miniconf.load_site_data import load_site_data
 from miniconf.site_data import Poster, Tutorial, Workshop
-from miniconf.utils import format_paper
 
-site_data = {}
-by_uid = {}
+site_data: Dict[str, Any] = {}
+by_uid: Dict[str, Any] = {}
 qa_session_length_hr = 1
 
 # ------------- SERVER CODE -------------------->

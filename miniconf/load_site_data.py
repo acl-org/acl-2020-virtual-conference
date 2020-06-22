@@ -9,7 +9,7 @@ import jsons
 import pytz
 import yaml
 
-from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Keynote, Poster, \
+from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Poster, \
     PosterContent
 from miniconf.utils import extract_list_field
 
@@ -99,8 +99,8 @@ def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember
     return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
 
 
-def build_plenary_sessions(raw_keynotes: List[Dict[str, Any]]) -> Dict[str, Keynote]:
-    # TODO: define a better dataclass
+def build_plenary_sessions(raw_keynotes: List[Dict[str, Any]]) -> Dict[str, Dict[str, List[Dict[str, Any]]]]:
+    # TODO: define a better dataclass and use Keynote
     return {
         day: {
             "speakers": [item for item in raw_keynotes if item["day"] == day]
@@ -117,8 +117,7 @@ def build_papers(site_data, by_uid, display_time_format: str, qa_session_length_
             time = datetime.strptime(session_info["date"], "%Y-%m-%d_%H:%M:%S")
             start_time = time.strftime(display_time_format)
             start_day = time.strftime("%a")
-            end_time = time + timedelta(hours=qa_session_length_hr)
-            end_time = end_time.strftime(display_time_format)
+            end_time = (time + timedelta(hours=qa_session_length_hr)).strftime(display_time_format)
             time_string = "({}-{} GMT)".format(start_time, end_time)
             current_num_sessions = len(by_uid["papers"][paper["id"]]["sessions"])
             calendar_stub = site_data["config"]["site_url"].replace("https", "webcal")
