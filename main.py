@@ -157,7 +157,7 @@ def paper_ics(uid, session_idx):
     )
     event.add("summary", paper.content.title)
     event.add("description", link)
-    event.add("uid", "-".join(["ACL2020", paper, str(session_idx)]))
+    event.add("uid", f"ACL2020-{uid}-{session_idx}")
     event.add("dtstart", start)
     event.add("dtend", start + timedelta(hours=qa_session_length_hr))
     event.add("dtstamp", start)
