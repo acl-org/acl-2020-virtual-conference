@@ -17,6 +17,7 @@ from flaskext.markdown import Markdown
 from icalendar import Calendar, Event
 
 from miniconf.load_site_data import load_site_data
+from miniconf.site_data import Tutorial, Workshop
 from miniconf.utils import (
     format_paper,
 )
@@ -167,39 +168,31 @@ def poster_ics(poster, session):
     return response
 
 
-@app.route("/speaker_<speaker>.html")
-def speaker(speaker):
-    uid = speaker
-    v = by_uid["speakers"][uid]
+@app.route("/speaker_<uid>.html")
+def speaker(uid):
     data = _data()
-    data["speaker"] = v
+    data["speaker"] = by_uid["speakers"][uid]
     return render_template("speaker.html", **data)
 
 
-@app.route("/tutorial_<tutorial>.html")
-def tutorial(tutorial):
-    uid = tutorial
-    v = by_uid["tutorials"][uid]
+@app.route("/tutorial_<uid>.html")
+def tutorial(uid):
     data = _data()
-    data["tutorial"] = format_tutorial(v)
+    data["tutorial"] = by_uid["tutorials"][uid]
     return render_template("tutorial.html", **data)
 
 
-@app.route("/workshop_<workshop>.html")
-def workshop(workshop):
-    uid = workshop
-    v = by_uid["workshops"][uid]
+@app.route("/workshop_<uid>.html")
+def workshop(uid):
     data = _data()
-    data["workshop"] = format_workshop(v)
+    data["workshop"] = by_uid["workshops"][uid]
     return render_template("workshop.html", **data)
 
 
-@app.route("/sponsor_<sponsor>.html")
-def sponsor(sponsor):
-    uid = sponsor
-    v = by_uid["sponsors"][uid]
+@app.route("/sponsor_<uid>.html")
+def sponsor(uid):
     data = _data()
-    data["sponsor"] = v
+    data["sponsor"] = by_uid["sponsors"][uid]
     return render_template("sponsor.html", **data)
 
 
@@ -240,15 +233,17 @@ def generator():
     for paper in site_data["papers"]:
         yield "poster", {"poster": str(paper["UID"])}
     for speaker in site_data["speakers"]:
-        yield "speaker", {"speaker": str(speaker["UID"])}
+        yield "speaker", {"uid": str(speaker["UID"])}
+    tutorial: Tutorial
     for tutorial in site_data["tutorials"]:
-        yield "tutorial", {"tutorial": str(tutorial["UID"])}
+        yield "tutorial", {"uid": tutorial.id}
+    workshop: Workshop
     for workshop in site_data["workshops"]:
-        yield "workshop", {"workshop": str(workshop["UID"])}
+        yield "workshop", {"uid": workshop.id}
 
     for sponsors_at_level in site_data["sponsors"]:
         for sponsor in sponsors_at_level["sponsors"]:
-            yield "sponsor", {"sponsor": str(sponsor["UID"])}
+            yield "sponsor", {"uid": str(sponsor["UID"])}
 
     for i in by_uid["papers"].keys():
         for j in range(2):

@@ -56,6 +56,11 @@ def load_site_data(
 
     # tutorials.html
     site_data["tutorials"] = build_tutorials(site_data["tutorials"])
+    # tutorial_<tutorial>.html
+    by_uid["tutorials"] = {
+        tutorial.id: tutorial
+        for tutorial in site_data["tutorials"]
+    }
 
     # papers.html
     build_papers(site_data, by_uid, display_time_format, qa_session_length_hr)
