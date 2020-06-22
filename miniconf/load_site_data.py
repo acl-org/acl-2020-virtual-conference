@@ -9,7 +9,8 @@ import jsons
 import pytz
 import yaml
 
-from miniconf.site_data import CommitteeMember
+from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Keynote
+from miniconf.utils import extract_list_field
 
 
 def load_site_data(
@@ -21,6 +22,8 @@ def load_site_data(
     """Loads all site data at once.
 
     Populates the `committee` and `by_uid` using files under `site_data_path`.
+
+    NOTE: site_data[filename][field]
     """
     extra_files = ["README.md"]
     # Load all for your sitedata one time.
@@ -44,6 +47,48 @@ def load_site_data(
             by_uid[typ][p["UID"]] = p
 
     display_time_format = "%H:%M"
+
+    # index.html
+    site_data["committee"] = build_committee(site_data["committee"]["committee"])
+
+    # schedule.html
+    site_data["schedule"] = build_plenary_sessions(site_data["speakers"])
+
+    # tutorials.html
+    site_data["tutorials"] = build_tutorials(site_data["tutorials"])
+
+    # papers.html
+    build_papers(site_data, by_uid, display_time_format, qa_session_length_hr)
+
+    # workshops.html
+    site_data["workshops"] = build_workshops(site_data["workshops"])
+
+    # sponsors.html
+    build_sponsors(site_data, by_uid, display_time_format)
+
+    # about.html
+    site_data["faq"] = site_data["faq"]["FAQ"]
+    site_data["code_of_conduct"] = site_data["code_of_conduct"]["CodeOfConduct"]
+
+    print("Data Successfully Loaded")
+    return extra_files
+
+
+def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember]:
+    return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
+
+
+def build_plenary_sessions(raw_keynotes: List[Dict[str, Any]]) -> Dict[str, Keynote]:
+    # TODO: define a better dataclass
+    return {
+        day: {
+            "speakers": [item for item in raw_keynotes if item["day"] == day]
+        }
+        for day in ["Monday", "Tuesday", "Wednesday"]
+    }
+
+
+def build_papers(site_data, by_uid, display_time_format: str, qa_session_length_hr: int) -> None:
     for session_name, session_info in site_data["poster_schedule"].items():
         for paper in session_info["posters"]:
             if "sessions" not in by_uid["papers"][paper["id"]]:
@@ -67,6 +112,32 @@ def load_site_data(
                 }
             )
 
+
+def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
+    return [
+        Tutorial(
+            id=item["UID"],
+            title=item["title"],
+            organizers=extract_list_field(item, "organizers"),
+            abstract=item["abstract"],
+            material=item["material"]
+        ) for item in raw_tutorials
+    ]
+
+
+def build_workshops(raw_workshops: List[Dict[str, Any]]) -> List[Workshop]:
+    return [
+        Workshop(
+            id=item["UID"],
+            title=item["title"],
+            organizers=extract_list_field(item, "organizers"),
+            abstract=item["abstract"],
+            material=item["material"]
+        ) for item in raw_workshops
+    ]
+
+
+def build_sponsors(site_data, by_uid, display_time_format) -> None:
     # TODO: should assign UID by sponsor name? What about sponsors with multiple levels?
     by_uid["sponsors"] = {
         sponsor["UID"]: sponsor
@@ -89,16 +160,3 @@ def load_site_data(
                 sponsor["zoom_times"][day] = []
 
             sponsor["zoom_times"][day].append((time_string, zoom["label"]))
-
-    # site_data[filename][field]
-    site_data["committee"] = build_committee(site_data["committee"]["committee"])
-
-    print("Data Successfully Loaded")
-    return extra_files
-
-
-def build_committee(committee_members: List[Dict[str, Any]]) -> List[CommitteeMember]:
-    return [
-        jsons.load(item, cls=CommitteeMember)
-        for item in committee_members
-    ]

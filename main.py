@@ -19,8 +19,6 @@ from icalendar import Calendar, Event
 from miniconf.load_site_data import load_site_data
 from miniconf.utils import (
     format_paper,
-    format_tutorial,
-    format_workshop,
 )
 
 site_data = {}
@@ -62,8 +60,8 @@ def home():
 @app.route("/about.html")
 def about():
     data = _data()
-    data["FAQ"] = site_data["faq"]["FAQ"]
-    data["CodeOfConduct"] = site_data["code_of_conduct"]["CodeOfConduct"]
+    data["FAQ"] = site_data["faq"]
+    data["CodeOfConduct"] = site_data["code_of_conduct"]
     return render_template("about.html", **data)
 
 
@@ -80,43 +78,25 @@ def paper_vis():
     return render_template("papers_vis.html", **data)
 
 
-@app.route("/calendar.html")
+@app.route("/schedule.html")
 def schedule():
     data = _data()
-    days = ["Monday", "Tuesday", "Wednesday"]
-    for day in days:
-        data[day] = {
-            "speakers": [s for s in site_data["speakers"] if s["day"] == day],
-            # There is no "Highlighted Papers" for ACL2020.
-            # "highlighted": [
-            #     format_paper(by_uid["papers"][h["UID"]])
-            #     for h in committee["highlighted"]
-            # ],
-        }
+    for day, item in site_data["schedule"].items():
+        data[day] = item
     return render_template("schedule.html", **data)
-
-
-@app.route("/livestream.html")
-def livestream():
-    data = _data()
-    return render_template("livestream.html", **data)
 
 
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
-    data["tutorials"] = [
-        format_tutorial(tutorial) for tutorial in site_data["tutorials"]
-    ]
+    data["tutorials"] = site_data["tutorials"]
     return render_template("tutorials.html", **data)
 
 
 @app.route("/workshops.html")
 def workshops():
     data = _data()
-    data["workshops"] = [
-        format_workshop(workshop) for workshop in site_data["workshops"]
-    ]
+    data["workshops"] = site_data["workshops"]
     return render_template("workshops.html", **data)
 
 

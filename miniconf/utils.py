@@ -27,36 +27,6 @@ def format_paper(v, by_uid):
     }
 
 
-def format_tutorial(v):
-    list_keys = ["organizers"]
-    list_fields = {}
-    for key in list_keys:
-        list_fields[key] = extract_list_field(v, key)
-
-    return {
-        "id": v["UID"],
-        "title": v["title"],
-        "organizers": list_fields["organizers"],
-        "abstract": v["abstract"],
-        "material": v["material"],
-    }
-
-
-def format_workshop(v):
-    list_keys = ["organizers"]
-    list_fields = {}
-    for key in list_keys:
-        list_fields[key] = extract_list_field(v, key)
-
-    return {
-        "id": v["UID"],
-        "title": v["title"],
-        "organizers": list_fields["organizers"],
-        "abstract": v["abstract"],
-        "material": v["material"],
-    }
-
-
 def extract_list_field(v, key):
     value = v.get(key, "")
     if isinstance(value, list):
