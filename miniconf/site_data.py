@@ -14,7 +14,7 @@ class SessionInfo:
 
     @property
     def time_string(self) -> str:
-        return "({}-{} GMT)".format(self.start_time, self.end_time)
+        return "({}-{} GMT)".format(self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M"))
 
     @property
     def session(self) -> str:
