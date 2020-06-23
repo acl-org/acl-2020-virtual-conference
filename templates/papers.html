@@ -22,7 +22,7 @@
       role="tab"
       aria-controls="nav-home"
       aria-selected="true"
-      >Browse
+      >All Papers
     </a>
   </li>
   <li class="nav-item">
@@ -30,7 +30,16 @@
   </li>
 </ul>
 
+<ul class="nav nav-pills justify-content-center">
+  {% for track in tracks %}
+    <li class="nav-item">
+      <a class="nav-link text-muted" href="track_{{ track }}.html">{{ track }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 {% endblock %}
+
 
 {% block content %}
 <div class="row p-3"></div>
@@ -91,6 +100,7 @@
         />
         title
       </label>
+      <!--
       <label
         class="btn btn-outline-secondary"
         data-tippy-content="Search for papers with specific keywords"
@@ -103,8 +113,9 @@
         />
         keyword
       </label>
+      -->
       <label
-        class="btn btn-outline-secondary active"
+        class="btn btn-outline-secondary"
         data-tippy-content="Search for papers from specific authors"
       >
         <input type="radio" name="options" value="authors" autocomplete="off" />
@@ -119,10 +130,12 @@
         class="btn-group btn-group-toggle render_option"
         data-toggle="buttons"
       >
+        <!--
         <label class="btn btn-outline-secondary active">
           <input type="radio" name="options" value="list" autocomplete="off" />
           list
         </label>
+        -->
         <label class="btn btn-outline-secondary active">
           <input
             type="radio"
@@ -156,7 +169,7 @@
 <script>
   $(document).ready(function () {
     tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
-    start();
+    start("papers.json");
   });
 </script>
 

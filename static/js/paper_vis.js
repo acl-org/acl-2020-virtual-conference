@@ -128,7 +128,7 @@ function brush_ended() {
         d => `<div class="p_title">${d.content.title}</div> <div class="p_authors">${d.content.authors.join(
           ', ')}</div>`)
       .on('click',
-        d => window.open(`poster_${d.content.iclr_id}.html`, '_blank'))
+        d => window.open(`paper_${d.content.iclr_id}.html`, '_blank'))
       .on('mouseenter', d => {
 
           l_main.selectAll('.dot').filter(dd => dd.id === d.id)
@@ -163,21 +163,20 @@ const updateVis = () => {
 
     const [pW, pH] = plot_size();
 
-    plot.attr('width', pW).attr('height', pH)
+    plot.attr('width', pW).attr('height', pH);
     d3.select('#table_info').style('height', pH + 'px');
 
     xS.range([sizes.margins.l, pW - sizes.margins.r]);
     yS.range([sizes.margins.t, pH - sizes.margins.b]);
 
-    brush.extent([[0, 0],
-        [pW, pH]])
+    brush.extent([[0, 0], [pW, pH]]);
     l_bg.call(brush);
 
     all_pos = all_papers.map(d => {
         const r2 = (d.is_selected ? 8 : 4);
         const [x, y] = [xS(d.pos[0]), yS(d.pos[1])];
         return new cola.Rectangle(x - r2, x + r2, y - r2, y + r2);
-    })
+    });
 
     cola.removeOverlaps(all_pos);
 
@@ -192,10 +191,10 @@ const updateVis = () => {
       .classed('non-highlight', d => !d.is_selected && is_filtered)
       .on('click',
         function(d) {
-            window.open(`poster_${d.id}.html`, '_blank');
+            window.open(`paper_${d.id}.html`, '_blank');
             persistor.set(d.id, true);
             d3.select(this).classed('read', true);
-        })
+        });
 
     if (!currentTippy) {
         currentTippy = tippy('.dot', {
