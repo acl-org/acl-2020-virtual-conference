@@ -1,6 +1,7 @@
 import csv
 import glob
 import json
+import os
 from collections import OrderedDict, defaultdict
 from datetime import datetime, timedelta
 from typing import Any, DefaultDict, Dict, List
@@ -65,7 +66,10 @@ def load_site_data(
     extra_files = ["README.md"]
     # Load all for your sitedata one time.
     for f in glob.glob(site_data_path + "/*"):
-        name, typ = f.split("/")[-1].split(".")
+        filename = os.path.basename(f)
+        if filename == "inbox":
+            continue
+        name, typ = filename.split(".")
         if name not in registered_sitedata:
             continue
 
