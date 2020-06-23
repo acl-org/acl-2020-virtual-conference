@@ -218,6 +218,7 @@ def build_papers(
                 authors=extract_list_field(item, "authors"),
                 keywords=extract_list_field(item, "keywords"),
                 abstract=item["abstract"],
+                tldr=item["abstract"][:250] + "...",
                 pdf_url=item.get("pdf_url", ""),
                 demo_url=item.get("demo_url", ""),
                 track=item.get("track", ""),
