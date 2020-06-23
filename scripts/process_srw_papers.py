@@ -3,6 +3,8 @@ import csv
 
 import pandas as pd
 
+from scripts.paper_import import clean_abstract, clean_title
+
 
 def main(srw_papers_csv: str, srw_ids_xlsx: str, output_file: str) -> pd.DataFrame:
     srw_papers_df = pd.read_csv(
@@ -20,6 +22,8 @@ def main(srw_papers_csv: str, srw_ids_xlsx: str, output_file: str) -> pd.DataFra
         int(row.get("UID")[4:])
         for _, row in srw_papers_df.iterrows()
     ]
+    srw_papers_df["abstract"] = srw_papers_df["abstract"].apply(clean_abstract)
+    srw_papers_df["title"] = srw_papers_df["title"].apply(clean_title)
     srw_papers_df["pdf_url"] = srw_ids_df.loc[sub_ids].loc[:, "Anthology link"].tolist()
 
     srw_papers_df.to_csv(
