@@ -192,15 +192,16 @@ def build_papers(
             start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
             end_time = start_time + timedelta(hours=qa_session_length_hr)
             session_offset = len(sessions_for_paper[paper_id])
-            session_info = SessionInfo(
-                session_name=session_name,
-                start_time=start_time,
-                end_time=end_time,
-                zoom_link=item["join_link"],
-                # TODO: the prefix should be configurable?
-                ical_link=f"{calendar_stub}/paper_{paper_id}.{session_offset}.ics",
+            sessions_for_paper[paper_id].append(
+                SessionInfo(
+                    session_name=session_name,
+                    start_time=start_time,
+                    end_time=end_time,
+                    zoom_link=item["join_link"],
+                    # TODO: the prefix should be configurable?
+                    ical_link=f"{calendar_stub}/paper_{paper_id}.{session_offset}.ics",
+                )
             )
-            sessions_for_paper[paper_id].append(session_info)
 
     return [
         Paper(

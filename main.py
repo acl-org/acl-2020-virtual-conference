@@ -231,7 +231,7 @@ def generator():
     paper: Paper
     for paper in site_data["papers"]:
         yield "paper", {"uid": paper.id}
-        for idx, session in enumerate(paper.content.sessions):
+        for idx in range(len(paper.content.sessions)):
             yield "paper_ics", {"uid": paper.id, "session_idx": str(idx)}
     for speaker in site_data["speakers"]:
         yield "speaker", {"uid": str(speaker["UID"])}
