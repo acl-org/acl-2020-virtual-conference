@@ -219,6 +219,16 @@ def chat():
 def papers_json():
     return jsonify(site_data["papers"])
 
+@app.route("/track_<track_name>.json")
+def track_json(track_name):
+    paper: Paper
+    papers_for_track = [
+        paper
+        for paper in site_data["papers"]
+        if paper.content.track == track_name
+    ]
+    return jsonify(papers_for_track)
+
 
 @app.route("/static/<path:path>")
 def send_static(path):
