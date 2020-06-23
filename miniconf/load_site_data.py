@@ -96,7 +96,7 @@ def load_site_data(
     # schedule.html
     site_data["speakers"] = build_plenary_sessions(site_data["speakers"])
     site_data["schedule"] = build_schedule(
-        site_data["tutorial_calendar"], site_data["workshop_calendar"]
+        site_data["main_calendar"], site_data["tutorial_calendar"], site_data["workshop_calendar"]
     )
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
@@ -172,12 +172,16 @@ def build_plenary_sessions(
     }
 
 
-def build_schedule(
+def build_schedule(main_event: List[Dict[str, Any]],
     tutorials: List[Dict[str, Any]], workshops: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     result = []
     tutorials = copy.deepcopy(tutorials)
     workshops = copy.deepcopy(workshops)
+
+    for e in main_event:
+        e["color"] = "#6699ff"
+        e["url"] = e["link"]
 
     for t in tutorials:
         t["color"] = "#BF4E30"
@@ -187,6 +191,7 @@ def build_schedule(
         w["color"] = "#028090"
         w["url"] = w["link"]
 
+    result.extend(main_event)
     result.extend(tutorials)
     result.extend(workshops)
 
