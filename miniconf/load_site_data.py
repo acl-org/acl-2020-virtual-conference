@@ -93,7 +93,10 @@ def load_site_data(
     site_data["committee"] = build_committee(site_data["committee"]["committee"])
 
     # schedule.html
-    site_data["schedule"] = build_plenary_sessions(site_data["speakers"])
+    site_data["speakers"] = build_plenary_sessions(site_data["speakers"])
+    site_data["schedule"] = []
+    site_data["schedule"].extend(site_data["tutorial_calendar"])
+    site_data["schedule"].extend(site_data["workshop_calendar"])
 
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
