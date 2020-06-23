@@ -17,7 +17,6 @@ from miniconf.site_data import (
     Tutorial,
     Workshop,
 )
-from miniconf.utils import extract_list_field
 
 
 def load_site_data(
@@ -126,6 +125,14 @@ def load_site_data(
 
     print("Data Successfully Loaded")
     return extra_files
+
+
+def extract_list_field(v, key):
+    value = v.get(key, "")
+    if isinstance(value, list):
+        return value
+    else:
+        return value.split("|")
 
 
 def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember]:
