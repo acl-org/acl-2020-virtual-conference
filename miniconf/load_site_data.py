@@ -26,9 +26,7 @@ def load_site_data(
     qa_session_length_hr: int,
 ) -> List[str]:
     """Loads all site data at once.
-
     Populates the `committee` and `by_uid` using files under `site_data_path`.
-
     NOTE: site_data[filename][field]
     """
     registered_sitedata = {
@@ -43,6 +41,7 @@ def load_site_data(
         "tutorials",
         # papers.html
         "main_papers",
+        "slideslive_id_mapping",
         "paper_recs",
         "papers_projection",
         "paper_schedule",
@@ -104,6 +103,7 @@ def load_site_data(
         # TODO: Should add a `webcal_url` to config instead? Is there a better way?
         calendar_stub=site_data["config"]["site_url"].replace("https", "webcal"),
         paper_recs=site_data["paper_recs"],
+        slideslive_id_mapping=site_data["slideslive_id_mapping"]
     )
     del site_data["main_papers"]
     site_data["papers"] = papers
@@ -157,9 +157,9 @@ def build_papers(
     qa_session_length_hr: int,
     calendar_stub: str,
     paper_recs: Dict[str, List[str]],
+    slideslive_id_mapping: List[Dict[str, str]],
 ) -> List[Paper]:
     """Builds the site_data["papers"].
-
     Each entry in the papers has the following fields:
     - UID: str
     - title: str
@@ -169,7 +169,6 @@ def build_papers(
     - paper_type: str (i.e., "Long", "Short", "SRW", "Demo")
     - pdf_url: str
     - demo_url: str
-
     The paper_schedule file contains the live QA session slots and corresponding Zoom links for each paper.
     An example paper_schedule.yml file is shown below.
     ```yaml
@@ -213,6 +212,7 @@ def build_papers(
         Paper(
             id=item["UID"],
             forum=item["UID"],
+            presentation_id=slideslive_id_mapping[item["UID"]]
             content=PaperContent(
                 title=item["title"],
                 authors=extract_list_field(item, "authors"),

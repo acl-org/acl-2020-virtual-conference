@@ -28,7 +28,6 @@ class SessionInfo:
 @dataclass(frozen=True)
 class PaperContent:
     """The content of a paper.
-
     Needs to be synced with static/js/papers.js and static/js/paper_vis.js.
     """
 
@@ -51,13 +50,13 @@ class PaperContent:
 @dataclass(frozen=True)
 class Paper:
     """The paper dataclass.
-
     This corresponds to an entry in the `papers.json`.
     See the `start()` method in static/js/papers.js.
     """
 
     id: str
     forum: str
+    presentation_id: str
     content: PaperContent
 
     @property
