@@ -251,7 +251,7 @@ def build_papers(
         for item in raw_papers
     ]
 
-    # throw warnings for empty track
+    # throw warnings for missing information
     for paper in papers:
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
