@@ -6,8 +6,12 @@
   <!-- Title -->
   <div class="row justify-content-md-center pt-5">
     <div class="col-10 text-center">
-        <h2>{{sponsor.name}}</h2>
-    </div>
+        {% if sponsor.logoontop %}
+          <img class="card-img-top" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="width: 15%;" />
+        {% else %}
+          <h2>{{sponsor.name}}</h2>
+        {% endif %}
+     </div>
   </div>
   <div class="row justify-content-md-center py-3">
     <div class="col-10 text-center">
@@ -68,27 +72,29 @@
   {% endif %}
 
   <!-- Zooms -->
-  <div class="card">
-    <div class="card-header" id="headingZooms">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseZooms" aria-expanded="true" aria-controls="collapseZooms">
-          Schedule
-        </button>
-      </h5>
-    </div>
-    <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms" data-parent="#accordion">
-      <div class="card-body">
-        {% for day, zooms in sponsor.zoom_times.items() %}
-        <h5>{{ day }}</h5>
-        <ul>
-            {% for (time_string, label) in zooms %}
-                <li> <span class="zoom_times">{{ time_string }}</span> {{     label|safe }} </li>
-            {% endfor %}
-        </ul>
-        {% endfor %}
+  {% if sponsor.zoom_times|length %}
+    <div class="card">
+      <div class="card-header" id="headingZooms">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseZooms" aria-expanded="true" aria-controls="collapseZooms">
+            Schedule
+          </button>
+        </h5>
+      </div>
+      <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms" data-parent="#accordion">
+        <div class="card-body">
+          {% for day, zooms in sponsor.zoom_times.items() %}
+          <h5>{{ day }}</h5>
+          <ul>
+              {% for (time_string, label) in zooms %}
+                  <li> <span class="zoom_times">{{ time_string }}</span> {{     label|safe }} </li>
+              {% endfor %}
+          </ul>
+          {% endfor %}
+        </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 
   <!-- Resources -->
   {% if sponsor.resources is defined %}
@@ -105,6 +111,28 @@
         <ul>
         {% for resource in sponsor.resources %}
             <li><a href="{{ resource.website }}" target="_blank">{{ resource.label|safe }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Downloads -->
+  {% if sponsor.downloads is defined %}
+  <div class="card">
+    <div class="card-header" id="headingDownloads">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDownloads" aria-expanded="true" aria-controls="collapseDownloads">
+         Downloads 
+        </button>
+      </h5>
+    </div>
+    <div id="collapseDownloads" class="collapse show" aria-labelledby="headingDownloads" data-parent="#accordion">
+      <div class="card-body">
+        <ul>
+        {% for download in sponsor.downloads %}
+            <li><a href="{{ download.website }}" target="_blank">{{ download.label|safe }}</a></li>
         {% endfor %}
         </ul>
       </div>

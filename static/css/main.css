@@ -188,6 +188,9 @@ h3.card-subtitle.text-muted {
 .sponsorImg {
   padding-left: 10px;
   padding-right: 10px;
+  max-height: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .sponsorLogo:hover {
