@@ -1,11 +1,12 @@
-from datetime import datetime
 from dataclasses import dataclass
+from datetime import datetime
 from typing import List, Optional
 
 
 @dataclass(frozen=True)
 class SessionInfo:
     """The session information for a paper."""
+
     session_name: str
     start_time: datetime
     end_time: datetime
@@ -14,7 +15,9 @@ class SessionInfo:
 
     @property
     def time_string(self) -> str:
-        return "({}-{} GMT)".format(self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M"))
+        return "({}-{} GMT)".format(
+            self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M")
+        )
 
     @property
     def session(self) -> str:
@@ -28,6 +31,7 @@ class PaperContent:
 
     Needs to be synced with static/js/papers.js and static/js/paper_vis.js.
     """
+
     # needs to be synced with
     title: str
     authors: List[str]
@@ -51,6 +55,7 @@ class Paper:
     This corresponds to an entry in the `papers.json`.
     See the `start()` method in static/js/papers.js.
     """
+
     id: str
     forum: str
     content: PaperContent

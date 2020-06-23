@@ -3,14 +3,20 @@ import glob
 import json
 from collections import OrderedDict, defaultdict
 from datetime import datetime, timedelta
-from typing import Dict, Any, List, DefaultDict
+from typing import Any, DefaultDict, Dict, List
 
 import jsons
 import pytz
 import yaml
 
-from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Paper, \
-    PaperContent, SessionInfo
+from miniconf.site_data import (
+    CommitteeMember,
+    Paper,
+    PaperContent,
+    SessionInfo,
+    Tutorial,
+    Workshop,
+)
 from miniconf.utils import extract_list_field
 
 
@@ -54,7 +60,7 @@ def load_site_data(
         "sponsors",
         # about.html
         "code_of_conduct",
-        "faq"
+        "faq",
     }
     extra_files = ["README.md"]
     # Load all for your sitedata one time.
@@ -89,10 +95,7 @@ def load_site_data(
     tutorials = build_tutorials(site_data["tutorials"])
     site_data["tutorials"] = tutorials
     # tutorial_<uid>.html
-    by_uid["tutorials"] = {
-        tutorial.id: tutorial
-        for tutorial in tutorials
-    }
+    by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
 
     # papers.{html,json}
     papers = build_papers(
@@ -106,19 +109,13 @@ def load_site_data(
     del site_data["main_papers"]
     site_data["papers"] = papers
     # paper_<uid>.html
-    by_uid["papers"] = {
-        paper.id: paper
-        for paper in papers
-    }
+    by_uid["papers"] = {paper.id: paper for paper in papers}
 
     # workshops.html
     workshops = build_workshops(site_data["workshops"])
     site_data["workshops"] = workshops
     # workshop_<uid>.html
-    by_uid["workshops"] = {
-        workshop.id: workshop
-        for workshop in workshops
-    }
+    by_uid["workshops"] = {workshop.id: workshop for workshop in workshops}
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
@@ -135,12 +132,12 @@ def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember
     return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
 
 
-def build_plenary_sessions(raw_keynotes: List[Dict[str, Any]]) -> Dict[str, Dict[str, List[Dict[str, Any]]]]:
+def build_plenary_sessions(
+    raw_keynotes: List[Dict[str, Any]]
+) -> Dict[str, Dict[str, List[Dict[str, Any]]]]:
     # TODO: define a better dataclass and use Keynote
     return {
-        day: {
-            "speakers": [item for item in raw_keynotes if item["day"] == day]
-        }
+        day: {"speakers": [item for item in raw_keynotes if item["day"] == day]}
         for day in ["Monday", "Tuesday", "Wednesday"]
     }
 
@@ -217,7 +214,7 @@ def build_papers(
                 track=item.get("track", ""),
                 sessions=sessions_for_paper[item["UID"]],
                 similar_paper_uids=paper_recs[item["UID"]],
-            )
+            ),
         )
         for item in raw_papers
     ]
@@ -230,8 +227,9 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             title=item["title"],
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
-            material=item["material"]
-        ) for item in raw_tutorials
+            material=item["material"],
+        )
+        for item in raw_tutorials
     ]
 
 
@@ -242,8 +240,9 @@ def build_workshops(raw_workshops: List[Dict[str, Any]]) -> List[Workshop]:
             title=item["title"],
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
-            material=item["material"]
-        ) for item in raw_workshops
+            material=item["material"],
+        )
+        for item in raw_workshops
     ]
 
 

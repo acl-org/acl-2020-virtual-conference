@@ -33,5 +33,3 @@ def extract_list_field(v, key):
         return value
     else:
         return value.split("|")
-
-
