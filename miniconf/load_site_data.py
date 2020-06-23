@@ -1,3 +1,4 @@
+import copy
 import csv
 import glob
 import json
@@ -94,10 +95,7 @@ def load_site_data(
 
     # schedule.html
     site_data["speakers"] = build_plenary_sessions(site_data["speakers"])
-    site_data["schedule"] = []
-    site_data["schedule"].extend(site_data["tutorial_calendar"])
-    site_data["schedule"].extend(site_data["workshop_calendar"])
-
+    site_data["schedule"] = build_schedule(site_data["tutorial_calendar"], site_data["workshop_calendar"])
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
     site_data["tutorials"] = tutorials
@@ -170,6 +168,25 @@ def build_plenary_sessions(
         day: {"speakers": [item for item in raw_keynotes if item["day"] == day]}
         for day in ["Monday", "Tuesday", "Wednesday"]
     }
+
+
+def build_schedule(tutorials: List[Dict[str, Any]], workshops: List[Dict[str, Any]], ) -> List[Dict[str, Any]]:
+    result = []
+    tutorials = copy.deepcopy(tutorials)
+    workshops = copy.deepcopy(workshops)
+
+    for t in tutorials:
+        t["color"] = "#BF4E30"
+        t["url"] = t["link"]
+
+    for w in workshops:
+        w["color"] = "#028090"
+        w["url"] = w["link"]
+
+    result.extend(tutorials)
+    result.extend(workshops)
+
+    return result
 
 
 def normalize_track_name(track_name: str) -> str:

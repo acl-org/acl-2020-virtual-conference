@@ -1,21 +1,31 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script><script>
-  var events = JSON.parse('{{ schedule | tojson | safe}}');
+  var events = JSON.parse('{{ schedule | tojson }}');
 
+  // We use https://fullcalendar.io/
   document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'timeGridWeek',
         initialDate: "2020-07-05",
+        visibleRange: {
+          start: '2020-07-05',
+          end: '2020-07-10'
+        },
         headerToolbar: {
           left: 'prev,next',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-      },
-        events: events
+          right: 'timeGridWeek,timeGridDay,listWeek'
+        },
+        events: events,
+        // Render HTML from title as HTML
+        eventContent: function( arg ) {
+ 	        return { html: arg.event.title }
+        }
       });
 
       calendar.render();
+
   });
 
 </script>
