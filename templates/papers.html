@@ -22,7 +22,7 @@
       role="tab"
       aria-controls="nav-home"
       aria-selected="true"
-      >Browse
+      >All Papers
     </a>
   </li>
   <li class="nav-item">
@@ -30,7 +30,23 @@
   </li>
 </ul>
 
+<ul class="nav nav-pills justify-content-center">
+  {% for track in tracks %}
+    <li>
+      <a
+          class="nav-link text-muted"
+          data-toggle="tab"
+          href="#tab-track-{{ track }}"
+          role="tab"
+          aria-controls="nav-home"
+      >{{ track }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
 {% endblock %}
+
 
 {% block content %}
 <div class="row p-3"></div>
