@@ -1,5 +1,5 @@
-{% set active_page = "Papers" %}
-{% set page_title = "Papers" %}
+{% set active_page = "Demo Papers" %}
+{% set page_title = "Demo Papers" %}
 
 {% extends "base.html" %}
 {% block head %}
@@ -14,7 +14,13 @@
 
 {% block tabs %}
 <ul class="nav nav-pills justify-content-center">
-  <li class="nav-item active">
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="papers.html">Browse </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-muted" href="paper_vis.html">Visualization</a>
+  </li>
+  <li class="nav-item active" style="background-color: #bed972;">
     <a
       class="nav-link text-muted active"
       data-toggle="tab"
@@ -22,21 +28,12 @@
       role="tab"
       aria-controls="nav-home"
       aria-selected="true"
-      >All Papers
+      >Demo Papers
     </a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link text-muted" href="paper_vis.html">Visualization</a>
-  </li>
-  {% for track in tracks %}
-  <li class="nav-item">
-      <a class="nav-link text-muted" href="track_{{ track }}.html">{{ track }}</a>
-  </li>
-  {% endfor %}
 </ul>
 
 {% endblock %}
-
 
 {% block content %}
 <div class="row p-3"></div>

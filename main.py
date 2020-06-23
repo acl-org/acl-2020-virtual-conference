@@ -80,6 +80,12 @@ def paper_vis():
     return render_template("papers_vis.html", **data)
 
 
+@app.route("/track_<track_name>.html")
+def track(track_name):
+    data = _data()
+    return render_template("track.html", **data)
+
+
 @app.route("/schedule.html")
 def schedule():
     data = _data()
