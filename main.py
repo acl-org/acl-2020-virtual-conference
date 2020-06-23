@@ -136,7 +136,9 @@ def paper(uid):
     data["id"] = uid
     data["openreview"] = v
     data["paper"] = v
-    data["paper_recs"] = [by_uid["papers"][ii] for ii in v.content.similar_paper_uids[1:]]
+    data["paper_recs"] = [
+        by_uid["papers"][ii] for ii in v.content.similar_paper_uids[1:]
+    ]
 
     return render_template("paper.html", **data)
 
