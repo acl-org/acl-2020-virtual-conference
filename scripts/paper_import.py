@@ -116,14 +116,21 @@ def extract_slot(qa_session_info):
     is_all_upper = all([word.isupper() for word in all_chars])
     is_all_lower = all([word.islower() for word in all_chars])
 
-    if is_all_upper: 
-        print('Track "{}" is all upper-case; styling as "{}"'.format(track, track.capitalize())) 
+    if is_all_upper:
+        print(
+            'Track "{}" is all upper-case; styling as "{}"'.format(
+                track, track.capitalize()
+            )
+        )
         track = track.capitalize()
-    if is_all_lower: 
-        print('Track "{}" is all lower-case; styling as "{}"'.format(track, track.capitalize())) 
+    if is_all_lower:
+        print(
+            'Track "{}" is all lower-case; styling as "{}"'.format(
+                track, track.capitalize()
+            )
+        )
         track = track.capitalize()
     return track
-
 
 
 def parse_arguments():
