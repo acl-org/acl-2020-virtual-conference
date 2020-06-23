@@ -3,7 +3,12 @@ import csv
 
 import pandas as pd
 
-from scripts.paper_import import clean_title, clean_abstract, miniconf_join_list, parse_authors
+from scripts.paper_import import (
+    clean_abstract,
+    clean_title,
+    miniconf_join_list,
+    parse_authors,
+)
 
 
 def main(demo_papers_xlsx: str, demo_ids_xlsx: str, output_file: str) -> pd.DataFrame:
@@ -12,10 +17,7 @@ def main(demo_papers_xlsx: str, demo_ids_xlsx: str, output_file: str) -> pd.Data
     demo_ids_df = pd.read_excel(demo_ids_xlsx)
     demo_ids_df.set_index("SubID", inplace=True, drop=True, verify_integrity=True)
 
-    sub_ids = [
-        row.get("UID")
-        for _, row in demo_papers_df.iterrows()
-    ]
+    sub_ids = [row.get("UID") for _, row in demo_papers_df.iterrows()]
     demo_papers_df["abstract"] = demo_papers_df["abstract"].apply(clean_abstract)
     demo_papers_df["title"] = demo_papers_df["title"].apply(clean_title)
     demo_papers_df["authors"] = demo_papers_df["authors"].apply(
@@ -34,38 +36,32 @@ def main(demo_papers_xlsx: str, demo_ids_xlsx: str, output_file: str) -> pd.Data
         "track",
         "paper_type",
         "pdf_url",
-        "demo_url"
+        "demo_url",
     ]
     demo_papers_df.to_csv(
         output_file,
-        sep=',',
+        sep=",",
         index=False,
-        encoding='utf-8',
+        encoding="utf-8",
         quoting=csv.QUOTE_ALL,
-        columns=colnames
+        columns=colnames,
     )
 
 
-if __name__ == '__main__':
-    cmdline_parser = argparse.ArgumentParser(
-        description=__doc__
+if __name__ == "__main__":
+    cmdline_parser = argparse.ArgumentParser(description=__doc__)
+    cmdline_parser.add_argument(
+        "--demo-papers-file", help="DemoPapers_SHARED.xlsx from demo chairs"
     )
     cmdline_parser.add_argument(
-        '--demo-papers-file',
-        help='DemoPapers_SHARED.xlsx from demo chairs'
+        "--demo-ids-file",
+        help="demo-ids.xlsx from https://github.com/acl-org/acl-2020-virtual-conference/issues/157#issuecomment-647821450",
     )
-    cmdline_parser.add_argument(
-        '--demo-ids-file',
-        help='demo-ids.xlsx from https://github.com/acl-org/acl-2020-virtual-conference/issues/157#issuecomment-647821450'
-    )
-    cmdline_parser.add_argument(
-        '--output-file',
-        help='ooutput demo_papers.csv file'
-    )
+    cmdline_parser.add_argument("--output-file", help="ooutput demo_papers.csv file")
     args = cmdline_parser.parse_args()
 
     main(
         demo_papers_xlsx=args.demo_papers_file,
         demo_ids_xlsx=args.demo_ids_file,
-        output_file=args.output_file
+        output_file=args.output_file,
     )

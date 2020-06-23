@@ -195,7 +195,7 @@ const updateVis = () => {
             persistor.set(d.id, true);
             d3.select(this).classed('read', true);
         });
-s
+
     if (!currentTippy) {
         currentTippy = tippy('.dot', {
             content(reference) {

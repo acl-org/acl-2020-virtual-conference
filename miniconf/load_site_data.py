@@ -103,7 +103,9 @@ def load_site_data(
 
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"] + site_data["demo_papers"] + site_data["srw_papers"],
+        raw_papers=site_data["main_papers"]
+        + site_data["demo_papers"]
+        + site_data["srw_papers"],
         paper_schedule=site_data["paper_schedule"],
         qa_session_length_hr=qa_session_length_hr,
         # TODO: Should add a `webcal_url` to config instead? Is there a better way?
