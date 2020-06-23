@@ -4,28 +4,74 @@
 
   // We use https://fullcalendar.io/
   document.addEventListener('DOMContentLoaded', function() {
+      var initialTimeZone = 'UTC';
+      var timeZoneSelectorEl = document.getElementById('time-zone-selector');
+
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'timeGridWeek',
         initialDate: "2020-07-05",
+        timeZone: initialTimeZone,
+        allDaySlot: false,
+        eventTimeFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          meridiem: false,
+          timeZoneName: 'short'
+        },
         visibleRange: {
           start: '2020-07-05',
           end: '2020-07-10'
         },
         headerToolbar: {
-          left: 'prev,next',
+          left: 'prev,next today',
           center: 'title',
           right: 'timeGridWeek,timeGridDay,listWeek'
         },
-        events: events,
+        events: function(info, successCallback, failureCallback) {
+            // We need to change the time zone manually,
+            // we cannot use static event data
+            // Deep copy
+            let zoned_events = JSON.parse(JSON.stringify(events));
+              for (var i = 0; i < zoned_events.length; i++){
+                var obj = zoned_events[i];
+                obj["start"] = moment(obj["start"]).tz(info.timeZone).format();
+                obj["end"] = moment(obj["end"]).tz(info.timeZone).format();
+                console.log(obj["start"]);
+              }
+            successCallback(zoned_events);
+        },
+
         // Render HTML from title as HTML
         eventContent: function( arg ) {
  	        return { html: arg.event.title }
         }
       });
 
-      calendar.render();
+      FullCalendar.requestJson('GET', 'https://fullcalendar.io/demo-timezones.json', {}, function(timeZones) {
+        timeZones.forEach(function(timeZone) {
+          var optionEl;
 
+          if (timeZone !== 'UTC') { // UTC is already in the list
+            optionEl = document.createElement('option');
+            optionEl.value = timeZone;
+            optionEl.innerText = timeZone;
+            timeZoneSelectorEl.appendChild(optionEl);
+          }
+        });
+      }, function() {
+        // failure
+      });
+
+    // when the timezone selector changes, dynamically change the calendar option
+    timeZoneSelectorEl.addEventListener('change', function() {
+      calendar.setOption('timeZone', this.value);
+    });
+
+    calendar.render();
   });
 
+
+
 </script>
+<script src="static/js/lazy_load.js"></script>
