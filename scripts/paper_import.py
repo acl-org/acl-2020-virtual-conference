@@ -114,43 +114,19 @@ def extract_slot(qa_session_info):
     return re_session_extract.match(qa_session_info)[1]
 
 
-def parse_arguments():
-    parser = argparse.ArgumentParser(
-        description="Format paper details into MiniConf format"
-    )
-    parser.add_argument(
-        "--volume",
-        help="Volume in the ACL Anthology that these papers are part of",
-        action="store",
-        type=str,
-        required=True,
-    )
-    parser.add_argument(
-        "--accepted-papers-file",
-        help="CSV of paper title, authors, abstract, and submission type",
-        action="store",
-        type=str,
-        default="ACL2020 Accepted Papers Information (to share with other chairs) - Sheet1.csv",
-    )
-    parser.add_argument(
-        "--track-file",
-        help="Excel spreadsheet giving each paper's track and ID in the proceedings",
-        action="store",
-        type=str,
-        default="paper_tracks.xls",
-    )
-    return parser.parse_args()
-
-
-def main():
-    args = parse_arguments()
-    papers = pd.read_csv(args.accepted_papers_file)
-    track_details = pd.read_excel(args.track_file)
+def process_main_conference_papers(
+    accepted_papers_file: str,
+    track_file: str,
+    volume: str
+) -> pd.DataFrame:
+    """An adhoc method to create papers.csv from various files provided by ACL2020 Program Chairs."""
+    papers = pd.read_csv(accepted_papers_file)
+    track_details = pd.read_excel(track_file)
 
     assert set(papers["Submission ID"].values) == set(track_details["ID"].values)
     papers = papers.merge(right=track_details, left_on="Submission ID", right_on="ID")
 
-    acl_id_stub = str(args.volume) + "."
+    acl_id_stub = str(volume) + "."
     acl_url_stub = "https://www.aclweb.org/anthology/2020.acl-"
 
     papers["authors"] = papers["Authors"].apply(
@@ -169,22 +145,94 @@ def main():
     assert track_slot1.equals(track_slot2)
     papers["track"] = track_slot1
 
-    papers = papers.loc[
-        :,
-        [
-            "Line order",
-            "UID",
-            "title",
-            "authors",
-            "abstract",
-            "keywords",
-            "track",
-            "paper_type",
-            "pdf_url",
-        ],
+    col_names = [
+        "Line order",
+        "UID",
+        "title",
+        "authors",
+        "abstract",
+        "keywords",
+        "track",
+        "paper_type",
+        "pdf_url",
     ]
+    papers = papers.loc[:, col_names]
     papers.sort_values(by="Line order", axis=0, inplace=True)
     papers.drop(columns="Line order", inplace=True)
+
+    return papers
+
+
+def process_demo_papers():
+    pass
+
+
+def process_srw_papers(srw_papers_file: str) -> pd.DataFrame:
+    papers = pd.read_csv(
+        srw_papers_file,
+        sep='\t',
+        encoding='utf-8',
+        na_values=None,
+        keep_default_na=False
+    )
+    acl_url_stub = "https://www.aclweb.org/anthology/2020.acl-"
+    papers["pdf_url"] = papers["UID"].apply(lambda x: acl_url_stub + x + ".pdf")
+
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(
+        description="Format paper details into MiniConf format."
+    )
+    parser.add_argument(
+        "--accepted-papers-file",
+        help="CSV of main conference paper title, authors, abstract, and submission type",
+        action="store",
+        type=str,
+        default="sitedata_acl2020/unprocessed/accepted_papers.csv",
+    )
+    parser.add_argument(
+        "--track-file",
+        help="Excel spreadsheet giving each main conference paper's track and ID in the proceedings",
+        action="store",
+        type=str,
+        default="sitedata_acl2020/unprocessed/paper_tracks.xls",
+    )
+    parser.add_argument(
+        "--srw-papers-file",
+        help="CSV of student research workshop papers",
+        action="store",
+        type=str,
+        default="sitedata_acl2020/unprocessed/srw_papers.csv",
+    )
+    parser.add_argument(
+        "--demo-papers-file",
+        help="Excel spreadsheet for demo papers",
+        action="store",
+        type=str,
+        default="sitedata_acl2020/unprocessed/DemoPapers_SHARED.xlsx",
+    )
+    parser.add_argument(
+        "--merged-papers-file",
+        help="Output papers.csv file",
+        action="store",
+        type=str,
+        default="sitedata_acl2020/papers.csv",
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_arguments()
+    main_papers = process_main_conference_papers(
+        accepted_papers_file=args.accepted_papers_file,
+        track_file=args.track_file,
+        # volume in the ACL Anthology that these papers are part of
+        volume="1"
+    )
+    demo_papers = process_demo_papers()
+    srw_papers = process_srw_papers()
+
+    papers = pd.concat([main_papers])
     papers.to_csv("papers.csv", index=False)
 
 

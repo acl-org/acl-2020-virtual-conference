@@ -46,7 +46,8 @@ def load_site_data(
         "paper_recs",
         "papers_projection",
         "paper_schedule",
-        # "srw_papers",
+        # "demo_papers",
+        "srw_papers",
         # socials.html
         "socials",
         # workshops.html
@@ -98,7 +99,8 @@ def load_site_data(
 
     # papers.{html,json}
     papers = build_papers(
-        raw_papers=site_data["main_papers"],
+        # raw_papers=site_data["main_papers"] + site_data["demo_papers"] + site_data["srw_papers"],
+        raw_papers=site_data["main_papers"] + site_data["srw_papers"],
         paper_schedule=site_data["paper_schedule"],
         qa_session_length_hr=qa_session_length_hr,
         # TODO: Should add a `webcal_url` to config instead? Is there a better way?
@@ -106,9 +108,20 @@ def load_site_data(
         paper_recs=site_data["paper_recs"],
     )
     del site_data["main_papers"]
+    # del site_data["demo_papers"]
+    del site_data["srw_papers"]
     site_data["papers"] = papers
-    site_data["tracks"] = list(sorted(list({paper.content.track for paper in papers})))
-    site_data["tracks"] += ["Demo", "Student Research Workshop"]
+    demo_and_srw_tracks = ["Demo", "Student Research Workshop"]
+    site_data["tracks"] = list(
+        sorted(
+            [
+                track
+                for track in {paper.content.track for paper in papers}
+                if track not in demo_and_srw_tracks
+            ]
+        )
+    )
+    site_data["tracks"] += demo_and_srw_tracks
     # paper_<uid>.html
     by_uid["papers"] = {paper.id: paper for paper in papers}
 
@@ -149,6 +162,12 @@ def build_plenary_sessions(
         day: {"speakers": [item for item in raw_keynotes if item["day"] == day]}
         for day in ["Monday", "Tuesday", "Wednesday"]
     }
+
+
+def normalize_track_name(track_name: str) -> str:
+    if track_name == "SRW":
+        return "Student Research Workshop"
+    return track_name
 
 
 def build_papers(
@@ -209,7 +228,7 @@ def build_papers(
                 )
             )
 
-    return [
+    papers = [
         Paper(
             id=item["UID"],
             forum=item["UID"],
@@ -221,13 +240,24 @@ def build_papers(
                 tldr=item["abstract"][:250] + "...",
                 pdf_url=item.get("pdf_url", ""),
                 demo_url=item.get("demo_url", ""),
-                track=item.get("track", ""),
+                track=normalize_track_name(item.get("track", "")),
                 sessions=sessions_for_paper[item["UID"]],
-                similar_paper_uids=paper_recs[item["UID"]],
+                similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
             ),
         )
         for item in raw_papers
     ]
+
+    # throw warnings for empty track
+    for paper in papers:
+        if not paper.content.track:
+            print(f"WARNING: track not set for {paper.id}")
+        if not paper.content.sessions:
+            print(f"WARNING: empty sessions for {paper.id}")
+        if not paper.content.similar_paper_uids:
+            print(f"WARNING: empty similar_paper_uids for {paper.id}")
+
+    return papers
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
