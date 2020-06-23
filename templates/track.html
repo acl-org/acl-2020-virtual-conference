@@ -20,17 +20,19 @@
   <li class="nav-item">
     <a class="nav-link text-muted" href="paper_vis.html">Visualization</a>
   </li>
-  <li class="nav-item active" style="background-color: #bed972;">
-    <a
-      class="nav-link text-muted active"
-      data-toggle="tab"
-      href="#tab-browse"
-      role="tab"
-      aria-controls="nav-home"
-      aria-selected="true"
-      >Demo Papers
-    </a>
-  </li>
+</ul>
+
+<ul class="nav nav-pills justify-content-center">
+  {% for track in tracks %}
+    <li class="nav-item">
+      {% if track == current_track %}
+      {% set nav_item_class = "nav-link text-muted active" %}
+      {% else %}
+      {% set nav_item_class = "nav-link text-muted" %}
+      {% endif %}
+      <a class="{{ nav_item_class }}" href="track_{{ track }}.html">{{ track }}</a>
+    </li>
+  {% endfor %}
 </ul>
 
 {% endblock %}

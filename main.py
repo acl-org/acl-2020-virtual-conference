@@ -83,6 +83,8 @@ def paper_vis():
 @app.route("/track_<track_name>.html")
 def track(track_name):
     data = _data()
+    data["tracks"] = site_data["tracks"]
+    data["current_track"] = track_name
     return render_template("track.html", **data)
 
 

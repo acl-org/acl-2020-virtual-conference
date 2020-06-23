@@ -28,10 +28,13 @@
   <li class="nav-item">
     <a class="nav-link text-muted" href="paper_vis.html">Visualization</a>
   </li>
+</ul>
+
+<ul class="nav nav-pills justify-content-center">
   {% for track in tracks %}
-  <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link text-muted" href="track_{{ track }}.html">{{ track }}</a>
-  </li>
+    </li>
   {% endfor %}
 </ul>
 
