@@ -10,7 +10,7 @@
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'timeGridWeek',
-        initialDate: "2020-07-05",
+        initialDate: '{{ config.calendar.start }}',
         timeZone: initialTimeZone,
         allDaySlot: false,
         slotLabelFormat: {
@@ -27,8 +27,8 @@
           hour12: false
         },
         visibleRange: {
-          start: '2020-07-05',
-          end: '2020-07-10'
+          start: '{{ config.calendar.start }}',
+          end: '{{ config.calendar.end }}'
         },
         headerToolbar: {
           left: 'prev,next today',
