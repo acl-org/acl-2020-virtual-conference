@@ -10,7 +10,8 @@
     selector  : ".add-to-calendar",
     duration  : 60,
     texts : {
-      label     : "Add to Calendar",
+      // label     : "Add to Calendar",
+      label     : "",
       title     : "New event",
       download  : "Calendar-event.ics",
       google    : "Google Calendar",

@@ -60,14 +60,12 @@
      <a href="track_{{paper.content.track}}.html" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
     </p>
 
-    <div class=" text-center text-muted text-monospace ">
+    <div class="text-center text-muted text-monospace ">
     {% for session in paper.content.sessions %}
-      <div>
-      {{session.session}}
-      <span class="session_times">{{session.time_string}}</span>
-      [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Live QA</a>]
-      <div id="session-cal-link-{{loop.index}}"></div>
-      </div>
+        {{session.session}}
+        <span class="session_times">{{session.time_string}}</span>
+        [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Live QA</a>]
+        <span id="session-cal-link-{{loop.index}}"></span>
     {% endfor %}
     </div>
 
