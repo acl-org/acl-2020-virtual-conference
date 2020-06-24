@@ -43,7 +43,6 @@
             if (tz === "Local") {
                 tz = moment.tz.guess();
             }
-            console.log(tz);
             let zoned_events = JSON.parse(JSON.stringify(events));
               for (var i = 0; i < zoned_events.length; i++){
                 var obj = zoned_events[i];
