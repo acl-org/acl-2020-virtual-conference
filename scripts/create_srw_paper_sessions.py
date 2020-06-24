@@ -2,6 +2,7 @@ import argparse
 import re
 from collections import defaultdict
 from datetime import datetime
+from typing import Any, DefaultDict, Dict
 
 import pandas as pd
 import yaml
@@ -22,9 +23,13 @@ def extract_date(x):
 
 
 def main(srw_papers_xlsx: str, output_file: str):
-    srw_papers_df = pd.read_excel(srw_papers_xlsx, na_values=None, keep_default_na=False)
+    srw_papers_df = pd.read_excel(
+        srw_papers_xlsx, na_values=None, keep_default_na=False
+    )
 
-    session_time_map = defaultdict(lambda: {"date": "", "papers": []})
+    session_time_map: DefaultDict[str, Dict[str, Any]] = defaultdict(
+        lambda: {"date": "", "papers": []}
+    )
     for _, row in srw_papers_df.iterrows():
         uid = f"srw.{row.get('Submission ID')}"
         for slot_name in ["QA Slot 1", "QA Slot 2"]:
@@ -45,9 +50,7 @@ def main(srw_papers_xlsx: str, output_file: str):
 
     # Sort everything
     for session_info in session_time_map.values():
-        session_info["papers"].sort(
-            key=lambda x: int(x.split(".")[1])
-        )
+        session_info["papers"].sort(key=lambda x: int(x.split(".")[1]))
 
     dict_items = list(sorted(session_time_map.items(), key=lambda x: x[1]["date"]))
     ordered_sessions = dict(dict_items)
@@ -62,15 +65,17 @@ def main(srw_papers_xlsx: str, output_file: str):
 def parse_arguments():
     cmdline_parser = argparse.ArgumentParser(description=__doc__)
     cmdline_parser.add_argument(
-        "--srw-papers-file", help="ACL.SRW.2020.Live.QA.Slots.for.website.xlsx from SRW chairs"
+        "--srw-papers-file",
+        help="ACL.SRW.2020.Live.QA.Slots.for.website.xlsx from SRW chairs",
     )
-    cmdline_parser.add_argument("--output-file", help="ooutput srw_paper_sessions.yml file")
+    cmdline_parser.add_argument(
+        "--output-file", help="ooutput srw_paper_sessions.yml file"
+    )
     return cmdline_parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_arguments()
     main(
-        srw_papers_xlsx=args.srw_papers_file,
-        output_file=args.output_file,
+        srw_papers_xlsx=args.srw_papers_file, output_file=args.output_file,
     )
