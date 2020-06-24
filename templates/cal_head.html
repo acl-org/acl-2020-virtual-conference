@@ -1,10 +1,16 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script><script>
   var events = JSON.parse('{{ calendar | tojson }}');
 
   // We use https://fullcalendar.io/
   document.addEventListener('DOMContentLoaded', function() {
-      var initialTimeZone = 'Local';
+      var initialTimeZone = moment.tz.guess();
       var timeZoneSelectorEl = document.getElementById('time-zone-selector');
 
       var calendarEl = document.getElementById('calendar');
@@ -13,11 +19,18 @@
         initialDate: "2020-07-05",
         timeZone: initialTimeZone,
         allDaySlot: false,
+        slotLabelFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          meridiem: false,
+          hour12: false
+        },
         eventTimeFormat: {
           hour: '2-digit',
           minute: '2-digit',
           meridiem: false,
-          timeZoneName: 'short'
+          timeZoneName: 'short',
+          hour12: false
         },
         visibleRange: {
           start: '2020-07-05',
@@ -26,7 +39,7 @@
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
-          right: 'timeGridWeek,timeGridDay,listWeek'
+          right: 'timeGridWeek,timeGridDay'
         },
         events: function(info, successCallback, failureCallback) {
             // We need to change the time zone manually,
@@ -36,6 +49,7 @@
             if (tz === "Local") {
                 tz = moment.tz.guess();
             }
+            console.log(tz);
             let zoned_events = JSON.parse(JSON.stringify(events));
               for (var i = 0; i < zoned_events.length; i++){
                 var obj = zoned_events[i];
