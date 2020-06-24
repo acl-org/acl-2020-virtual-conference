@@ -349,7 +349,7 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
             if zoom.get("end") is None:
                 end = start + timedelta(hours=zoom["duration"])
             else:
-                end = zoom["end"].astimezone(pytz.timezone("GMT")) 
+                end = zoom["end"].astimezone(pytz.timezone("GMT"))
             day = start.strftime("%A")
             start_time = start.strftime(display_time_format)
             end_time = end.strftime(display_time_format)
