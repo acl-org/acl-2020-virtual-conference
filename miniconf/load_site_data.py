@@ -1,9 +1,11 @@
+import copy
 import csv
 import glob
 import json
 import os
 from collections import OrderedDict, defaultdict
 from datetime import datetime, timedelta
+from itertools import chain
 from typing import Any, DefaultDict, Dict, List
 
 import jsons
@@ -37,18 +39,20 @@ def load_site_data(
         # index.html
         "committee",
         # schedule.html
-        "main_calendar",
+        "overall_calendar",
         "speakers",
         # tutorials.html
         "tutorial_calendar",
         "tutorials",
         # papers.html
         "main_papers",
-        "paper_recs",
-        "papers_projection",
-        "paper_schedule",
         "demo_papers",
         "srw_papers",
+        "paper_recs",
+        "papers_projection",
+        "main_paper_sessions",
+        "demo_paper_sessions",
+        "srw_paper_sessions",
         # socials.html
         "socials",
         # workshops.html
@@ -94,7 +98,7 @@ def load_site_data(
 
     # schedule.html
     site_data["schedule"] = build_plenary_sessions(site_data["speakers"])
-
+    site_data["calendar"] = build_schedule(site_data["overall_calendar"])
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
     site_data["tutorials"] = tutorials
@@ -106,7 +110,11 @@ def load_site_data(
         raw_papers=site_data["main_papers"]
         + site_data["demo_papers"]
         + site_data["srw_papers"],
-        paper_schedule=site_data["paper_schedule"],
+        all_paper_sessions=[
+            site_data["main_paper_sessions"],
+            site_data["demo_paper_sessions"],
+            site_data["srw_paper_sessions"],
+        ],
         qa_session_length_hr=qa_session_length_hr,
         # TODO: Should add a `webcal_url` to config instead? Is there a better way?
         calendar_stub=site_data["config"]["site_url"].replace("https", "webcal"),
@@ -115,6 +123,9 @@ def load_site_data(
     del site_data["main_papers"]
     del site_data["demo_papers"]
     del site_data["srw_papers"]
+    del site_data["main_paper_sessions"]
+    del site_data["demo_paper_sessions"]
+    del site_data["srw_paper_sessions"]
     site_data["papers"] = papers
     demo_and_srw_tracks = ["Demo", "Student Research Workshop"]
     site_data["tracks"] = list(
@@ -169,6 +180,38 @@ def build_plenary_sessions(
     }
 
 
+def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    events = [
+        copy.deepcopy(event)
+        for event in overall_calendar
+        if event["type"]
+        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions"}
+    ]
+
+    for event in events:
+        event_type = event["type"]
+        if event_type == "Plenary Sessions":
+            event["color"] = "red"
+            event["url"] = event["link"]
+        elif event_type == "Tutorials":
+            event["color"] = "#BF4E30"
+            event["url"] = event["link"]
+        elif event_type == "Workshops":
+            event["color"] = "#028090"
+            event["url"] = event["link"]
+        elif event_type == "QA Sessions":
+            event["color"] = "brown"
+            event["url"] = event["link"]
+        elif event_type == "Socials":
+            event["color"] = "Bright Green"
+            event["url"] = event["link"]
+        else:
+            event["color"] = "#6699ff"
+            event["url"] = event["link"]
+
+    return events
+
+
 def normalize_track_name(track_name: str) -> str:
     if track_name == "SRW":
         return "Student Research Workshop"
@@ -177,7 +220,7 @@ def normalize_track_name(track_name: str) -> str:
 
 def build_papers(
     raw_papers: List[Dict[str, str]],
-    paper_schedule: Dict[str, Dict[str, Any]],
+    all_paper_sessions: List[Dict[str, Dict[str, Any]]],
     qa_session_length_hr: int,
     calendar_stub: str,
     paper_recs: Dict[str, List[str]],
@@ -194,40 +237,37 @@ def build_papers(
     - pdf_url: str
     - demo_url: str
 
-    The paper_schedule file contains the live QA session slots and corresponding Zoom links for each paper.
-    An example paper_schedule.yml file is shown below.
+    The paper_schedule file contains the live QA session slots for each paper.
+    An example paper_sessions.yml file is shown below.
     ```yaml
     1A:
       date: 2020-07-06_05:00:00
       papers:
-      - id: main.1
-        join_link: https://www.google.com/
-      - id: main.2
-        join_link: https://www.google.com/
+      - main.1
+      - main.2
     2A:
       date: 2020-07-06_08:00:00
       papers:
-      - id: main.17
-        join_link: https://www.google.com/
-      - id: main.19
-        join_link: https://www.google.com/
+      - main.17
+      - main.19
     ```
     """
     # build the lookup from paper to slots
     sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
-    for session_name, session_info in paper_schedule.items():
+    for session_name, session_info in chain(
+        *[paper_sessions.items() for paper_sessions in all_paper_sessions]
+    ):
         date = session_info["date"]
-        for item in session_info["papers"]:
-            paper_id = item["id"]
-            start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
-            end_time = start_time + timedelta(hours=qa_session_length_hr)
+        start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
+        end_time = start_time + timedelta(hours=qa_session_length_hr)
+        for paper_id in session_info["papers"]:
             session_offset = len(sessions_for_paper[paper_id])
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
                     start_time=start_time,
                     end_time=end_time,
-                    zoom_link=item["join_link"],
+                    zoom_link="https://zoom.com",
                     # TODO: the prefix should be configurable?
                     ical_link=f"{calendar_stub}/paper_{paper_id}.{session_offset}.ics",
                 )
@@ -257,8 +297,10 @@ def build_papers(
     for paper in papers:
         if not paper.content.track:
             print(f"WARNING: track not set for {paper.id}")
-        if not paper.content.sessions:
-            print(f"WARNING: empty sessions for {paper.id}")
+        if len(paper.content.sessions) != 2:
+            print(
+                f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
+            )
         if not paper.content.similar_paper_uids:
             print(f"WARNING: empty similar_paper_uids for {paper.id}")
 
@@ -304,7 +346,10 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
         sponsor["zoom_times"] = OrderedDict()
         for zoom in sponsor.get("zooms", []):
             start = zoom["start"].astimezone(pytz.timezone("GMT"))
-            end = start + timedelta(hours=zoom["duration"])
+            if zoom.get("end") is None:
+                end = start + timedelta(hours=zoom["duration"])
+            else:
+                end = zoom["end"].astimezone(pytz.timezone("GMT"))
             day = start.strftime("%A")
             start_time = start.strftime(display_time_format)
             end_time = end.strftime(display_time_format)
