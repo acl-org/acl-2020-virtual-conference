@@ -78,7 +78,7 @@ body {
   object-fit: scale-down;
 }
 
-.nav-pills .nav-link.active {
+body .nav-pills .nav-link.active {
   background-color: #ee353a;
   color: white;
 }
