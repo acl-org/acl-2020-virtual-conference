@@ -93,12 +93,12 @@ def track(track_name):
 @app.route("/schedule.html")
 def schedule():
     data = _data()
-    for day, item in site_data["speakers"].items():
+    for day, item in site_data["schedule"].items():
         new_item = copy.deepcopy(item)
         new_item["speakers"] = sorted(new_item["speakers"], key=lambda i: i["time"])
         data[day] = new_item
 
-    data["schedule"] = site_data["schedule"]
+    data["calendar"] = site_data["calendar"]
     return render_template("schedule.html", **data)
 
 
