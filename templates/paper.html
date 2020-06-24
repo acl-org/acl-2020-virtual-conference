@@ -1,0 +1,164 @@
+{% set page_title = paper.content.title %}
+{% extends "base.html" %}
+
+{% block head %}
+
+{{ super() }}
+<meta name="citation_title" content="{{paper.content.title}}" />
+{% for author in paper.content.authors %}
+<meta name="citation_author" content="{{author}}" />
+{% endfor %}
+<meta name="citation_publication_date" content="{{config.citation_date}}" />
+<meta name="citation_conference_title" content="{{config.tagline|striptags|title}}" />
+<meta name="citation_inbook_title" content="{{config.proceedings_title}}" />
+<meta name="citation_abstract" content="{{paper.content.abstract}}" />
+{% for keyword in paper.content.keywords %}
+<meta name="citation_keywords" content="{{keyword}}" />
+{% endfor %}
+<meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="color: black">
+      {{paper.content.title}}
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      {% for author in paper.content.authors %}
+      <a href="papers.html?filter=authors&search={{author}}" class="text-primary"
+        >{{author}}</a
+      >{{ "," if not loop.last }}
+      {% endfor %}
+    </h3>
+   
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      {% if paper.content.pdf_url %}
+      <a class="card-link" target="_blank" href="{{paper.content.pdf_url}}">
+        Paper
+      </a>
+      {% endif %}
+      {% if paper.content.code != blank %}
+      <a href="{{paper.content.code}}" target="_blank" class="card-link">
+        Code
+      </a>
+      {% endif %}
+      {% if paper.content.demo_url %}
+      <a href="{{paper.content.demo_url}}" target="_blank" class="card-link">
+        Demo
+      </a>
+      {% endif %}
+    </div>
+     <p class="card-text text-center h5">
+    
+     <a href="track_{{paper.content.track}}.html" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
+    </p>
+
+    <div class=" text-center text-muted text-monospace ">
+    {% for session in paper.content.sessions %}
+      <div>
+      {{session.session}}
+      <span class="session_times">{{session.time_string}}</span>
+      [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Live QA</a>]
+      [<a target="_blank" href="{{session.ical_link}}">Cal</a>]
+      </div>
+    {% endfor %}
+    </div>
+
+  </div>
+</div>
+<div id="details" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        {{paper.content.abstract}}
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="row m-2">
+    <!-- Slides Live-->
+    <div class="col-md-7 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '{{paper.presentation_id | default(config.default_presentation_id)}}',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+
+    <!-- Chat -->
+    <div class="col-md-5 col-xs-12 p-2">
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% if paper.poster_pdf %}
+{{ components.section("Example Poster") }}
+
+<div role="main" id="pdf_view"></div>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.3.200/build/pdf.min.js"></script>
+<script src="static/js/pdf_render.js"></script>
+<script>
+    $(document).ready(() => {
+        // render first page of PDF to div
+        // PDF name can be bound to variable -- e.g. paper.content.poster_link
+        initPDFViewer("{{paper.poster_pdf}}",'#pdf_view');
+    })
+</script>
+{% endif %}
+
+{{ components.section("Similar Papers") }}
+<p></p>
+<div  class="container" >
+  <div class="row">
+  {% for recommended in paper_recs %}
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_{{recommended.id}}.html" class="text-muted">
+            <h5 class="card-title" align="center">{{recommended.content.title}}</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             {% for a in recommended.content.authors %}
+             {{a}},
+             {% endfor %}
+          </h6>
+          <center><img class="cards_img" src="{{ config.paper_images_path }}/{{recommended.id}}.png" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+
+{% endblock %}

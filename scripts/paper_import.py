@@ -111,7 +111,26 @@ def parse_authors(author_string):
 
 
 def extract_slot(qa_session_info):
-    return re_session_extract.match(qa_session_info)[1]
+    track = re_session_extract.match(qa_session_info)[1]
+    all_chars = set(track)
+    is_all_upper = all([word.isupper() for word in all_chars])
+    is_all_lower = all([word.islower() for word in all_chars])
+
+    if is_all_upper:
+        print(
+            'Track "{}" is all upper-case; styling as "{}"'.format(
+                track, track.capitalize()
+            )
+        )
+        track = track.capitalize()
+    if is_all_lower:
+        print(
+            'Track "{}" is all lower-case; styling as "{}"'.format(
+                track, track.capitalize()
+            )
+        )
+        track = track.capitalize()
+    return track
 
 
 def parse_arguments():
@@ -151,6 +170,7 @@ def main():
     papers = papers.merge(right=track_details, left_on="Submission ID", right_on="ID")
 
     acl_id_stub = str(args.volume) + "."
+    acl_url_stub = "https://www.aclweb.org/anthology/2020.acl-"
 
     papers["authors"] = papers["Authors"].apply(
         lambda x: miniconf_join_list(parse_authors(x))
@@ -158,6 +178,7 @@ def main():
     papers["Abstract"] = papers["Abstract"].apply(clean_abstract)
     papers["title"] = papers["title"].apply(clean_title)
     papers["UID"] = papers["Line order"].apply(lambda x: acl_id_stub + str(x))
+    papers["pdf_url"] = papers["UID"].apply(lambda x: acl_url_stub + x + ".pdf")
     papers["paper_type"] = papers["Submission Type"]
     papers.rename(columns={"Abstract": "abstract"}, inplace=True)
     papers["keywords"] = ""
@@ -178,6 +199,7 @@ def main():
             "keywords",
             "track",
             "paper_type",
+            "pdf_url",
         ],
     ]
     papers.sort_values(by="Line order", axis=0, inplace=True)

@@ -127,13 +127,14 @@ const updateSession = () => {
 /**
  * START here and load JSON.
  */
-const start = () => {
-    const urlFilter = getUrlParameter("filter") || 'keywords';
+const start = (path_to_papers_json) => {
+    // const urlFilter = getUrlParameter("filter") || 'keywords';
+    const urlFilter = getUrlParameter("filter") || 'titles';
     setQueryStringParameter("filter", urlFilter);
-    updateFilterSelectionBtn(urlFilter)
+    updateFilterSelectionBtn(urlFilter);
 
 
-    d3.json('papers.json').then(papers => {
+    d3.json(path_to_papers_json).then(papers => {
         // console.log(papers, "--- papers");
 
         shuffleArray(papers);
@@ -142,7 +143,7 @@ const start = () => {
         calcAllKeys(allPapers, allKeys);
         setTypeAhead(urlFilter,
           allKeys, filters, render);
-        updateCards(allPapers)
+        updateCards(allPapers);
 
 
         const urlSearch = getUrlParameter("search");
@@ -154,7 +155,7 @@ const start = () => {
 
 
     }).catch(e => console.error(e))
-}
+};
 
 
 /**
@@ -162,7 +163,7 @@ const start = () => {
  * **/
 
 d3.selectAll('.filter_option input').on('click', function () {
-    const me = d3.select(this)
+    const me = d3.select(this);
 
     const filter_mode = me.property('value');
     setQueryStringParameter("filter", filter_mode);
@@ -172,20 +173,20 @@ d3.selectAll('.filter_option input').on('click', function () {
 
     setTypeAhead(filter_mode, allKeys, filters, render);
     render();
-})
+});
 
 d3.selectAll('.remove_session').on('click', () => {
     setQueryStringParameter("session", '');
     render();
 
-})
+});
 
 d3.selectAll('.render_option input').on('click', function () {
     const me = d3.select(this);
     render_mode = me.property('value');
 
     render();
-})
+});
 
 d3.select('.reshuffle').on('click', () => {
     shuffleArray(allPapers);
@@ -198,66 +199,32 @@ d3.select('.reshuffle').on('click', () => {
  */
 
 const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
-                       class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`
+                       class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
 
 const card_image = (openreview, show) => {
     if (show) return ` <center><img class="lazy-load-img cards_img" data-src="static/images/acl2020/papers/${openreview.id}.png" width="80%"/></center>`
     else return ''
-}
+};
 
 const card_detail = (openreview, show) => {
     if (show)
         return ` 
      <div class="pp-card-header">
-        <p class="card-text"> ${openreview.content.TLDR}</p>
-        <p class="card-text"><span class="font-weight-bold">Keywords:</span>
+        <p class="card-text"> ${openreview.content.tldr}</p>
+        <!--<p class="card-text"><span class="font-weight-bold">Keywords:</span>
             ${openreview.content.keywords.map(keyword).join(', ')}
-        </p>
+        </p>-->
     </div>
 `
     else return ''
-}
-
-const card_time_small = (openreview, show) => {
-    const cnt = openreview.content;
-    // FIXME: there is no "session_links" anymore.
-    return show ? `
-<!--    <div class="pp-card-footer">-->
-    <div class="text-center" style="margin-top: 10px;">
-    ${cnt.session.filter(s => s.match(/.*[0-9]/g)).map(
-      (s, i) => `<a class="card-subtitle text-muted" href="?session=${encodeURIComponent(
-        s)}">${s.replace('Session ', '')}</a> ${card_live(
-        cnt.session_links[i])} ${card_cal(openreview, i)} `).join(', ')}
-    </div>
-<!--    </div>-->
-    ` : '';
-}
-
-const card_icon_video = icon_video(16);
-const card_icon_cal = icon_cal(16);
-
-const card_live = (link) => `<a class="text-muted" href="${link}">${card_icon_video}</a>`
-const card_cal = (openreview, i) => `<a class="text-muted" href="webcal://iclr.github.io/iclr-images/calendars/poster_${openreview.forum}.${i}.ics">${card_icon_cal}</a>`
-
-// const card_time_detail = (openreview, show) => {
-//     const cnt = openreview.content;
-//     return show ? `
-// <!--    <div class="pp-card-footer">-->
-//     <div class="text-center text-monospace small" style="margin-top: 10px;">
-//     ${cnt.session.filter(s => s.match(/.*[0-9]/g))
-//       .map((s, i) => `${s} ${cnt.session_times[i]} ${card_live(cnt.session_links[i])}   `)
-//       .join('<br>')}
-//     </div>
-// <!--    </div>-->
-//     ` : '';
-// }
+};
 
 //language=HTML
 const card_html = openreview => `
         <div class="pp-card pp-mode-` + render_mode + ` ">
             <div class="pp-card-header">
             <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}" style="display: block;position: absolute; bottom:35px;left: 35px;">✓</div>    
-                <a href="poster_${openreview.id}.html"
+                <a href="paper_${openreview.id}.html"
                 target="_blank"
                    class="text-muted">
                    <h5 class="card-title" align="center"> ${openreview.content.title} </h5></a>

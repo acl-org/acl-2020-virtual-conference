@@ -1,17 +1,25 @@
+import copy
 import csv
 import glob
 import json
-from collections import OrderedDict
+import os
+from collections import OrderedDict, defaultdict
 from datetime import datetime, timedelta
-from typing import Dict, Any, List
+from itertools import chain
+from typing import Any, DefaultDict, Dict, List
 
 import jsons
 import pytz
 import yaml
 
-from miniconf.site_data import CommitteeMember, Tutorial, Workshop, Poster, \
-    PosterContent
-from miniconf.utils import extract_list_field
+from miniconf.site_data import (
+    CommitteeMember,
+    Paper,
+    PaperContent,
+    SessionInfo,
+    Tutorial,
+    Workshop,
+)
 
 
 def load_site_data(
@@ -26,23 +34,59 @@ def load_site_data(
 
     NOTE: site_data[filename][field]
     """
+    registered_sitedata = {
+        "config",
+        # index.html
+        "committee",
+        # schedule.html
+        "overall_calendar",
+        "speakers",
+        # tutorials.html
+        "tutorial_calendar",
+        "tutorials",
+        # papers.html
+        "main_papers",
+        "demo_papers",
+        "srw_papers",
+        "paper_recs",
+        "papers_projection",
+        "main_paper_sessions",
+        "demo_paper_sessions",
+        "srw_paper_sessions",
+        # socials.html
+        "socials",
+        # workshops.html
+        "july5_workshop_calendar",
+        "july9_workshop_calendar",
+        "july10_workshop_calendar",
+        "workshop_calendar",
+        "workshops",
+        # sponsors.html
+        "sponsors",
+        # about.html
+        "code_of_conduct",
+        "faq",
+    }
     extra_files = ["README.md"]
     # Load all for your sitedata one time.
     for f in glob.glob(site_data_path + "/*"):
-        extra_files.append(f)
-        name, typ = f.split("/")[-1].split(".")
-
-        if name == "acl2020_accepted_papers":
+        filename = os.path.basename(f)
+        if filename == "inbox":
+            continue
+        name, typ = filename.split(".")
+        if name not in registered_sitedata:
             continue
 
+        extra_files.append(f)
         if typ == "json":
             site_data[name] = json.load(open(f))
         elif typ in {"csv", "tsv"}:
             site_data[name] = list(csv.DictReader(open(f)))
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
+    assert set(site_data.keys()) == registered_sitedata
 
-    for typ in ["papers", "speakers"]:
+    for typ in ["speakers"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
@@ -54,35 +98,54 @@ def load_site_data(
 
     # schedule.html
     site_data["schedule"] = build_plenary_sessions(site_data["speakers"])
-
+    site_data["calendar"] = build_schedule(site_data["overall_calendar"])
     # tutorials.html
     tutorials = build_tutorials(site_data["tutorials"])
     site_data["tutorials"] = tutorials
     # tutorial_<uid>.html
-    by_uid["tutorials"] = {
-        tutorial.id: tutorial
-        for tutorial in tutorials
-    }
+    by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
 
-    # papers.html
-    build_papers(site_data, by_uid, display_time_format, qa_session_length_hr)
-    # poster_<uid>.html
-    posters = build_posters(site_data["papers"])
-    # papers.json
-    site_data["posters"] = posters
-    by_uid["posters"] = {
-        poster.id: poster
-        for poster in posters
-    }
+    # papers.{html,json}
+    papers = build_papers(
+        raw_papers=site_data["main_papers"]
+        + site_data["demo_papers"]
+        + site_data["srw_papers"],
+        all_paper_sessions=[
+            site_data["main_paper_sessions"],
+            site_data["demo_paper_sessions"],
+            site_data["srw_paper_sessions"],
+        ],
+        qa_session_length_hr=qa_session_length_hr,
+        # TODO: Should add a `webcal_url` to config instead? Is there a better way?
+        calendar_stub=site_data["config"]["site_url"].replace("https", "webcal"),
+        paper_recs=site_data["paper_recs"],
+    )
+    del site_data["main_papers"]
+    del site_data["demo_papers"]
+    del site_data["srw_papers"]
+    del site_data["main_paper_sessions"]
+    del site_data["demo_paper_sessions"]
+    del site_data["srw_paper_sessions"]
+    site_data["papers"] = papers
+    demo_and_srw_tracks = ["Demo", "Student Research Workshop"]
+    site_data["tracks"] = list(
+        sorted(
+            [
+                track
+                for track in {paper.content.track for paper in papers}
+                if track not in demo_and_srw_tracks
+            ]
+        )
+    )
+    site_data["tracks"] += demo_and_srw_tracks
+    # paper_<uid>.html
+    by_uid["papers"] = {paper.id: paper for paper in papers}
 
     # workshops.html
     workshops = build_workshops(site_data["workshops"])
     site_data["workshops"] = workshops
     # workshop_<uid>.html
-    by_uid["workshops"] = {
-        workshop.id: workshop
-        for workshop in workshops
-    }
+    by_uid["workshops"] = {workshop.id: workshop for workshop in workshops}
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
@@ -95,63 +158,153 @@ def load_site_data(
     return extra_files
 
 
+def extract_list_field(v, key):
+    value = v.get(key, "")
+    if isinstance(value, list):
+        return value
+    else:
+        return value.split("|")
+
+
 def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember]:
     return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
 
 
-def build_plenary_sessions(raw_keynotes: List[Dict[str, Any]]) -> Dict[str, Dict[str, List[Dict[str, Any]]]]:
+def build_plenary_sessions(
+    raw_keynotes: List[Dict[str, Any]]
+) -> Dict[str, Dict[str, List[Dict[str, Any]]]]:
     # TODO: define a better dataclass and use Keynote
     return {
-        day: {
-            "speakers": [item for item in raw_keynotes if item["day"] == day]
-        }
+        day: {"speakers": [item for item in raw_keynotes if item["day"] == day]}
         for day in ["Monday", "Tuesday", "Wednesday"]
     }
 
 
-def build_papers(site_data, by_uid, display_time_format: str, qa_session_length_hr: int) -> None:
-    for session_name, session_info in site_data["poster_schedule"].items():
-        for paper in session_info["posters"]:
-            if "sessions" not in by_uid["papers"][paper["id"]]:
-                by_uid["papers"][paper["id"]]["sessions"] = []
-            time = datetime.strptime(session_info["date"], "%Y-%m-%d_%H:%M:%S")
-            start_time = time.strftime(display_time_format)
-            start_day = time.strftime("%a")
-            end_time = (time + timedelta(hours=qa_session_length_hr)).strftime(display_time_format)
-            time_string = "({}-{} GMT)".format(start_time, end_time)
-            current_num_sessions = len(by_uid["papers"][paper["id"]]["sessions"])
-            calendar_stub = site_data["config"]["site_url"].replace("https", "webcal")
-            by_uid["papers"][paper["id"]]["sessions"].append(
-                {
-                    "time": time,
-                    "time_string": time_string,
-                    "session": " ".join([start_day, "Session", session_name]),
-                    "zoom_link": paper["join_link"],
-                    "ical_link": calendar_stub
-                    + "/poster_{}.{}.ics".format(paper["id"], current_num_sessions),
-                }
+def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    events = [
+        copy.deepcopy(event)
+        for event in overall_calendar
+        if event["type"]
+        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions"}
+    ]
+
+    for event in events:
+        event_type = event["type"]
+        if event_type == "Plenary Sessions":
+            event["color"] = "red"
+            event["url"] = event["link"]
+        elif event_type == "Tutorials":
+            event["color"] = "#BF4E30"
+            event["url"] = event["link"]
+        elif event_type == "Workshops":
+            event["color"] = "#028090"
+            event["url"] = event["link"]
+        elif event_type == "QA Sessions":
+            event["color"] = "brown"
+            event["url"] = event["link"]
+        elif event_type == "Socials":
+            event["color"] = "Bright Green"
+            event["url"] = event["link"]
+        else:
+            event["color"] = "#6699ff"
+            event["url"] = event["link"]
+
+    return events
+
+
+def normalize_track_name(track_name: str) -> str:
+    if track_name == "SRW":
+        return "Student Research Workshop"
+    return track_name
+
+
+def build_papers(
+    raw_papers: List[Dict[str, str]],
+    all_paper_sessions: List[Dict[str, Dict[str, Any]]],
+    qa_session_length_hr: int,
+    calendar_stub: str,
+    paper_recs: Dict[str, List[str]],
+) -> List[Paper]:
+    """Builds the site_data["papers"].
+
+    Each entry in the papers has the following fields:
+    - UID: str
+    - title: str
+    - authors: str (separated by '|')
+    - keywords: str (separated by '|')
+    - track: str
+    - paper_type: str (i.e., "Long", "Short", "SRW", "Demo")
+    - pdf_url: str
+    - demo_url: str
+
+    The paper_schedule file contains the live QA session slots for each paper.
+    An example paper_sessions.yml file is shown below.
+    ```yaml
+    1A:
+      date: 2020-07-06_05:00:00
+      papers:
+      - main.1
+      - main.2
+    2A:
+      date: 2020-07-06_08:00:00
+      papers:
+      - main.17
+      - main.19
+    ```
+    """
+    # build the lookup from paper to slots
+    sessions_for_paper: DefaultDict[str, List[SessionInfo]] = defaultdict(list)
+    for session_name, session_info in chain(
+        *[paper_sessions.items() for paper_sessions in all_paper_sessions]
+    ):
+        date = session_info["date"]
+        start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
+        end_time = start_time + timedelta(hours=qa_session_length_hr)
+        for paper_id in session_info["papers"]:
+            session_offset = len(sessions_for_paper[paper_id])
+            sessions_for_paper[paper_id].append(
+                SessionInfo(
+                    session_name=session_name,
+                    start_time=start_time,
+                    end_time=end_time,
+                    zoom_link="https://zoom.com",
+                    # TODO: the prefix should be configurable?
+                    ical_link=f"{calendar_stub}/paper_{paper_id}.{session_offset}.ics",
+                )
             )
 
-
-def build_posters(raw_papers: List[Dict[str, Any]]) -> List[Poster]:
-    return [
-        Poster(
+    papers = [
+        Paper(
             id=item["UID"],
             forum=item["UID"],
-            content=PosterContent(
+            content=PaperContent(
                 title=item["title"],
                 authors=extract_list_field(item, "authors"),
                 keywords=extract_list_field(item, "keywords"),
                 abstract=item["abstract"],
+                tldr=item["abstract"][:250] + "...",
                 pdf_url=item.get("pdf_url", ""),
                 demo_url=item.get("demo_url", ""),
-                track=item.get("track", ""),
-                sessions=item["sessions"],
-                recs=[]
-            )
+                track=normalize_track_name(item.get("track", "")),
+                sessions=sessions_for_paper[item["UID"]],
+                similar_paper_uids=paper_recs.get(item["UID"], [item["UID"]]),
+            ),
         )
         for item in raw_papers
     ]
+
+    # throw warnings for missing information
+    for paper in papers:
+        if not paper.content.track:
+            print(f"WARNING: track not set for {paper.id}")
+        if len(paper.content.sessions) != 2:
+            print(
+                f"WARNING: found {len(paper.content.sessions)} sessions for {paper.id}"
+            )
+        if not paper.content.similar_paper_uids:
+            print(f"WARNING: empty similar_paper_uids for {paper.id}")
+
+    return papers
 
 
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
@@ -161,8 +314,9 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             title=item["title"],
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
-            material=item["material"]
-        ) for item in raw_tutorials
+            material=item["material"],
+        )
+        for item in raw_tutorials
     ]
 
 
@@ -173,8 +327,9 @@ def build_workshops(raw_workshops: List[Dict[str, Any]]) -> List[Workshop]:
             title=item["title"],
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
-            material=item["material"]
-        ) for item in raw_workshops
+            material=item["material"],
+        )
+        for item in raw_workshops
     ]
 
 
