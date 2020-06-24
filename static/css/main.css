@@ -78,7 +78,7 @@ body {
   object-fit: scale-down;
 }
 
-body .nav-pills .nav-link.active {
+.nav-pills .nav-link.active {
   background-color: #ee353a;
   color: white;
 }
@@ -330,4 +330,33 @@ body .carousel-control-prev {
     opacity: 1;
     -webkit-text-fill-color: green;
   }
+}
+
+.fc-v-event.calendar-event-plenary {
+  background-color: red;
+  border-color: red;
+}
+
+.fc-v-event.calendar-event-tutorial {
+  background-color: #BF4E30;
+}
+
+.fc-v-event.calendar-event-workshops {
+  background-color: #028090;
+}
+
+.fc-v-event.calendar-event-qa {
+  background-color: brown;
+}
+
+.fc-v-event.calendar-event-socials {
+  background-color: #66FF00;
+}
+
+.fc-v-event.calendar-event-other {
+  background-color: #6699ff;
+}
+
+.fc-v-event.calendar-event {
+  border-color: transparent;
 }
