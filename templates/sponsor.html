@@ -2,98 +2,59 @@
 {% set page_title = sponsor.name %}
 {% block content %}
 
-<div class="shadow rounded m-5">
-  <!-- Title -->
-  <div class="row justify-content-md-center pt-5">
-    <div class="col-10 text-center">
-        {% if sponsor.logoontop %}
-          <img class="card-img-top" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="width: 15%;" />
-        {% else %}
-          <h2>{{sponsor.name}}</h2>
-        {% endif %}
-     </div>
-  </div>
-  <div class="row justify-content-md-center py-3">
-    <div class="col-10 text-center">
-        <a href="{{sponsor.website}}" target="_blank">Visit Website</a>
-    </div>
-  </div>
-
-  <!-- Description -->
-  <div class="row justify-content-md-center">
-      <div class="col-10">
-          {{ sponsor.description|markdown }}
-      </div>
+<div class="tab-content pt-3 px-3 px-sm-0" id="nav-tabContent">
+  {% if sponsor.logoontop %}
+  <img class="card-img-top" src="{{ sponsor.logo }}" alt="{{ sponsor.name }}" style="width: 15%;" />
+  {% else %}
+  {{ components.section(sponsor.name) }}
+  {% endif %}
+</div>
+<div class="row justify-content-md-center mt-n3 pb-3">
+  <div class="col-6 text-center lead">
+      <a href="{{sponsor.website}}" target="_blank">Visit Website</a>
   </div>
 </div>
 
+<!-- Description -->
 <div class="row justify-content-md-center">
-<div id="accordion" class="col-10">
+    <div class="col-10">
+        <span  class="lead">
+          {{ sponsor.description|markdown }}</span>
+    </div>
+</div>
 
-  <!-- Youtube -->
-  {% if sponsor.youtube is defined %}
+<!-- Youtube -->
+{% if sponsor.youtube is defined %}
+<div class="row justify-content-md-center pt-3">
+  <iframe width="525" height="301" src="{{ sponsor.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+{% endif %}
+
+<div class="row justify-content-md-center py-5">
+<div id="accordion" class="col-10 lead">
+  <!-- Zooms -->
+  {% if sponsor.zoom_times|length %}
   <div class="card">
-    <div class="card-header" id="headingYoutube">
+    <div class="card-header" id="headingZooms">
       <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseYoutube" aria-expanded="true" aria-controls="collapseYoutube">
-          Video
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseZooms" aria-expanded="true" aria-controls="collapseZooms">
+          <h5>Schedule</h5>
         </button>
       </h5>
     </div>
-
-    <div id="collapseYoutube" class="collapse show" aria-labelledby="headingYoutube" data-parent="#accordion">
+    <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms" data-parent="#accordion">
       <div class="card-body">
-        <iframe width="525" height="301" src="{{ sponsor.youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% for day, zooms in sponsor.zoom_times.items() %}
+        <h5>{{ day }}</h5>
+        <ul>
+            {% for (time_string, label) in zooms %}
+                <li> <span class="zoom_times">{{ time_string }}</span> {{     label }} </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
       </div>
     </div>
   </div>
-  {% endif %}
-
-  <!-- Contact -->
-  {% if sponsor.contacts is defined %}
-    <div class="card">
-      <div class="card-header" id="headingContact">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseContact" aria-expanded="true" aria-controls="collapseContact">
-              Contact
-          </button>
-        </h5>
-      </div>
-      <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordion">
-        <div class="card-body">
-          <ul>
-          {% for contact in sponsor.contacts %}
-            <li>{{ contact.name|safe }} &lt;<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>&gt;</li>
-          {% endfor %}
-          </ul>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  <!-- Zooms -->
-  {% if sponsor.zoom_times|length %}
-    <div class="card">
-      <div class="card-header" id="headingZooms">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseZooms" aria-expanded="true" aria-controls="collapseZooms">
-            Schedule
-          </button>
-        </h5>
-      </div>
-      <div id="collapseZooms" class="collapse show" aria-labelledby="headingZooms" data-parent="#accordion">
-        <div class="card-body">
-          {% for day, zooms in sponsor.zoom_times.items() %}
-          <h5>{{ day }}</h5>
-          <ul>
-              {% for (time_string, label) in zooms %}
-                  <li> <span class="zoom_times">{{ time_string }}</span> {{     label|safe }} </li>
-              {% endfor %}
-          </ul>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
   {% endif %}
 
   <!-- Resources -->
@@ -102,7 +63,7 @@
     <div class="card-header" id="headingResources">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseResources" aria-expanded="true" aria-controls="collapseResources">
-          Resources
+          <h5>Resources</h5>
         </button>
       </h5>
     </div>
@@ -110,7 +71,7 @@
       <div class="card-body">
         <ul>
         {% for resource in sponsor.resources %}
-            <li><a href="{{ resource.website }}" target="_blank">{{ resource.label|safe }}</a></li>
+            <li><a href="{{ resource.website }}" target="_blank">{{ resource.label }}</a></li>
         {% endfor %}
         </ul>
       </div>
@@ -124,15 +85,37 @@
     <div class="card-header" id="headingDownloads">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseDownloads" aria-expanded="true" aria-controls="collapseDownloads">
-         Downloads 
+          <h5>Downloads</h5>
         </button>
       </h5>
     </div>
     <div id="collapseDownloads" class="collapse show" aria-labelledby="headingDownloads" data-parent="#accordion">
       <div class="card-body">
         <ul>
-        {% for download in sponsor.downloads %}
-            <li><a href="{{ download.website }}" target="_blank">{{ download.label|safe }}</a></li>
+        {% for resource in sponsor.resources %}
+            <li><a href="{{ resource.website }}" target="_blank">{{ resource.label }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Contact -->
+  {% if sponsor.contacts is defined %}
+  <div class="card">
+    <div class="card-header" id="headingContact">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseContact" aria-expanded="true" aria-controls="collapseContact">
+            <h5>Contact</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordion">
+      <div class="card-body">
+        <ul class="list-unstyled px-4">
+        {% for contact in sponsor.contacts %}
+          <li>{{ contact.name }} &lt;<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>&gt;</li>
         {% endfor %}
         </ul>
       </div>
@@ -142,29 +125,28 @@
 
   <!-- Chat -->
   {% if sponsor.channel is defined %}
-    <div class="card">
-      <div class="card-header" id="headingChat">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseChat" aria-expanded="true" aria-controls="collapseChat">
-            Chat
-          </button>
-        </h5>
-      </div>
-      <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
-        <div class="card-body">
-          <div class="col-md-12 col-xs-12 p-2">
-            <div id="gitter" class="slp">
-              <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.channel }}?layout=embedded" height="700px" width="100%" ></iframe>
-            </div>
+  <div class="card">
+    <div class="card-header" id="headingChat">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseChat" aria-expanded="true" aria-controls="collapseChat">
+          <h5>Chat</h5>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseChat" class="collapse show" aria-labelledby="headingChat" data-parent="#accordion">
+      <div class="card-body">
+        <div class="col-md-12 col-xs-12 p-2">
+          <div id="gitter" class="slp">
+            <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{ sponsor.channel }}?layout=embedded" height="700px" width="100%" ></iframe>
           </div>
         </div>
       </div>
     </div>
+  </div>
   {% endif %}
 
 </div>
 </div>
-
 
 <script src="static/js/time-extend.js"></script>
 <script>
