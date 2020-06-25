@@ -10,15 +10,14 @@
     selector  : ".add-to-calendar",
     duration  : 60,
     texts : {
-      // label     : "Add to Calendar",
-      label     : "",
+      label     : "Add to Calendar",
       title     : "New event",
       download  : "Calendar-event.ics",
-      google    : "Google Calendar",
-      yahoo     : "Yahoo! Calendar",
-      off365    : "Office 365",
-      ical      : "Download iCal",
-      outlook   : "Download Outlook",
+      google    : "Google",
+      yahoo     : "Yahoo!",
+      off365    : "Office365",
+      ical      : "iCal",
+      outlook   : "Outlook",
       ienoblob  : "Sorry, your browser does not support downloading Calendar events."
     }
   };
