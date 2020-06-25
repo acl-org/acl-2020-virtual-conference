@@ -1,3 +1,4 @@
+// Modified based on https://github.com/commonpike/add-to-calendar-buttons/blob/master/add-to-calendar.js.
 ;(function(exports) {
 
   /* --------------
