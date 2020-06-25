@@ -308,9 +308,9 @@
                         {% endfor %}
                     </div>
                 </div>
-                {% if social.channel %}
+                {% if social.rocketchat_channel %}
                 <p class="text-center text-muted card-title">
-                  <a href="https://{{config.chat_server}}/channel/{{social.channel}}" target="_blank"> Chat </a>
+                  <a href="https://{{config.chat_server}}/channel/{{social.rocketchat_channel}}" target="_blank"> Chat </a>
                   {% if social.website %}
                   | <a href="{{social.website}}" target="_blank"> Website </a>
                   {% endif %}
