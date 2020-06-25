@@ -23,6 +23,7 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
+
   <div class="form-group col">
     <label for="time-zone-selector">Timezone:</label>
     <select id="time-zone-selector" class="selectpicker" data-live-search="true">
@@ -117,8 +118,6 @@
     <div id="wed">
       <!-- Speakers -->
       {{ components.section("Plenary Sessions") }}
-      <div class="col-md-12 col-xs-12 my-auto p-2" >
-      </div>
       <div class="speakers">
         {{ components.speakergroup(Wednesday.speakers) }}
       </div>
@@ -127,7 +126,6 @@
     <script type="text/javascript">
       lazyLoader();
     </script>
-
   </div>
 </div>
 
