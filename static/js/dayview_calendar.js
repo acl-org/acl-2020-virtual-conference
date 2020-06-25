@@ -1,7 +1,10 @@
 function make_cal(name) {
   // console.log(location.search, "--- location.search");
 
-  const current_tz = getUrlParameter("tz") || moment.tz.guess();
+  let current_tz = getUrlParameter("tz") || moment.tz.guess();
+  if (current_tz === "undefined") {
+    current_tz = moment.tz.guess();
+  }
   const tzNames = [...moment.tz.names()];
 
   const setupTZSelector = () => {
