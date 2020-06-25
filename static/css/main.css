@@ -331,3 +331,32 @@ body .carousel-control-prev {
     -webkit-text-fill-color: green;
   }
 }
+
+.fc-v-event.calendar-event-plenary {
+  background-color: #82b74b;
+  border-color: #82b74b;
+}
+
+.fc-v-event.calendar-event-tutorial {
+  background-color: #feb236;
+}
+
+.fc-v-event.calendar-event-workshops {
+  background-color: #f4a688;
+}
+
+.fc-v-event.calendar-event-qa {
+  background-color: #d64161;
+}
+
+.fc-v-event.calendar-event-socials {
+  background-color: #00a1f1;
+}
+
+.fc-v-event.calendar-event-other {
+  background-color: #6699ff;
+}
+
+.fc-v-event.calendar-event {
+  border-color: transparent;
+}
