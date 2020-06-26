@@ -6,7 +6,7 @@ import os
 from collections import OrderedDict, defaultdict
 from datetime import datetime, timedelta
 from itertools import chain
-from typing import Any, DefaultDict, Dict, List, Optional
+from typing import Any, DefaultDict, Dict, List
 
 import jsons
 import pytz
@@ -40,7 +40,7 @@ def load_site_data(
         "committee",
         # schedule.html
         "overall_calendar",
-        "speakers",
+        "plenary_sessions",
         # tutorials.html
         "tutorials",
         # papers.html
@@ -90,13 +90,13 @@ def load_site_data(
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
     # plenary_sessions.html
-    site_data["plenary_sessions"] = build_plenary_sessions(site_data["speakers"])
+    plenary_sessions = build_plenary_sessions(site_data["plenary_sessions"])
+    site_data["plenary_sessions"] = plenary_sessions
     by_uid["plenary_sessions"] = {
         plenary_session.id: plenary_session
-        for _, plenary_sessions_on_date in site_data["plenary_sessions"].items()
+        for _, plenary_sessions_on_date in plenary_sessions.items()
         for plenary_session in plenary_sessions_on_date
     }
-    del site_data["speakers"]
 
     # papers.{html,json}
     papers = build_papers(
