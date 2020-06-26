@@ -96,6 +96,7 @@ class Tutorial:
     material: str
     prerecorded: Optional[str]
     livestream: Optional[str]
+    virtual_format_description: str
 
 
 @dataclass(frozen=True)

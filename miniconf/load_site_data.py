@@ -318,6 +318,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             material=item["material"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
+            virtual_format_description=item["virtual_format_description"]
         )
         for item in raw_tutorials
     ]
