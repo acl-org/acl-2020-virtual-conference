@@ -63,7 +63,7 @@ def load_site_data(
         "code_of_conduct",
         "faq",
     }
-    extra_files = ["README.md"]
+    extra_files = []
     # Load all for your sitedata one time.
     for f in glob.glob(site_data_path + "/*"):
         filename = os.path.basename(f)

@@ -40,7 +40,6 @@ def index():
 @app.route("/index.html")
 def home():
     data = _data()
-    data["readme"] = open("README.md").read()
     data["committee"] = site_data["committee"]
     return render_template("index.html", **data)
 
@@ -205,9 +204,9 @@ def generator():
     for track in site_data["tracks"]:
         yield "track_json", {"track_name": track}
     plenary_session: PlenarySession
-    for plenary_sessions_on_date in site_data["plenary_sessions"].items():
+    for _, plenary_sessions_on_date in site_data["plenary_sessions"].items():
         for plenary_session in plenary_sessions_on_date:
-            yield "plenary", {"uid": plenary_session.id}
+            yield "plenary_session", {"uid": plenary_session.id}
     tutorial: Tutorial
     for tutorial in site_data["tutorials"]:
         yield "tutorial", {"uid": tutorial.id}
