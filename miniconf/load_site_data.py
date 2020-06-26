@@ -240,7 +240,7 @@ def build_workshop_schedule(
     ]
 
     for event in events:
-        event["classNames"] = ["calendar-event-workshop"]
+        event["classNames"] = ["calendar-event-workshops"]
         event["url"] = event["link"]
         event["classNames"].append("calendar-event")
     return events
