@@ -1,6 +1,5 @@
 # pylint: disable=global-statement,redefined-outer-name
 import argparse
-import copy
 import os
 from typing import Any, Dict
 
