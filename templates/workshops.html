@@ -3,25 +3,27 @@
 {% set page_title = "Workshops" %}
 {% block head %}
 {{ super() }}
+{% include 'cal_head.html' %}
 {% endblock %}
 
 
 {% block tabs %}
-{{ components.tabs([("day", "All", "active"),
+{{ components.tabs([("all", "All", "active"),
                     ("sat", "Sunday", ""),
                     ("thu", "Thursday", ""),
-                    ("fri", "Friday", "")]) }}
+                    ("fri", "Friday", ""),
+                    ]) }}
 {% endblock %}
 
 {% block content %}
 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
   <div
     class="tab-pane active"
-    id="tab-day"
+    id="tab-all"
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-      <div id="day">
+      <div id="all">
         <!-- Workshops -->
         {{ components.section("Workshops") }}
         <div class="speakers">
@@ -43,10 +45,6 @@
         {{ components.workshopgroup(workshops.Sunday) }}
       </div>
     </div>
-
-    <script type="text/javascript">
-      lazyLoader();
-    </script>
   </div>
 
   <div
@@ -78,10 +76,6 @@
         {{ components.workshopgroup(workshops.Friday) }}
       </div>
     </div>
-
-    <script type="text/javascript">
-      lazyLoader();
-    </script>
   </div>
 
 </div>
