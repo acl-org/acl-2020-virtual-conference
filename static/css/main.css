@@ -375,3 +375,28 @@ body .carousel-control-prev {
   color: inherit;
   text-decoration: inherit;
 }
+
+.twitter-typeahead {
+  flex-grow: 100;
+}
+
+div#papers_options > div {
+  margin-bottom: 5px;
+}
+
+#papers_options {
+  justify-content: center;
+}
+
+.paper-session-times {
+  grid-column-start: 2;
+}
+
+.paper-cal-links {
+  grid-column-start: 3;
+}
+
+.paper-detail-container {
+  display: grid;
+  grid-template-columns: 40px auto auto 40px;
+}
