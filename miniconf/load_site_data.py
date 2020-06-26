@@ -150,7 +150,7 @@ def load_site_data(
     )
     # workshop_<uid>.html
     by_uid["workshops"] = {}
-    for day, workshops_list in workshops.items():
+    for _, workshops_list in workshops.items():
         for workshop in workshops_list:
             by_uid["workshops"][workshop.id] = workshop
 
