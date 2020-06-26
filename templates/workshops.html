@@ -2,14 +2,83 @@
 {% set page_title = "Workshops" %}
 {% extends "base.html" %}
 
+{% block tabs %}
+{{ components.tabs([("day", "All", "active"),
+                    ("sat", "Sunday", ""),
+                    ("thu", "Thursday", ""),
+                    ("fri", "Friday", "")]) }}
+{% endblock %}
+
 {% block content %}
 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-  <div id="day">
-    <!-- Workshops -->
-    {{ components.section("Workshops") }}
-    <div class="speakers">
-      {{ components.workshopgroup(workshops) }}
+  <div
+    class="tab-pane active"
+    id="tab-day"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+      <div id="day">
+        <!-- Workshops -->
+        {{ components.section("Workshops") }}
+        <div class="speakers">
+          {{ components.workshopgroup(workshops.Sunday + workshops.Thursday + workshops.Friday)}}
+        </div>
+      </div>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="tab-sat"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="sat">
+      <!-- Speakers -->
+      {{ components.section("Sunday") }}
+      <div class="speakers">
+        {{ components.workshopgroup(workshops.Sunday) }}
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="tab-thu"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="thu">
+      <!-- Speakers -->
+      {{ components.section("Thursday") }}
+      <div class="speakers">
+        {{ components.workshopgroup(workshops.Thursday) }}
+      </div>
     </div>
   </div>
+
+
+  <div
+    class="tab-pane fade"
+    id="tab-fri"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div id="fri">
+      <!-- Speakers -->
+      {{ components.section("Friday") }}
+      <div class="speakers">
+        {{ components.workshopgroup(workshops.Friday) }}
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      lazyLoader();
+    </script>
+  </div>
+
 </div>
 {% endblock %}

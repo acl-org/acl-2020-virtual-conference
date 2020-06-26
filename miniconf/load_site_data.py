@@ -145,7 +145,10 @@ def load_site_data(
     workshops = build_workshops(site_data["workshops"])
     site_data["workshops"] = workshops
     # workshop_<uid>.html
-    by_uid["workshops"] = {workshop.id: workshop for workshop in workshops}
+    by_uid["workshops"] = {}
+    for day, workshops_list in workshops.items():
+        for workshop in workshops_list:
+            by_uid["workshops"][workshop.id] = workshop
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
@@ -321,17 +324,21 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
     ]
 
 
-def build_workshops(raw_workshops: List[Dict[str, Any]]) -> List[Workshop]:
-    return [
-        Workshop(
-            id=item["UID"],
-            title=item["title"],
-            organizers=extract_list_field(item, "organizers"),
-            abstract=item["abstract"],
-            material=item["material"],
-        )
-        for item in raw_workshops
-    ]
+def build_workshops(raw_workshops: List[Dict[str, Any]]) -> Dict[str, List[Workshop]]:
+    return {
+        day:
+            [
+                Workshop(
+                    id=item["UID"],
+                    title=item["title"],
+                    organizers=extract_list_field(item, "organizers"),
+                    abstract=item["abstract"],
+                    material=item["material"],
+                )
+                for item in raw_workshops if item["day"] == day
+            ]
+        for day in ["Sunday", "Thursday", "Friday"]
+    }
 
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
