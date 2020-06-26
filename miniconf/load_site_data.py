@@ -188,7 +188,6 @@ def build_qa_session_for_plenary_session(qa_session: Dict[str, Any]) -> SessionI
 def build_plenary_sessions(
     raw_keynotes: List[Dict[str, Any]]
 ) -> DefaultDict[str, List[PlenarySession]]:
-    # TODO: define a better dataclass and use Keynote
     plenary_sessions: DefaultDict[str, List[PlenarySession]] = defaultdict(list)
     for item in raw_keynotes:
         plenary_sessions[item["date"]].append(
