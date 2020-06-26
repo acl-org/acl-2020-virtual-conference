@@ -89,15 +89,15 @@ def schedule():
     return render_template("schedule.html", **data)
 
 
-@app.route("/live.html")
-def live():
+@app.route("/plenary.html")
+def plenary():
     data = _data()
     for day, item in site_data["schedule"].items():
         new_item = copy.deepcopy(item)
         new_item["speakers"] = sorted(new_item["speakers"], key=lambda i: i["time"])
         data[day] = new_item
 
-    return render_template("live.html", **data)
+    return render_template("plenary.html", **data)
 
 
 @app.route("/tutorials.html")
