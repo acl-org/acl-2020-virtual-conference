@@ -53,7 +53,7 @@
             </div>
             <div class="m-3 text-muted">
               <span class="card-title h3">
-                {{speaker.speaker}}
+                {{speaker.speaker | markdown}}
                 {% if speaker.institution %}
                 /  {{speaker.institution}}
                 {% endif %}
