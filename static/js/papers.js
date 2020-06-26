@@ -77,7 +77,7 @@ const render = () => {
     Object.keys(filters)
       .forEach(k => {filters[k] ? f_test.push([k, filters[k]]) : null})
 
-    // console.log(f_test, filters, "--- f_test, filters");
+    //  console.log(f_test, filters, "--- f_test, filters");
     if (f_test.length === 0) updateCards(allPapers)
     else {
         const fList = allPapers.filter(
@@ -90,8 +90,17 @@ const render = () => {
                         .indexOf(f_test[i][1].toLowerCase()) > -1;
 
                   } else {
-                      pass_test &= d.content[f_test[i][0]].indexOf(
-                        f_test[i][1]) > -1
+                      if (f_test[i][0] === 'session' || f_test[i][0] === 'sessions' ) {
+                          pass_test &= d.content['sessions'].some(
+                              function (item) {
+                                  return item.session_name === f_test[i][1];
+                              }
+                          );
+                      } else {
+                          console.log(f_test[i])
+                          pass_test &= d.content[f_test[i][0]].indexOf(
+                            f_test[i][1]) > -1
+                      }
                   }
                   i++;
               }
@@ -127,16 +136,20 @@ const updateSession = () => {
 /**
  * START here and load JSON.
  */
-const start = (path_to_papers_json) => {
+const start = (track) => {
     // const urlFilter = getUrlParameter("filter") || 'keywords';
     const urlFilter = getUrlParameter("filter") || 'titles';
     setQueryStringParameter("filter", urlFilter);
     updateFilterSelectionBtn(urlFilter);
 
+    var path_to_papers_json;
+    if (track === "All tracks") {
+      path_to_papers_json = "papers.json";
+    } else {
+      path_to_papers_json = "track_"  + track + ".json";
+    }
 
     d3.json(path_to_papers_json).then(papers => {
-        // console.log(papers, "--- papers");
-
         shuffleArray(papers);
 
         allPapers = papers;
@@ -144,7 +157,6 @@ const start = (path_to_papers_json) => {
         setTypeAhead(urlFilter,
           allKeys, filters, render);
         updateCards(allPapers);
-
 
         const urlSearch = getUrlParameter("search");
         if ((urlSearch !== '') || updateSession()) {

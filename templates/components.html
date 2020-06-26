@@ -33,32 +33,51 @@
 </div>
 {%- endmacro %}
 
-{% macro speakergroup(speakers) -%}
-{% for speaker in speakers %}
+{% macro plenarysessiongroup(plenary_sessions) -%}
+{% for plenary_session in plenary_sessions %}
 <div class="row p-4">
   <div class="col-md-12">
     <div class="card">
       <div class="card-header">
         <div class="row">
           <div class="col-md-2 col-sm-5">
-            <img src="{{speaker.image}}" width="100%" class="img-thumbnail" />
+            <img src="{{plenary_session.image}}" width="100%" class="img-thumbnail" />
           </div>
           <div class="col-md-10 col-sm-6">
             <div class="m-3 text-muted">
               <h3>
-                <a href="speaker_{{speaker.UID}}.html" class="main-title">
-                  {{speaker.title}}
+                <a href="plenary_session_{{plenary_session.id}}.html" class="main-title" target="_blank">
+                  {{plenary_session.title}}
                 </a>
               </h3>
             </div>
             <div class="m-3 text-muted">
               <span class="card-title h3">
-                {{speaker.speaker}}  /  {{speaker.institution}}
+                {{plenary_session.speaker}}
+                {% if plenary_session.institution != none %}
+                / {{plenary_session.institution}}
+                {% endif %}
               </span>
             </div>
-            <div class="m-3">
-              {{speaker.abstract|safe}}
+
+            {% if plenary_session.time != none %}
+            <div class="m-3 text-muted">
+              Time: {{plenary_session.time}}
             </div>
+            {% endif %}
+
+            {% if plenary_session.qa_time != none %}
+            <div class="m-3 text-muted">
+              Live QA: {{plenary_session.qa_time}}
+              [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Join Zoom</a>]
+            </div>
+            {% endif %}
+
+            {% if plenary_session.abstract != none %}
+            <div class="m-3">
+              {{plenary_session.abstract|markdown}}
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -282,7 +301,7 @@
         <div class="card p-3 text-center bg-light" 
         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         height:100%;">
-                <h3 class="card-title main-title">
+                <h3 class="card-title" style="font-weight: 700;">
                     {{social.name}}
                 </h3>
                 <h6 class="text-muted font-italic">
@@ -321,3 +340,10 @@
     {% endfor %}
   </div>
 {%- endmacro %}
+
+{% macro calendar_scripts() -%}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script>
+{%- endmacro %}
+
+

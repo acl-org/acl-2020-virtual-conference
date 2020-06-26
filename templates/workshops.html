@@ -1,6 +1,10 @@
+{% extends "base.html" %}
 {% set active_page = "Workshops" %}
 {% set page_title = "Workshops" %}
-{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
 
 {% block tabs %}
 {{ components.tabs([("day", "All", "active"),

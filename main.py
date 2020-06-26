@@ -1,25 +1,14 @@
 # pylint: disable=global-statement,redefined-outer-name
 import argparse
-import copy
 import os
-from datetime import timedelta
 from typing import Any, Dict
 
-import pytz
-from flask import (
-    Flask,
-    jsonify,
-    make_response,
-    redirect,
-    render_template,
-    send_from_directory,
-)
+from flask import Flask, jsonify, redirect, render_template, send_from_directory
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
-from icalendar import Calendar, Event
 
 from miniconf.load_site_data import load_site_data
-from miniconf.site_data import Paper, Tutorial, Workshop
+from miniconf.site_data import Paper, PlenarySession, Tutorial, Workshop
 
 site_data: Dict[str, Any] = {}
 by_uid: Dict[str, Any] = {}
@@ -51,7 +40,6 @@ def index():
 @app.route("/index.html")
 def home():
     data = _data()
-    data["readme"] = open("README.md").read()
     data["committee"] = site_data["committee"]
     return render_template("index.html", **data)
 
@@ -73,7 +61,7 @@ def papers():
     return render_template("papers.html", **data)
 
 
-@app.route("/paper_vis.html")
+@app.route("/papers_vis.html")
 def paper_vis():
     data = _data()
     # The data will be loaded from `papers.json`.
@@ -82,37 +70,31 @@ def paper_vis():
     return render_template("papers_vis.html", **data)
 
 
-@app.route("/track_<track_name>.html")
-def track(track_name):
-    data = _data()
-    data["tracks"] = site_data["tracks"]
-    data["current_track"] = track_name
-    return render_template("track.html", **data)
-
-
 @app.route("/schedule.html")
 def schedule():
     data = _data()
-    for day, item in site_data["schedule"].items():
-        new_item = copy.deepcopy(item)
-        new_item["speakers"] = sorted(new_item["speakers"], key=lambda i: i["time"])
-        data[day] = new_item
-
     data["calendar"] = site_data["calendar"]
     return render_template("schedule.html", **data)
+
+
+@app.route("/plenary_sessions.html")
+def plenary_sessions():
+    data = _data()
+    data["plenary_sessions"] = site_data["plenary_sessions"]
+    return render_template("plenary_sessions.html", **data)
 
 
 @app.route("/tutorials.html")
 def tutorials():
     data = _data()
-    data["tutorials"] = site_data["tutorials"]
+    data["calendar"] = site_data["tutorial_calendar"]
     return render_template("tutorials.html", **data)
 
 
 @app.route("/workshops.html")
 def workshops():
     data = _data()
-    data["workshops"] = site_data["workshops"]
+    data["calendar"] = site_data["workshop_calendar"]
     return render_template("workshops.html", **data)
 
 
@@ -148,48 +130,11 @@ def paper(uid):
     return render_template("paper.html", **data)
 
 
-@app.route("/paper_<uid>.<session_idx>.ics")
-def paper_ics(uid, session_idx):
-    session_idx = int(session_idx)
-    # TODO: should move these to load_site_data
-    paper: Paper
-    paper = by_uid["papers"][uid]
-    start = paper.content.sessions[session_idx].start_time
-    start = start.replace(tzinfo=pytz.utc)
-
-    cal = Calendar()
-    cal.add("prodid", "-//ACL//acl2020.org//")
-    cal.add("version", "2.0")
-    cal["X-WR-TIMEZONE"] = "GMT"
-    cal["X-WR-CALNAME"] = f"ACL: {paper.content.title}"
-
-    event = Event()
-    link = (
-        '<a href="'
-        + site_data["config"]["site_url"]
-        + '/paper_%s.html">Poster Page</a>' % (uid)
-    )
-    event.add("summary", paper.content.title)
-    event.add("description", link)
-    event.add("uid", f"ACL2020-{uid}-{session_idx}")
-    event.add("dtstart", start)
-    event.add("dtend", start + timedelta(hours=qa_session_length_hr))
-    event.add("dtstamp", start)
-    cal.add_component(event)
-
-    response = make_response(cal.to_ical())
-    response.mimetype = "text/calendar"
-    response.headers["Content-Disposition"] = (
-        "attachment; filename=paper_" + uid + "." + str(session_idx) + ".ics"
-    )
-    return response
-
-
-@app.route("/speaker_<uid>.html")
-def speaker(uid):
+@app.route("/plenary_session_<uid>.html")
+def plenary_session(uid):
     data = _data()
-    data["speaker"] = by_uid["speakers"][uid]
-    return render_template("speaker.html", **data)
+    data["plenary_session"] = by_uid["plenary_sessions"][uid]
+    return render_template("plenary_session.html", **data)
 
 
 @app.route("/tutorial_<uid>.html")
@@ -256,14 +201,12 @@ def generator():
     paper: Paper
     for paper in site_data["papers"]:
         yield "paper", {"uid": paper.id}
-        for idx in range(len(paper.content.sessions)):
-            yield "paper_ics", {"uid": paper.id, "session_idx": str(idx)}
-    for track in site_data["tracks"]:
-        yield "track", {"track_name": track}
     for track in site_data["tracks"]:
         yield "track_json", {"track_name": track}
-    for speaker in site_data["speakers"]:
-        yield "speaker", {"uid": str(speaker["UID"])}
+    plenary_session: PlenarySession
+    for _, plenary_sessions_on_date in site_data["plenary_sessions"].items():
+        for plenary_session in plenary_sessions_on_date:
+            yield "plenary_session", {"uid": plenary_session.id}
     tutorial: Tutorial
     for tutorial in site_data["tutorials"]:
         yield "tutorial", {"uid": tutorial.id}
