@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% set active_page = "Plenary" %}
+{% set page_title = "Plenary Sessions" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+
+{% block tabs %}
+{{ components.tabs([("live", "Livestream", "active"),
+                    ("july6", "July 6", ""),
+                    ("july7", "July 7", ""),
+                    ("july8", "July 8", "")]) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+  <!-- Day Tab -->
+  <div
+      class="tab-pane active show"
+      id="tab-live"
+      role="tabpanel"
+      aria-labelledby="nav-profile-tab"
+  >
+    <div id="live">
+      <div class="plenary_sessions">
+      <!-- Chat -->
+      <div class="row p-4">
+      <div class="col-md-12 col-xs-12 p-2">
+      <div id="chat" class="slp">
+      <iframe frameborder="0" src="https://{{config.chat_server}}/channel/live?layout=embedded" height="300px" width="100%" ></iframe>
+      </div>
+      </div>
+      </div>
+
+      <!-- SlidesLive-->
+      <div class="row p-4">
+        <div class="col-md-12 col-xs-12 p-2">
+        <div id="presentation-embed" class="my-auto slp"></div>
+        </div>
+        <script src='https://slideslive.com/embed_presentation.js'></script>
+        <script>
+          embed = new SlidesLiveEmbed('presentation-embed', {
+            presentationId: '38931287',  // TODO: make this configurable
+            autoPlay: false, // change to true to autoplay the embedded presentation
+            verticalEnabled: true,
+            verticalWhenWidthLte: 500,
+            allowHiddenControlsWhenPaused: true,
+            hideTitle: true,
+          });
+        </script>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+      class="tab-pane fade"
+      id="tab-july6"
+      role="tabpanel"
+      aria-labelledby="nav-profile-tab"
+  >
+    {{ components.section("Plenary Sessions") }}
+    <div id="july6">
+      <div class="plenary_sessions">
+        {{ components.plenarysessiongroup(plenary_sessions["July 6"]) }}
+      </div>
+
+    </div>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="tab-july7"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    {{ components.section("Plenary Sessions") }}
+    <div id="july7">
+      <div class="plenary_sessions">
+        {{ components.plenarysessiongroup(plenary_sessions["July 7"]) }}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="tab-july8"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    {{ components.section("Plenary Sessions") }}
+    <div id="july8">
+      <div class="plenary_sessions">
+        {{ components.plenarysessiongroup(plenary_sessions["July 8"]) }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="static/js/lazy_load.js"></script>
+<script type="text/javascript">
+  lazyLoader();
+</script>
+
+{% endblock %}
