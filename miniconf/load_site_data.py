@@ -16,6 +16,7 @@ from miniconf.site_data import (
     CommitteeMember,
     Paper,
     PaperContent,
+    PlenarySession,
     SessionInfo,
     Tutorial,
     Workshop,
@@ -40,9 +41,8 @@ def load_site_data(
         "committee",
         # schedule.html
         "overall_calendar",
-        "speakers",
+        "plenary_sessions",
         # tutorials.html
-        "tutorial_calendar",
         "tutorials",
         # papers.html
         "main_papers",
@@ -56,10 +56,6 @@ def load_site_data(
         # socials.html
         "socials",
         # workshops.html
-        "july5_workshop_calendar",
-        "july9_workshop_calendar",
-        "july10_workshop_calendar",
-        "workshop_calendar",
         "workshops",
         # sponsors.html
         "sponsors",
@@ -67,7 +63,7 @@ def load_site_data(
         "code_of_conduct",
         "faq",
     }
-    extra_files = ["README.md"]
+    extra_files = []
     # Load all for your sitedata one time.
     for f in glob.glob(site_data_path + "/*"):
         filename = os.path.basename(f)
@@ -86,24 +82,22 @@ def load_site_data(
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
     assert set(site_data.keys()) == registered_sitedata
 
-    for typ in ["speakers"]:
-        by_uid[typ] = {}
-        for p in site_data[typ]:
-            by_uid[typ][p["UID"]] = p
-
     display_time_format = "%H:%M"
 
     # index.html
     site_data["committee"] = build_committee(site_data["committee"]["committee"])
 
     # schedule.html
-    site_data["schedule"] = build_plenary_sessions(site_data["speakers"])
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
-    # tutorials.html
-    tutorials = build_tutorials(site_data["tutorials"])
-    site_data["tutorials"] = tutorials
-    # tutorial_<uid>.html
-    by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
+
+    # plenary_sessions.html
+    plenary_sessions = build_plenary_sessions(site_data["plenary_sessions"])
+    site_data["plenary_sessions"] = plenary_sessions
+    by_uid["plenary_sessions"] = {
+        plenary_session.id: plenary_session
+        for _, plenary_sessions_on_date in plenary_sessions.items()
+        for plenary_session in plenary_sessions_on_date
+    }
 
     # papers.{html,json}
     papers = build_papers(
@@ -116,8 +110,6 @@ def load_site_data(
             site_data["srw_paper_sessions"],
         ],
         qa_session_length_hr=qa_session_length_hr,
-        # TODO: Should add a `webcal_url` to config instead? Is there a better way?
-        calendar_stub=site_data["config"]["site_url"].replace("https", "webcal"),
         paper_recs=site_data["paper_recs"],
     )
     del site_data["main_papers"]
@@ -141,9 +133,21 @@ def load_site_data(
     # paper_<uid>.html
     by_uid["papers"] = {paper.id: paper for paper in papers}
 
+    # tutorials.html
+    tutorials = build_tutorials(site_data["tutorials"])
+    site_data["tutorials"] = tutorials
+    site_data["tutorial_calendar"] = build_tutorial_schedule(
+        site_data["overall_calendar"]
+    )
+    # tutorial_<uid>.html
+    by_uid["tutorials"] = {tutorial.id: tutorial for tutorial in tutorials}
+
     # workshops.html
     workshops = build_workshops(site_data["workshops"])
     site_data["workshops"] = workshops
+    site_data["workshop_calendar"] = build_workshop_schedule(
+        site_data["overall_calendar"]
+    )
     # workshop_<uid>.html
     by_uid["workshops"] = {workshop.id: workshop for workshop in workshops}
 
@@ -170,14 +174,41 @@ def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember
     return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
 
 
+def build_qa_session_for_plenary_session(qa_session: Dict[str, Any]) -> SessionInfo:
+    start_time = datetime.strptime(qa_session["start_time"][:-4], "%H:%M")
+    end_time = datetime.strptime(qa_session["end_time"][:-4], "%H:%M")
+    return SessionInfo(
+        session_name="",
+        start_time=start_time,
+        end_time=end_time,
+        zoom_link=qa_session["zoom_link"],
+    )
+
+
 def build_plenary_sessions(
     raw_keynotes: List[Dict[str, Any]]
-) -> Dict[str, Dict[str, List[Dict[str, Any]]]]:
-    # TODO: define a better dataclass and use Keynote
-    return {
-        day: {"speakers": [item for item in raw_keynotes if item["day"] == day]}
-        for day in ["Monday", "Tuesday", "Wednesday"]
-    }
+) -> DefaultDict[str, List[PlenarySession]]:
+    plenary_sessions: DefaultDict[str, List[PlenarySession]] = defaultdict(list)
+    for item in raw_keynotes:
+        plenary_sessions[item["date"]].append(
+            PlenarySession(
+                id=item["UID"],
+                title=item["title"],
+                image=item["image"],
+                date=item["date"],
+                day=item["day"],
+                time=item.get("time"),
+                speaker=item["speaker"],
+                institution=item.get("institution"),
+                abstract=item.get("abstract"),
+                bio=item.get("bio"),
+                presentation_id=item.get("presentation_id"),
+                rocketchat_channel=item.get("rocketchat_channel"),
+                qa_time=item.get("qa_time"),
+                zoom_link=item.get("zoom_link"),
+            )
+        )
+    return plenary_sessions
 
 
 def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -213,6 +244,38 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
     return events
 
 
+def build_tutorial_schedule(
+    overall_calendar: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    events = [
+        copy.deepcopy(event)
+        for event in overall_calendar
+        if event["type"] in {"Tutorials"}
+    ]
+
+    for event in events:
+        event["classNames"] = ["calendar-event-tutorial"]
+        event["url"] = event["link"]
+        event["classNames"].append("calendar-event")
+    return events
+
+
+def build_workshop_schedule(
+    overall_calendar: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    events = [
+        copy.deepcopy(event)
+        for event in overall_calendar
+        if event["type"] in {"Workshops"}
+    ]
+
+    for event in events:
+        event["classNames"] = ["calendar-event-workshops"]
+        event["url"] = event["link"]
+        event["classNames"].append("calendar-event")
+    return events
+
+
 def normalize_track_name(track_name: str) -> str:
     if track_name == "SRW":
         return "Student Research Workshop"
@@ -223,7 +286,6 @@ def build_papers(
     raw_papers: List[Dict[str, str]],
     all_paper_sessions: List[Dict[str, Dict[str, Any]]],
     qa_session_length_hr: int,
-    calendar_stub: str,
     paper_recs: Dict[str, List[str]],
 ) -> List[Paper]:
     """Builds the site_data["papers"].
@@ -262,15 +324,12 @@ def build_papers(
         start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
         end_time = start_time + timedelta(hours=qa_session_length_hr)
         for paper_id in session_info["papers"]:
-            session_offset = len(sessions_for_paper[paper_id])
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
                     start_time=start_time,
                     end_time=end_time,
                     zoom_link="https://zoom.com",
-                    # TODO: the prefix should be configurable?
-                    ical_link=f"{calendar_stub}/paper_{paper_id}.{session_offset}.ics",
                 )
             )
 
@@ -316,6 +375,9 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
             material=item["material"],
+            prerecorded=item.get("prerecorded", ""),
+            livestream=item.get("livestream", ""),
+            virtual_format_description=item["virtual_format_description"],
         )
         for item in raw_tutorials
     ]

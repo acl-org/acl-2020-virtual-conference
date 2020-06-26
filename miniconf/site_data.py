@@ -11,7 +11,6 @@ class SessionInfo:
     start_time: datetime
     end_time: datetime
     zoom_link: str
-    ical_link: str
 
     @property
     def time_string(self) -> str:
@@ -63,19 +62,22 @@ class Paper:
 
 
 @dataclass(frozen=True)
-class Keynote:
+class PlenarySession:
     id: str
-    speaker: str
-    slides_link: str
-    qa_link: str
     title: str
     image: str
-    institution: str
+    date: str
     day: str
-    time: str
-    zoom: str
-    abstract: str
-    bio: str
+    time: Optional[str]
+    speaker: str
+    institution: Optional[str]
+    abstract: Optional[str]
+    bio: Optional[str]
+    # SlidesLive presentation ID
+    presentation_id: Optional[str]
+    rocketchat_channel: Optional[str]
+    qa_time: Optional[str]
+    zoom_link: Optional[str]
 
 
 @dataclass(frozen=True)
@@ -94,6 +96,9 @@ class Tutorial:
     organizers: List[str]
     abstract: str
     material: str
+    prerecorded: Optional[str]
+    livestream: Optional[str]
+    virtual_format_description: str
 
 
 @dataclass(frozen=True)
