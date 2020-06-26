@@ -94,6 +94,8 @@ class Tutorial:
     organizers: List[str]
     abstract: str
     material: str
+    prerecorded: Optional[str]
+    livestream: Optional[str]
 
 
 @dataclass(frozen=True)
