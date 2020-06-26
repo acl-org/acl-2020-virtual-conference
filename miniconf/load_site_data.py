@@ -16,10 +16,11 @@ from miniconf.site_data import (
     CommitteeMember,
     Paper,
     PaperContent,
+    PlenarySession,
     SessionInfo,
     Tutorial,
     Workshop,
-    PlenarySession)
+)
 
 
 def load_site_data(
@@ -173,16 +174,14 @@ def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember
     return [jsons.load(item, cls=CommitteeMember) for item in raw_committee]
 
 
-def build_qa_session_for_plenary_session(
-    qa_session: Dict[str, Any]
-) -> SessionInfo:
+def build_qa_session_for_plenary_session(qa_session: Dict[str, Any]) -> SessionInfo:
     start_time = datetime.strptime(qa_session["start_time"][:-4], "%H:%M")
     end_time = datetime.strptime(qa_session["end_time"][:-4], "%H:%M")
     return SessionInfo(
         session_name="",
         start_time=start_time,
         end_time=end_time,
-        zoom_link=qa_session["zoom_link"]
+        zoom_link=qa_session["zoom_link"],
     )
 
 
@@ -207,9 +206,8 @@ def build_plenary_sessions(
                 presentation_id=item.get("presentation_id"),
                 rocketchat_channel=item.get("rocketchat_channel"),
                 qa_time=item.get("qa_time"),
-                zoom_link=item.get("zoom_link")
+                zoom_link=item.get("zoom_link"),
             )
-
         )
     return plenary_sessions
 
