@@ -225,7 +225,6 @@ def build_tutorial_schedule(
     ]
 
     for event in events:
-        event_type = event["type"]
         event["classNames"] = ["calendar-event-tutorial"]
         event["url"] = event["link"]
         event["classNames"].append("calendar-event")
