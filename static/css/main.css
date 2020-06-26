@@ -361,6 +361,10 @@ body .carousel-control-prev {
   border-color: transparent;
 }
 
+.fc-v-event .fc-event-main {
+  overflow: scroll;
+}
+
 .deco-none {
   color: inherit;
   text-decoration: inherit;
@@ -386,4 +390,17 @@ div#papers_options > div {
 
 #papers_options {
   justify-content: center;
+}
+
+.paper-session-times {
+  grid-column-start: 2;
+}
+
+.paper-cal-links {
+  grid-column-start: 3;
+}
+
+.paper-detail-container {
+  display: grid;
+  grid-template-columns: 40px auto auto 40px;
 }
