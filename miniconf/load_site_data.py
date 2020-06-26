@@ -388,17 +388,17 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 
 def build_workshops(raw_workshops: List[Dict[str, Any]]) -> Dict[str, List[Workshop]]:
     return {
-        day:
-            [
-                Workshop(
-                    id=item["UID"],
-                    title=item["title"],
-                    organizers=extract_list_field(item, "organizers"),
-                    abstract=item["abstract"],
-                    material=item["material"],
-                )
-                for item in raw_workshops if item["day"] == day
-            ]
+        day: [
+            Workshop(
+                id=item["UID"],
+                title=item["title"],
+                organizers=extract_list_field(item, "organizers"),
+                abstract=item["abstract"],
+                material=item["material"],
+            )
+            for item in raw_workshops
+            if item["day"] == day
+        ]
         for day in ["Sunday", "Thursday", "Friday"]
     }
 
