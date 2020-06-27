@@ -49,6 +49,7 @@ class PaperContent:
         if self.demo_url:
             assert self.demo_url.startswith("https://"), self.demo_url
 
+
 @dataclass(frozen=True)
 class Paper:
     """The paper dataclass.
