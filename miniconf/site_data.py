@@ -118,3 +118,6 @@ class Workshop:
     organizers: List[str]
     abstract: str
     material: str
+    prerecorded: Optional[str]
+    livestream: Optional[str]
+    virtual_format_description: str
