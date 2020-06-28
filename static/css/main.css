@@ -391,3 +391,9 @@ div#papers_options > div {
 #papers_options {
   justify-content: center;
 }
+
+.paper-detail-calendar {
+  position: relative;
+  top: -1px;
+  left: 10px;
+}
