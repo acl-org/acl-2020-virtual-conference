@@ -148,8 +148,7 @@ def load_site_data(
 
     # serve_papers_projection.json
     all_paper_ids_with_projection = {
-        item["id"]
-        for item in site_data["papers_projection"]
+        item["id"] for item in site_data["papers_projection"]
     }
     for paper_id in set(by_uid["papers"].keys()) - all_paper_ids_with_projection:
         print(f"WARNING: {paper_id} does not have a projection")
