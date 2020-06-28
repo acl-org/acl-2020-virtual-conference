@@ -44,6 +44,7 @@ class PaperContent:
     similar_paper_uids: List[str]
 
     def __post_init__(self):
+        assert self.track, self
         if self.pdf_url:
             assert self.pdf_url.startswith("https://"), self.pdf_url
         if self.demo_url:

@@ -48,11 +48,15 @@ def load_site_data(
         "main_papers",
         "demo_papers",
         "srw_papers",
+        "cl_papers",
+        "tacl_papers",
         "paper_recs",
         "papers_projection",
         "main_paper_sessions",
         "demo_paper_sessions",
         "srw_paper_sessions",
+        "cl_paper_sessions",
+        "tacl_paper_sessions",
         # socials.html
         "socials",
         # workshops.html
@@ -103,11 +107,15 @@ def load_site_data(
     papers = build_papers(
         raw_papers=site_data["main_papers"]
         + site_data["demo_papers"]
-        + site_data["srw_papers"],
+        + site_data["srw_papers"]
+        + site_data["cl_papers"]
+        + site_data["tacl_papers"],
         all_paper_sessions=[
             site_data["main_paper_sessions"],
             site_data["demo_paper_sessions"],
             site_data["srw_paper_sessions"],
+            site_data["cl_paper_sessions"],
+            site_data["tacl_paper_sessions"],
         ],
         qa_session_length_hr=qa_session_length_hr,
         paper_recs=site_data["paper_recs"],
@@ -115,9 +123,13 @@ def load_site_data(
     del site_data["main_papers"]
     del site_data["demo_papers"]
     del site_data["srw_papers"]
+    del site_data["cl_papers"]
+    del site_data["tacl_papers"]
     del site_data["main_paper_sessions"]
     del site_data["demo_paper_sessions"]
     del site_data["srw_paper_sessions"]
+    del site_data["cl_paper_sessions"]
+    del site_data["tacl_paper_sessions"]
     site_data["papers"] = papers
     demo_and_srw_tracks = ["System Demonstrations", "Student Research Workshop"]
     site_data["tracks"] = list(
