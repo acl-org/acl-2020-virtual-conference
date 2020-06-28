@@ -50,6 +50,7 @@ class PaperContent:
             assert self.pdf_url.startswith("https://"), self.pdf_url
         if self.demo_url:
             assert self.demo_url.startswith("https://"), self.demo_url
+        assert self.paper_type[0].isupper(), self
 
 
 @dataclass(frozen=True)
