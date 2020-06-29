@@ -397,3 +397,13 @@ div#papers_options > div {
   top: -1px;
   left: 10px;
 }
+
+.fc-v-event {
+  overflow: hidden !important;
+}
+
+/* Manipulate calendar event on hover */
+.fc-v-event:hover {
+  background: red;
+  overflow: hidden !important;
+}
