@@ -8,10 +8,10 @@ from datetime import datetime, timedelta
 from itertools import chain
 from typing import Any, DefaultDict, Dict, List
 
+import jsons
 import pytz
 import yaml
 
-import jsons
 from miniconf.site_data import (
     CommitteeMember,
     Paper,
