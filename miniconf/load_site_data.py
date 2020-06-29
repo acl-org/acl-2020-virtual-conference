@@ -410,32 +410,6 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
     ]
 
 
-def build_plenary_sessions(
-    raw_keynotes: List[Dict[str, Any]]
-) -> DefaultDict[str, List[PlenarySession]]:
-    plenary_sessions: DefaultDict[str, List[PlenarySession]] = defaultdict(list)
-    for item in raw_keynotes:
-        plenary_sessions[item["date"]].append(
-            PlenarySession(
-                id=item["UID"],
-                title=item["title"],
-                image=item["image"],
-                date=item["date"],
-                day=item["day"],
-                time=item.get("time"),
-                speaker=item["speaker"],
-                institution=item.get("institution"),
-                abstract=item.get("abstract"),
-                bio=item.get("bio"),
-                presentation_id=item.get("presentation_id"),
-                rocketchat_channel=item.get("rocketchat_channel"),
-                qa_time=item.get("qa_time"),
-                zoom_link=item.get("zoom_link"),
-            )
-        )
-    return plenary_sessions
-
-
 def build_workshops(
     raw_workshops: List[Dict[str, Any]]
 ) -> DefaultDict[str, List[Workshop]]:
