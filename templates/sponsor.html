@@ -30,6 +30,15 @@
 </div>
 {% endif %}
 
+<!-- Youtube -->
+{% if sponsor.video is defined %}
+<div class="row justify-content-md-center pt-3">
+  <video width="525" controls>
+    <source src="{{ sponsor.video }}" type="video/mp4">
+  </video>
+</div>
+{% endif %}
+
 <div class="row justify-content-md-center py-5">
 <div id="accordion" class="col-10 ">
   <!-- Zooms -->
