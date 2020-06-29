@@ -441,7 +441,8 @@ def build_sponsors(site_data, by_uid, display_time_format) -> None:
     # Format the session start and end times
     for sponsor in by_uid["sponsors"].values():
         sponsor["zoom_times"] = OrderedDict()
-        for zoom in sponsor.get("zooms", []):
+
+        for zoom in sponsor.get("schedule", []):
             start = zoom["start"].astimezone(pytz.timezone("GMT"))
             if zoom.get("end") is None:
                 end = start + timedelta(hours=zoom["duration"])
