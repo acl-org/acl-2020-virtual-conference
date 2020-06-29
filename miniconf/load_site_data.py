@@ -8,10 +8,10 @@ from datetime import datetime, timedelta
 from itertools import chain
 from typing import Any, DefaultDict, Dict, List
 
-import jsons
 import pytz
 import yaml
 
+import jsons
 from miniconf.site_data import (
     CommitteeMember,
     Paper,
@@ -410,9 +410,38 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
     ]
 
 
-def build_workshops(raw_workshops: List[Dict[str, Any]]) -> Dict[str, List[Workshop]]:
-    return {
-        day: [
+def build_plenary_sessions(
+    raw_keynotes: List[Dict[str, Any]]
+) -> DefaultDict[str, List[PlenarySession]]:
+    plenary_sessions: DefaultDict[str, List[PlenarySession]] = defaultdict(list)
+    for item in raw_keynotes:
+        plenary_sessions[item["date"]].append(
+            PlenarySession(
+                id=item["UID"],
+                title=item["title"],
+                image=item["image"],
+                date=item["date"],
+                day=item["day"],
+                time=item.get("time"),
+                speaker=item["speaker"],
+                institution=item.get("institution"),
+                abstract=item.get("abstract"),
+                bio=item.get("bio"),
+                presentation_id=item.get("presentation_id"),
+                rocketchat_channel=item.get("rocketchat_channel"),
+                qa_time=item.get("qa_time"),
+                zoom_link=item.get("zoom_link"),
+            )
+        )
+    return plenary_sessions
+
+
+def build_workshops(
+    raw_workshops: List[Dict[str, Any]]
+) -> DefaultDict[str, List[Workshop]]:
+    workshops: DefaultDict[str, List[Workshop]] = defaultdict(list)
+    for item in raw_workshops:
+        workshops[item["day"]].append(
             Workshop(
                 id=item["UID"],
                 title=item["title"],
@@ -423,11 +452,8 @@ def build_workshops(raw_workshops: List[Dict[str, Any]]) -> Dict[str, List[Works
                 livestream=item.get("livestream", ""),
                 virtual_format_description=item["virtual_format_description"],
             )
-            for item in raw_workshops
-            if item["day"] == day
-        ]
-        for day in ["Sunday", "Thursday", "Friday"]
-    }
+        )
+    return workshops
 
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
