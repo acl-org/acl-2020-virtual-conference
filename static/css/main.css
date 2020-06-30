@@ -361,10 +361,6 @@ body .carousel-control-prev {
   border-color: transparent;
 }
 
-.fc-v-event .fc-event-main {
-  overflow: scroll;
-}
-
 .deco-none {
   color: inherit;
   text-decoration: inherit;
@@ -400,10 +396,11 @@ div#papers_options > div {
 
 .fc-v-event {
   overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Manipulate calendar event on hover */
 .fc-v-event:hover {
-  background: red;
-  overflow: hidden !important;
+  background: rgb(234, 33, 45);
 }
