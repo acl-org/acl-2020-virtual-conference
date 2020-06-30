@@ -165,9 +165,6 @@ def load_site_data(
     # workshops.html
     workshops = build_workshops(site_data["workshops"])
     site_data["workshops"] = workshops
-    site_data["workshop_calendar"] = build_workshop_schedule(
-        site_data["overall_calendar"]
-    )
     # workshop_<uid>.html
     by_uid["workshops"] = {}
     for _, workshops_list in workshops.items():
@@ -267,22 +264,6 @@ def build_tutorial_schedule(
 
     for event in events:
         event["classNames"] = ["calendar-event-tutorial"]
-        event["url"] = event["link"]
-        event["classNames"].append("calendar-event")
-    return events
-
-
-def build_workshop_schedule(
-    overall_calendar: List[Dict[str, Any]]
-) -> List[Dict[str, Any]]:
-    events = [
-        copy.deepcopy(event)
-        for event in overall_calendar
-        if event["type"] in {"Workshops"}
-    ]
-
-    for event in events:
-        event["classNames"] = ["calendar-event-workshops"]
         event["url"] = event["link"]
         event["classNames"].append("calendar-event")
     return events
@@ -404,6 +385,9 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             material=item["material"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
+            zoom_link=item.get("zoom_link"),
+            session1_time=item.get("session1_time"),
+            session2_time=item.get("session2_time", ""),
             virtual_format_description=item["virtual_format_description"],
         )
         for item in raw_tutorials
