@@ -45,6 +45,13 @@ const updateCards = (papers) => {
               readCard(iid, new_value);
               return new_value;
           })
+
+          all_mounted_cards.filter(d => d.id === iid)
+              .select(".greenbox-paper").classed('selected', function () {
+                  const new_value = true;//!d3.select(this).classed('not-selected');
+                  readCard(iid, new_value);
+                  return new_value;
+              })
       })
 
     all_mounted_cards.select(".checkbox-paper")
@@ -53,6 +60,7 @@ const updateCards = (papers) => {
           const new_value = !d3.select(this).classed('selected');
           readCard(iid, new_value);
           d3.select(this).classed('selected', new_value)
+          d3.select(this.closest('.greenbox-paper')).classed('selected', new_value)
       })
 
 
@@ -241,7 +249,7 @@ const card_detail = (openreview, show) => {
 //language=HTML
 const card_html = openreview => `
         <div class="pp-card pp-mode-` + render_mode + ` ">
-            <div class="pp-card-header">
+            <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
             <div class="" style="position: relative; height:340px">
                 <div style="display: block;position: absolute; bottom:35px;left: 0px;"> 
                     <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div> 
