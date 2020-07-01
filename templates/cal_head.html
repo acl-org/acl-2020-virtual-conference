@@ -92,10 +92,6 @@
             container:'body'
           })
         },
-        eventWillUnmount: function(info){
-          $(info.el).popover('dispose');
-          console.log("Disposing");
-        },
         // Render HTML from title as HTML
         eventContent: function( arg ) {
  	        return { html: arg.event.title }
