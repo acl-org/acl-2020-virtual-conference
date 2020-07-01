@@ -23,7 +23,7 @@ The project is divided into two parts:
 - the [main website](https://github.com/acl-org/acl-2020-virtual-conference/) which you just downloaded
 - the [data](https://github.com/acl-org/acl-2020-virtual-conference-sitedata), which contains all the actual data for the conference 
 
-The data is private/sensitive, and needs to be stored in a "not public" repository, as it contains email adresses, zoom links, (which should not be easily accessible)...
+The data is private/sensitive, and needs to be stored in a "not public" git repository, as it contains email adresses, zoom links, (which should not be easily accessible)...
 
 For this reason, it is linked to the main website project as a git submodule. Running the command below will link both projects on your machine, and make sure that you have access to the latest version of the private [sitedata_acl2020](https://github.com/acl-org/acl-2020-virtual-conference-sitedata).
 
@@ -31,7 +31,7 @@ For this reason, it is linked to the main website project as a git submodule. Ru
 git submodule update --init --recursive
 ```
 
-* You need to have cloned the main project with SSH instead of HTTPS to get the git submodule working.*
+**You need to have cloned the main project with SSH instead of HTTPS to get the git submodule working.**
 
 
 ### Install Required Software Dependencies
@@ -39,9 +39,9 @@ git submodule update --init --recursive
 #### Optional: Create a Virtual Environment
 Creating a virtual Python environment makes sure that all the Python libraries installed in it do not conflict with the software already on your machine. It is not mandatory, but will prevent a number of bugs.
 
-There are many ways to create virtual environments in Python, use your favorite venv manager, or use the following commands to create one using ```virtualenvwrapper``` with Python 3.x.
+There are many ways to create virtual environments in Python, use your favorite venv manager, or use the following commands to create one using ```virtualenvwrapper``` with Python **3.x (x=7 or above)**.
 
-1) Install python3 and virtualenvwrapper
+1) Install python and virtualenvwrapper
 ```shell
 #----------------------------------------------------
 # on Ubuntu
@@ -49,7 +49,7 @@ sudo apt-get install python3-pip
 sudo pip3 install virtualenvwrapper
 #----------------------------------------------------
 # on MacOS
-# install python3 if needed
+# install if needed
 brew install python3
 ```
 
@@ -127,16 +127,9 @@ Once you've finished, use the following command in the terminal to push your cha
 git push --set-upstream origin your_branch_name # setup the upstream
 ```
 
-### Opening a Pull Request 
-#### In the Main Repository
+### Opening a Pull Request in the Main Repository
 
 Now you can open a pull request on the repository's website. Additionally, on the repository's page, you should click ```New pull request``` button near the ```Branch: master```. Then it will redirect to a new page. On this page, you need to be very carefully for the choices of base repository and head repository. Following the example shown in this document, the head repository should be ```acl-org/acl-2020-virtual-conference```, and ```compare: your_branch_name``` next to the head repository menu. The base repository should be ```acl-org/acl-2020-virtual-conference```.  Then you can click the green button ```Create pull request```. By clicking this button, you have created a new pull request and a collaborator will be notified and review your changes. The collaborator will discuss any further changes for your contributions. Once approved, your branch will be merged into ```master``` branch. Before you make any further contributions, don't forget to ```git pull``` to update your local files.
-
-#### With a Fork
-
-If you made your contributions with a forked repository, the process for adding and committing are the same. However, when you create a pull request, you need to change the head repository to your forked repository accordingly. For example, the head repository should be ```your_github_name/acl-2020-virtual-conference``` with the branch you made contributions to, whereas the base repository will be ```acl-org/acl-2020-virtual-conference``` with master branch. A collaborator will be notified and review your changes when you submit your pull request.
-
-
 
 For more details about opening a pull request on the website, please check the  [GitHub help documentation](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
