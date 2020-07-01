@@ -456,7 +456,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 
 
 def build_workshops(
-    raw_workshops: List[Dict[str, Any]], raw_workshop_papers: Dict[str, Dict[str, Any]]
+    raw_workshops: List[Dict[str, Any]], raw_workshop_papers: Dict[str, List[Dict[str, Any]]]
 ) -> DefaultDict[str, List[Workshop]]:
 
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
