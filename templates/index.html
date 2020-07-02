@@ -11,9 +11,22 @@
     font-family: "Lato", sans-serif;
     font-weight: 900;
   }
+  .page__hero-caption {
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 2px 10px;
+    color: #fff;
+    font-family: Georgia,Times,serif;
+    font-size: 0.9em;
+    text-align: right;
+    z-index: 5;
+    opacity: 0.5;
+    border-radius: 4px 0 0 0;
+  }
 </style>
 
-<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 20px;">
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 5px;">
   <div class="row header p-6 m-5">
     <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
       <h2>
@@ -24,6 +37,7 @@
       </h2>
     </div>
   </div>
+  <div class="page__hero-caption">Photo by Jingya Chen</div>
 </div>
 {% endblock %}
 
@@ -76,6 +90,7 @@
         </div>
       </div>
     </div>
+    <!--
     <div class="text-center mt-4">
       <h5> About the virtual <br> conference website</h5>
       <div id="presentation-embed" class="slp embed-responsive embed-responsive-16by9">
@@ -91,7 +106,8 @@
           });
         </script>
       </div>
-    </div>  
+    </div>
+    -->
   </div>
 </div>
 <br/>
