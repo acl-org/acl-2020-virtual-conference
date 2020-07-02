@@ -109,7 +109,7 @@ class Tutorial:
     title: str
     organizers: List[str]
     abstract: str
-    material: str
+    material: Optional[str]
     prerecorded: Optional[str]
     livestream: Optional[str]
     zoom_link: Optional[str]
