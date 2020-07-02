@@ -223,7 +223,7 @@ d3.selectAll('.render_option input').on('click', function () {
     render();
 });
 
-d3.select('.selection').on('click', () => {
+d3.select('.visited').on('click', () => {
     sortSelectedFirst(allPapers);
 
     render();
