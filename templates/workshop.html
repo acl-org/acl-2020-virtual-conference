@@ -118,11 +118,10 @@
 
 <!-- Prerecorded Talk -->
 <br/>
-<p><b>Pre-recorded Talks</b></p>
+<h3><b>Pre-recorded Talks</b></h3>
 {% for paper in workshop.papers %}
 <div class="row m-2">
   <div class="col-md-12 col-xs-12 my-auto p-2">
-    <br/>
     <hr>
     <p>
       <b>{{paper.title}}</b>
@@ -142,6 +141,7 @@
       hideTitle: true
     });
   </script>
+  <br/>
   </div>
 </div>
 {% endfor %}
