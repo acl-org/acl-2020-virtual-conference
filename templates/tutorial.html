@@ -50,6 +50,11 @@
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Description
       </a>
+      {% if tutorial.material %}
+      <a href="{{tutorial.material}}" target="_blank"  class="card-link">
+         Material
+      </a>
+      {% endif %}
     </div>
   </div>
 </div>

@@ -109,7 +109,7 @@ class Tutorial:
     title: str
     organizers: List[str]
     abstract: str
-    material: str
+    material: Optional[str]
     prerecorded: Optional[str]
     livestream: Optional[str]
     zoom_link: Optional[str]
@@ -136,3 +136,7 @@ class Workshop:
     livestream: Optional[str]
     papers: List[WorkshopPaper]
     schedule: List[Dict[str, Any]]
+    zoom_link: Optional[str]
+    session1_time: Optional[str]
+    session2_time: Optional[str]
+    session3_time: Optional[str]

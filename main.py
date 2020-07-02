@@ -250,12 +250,7 @@ def parse_arguments():
         dest="build",
         help="Convert the site to static assets",
     )
-    parser.add_argument(
-        "path",
-        default="sitedata_acl2020",
-        nargs="?",
-        help="Pass the JSON data path and run the server",
-    )
+    parser.add_argument("path", help="Pass the JSON data path and run the server")
 
     return parser.parse_args()
 
