@@ -8,9 +8,9 @@
     <h2 class="card-title main-title text-center" style="color:black">
       {{plenary_session.title}}
     </h2>
-    {% if plenary_session.spaker != none %}
+    {% if plenary_session.presenter != none %}
     <h3 class="card-subtitle mb-2 text-muted text-center">
-      {{plenary_session.speaker}}
+      {{plenary_session.presenter}}
       {% if plenary_session.institution %}
       / {{plenary_session.institution}}
       {% endif %}
@@ -69,7 +69,7 @@
   {% endif %}
   <script>
     embed = new SlidesLiveEmbed('presentation-embed', {
-      presentationId: '{{config.default_presentation_id}}', // FIXME: when the talks are ready
+      presentationId: '{{presentation_id}}',
       autoPlay: false, // change to true to autoplay the embedded presentation
       verticalEnabled: true,
       verticalWhenWidthLte: 500,
