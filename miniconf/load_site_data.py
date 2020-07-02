@@ -92,6 +92,7 @@ def load_site_data(
         "w18_papers",
         "w19_papers",
         "w20_papers",
+        "workshop_schedules",
         # sponsors.html
         "sponsors",
         # about.html
@@ -226,6 +227,7 @@ def load_site_data(
             "W19": site_data["w19_papers"],
             "W20": site_data["w20_papers"],
         },
+        workshop_schedules=site_data["workshop_schedules"],
     )
     site_data["workshops"] = workshops
     # workshop_<uid>.html
@@ -488,6 +490,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 def build_workshops(
     raw_workshops: List[Dict[str, Any]],
     raw_workshop_papers: Dict[str, List[Dict[str, Any]]],
+    workshop_schedules: Dict[str, List[Dict[str, Any]]],
 ) -> DefaultDict[str, List[Workshop]]:
 
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
@@ -513,6 +516,7 @@ def build_workshops(
                 material=item["material"],
                 livestream=item["livestream"],
                 papers=workshop_papers[item["UID"]],
+                schedule=workshop_schedules.get(item["UID"], "W1"),
             )
         )
     return workshops

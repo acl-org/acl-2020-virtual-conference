@@ -38,7 +38,25 @@
     <p></p>
   </div>
 </div>
-
+<!-- Schedule -->
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Speakers</th>
+      <th scope="col">Time(PST)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for event in workshop.schedule %}
+    <tr>
+      <th scope="row">{{event.title}}</th>
+      <td>{{event.speakers}}</td>
+      <td>{{event.startTime+'-'+event.endTime}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">    
     {% if workshop.livestream %}
