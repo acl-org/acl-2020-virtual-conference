@@ -408,3 +408,7 @@ div#papers_options > div {
 .fc-v-event:hover {
   background: rgb(234, 33, 45);
 }
+
+.embed-responsive .card-img-top {
+  object-fit: cover;
+}

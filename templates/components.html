@@ -17,7 +17,7 @@
 {%- endmacro %}
 
 {% macro section(name) -%}
-<div class="border-top my-3"></div>
+<div class="my-3"></div>
 <div class="row p-4">
   <div class="col-12 bd-content">
     <h1 class="text-center">{{name}}</h1>
@@ -28,7 +28,7 @@
 {% macro subsection(name) -%}
 <div class="row p-3">
   <div class="col-12 bd-content">
-    <h3>{{name}}</h3>
+    <h3 class="text-center">{{name}}</h3>
   </div>
 </div>
 {%- endmacro %}
@@ -37,19 +37,18 @@
 {% for plenary_session in plenary_sessions %}
 <div class="row p-4">
   <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
+    <div class="card p-3 shadow bg-light rounded">
         <div class="row">
           <div class="col-md-2 col-sm-5">
-            <img src="{{plenary_session.image}}" width="100%" class="img-thumbnail" />
+            <img src="{{plenary_session.image}}" width="100%" class="mt-3" />
           </div>
           <div class="col-md-10 col-sm-6">
             <div class="m-3 text-muted">
-              <h3>
+              <h4>
                 <a href="plenary_session_{{plenary_session.id}}.html" class="main-title" target="_blank">
                   {{plenary_session.title}}
                 </a>
-              </h3>
+              </h4>
             </div>
 
             {% if plenary_session.presenter != none %}
@@ -84,7 +83,6 @@
             {% endif %}
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -94,28 +92,19 @@
 {% macro organizergroup(committee) -%}
 <div class="row">
   {% for org in committee %}
-  <div class="col-md-4 col-xs-6">
-    <div class="pp-card">
-      <div class="pp-card-header" class="text-muted">
-        <h5 class="card-title" align="center">{{org.name}}</h5>
-        <div>
-          <h6 class="card-subtitle text-muted m-1" align="center">
-            {{org.role}}
-          </h6>
+  <div class="col-md-4 col-xs-6 p-3">
+      <div class="card text-center shadow ">
+        <div class="embed-responsive embed-responsive-1by1">
+          <img alt="Card image cap" class="card-img-top embed-responsive-item" src="{{org.im}}" />
         </div>
-        <div>
-          <h6 class="card-subtitle text-muted m-1" align="center">
-            {{org.aff}}{% if org.tw %} /
-            <a class="text-muted" href="http://twitter.com/{{org.tw}}" target="_blank"
-              >@{{org.tw}}</a
-            >{% endif %}
-          </h6>
+        <div class="card-img-overlay text-white d-flex flex-column mt-auto" style="background-color:rgba(0, 0, 0, 0); height:50%; box-sizing: border-box;
+  box-shadow: inset 0 -140px 30px -30px rgba(40, 40, 40, 0.6)">
+          <h4 class="card-subtitle mb-2 mt-auto">{{org.name}}</h4>
+          <h6 class="card-subtitle mb-2 text-warning">{{org.role}}</h6>
+          <h6 class="card-subtitle">{{org.aff}}{% if org.tw %} /
+            <a class="text-white text-monospace" href="http://twitter.com/{{org.tw}}" target="_blank">@{{org.tw}}</a>{% endif %}</h6>
         </div>
-        <center>
-          <img src="{{org.im}}" class="rounded" style="height: 150px;" />
-        </center>
       </div>
-    </div>
   </div>
   {% endfor %}
 </div>
@@ -250,7 +239,7 @@
 <div class="cards row">
   {% for workshop in workshops %}
   <div class="col-md-6 col-sm-12 p-2">
-    <div class="card p-1 text-center bg-light" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    <div class="card p-1 text-center shadow p-3 mb-5 bg-light rounded" style="
     height:100%;">
         <a class="card-title main-title" href="workshop_{{workshop.id}}.html">
             {{workshop.title}}
@@ -302,7 +291,7 @@
     {% for social in socials %}
     <div class="col-md-6 col-sm-12 p-3"
         id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
-        <div class="card p-3 text-center bg-light" 
+        <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         height:100%;">
                 <h3 class="card-title" style="font-weight: 700;">
