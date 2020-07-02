@@ -141,3 +141,4 @@ class Workshop:
     session1_time: Optional[str]
     session2_time: Optional[str]
     session3_time: Optional[str]
+    rocketchat_channel: str

@@ -522,6 +522,7 @@ def build_workshops(
                 session1_time=item.get("session1_time"),
                 session2_time=item.get("session2_time", ""),
                 session3_time=item.get("session3_time", ""),
+                rocketchat_channel=item["rocketchat_channel"],
             )
         )
     return workshops
