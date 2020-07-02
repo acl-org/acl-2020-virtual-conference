@@ -262,9 +262,9 @@ const card_detail = (openreview, show) => {
         return ` 
      <div class="pp-card-header" style="height:220px;background-color:rgb(240, 240, 240)">
         <p class="card-text"> ${openreview.content.tldr}</p>
-        <!--<p class="card-text"><span class="font-weight-bold">Keywords:</span>
+        <p class="card-text"><span class="font-weight-bold">Keywords:</span>
             ${openreview.content.keywords.map(keyword).join(', ')}
-        </p>-->
+        </p>
     </div>
 `
     else return ''
