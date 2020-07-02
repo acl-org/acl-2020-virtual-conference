@@ -110,6 +110,7 @@ class Tutorial:
     organizers: List[str]
     abstract: str
     material: Optional[str]
+    slides: Optional[str]
     prerecorded: Optional[str]
     livestream: Optional[str]
     zoom_link: Optional[str]
