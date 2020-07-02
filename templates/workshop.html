@@ -85,20 +85,20 @@
 <!-- Schedule -->
 <div id="schedule" class="collapse" aria-labelledby="schedule">
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" style="font-size: small;">
       <thead>
         <tr>
-          <th scope="col">Event</th>
-          <th scope="col">Speakers</th>
-          <th scope="col">Time(PST)</th>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 25%;">Event</th>
+          <th scope="col">Speakers</th>          
         </tr>
       </thead>
       <tbody>
         {% for event in workshop.schedule %}
-        <tr>
-          <th scope="row">{{event.title}}</th>
-          <td>{{event.speakers}}</td>
+        <tr>          
           <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
+          <td scope="row">{{event.title}}</td>
+          <td>{{event.speakers}}</td>
         </tr>
         {% endfor %}
       </tbody>
