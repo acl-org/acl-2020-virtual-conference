@@ -476,6 +476,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
             material=item["material"],
+            slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
             zoom_link=item.get("zoom_link"),
