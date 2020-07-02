@@ -272,7 +272,7 @@ def build_plenary_sessions(
                 date=item["date"],
                 day=item["day"],
                 time=item.get("time"),
-                speaker=item.get("speaker"),
+                presenter=item.get("presenter"),
                 institution=item.get("institution"),
                 abstract=item.get("abstract"),
                 bio=item.get("bio"),

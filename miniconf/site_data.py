@@ -83,7 +83,7 @@ class PlenarySession:
     date: str
     day: str
     time: Optional[str]
-    speaker: Optional[str]
+    presenter: Optional[str]
     institution: Optional[str]
     abstract: Optional[str]
     bio: Optional[str]

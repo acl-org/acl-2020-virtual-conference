@@ -6,6 +6,9 @@
 {% endblock %}
 
 
+{% block heading %}
+{{ components.section("Plenary Sessions") }}
+{% endblock %}
 
 {% block tabs %}
 {{ components.tabs([("july6", "July 6", "active"),
@@ -24,10 +27,6 @@
       role="tabpanel"
       aria-labelledby="nav-profile-tab"
   >
-    {{ components.section("Plenary Sessions") }}
-    <div class="col-12 bd-content">
-      <h4 class="text-center">Watch Livestream <a href="livestream.html" target="_blank">Here</a></h4>
-    </div>
     <div id="july6">
       <div class="plenary_sessions">
         {{ components.plenarysessiongroup(plenary_sessions["July 6"]) }}
@@ -42,10 +41,6 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    {{ components.section("Plenary Sessions") }}
-    <div class="col-12 bd-content">
-      <h4 class="text-center">Watch Livestream <a href="livestream.html" target="_blank">Here</a></h4>
-    </div>
     <div id="july7">
       <div class="plenary_sessions">
         {{ components.plenarysessiongroup(plenary_sessions["July 7"]) }}
@@ -59,10 +54,6 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    {{ components.section("Plenary Sessions") }}
-    <div class="col-12 bd-content">
-      <h4 class="text-center">Watch Livestream <a href="livestream.html" target="_blank">Here</a></h4>
-    </div>
     <div id="july8">
       <div class="plenary_sessions">
         {{ components.plenarysessiongroup(plenary_sessions["July 8"]) }}
