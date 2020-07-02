@@ -513,6 +513,10 @@ def build_workshops(
                 material=item["material"],
                 livestream=item["livestream"],
                 papers=workshop_papers[item["UID"]],
+                zoom_link=item.get("zoom_link"),
+                session1_time=item.get("session1_time"),
+                session2_time=item.get("session2_time", ""),
+                session3_time=item.get("session3_time", ""),
             )
         )
     return workshops

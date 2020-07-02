@@ -25,6 +25,53 @@
          Chat
       </a>
     </div>
+    <div class="text-center text-muted text-monospace">
+      <div class="workshop-times">
+        {% if workshop.session2_time %}
+          <span class="workshop_times">Live Session 1: {{workshop.session1_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+          <br/>
+          <span class="workshop_times">Live Session 2: {{workshop.session2_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+        {% else %}
+          <span class="workshop_times">Live Session: {{workshop.session1_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+        {% endif %}
+        {% if workshop.session3_time %}
+          <br/>
+          <span class="workshop_times">Live Session 3: {{workshop.session3_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
 <div id="details" class="pp-card m-3 collapse hide">

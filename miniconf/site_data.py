@@ -135,3 +135,7 @@ class Workshop:
     material: str
     livestream: Optional[str]
     papers: List[WorkshopPaper]
+    zoom_link: Optional[str]
+    session1_time: Optional[str]
+    session2_time: Optional[str]
+    session3_time: Optional[str]
