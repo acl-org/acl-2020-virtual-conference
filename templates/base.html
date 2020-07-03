@@ -93,8 +93,8 @@
     ('workshops.html', 'Workshops'),
     ('socials.html', 'Socials'),
     ('sponsors.html', 'Sponsors'),
-    ('organizers.html', 'Organizers'),
     ('chat.html', 'Chat'),
+    ('organizers.html', 'Organizers'),
     ('about.html', 'Help'),
     ] -%}
 
@@ -145,6 +145,11 @@
     {% block top %} {% endblock %}
 
     <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        {% block heading %} {% endblock %}
+      </div>
+      <div class="tabs pt-3">
       <!-- Tabs -->
       <div class="tabs">
         {% block tabs %} {% endblock %}

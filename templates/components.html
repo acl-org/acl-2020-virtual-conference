@@ -51,25 +51,29 @@
                 </a>
               </h3>
             </div>
+
+            {% if plenary_session.presenter != none %}
             <div class="m-3 text-muted">
               <span class="card-title h3">
-                {{plenary_session.speaker}}
+                {{plenary_session.presenter}}
                 {% if plenary_session.institution != none %}
                 / {{plenary_session.institution}}
                 {% endif %}
               </span>
             </div>
+            {% endif %}
 
             {% if plenary_session.time != none %}
             <div class="m-3 text-muted">
               Time: {{plenary_session.time}}
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
             </div>
             {% endif %}
 
             {% if plenary_session.qa_time != none %}
             <div class="m-3 text-muted">
               Live QA: {{plenary_session.qa_time}}
-              [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Join Zoom</a>]
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
             </div>
             {% endif %}
 

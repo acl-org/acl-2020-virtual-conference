@@ -50,6 +50,20 @@
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Description
       </a>
+      {% if tutorial.material %}
+      <a href="{{tutorial.material}}" target="_blank"  class="card-link">
+         Website
+      </a>
+      {% endif %}
+      {% if tutorial.slides.endswith('.zip') %}
+      <a href="{{tutorial.slides}}" download class="card-link">
+         Slides
+      </a>
+      {% elif tutorial.slides %}
+      <a href="{{tutorial.slides}}" target="_blank"  class="card-link">
+         Slides
+      </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -69,6 +83,14 @@
   <br/>
   <b>Information about the virtual format of this tutorial: </b> {{tutorial.virtual_format_description}}
   <br/>
+  {% if tutorial.id == 'T1' %}
+  <div class="row m-2">
+    <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
+       Question and discussion topic collection via Dory
+    </a>
+  </div>
+  {% endif %}
+
   <div class="row m-2">    
     {% if tutorial.livestream %}
     <!-- Livestreaming -->

@@ -92,6 +92,7 @@ def load_site_data(
         "w18_papers",
         "w19_papers",
         "w20_papers",
+        "workshop_schedules",
         # sponsors.html
         "sponsors",
         # about.html
@@ -226,6 +227,7 @@ def load_site_data(
             "W19": site_data["w19_papers"],
             "W20": site_data["w20_papers"],
         },
+        workshop_schedules=site_data["workshop_schedules"],
     )
     site_data["workshops"] = workshops
     # workshop_<uid>.html
@@ -270,7 +272,7 @@ def build_plenary_sessions(
                 date=item["date"],
                 day=item["day"],
                 time=item.get("time"),
-                speaker=item.get("speaker"),
+                presenter=item.get("presenter"),
                 institution=item.get("institution"),
                 abstract=item.get("abstract"),
                 bio=item.get("bio"),
@@ -415,7 +417,7 @@ def build_papers(
             assert (
                 datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
                 == start_time
-            )
+            ), paper_id
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
@@ -474,6 +476,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
             material=item["material"],
+            slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
             zoom_link=item.get("zoom_link"),
@@ -488,6 +491,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
 def build_workshops(
     raw_workshops: List[Dict[str, Any]],
     raw_workshop_papers: Dict[str, List[Dict[str, Any]]],
+    workshop_schedules: Dict[str, List[Dict[str, Any]]],
 ) -> DefaultDict[str, List[Workshop]]:
 
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
@@ -513,6 +517,12 @@ def build_workshops(
                 material=item["material"],
                 livestream=item["livestream"],
                 papers=workshop_papers[item["UID"]],
+                schedule=workshop_schedules.get(item["UID"]),
+                zoom_link=item.get("zoom_link"),
+                session1_time=item.get("session1_time"),
+                session2_time=item.get("session2_time", ""),
+                session3_time=item.get("session3_time", ""),
+                rocketchat_channel=item["rocketchat_channel"],
             )
         )
     return workshops

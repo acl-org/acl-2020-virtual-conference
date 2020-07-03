@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass(frozen=True)
@@ -83,7 +83,7 @@ class PlenarySession:
     date: str
     day: str
     time: Optional[str]
-    speaker: Optional[str]
+    presenter: Optional[str]
     institution: Optional[str]
     abstract: Optional[str]
     bio: Optional[str]
@@ -109,7 +109,8 @@ class Tutorial:
     title: str
     organizers: List[str]
     abstract: str
-    material: str
+    material: Optional[str]
+    slides: Optional[str]
     prerecorded: Optional[str]
     livestream: Optional[str]
     zoom_link: Optional[str]
@@ -135,3 +136,9 @@ class Workshop:
     material: str
     livestream: Optional[str]
     papers: List[WorkshopPaper]
+    schedule: List[Dict[str, Any]]
+    zoom_link: Optional[str]
+    session1_time: Optional[str]
+    session2_time: Optional[str]
+    session3_time: Optional[str]
+    rocketchat_channel: str

@@ -15,15 +15,61 @@
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Description
       </a>
+      {% if workshop.schedule %}
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      {% endif %}
       <a href="{{workshop.material}}" target="_blank"  class="card-link">
-         Website
+        Website
       </a>
-      <a href="{{workshop.zoom_live}}" target="_blank"  class="card-link">
-         Live
-      </a>
-      <a href="chat.html?room=channel/workshop_{{workshop.chat}}" target="_blank"  class="card-link">
-         Chat
-      </a>
+    </div>
+    <div class="text-center text-muted text-monospace">
+      <div class="workshop-times">
+        {% if workshop.session2_time %}
+          <span class="workshop_times">Live Session 1: {{workshop.session1_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+          <br/>
+          <span class="workshop_times">Live Session 2: {{workshop.session2_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+        {% else %}
+          <span class="workshop_times">Live Session: {{workshop.session1_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+        {% endif %}
+        {% if workshop.session3_time %}
+          <br/>
+          <span class="workshop_times">Live Session 3: {{workshop.session3_time}}</span>
+          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <img
+                src="static/images/zoom-icon.png"
+                height="24px"
+                alt="Join Zoom Meeting"
+                title="Join Zoom Meeting"
+            >
+          </a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
@@ -38,6 +84,31 @@
     <p></p>
   </div>
 </div>
+<!-- Schedule -->
+{% if workshop.schedule %}
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 25%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in workshop.schedule %}
+        <tr>          
+          <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
+          <td scope="row">{{event.title}}</td>
+          <td>{{event.speakers}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">    
@@ -69,17 +140,19 @@
         <b>RocketChat Channel discussion</b>
       </p>
       <div id="gitter" class="slp">
-        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/workshop-{{workshop.id}}?layout=embedded" height="700px" width="100%" ></iframe>
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Prerecorded Talk -->
-<p>Pre-recorded Talks</p>
+<br/>
+<h3><b>Pre-recorded Talks</b></h3>
 {% for paper in workshop.papers %}
 <div class="row m-2">
   <div class="col-md-12 col-xs-12 my-auto p-2">
+    <hr>
     <p>
       <b>{{paper.title}}</b>
     </p>
@@ -98,6 +171,7 @@
       hideTitle: true
     });
   </script>
+  <br/>
   </div>
 </div>
 {% endfor %}
