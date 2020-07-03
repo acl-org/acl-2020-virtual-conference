@@ -417,7 +417,7 @@ def build_papers(
             assert (
                 datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
                 == start_time
-            )
+            ), paper_id
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
@@ -517,7 +517,7 @@ def build_workshops(
                 material=item["material"],
                 livestream=item["livestream"],
                 papers=workshop_papers[item["UID"]],
-                schedule=workshop_schedules.get(item["UID"], workshop_schedules["W1"]),
+                schedule=workshop_schedules.get(item["UID"]),
                 zoom_link=item.get("zoom_link"),
                 session1_time=item.get("session1_time"),
                 session2_time=item.get("session2_time", ""),
