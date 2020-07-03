@@ -90,6 +90,12 @@
     </a>
   </div>
   {% endif %}
+  <script src="static/js/time-extend.js"></script>
+  <script>
+    $(document).ready(() => {
+      add_local_tz('.tutorial_times');
+    })
+  </script>
 
   <div class="row m-2">    
     {% if tutorial.livestream %}
