@@ -44,7 +44,7 @@
   
     google: function(event) {
       var startTime,endTime;
-      
+
       if (event.allday) {
         // google wants 2 consecutive days at 00:00
         startTime = formatTime(event.tzstart);
