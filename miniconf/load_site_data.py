@@ -468,6 +468,14 @@ def build_papers(
     return papers
 
 
+def processGMTPDT(timestring):
+    if timestring == "":
+        return ""
+    gmttime = timestring.split("GMT")[0].strip()
+    gmttime = gmttime.split("(")[-1]
+    return "(" + gmttime + " GMT)"
+
+
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
     return [
         Tutorial(
@@ -480,8 +488,8 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
             zoom_link=item.get("zoom_link"),
-            session1_time=item.get("session1_time"),
-            session2_time=item.get("session2_time", ""),
+            session1_time=processGMTPDT(item.get("session1_time")),
+            session2_time=processGMTPDT(item.get("session2_time")),
             virtual_format_description=item["virtual_format_description"],
         )
         for item in raw_tutorials
@@ -519,9 +527,9 @@ def build_workshops(
                 papers=workshop_papers[item["UID"]],
                 schedule=workshop_schedules.get(item["UID"]),
                 zoom_link=item.get("zoom_link"),
-                session1_time=item.get("session1_time"),
-                session2_time=item.get("session2_time", ""),
-                session3_time=item.get("session3_time", ""),
+                session1_time=processGMTPDT(item.get("session1_time")),
+                session2_time=processGMTPDT(item.get("session2_time", "")),
+                session3_time=processGMTPDT(item.get("session3_time", "")),
                 rocketchat_channel=item["rocketchat_channel"],
             )
         )

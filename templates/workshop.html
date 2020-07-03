@@ -3,6 +3,7 @@
 {% block content %}
 
 <!-- Title -->
+
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
@@ -109,6 +110,12 @@
   </div>
 </div>
 {% endif %}
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(() => {
+    add_local_tz('.workshop_times');
+  })
+</script>
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">    
