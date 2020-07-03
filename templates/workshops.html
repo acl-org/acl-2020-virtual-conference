@@ -2,6 +2,9 @@
 {% set active_page = "Workshops" %}
 {% set page_title = "Workshops" %}
 
+{% block heading %}
+{{ components.section("Workshops") }}
+{% endblock %}
 
 {% block tabs %}
 {{ components.tabs([("july5", "July 5", "active"),
