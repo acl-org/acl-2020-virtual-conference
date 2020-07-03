@@ -417,7 +417,7 @@ def build_papers(
             assert (
                 datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
                 == start_time
-            )
+            ), paper_id
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
