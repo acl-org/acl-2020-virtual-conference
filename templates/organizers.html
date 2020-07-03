@@ -2,9 +2,13 @@
 {% set page_title = "Organizers" %}
 {% extends "base.html" %}
 
+{% block heading %}
+{{ components.section("Organizers") }}
+{% endblock %}
+
 {% block content %}
 
-{{ components.section("Organizers") }}
+
 {{ components.organizergroup(committee) }}
 
 <!-- Acknowledgements -->
