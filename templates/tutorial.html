@@ -55,7 +55,11 @@
          Website
       </a>
       {% endif %}
-      {% if tutorial.slides %}
+      {% if tutorial.slides.endswith('.zip') %}
+      <a href="{{tutorial.slides}}" download class="card-link">
+         Slides
+      </a>
+      {% elif tutorial.slides %}
       <a href="{{tutorial.slides}}" target="_blank"  class="card-link">
          Slides
       </a>
