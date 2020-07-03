@@ -260,7 +260,7 @@ const card_image = (openreview, show) => {
 const card_detail = (openreview, show) => {
     if (show)
         return ` 
-     <div class="pp-card-header" style="height:220px;background-color:rgb(240, 240, 240)">
+     <div class="pp-card-header" style="background-color:rgb(240, 240, 240)">
         <p class="card-text"> ${openreview.content.tldr}</p>
         <p class="card-text"><span class="font-weight-bold">Keywords:</span>
             ${openreview.content.keywords.map(keyword).join(', ')}
@@ -274,7 +274,7 @@ const card_detail = (openreview, show) => {
 const card_html = openreview => `
         <div class="pp-card pp-mode-` + render_mode + ` ">
             <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
-            <div class="" style="position: relative; height:340px">
+            <div class="" style="position: relative; height:100%">
                 <div style="display: block;position: absolute; bottom:35px;left: 0px;"> 
                     <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div> 
                 </div>   

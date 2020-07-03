@@ -2,9 +2,13 @@
 {% set page_title = "Help" %}
 {% extends "base.html" %}
 
+{% block heading %}
+{{ components.section("Help") }}
+{% endblock %}
+
 {% block tabs %}
-{{ components.tabs([("faq", "FAQ", "active"),
-                    ("code-of-conduct", "Code of Conduct", "")]) }}
+{{ components.tabs([("faq", "Frequently Asked Questions", "active"),
+                    ("code-of-conduct", "ACL Code of Conduct", "")]) }}
 {% endblock %}
 
 {% block content %}
@@ -17,7 +21,8 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    {{ components.section("Frequently Asked Questions") }}
+    {{ components.subsection("Frequently Asked Questions") }}
+
     {{ components.faqgroup(FAQ) }}
   </div>
 
@@ -28,7 +33,7 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    {{ components.section("ACL Code of Conduct") }}
+    {{ components.subsection("ACL Code of Conduct") }}
     <div class="row p-3">
       <div class="col-12 bd-content">
         <div>{{CodeOfConduct|markdown}}</div>
