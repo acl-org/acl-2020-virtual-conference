@@ -19,6 +19,14 @@ class SessionInfo:
         )
 
     @property
+    def start_time_string(self) -> str:
+        return self.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @property
+    def end_time_string(self) -> str:
+        return self.end_time.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @property
     def session(self) -> str:
         start_day = self.start_time.strftime("%a")
         if self.session_name.startswith("D"):

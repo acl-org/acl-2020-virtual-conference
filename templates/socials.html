@@ -2,11 +2,14 @@
 {% set page_title = "Socials" %}
 {% extends "base.html" %}
 
+{% block heading %}
+{{ components.section("Socials") }}
+{% endblock %}
+
 {% block content %}
 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
   <div id="day">
     <!-- Socials -->
-    {{ components.section("Socials") }}
     <div class="speakers">
       {{ components.socialgroup(socials, config) }}
     </div>
