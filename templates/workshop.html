@@ -15,9 +15,11 @@
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Description
       </a>
+      {% if workshop.schedule %}
       <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
         Schedule
       </a>
+      {% endif %}
       <a href="{{workshop.material}}" target="_blank"  class="card-link">
         Website
       </a>
@@ -83,6 +85,7 @@
   </div>
 </div>
 <!-- Schedule -->
+{% if workshop.schedule %}
 <div id="schedule" class="collapse" aria-labelledby="schedule">
   <div class="card-body">
     <table class="table table-bordered table-striped" style="font-size: small;">
@@ -105,6 +108,7 @@
     </table>
   </div>
 </div>
+{% endif %}
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">    
