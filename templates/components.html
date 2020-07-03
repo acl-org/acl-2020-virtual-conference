@@ -92,19 +92,28 @@
 {% macro organizergroup(committee) -%}
 <div class="row">
   {% for org in committee %}
-  <div class="col-md-4 col-xs-6 p-3">
-      <div class="card text-center shadow ">
-        <div class="embed-responsive embed-responsive-1by1">
-          <img alt="Card image cap" class="card-img-top embed-responsive-item" src="{{org.im}}" />
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">{{org.name}}</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            {{org.role}}
+          </h6>
         </div>
-        <div class="card-img-overlay text-white d-flex flex-column mt-auto" style="background-color:rgba(0, 0, 0, 0); height:50%; box-sizing: border-box;
-  box-shadow: inset 0 -140px 30px -30px rgba(40, 40, 40, 0.6)">
-          <h4 class="card-subtitle mb-2 mt-auto">{{org.name}}</h4>
-          <h6 class="card-subtitle mb-2 text-warning">{{org.role}}</h6>
-          <h6 class="card-subtitle">{{org.aff}}{% if org.tw %} /
-            <a class="text-white text-monospace" href="http://twitter.com/{{org.tw}}" target="_blank">@{{org.tw}}</a>{% endif %}</h6>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            {{org.aff}}{% if org.tw %} /
+            <a class="text-muted" href="http://twitter.com/{{org.tw}}" target="_blank"
+              >@{{org.tw}}</a
+            >{% endif %}
+          </h6>
         </div>
+        <center>
+          <img src="{{org.im}}" class="rounded" style="height: 150px;" />
+        </center>
       </div>
+    </div>
   </div>
   {% endfor %}
 </div>
