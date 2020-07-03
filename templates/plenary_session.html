@@ -17,6 +17,27 @@
     </h3>
     {% endif %}
 
+    <div class="text-center p-3">
+      {% if plenary_session.abstract %}
+      <a class="card-link" data-toggle="collapse" role="button" href="#abstract">
+        Abstract
+      </a>
+      {% endif %}
+      {% if plenary_session.bio %}
+      <a class="card-link" data-toggle="collapse" role="button" href="#bio">
+        Bio
+      </a>
+      {% endif %}
+    </div>
+    {% if plenary_session.time != none %}
+    <div class="text-center text-muted text-monospace ">
+      <div>
+      Livestream
+      <span class="livestream_time">{{plenary_session.time}}</span>
+      </div>
+    </div>
+    {% endif %}
+
     {% if plenary_session.qa_time != none %}
     <div class="text-center text-muted text-monospace ">
       <div>
@@ -26,66 +47,70 @@
     </div>
     {% endif %}
 
-    {% if plenary_session.abstract %}
-    <div class="text-center p-3">
-      <a class="card-link" data-toggle="collapse" role="button" href="#details">
-        Abstract & Bio
-      </a>
-    </div>
-    <div id="details" class="pp-card m-3 collapse">
-      <div class="card-body">
-        <div class="card-text">
-          <div id="abstractExample">
-            <span class="font-weight-bold">Abstract:</span>
-            {{plenary_session.abstract|safe}} <br /><br />
-
-            <span class="font-weight-bold">Bio:</span>
-            {{plenary_session.bio|safe}}
-          </div>
-        </div>
-        <p></p>
-      </div>
-    </div>
-    {% endif %}
-
   </div>
 </div>
 
+{% if plenary_session.abstract %}
+<div id="abstract" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      {{plenary_session.abstract|markdown}}
+    </div>
+  </div>
+</div>
+{% endif %}
 
-<div class="container" style="background-color:white; padding: 0px;">
+{% if plenary_session.bio %}
+<div id="bio" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <span class="font-weight-bold">Bio:</span>
+      {{plenary_session.bio|safe}}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+  <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">
   <!-- Presentation Embed -->
   {% if plenary_session.rocketchat_channel %}
-  <div class="col-md-7 col-xs-12 my-auto p-2" >
+    {%  set n = 7 %}
   {% else %}
-    <div class="col-md-12 col-xs-12 my-auto p-2" >
+    {% set n = 12%}
   {% endif %}
-  <div id="presentation-embed" class="slp my-auto"></div>
-  <script src='https://slideslive.com/embed_presentation.js'></script>
-  {% if plenary_session.presentation_id != none %}
-  {% set presentation_id =  plenary_session.presentation_id%}
-  {% else %}
-  {% set presentation_id =  config.default_presentation_id%}
-  {% endif %}
-  <script>
-    embed = new SlidesLiveEmbed('presentation-embed', {
-      presentationId: '{{presentation_id}}',
-      autoPlay: false, // change to true to autoplay the embedded presentation
-      verticalEnabled: true,
-      verticalWhenWidthLte: 500,
-      allowHiddenControlsWhenPaused: true,
-      hideTitle: true
-    });
-  </script>
-  </div>
-  <!-- Chat -->
-  {% if plenary_session.rocketchat_channel %}
-  <div class="col-md-5 col-xs-12 p-2">
-    <div id="gitter" class="slp">
-      <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+
+  <div class="col-md-{{ n }} col-xs-12 my-auto p-2" >
+    {% if plenary_session.presentation_id != none %}
+    <div id="presentation-embed" class="slp my-auto"></div>
+    <script src='https://slideslive.com/embed_presentation.js'></script>
+    <script>
+      embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '{{plenary_session.presentation_id}}',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+      });
+    </script>
     </div>
-  </div>
-  {% endif %}
+    {% else %}
+    <h3 class="text text-center">
+      To Be Announced
+    </h3>
+    {% endif %}
+
+    <!-- Chat -->
+    {% if plenary_session.rocketchat_channel %}
+    <div class="col-md-5 col-xs-12 p-2">
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
+    </div>
+    {% endif %}
   </div>
 </div>
 
