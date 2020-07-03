@@ -471,7 +471,7 @@ def build_papers(
 def processGMTPDT(timestring):
     if timestring == "":
         return ""
-    gmttime = timestring.split('GMT')[0].strip()
+    gmttime = timestring.split("GMT")[0].strip()
     gmttime = gmttime.split("(")[-1]
     return "(" + gmttime + " GMT)"
 
