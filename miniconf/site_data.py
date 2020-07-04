@@ -84,6 +84,14 @@ class Paper:
 
 
 @dataclass(frozen=True)
+class PlenaryVideo:
+    id: str
+    title: str
+    speakers: str
+    presentation_id: Optional[str]
+
+
+@dataclass(frozen=True)
 class PlenarySession:
     id: str
     title: str
@@ -100,6 +108,7 @@ class PlenarySession:
     rocketchat_channel: Optional[str]
     qa_time: Optional[str]
     zoom_link: Optional[str]
+    videos: List[PlenaryVideo]
 
 
 @dataclass(frozen=True)
