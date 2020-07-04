@@ -28,7 +28,7 @@
     <div class="text-center text-muted text-monospace">
       <div class="workshop-times">
         {% if workshop.session2_time %}
-          <span class="workshop_times">Live Session 1: {{workshop.session1_time}}</span>
+          Live Session 1: <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -38,7 +38,7 @@
             >
           </a>
           <br/>
-          <span class="workshop_times">Live Session 2: {{workshop.session2_time}}</span>
+          Live Session 2: <span class="workshop_times">{{workshop.session2_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -48,7 +48,7 @@
             >
           </a>
         {% else %}
-          <span class="workshop_times">Live Session: {{workshop.session1_time}}</span>
+          Live Session: <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -60,7 +60,7 @@
         {% endif %}
         {% if workshop.session3_time %}
           <br/>
-          <span class="workshop_times">Live Session 3: {{workshop.session3_time}}</span>
+          Live Session 3: <span class="workshop_times">{{workshop.session3_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"

@@ -17,7 +17,7 @@
 {%- endmacro %}
 
 {% macro section(name) -%}
-<div class="border-top my-3"></div>
+<div class="my-3"></div>
 <div class="row p-4">
   <div class="col-12 bd-content">
     <h1 class="text-center">{{name}}</h1>
@@ -28,7 +28,7 @@
 {% macro subsection(name) -%}
 <div class="row p-3">
   <div class="col-12 bd-content">
-    <h3>{{name}}</h3>
+    <h3 class="text-center">{{name}}</h3>
   </div>
 </div>
 {%- endmacro %}
@@ -37,19 +37,18 @@
 {% for plenary_session in plenary_sessions %}
 <div class="row p-4">
   <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
+    <div class="card p-3 shadow bg-light rounded">
         <div class="row">
           <div class="col-md-2 col-sm-5">
-            <img src="{{plenary_session.image}}" width="100%" class="img-thumbnail" />
+            <img src="{{plenary_session.image}}" width="100%" class="mt-3" />
           </div>
           <div class="col-md-10 col-sm-6">
             <div class="m-3 text-muted">
-              <h3>
+              <h4>
                 <a href="plenary_session_{{plenary_session.id}}.html" class="main-title" target="_blank">
                   {{plenary_session.title}}
                 </a>
-              </h3>
+              </h4>
             </div>
 
             {% if plenary_session.presenter != none %}
@@ -84,7 +83,6 @@
             {% endif %}
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -95,8 +93,8 @@
 <div class="row">
   {% for org in committee %}
   <div class="col-md-4 col-xs-6">
-    <div class="pp-card">
-      <div class="pp-card-header" class="text-muted">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
         <h5 class="card-title" align="center">{{org.name}}</h5>
         <div>
           <h6 class="card-subtitle text-muted m-1" align="center">
@@ -250,7 +248,7 @@
 <div class="cards row">
   {% for workshop in workshops %}
   <div class="col-md-6 col-sm-12 p-2">
-    <div class="card p-1 text-center bg-light" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    <div class="card p-1 text-center shadow p-3 mb-5 bg-light rounded" style="
     height:100%;">
         <a class="card-title main-title" href="workshop_{{workshop.id}}.html">
             {{workshop.title}}
@@ -302,7 +300,7 @@
     {% for social in socials %}
     <div class="col-md-6 col-sm-12 p-3"
         id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
-        <div class="card p-3 text-center bg-light" 
+        <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         height:100%;">
                 <h3 class="card-title" style="font-weight: 700;">
@@ -350,8 +348,87 @@
   </div>
 {%- endmacro %}
 
+{% macro live_sessions(sessions, title, abstract) -%}
+{% for session in sessions %}
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  {{session.session}}
+  <span class="session_times">{{session.time_string}}</span>
+
+  {% if session.zoom_link %}
+  <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
+    <img
+        src="static/images/zoom-icon.png"
+        height="24px"
+        alt="Join Zoom Meeting"
+        title="Join Zoom Meeting"
+    >
+  </a>
+  {% endif %}
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-{{loop.index}}"></span>
+  </div>
+  </div>
+{% endfor %}
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  {% for session in sessions %}
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: '{{title}}',
+
+        // Event start date
+        start: new Date("{{session.start_time_string}}"),
+        end: new Date("{{session.end_time_string}}"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        {% if session.zoom_link %}
+        address: '{{session.zoom_link}}',
+        {% endif %}
+
+        // Event Description
+        description: '{{abstract}}'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-{{ loop.index }}');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+      calendarNodeSpan.appendChild(document.createTextNode("["));
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+      calendarNodeSpan.appendChild(document.createTextNode("]"));
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  {% endfor %}
+</script>
+{%- endmacro %}
+
 {% macro calendar_scripts() -%}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script>
 {%- endmacro %}
 
