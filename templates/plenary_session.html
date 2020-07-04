@@ -76,31 +76,22 @@
   <div class="container" style="background-color:white; padding: 0px;">
     {% if plenary_session.videos != none %}
       <div class="row m-2">
-        <h3><b>Pre-recorded Talks</b></h3>
-        <br/>
-        <div class="col-md-12 col-xs-12 my-auto p-2">
-        {% for video in plenary_session.videos %}
-          <hr>
-          <p>
-            <b>{{video.title}}</b>
-          </p>
-          <p>
-            <i>{{video.speakers}}</i>
-          </p>
-          <div id="presentation-embed-{{video.id}}" class="slp my-auto"></div>
-          <script src='https://slideslive.com/embed_presentation.js'></script>
-          <script>
-            embed = new SlidesLiveEmbed('presentation-embed-{{video.id}}', {
-              presentationId: '{{video.presentation_id}}',
-              autoPlay: false, // change to true to autoplay the embedded presentation
-              verticalEnabled: true,
-              verticalWhenWidthLte: 500,
-              allowHiddenControlsWhenPaused: true,
-              hideTitle: true
-            });
-          </script>
-        {% endfor %}
+        <div class="col-md-7 col-xs-12 p-2">
+        <div id="accordion">
+          {% for video in plenary_session.videos %}
+          <div class="row m-2">
+            <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+                <p>
+                  <a href="https://slideslive.com/{{video.presentation_id}}" target="_blank"><b>{{video.title}}</b></a>
+                </p>
+                <p>
+                  <i>{{video.speakers}}</i>
+                </p>
+            </div>
+          </div>
+          {% endfor %}
         </div>
+      </div>
         <div class="col-md-5 col-xs-12 p-2">
           <div id="gitter" class="slp">
             <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
