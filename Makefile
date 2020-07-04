@@ -57,4 +57,4 @@ deploy-aws: freeze
 deploy-aws-internal: freeze
 	aws s3 rm s3://serverlessrepo-acl2020-virtual-conferenc-s3bucket-1r6p34ij5ss42 --recursive
 	aws s3 cp build/ s3://serverlessrepo-acl2020-virtual-conferenc-s3bucket-1r6p34ij5ss42 --recursive
-	aws cloudfront create-invalidation --distribution-id EY8475KHJPSA0 --paths "/*"
+	aws cloudfront create-invalidation --distribution-id E3OA7TCOJFYTMZ --paths "/*"
