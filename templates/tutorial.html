@@ -80,14 +80,20 @@
 </div>
 
 <div class="container" style="background-color:white; padding: 0px;">
-  <br/>
-  <b>Information about the virtual format of this tutorial: </b> {{tutorial.virtual_format_description}}
-  <br/>
+  <div class="row m-2">
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <b>Information about the virtual format of this tutorial: </b>
+      {{tutorial.virtual_format_description}}
+    </div>
+  </div>
+
   {% if tutorial.id == 'T1' %}
-  <div class="row m-2" style="padding-left: 5px;">
-    <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
-       Question and discussion topic collection via Dory
-    </a>
+  <div class="row m-2">
+    <div class="col-md-12 col-xs-12 my-auto p-2" style="font-size: 20px;">
+      <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank">
+        Question and discussion topic collection via Dory
+      </a>
+    </div>
   </div>
   {% elif tutorial.id == 'T7' %}
   <div class="row m-2" style="padding-left: 5px;">
