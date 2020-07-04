@@ -64,6 +64,16 @@
          Slides
       </a>
       {% endif %}
+      {% if tutorial.id == 'T7' %}
+      <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
+        Tutorial Worksheet
+     </a>
+      {% endif %}      
+      {% if tutorial.id == 'T1' %}
+        <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
+          Question and discussion topic collection via Dory
+        </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -83,20 +93,6 @@
   <br/>
   <b>Information about the virtual format of this tutorial: </b> {{tutorial.virtual_format_description}}
   <br/>
-  {% if tutorial.id == 'T1' %}
-  <div class="row m-2" style="padding-left: 5px;">
-    <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
-       Question and discussion topic collection via Dory
-    </a>
-  </div>
-  {% elif tutorial.id == 'T7' %}
-  <div class="row m-2" style="padding-left: 5px;">
-    <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
-       Tutorial Worksheet
-    </a>
-  </div>
-
-  {% endif %}
   <script src="static/js/time-extend.js"></script>
   <script>
     $(document).ready(() => {
@@ -108,9 +104,6 @@
     {% if tutorial.livestream %}
     <!-- Livestreaming -->
     <div class="col-md-7 col-xs-12 my-auto p-2" >
-      <p>
-        <b>Livestreaming</b>
-      </p>
       <div id="presentation-embed" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
@@ -129,9 +122,6 @@
     <!-- Chat -->
     <br/>
     <div class="col-md-5 col-xs-12 p-2">
-      <p>
-        <b>RocketChat Channel discussion</b>
-      </p>
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/tutorial-{{tutorial.id}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
@@ -144,7 +134,7 @@
 <div class="row m-2">
   <div class="col-md-12 col-xs-12 my-auto p-2">
     <p>
-      <b>Prerecorded talk</b>
+      <h4><b>Pre-recorded talk</b></h4>
     </p>
   <div id="presentation-embed-{{tutorial.prerecorded}}" class="slp my-auto"></div>
   <script src='https://slideslive.com/embed_presentation.js'></script>
