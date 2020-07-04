@@ -517,24 +517,16 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
-            zoom_link=item.get("zoom_link"),
             sessions=[
                 SessionInfo(
-                    session_name="",
-                    start_time=parse_session_time(item.get("session1_start_time")),
-                    end_time=parse_session_time(item.get("session1_end_time")),
-                    zoom_link=item.get("zoom_link"),
-                ),
-                SessionInfo(
-                    session_name="",
-                    start_time=parse_session_time(item.get("session2_start_time")),
-                    end_time=parse_session_time(item.get("session2_end_time")),
-                    zoom_link=item.get("zoom_link"),
-                ),
+                    session_name=session.get("name"),
+                    start_time=parse_session_time(session.get("start_time")),
+                    end_time=parse_session_time(session.get("end_time")),
+                    zoom_link=session.get("zoom_link"),
+                )
+                for session in item.get("sessions")
             ],
-            # session1_time=processGMTPDT(item.get("session1_time")),
-            # session2_time=processGMTPDT(item.get("session2_time")),
-            virtual_format_description=item["virtual_format_description"],
+            virtual_format_description=item["info"],
         )
         for item in raw_tutorials
     ]
