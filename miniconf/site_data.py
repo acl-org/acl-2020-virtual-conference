@@ -133,6 +133,7 @@ class Tutorial:
     slides: Optional[str]
     prerecorded: Optional[str]
     livestream: Optional[str]
+    rocketchat_channel: str
     sessions: List[SessionInfo]
     virtual_format_description: str
 

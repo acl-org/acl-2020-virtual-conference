@@ -517,6 +517,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
+            rocketchat_channel=item.get("rocketchat_channel", ""),
             sessions=[
                 SessionInfo(
                     session_name=session.get("name"),
