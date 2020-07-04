@@ -151,7 +151,7 @@
       </div>
       <div class="tabs pt-3">
       <!-- Tabs -->
-      <div class="tabs pt-3">
+      <div class="tabs">
         {% block tabs %} {% endblock %}
       </div>
       <!-- Content -->
@@ -199,6 +199,7 @@
             $(window).scrollTop(position);
           }
         });
+        window.scrollTo(0,0);
       });
     </script>
     <script src="static/js/lazy_load.js"></script>

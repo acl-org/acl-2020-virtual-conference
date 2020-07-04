@@ -53,3 +53,8 @@ deploy-aws: freeze
 	aws s3 cp build/ $(AWS_S3_BUCKET) --recursive
 	# invalidate caches so that new content are immediately available
 	# aws cloudfront create-invalidation --distribution-id $(AWS_CLOUDFRONT_DISTRIBUTION_ID) --paths "/*"
+
+deploy-aws-internal: freeze
+	aws s3 rm s3://serverlessrepo-acl2020-virtual-conferenc-s3bucket-1r6p34ij5ss42 --recursive
+	aws s3 cp build/ s3://serverlessrepo-acl2020-virtual-conferenc-s3bucket-1r6p34ij5ss42 --recursive --profile alexaprize-s3
+	aws cloudfront create-invalidation --distribution-id EY8475KHJPSA0 --paths "/*"
