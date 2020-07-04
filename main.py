@@ -99,6 +99,7 @@ def tutorials():
 @app.route("/workshops.html")
 def workshops():
     data = _data()
+    print(site_data["workshops"])
     data["workshops"] = site_data["workshops"]
     return render_template("workshops.html", **data)
 
