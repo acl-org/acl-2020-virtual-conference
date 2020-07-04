@@ -84,11 +84,18 @@
   <b>Information about the virtual format of this tutorial: </b> {{tutorial.virtual_format_description}}
   <br/>
   {% if tutorial.id == 'T1' %}
-  <div class="row m-2">
+  <div class="row m-2" style="padding-left: 5px;">
     <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
        Question and discussion topic collection via Dory
     </a>
   </div>
+  {% elif tutorial.id == 'T7' %}
+  <div class="row m-2" style="padding-left: 5px;">
+    <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
+       Tutorial Worksheet
+    </a>
+  </div>
+
   {% endif %}
   <script src="static/js/time-extend.js"></script>
   <script>
