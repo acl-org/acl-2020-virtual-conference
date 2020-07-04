@@ -169,23 +169,22 @@
         </p>
       </div>
     <div id="presentation-embed-wrapper-{{paper.id}}" class="collapse" aria-labelledby="{{paper.title}}" data-parent="#accordion">
-      <div id="presentation-embed-{{paper.id}}" class="slp my-auto hidden"></div>
     </div>
     <script>
-      $("#papertitle-{{paper.id}}").click(
-        function(){
-          //Load the embed the first time
-          if(!($("#presentation-embed-wrapper-{{paper.id}}").hasClass("vidadded"))){
-            embed = new SlidesLiveEmbed('presentation-embed-{{paper.id}}', {
-            presentationId: '{{paper.presentation_id}}',  // TODO: make this configurable
-            autoPlay: false, // change to true to autoplay the embedded presentation
-            verticalEnabled: true,
-            verticalWhenWidthLte: 500,
-            allowHiddenControlsWhenPaused: true,
-            hideTitle: true });
-            $("#presentation-embed-wrapper-{{paper.id}}").addClass("vidadded")
+      $("#presentation-embed-wrapper-{{paper.id}}").on('show.bs.collapse', function () {
+          $("#presentation-embed-wrapper-{{paper.id}}").append(
+            `<div id="presentation-embed-{{paper.id}}" class="slp my-auto hidden"></div>`)
+          embed = new SlidesLiveEmbed('presentation-embed-{{paper.id}}', {
+          presentationId: '{{paper.presentation_id}}',  // TODO: make this configurable
+          autoPlay: false, // change to true to autoplay the embedded presentation
+          verticalEnabled: true,
+          verticalWhenWidthLte: 500,
+          allowHiddenControlsWhenPaused: true,
+          hideTitle: true });
           }
-        })
+        );
+      $("#presentation-embed-wrapper-{{paper.id}}").on('hide.bs.collapse', function () {
+          $("#presentation-embed-{{paper.id}}").remove()});
     </script>
     </div>
   </div>
