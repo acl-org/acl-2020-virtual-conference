@@ -1,4 +1,4 @@
-name: Deploy website to AWS S3
+name: Deploy website to AWS S3 (Internal)
 
 on:
   push:
