@@ -28,11 +28,14 @@ class SessionInfo:
 
     @property
     def session(self) -> str:
-        start_day = self.start_time.strftime("%a")
+        start_date = f'{self.start_time.strftime("%b")} {self.start_time.day}'
         if self.session_name.startswith("D"):
             # demo sessions
-            return f"Demo Session {self.session_name[1:]} {start_day}"
-        return f"Session {self.session_name} {start_day}"
+            return f"Demo Session {self.session_name[1:]}: {start_date}"
+        elif self.session_name.startswith("T-"):
+            # tutorials
+            return f"{self.session_name[2:]}: {start_date}"
+        return f"Session {self.session_name}: {start_date}"
 
 
 @dataclass(frozen=True)
@@ -130,9 +133,8 @@ class Tutorial:
     slides: Optional[str]
     prerecorded: Optional[str]
     livestream: Optional[str]
-    zoom_link: Optional[str]
-    session1_time: Optional[str]
-    session2_time: Optional[str]
+    rocketchat_channel: str
+    sessions: List[SessionInfo]
     virtual_format_description: str
 
 

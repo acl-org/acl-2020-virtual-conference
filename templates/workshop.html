@@ -2,8 +2,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+<script src='https://slideslive.com/embed_presentation.js'></script>
 <!-- Title -->
-
 <div class="pp-card m-3" style="">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="">
@@ -126,7 +126,6 @@
         <b>Livestreaming</b>
       </p>
       <div id="presentation-embed" class="slp my-auto"></div>
-      <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
         embed = new SlidesLiveEmbed('presentation-embed', {
         presentationId: '{{config.default_presentation_id}}',
@@ -156,31 +155,19 @@
 <!-- Prerecorded Talk -->
 <br/>
 <h3><b>Pre-recorded Talks</b></h3>
-{% for paper in workshop.papers %}
-<div class="row m-2">
-  <div class="col-md-12 col-xs-12 my-auto p-2">
-    <hr>
-    <p>
-      <b>{{paper.title}}</b>
-    </p>
-    <p>
-      <i>{{paper.speakers}}</i>
-    </p>
-  <div id="presentation-embed-{{paper.id}}" class="slp my-auto"></div>
-  <script src='https://slideslive.com/embed_presentation.js'></script>
-  <script>
-    embed = new SlidesLiveEmbed('presentation-embed-{{paper.id}}', {
-      presentationId: '{{paper.presentation_id}}',  // TODO: make this configurable
-      autoPlay: false, // change to true to autoplay the embedded presentation
-      verticalEnabled: true,
-      verticalWhenWidthLte: 500,
-      allowHiddenControlsWhenPaused: true,
-      hideTitle: true
-    });
-  </script>
-  <br/>
+<div id="accordion">
+  {% for paper in workshop.papers %}
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank"><b>{{paper.title}}</b></a>
+        </p>
+        <p>
+          <i>{{paper.speakers}}</i>
+        </p>
+    </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
-
 {% endblock %}
