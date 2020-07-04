@@ -29,7 +29,21 @@
       <a href="{{tutorial.slides}}" target="_blank"  class="card-link">
         Slides
       </a>
+<<<<<<< HEAD
     {% endif %}
+=======
+      {% endif %}
+      {% if tutorial.id == 'T7' %}
+      <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
+        Tutorial Worksheet
+     </a>
+      {% endif %}      
+      {% if tutorial.id == 'T1' %}
+        <a href="https://www.dory.app/c/google.com/aaabb999_acl-20-interpretability-tutorial/questions" target="_blank"  class="card-link">
+          Question and discussion topic collection via Dory
+        </a>
+      {% endif %}
+>>>>>>> origin/master
     </div>
 
     {{ components.live_sessions(tutorial.sessions, tutorial.title) }}
