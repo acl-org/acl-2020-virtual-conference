@@ -55,34 +55,13 @@
       </a>
       {% endif %}
     </div>
-     <p class="card-text text-center h5">
+    <p class="card-text text-center h5">
 
-     <a href="papers.html?track={{paper.content.track}}" class ="badge badge-pill badge-primary">{{ paper.content.track }}</a>
+     <a href="papers.html?track={{paper.content.track}}" class ="badge badge-pill badge-primary" target="_blank">{{ paper.content.track }}</a>
      <span class="badge badge-secondary">{{ paper.content.paper_type }} Paper</span>
     </p>
 
-    {% for session in paper.content.sessions %}
-      <div class="text-center text-muted text-monospace">
-        <div class="paper-session-times">
-          {{session.session}}
-          <span class="session_times">{{session.time_string}}</span>
-          <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
-            <img
-                src="static/images/zoom-icon.png"
-                height="24px"
-                alt="Join Zoom Meeting"
-                title="Join Zoom Meeting"
-            >
-          </a>
-        </div>
-      </div>
-      <div class="text-center text-muted text-monospace">
-        <div class="paper-cal-links">
-          <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
-          <span id="session-cal-link-{{loop.index}}"></span>
-        </div>
-      </div>
-    {% endfor %}
+    {{  components.live_sessions(paper.content.sessions, paper.content.title) }}
 
   </div>
 </div>
@@ -142,7 +121,7 @@
 
 {{ components.section("Similar Papers") }}
 <p></p>
-<div  class="container" >
+<div class="container" >
   <div class="row">
   {% for recommended in paper_recs %}
     <div class="col-md-4 col-xs-6">
@@ -169,54 +148,6 @@
   $(document).ready(()=>{
     add_local_tz('.session_times');
   })
-</script>
-
-<script src="static/js/add-to-calendar.js"></script>
-<script>
-  let ouicalData;
-  let targetNode;
-  let calendarNodeInner;
-  let calendarNodeSpan;
-  let parser = new DOMParser();
-  let calendarNames = Array("google", "off365", "outlook", "ical");
-
-  {% for session in paper.content.sessions %}
-  // create a calendar by hand
-  ouicalData = addToCalendarData({
-    options: {
-      class: 'my-class',
-      id: 'my-id'                               // If you don't pass an id, one will be generated for you.
-    },
-    data: {
-      title: '{{paper.content.title}}',
-
-      // Event start date
-      start: new Date('{{session.start_time}}'),
-      end: new Date('{{session.end_time}}'),
-      // duration: 120,                           // Event duration (IN MINUTES)
-      // allday: true,														// Override end time, duration and timezone, triggers 'all day'
-
-      // Event timezone. Will convert the given time to that zone
-      timezone: 'UTC',
-      // Event Address
-      address: '{{session.zoom_link}}',
-
-      // Event Description
-      description: '{{session.zoom_link}}'
-    }
-  });
-
-  targetNode = document.querySelector('#session-cal-link-{{ loop.index }}');
-  for (const name of calendarNames) {
-    calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
-    calendarNodeSpan = document.createElement("span");
-    calendarNodeSpan.setAttribute("style", "padding: 2px");
-    calendarNodeSpan.appendChild(document.createTextNode("["));
-    calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-    calendarNodeSpan.appendChild(document.createTextNode("]"));
-    targetNode.appendChild(calendarNodeSpan);
-  }
-  {% endfor %}
 </script>
 
 {% endblock %}

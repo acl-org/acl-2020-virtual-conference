@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<script src='https://slideslive.com/embed_presentation.js'></script>
 <!-- Title -->
 <div class="pp-card m-3" style="">
   <div class="card-header">
@@ -27,7 +28,7 @@
     <div class="text-center text-muted text-monospace">
       <div class="workshop-times">
         {% if workshop.session2_time %}
-          <span class="workshop_times">Live Session 1: {{workshop.session1_time}}</span>
+          Live Session 1: <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -37,7 +38,7 @@
             >
           </a>
           <br/>
-          <span class="workshop_times">Live Session 2: {{workshop.session2_time}}</span>
+          Live Session 2: <span class="workshop_times">{{workshop.session2_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -47,7 +48,7 @@
             >
           </a>
         {% else %}
-          <span class="workshop_times">Live Session: {{workshop.session1_time}}</span>
+          Live Session: <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -59,7 +60,7 @@
         {% endif %}
         {% if workshop.session3_time %}
           <br/>
-          <span class="workshop_times">Live Session 3: {{workshop.session3_time}}</span>
+          Live Session 3: <span class="workshop_times">{{workshop.session3_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <img
                 src="static/images/zoom-icon.png"
@@ -109,6 +110,12 @@
   </div>
 </div>
 {% endif %}
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(() => {
+    add_local_tz('.workshop_times');
+  })
+</script>
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="row m-2">    
@@ -119,7 +126,6 @@
         <b>Livestreaming</b>
       </p>
       <div id="presentation-embed" class="slp my-auto"></div>
-      <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
         embed = new SlidesLiveEmbed('presentation-embed', {
         presentationId: '{{config.default_presentation_id}}',
@@ -149,31 +155,19 @@
 <!-- Prerecorded Talk -->
 <br/>
 <h3><b>Pre-recorded Talks</b></h3>
-{% for paper in workshop.papers %}
-<div class="row m-2">
-  <div class="col-md-12 col-xs-12 my-auto p-2">
-    <hr>
-    <p>
-      <b>{{paper.title}}</b>
-    </p>
-    <p>
-      <i>{{paper.speakers}}</i>
-    </p>
-  <div id="presentation-embed-{{paper.id}}" class="slp my-auto"></div>
-  <script src='https://slideslive.com/embed_presentation.js'></script>
-  <script>
-    embed = new SlidesLiveEmbed('presentation-embed-{{paper.id}}', {
-      presentationId: '{{paper.presentation_id}}',  // TODO: make this configurable
-      autoPlay: false, // change to true to autoplay the embedded presentation
-      verticalEnabled: true,
-      verticalWhenWidthLte: 500,
-      allowHiddenControlsWhenPaused: true,
-      hideTitle: true
-    });
-  </script>
-  <br/>
+<div id="accordion">
+  {% for paper in workshop.papers %}
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank"><b>{{paper.title}}</b></a>
+        </p>
+        <p>
+          <i>{{paper.speakers}}</i>
+        </p>
+    </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
-
 {% endblock %}

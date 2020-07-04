@@ -17,6 +17,7 @@ from miniconf.site_data import (
     Paper,
     PaperContent,
     PlenarySession,
+    PlenaryVideo,
     SessionInfo,
     Tutorial,
     Workshop,
@@ -43,6 +44,8 @@ def load_site_data(
         # schedule.html
         "overall_calendar",
         "plenary_sessions",
+        "business_meeting",
+        "review_meeting",
         # tutorials.html
         "tutorials",
         # papers.html
@@ -127,7 +130,13 @@ def load_site_data(
     site_data["calendar"] = build_schedule(site_data["overall_calendar"])
 
     # plenary_sessions.html
-    plenary_sessions = build_plenary_sessions(site_data["plenary_sessions"])
+    plenary_sessions = build_plenary_sessions(
+        raw_plenary_sessions=site_data["plenary_sessions"],
+        raw_plenary_videos={
+            "business_meeting": site_data["business_meeting"],
+            "review_meeting": site_data["review_meeting"],
+        },
+    )
     site_data["plenary_sessions"] = plenary_sessions
     by_uid["plenary_sessions"] = {
         plenary_session.id: plenary_session
@@ -260,10 +269,24 @@ def build_committee(raw_committee: List[Dict[str, Any]]) -> List[CommitteeMember
 
 
 def build_plenary_sessions(
-    raw_keynotes: List[Dict[str, Any]]
+    raw_plenary_sessions: List[Dict[str, Any]],
+    raw_plenary_videos: Dict[str, List[Dict[str, Any]]],
 ) -> DefaultDict[str, List[PlenarySession]]:
+
+    plenary_videos: DefaultDict[str, List[PlenaryVideo]] = defaultdict(list)
+    for plenary_id, videos in raw_plenary_videos.items():
+        for item in videos:
+            plenary_videos[plenary_id].append(
+                PlenaryVideo(
+                    id=item["UID"],
+                    title=item["title"],
+                    speakers=item["speakers"],
+                    presentation_id=item["presentation_id"],
+                )
+            )
+
     plenary_sessions: DefaultDict[str, List[PlenarySession]] = defaultdict(list)
-    for item in raw_keynotes:
+    for item in raw_plenary_sessions:
         plenary_sessions[item["date"]].append(
             PlenarySession(
                 id=item["UID"],
@@ -280,6 +303,9 @@ def build_plenary_sessions(
                 rocketchat_channel=item.get("rocketchat_channel"),
                 qa_time=item.get("qa_time"),
                 zoom_link=item.get("zoom_link"),
+                videos=plenary_videos[item["UID"]]
+                if item["UID"] in ["business_meeting", "review_meeting"]
+                else None,
             )
         )
     return plenary_sessions
@@ -468,6 +494,18 @@ def build_papers(
     return papers
 
 
+def processGMTPDT(timestring):
+    if timestring == "":
+        return ""
+    gmttime = timestring.split("GMT")[0].strip()
+    gmttime = gmttime.split("(")[-1]
+    return "(" + gmttime + " GMT)"
+
+
+def parse_session_time(session_time_str: str) -> datetime:
+    return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
+
+
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
     return [
         Tutorial(
@@ -479,10 +517,17 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
-            zoom_link=item.get("zoom_link"),
-            session1_time=item.get("session1_time"),
-            session2_time=item.get("session2_time", ""),
-            virtual_format_description=item["virtual_format_description"],
+            rocketchat_channel=item.get("rocketchat_channel", ""),
+            sessions=[
+                SessionInfo(
+                    session_name=session.get("name"),
+                    start_time=parse_session_time(session.get("start_time")),
+                    end_time=parse_session_time(session.get("end_time")),
+                    zoom_link=session.get("zoom_link"),
+                )
+                for session in item.get("sessions")
+            ],
+            virtual_format_description=item["info"],
         )
         for item in raw_tutorials
     ]
@@ -519,9 +564,9 @@ def build_workshops(
                 papers=workshop_papers[item["UID"]],
                 schedule=workshop_schedules.get(item["UID"]),
                 zoom_link=item.get("zoom_link"),
-                session1_time=item.get("session1_time"),
-                session2_time=item.get("session2_time", ""),
-                session3_time=item.get("session3_time", ""),
+                session1_time=processGMTPDT(item.get("session1_time")),
+                session2_time=processGMTPDT(item.get("session2_time", "")),
+                session3_time=processGMTPDT(item.get("session3_time", "")),
                 rocketchat_channel=item["rocketchat_channel"],
             )
         )
