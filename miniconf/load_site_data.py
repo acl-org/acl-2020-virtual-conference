@@ -502,6 +502,10 @@ def processGMTPDT(timestring):
     return "(" + gmttime + " GMT)"
 
 
+def parse_session_time(session_time_str: str) -> datetime:
+    return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
+
+
 def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
     return [
         Tutorial(
@@ -513,10 +517,16 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
             livestream=item.get("livestream", ""),
-            zoom_link=item.get("zoom_link"),
-            session1_time=processGMTPDT(item.get("session1_time")),
-            session2_time=processGMTPDT(item.get("session2_time")),
-            virtual_format_description=item["virtual_format_description"],
+            sessions=[
+                SessionInfo(
+                    session_name=session.get("name"),
+                    start_time=parse_session_time(session.get("start_time")),
+                    end_time=parse_session_time(session.get("end_time")),
+                    zoom_link=session.get("zoom_link"),
+                )
+                for session in item.get("sessions")
+            ],
+            virtual_format_description=item["info"],
         )
         for item in raw_tutorials
     ]
