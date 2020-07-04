@@ -1,5 +1,13 @@
 {% set page_title = tutorial.title %}
 {% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<meta property="og:title" content="{{tutorial.title}}" />
+<meta property="og:description" content="{{tutorial.abstract|safe}}" />
+<meta property="og:url" content="https://virtual.acl2020.org" />
+{% endblock %}
+
 {% block content %}
 
 <!-- Title -->

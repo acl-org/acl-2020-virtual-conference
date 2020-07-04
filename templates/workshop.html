@@ -1,5 +1,13 @@
 {% set page_title = workshop.title %}
 {% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<meta property="og:title" content="{{workshop.title}}" />
+<meta property="og:description" content="{{ workshop.organizers | join(', ') }}" />
+<meta property="og:url" content="https://virtual.acl2020.org" />
+{% endblock %}
+
 {% block content %}
 
 <script src='https://slideslive.com/embed_presentation.js'></script>

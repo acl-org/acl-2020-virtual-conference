@@ -5,6 +5,7 @@
 
 {{ super() }}
 <meta name="citation_title" content="{{paper.content.title}}" />
+
 {% for author in paper.content.authors %}
 <meta name="citation_author" content="{{author}}" />
 {% endfor %}
@@ -16,6 +17,11 @@
 <meta name="citation_keywords" content="{{keyword}}" />
 {% endfor %}
 <meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
+
+<meta property="og:title" content="{{paper.content.title}}" />
+<meta property="og:image" content="https://virtual.acl2020.org/{{paper.card_image_path}}" />
+<meta property="og:description" content="{{paper.content.tldr}}" />
+<meta property="og:url" content="https://virtual.acl2020.org" />
 
 {% endblock %}
 
