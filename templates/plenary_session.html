@@ -33,7 +33,7 @@
     <div class="text-center text-muted text-monospace ">
       <div>
       Presentation:
-      <span class="livestream_time">{{plenary_session.time}}</span>
+      {{plenary_session.date}} (<span class="session_times">{{plenary_session.time}}</span>)
       </div>
     </div>
     {% endif %}
@@ -42,7 +42,7 @@
     <div class="text-center text-muted text-monospace ">
       <div>
       Live QA:
-      <span class="session_times">{{plenary_session.qa_time}}</span>
+      {{plenary_session.date}} (<span class="session_times">{{plenary_session.qa_time}}</span>)
       </div>
     </div>
     {% endif %}
