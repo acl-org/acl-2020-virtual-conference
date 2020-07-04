@@ -32,9 +32,6 @@ class SessionInfo:
         if self.session_name.startswith("D"):
             # demo sessions
             return f"Demo Session {self.session_name[1:]}: {start_date}"
-        elif self.session_name.startswith("T-"):
-            # tutorials
-            return f"{self.session_name[2:]}: {start_date}"
         return f"Session {self.session_name}: {start_date}"
 
 
@@ -124,6 +121,36 @@ class CommitteeMember:
 
 
 @dataclass(frozen=True)
+class TutorialSessionInfo:
+    """The session information for a tutorial."""
+
+    session_name: str
+    start_time: datetime
+    end_time: datetime
+    livestream_id: str
+    zoom_link: str
+
+    @property
+    def time_string(self) -> str:
+        return "({}-{} GMT)".format(
+            self.start_time.strftime("%H:%M"), self.end_time.strftime("%H:%M")
+        )
+
+    @property
+    def start_time_string(self) -> str:
+        return self.start_time.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @property
+    def end_time_string(self) -> str:
+        return self.end_time.strftime("%Y-%m-%dT%H:%M:%S")
+
+    @property
+    def session(self) -> str:
+        start_date = f'{self.start_time.strftime("%b")} {self.start_time.day}'
+        return f"{self.session_name}: {start_date}"
+
+
+@dataclass(frozen=True)
 class Tutorial:
     id: str
     title: str
@@ -132,9 +159,8 @@ class Tutorial:
     material: Optional[str]
     slides: Optional[str]
     prerecorded: Optional[str]
-    livestream: Optional[str]
     rocketchat_channel: str
-    sessions: List[SessionInfo]
+    sessions: List[TutorialSessionInfo]
     virtual_format_description: str
 
 

@@ -20,6 +20,7 @@ from miniconf.site_data import (
     PlenaryVideo,
     SessionInfo,
     Tutorial,
+    TutorialSessionInfo,
     Workshop,
     WorkshopPaper,
 )
@@ -516,13 +517,13 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             material=item["material"],
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
-            livestream=item.get("livestream", ""),
             rocketchat_channel=item.get("rocketchat_channel", ""),
             sessions=[
-                SessionInfo(
+                TutorialSessionInfo(
                     session_name=session.get("name"),
                     start_time=parse_session_time(session.get("start_time")),
                     end_time=parse_session_time(session.get("end_time")),
+                    livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
                 for session in item.get("sessions")
