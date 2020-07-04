@@ -168,12 +168,12 @@
           <i>{{paper.speakers}}</i>
         </p>
       </div>
-    <div id="presentation-embed-wrapper-{{paper.id}}" class="collapse" aria-labelledby="{{paper.title}}" data-parent="#accordion">
+    <div id="presentation-embed-wrapper-{{paper.id}}" class="collapse" aria-labelledby="{{paper.title}}">
     </div>
     <script>
       $("#presentation-embed-wrapper-{{paper.id}}").on('show.bs.collapse', function () {
           $("#presentation-embed-wrapper-{{paper.id}}").append(
-            `<div id="presentation-embed-{{paper.id}}" class="slp my-auto hidden"></div>`)
+            `<div id="presentation-embed-{{paper.id}}" class="slp my-auto hidden"></div>`);
           embed = new SlidesLiveEmbed('presentation-embed-{{paper.id}}', {
           presentationId: '{{paper.presentation_id}}',  // TODO: make this configurable
           autoPlay: false, // change to true to autoplay the embedded presentation
@@ -184,7 +184,7 @@
           }
         );
       $("#presentation-embed-wrapper-{{paper.id}}").on('hide.bs.collapse', function () {
-          $("#presentation-embed-{{paper.id}}").remove()});
+        $("#presentation-embed-{{paper.id}}").remove()});
     </script>
     </div>
   </div>
