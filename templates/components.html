@@ -348,12 +348,14 @@
   </div>
 {%- endmacro %}
 
-{% macro live_sessions(sessions, title) -%}
+{% macro live_sessions(sessions, title, abstract) -%}
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
   {{session.session}}
   <span class="session_times">{{session.time_string}}</span>
+
+  {% if session.zoom_link %}
   <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
     <img
         src="static/images/zoom-icon.png"
@@ -362,8 +364,10 @@
         title="Join Zoom Meeting"
     >
   </a>
+  {% endif %}
   </div>
   </div>
+
   <div class="text-center text-muted text-monospace">
   <div class="paper-cal-links">
   <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
@@ -389,7 +393,7 @@
         id: 'my-id'                               // If you don't pass an id, one will be generated for you.
       },
       data: {
-        title: '{{title | safe}}',
+        title: '{{title}}',
 
         // Event start date
         start: new Date("{{session.start_time_string}}"),
@@ -400,10 +404,12 @@
         // Event timezone. Will convert the given time to that zone
         timezone: 'UTC',
         // Event Address
+        {% if session.zoom_link %}
         address: '{{session.zoom_link}}',
+        {% endif %}
 
         // Event Description
-        description: '{{session.zoom_link}}'
+        description: '{{abstract}}'
       }
     });
 

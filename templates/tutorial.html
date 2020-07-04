@@ -66,9 +66,11 @@
   </div>
   {% elif tutorial.id == 'T7' %}
   <div class="row m-2" style="padding-left: 5px;">
-    <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
-       Tutorial Worksheet
-    </a>
+    <div class="col-md-12 col-xs-12 my-auto p-2" style="font-size: 20px;">
+      <a href="https://docs.google.com/document/d/1WUerIY4MKuKEmvWR2OeB_oJCSBl3k4Q7KWwNzm5HYhs/view" target="_blank" class="card-link">
+         Tutorial Worksheet
+      </a>
+    </div>
   </div>
 
   {% endif %}
@@ -92,9 +94,14 @@
     </div>
     {% endif %}
 
+    {% if tutorial.livestream %}
+    {% set rocketchat_width = 5 %}
+    {% else %}
+    {% set rocketchat_width = 12 %}
+    {% endif %}
     <!-- Chat -->
     <br/>
-    <div class="col-md-5 col-xs-12 p-2">
+    <div class="col-md-{{ rocketchat_width }} col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/tutorial-{{tutorial.id}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
