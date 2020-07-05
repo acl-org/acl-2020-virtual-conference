@@ -32,6 +32,8 @@ class SessionInfo:
         if self.session_name.startswith("D"):
             # demo sessions
             return f"Demo Session {self.session_name[1:]}: {start_date}"
+        if self.session_name.startswith('P-'):
+            return f"{self.session_name[2:]}: {start_date}"
         return f"Session {self.session_name}: {start_date}"
 
 
@@ -98,7 +100,7 @@ class PlenarySession:
     image: str
     date: str
     day: str
-    time: Optional[str]
+    sessions: List[SessionInfo]
     presenter: Optional[str]
     institution: Optional[str]
     abstract: Optional[str]
@@ -106,8 +108,6 @@ class PlenarySession:
     # SlidesLive presentation ID
     presentation_id: Optional[str]
     rocketchat_channel: Optional[str]
-    qa_time: Optional[str]
-    zoom_link: Optional[str]
     videos: List[PlenaryVideo]
 
 

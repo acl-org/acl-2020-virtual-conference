@@ -295,15 +295,21 @@ def build_plenary_sessions(
                 image=item["image"],
                 date=item["date"],
                 day=item["day"],
-                time=item.get("time"),
+                sessions=[
+                    SessionInfo(
+                        session_name=session.get("name"),
+                        start_time=parse_session_time(session.get("start_time")),
+                        end_time=parse_session_time(session.get("end_time")),
+                        zoom_link=session.get("zoom_link"),
+                    )
+                    for session in item.get("sessions")
+                ],
                 presenter=item.get("presenter"),
                 institution=item.get("institution"),
                 abstract=item.get("abstract"),
                 bio=item.get("bio"),
                 presentation_id=item.get("presentation_id"),
                 rocketchat_channel=item.get("rocketchat_channel"),
-                qa_time=item.get("qa_time"),
-                zoom_link=item.get("zoom_link"),
                 videos=plenary_videos[item["UID"]]
                 if item["UID"] in ["business_meeting", "review_meeting"]
                 else None,

@@ -62,19 +62,13 @@
             </div>
             {% endif %}
 
-            {% if plenary_session.time != none %}
-            <div class="m-3 text-muted">
-              Presentation: {{plenary_session.time}}
+            {% for session in plenary_session.sessions %}
+              <div class="m-3 text-muted">
+              {{session.session}}
+              <span class="session_times">{{session.time_string}}</span>
               [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
-            </div>
-            {% endif %}
-
-            {% if plenary_session.qa_time != none %}
-            <div class="m-3 text-muted">
-              Live QA: {{plenary_session.qa_time}}
-              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
-            </div>
-            {% endif %}
+              </div>
+            {% endfor %}
 
             {% if plenary_session.abstract != none %}
             <div class="m-3">
@@ -348,7 +342,7 @@
   </div>
 {%- endmacro %}
 
-{% macro live_sessions(sessions, title, abstract) -%}
+{% macro live_sessions(sessions, title, abstract, is_plenary) -%}
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
@@ -364,6 +358,12 @@
         title="Join Zoom Meeting"
     >
   </a>
+  {% endif %}
+
+  {% if is_plenary %}
+    <a href="livestream.html" target="_blank"  class="card-link">
+    [Livestream]
+    </a>
   {% endif %}
   </div>
   </div>
@@ -409,7 +409,8 @@
         {% endif %}
 
         // Event Description
-        description: '{{abstract}}'
+        // TODO: Cannot use "abstract" because it maybe unsafe. Need to clean the text.
+        description: '{{title}}'
       }
     });
 

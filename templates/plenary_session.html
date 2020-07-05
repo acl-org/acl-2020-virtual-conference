@@ -29,23 +29,8 @@
       </a>
       {% endif %}
     </div>
-    {% if plenary_session.time != none %}
-    <div class="text-center text-muted text-monospace ">
-      <div>
-      Presentation:
-      {{plenary_session.date}} (<span class="session_times">{{plenary_session.time}}</span>)
-      </div>
-    </div>
-    {% endif %}
 
-    {% if plenary_session.qa_time != none %}
-    <div class="text-center text-muted text-monospace ">
-      <div>
-      Live QA:
-      {{plenary_session.date}} (<span class="session_times">{{plenary_session.qa_time}}</span>)
-      </div>
-    </div>
-    {% endif %}
+    {{ components.live_sessions(plenary_session.sessions, plenary_session.title, plenary_session.abstract, true) }}
 
   </div>
 </div>
@@ -71,72 +56,75 @@
 </div>
 {% endif %}
 
-
-
-  <div class="container" style="background-color:white; padding: 0px;">
-    {% if plenary_session.videos != none %}
+<div class="container" style="background-color:white; padding: 0px;">
+  {% if plenary_session.videos != none %}
+  <div class="row m-2">
+    <div class="col-md-7 col-xs-12 p-2">
+    <div id="accordion">
+      {% for video in plenary_session.videos %}
       <div class="row m-2">
-        <div class="col-md-7 col-xs-12 p-2">
-        <div id="accordion">
-          {% for video in plenary_session.videos %}
-          <div class="row m-2">
-            <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
-                <p>
-                  <a href="https://slideslive.com/{{video.presentation_id}}" target="_blank"><b>{{video.title}}</b></a>
-                </p>
-                <p>
-                  <i>{{video.speakers}}</i>
-                </p>
-            </div>
-          </div>
-          {% endfor %}
+        <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+            <p>
+              <a href="https://slideslive.com/{{video.presentation_id}}" target="_blank"><b>{{video.title}}</b></a>
+            </p>
+            <p>
+              <i>{{video.speakers}}</i>
+            </p>
         </div>
       </div>
-        <div class="col-md-5 col-xs-12 p-2">
-          <div id="gitter" class="slp">
-            <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
-          </div>
-        </div>
-      </div>
-    {% else %}
-    <div class="row m-2">
-      <!-- Presentation Embed -->
-      {% if plenary_session.rocketchat_channel %}
-        {%  set n = 7 %}
-      {% else %}
-        {% set n = 12%}
-      {% endif %}
-        <div class="col-md-{{ n }} col-xs-12 my-auto p-2" >
-          {% if plenary_session.presentation_id != none %}
-          <div id="presentation-embed" class="slp my-auto"></div>
-          <script src='https://slideslive.com/embed_presentation.js'></script>
-          <script>
-            embed = new SlidesLiveEmbed('presentation-embed', {
-              presentationId: '{{plenary_session.presentation_id}}',
-              autoPlay: false, // change to true to autoplay the embedded presentation
-              verticalEnabled: true,
-              verticalWhenWidthLte: 500,
-              allowHiddenControlsWhenPaused: true,
-              hideTitle: true
-            });
-          </script>
-          </div>
-          {% else %}
-          <h3 class="text text-center">
-            To Be Announced
-          </h3>
-          {% endif %}
+      {% endfor %}
+    </div>
+    </div>
 
-      <!-- Chat -->
-      {% if plenary_session.rocketchat_channel %}
-      <div class="col-md-5 col-xs-12 p-2">
-        <div id="gitter" class="slp">
-          <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
-        </div>
+    <div class="col-md-5 col-xs-12 p-2">
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
-      {% endif %}
+    </div>
+  </div>
+
+  {% else %}
+  <div class="row m-2">
+    {% if plenary_session.rocketchat_channel %}
+    {% set n = 7 %}
+    {% else %}
+    {% set n = 12%}
+    {% endif %}
+
+    <!-- Presentation Embed -->
+    <div class="col-md-{{ n }} col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+          presentationId: '{{plenary_session.presentation_id}}',
+          autoPlay: false, // change to true to autoplay the embedded presentation
+          verticalEnabled: true,
+          verticalWhenWidthLte: 500,
+          allowHiddenControlsWhenPaused: true,
+          hideTitle: true
+        });
+      </script>
+    </div>
+
+    <!-- Chat -->
+    {% if plenary_session.rocketchat_channel %}
+    <div class="col-md-5 col-xs-12 p-2">
+      <div id="gitter" class="slp">
+        <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
+      </div>
+    </div>
+    {% endif %}
+
   </div>
   {% endif %}
 </div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
 
 {% endblock %}
