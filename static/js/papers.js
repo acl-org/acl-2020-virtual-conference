@@ -12,7 +12,7 @@ const filters = {
     title: null,
 };
 
-let render_mode = 'compact';
+let render_mode = 'list';
 
 const persistor = new Persistor('Mini-Conf-Papers');
 
