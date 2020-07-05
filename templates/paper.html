@@ -61,7 +61,11 @@
      <span class="badge badge-secondary">{{ paper.content.paper_type }} Paper</span>
     </p>
 
-    {{  components.live_sessions(paper.content.sessions, paper.content.title) }}
+    {{ components.live_sessions(
+        paper.content.sessions,
+        paper.content.title,
+        "https://virtual.acl2020.org/paper_" + paper.id + ".html",
+        false) }}
 
   </div>
 </div>

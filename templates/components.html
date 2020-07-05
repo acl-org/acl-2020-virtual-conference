@@ -342,7 +342,7 @@
   </div>
 {%- endmacro %}
 
-{% macro live_sessions(sessions, title, abstract, is_plenary) -%}
+{% macro live_sessions(sessions, title, url, is_plenary) -%}
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
   <div class="paper-session-times">
@@ -409,8 +409,8 @@
         {% endif %}
 
         // Event Description
-        // TODO: Cannot use "abstract" because it maybe unsafe. Need to clean the text.
-        description: '{{title}}'
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: '{{ url }}'
       }
     });
 

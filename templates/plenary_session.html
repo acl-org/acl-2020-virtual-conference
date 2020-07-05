@@ -30,7 +30,11 @@
       {% endif %}
     </div>
 
-    {{ components.live_sessions(plenary_session.sessions, plenary_session.title, plenary_session.abstract, true) }}
+    {{ components.live_sessions(
+        plenary_session.sessions,
+        plenary_session.title,
+        "https://virtual.acl2020.org/plenary_session_" + plenary_session.id + ".html",
+        true) }}
 
   </div>
 </div>
