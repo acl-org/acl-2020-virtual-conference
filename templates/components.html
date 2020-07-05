@@ -378,6 +378,7 @@
 
 <script src="static/js/add-to-calendar.js"></script>
 <script>
+
   let ouicalData;
   let targetNode;
   let calendarNodeInner;
@@ -393,7 +394,7 @@
         id: 'my-id'                               // If you don't pass an id, one will be generated for you.
       },
       data: {
-        title: '{{title}}',
+        title: '{{ title }}'.replace("#", " "),
 
         // Event start date
         start: new Date("{{session.start_time_string}}"),
