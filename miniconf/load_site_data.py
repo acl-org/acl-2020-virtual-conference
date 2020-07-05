@@ -376,11 +376,7 @@ def normalize_track_name(track_name: str) -> str:
 
 
 def get_card_image_path_for_paper(paper_id: str, paper_images_path: str) -> str:
-    if os.path.exists(os.path.join(paper_images_path, f"{paper_id}.png")):
-        return f"{paper_images_path}/{paper_id}.png"
-    else:
-        # print(f"WARNING: using default image for {paper_id}")
-        return f"{paper_images_path}/default.png"
+    return f"{paper_images_path}/{paper_id}.png"
 
 
 def build_papers(
