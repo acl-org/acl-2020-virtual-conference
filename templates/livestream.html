@@ -8,7 +8,22 @@
 
 {% block content %}
 
-<div id="live">
+{% set livestream_id = '38931670' %}
+{% set cart_url = "https://www.streamtext.net/text.aspx?event=ACLCONFERENCE" %}
+
+<div id="live container">
+    <div class="text-muted text-center">
+      You can also watch the
+      <a href="https://slideslive.com/{{ livestream_id }}" target="_blank">
+        livestream
+      </a>
+      and
+      <a href="{{ cart_url }}" target="_blank">
+        captions
+      </a>
+      in separate windows.
+    </div>
+
     <div class="row p-4">
       <!-- SlidesLive-->
       <div class="col-md-12 col-xs-12 p-2">
@@ -16,7 +31,7 @@
         <script src='https://slideslive.com/embed_presentation.js'></script>
         <script>
           embed = new SlidesLiveEmbed('presentation-embed', {
-            presentationId: {{ config.default_presentation_id }},  // FIXME: change on July 4
+            presentationId: {{ livestream_id }},
             autoPlay: false, // change to true to autoplay the embedded presentation
             verticalEnabled: true,
             verticalWhenWidthLte: 500,
@@ -27,8 +42,57 @@
       </div>
     </div>
 
+    <div class="row"
+         style="padding: 0; margin-left: 0; margin-right: 0; margin-top: -35px;">
+      <div class="col-md-12 col-xs-12 p-2">
+        <div class="collapse" id="liveCaptioning">
+          <div class="card card-body">
+            <iframe
+                src="{{ cart_url }}&chat=false&controls=false&header=false&footer=false&ff=arial&fs=24"
+                marginwidth="0px"
+                marginheight="0px"
+                scrolling="no"
+                frameborder="0"
+                class="style7"
+                id="stFrame"
+                style="width:100%;height:200px"
+            >
+            </iframe>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    {% set text_show = "Show Live Captioning (Only available for Q&A)" %}
+    {% set text_hide = "Hide Live Captioning (Only available for Q&A)" %}
+    <p class="text-center">
+      <a id="toggleCaption"
+         class="btn btn-danger"
+         data-toggle="collapse"
+         href="#liveCaptioning"
+         role="button"
+         aria-expanded="false"
+         aria-controls="liveCaptioning"
+         onclick="toggleCaptions()"
+      >{{ text_show }}</a>
+    </p>
+    <script>
+      function toggleCaptions() {
+        const x = document.getElementById("toggleCaption");
+        if (x.innerHTML === "{{ text_show }}") {
+          x.innerHTML = "{{ text_hide }}";
+        } else {
+          x.innerHTML = "{{ text_show }}";
+        }
+      }
+    </script>
+
     <!-- Chat -->
     {{ components.section("Live Chat") }}
+    <div class="text text-muted text-center">
+      You can also open the <a href="https://{{config.chat_server}}/channel/live" target="_blank">#live</a>
+      channel below in a separate window.
+    </div>
     <div class="row p-4">
       <div class="col-md-12 col-xs-12 p-2">
         <div id="chat2" class="slp">
