@@ -118,6 +118,22 @@
 </script>
 
 <div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  {% if workshop.livestream %}
+  <a class="btn btn-outline-danger"
+     href="https://slideslive.com/{{config.default_presentation_id}}" target="_blank"
+     style="margin-left: 5px; margin-right: 5px">
+    Livestream Video
+  </a>
+  {% endif %}
+  <a class="btn btn-outline-danger"
+     href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}"
+     target="_blank"
+     style="margin-left: 5px; margin-right: 5px">
+    Chat
+  </a>
+
+  </div>
   <div class="row m-2">    
     {% if workshop.livestream %}
     <!-- Livestreaming -->

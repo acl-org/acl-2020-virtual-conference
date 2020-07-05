@@ -62,6 +62,16 @@
 
 <div class="container" style="background-color:white; padding: 0px;">
   {% if plenary_session.videos != none %}
+
+  <div class="text-muted text-center">
+    <a class="btn btn-outline-danger"
+       href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
+       target="_blank"
+       style="margin-left: 5px; margin-right: 5px">
+      Chat
+    </a>
+  </div>
+
   <div class="row m-2">
     <div class="col-md-7 col-xs-12 p-2">
     <div id="accordion">
@@ -88,6 +98,22 @@
   </div>
 
   {% else %}
+  <div class="text-muted text-center">
+    <a class="btn btn-outline-danger"
+       href="https://slideslive.com/{{plenary_session.presentation_id}}" target="_blank"
+       style="margin-left: 5px; margin-right: 5px">
+      Video
+    </a>
+    {% if plenary_session.rocketchat_channel %}
+      <a class="btn btn-outline-danger"
+         href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
+         target="_blank"
+         style="margin-left: 5px; margin-right: 5px">
+        Chat
+      </a>
+    {% endif %}
+  </div>
+
   <div class="row m-2">
     {% if plenary_session.rocketchat_channel %}
     {% set n = 7 %}
