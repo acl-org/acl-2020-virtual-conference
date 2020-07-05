@@ -6,6 +6,14 @@
 {% endblock %}
 
 
+{% block heading %}
+<div class="col-12 bd-content">
+<h4 class="text-center">
+  Pre-recorded videos and full schedule are available <a href="plenary_sessions.html" target="_blank">here</a>.
+</h4>
+</div>
+{% endblock %}
+
 {% block content %}
 
 {% set livestream_id = '38931670' %}
@@ -19,8 +27,9 @@
       </a>
       and
       <a href="{{ cart_url }}" target="_blank">
-        captions
+        captions (for Q&A)
       </a>
+      below
       in separate windows.
     </div>
 
