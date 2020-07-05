@@ -32,7 +32,7 @@ class SessionInfo:
         if self.session_name.startswith("D"):
             # demo sessions
             return f"Demo Session {self.session_name[1:]}: {start_date}"
-        if self.session_name.startswith('P-'):
+        if self.session_name.startswith("P-"):
             return f"{self.session_name[2:]}: {start_date}"
         return f"Session {self.session_name}: {start_date}"
 
