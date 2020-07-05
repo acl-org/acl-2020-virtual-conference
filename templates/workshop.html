@@ -121,7 +121,7 @@
   <div class="text-muted text-center">
   {% if workshop.livestream %}
   <a class="btn btn-outline-danger"
-     href="https://slideslive.com/{{config.default_presentation_id}}" target="_blank"
+     href="https://slideslive.com/{{workshop.livestream}}" target="_blank"
      style="margin-left: 5px; margin-right: 5px">
     Livestream Video
   </a>
@@ -138,13 +138,10 @@
     {% if workshop.livestream %}
     <!-- Livestreaming -->
     <div class="col-md-7 col-xs-12 my-auto p-2" >
-      <p>
-        <b>Livestreaming</b>
-      </p>
       <div id="presentation-embed" class="slp my-auto"></div>
       <script>
         embed = new SlidesLiveEmbed('presentation-embed', {
-        presentationId: '{{config.default_presentation_id}}',
+        presentationId: '{{workshop.livestream}}',
         autoPlay: false, // change to true to autoplay the embedded presentation
         verticalEnabled: true,
         verticalWhenWidthLte: 500,
@@ -158,9 +155,6 @@
     <!-- Chat -->
     <br/>
     <div class="col-md-5 col-xs-12 p-2">
-      <p>
-        <b>RocketChat Channel discussion</b>
-      </p>
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
@@ -169,8 +163,7 @@
 </div>
 
 <!-- Prerecorded Talk -->
-<br/>
-<h3><b>Pre-recorded Talks</b></h3>
+{{ components.section("Pre-recorded Talks") }}
 <div id="accordion">
   {% for paper in workshop.papers %}
   <div class="row m-2">
