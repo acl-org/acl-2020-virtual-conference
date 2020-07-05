@@ -61,7 +61,11 @@
      <span class="badge badge-secondary">{{ paper.content.paper_type }} Paper</span>
     </p>
 
-    {{  components.live_sessions(paper.content.sessions, paper.content.title) }}
+    {{ components.live_sessions(
+        paper.content.sessions,
+        paper.content.title,
+        "https://virtual.acl2020.org/paper_" + paper.id + ".html",
+        false) }}
 
   </div>
 </div>
@@ -77,6 +81,19 @@
 </div>
 
 <div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  <a class="btn btn-outline-danger"
+     href="https://slideslive.com/{{paper.presentation_id}}" target="_blank"
+     style="margin-left: 5px; margin-right: 5px">
+    Video
+  </a>
+  <a class="btn btn-outline-danger"
+     href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+     target="_blank"
+     style="margin-left: 5px; margin-right: 5px">
+    Chat
+  </a>
+  </div>
   <div class="row m-2">
     <!-- Slides Live-->
     <div class="col-md-7 col-xs-12 my-auto p-2" >

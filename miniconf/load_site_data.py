@@ -20,6 +20,7 @@ from miniconf.site_data import (
     PlenaryVideo,
     SessionInfo,
     Tutorial,
+    TutorialSessionInfo,
     Workshop,
     WorkshopPaper,
 )
@@ -294,15 +295,21 @@ def build_plenary_sessions(
                 image=item["image"],
                 date=item["date"],
                 day=item["day"],
-                time=item.get("time"),
+                sessions=[
+                    SessionInfo(
+                        session_name=session.get("name"),
+                        start_time=parse_session_time(session.get("start_time")),
+                        end_time=parse_session_time(session.get("end_time")),
+                        zoom_link=session.get("zoom_link"),
+                    )
+                    for session in item.get("sessions")
+                ],
                 presenter=item.get("presenter"),
                 institution=item.get("institution"),
                 abstract=item.get("abstract"),
                 bio=item.get("bio"),
                 presentation_id=item.get("presentation_id"),
                 rocketchat_channel=item.get("rocketchat_channel"),
-                qa_time=item.get("qa_time"),
-                zoom_link=item.get("zoom_link"),
                 videos=plenary_videos[item["UID"]]
                 if item["UID"] in ["business_meeting", "review_meeting"]
                 else None,
@@ -369,11 +376,7 @@ def normalize_track_name(track_name: str) -> str:
 
 
 def get_card_image_path_for_paper(paper_id: str, paper_images_path: str) -> str:
-    if os.path.exists(os.path.join(paper_images_path, f"{paper_id}.png")):
-        return f"{paper_images_path}/{paper_id}.png"
-    else:
-        # print(f"WARNING: using default image for {paper_id}")
-        return f"{paper_images_path}/default.png"
+    return f"{paper_images_path}/{paper_id}.png"
 
 
 def build_papers(
@@ -516,13 +519,13 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             material=item["material"],
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
-            livestream=item.get("livestream", ""),
             rocketchat_channel=item.get("rocketchat_channel", ""),
             sessions=[
-                SessionInfo(
+                TutorialSessionInfo(
                     session_name=session.get("name"),
                     start_time=parse_session_time(session.get("start_time")),
                     end_time=parse_session_time(session.get("end_time")),
+                    livestream_id=session.get("livestream_id"),
                     zoom_link=session.get("zoom_link"),
                 )
                 for session in item.get("sessions")
