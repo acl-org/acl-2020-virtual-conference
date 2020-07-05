@@ -39,7 +39,11 @@
     {% endif %}
     </div>
 
-    {{ components.live_sessions(tutorial.sessions, tutorial.title) }}
+    {{ components.live_sessions(
+        tutorial.sessions,
+        tutorial.title,
+        "https://virtual.acl2020.org/tutorial_" + tutorial.id + ".html",
+        false) }}
 
   </div>
 </div>
@@ -63,85 +67,107 @@
     </div>
   </div>
 
-  {% if tutorial.id == 'T6' %}
-    <div class="row m-2" style="padding-left: 5px;">
-    <div class="col-md-12 col-xs-12 my-auto p-2" style="font-size: 20px;">
-      <table class="table table-striped table-sm">
-        <thead>
-        <tr>
-          <th style="width: 16em;">Title / slides</th>
-          <th>Description</th>
-          <th style="width: 12em;">Speaker</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Introduction</td>
-          <td>Why commonsense reasoning is the new frontier of artificial intelligence.</td>
-          <td>Yejin Choi</td>
-        </tr>
-        <tr>
-          <td><a href="https://drive.google.com/file/d/18d951TboJK3hTS6tb6AQar_OVjc4-AP4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Knowledge in LMs</a></td>
-          <td>On the types of commonsense knowledge captured during the pre-training of language models, and what is still missing.</td>
-          <td>Vered Shwartz</td>
-        </tr>
-        <tr>
-          <td><a href="https://drive.google.com/file/d/1rcRkMt0l8Nr-WkUxJWcsckowGASg579o/view?usp=sharing" target="_blank" rel="noopener noreferrer">Commonsense resources</a></td>
-          <td>How to gather and represent commonsense knowledge of different types (e.g., social, physical, taxonomic).</td>
-          <td>Maarten Sap</td>
-        </tr>
-        <tr>
-          <td><a href="https://drive.google.com/file/d/1FwSGgJG-peHWxITHJVbrwKkhfjM7GXo7/view?usp=sharing" target="_blank" rel="noopener noreferrer">Integration into NNs part 1</a></td>
-          <td>How to enhance neural models for commonsense reasoning tasks with symbolic knowledge?</td>
-          <td>Vered Shwartz</td>
-        </tr>
-        <tr>
-          <td><a href="https://drive.google.com/file/d/1y-qV6J7lwzI-SDrR7wl8gXOz0xD5X41g/view?usp=sharing" target="_blank" rel="noopener noreferrer">Integration into NNs part 2</a></td>
-          <td>In this section, we explore how language models can be converted to commonsense knowledge bases, and the downstream effects of these new tools.</td>
-          <td>Antoine Bosselut</td>
-        </tr>
-        <tr>
-          <td><a href="https://drive.google.com/file/d/1rlOG2bHXaHCqBRXyymhJBKUXm5OICYyK/view?usp=sharing" target="_blank" rel="noopener noreferrer">Commonsense benchmarks</a></td>
-          <td>How to create benchmarks to measure whether and how well a model can do commonsense reasoning.</td>
-          <td>Maarten Sap</td>
-        </tr>
-        <tr>
-          <td><a href="https://drive.google.com/file/d/1rvnhA5Gx6HtTIbrwd7--ROx5vhZxdlvX/view?usp=sharing" target="_blank" rel="noopener noreferrer">Temporal commonsense</a></td>
-          <td>In this section, we review studies in discovering the temporal commonsense implications of events described in text.</td>
-          <td>Dan Roth</td>
-        </tr>
-        </tbody>
-      </table>
+  {% if tutorial.id == 'T8' %}
+  <div class="row m-2" style="padding-left: 5px;">
+  <div class="col-md-12 col-xs-12 my-auto p-2" style="font-size: 15px;">
+    <table class="table table-striped table-sm">
+      <thead>
+      <tr>
+        <th>Speaker</th>
+        <th>Slides</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Danqi Chen</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part1-introduction.pdf" target="_blank" rel="noopener noreferrer">Introduction & problem definition</a></td>
+      </tr>
+      <tr>
+        <td>Scott Yih</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part2-history.pdf" target="_blank" rel="noopener noreferrer">A history of open-domain (textual) QA</a></td>
+      </tr>
+      <tr>
+        <td>Scott Yih</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part3-dataset-evaluation.pdf" target="_blank" rel="noopener noreferrer">Datasets & evaluation</a></td>
+      </tr>
+      <tr>
+        <td>Danqi Chen</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part4-retriever-reader.pdf" target="_blank" rel="noopener noreferrer">Two-stage retriever-reader approaches</a></td>
+      </tr>
+      <tr>
+        <td>Danqi Chen</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part5-dense-retriever-e2e-training.pdf" target="_blank" rel="noopener noreferrer">Dense retriever and end-to-end training</a></td>
+      </tr>
+      <tr>
+        <td>Danqi Chen</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part6-retrieval-free.pdf" target="_blank" rel="noopener noreferrer">Retrieval-free approaches</a></td>
+      </tr>
+      <tr>
+        <td>Scott Yih</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part7-kb-text.pdf" target="_blank" rel="noopener noreferrer">Open-domain QA using KBs and text</a></td>
+      </tr>
+      <tr>
+        <td>Scott Yih</td>
+        <td><a href="https://github.com/danqi/acl2020-openqa-tutorial/blob/master/slides/part8-conclusion.pdf" target="_blank" rel="noopener noreferrer">Open problems and future directions</a></td>
+      </tr>
+      </tbody>
+    </table>
     </div>
-    </div>
+  </div>
   {% endif %}
 
-  <div class="row m-2">    
-    {% if tutorial.livestream %}
-    <!-- Livestreaming -->
+  <div class="text-muted text-center">
+    {% if tutorial.prerecorded %}
+    <a class="btn btn-outline-danger"
+       href="https://slideslive.com/{{tutorial.prerecorded}}" target="_blank"
+       style="margin-left: 5px; margin-right: 5px">
+      Pre-recorded Video
+    </a>
+    {% endif %}
+
+    {% if tutorial.id != 'T7' %}
+      {% for session in tutorial.sessions %}
+      <a class="btn btn-outline-danger"
+         href="https://slideslive.com/{{session.livestream_id}}" target="_blank"
+         style="margin-left: 5px; margin-right: 5px">
+        {{ session.session_name }}
+      </a>
+      {% endfor %}
+    {% endif %}
+
+    <a class="btn btn-outline-danger"
+       href="https://{{config.chat_server}}/channel/{{tutorial.rocketchat_channel}}"
+       target="_blank"
+       style="margin-left: 5px; margin-right: 5px">
+      Chat
+    </a>
+  </div>
+
+  <div class="row m-2">   
+    {% if tutorial.id == 'T7' or tutorial.id == 'T2' or tutorial.id == 'T6' or tutorial.id == 'T8' %}
+      {% set rocketchat_width = 12 %}
+    {% else %}
+      {% set rocketchat_width = 5 %}
+    {% endif %}
+
+    <!-- Prerecorded Talk -->
+    {% if tutorial.prerecorded %}
     <div class="col-md-7 col-xs-12 my-auto p-2" >
-      <div id="presentation-embed" class="slp my-auto"></div>
+      <div id="presentation-embed-{{tutorial.prerecorded}}" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
-        embed = new SlidesLiveEmbed('presentation-embed', {
-        presentationId: '{{config.default_presentation_id}}',
-        autoPlay: false, // change to true to autoplay the embedded presentation
-        verticalEnabled: true,
-        verticalWhenWidthLte: 500,
-        allowHiddenControlsWhenPaused: true,
-        hideTitle: true
+        embed = new SlidesLiveEmbed('presentation-embed-{{tutorial.prerecorded}}', {
+          presentationId: '{{tutorial.prerecorded}}',  // TODO: make this configurable
+          autoPlay: false, // change to true to autoplay the embedded presentation
+          verticalEnabled: true,
+          verticalWhenWidthLte: 500,
+          allowHiddenControlsWhenPaused: true,
+          hideTitle: true
         });
       </script>
     </div>
     {% endif %}
 
-    {% if tutorial.livestream %}
-    {% set rocketchat_width = 5 %}
-    {% else %}
-    {% set rocketchat_width = 12 %}
-    {% endif %}
-    <!-- Chat -->
-    <br/>
     <div class="col-md-{{ rocketchat_width }} col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{tutorial.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
@@ -149,28 +175,33 @@
     </div>
   </div>
 
-  <!-- Prerecorded Talk -->
-  {% if tutorial.prerecorded %}
-  {{ components.section("Pre-recorded Talk") }}
-  <div class="row m-2">
-    <div id="presentation-embed-{{tutorial.prerecorded}}" class="slp my-auto"></div>
-    <script src='https://slideslive.com/embed_presentation.js'></script>
-    <script>
-      embed = new SlidesLiveEmbed('presentation-embed-{{tutorial.prerecorded}}', {
-        presentationId: '{{tutorial.prerecorded}}',  // TODO: make this configurable
-        autoPlay: false, // change to true to autoplay the embedded presentation
-        verticalEnabled: true,
-        verticalWhenWidthLte: 500,
-        allowHiddenControlsWhenPaused: true,
-        hideTitle: true
-      });
-    </script>
-  </div>
+
+  <!-- Livestreaming -->
+  {% if tutorial.id != 'T7' %}
+  {% for session in tutorial.sessions %}
+    {{ components.section(session.session_name) }}
+    <div class="row m-2">
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed-{{session.livestream_id}}" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed-{{session.livestream_id}}', {
+          presentationId: '{{session.livestream_id}}',
+          autoPlay: false, // change to true to autoplay the embedded presentation
+          verticalEnabled: true,
+          verticalWhenWidthLte: 500,
+          allowHiddenControlsWhenPaused: true,
+          hideTitle: true
+        });
+      </script>
+    </div>
+    </div>
+  {% endfor %}
   {% endif %}
 
 </div>
 
-<script src="static/js/time-extend.js"></script>
+  <script src="static/js/time-extend.js"></script>
 <script>
   $(document).ready(()=>{
     add_local_tz('.session_times');

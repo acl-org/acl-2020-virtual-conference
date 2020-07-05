@@ -73,4 +73,11 @@
   lazyLoader();
 </script>
 
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
 {% endblock %}
