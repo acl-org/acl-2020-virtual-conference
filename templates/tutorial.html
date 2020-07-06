@@ -16,14 +16,19 @@
     <a class="card-link" data-toggle="collapse" role="button" href="#details">
       Description
     </a>
-    {% if tutorial.material %}
-      <a href="{{tutorial.material}}" target="_blank"  class="card-link">
+    {% if tutorial.website %}
+      <a href="{{tutorial.website}}" target="_blank"  class="card-link">
         Website
       </a>
     {% endif %}
     {% if tutorial.slides %}
       <a href="{{tutorial.slides}}" target="_blank"  class="card-link">
         Slides
+      </a>
+    {% endif %}
+    {% if tutorial.material %}
+      <a href="{{tutorial.material}}" target="_blank"  class="card-link">
+        Material
       </a>
     {% endif %}
 
