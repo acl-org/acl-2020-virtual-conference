@@ -62,7 +62,11 @@
             [Join Zoom Meeting]
           </a>
         {% else %}
-          Live Session: {{workshop.day}} <span class="workshop_times">{{workshop.session1_time}}</span>
+          {% if workshop.id == 'W20' %}
+            Live Session: July 11 <span class="workshop_times">{{workshop.session1_time}}</span>
+          {% else %}
+            Live Session: {{workshop.day}} <span class="workshop_times">{{workshop.session1_time}}</span>
+          {% endif %}
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
             <!--
             <img
@@ -77,7 +81,7 @@
         {% endif %}
         {% if workshop.session3_time %}
           <br/>
-          {% if workshop.id == 'W2' %}
+          {% if workshop.id == 'W2' or workshop.id == 'W10' %}
             Live Session 3: July 10 <span class="workshop_times">{{workshop.session3_time}}</span>
           {% else %}
             Live Session 3: {{workshop.day}} <span class="workshop_times">{{workshop.session3_time}}</span>
