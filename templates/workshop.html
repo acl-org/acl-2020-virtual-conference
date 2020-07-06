@@ -36,6 +36,7 @@
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            [Join Zoom Meeting]
           </a>
           <br/>
           Live Session 2: <span class="workshop_times">{{workshop.session2_time}}</span>
@@ -46,6 +47,7 @@
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            [Join Zoom Meeting]
           </a>
         {% else %}
           Live Session: <span class="workshop_times">{{workshop.session1_time}}</span>
@@ -56,6 +58,7 @@
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            [Join Zoom Meeting]
           </a>
         {% endif %}
         {% if workshop.session3_time %}
@@ -68,6 +71,7 @@
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            [Join Zoom Meeting]
           </a>
         {% endif %}
       </div>
@@ -119,21 +123,24 @@
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
+  You can open the
   {% if workshop.livestream %}
-  <a class="btn btn-outline-danger"
-     href="https://slideslive.com/{{workshop.livestream}}" target="_blank"
-     style="margin-left: 5px; margin-right: 5px">
-    Livestream Video
-  </a>
+  <a href="https://slideslive.com/{{workshop.livestream}}" target="_blank">livestream video</a>
+  and
   {% endif %}
-  <a class="btn btn-outline-danger"
-     href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}"
-     target="_blank"
-     style="margin-left: 5px; margin-right: 5px">
-    Chat
+  the
+  <a href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}" target="_blank">
+    #{{ workshop.rocketchat_channel }}
   </a>
+  channel
+  {% if workshop.livestream %}
+  in separate windows.
+  {% else %}
+  in a separate window.
+  {% endif %}
 
   </div>
+
   <div class="row m-2">    
     {% if workshop.livestream %}
     <!-- Livestreaming -->
