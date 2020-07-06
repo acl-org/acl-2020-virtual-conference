@@ -64,6 +64,7 @@ function make_cal(name) {
                 taskView: false,
                 scheduleView: ['time'],
                 usageStatistics: false,
+                nowIndicator: true,
                 week: {
                     // workweek: !config.calendar["sunday_saturday"],
                     hourStart: min_hours,
@@ -146,6 +147,7 @@ function make_cal(name) {
                     taskView: false,
                     scheduleView: ['time'],
                     usageStatistics: false,
+                    nowIndicator: true,
 
                     timezones: [{
                         timezoneOffset: -moment.tz.zone(timezoneName)
