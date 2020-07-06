@@ -30,34 +30,40 @@
         {% if workshop.session2_time %}
           Live Session 1: <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
             [Join Zoom Meeting]
           </a>
           <br/>
           Live Session 2: <span class="workshop_times">{{workshop.session2_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
             [Join Zoom Meeting]
           </a>
         {% else %}
           Live Session: <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
             [Join Zoom Meeting]
           </a>
         {% endif %}
@@ -65,12 +71,14 @@
           <br/>
           Live Session 3: <span class="workshop_times">{{workshop.session3_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
             [Join Zoom Meeting]
           </a>
         {% endif %}
