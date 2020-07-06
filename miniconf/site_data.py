@@ -177,6 +177,7 @@ class WorkshopPaper:
 class Workshop:
     id: str
     title: str
+    day: str
     organizers: List[str]
     abstract: str
     material: str
