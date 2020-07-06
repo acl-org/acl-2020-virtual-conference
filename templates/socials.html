@@ -7,70 +7,74 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-  <div class="cards row">
-  {% for social in socials %}
-    <div class="col-md-6 col-sm-12 p-3"
-         id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
-    <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
-         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-      height:100%;">
-    <h3 class="card-title" style="font-weight: 700;">
-      {{social.name}}
-    </h3>
-    <h6 class="text-muted font-italic">
-      {{social.organizers.members|join(" & ")}}
-      {% if social.organizers.website %}
-        <br>
-        (<a href="{{social.organizers.website}}" target="_blank">{{social.organizers.website}}</a>)
-      {% endif %}
-
-    </h6>
-    {% if social.image %}
-      <div class="m-4">
-      <img height="100"
-           src="{{social.image}}"/>
-      </div>
+<div id="day">
+<div class="speaker">
+{% for social in socials %}
+<div class="cards row">
+  <div class="col-md-6 col-sm-12 p-3"
+       id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
+  <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
+       style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height:100%;">
+  <h3 class="card-title" style="font-weight: 700;">
+    {{social.name}}
+  </h3>
+  <h6 class="text-muted font-italic">
+    {{social.organizers.members|join(" & ")}}
+    {% if social.organizers.website %}
+      <br>
+      (<a href="{{social.organizers.website}}" target="_blank">{{social.organizers.website}}</a>)
     {% endif %}
-    <div class="mx-4 text-left card-subtitle">
-    <p>{{social.description|safe}}</p>
-    <br/>
+  </h6>
 
-    {% for session in social.sessions %}
-      <div class="m-3 text-muted">
-      {{session.session}}
-      <span class="session_times">{{session.time_string}}</span>
-      {% if session.zoom_link %}
-        <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
-          <!--
-          <img
-              src="static/images/zoom-icon.png"
-              height="24px"
-              alt="Join Zoom Meeting"
-              title="Join Zoom Meeting"
-          >
-          -->
-          [Join Zoom Meeting]
-        </a>
-      {% endif %}
-      </div>
-    {% endfor %}
-
+  {% if social.image %}
+    <div class="m-4">
+    <img height="100"
+         src="{{social.image}}"/>
     </div>
-    {% if social.rocketchat_channel %}
-      <p class="text-center text-muted card-title">
-        <a href="https://{{config.chat_server}}/channel/{{social.rocketchat_channel}}" target="_blank"> Chat </a>
-        {% if social.website %}
-          | <a href="{{social.website}}" target="_blank"> Website </a>
-        {% endif %}
-      </p>
+  {% endif %}
+  <div class="mx-4 text-left card-subtitle">
+  <p>{{social.description|safe}}</p>
+  <br/>
+
+  {% for session in social.sessions %}
+    <div class="m-3 text-muted text-center">
+    {{session.session}}
+    <span class="session_times">{{session.time_string}}</span>
+    {% if session.zoom_link %}
+      <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
+        <!--
+        <img
+            src="static/images/zoom-icon.png"
+            height="24px"
+            alt="Join Zoom Meeting"
+            title="Join Zoom Meeting"
+        >
+        -->
+        [Join Zoom Meeting]
+      </a>
     {% endif %}
-    </div>
     </div>
   {% endfor %}
+
+  </div>
+  {% if social.rocketchat_channel %}
+    <p class="text-center text-muted card-title">
+      <a href="https://{{config.chat_server}}/channel/{{social.rocketchat_channel}}" target="_blank"> Chat </a>
+      {% if social.website %}
+        | <a href="{{social.website}}" target="_blank"> Website </a>
+      {% endif %}
+    </p>
+  {% endif %}
+  </div>
   </div>
 </div>
-
+{% endfor %}
+</div>
+</div>
+</div>
 
 <script src="static/js/time-extend.js"></script>
 <script>

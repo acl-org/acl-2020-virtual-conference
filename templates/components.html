@@ -263,12 +263,69 @@
 </div>
 {%- endmacro %}
 
+
+<!-- WIP (do not use) -->
+{% macro socialeventgroup(social_events) -%}
+  {% for social_event in social_events %}
+  <div class="row p-4">
+    <div class="col-md-12">
+      <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="{{social_event.image}}" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+            <h4>
+              <a href="social_event_{{social_event.id}}.html" class="main-title" target="_blank">
+                {{social_event.title}}
+              </a>
+            </h4>
+          </div>
+
+          <h6 class="text-muted font-italic">
+    {{social_event.organizers.members|join(" & ")}}
+    {% if social_event.organizers.website %}
+    <br>
+    (<a href="{{social_event.organizers.website}}" target="_blank">{{social_event.organizers.website}}</a>)
+    {% endif %}
+  </h6>
+
+          {% for session in social_event.sessions %}
+          <div class="m-3 text-muted">
+            {{session.session}}
+            <span class="session_times">{{session.time_string}}</span>
+            {% if session.zoom_link %}
+              <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
+                <!--
+                <img
+                    src="static/images/zoom-icon.png"
+                    height="24px"
+                    alt="Join Zoom Meeting"
+                    title="Join Zoom Meeting"
+                >
+                -->
+                [Join Zoom Meeting]
+              </a>
+            {% endif %}
+          </div>
+          {% endfor %}
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{%- endmacro %}
+
+
 {% macro sponsorgroup(sponsors) -%}
   <div class="cards row">
   {% for sponsor_level in sponsors %}
     <div class="col-12">
-      <h2>{{ sponsor_level.level }}</h2>
-      <hr />
+    <h2>{{ sponsor_level.level }}</h2>
+    <hr />
     </div>
 
     {% for sponsor in sponsor_level.sponsors %}
