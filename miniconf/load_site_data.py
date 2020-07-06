@@ -19,6 +19,8 @@ from miniconf.site_data import (
     PlenarySession,
     PlenaryVideo,
     SessionInfo,
+    SocialEvent,
+    SocialEventOrganizers,
     Tutorial,
     TutorialSessionInfo,
     Workshop,
@@ -245,6 +247,10 @@ def load_site_data(
     for _, workshops_list in workshops.items():
         for workshop in workshops_list:
             by_uid["workshops"][workshop.id] = workshop
+
+    # socials.html
+    social_events = build_socials(site_data["socials"])
+    site_data["socials"] = social_events
 
     # sponsors.html
     build_sponsors(site_data, by_uid, display_time_format)
@@ -516,6 +522,7 @@ def build_tutorials(raw_tutorials: List[Dict[str, Any]]) -> List[Tutorial]:
             title=item["title"],
             organizers=extract_list_field(item, "organizers"),
             abstract=item["abstract"],
+            website=item["website"],
             material=item["material"],
             slides=item["slides"],
             prerecorded=item.get("prerecorded", ""),
@@ -560,6 +567,7 @@ def build_workshops(
             Workshop(
                 id=item["UID"],
                 title=item["title"],
+                day=item["day"],
                 organizers=extract_list_field(item, "organizers"),
                 abstract=item["abstract"],
                 material=item["material"],
@@ -574,6 +582,33 @@ def build_workshops(
             )
         )
     return workshops
+
+
+def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
+    return [
+        SocialEvent(
+            id=item["UID"],
+            name=item["name"],
+            description=item["description"],
+            image=item["image"],
+            organizers=SocialEventOrganizers(
+                members=item["organizers"]["members"],
+                website=item["organizers"].get("website", ""),
+            ),
+            sessions=[
+                SessionInfo(
+                    session_name=session.get("name", "S-0"),
+                    start_time=parse_session_time(session.get("start_time")),
+                    end_time=parse_session_time(session.get("end_time")),
+                    zoom_link=session.get("zoom_link"),
+                )
+                for session in item["sessions"]
+            ],
+            rocketchat_channel=item.get("rocketchat_channel", ""),
+            website=item.get("website", ""),
+        )
+        for item in raw_socials
+    ]
 
 
 def build_sponsors(site_data, by_uid, display_time_format) -> None:
