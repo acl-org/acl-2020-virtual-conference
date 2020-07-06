@@ -209,5 +209,7 @@ class SocialEvent:
     image: str
     organizers: List[SocialEventOrganizers]
     sessions: List[SessionInfo]
+    rocketchat_channel: str
+    website: str
 
 

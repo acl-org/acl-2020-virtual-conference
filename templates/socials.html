@@ -10,9 +10,9 @@
 
 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 <div id="day">
-<div class="speaker">
-{% for social in socials %}
+<div class="speakers">
 <div class="cards row">
+  {% for social in socials %}
   <div class="col-md-6 col-sm-12 p-3"
        id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
   <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
@@ -44,6 +44,7 @@
     {{session.session}}
     <span class="session_times">{{session.time_string}}</span>
     {% if session.zoom_link %}
+      <div>
       <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
         <!--
         <img
@@ -55,6 +56,7 @@
         -->
         [Join Zoom Meeting]
       </a>
+      </div>
     {% endif %}
     </div>
   {% endfor %}
@@ -70,8 +72,8 @@
   {% endif %}
   </div>
   </div>
+  {% endfor %}
 </div>
-{% endfor %}
 </div>
 </div>
 </div>

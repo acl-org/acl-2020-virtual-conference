@@ -601,7 +601,9 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
                     zoom_link=session.get("zoom_link"),
                 )
                 for session in item["sessions"]
-            ]
+            ],
+            rocketchat_channel=item.get("rocketchat_channel", ""),
+            website=item.get("website", "")
         )
         for item in raw_socials
     ]
