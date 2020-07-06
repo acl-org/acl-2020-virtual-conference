@@ -156,6 +156,7 @@ class Tutorial:
     title: str
     organizers: List[str]
     abstract: str
+    website: Optional[str]
     material: Optional[str]
     slides: Optional[str]
     prerecorded: Optional[str]
@@ -176,6 +177,7 @@ class WorkshopPaper:
 class Workshop:
     id: str
     title: str
+    day: str
     organizers: List[str]
     abstract: str
     material: str
