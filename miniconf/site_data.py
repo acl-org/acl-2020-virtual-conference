@@ -211,5 +211,3 @@ class SocialEvent:
     sessions: List[SessionInfo]
     rocketchat_channel: str
     website: str
-
-

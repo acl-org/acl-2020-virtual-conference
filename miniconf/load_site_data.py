@@ -19,11 +19,13 @@ from miniconf.site_data import (
     PlenarySession,
     PlenaryVideo,
     SessionInfo,
+    SocialEvent,
+    SocialEventOrganizers,
     Tutorial,
     TutorialSessionInfo,
     Workshop,
     WorkshopPaper,
-    SocialEvent, SocialEventOrganizers)
+)
 
 
 def load_site_data(
@@ -591,7 +593,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             image=item["image"],
             organizers=SocialEventOrganizers(
                 members=item["organizers"]["members"],
-                website=item["organizers"].get("website", "")
+                website=item["organizers"].get("website", ""),
             ),
             sessions=[
                 SessionInfo(
@@ -603,7 +605,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
                 for session in item["sessions"]
             ],
             rocketchat_channel=item.get("rocketchat_channel", ""),
-            website=item.get("website", "")
+            website=item.get("website", ""),
         )
         for item in raw_socials
     ]
