@@ -33,7 +33,11 @@ class SessionInfo:
             # demo sessions
             return f"Demo Session {self.session_name[1:]}: {start_date}"
         if self.session_name.startswith("P-"):
+            # plenary sessions
             return f"{self.session_name[2:]}: {start_date}"
+        if self.session_name.startswith("S-"):
+            # social event sessions
+            return f"{start_date}"
         return f"Session {self.session_name}: {start_date}"
 
 
@@ -189,3 +193,21 @@ class Workshop:
     session2_time: Optional[str]
     session3_time: Optional[str]
     rocketchat_channel: str
+
+
+@dataclass(frozen=True)
+class SocialEventOrganizers:
+    members: List[str]
+    website: str
+
+
+@dataclass(frozen=True)
+class SocialEvent:
+    id: str
+    name: str
+    description: str
+    image: str
+    organizers: SocialEventOrganizers
+    sessions: List[SessionInfo]
+    rocketchat_channel: str
+    website: str
