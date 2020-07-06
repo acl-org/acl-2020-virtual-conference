@@ -102,7 +102,7 @@
         <tr>          
           <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
           <td scope="row">{{event.title}}</td>
-          <td>{{event.speakers}}</td>
+          <td style="white-space: pre-wrap;">{{event.speakers}}</td>
         </tr>
         {% endfor %}
       </tbody>
