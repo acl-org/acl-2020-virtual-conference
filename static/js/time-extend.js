@@ -1,19 +1,13 @@
 add_local_tz = (selector) => {
   const regex_time = new RegExp("\\((.*)-(.*) (.*)\\)");
   const guess_tz = moment.tz.guess(true);
-  const utc_offsets = { UTC: 0, GMT: 0, PDT: -7 };
 
   $(selector).each(function () {
     const t = $(this).text();
     const res = regex_time.exec(t);
-    if (res && res[3] in utc_offsets) {
-      const utc_offset = utc_offsets[res[3]];
-      const start_time = moment
-        .utc(`2020-07-05 ${res[1]}`)
-        .utcOffset(utc_offset, true);
-      const end_time = moment
-        .utc(`2020-07-05 ${res[2]}`)
-        .utcOffset(utc_offset, true);
+    if (res) {
+      const start_time = moment.utc(`2020-07-05 ${res[1]}`);
+      const end_time = moment.utc(`2020-07-05 ${res[2]}`);
       const local_start = moment(start_time).tz(guess_tz);
       const local_start_and_tz = local_start.format("HH:mm");
       const local_end = moment(end_time).tz(guess_tz);
