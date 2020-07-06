@@ -4,13 +4,17 @@
 
 {% block heading %}
 {{ components.section("Organizers") }}
+<div class="text-muted text-center">
+Also check out our
+<a href="https://acl2020.org/committees/program" target="_blank">Senior Program Committee</a>
+and
+<a href="https://acl2020.org/committees/diversity-inclusion" target="_blank">Diversity & Inclusion Committee</a>.
+</div>
 {% endblock %}
 
 {% block content %}
 
-
 {{ components.organizergroup(committee) }}
 
-<!-- Acknowledgements -->
 
 {% endblock %}
