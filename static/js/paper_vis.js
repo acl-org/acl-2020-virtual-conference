@@ -129,7 +129,7 @@ function brush_ended() {
         d => `<div class="p_title">${d.content.title}</div> <div class="p_authors">${d.content.authors.join(
           ', ')}</div>`)
       .on('click',
-        d => window.open(`paper_${d.content.iclr_id}.html`, '_blank'))
+        d => window.open(`paper_${d.id}.html`, '_blank'))
       .on('mouseenter', d => {
 
           l_main.selectAll('.dot').filter(dd => dd.id === d.id)

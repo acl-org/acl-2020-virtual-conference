@@ -61,15 +61,15 @@
 {% endif %}
 
 <div class="container" style="background-color:white; padding: 0px;">
+  <!-- Multiple Videos -->
   {% if plenary_session.videos != none %}
 
   <div class="text-muted text-center">
-    <a class="btn btn-outline-danger"
-       href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
-       target="_blank"
-       style="margin-left: 5px; margin-right: 5px">
-      Chat
+    You can open the
+    <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
+       target="_blank">#{{ plenary_session.rocketchat_channel }}
     </a>
+    channel below in a separate window.
   </div>
 
   <div class="row m-2">
@@ -97,20 +97,29 @@
     </div>
   </div>
 
+  <!-- Surprise Events -->
+  {% elif plenary_session.id in [
+      "lifetime_achievement_award",
+      "distinguished_service_award",
+      "test_of_time_awards",
+      "best_paper_award",
+      ] %}
+
+  {{ components.section("To Be Announced") }}
+
+  <!-- Regular Plenary Session -->
   {% else %}
   <div class="text-muted text-center">
-    <a class="btn btn-outline-danger"
-       href="https://slideslive.com/{{plenary_session.presentation_id}}" target="_blank"
-       style="margin-left: 5px; margin-right: 5px">
-      Video
-    </a>
+    You can open the
+    <a href="https://slideslive.com/{{plenary_session.presentation_id}}" target="_blank">pre-recorded video</a>
     {% if plenary_session.rocketchat_channel %}
-      <a class="btn btn-outline-danger"
-         href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
-         target="_blank"
-         style="margin-left: 5px; margin-right: 5px">
-        Chat
-      </a>
+      and the
+      <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
+         target="_blank">#{{plenary_session.rocketchat_channel}}</a>
+      channel
+      in separate windows.
+    {% else %}
+      in a separate window.
     {% endif %}
   </div>
 

@@ -28,46 +28,70 @@
     <div class="text-center text-muted text-monospace">
       <div class="workshop-times">
         {% if workshop.session2_time %}
-          Live Session 1: <span class="workshop_times">{{workshop.session1_time}}</span>
+          {% if workshop.id == 'W2' %}
+            Live Session 1: July 9 <span class="workshop_times">{{workshop.session1_time}}</span>
+          {% else %}
+            Live Session 1: {{workshop.day}} <span class="workshop_times">{{workshop.session1_time}}</span>
+          {% endif %}
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
+            [Join Zoom Meeting]
           </a>
           <br/>
-          Live Session 2: <span class="workshop_times">{{workshop.session2_time}}</span>
+          {% if workshop.id == 'W2' %}
+            Live Session 2:  July 10 <span class="workshop_times">{{workshop.session2_time}}</span>
+          {% else %}
+            Live Session 2: {{workshop.day}} <span class="workshop_times">{{workshop.session2_time}}</span>
+          {% endif %}
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
+            [Join Zoom Meeting]
           </a>
         {% else %}
-          Live Session: <span class="workshop_times">{{workshop.session1_time}}</span>
+          Live Session: {{workshop.day}} <span class="workshop_times">{{workshop.session1_time}}</span>
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
+            [Join Zoom Meeting]
           </a>
         {% endif %}
         {% if workshop.session3_time %}
           <br/>
-          Live Session 3: <span class="workshop_times">{{workshop.session3_time}}</span>
+          {% if workshop.id == 'W2' %}
+            Live Session 3: July 10 <span class="workshop_times">{{workshop.session3_time}}</span>
+          {% else %}
+            Live Session 3: {{workshop.day}} <span class="workshop_times">{{workshop.session3_time}}</span>
+          {% endif %}
           <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
+            <!--
             <img
                 src="static/images/zoom-icon.png"
                 height="24px"
                 alt="Join Zoom Meeting"
                 title="Join Zoom Meeting"
             >
+            -->
+            [Join Zoom Meeting]
           </a>
         {% endif %}
       </div>
@@ -102,7 +126,7 @@
         <tr>          
           <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
           <td scope="row">{{event.title}}</td>
-          <td>{{event.speakers}}</td>
+          <td style="white-space: pre-wrap;">{{event.speakers}}</td>
         </tr>
         {% endfor %}
       </tbody>
@@ -119,21 +143,24 @@
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
+  You can open the
   {% if workshop.livestream %}
-  <a class="btn btn-outline-danger"
-     href="https://slideslive.com/{{workshop.livestream}}" target="_blank"
-     style="margin-left: 5px; margin-right: 5px">
-    Livestream Video
-  </a>
+  <a href="https://slideslive.com/{{workshop.livestream}}" target="_blank">livestream video</a>
+  and
   {% endif %}
-  <a class="btn btn-outline-danger"
-     href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}"
-     target="_blank"
-     style="margin-left: 5px; margin-right: 5px">
-    Chat
+  the
+  <a href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}" target="_blank">
+    #{{ workshop.rocketchat_channel }}
   </a>
+  channel
+  {% if workshop.livestream %}
+  in separate windows.
+  {% else %}
+  in a separate window.
+  {% endif %}
 
   </div>
+
   <div class="row m-2">    
     {% if workshop.livestream %}
     <!-- Livestreaming -->

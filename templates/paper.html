@@ -82,17 +82,13 @@
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
-  <a class="btn btn-outline-danger"
-     href="https://slideslive.com/{{paper.presentation_id}}" target="_blank"
-     style="margin-left: 5px; margin-right: 5px">
-    Video
-  </a>
-  <a class="btn btn-outline-danger"
-     href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
-     target="_blank"
-     style="margin-left: 5px; margin-right: 5px">
-    Chat
-  </a>
+    You can open the
+    <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank">pre-recorded video</a>
+    and the
+    <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
+       target="_blank">#{{paper.rocketchat_channel}}</a>
+    channel
+    in separate windows.
   </div>
   <div class="row m-2">
     <!-- Slides Live-->
@@ -109,6 +105,11 @@
         hideTitle: true
         });
       </script>
+
+      <div class="text-muted">
+      NOTE: The SlidesLive video may display a random order of the authors.
+      The correct author list is shown at the top of this webpage.
+      </div>
     </div>
 
     <!-- Chat -->
