@@ -503,14 +503,6 @@ def build_papers(
     return papers
 
 
-def processGMTPDT(timestring):
-    if timestring == "":
-        return ""
-    gmttime = timestring.split("GMT")[0].strip()
-    gmttime = gmttime.split("(")[-1]
-    return "(" + gmttime + " GMT)"
-
-
 def parse_session_time(session_time_str: str) -> datetime:
     return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
 
