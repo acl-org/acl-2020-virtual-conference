@@ -66,7 +66,9 @@ class PaperContent:
         if self.pdf_url:
             assert self.pdf_url.startswith("https://"), self.pdf_url
         if self.demo_url:
-            assert self.demo_url.startswith("https://"), self.demo_url
+            assert self.demo_url.startswith("https://") or self.demo_url.startswith(
+                "http://"
+            ), self.demo_url
         assert self.paper_type[0].isupper(), self
 
 
