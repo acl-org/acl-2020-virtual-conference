@@ -289,59 +289,6 @@
   </div>
 {%- endmacro %}
 
-{% macro socialgroup(socials, config) -%}
-  <div class="cards row">
-    {% for social in socials %}
-    <div class="col-md-6 col-sm-12 p-3"
-        id='{{social.name|replace(" ", "_")|replace("?", "")}}'>
-        <div class="card p-3 text-center shadow p-3 mb-5 bg-light rounded"
-        style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        height:100%;">
-                <h3 class="card-title" style="font-weight: 700;">
-                    {{social.name}}
-                </h3>
-                <h6 class="text-muted font-italic">
-                  {{social.organizers.members|join(" & ")}}
-                  {% if social.organizers.website %}
-                  <br>
-                  (<a href="{{social.organizers.website}}" target="_blank">{{social.organizers.website}}</a>)
-                  {% endif %}
-
-                </h6>
-                {% if social.image %}
-                <div class="m-4">
-                    <img height="100"
-                        src="{{social.image}}"/>
-                </div>
-                {% endif %}
-                <div class="mx-4 text-left card-subtitle">
-                    <p>{{social.description|safe}}</p>
-                    <br/>
-                    <div class="text-center text-muted text-monospace">
-                        {% for schedule in social.schedules %}
-                        <p>
-                          {{schedule.day}}  <span class="session_times"> ({{schedule.time}})</span>
-                          {% if schedule.link %}
-                          [<a href="{{schedule.link}}" target="_blank">Join Zoom Meeting</a>]
-                          {% endif %}
-                        </p>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% if social.rocketchat_channel %}
-                <p class="text-center text-muted card-title">
-                  <a href="https://{{config.chat_server}}/channel/{{social.rocketchat_channel}}" target="_blank"> Chat </a>
-                  {% if social.website %}
-                  | <a href="{{social.website}}" target="_blank"> Website </a>
-                  {% endif %}
-                </p>
-                {% endif %}
-            </div>
-    </div>
-    {% endfor %}
-  </div>
-{%- endmacro %}
-
 {% macro live_sessions(sessions, title, url, is_plenary) -%}
 {% for session in sessions %}
   <div class="text-center text-muted text-monospace">
