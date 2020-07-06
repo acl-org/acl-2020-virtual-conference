@@ -561,6 +561,7 @@ def build_workshops(
             Workshop(
                 id=item["UID"],
                 title=item["title"],
+                day=item["day"],
                 organizers=extract_list_field(item, "organizers"),
                 abstract=item["abstract"],
                 material=item["material"],
