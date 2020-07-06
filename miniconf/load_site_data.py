@@ -568,17 +568,23 @@ def build_workshops(
                 id=item["UID"],
                 title=item["title"],
                 day=item["day"],
-                organizers=extract_list_field(item, "organizers"),
+                organizers=item["organizers"],
                 abstract=item["abstract"],
                 material=item["material"],
                 livestream=item["livestream"],
                 papers=workshop_papers[item["UID"]],
                 schedule=workshop_schedules.get(item["UID"]),
                 zoom_link=item.get("zoom_link"),
-                session1_time=processGMTPDT(item.get("session1_time")),
-                session2_time=processGMTPDT(item.get("session2_time", "")),
-                session3_time=processGMTPDT(item.get("session3_time", "")),
                 rocketchat_channel=item["rocketchat_channel"],
+                sessions=[
+                    SessionInfo(
+                        session_name=session.get("name"),
+                        start_time=parse_session_time(session.get("start_time")),
+                        end_time=parse_session_time(session.get("end_time")),
+                        zoom_link=""
+                    )
+                    for session in item.get("sessions")
+                ]
             )
         )
     return workshops

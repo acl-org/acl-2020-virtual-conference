@@ -38,6 +38,9 @@ class SessionInfo:
         if self.session_name.startswith("S-"):
             # social event sessions
             return f"{start_date}"
+        if self.session_name.startswith("W-"):
+            # workshop sessions
+            return f"{self.session_name[2:]}: {start_date}"
         return f"Session {self.session_name}: {start_date}"
 
 
@@ -191,10 +194,8 @@ class Workshop:
     papers: List[WorkshopPaper]
     schedule: List[Dict[str, Any]]
     zoom_link: Optional[str]
-    session1_time: Optional[str]
-    session2_time: Optional[str]
-    session3_time: Optional[str]
     rocketchat_channel: str
+    sessions: List[SessionInfo]
 
 
 @dataclass(frozen=True)
