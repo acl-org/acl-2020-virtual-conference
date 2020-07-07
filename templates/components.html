@@ -267,6 +267,7 @@
           {% for session in workshop.sessions %}
           <div class="m-3 text-muted">
             {{session.session}}
+            <span class="session_times">{{session.time_string}}</span>
           </div>
           {% endfor %}
 
