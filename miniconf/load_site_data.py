@@ -562,18 +562,17 @@ def build_workshops(
                 day=item["day"],
                 organizers=item["organizers"],
                 abstract=item["abstract"],
-                material=item["material"],
+                website=item["website"],
                 livestream=item["livestream"],
                 papers=workshop_papers[item["UID"]],
                 schedule=workshop_schedules.get(item["UID"]),
-                zoom_link=item.get("zoom_link"),
                 rocketchat_channel=item["rocketchat_channel"],
                 sessions=[
                     SessionInfo(
-                        session_name=session.get("name"),
+                        session_name=session.get("name", ""),
                         start_time=parse_session_time(session.get("start_time")),
                         end_time=parse_session_time(session.get("end_time")),
-                        zoom_link="",
+                        zoom_link=session.get("zoom_link", ""),
                     )
                     for session in item.get("sessions")
                 ],
