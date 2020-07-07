@@ -96,22 +96,8 @@
       }
     </script>
 
-    <!-- Chat -->
-    {{ components.section("Live Chat") }}
-    <div class="text text-muted text-center">
-      You can also open the <a href="https://{{config.chat_server}}/channel/live" target="_blank">#live</a>
-      channel below in a separate window.
-    </div>
-    <div class="row p-4">
-      <div class="col-md-12 col-xs-12 p-2">
-        <div id="chat2" class="slp">
-          <iframe frameborder="0" src="https://{{config.chat_server}}/channel/live?layout=embedded" height="600px" width="100%" ></iframe>
-        </div>
-      </div>
-    </div>
-
     <!-- QA -->
-    {{ components.section("Questions for Live QA") }}
+    {{ components.section("Please Post Your Questions Here for Corresponding Sessions") }}
     {% set dory_height = '600px' %}
 
     <div id="accordion">
@@ -206,9 +192,24 @@
 
     </div>
 
+    <!-- Chat -->
+    {{ components.section("Live Chat") }}
+    <div class="text text-muted text-center">
+      You can also open the <a href="https://{{config.chat_server}}/channel/live" target="_blank">#live</a>
+      channel below in a separate window.
+    </div>
+
+    <div class="row p-4">
+      <div class="col-md-12 col-xs-12 p-2">
+        <div id="chat" class="slp">
+          <iframe frameborder="0" src="https://{{config.chat_server}}/channel/live?layout=embedded" height="600px" width="100%" ></iframe>
+        </div>
+      </div>
+    </div>
+
 </div>
 
-<script src="static/js/lazy_load.js"></script>
+  <script src="static/js/lazy_load.js"></script>
 <script type="text/javascript">
   lazyLoader();
 </script>
