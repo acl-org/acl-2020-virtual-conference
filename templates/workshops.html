@@ -22,7 +22,7 @@
     aria-labelledby="nav-profile-tab"
   >
     <div id="july5">
-      <div class="speakers">
+      <div class="workshops">
         {{ components.workshopgroup(workshops["July 5"]) }}
       </div>
     </div>
@@ -35,7 +35,7 @@
     aria-labelledby="nav-profile-tab"
   >
     <div id="july9">
-      <div class="speakers">
+      <div class="workshops">
         {{ components.workshopgroup(workshops["July 9"]) }}
       </div>
     </div>
@@ -48,11 +48,19 @@
     aria-labelledby="nav-profile-tab"
   >
     <div id="july10">
-      <div class="speakers">
+      <div class="workshops">
         {{ components.workshopgroup(workshops["July 10"]) }}
       </div>
     </div>
   </div>
 
 </div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
 {% endblock %}
