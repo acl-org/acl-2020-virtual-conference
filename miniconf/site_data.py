@@ -189,11 +189,10 @@ class Workshop:
     day: str
     organizers: List[str]
     abstract: str
-    material: str
+    website: str
     livestream: Optional[str]
     papers: List[WorkshopPaper]
     schedule: List[Dict[str, Any]]
-    zoom_link: Optional[str]
     rocketchat_channel: str
     sessions: List[SessionInfo]
 
