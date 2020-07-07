@@ -12,107 +12,43 @@
     <h3 class="card-subtitle mb-2 text-muted text-center">
       {{ workshop.organizers | join(", ") }}
     </h3>
+
     <div class="text-center p-3">
       <a class="card-link" data-toggle="collapse" role="button" href="#details">
         Description
       </a>
+
       {% if workshop.schedule %}
       <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
         Schedule
       </a>
       {% endif %}
-      <a href="{{workshop.material}}" target="_blank"  class="card-link">
-        Website
+
+      <a href="{{workshop.website}}" target="_blank"  class="card-link">
+        External Website
       </a>
     </div>
-    <div class="text-center text-muted text-monospace">
-      <div class="workshop-times">
-        {% if workshop.session2_time %}
-          {% if workshop.id == 'W2' %}
-            Live Session 1: July 9 <span class="workshop_times">{{workshop.session1_time}}</span>
-          {% else %}
-            Live Session 1: {{workshop.day}} <span class="workshop_times">{{workshop.session1_time}}</span>
-          {% endif %}
-          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
-            <!--
-            <img
-                src="static/images/zoom-icon.png"
-                height="24px"
-                alt="Join Zoom Meeting"
-                title="Join Zoom Meeting"
-            >
-            -->
-            [Join Zoom Meeting]
-          </a>
-          <br/>
-          {% if workshop.id == 'W2' %}
-            Live Session 2:  July 10 <span class="workshop_times">{{workshop.session2_time}}</span>
-          {% else %}
-            Live Session 2: {{workshop.day}} <span class="workshop_times">{{workshop.session2_time}}</span>
-          {% endif %}
-          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
-            <!--
-            <img
-                src="static/images/zoom-icon.png"
-                height="24px"
-                alt="Join Zoom Meeting"
-                title="Join Zoom Meeting"
-            >
-            -->
-            [Join Zoom Meeting]
-          </a>
-        {% else %}
-          {% if workshop.id == 'W20' %}
-            Live Session: July 11 <span class="workshop_times">{{workshop.session1_time}}</span>
-          {% else %}
-            Live Session: {{workshop.day}} <span class="workshop_times">{{workshop.session1_time}}</span>
-          {% endif %}
-          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
-            <!--
-            <img
-                src="static/images/zoom-icon.png"
-                height="24px"
-                alt="Join Zoom Meeting"
-                title="Join Zoom Meeting"
-            >
-            -->
-            [Join Zoom Meeting]
-          </a>
-        {% endif %}
-        {% if workshop.session3_time %}
-          <br/>
-          {% if workshop.id == 'W2' or workshop.id == 'W10' %}
-            Live Session 3: July 10 <span class="workshop_times">{{workshop.session3_time}}</span>
-          {% else %}
-            Live Session 3: {{workshop.day}} <span class="workshop_times">{{workshop.session3_time}}</span>
-          {% endif %}
-          <a href="{{workshop.zoom_link}}" target="_blank"  class="card-link">
-            <!--
-            <img
-                src="static/images/zoom-icon.png"
-                height="24px"
-                alt="Join Zoom Meeting"
-                title="Join Zoom Meeting"
-            >
-            -->
-            [Join Zoom Meeting]
-          </a>
-        {% endif %}
-      </div>
-    </div>
+
+    {{ components.live_sessions(
+        workshop.sessions,
+        workshop.title,
+        "https://virtual.acl2020.org/workshop_" + workshop.id + ".html",
+        false) }}
+
   </div>
 </div>
+
 <div id="details" class="pp-card m-3 collapse hide">
   <div class="card-body">
     <div class="card-text">
       <div id="abstractExample">
-        <span class="font-weight-bold">Abstract:</span>
-        {{workshop.abstract|safe}} <br />
+        {{workshop.abstract|safe}}
       </div>
     </div>
     <p></p>
   </div>
 </div>
+
 <!-- Schedule -->
 {% if workshop.schedule %}
 <div id="schedule" class="collapse" aria-labelledby="schedule">
@@ -121,7 +57,7 @@
       <thead>
         <tr>
           <th scope="col" style="width: 20%;">Time (PDT)</th>
-          <th scope="col" style="width: 25%;">Event</th>
+          <th scope="col" style="width: 40%;">Event</th>
           <th scope="col">Speakers</th>          
         </tr>
       </thead>
@@ -139,11 +75,6 @@
 </div>
 {% endif %}
 <script src="static/js/time-extend.js"></script>
-<script>
-  $(document).ready(() => {
-    add_local_tz('.workshop_times');
-  })
-</script>
 
 <div class="container" style="background-color:white; padding: 0px;">
   <div class="text-muted text-center">
@@ -211,4 +142,12 @@
   </div>
   {% endfor %}
 </div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
 {% endblock %}
