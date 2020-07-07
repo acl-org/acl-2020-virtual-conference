@@ -244,13 +244,23 @@
   <div class="col-md-6 col-sm-12 p-2">
     <div class="card p-1 text-center shadow p-3 mb-5 bg-light rounded" style="
     height:100%;">
-        <a class="card-title main-title" href="workshop_{{workshop.id}}.html" target="_blank">
-            {{workshop.title}}
-        </a>
+      <h3 class="card-title main-title" href="workshop_{{workshop.id}}.html" target="_blank">
+          {{workshop.title}}
+      </h3>
+
       <div class="align-bottom card-body">
         <h6 class="text-muted font-weight-light font-italic">
             {{ workshop.organizers | join(", ") }}
         </h6>
+
+        {% for session in workshop.sessions %}
+        <div class="m-3 text-muted">
+          {{session.session}}
+          <span class="session_times">{{session.time_string}}</span>
+          [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+        </div>
+        {% endfor %}
+
       </div>
     </div>
   </div>
