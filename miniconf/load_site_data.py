@@ -590,7 +590,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             ),
             sessions=[
                 SessionInfo(
-                    session_name=session.get("name", "S-0").split("Session")[-1],
+                    session_name=session.get("name"),
                     start_time=parse_session_time(session.get("start_time")),
                     end_time=parse_session_time(session.get("end_time")),
                     zoom_link=session.get("zoom_link"),
