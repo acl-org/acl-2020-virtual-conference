@@ -63,8 +63,12 @@
       </thead>
       <tbody>
         {% for event in workshop.schedule %}
-        <tr>          
-          <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
+        <tr>
+          {% if event.endTime %}          
+            <td>{{event.date+', '+event.startTime+'-'+event.endTime}}</td>
+          {% else %}
+            <td>{{event.date+', '+event.startTime}}</td>
+          {% endif %}
           <td scope="row">{{event.title}}</td>
           <td style="white-space: pre-wrap;">{{event.speakers}}</td>
         </tr>
