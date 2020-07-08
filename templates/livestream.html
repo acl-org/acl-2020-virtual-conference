@@ -16,7 +16,7 @@
 
 {% block content %}
 
-{% set livestream_id = '38931671' %}
+{% set livestream_id = '38931672' %}
 {% set cart_url = "https://www.streamtext.net/text.aspx?event=ACLCONFERENCE" %}
 
 <div id="live container">
@@ -95,102 +95,6 @@
         }
       }
     </script>
-
-    <!-- QA -->
-    {{ components.section("Please Post Your Questions Here for Corresponding Sessions") }}
-    {% set dory_height = '600px' %}
-
-    <div id="accordion">
-      <!-- Lifetime Achievement Award -->
-      <div class="card">
-        <div class="card-header" id="headingLAA">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#laa" aria-expanded="true" aria-controls="laa">
-              Lifetime Achievement Award
-            </button>
-          </h5>
-        </div>
-
-        <div id="laa" class="collapse" aria-labelledby="laa" data-parent="#accordion">
-          <div class="text-muted text-center">
-            You can also open
-            <a href="https://www.dory.app/c/e1ce1275/a99a8a99_acl2020-lifetime-achievement-award-live-qa" target="_blank">this</a>
-            in a separate window.
-          </div>
-          <div class="card-body">
-            <iframe frameborder="0" src="https://www.dory.app/c/e1ce1275/a99a8a99_acl2020-lifetime-achievement-award-live-qa" height={{ dory_height }} width="100%" ></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Distinguished Service Award -->
-      <div class="card">
-        <div class="card-header" id="headingDSA">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#dsa" aria-expanded="true" aria-controls="dsa">
-            Distinguished Service Award
-            </button>
-          </h5>
-        </div>
-
-        <div id="dsa" class="collapse" aria-labelledby="dsa" data-parent="#accordion">
-          <div class="text-muted text-center">
-            You can also open
-            <a href="https://www.dory.app/c/e1ce1275/a9b9aba9_acl2020-distinguished-service-award-live-qa" target="_blank">this</a>
-            in a separate window.
-          </div>
-          <div class="card-body">
-            <iframe frameborder="0" src="https://www.dory.app/c/e1ce1275/a9b9aba9_acl2020-distinguished-service-award-live-qa" height={{ dory_height }} width="100%" ></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Test of Time Awards -->
-      <div class="card">
-        <div class="card-header" id="headingTOT">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#tot" aria-expanded="true" aria-controls="tot">
-              Test of Time Awards
-            </button>
-          </h5>
-        </div>
-
-        <div id="tot" class="collapse" aria-labelledby="tot" data-parent="#accordion">
-          <div class="text-muted text-center">
-            You can also open
-            <a href="https://www.dory.app/c/e1ce1275/99b9b9bb_acl2020-test-of-time-awards-live-qa" target="_blank">this</a>
-            in a separate window.
-          </div>
-          <div class="card-body">
-            <iframe frameborder="0" src="https://www.dory.app/c/e1ce1275/99b9b9bb_acl2020-test-of-time-awards-live-qa" height={{ dory_height }} width="100%" ></iframe>
-          </div>
-        </div>
-      </div>
-
-      <!-- Review Meeting -->
-      <div class="card">
-        <div class="card-header" id="headingReview">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#review" aria-expanded="true" aria-controls="review">
-              Review Meeting
-            </button>
-          </h5>
-        </div>
-
-        <div id="review" class="collapse" aria-labelledby="review" data-parent="#accordion">
-          <div class="text-muted text-center">
-            You can also open
-            <a href="https://www.dory.app/c/e1ce1275/998a9a99_acl2020-review-meeting-live-qa" target="_blank">this</a>
-            in a separate window.
-          </div>
-
-          <div class="card-body">
-            <iframe frameborder="0" src="https://www.dory.app/c/e1ce1275/998a9a99_acl2020-review-meeting-live-qa" height={{ dory_height }} width="100%" ></iframe>
-          </div>
-        </div>
-      </div>
-
-    </div>
 
     <!-- Chat -->
     {{ components.section("Live Chat") }}
