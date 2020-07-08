@@ -37,7 +37,7 @@ class SessionInfo:
             return f"{self.session_name[2:]}: {start_date}"
         if self.session_name.startswith("S-"):
             # social event sessions
-            return f"{start_date}"
+            return f"{self.session_name[2:]}: {start_date}"
         if self.session_name.startswith("W-"):
             # workshop sessions
             return f"{self.session_name[2:]}: {start_date}"
