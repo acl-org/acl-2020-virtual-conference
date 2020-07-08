@@ -264,9 +264,14 @@
             {{session.session}}
             <span class="session_times">{{session.time_string}}</span>
           </div>
+          <div class="text-center text-muted text-monospace">
+            <div class="paper-cal-links">
+              <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+              <span id="session-cal-link-{{ workshop.id }}-{{loop.index}}"></span>
+            </div>
+          </div>
           {% endfor %}
-
-  </div>
+    </div>
   </div>
   {% endfor %}
 </div>
@@ -348,12 +353,12 @@
           </div>
 
           <h6 class="text-muted font-italic">
-    {{social_event.organizers.members|join(" & ")}}
-    {% if social_event.organizers.website %}
-    <br>
-    (<a href="{{social_event.organizers.website}}" target="_blank">{{social_event.organizers.website}}</a>)
-    {% endif %}
-  </h6>
+            {{social_event.organizers.members|join(" & ")}}
+            {% if social_event.organizers.website %}
+            <br>
+            (<a href="{{social_event.organizers.website}}" target="_blank">{{social_event.organizers.website}}</a>)
+            {% endif %}
+          </h6>
 
           {% for session in social_event.sessions %}
           <div class="m-3 text-muted">
