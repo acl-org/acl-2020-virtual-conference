@@ -223,7 +223,7 @@ def generator():
     for tutorial in site_data["tutorials"]:
         yield "tutorial", {"uid": tutorial.id}
     workshop: Workshop
-    for workshop in site_data["workshops"].items():
+    for workshop in site_data["workshops"]:
         yield "workshop", {"uid": workshop.id}
 
     for sponsors_at_level in site_data["sponsors"]:
