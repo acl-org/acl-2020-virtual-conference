@@ -98,18 +98,13 @@
   </div>
 
   <!-- Surprise Sessions -->
-  {% elif plenary_session.id in ["lifetime_achievement_award", "distinguished_service_award", "test_of_time_awards", "best_paper_award"] %}
+  {% elif plenary_session.id in ["lifetime_achievement_award", "distinguished_service_award"] %}
     {% if plenary_session.id == "lifetime_achievement_award" %}
       {% set intro_presentation_id = '38929471' %}
     {% elif plenary_session.id == "distinguished_service_award" %}
       {% set intro_presentation_id = '38929473' %}
     {% endif %}
 
-    <h4 class="text-center">
-      Please watch the recorded livestream <a href="livestream.html" target="_blank">here</a>.
-    </h4>
-
-    <!--
     <div class="text-muted text-center">
       You can open the
       <a href="https://slideslive.com/{{intro_presentation_id}}" target="_blank">pre-recorded video</a>
@@ -132,19 +127,15 @@
         </script>
       </div>
     </div>
-    -->
 
-    <!--
     <div class="text-muted text-center">
       You can open the
       <a href="https://slideslive.com/{{plenary_session.presentation_id}}" target="_blank">pre-recorded video</a>
       below in a separate window.
     </div>
-    -->
 
     <div class="row m-2">
       <!-- Presentation Embed -->
-      <!--
       <div class="col-md-12 col-xs-12 my-auto p-2" >
         <div id="presentation-embed" class="slp my-auto"></div>
         <script src='https://slideslive.com/embed_presentation.js'></script>
@@ -159,7 +150,6 @@
           });
         </script>
       </div>
-      -->
     </div>
 
   <!-- Regular Plenary Session -->
