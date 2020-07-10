@@ -243,10 +243,7 @@ def load_site_data(
     )
     site_data["workshops"] = workshops
     # workshop_<uid>.html
-    by_uid["workshops"] = {}
-    for _, workshops_list in workshops.items():
-        for workshop in workshops_list:
-            by_uid["workshops"][workshop.id] = workshop
+    by_uid["workshops"] = {workshop.id: workshop for workshop in workshops}
 
     # socials.html
     social_events = build_socials(site_data["socials"])
@@ -503,14 +500,6 @@ def build_papers(
     return papers
 
 
-def processGMTPDT(timestring):
-    if timestring == "":
-        return ""
-    gmttime = timestring.split("GMT")[0].strip()
-    gmttime = gmttime.split("(")[-1]
-    return "(" + gmttime + " GMT)"
-
-
 def parse_session_time(session_time_str: str) -> datetime:
     return datetime.strptime(session_time_str, "%Y-%m-%d_%H:%M:%S")
 
@@ -547,7 +536,7 @@ def build_workshops(
     raw_workshops: List[Dict[str, Any]],
     raw_workshop_papers: Dict[str, List[Dict[str, Any]]],
     workshop_schedules: Dict[str, List[Dict[str, Any]]],
-) -> DefaultDict[str, List[Workshop]]:
+) -> List[Workshop]:
 
     workshop_papers: DefaultDict[str, List[WorkshopPaper]] = defaultdict(list)
     for workshop_id, papers in raw_workshop_papers.items():
@@ -561,26 +550,30 @@ def build_workshops(
                 )
             )
 
-    workshops: DefaultDict[str, List[Workshop]] = defaultdict(list)
-    for item in raw_workshops:
-        workshops[item["day"]].append(
-            Workshop(
-                id=item["UID"],
-                title=item["title"],
-                day=item["day"],
-                organizers=extract_list_field(item, "organizers"),
-                abstract=item["abstract"],
-                material=item["material"],
-                livestream=item["livestream"],
-                papers=workshop_papers[item["UID"]],
-                schedule=workshop_schedules.get(item["UID"]),
-                zoom_link=item.get("zoom_link"),
-                session1_time=processGMTPDT(item.get("session1_time")),
-                session2_time=processGMTPDT(item.get("session2_time", "")),
-                session3_time=processGMTPDT(item.get("session3_time", "")),
-                rocketchat_channel=item["rocketchat_channel"],
-            )
+    workshops: List[Workshop] = [
+        Workshop(
+            id=item["UID"],
+            title=item["title"],
+            day=item["day"],
+            organizers=item["organizers"],
+            abstract=item["abstract"],
+            website=item["website"],
+            livestream=item["livestream"],
+            papers=workshop_papers[item["UID"]],
+            schedule=workshop_schedules.get(item["UID"]),
+            rocketchat_channel=item["rocketchat_channel"],
+            sessions=[
+                SessionInfo(
+                    session_name=session.get("name", ""),
+                    start_time=parse_session_time(session.get("start_time")),
+                    end_time=parse_session_time(session.get("end_time")),
+                    zoom_link=session.get("zoom_link", ""),
+                )
+                for session in item.get("sessions")
+            ],
         )
+        for item in raw_workshops
+    ]
     return workshops
 
 
@@ -597,7 +590,7 @@ def build_socials(raw_socials: List[Dict[str, Any]]) -> List[SocialEvent]:
             ),
             sessions=[
                 SessionInfo(
-                    session_name=session.get("name", "S-0"),
+                    session_name=session.get("name"),
                     start_time=parse_session_time(session.get("start_time")),
                     end_time=parse_session_time(session.get("end_time")),
                     zoom_link=session.get("zoom_link"),
