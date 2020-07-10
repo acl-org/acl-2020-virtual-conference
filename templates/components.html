@@ -510,4 +510,27 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script>
 {%- endmacro %}
 
-
+{% macro share_scripts() -%}
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+  <script>
+    toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "3000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+    }
+  </script>
+{%- endmacro %}

@@ -382,6 +382,18 @@ def get_card_image_path_for_paper(paper_id: str, paper_images_path: str) -> str:
     return f"{paper_images_path}/{paper_id}.png"
 
 
+def get_paper_share_text(paper_title: str, pdf_url: str):
+    share_text = "Here's an interesting read from #ACL2020 -\n" + paper_title + ": "
+    if pdf_url.startswith("https://www.aclweb.org/anthology/"):
+        return share_text + pdf_url.rstrip(".pdf")
+    elif pdf_url.startswith("https://www.mitpressjournals.org/doi/pdf/"):
+        return share_text + pdf_url.replace("pdf/", "", 1)
+    elif pdf_url.startswith("https://arxiv.org/abs/") and not pdf_url.endswith(".pdf"):
+        return share_text + pdf_url
+    else:
+        return ""
+
+
 def build_papers(
     raw_papers: List[Dict[str, str]],
     all_paper_sessions: List[Dict[str, Dict[str, Any]]],
@@ -475,6 +487,7 @@ def build_papers(
                 tldr=item["abstract"][:250] + "...",
                 pdf_url=item.get("pdf_url", ""),
                 demo_url=item.get("demo_url", ""),
+                share_text=get_paper_share_text(item["title"], item.get("pdf_url", "")),                
                 track=normalize_track_name(item.get("track", "")),
                 paper_type=item.get("paper_type", ""),
                 sessions=sessions_for_paper[item["UID"]],

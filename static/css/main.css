@@ -409,3 +409,7 @@ div#papers_options > div {
 .fc-v-event:hover {
   background: rgb(234, 33, 45);
 }
+
+.toast {
+  background-color: #6c757d !important;
+}
