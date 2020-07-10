@@ -129,7 +129,27 @@
   </div>
 </div>
 
-<!-- Prerecorded Talk -->
+{% if workshop.id == "W2" %}
+<!-- Recorded Livestream Talk -->
+{{ components.section("Recorded Livestream (July 9)") }}
+<div class="col-md-12 col-xs-12 my-auto p-2" >
+<div id="presentation-embed-1" class="slp my-auto"></div>
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<script>
+  embed = new SlidesLiveEmbed('presentation-embed-1', {
+    presentationId: '38931790',
+    autoPlay: false, // change to true to autoplay the embedded presentation
+    verticalEnabled: true,
+    verticalWhenWidthLte: 500,
+    allowHiddenControlsWhenPaused: true,
+    hideTitle: true
+  });
+</script>
+</div>
+
+{% endif %}
+
+  <!-- Prerecorded Talk -->
 {{ components.section("Pre-recorded Talks") }}
 <div id="accordion">
   {% for paper in workshop.papers %}
