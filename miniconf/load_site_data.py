@@ -466,6 +466,7 @@ def build_papers(
             card_image_path=get_card_image_path_for_paper(
                 item["UID"], paper_images_path
             ),
+            card_image_alt_text=f"A representative figure from paper {item.get('UID')}",
             presentation_id=presentation_id_for_paper.get(item["UID"]),
             content=PaperContent(
                 title=item["title"],

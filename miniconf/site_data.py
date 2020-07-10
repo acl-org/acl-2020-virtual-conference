@@ -86,6 +86,7 @@ class Paper:
     id: str
     forum: str
     card_image_path: str
+    card_image_alt_text: str
     presentation_id: str
     content: PaperContent
 
