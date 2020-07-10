@@ -63,11 +63,11 @@
             {% endif %}
 
             {% for session in plenary_session.sessions %}
-              <div class="m-3 text-muted">
+            <div class="m-3 text-muted">
               {{session.session}}
               <span class="session_times">{{session.time_string}}</span>
               [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
-              </div>
+            </div>
             {% endfor %}
 
             {% if plenary_session.abstract != none %}
@@ -242,26 +242,95 @@
 {% macro workshopgroup(workshops) -%}
 <div class="cards row">
   {% for workshop in workshops %}
-  <div class="col-md-6 col-sm-12 p-2">
-    <div class="card p-1 text-center shadow p-3 mb-5 bg-light rounded" style="
-    height:100%;">
-        <a class="card-title main-title" href="workshop_{{workshop.id}}.html">
-            {{workshop.title}}
-        </a>
-      <div class="align-bottom card-body">
-        <h6 class="text-muted font-weight-light font-italic">
-            {{ workshop.organizers | join(", ") }}
-        </h6>
-      </div>
-        <!--
-        <div class="m-3 text-left card-subtitle">
-          {{workshop.abstract|safe}}
-        </div>
-        -->
+  <div class="col-md-6 col-sm-12 p-3">
+    <div class="card p-3 shadow p-3 mb-5 bg-light rounded"
+         style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); height:100%;">
+
+          <div class="m-3 text-muted text-center">
+            <h4>
+              <a href="workshop_{{workshop.id}}.html" class="main-title" target="_blank">
+                {{workshop.title}}
+              </a>
+            </h4>
+          </div>
+
+          <div class="m-3 text-muted text-center">
+            <span class="card-title h3">
+              {{ workshop.organizers | join(", ") }}
+            </span>
+          </div>
+
+          {% for session in workshop.sessions %}
+          <div class="m-3 text-center">
+            {{session.session}}
+            <span class="session_times">{{session.time_string}}</span>
+          </div>
+          <div class="text-center text-muted text-monospace">
+            <div class="paper-cal-links">
+              <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+              <span id="session-cal-link-{{ workshop.id }}-{{loop.index}}"></span>
+            </div>
+          </div>
+          {% endfor %}
     </div>
   </div>
   {% endfor %}
 </div>
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  {% for workshop in workshops %}
+  {% for session in workshop.sessions %}
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: '{{ title }}'.replace("#", " "),
+
+        // Event start date
+        start: new Date("{{session.start_time_string}}"),
+        end: new Date("{{session.end_time_string}}"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        {% if session.zoom_link %}
+          address: '{{session.zoom_link}}',
+        {% endif %}
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_{{ workshop.id }}.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-{{ workshop.id }}-{{ loop.index }}');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+      calendarNodeSpan.appendChild(document.createTextNode("["));
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+      calendarNodeSpan.appendChild(document.createTextNode("]"));
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  {% endfor %}
+  {% endfor %}
+</script>
+
 {%- endmacro %}
 
 
@@ -285,12 +354,12 @@
           </div>
 
           <h6 class="text-muted font-italic">
-    {{social_event.organizers.members|join(" & ")}}
-    {% if social_event.organizers.website %}
-    <br>
-    (<a href="{{social_event.organizers.website}}" target="_blank">{{social_event.organizers.website}}</a>)
-    {% endif %}
-  </h6>
+            {{social_event.organizers.members|join(" & ")}}
+            {% if social_event.organizers.website %}
+            <br>
+            (<a href="{{social_event.organizers.website}}" target="_blank">{{social_event.organizers.website}}</a>)
+            {% endif %}
+          </h6>
 
           {% for session in social_event.sessions %}
           <div class="m-3 text-muted">
@@ -428,9 +497,19 @@
       calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
       calendarNodeSpan = document.createElement("span");
       calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
       calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
       targetNode.appendChild(calendarNodeSpan);
     }
   {% endfor %}
