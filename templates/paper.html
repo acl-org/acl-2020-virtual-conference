@@ -16,7 +16,6 @@
 <meta name="citation_keywords" content="{{keyword}}" />
 {% endfor %}
 <meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
-{{components.share_scripts()}}
 {% endblock %}
 
 {% block content %}
@@ -54,16 +53,10 @@
         Demo
       </a>
       {% endif %}
-      {% if paper.content.share_text %}
-      <script>
-        let clipboard = new ClipboardJS('.share-text');
-        clipboard.on("success", function(e){
-          toastr.info("Paper info copied to clipboard!")
-        })
-      </script>
-      <button class="ml-3 btn btn-primary share-text" data-clipboard-text="{{paper.content.share_text}}">
-        Share
-      </button>
+      {% if paper.content.share_url %}
+      <!-- Sharing options -->
+      <a class="a2a_dd ml-3 btn btn-primary" data-a2a-url="{{paper.content.share_url}}">Share</a>
+      {{ components.share_scripts()}}
       {% endif %}
     </div>
     <p class="card-text text-center h5">
