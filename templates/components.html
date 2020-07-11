@@ -180,6 +180,7 @@
                 <img
                   class="cards_img lazy-load-img"
                   data-src="{{openreview.card_image_path}}"
+                  alt="{{openreview.card_image_alt_text}}"
                   width="80%"
                 />
               </center>
@@ -496,9 +497,19 @@
       calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
       calendarNodeSpan = document.createElement("span");
       calendarNodeSpan.setAttribute("style", "padding: 2px");
-      calendarNodeSpan.appendChild(document.createTextNode("["));
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
       calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
-      calendarNodeSpan.appendChild(document.createTextNode("]"));
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
       targetNode.appendChild(calendarNodeSpan);
     }
   {% endfor %}
