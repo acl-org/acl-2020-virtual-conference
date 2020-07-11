@@ -16,13 +16,12 @@
 <meta name="citation_keywords" content="{{keyword}}" />
 {% endfor %}
 <meta name="citation_pdf_url" content="{{paper.content.pdf_url | default("")}}" />
-
 {% endblock %}
 
 {% block content %}
 
 <!-- Title -->
-<div class="pp-card m-3" style="">
+<div class="pp-card m-3">
   <div class="card-header">
     <h2 class="card-title main-title text-center" style="color: black">
       {{paper.content.title}}
@@ -54,6 +53,11 @@
         Demo
       </a>
       {% endif %}
+      {% if paper.content.share_url %}
+      <!-- Sharing options -->
+      <a class="a2a_dd card-link" data-a2a-url="{{paper.content.share_url}}">Share</a>
+      {{ components.share_scripts()}}
+      {% endif %}
     </div>
     <p class="card-text text-center h5">
 
@@ -69,6 +73,7 @@
 
   </div>
 </div>
+
 <div id="details" class="pp-card m-3 collapse">
   <div class="card-body">
     <div class="card-text">

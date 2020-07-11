@@ -61,6 +61,7 @@ class PaperContent:
     keywords: List[str]
     pdf_url: Optional[str]
     demo_url: Optional[str]
+    share_url: Optional[str]
     sessions: List[SessionInfo]
     similar_paper_uids: List[str]
 

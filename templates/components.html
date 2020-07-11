@@ -521,4 +521,14 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script>
 {%- endmacro %}
 
-
+{% macro share_scripts() -%}
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.onclick = 1;
+    a2a_config.num_services = 6;
+    a2a_config.prioritize = ["twitter", "email", "facebook", "reddit", "linkedin", "copy_link"];
+    a2a_config.no3p = true; //disable 3rd party cookies-limits some functionality
+    a2a_config.templates.twitter = {hashtags: "acl2020nlp,ACL2020"};
+  </script>
+{%- endmacro %}
