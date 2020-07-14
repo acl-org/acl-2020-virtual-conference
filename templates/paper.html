@@ -65,13 +65,11 @@
      <span class="badge badge-secondary">{{ paper.content.paper_type }} Paper</span>
     </p>
 
-    {% if false %}
     {{ components.live_sessions(
         paper.content.sessions,
         paper.content.title,
         "https://virtual.acl2020.org/paper_" + paper.id + ".html",
         false) }}
-    {% endif %}
 
   </div>
 </div>
