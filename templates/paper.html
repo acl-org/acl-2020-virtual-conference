@@ -89,15 +89,20 @@
   <div class="text-muted text-center">
     You can open the
     <a href="https://slideslive.com/{{paper.presentation_id}}" target="_blank">pre-recorded video</a>
+    {% if false %}
     and the
     <a href="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}"
        target="_blank">#{{paper.rocketchat_channel}}</a>
     channel
     in separate windows.
+    {% else %}
+    in a separate window.
+    {% endif %}
+
   </div>
   <div class="row m-2">
     <!-- Slides Live-->
-    <div class="col-md-7 col-xs-12 my-auto p-2" >
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
       <div id="presentation-embed" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
@@ -117,12 +122,14 @@
       </div>
     </div>
 
-    <!-- Chat -->
+    <!-- Chat (disabled) -->
+    {% if false %}
     <div class="col-md-5 col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{paper.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
 
