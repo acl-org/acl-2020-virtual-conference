@@ -110,11 +110,11 @@ def sponsors():
     return render_template("sponsors.html", **data)
 
 
-@app.route("/socials.html")
-def socials():
-    data = _data()
-    data["socials"] = site_data["socials"]
-    return render_template("socials.html", **data)
+# @app.route("/socials.html")
+# def socials():
+#     data = _data()
+#     data["socials"] = site_data["socials"]
+#     return render_template("socials.html", **data)
 
 
 @app.route("/organizers.html")
@@ -170,10 +170,10 @@ def sponsor(uid):
     return render_template("sponsor.html", **data)
 
 
-@app.route("/chat.html")
-def chat():
-    data = _data()
-    return render_template("chat.html", **data)
+# @app.route("/chat.html")
+# def chat():
+#     data = _data()
+#     return render_template("chat.html", **data)
 
 
 # FRONT END SERVING

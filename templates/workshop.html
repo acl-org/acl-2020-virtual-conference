@@ -87,12 +87,14 @@
   <a href="https://slideslive.com/{{workshop.livestream}}" target="_blank">livestream video</a>
   and
   {% endif %}
+  {% if false %}
   the
   <a href="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}" target="_blank">
     #{{ workshop.rocketchat_channel }}
   </a>
   channel
-  {% if workshop.livestream %}
+  {% endif %}
+  {% if false and workshop.livestream %}
   in separate windows.
   {% else %}
   in a separate window.
@@ -103,7 +105,7 @@
   <div class="row m-2">    
     {% if workshop.livestream %}
     <!-- Livestreaming -->
-    <div class="col-md-7 col-xs-12 my-auto p-2" >
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
       <div id="presentation-embed" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
@@ -120,12 +122,14 @@
     {% endif %}
 
     <!-- Chat -->
+    {% if false %}
     <br/>
     <div class="col-md-5 col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{workshop.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
 

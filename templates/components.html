@@ -424,23 +424,11 @@
   <span class="session_times">{{session.time_string}}</span>
 
   {% if session.zoom_link %}
-  <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
-    <!--
-    <img
-        src="static/images/zoom-icon.png"
-        height="24px"
-        alt="Join Zoom Meeting"
-        title="Join Zoom Meeting"
-    >
-    -->
-    [Join Zoom Meeting]
-  </a>
+  [<a href="{{session.zoom_link}}" target="_blank"  class="card-link">Join Zoom Meeting</a>]
   {% endif %}
 
   {% if is_plenary %}
-    <a href="livestream.html" target="_blank"  class="card-link">
-    [Livestream]
-    </a>
+    [<a href="livestream.html" target="_blank"  class="card-link">Livestream (Recorded)</a>]
   {% endif %}
   </div>
   </div>

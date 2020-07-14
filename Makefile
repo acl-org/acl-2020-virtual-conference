@@ -49,12 +49,7 @@ deploy: freeze
 	@echo "Deployed to gh-pages 🚀"
 
 deploy-aws: freeze
-	# aws s3 rm $(AWS_S3_BUCKET) --recursive
+	aws s3 rm $(AWS_S3_BUCKET) --recursive
 	aws s3 cp build/ $(AWS_S3_BUCKET) --recursive
 	# invalidate caches so that new content are immediately available
-	# aws cloudfront create-invalidation --distribution-id $(AWS_CLOUDFRONT_DISTRIBUTION_ID) --paths "/*"
-
-deploy-aws-internal: freeze
-	aws s3 rm s3://serverlessrepo-cloudfront-authorization-s3bucket-100h8plm463eg --recursive
-	aws s3 cp build/ s3://serverlessrepo-cloudfront-authorization-s3bucket-100h8plm463eg --recursive
-	aws cloudfront create-invalidation --distribution-id E3OA7TCOJFYTMZ --paths "/*"
+	aws cloudfront create-invalidation --distribution-id $(AWS_CLOUDFRONT_DISTRIBUTION_ID) --paths "/*"

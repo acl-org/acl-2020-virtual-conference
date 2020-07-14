@@ -64,11 +64,11 @@ def load_site_data(
         "srw_paper_sessions",
         "cl_paper_sessions",
         "tacl_paper_sessions",
-        "main_paper_zoom_links",
-        "demo_paper_zoom_links",
-        "srw_paper_zoom_links",
-        "cl_paper_zoom_links",
-        "tacl_paper_zoom_links",
+        # "main_paper_zoom_links",
+        # "demo_paper_zoom_links",
+        # "srw_paper_zoom_links",
+        # "cl_paper_zoom_links",
+        # "tacl_paper_zoom_links",
         "main_paper_slideslive_ids",
         "demo_paper_slideslive_ids",
         "srw_paper_slideslive_ids",
@@ -162,11 +162,12 @@ def load_site_data(
             site_data["tacl_paper_sessions"],
         ],
         qa_session_length_hr=qa_session_length_hr,
-        all_paper_zoom_links=site_data["main_paper_zoom_links"]
-        + site_data["demo_paper_zoom_links"]
-        + site_data["srw_paper_zoom_links"]
-        + site_data["cl_paper_zoom_links"]
-        + site_data["tacl_paper_zoom_links"],
+        all_paper_zoom_links=[],
+        # all_paper_zoom_links=site_data["main_paper_zoom_links"]
+        # + site_data["demo_paper_zoom_links"]
+        # + site_data["srw_paper_zoom_links"]
+        # + site_data["cl_paper_zoom_links"]
+        # + site_data["tacl_paper_zoom_links"],
         all_paper_slideslive_ids=site_data["main_paper_slideslive_ids"]
         + site_data["demo_paper_slideslive_ids"]
         + site_data["srw_paper_slideslive_ids"]
@@ -179,7 +180,7 @@ def load_site_data(
         for suffix in [
             "papers",
             "paper_sessions",
-            "paper_zoom_links",
+            # "paper_zoom_links",
             "paper_slideslive_ids",
         ]:
             del site_data[f"{prefix}_{suffix}"]
@@ -326,7 +327,8 @@ def build_schedule(overall_calendar: List[Dict[str, Any]]) -> List[Dict[str, Any
         copy.deepcopy(event)
         for event in overall_calendar
         if event["type"]
-        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials"}
+        # in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions", "Socials"}
+        in {"Plenary Sessions", "Tutorials", "Workshops", "QA Sessions"}
     ]
 
     for event in events:
@@ -455,12 +457,13 @@ def build_papers(
         start_time = datetime.strptime(date, "%Y-%m-%d_%H:%M:%S")
         end_time = start_time + timedelta(hours=qa_session_length_hr)
         for paper_id in session_info["papers"]:
-            paper_session_id = f"{paper_id}-{session_name}"
-            zoom_info = zoom_info_for_paper_session[paper_session_id]
-            assert (
-                datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
-                == start_time
-            ), paper_id
+            # paper_session_id = f"{paper_id}-{session_name}"
+            # zoom_info = zoom_info_for_paper_session[paper_session_id]
+            # assert (
+            #     datetime.strptime(zoom_info["starttime"], "%Y-%m-%dT%H:%M:%SZ")
+            #     == start_time
+            # ), paper_id
+            zoom_info = {"zoom_join_link": ""}
             sessions_for_paper[paper_id].append(
                 SessionInfo(
                     session_name=session_name,
