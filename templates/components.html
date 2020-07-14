@@ -423,8 +423,7 @@
   {{session.session}}
   <span class="session_times">{{session.time_string}}</span>
 
-  <!-- disable Zoom meetings -->
-  {% if session.zoom_link and false %}
+  {% if session.zoom_link %}
   <a href="{{session.zoom_link}}" target="_blank"  class="card-link">
     <!--
     <img
