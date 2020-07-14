@@ -103,11 +103,11 @@ def workshops():
     return render_template("workshops.html", **data)
 
 
-# @app.route("/sponsors.html")
-# def sponsors():
-#     data = _data()
-#     data["sponsors"] = site_data["sponsors"]
-#     return render_template("sponsors.html", **data)
+@app.route("/sponsors.html")
+def sponsors():
+    data = _data()
+    data["sponsors"] = site_data["sponsors"]
+    return render_template("sponsors.html", **data)
 
 
 # @app.route("/socials.html")
