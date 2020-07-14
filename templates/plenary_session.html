@@ -64,6 +64,7 @@
   <!-- Multiple Videos -->
   {% if plenary_session.videos != none %}
 
+  {% if false %}
   <div class="text-muted text-center">
     You can open the
     <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
@@ -71,9 +72,10 @@
     </a>
     channel below in a separate window.
   </div>
+  {% endif %}
 
   <div class="row m-2">
-    <div class="col-md-7 col-xs-12 p-2">
+    <div class="col-md-12 col-xs-12 p-2">
     <div id="accordion">
       {% for video in plenary_session.videos %}
       <div class="row m-2">
@@ -90,11 +92,13 @@
     </div>
     </div>
 
+    {% if false %}
     <div class="col-md-5 col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
+    {% endif %}
   </div>
 
   <!-- Surprise Sessions -->
@@ -157,7 +161,7 @@
   <div class="text-muted text-center">
     You can open the
     <a href="https://slideslive.com/{{plenary_session.presentation_id}}" target="_blank">pre-recorded video</a>
-    {% if plenary_session.rocketchat_channel %}
+    {% if false and plenary_session.rocketchat_channel %}
       and the
       <a href="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}"
          target="_blank">#{{plenary_session.rocketchat_channel}}</a>
@@ -169,7 +173,7 @@
   </div>
 
   <div class="row m-2">
-    {% if plenary_session.rocketchat_channel %}
+    {% if false and plenary_session.rocketchat_channel %}
     {% set n = 7 %}
     {% else %}
     {% set n = 12%}
@@ -192,7 +196,7 @@
     </div>
 
     <!-- Chat -->
-    {% if plenary_session.rocketchat_channel %}
+    {% if false and plenary_session.rocketchat_channel %}
     <div class="col-md-5 col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{plenary_session.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
