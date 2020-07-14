@@ -2,7 +2,7 @@ name: Deploy website to AWS S3
 
 on:
   push:
-    branches: [ publish ]
+    branches: [ master ]
 
 jobs:
   build:
