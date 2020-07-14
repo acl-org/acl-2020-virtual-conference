@@ -121,6 +121,7 @@
   </div>
   {% endif %}
 
+  {% if false %}
   <div class="text-muted text-center">
     {% if tutorial.prerecorded %}
     <a class="btn btn-outline-danger"
@@ -147,9 +148,10 @@
       Chat
     </a>
   </div>
+  {% endif %}
 
-  <div class="row m-2">   
-    {% if tutorial.id == 'T7' or tutorial.id == 'T2' or tutorial.id == 'T6' or tutorial.id == 'T8' %}
+  <div class="row m-2">
+  {% if tutorial.id == 'T7' or tutorial.id == 'T2' or tutorial.id == 'T6' or tutorial.id == 'T8' %}
       {% set rocketchat_width = 12 %}
     {% else %}
       {% set rocketchat_width = 5 %}
@@ -157,7 +159,7 @@
 
     <!-- Prerecorded Talk -->
     {% if tutorial.prerecorded %}
-    <div class="col-md-7 col-xs-12 my-auto p-2" >
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
       <div id="presentation-embed-{{tutorial.prerecorded}}" class="slp my-auto"></div>
       <script src='https://slideslive.com/embed_presentation.js'></script>
       <script>
@@ -173,11 +175,13 @@
     </div>
     {% endif %}
 
+    {% if false %}
     <div class="col-md-{{ rocketchat_width }} col-xs-12 p-2">
       <div id="gitter" class="slp">
         <iframe frameborder="0" src="https://{{config.chat_server}}/channel/{{tutorial.rocketchat_channel}}?layout=embedded" height="700px" width="100%" ></iframe>
       </div>
     </div>
+    {% endif %}
   </div>
 
 
