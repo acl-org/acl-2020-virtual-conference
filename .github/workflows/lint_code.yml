@@ -13,9 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: true
-        token: ${{ secrets.CI_TOKEN }}
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:

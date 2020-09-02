@@ -2,7 +2,7 @@ name: Deploy website to AWS S3
 
 on:
   push:
-    branches: [ master ]
+    branches: [ publish ]
 
 jobs:
   build:
@@ -11,9 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: true
-        token: ${{ secrets.CI_TOKEN }}
     - name: Set up Python 3.7
       uses: actions/setup-python@v2
       with:
