@@ -1,0 +1,31 @@
+UID,title,speakers,presentation_id
+W1208,Learning to Generate Multiple Style Transfer Outputs for an Input Sentence,Kevin Lin,38929815
+W1209,Balancing Cost and Benefit with Tied-Multi Transformers,Raj Dabre,38929816
+W1210,Compressing Neural Machine Translation Models with 4-bit Precision,Alham Fikri Aji ,38929817
+W1211,Meta-Learning for Few-Shot NMT Adaptation,Amr Sharaf,38929818
+W1212,Automatically Ranked Russian Paraphrase Corpus for Text Generation,Vadim Gudkov,38929819
+W1213,A Deep Reinforced Model for Zero-Shot Cross-Lingual Summarization with Bilingual Semantic Similarity Rewards,Zi-Yi Dou,38929820
+W1214,A Question Type Driven and Copy Loss Enhanced Framework for Answer-Agnostic Neural Question Generation,Xiuyu Wu,38929821
+W1215,A Generative Approach to Titling and Clustering Wikipedia Sections,Anjalie Field,38929822
+W1216,The Unreasonable Volatility of Neural Machine Translation Models,Marzieh Fadaee,38929823
+W1217,Leveraging Sentence Similarity in Natural Language Generation: Improving Beam Search using Range Voting,Sebastian Borgeaud,38929824
+W1218,"Distill, Adapt, Distill: Training Small, In-Domain Models for Neural Machine Translation",Mitchell A. Gordon,38929825
+W1219,Improving Neural Machine Translation Using Energy-Based Models,Subhajit Naskar,38929826
+W1220,Training and Inference Methods for High-Coverage Neural Machine Translation,Michael Yang,38929827
+W1221,Meeting the 2020 Duolingo Challenge on a Shoestring,Tadashi Nomoto,38929828
+W1222,English-to-Japanese Diverse Translation by Combining Forward and Backward Outputs,Masahiro Kaneko,38929829
+W1223,POSTECH Submission on Duolingo Shared Task,Junsu Park,38929830
+W1224,The ADAPT System Description for the STAPLE 2020 English-to-Portuguese Translation Task,Rejwanul Haque,38929831
+W1225,Expand and Filter: CUNI and LMU Systems for the WNGT 2020 Duolingo Shared Task,Jindřich Libovický,38929832
+W1226,Exploring Model Consensus to Generate Translation Paraphrases,Zhenhao Li,38929833
+W1227,Growing Together: Modeling Human Language Learning With n-Best Multi-Checkpoint Machine Translation,El Moatez Billah Nagoudi,38929834
+W1228,Generating Diverse Translations via Weighted Fine-tuning and Hypotheses Filtering for the Duolingo STAPLE Task,Sweta Agrawal,38929835
+W1229,The JHU Submission to the 2020 Duolingo Shared Task on Simultaneous Translation and Paraphrase for Language Education,Huda Khayrallah,38929836
+W1230,Simultaneous paraphrasing and translation by fine-tuning Transformer models,Rakesh Chada,38929837
+W1231,The NiuTrans System for WNGT 2020 Efficiency Task,Chi Hu,38929838
+W1232,Efficient and High-Quality Neural Machine Translation with OpenNMT,Guillaume Klein,38929839
+W1233,Edinburgh’s Submissions to the 2020 Machine Translation Efficiency Task,Nikolay Bogoychev,38929840
+W1234,Increasing Lexical Diversity in Plug and Play Language Models,Soham Parikh,38929841
+W1235,When and Why is Unsupervised Neural Machine Translation Useless?,Yunsu Kim,38929842
+W1236,Transformers without Tears: Improving the Normalization of Self-Attention,Toan Q. Nguyen,38929843
+W1237,Masked Language Model Scoring,Julian Salazar,38929844

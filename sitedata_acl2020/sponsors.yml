@@ -1,0 +1,875 @@
+- level: Diamond
+  sponsors:
+  - UID: '1'
+    name: Apple
+    logo: static/images/sponsors/Apple-for-2019-ACLwebsite.jpg
+    logoontop: True
+    website: https://www.apple.com/jobs/us/teams/machine-learning-and-ai.html
+    description: "Apple is a place where extraordinary people gather to do their best work. Our community is made up of every kind of individual: artists and designers, engineers and scientists, thinkers and doers. Together, we create things and experiences people once couldn’t have imagined and now can’t imagine living without. So if you’re excited by the idea of making a real impact, a career with Apple might be your dream job. Just be ready to dream big."
+    youtube: https://www.youtube.com/embed/vfkOZTjD06Y
+    contacts:
+      - name: Email
+        email: aimlconf-recruiting@group.apple.com
+    zoom_link: https://zoom.us/j/97030516088
+    schedule:
+      - start: 2020-07-07T10:00:00-07:00
+        duration: 0.5
+        label: "Q&A with Apple: Meet a few authors of our ACL publications, as well as recruiters from our machine learning and NLP teams."
+    resources:
+      - label: Apple Publications at ACL 2020 
+        website:  https://apple.box.com/v/ACL2020publications 
+      - label: Job Card
+        website: https://apple.box.com/v/aimlACL2020jc
+      - label: Apply to full-time roles
+        website: http://bit.ly/apple-acl2020
+      - label: Apply to intern roles
+        website: http://bit.ly/apple-acl2020-intern
+  - UID: '2'
+    name: Bloomberg
+    logo: static/images/sponsors/Bloomberg-logo-2019.png
+    website: https://www.techatbloomberg.com/
+    description: "Bloomberg is building the world's most trusted information network for financial professionals. Among our 6,000+ software engineers, we employ 150+ data scientists and research engineers who employ machine learning and natural language processing to solve complex, real-world problems. For example, they build ML models that enable predicting news stories’ impact on company stock prices, recommender systems, semantic parsing for question answering, topic clustering/classification, summarization, sentiment analysis, anomaly detection in time series, and various other domain-specific solutions." 
+    youtube: https://www.youtube.com/embed/2ZlZD-fvuhc
+    contacts:
+      - name: Lingjia Deng
+        email: ldeng43@bloomberg.net
+      - name: Irinka Toidze
+        email: itoidze@bloomberg.net
+    zoom_link: https://zoom.us/j/97542736114
+    schedule:
+      - start: 2020-07-06T12:00:00-00:00
+        end: 2020-07-06T12:40:00-00:00
+        label: "Tech Talk + Live Q&A: Social Monitor in Bloomberg"
+      - start: 2020-07-06T20:00:00-00:00
+        end: 2020-07-06T20:40:00-00:00
+        label: "Ask me anything about Bloomberg ML/NLP Hiring"
+      - start: 2020-07-07T12:00:00-00:00
+        end: 2020-07-07T12:40:00-00:00
+        label: "Tech Talk + Live Q&A: Making Sense of Twitter at Bloomberg"
+      - start: 2020-07-07T17:00:00-00:00
+        end: 2020-07-07T17:40:00-00:00
+        label: "Ask me anything about Bloomberg ML/NLP Hiring"
+      - start: 2020-07-07T20:00:00-00:00
+        end: 2020-07-07T20:40:00-00:00
+        label: "Tech Talk + Live Q&A: Making Sense of Twitter at Bloomberg        "
+      - start: 2020-07-08T12:00:00-00:00
+        end: 2020-07-08T12:40:00-00:00
+        label: "Ask me anything about Bloomberg ML/NLP Hiring"
+      - start: 2020-07-08T20:00:00-00:00
+        end: 2020-07-08T20:40:00-00:00
+        label: "Tech Talk + Live Q&A: Social Monitor in Bloomberg"
+    downloads:
+      - label: Bloomberg AI at ACL
+        website: static/pdf/bloomberg_acl_2020_flyer.pdf
+    channel: sponsor-bloomberg
+  - UID: '3'
+    name: Google Research
+    logo: static/images/sponsors/Google_Research.png
+    website: https://goo.gle/ACLhomepage
+    description: |
+      Natural Language Processing (NLP) research at Google focuses on algorithms that apply at scale, across languages, and
+      across domains. Our systems are used in numerous ways across Google, impacting user experience in search, mobile, apps,
+      ads, translate and more.
+
+      Our work spans the range of traditional NLP tasks, with general-purpose syntax and semantic algorithms underpinning
+      more specialized systems. We are particularly interested in algorithms that scale well and can be run efficiently in a
+      highly distributed environment.
+
+      Our syntactic systems predict part-of-speech tags for each word in a given sentence, as well as morphological features
+      such as gender and number. They also label relationships between words, such as subject, object, modification, and others.
+      We focus on efficient algorithms that leverage large amounts of unlabeled data, and recently have incorporated neural net technology.
+
+      On the semantic side, we identify entities in free text, label them with types (such as person, location, or organization),
+      cluster mentions of those entities within and across documents (coreference resolution), and resolve the entities to
+      the Knowledge Graph.
+
+      To learn more about the research we’re presenting at ACL 2020, please visit our [Google at ACL 2020 website](https://goo.gle/ACLhomepage).
+
+      Interested in learning more about how we hire? Diversity and inclusion at Google? Watch demos performed by Googlers around the world?
+      Please visit our [Google at ACL 2020](https://goo.gle/ACLhomepage) website.
+    youtube: https://www.youtube.com/embed/EvfziohbbnE
+    zoom_link: https://zoom.us/j/92790255109
+    schedule:
+      - start: 2020-07-06T08:00:00-07:00
+        duration: 1
+        label: Room 1-Technical Demos with Google Researchers
+      - start: 2020-07-06T09:30:00-07:00
+        duration: 1
+        label: Room 2-Hiring Q&A with Google Recruiters
+      - start: 2020-07-07T08:00:00-07:00
+        duration: 1
+        label: Room 1-Coffee / Tea Chat with Google Researchers
+      - start: 2020-07-07T09:00:00-07:00
+        duration: 1
+        label: Room 2-Coffee / Tea Chat with Google Researchers
+      - start: 2020-07-07T10:30:00-07:00
+        duration: 1
+        label: Room 3-Hiring Q&A with Google Recruiters
+    resources:
+      - label: Google Accepted Papers
+        website: https://goo.gle/ACLAcceptedPapers
+      - label: Google Accepted Workshops & Tutorials
+        website: https://goo.gle/ACLWorkshopsTutorials
+      - label: Googlers on Organizing Committees
+        website: https://goo.gle/GooglersOnCommittee
+      - label: Demos
+        website: https://goo.gle/ACLDemos
+      - label: Diversity and Inclusion at Google
+        website: https://goo.gle/ACLDEI
+      - label: Careers at Google
+        website: https://goo.gle/ACLCareers
+    channel: sponsor-google
+  - UID: '4'
+    name: Amazon
+    logo: static/images/sponsors/amazon_science.png
+    website: https://www.amazon.science/conferences-and-events/acl-2020?utm_campaign=events2020&utm_medium=recruiting&utm_source=collat&utm_content=event_page&utm_term=acl
+    description: "At Amazon we fundamentally believe that scientific innovation is essential to being the most customer-centric company in the world. It's this ability to have an impact at scale that allows us to attract some of the brightest minds in artificial intelligence and related fields. Amazon’s Conversational AI / Natural-language processing teams are looking forward to meeting you at ACL 2020. Come and visit the Amazon Virtual booth!"
+    youtube: https://www.youtube.com/embed/H8dpdFTApgo
+    logoontop: True
+    contacts:
+      - name: 'E-mail'
+        email: acl2020@amazon.com
+    resources:
+      - label: "Watch: Alexa Scientists Answer Frequently Asked Questions"
+        website: https://attendee.gotowebinar.com/register/6123632562353426702
+      - label: Graduate Research at Amazon
+        website: static/pdf/amazon_graduate_research.pdf
+      - label: Research Brochure
+        website: static/pdf/amazon_research_brochure.pdf  
+      - label: "Amazon@ACL 2020 Publications"
+        website: static/pdf/amazon_papers.pdf
+      - label: "Amazon Science Careers"
+        website: https://www.amazon.science/careers
+      - label: "Diversity and Inclusion at Amazon"
+        website: https://www.aboutamazon.com/working-at-amazon/diversity-and-inclusion
+    zoom_link: https://zoom.us/j/95213410507
+    schedule:
+      - start: 2020-07-06T08:00:00-08:00
+        duration: 9
+        label: Meet with Live Recruiter here
+      - start: 2020-07-07T08:00:00-08:00
+        duration: 9
+        label: Meet with Live Recruiter here
+      - start: 2020-07-08T08:00:00-08:00
+        duration: 9
+        label: Meet with Live Recruiter here
+    channel: sponsor-amazon-science
+- level: Platinum
+  sponsors:
+  - UID: '5'
+    name: DeepMind
+    logo: static/images/sponsors/DeepMind-Final2020.png
+    website: https://deepmind.com
+    channel: sponsor-deepmind
+    contacts:
+      - name: DeepMind at ACL 2020
+        email: dm-acl-2020-enquiries@google.com
+    description: |
+      Artificial intelligence could be one of humanity's most useful inventions. DeepMind aims to build advanced AI to expand our knowledge and find solutions to thousands of problems.
+
+      We’re a team of scientists, engineers, machine learning experts and more, working together to advance the state of the art in artificial intelligence. We use our technologies for widespread public benefit and scientific discovery, and collaborate with others on critical challenges, ensuring safety and ethics are the highest priority.
+
+      We have a track record of breakthroughs in fundamental AI research, published in journals like Nature, Science, and more. Our programs have learned to diagnose eye diseases as effectively as the world’s top doctors, to save 30% of the energy used to keep data centres cool, and to make state of the art predictions of the complex 3D shapes of proteins - which could one day transform how drugs are invented.
+
+      DeepMind was founded in London in 2010, and we joined forces with Google in 2014 to accelerate our work. Since then, our community has expanded to include teams in Alberta, Montreal, Paris, and Mountain View in California.
+    youtube: https://www.youtube.com/embed/koEWIEHTopo
+    zoom_link: https://zoom.us/j/93378401442
+    schedule: 
+      - start: 2020-07-06T08:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-07T08:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-07T11:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-07T13:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-07T21:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-08T08:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-09T03:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-09T08:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-09T13:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+      - start: 2020-07-10T11:00:00-07:00
+        duration: 1
+        label: Chat with DeepMind Researchers
+    resources: 
+      - label: |
+              Multi-agent Communication meets Natural Language: Synergies between Functional and Structural Language Learning
+        website: static/pdf/Lazaridou-etal-2020.pdf
+      - label: Do Transformers Need Deep Long-Range Memory?
+        website: static/pdf/Rae-Razavi-2020.pdf
+      - label: Learning to Segment Actions from Observation and Narration
+        website: static/pdf/Fried-etal-2020.pdf
+      - label: Better Document-Level Machine Translation with Bayes' Rule
+        website: static/pdf/Yu-etal-2020.pdf
+      - label: On the Cross-lingual Transferability of Monolingual Representations
+        website: static/pdf/Artetxe-etal-2020.pdf
+      - label: A Call for More Rigor in Unsupervised Cross-lingual Learning
+        website: static/pdf/Artetxe-etal-2020b.pdf
+    downloads: 
+      - label: Careers Leaflet - Engineering and Games
+        website: static/pdf/DeepMind-Careers-EngGames.pdf
+      - label: Careers Leaflet - Operations
+        website: static/pdf/DeepMind-Careers-Ops.pdf
+      - label: Careers Leaflet - Research
+        website: static/pdf/DeepMind-Careers-Research.pdf
+      - label: Careers Leaflet - Science and DeepMind for Google
+        website: static/pdf/DeepMind-Careers-Science.pdf
+      - label: Flyer - Language at ACL 2020
+        website: static/pdf/DeepMind-Language-Flyer.pdf
+      - label: Overview Deck - Language at ACL 2020
+        website: static/pdf/DeepMind-Language-Deck.pdf
+  - UID: '6'
+    name: Megagon Labs
+    logo: static/images/sponsors/megagon-logo-2019.png
+    website: https://megagon.ai
+    channel: sponsor-megagon-labs
+    contacts:
+      - name: Makiko Shiino
+        email: makiko@megagon.ai
+      - name: Vivian Li
+        email: vivian@megagon.ai
+    description: Since 2016, Megagon Labs (formerly Recruit Institute of Technology) has conducted top-notch research and built technologies in Mountain View and Tokyo.  We are making impacts through the worldwide services and products of the Recruit Group by empowering people to make their best decision.  Our research focuses are in the broad areas of Artificial Intelligence, Data Management, and Natural Language Processing.
+    youtube: https://www.youtube.com/embed/3v69lJWscaY
+    resources:
+      - label: Publications
+        website: https://megagon.ai/publications/
+      - label: Jobs
+        website: https://megagon.ai/jobs/
+    zoom_link: https://zoom.us/j/93933098558
+    schedule:
+      - start: 2020-07-06T13:00:00-07:00
+        duration: 0.667
+        label: NLP Research at Megagon Labs
+        link: https://us02web.zoom.us/j/85189673115
+      - start: 2020-07-07T10:00:00-07:00
+        duration: 0.667
+        label: NLP Research at Megagon Labs
+        link: https://us02web.zoom.us/j/85189673115
+      - start: 2020-07-08T11:00:00-07:00
+        duration: 0.667
+        label: NLP Research at Megagon Labs
+        link: https://us02web.zoom.us/j/85189673115
+  - UID: '7'
+    name: IBM
+    logo: static/images/sponsors/IBM-Final2020.jpg
+    website: https://ibm.biz/ai-research
+    channel: sponsor-ibm
+    contacts:
+      - name: Avi Sil
+        email: avi@us.ibm.com
+      - name: Karthik Sankaranarayanan
+        email: kartsank@in.ibm.com
+    description: |
+      There is no AI without algorithms. In our pursuit of fluid intelligence, we are continuing to advance our work in deep learning, and are putting significant investment into neurosymbolic AI, which combines the power of neural networks with symbolic methods to help AI reason more effectively. \n In parallel, we’re delivering secure, trusted AI with work focused on expandability, fairness, and bias reduction, and empowering AI creators with AI engineering tools and capabilities that simplify and automate key tasks like data preparation, training and lifecycle management. \n Finally, we’re developing a new class of AI hardware that is inherently energy-sufficient, increasing compute power by orders of magnitude without the demand for increased energy. To learn more visit: [https://ibm.biz/ai-research](https://ibm.biz/ai-research)
+    youtube: https://www.youtube.com/embed/jwZHW1J7TX0
+    downloads:
+      - label: Recruiting Flyer
+        website: https://ibm.box.com/s/83brcb9jlugw8ajmmz2xyalaycs5ugs4
+      - label: AI Residency Flyer
+        website: https://ibm.box.com/s/lbw17ykwfivgq0ej1g2u6wkz0usdiifu
+      - label: IBM Booth Agenda
+        website: https://ibm.box.com/s/38k0x519t6rhlw9qi6of2xme8m2ft7y1
+      - label: |
+              IBM Accepted Papers/Talks
+        website: https://ibm.box.com/s/x16g4w33p3lxonj6x532rfnzxmn1lml8
+    resources:
+      - label: Gamma
+        website: https://ibm.box.com/s/31pqkzfkgtmci9f6rcdakaecohzandia
+      - label: |
+              ExBERT: A Visual Tool to Explore BERT
+        website: https://ibm.box.com/s/wh5xv2txqibg83h61pgsc9i6b61pycd7
+      - label: NLQ over BAI
+        website: https://ibm.box.com/s/a5tcucibzkz9spo8wrre2c15s00vx0bp
+      - label: Vendor Master Scrubber
+        website: https://ibm.box.com/s/w76ethl1mz05ziytzjkcw5pccgg3ct1i
+      - label: Cognitive Invoice Processing (ADAPT)
+        website: https://ibm.box.com/s/fdwo45xylnmjgpq86mrspk8hywax0jnn
+      - label: Label Noise in Context (LNiC)
+        website: https://www.youtube.com/watch?v=20cigQaCc_k 
+      - label: PARTNER
+        website: http://ibm.biz/PARTNER
+      - label: IBM Research AI publications at ACL 2020
+        website: https://www.research.ibm.com/artificial-intelligence/publications/
+      - label: To learn more about IBM presence at ACL 2020 please visit our blog
+        website: https://ibm.biz/ai-blogs
+      - label: |
+              Try Our Tech: At IBM Research, we create innovative tools and resources to help unleash the power of AI. See for yourself. Take our tech for a spin.
+        website: https://www.research.ibm.com/artificial-intelligence/experiments/try-our-tech/
+      - label: Stay up to date with the latest announcements, research, and events from IBM Research through our newsletter.
+        website: https://www.ibm.com/account/reg/us-en/signup?formid=urx-44015
+      - label: |
+              "The Debater" tells the story of an eclectic team of researchers that dare to take AI into uncharted territory--the world of human discourse. Watch the film here.
+        website: https://www.youtube.com/watch?v=NSxVEaWEUjk&t=154s
+      - label: To learn more about IBM Research COVID-19 Literature QA system click here.
+        website: https://covid-19-literature-qna.mybluemix.net/
+    zoom_link: https://zoom.us/j/91843537365
+    schedule: 
+      - start: 2020-07-06T12:00:00+00:00
+        duration: 1
+        label: Vendor Master Scrubber
+      - start: 2020-07-06T14:00:00+00:00
+        duration: 1
+        label: EXBERT
+      - start: 2020-07-06T17:00:00+00:00
+        duration: 1
+        label: PARTNER
+      - start: 2020-07-07T12:00:00+00:00
+        duration: 1
+        label: Cognitive Invoice Processing (ADAPT)
+      - start: 2020-07-07T14:00:00+00:00  
+        duration: 1
+        label: GAAMA
+      - start: 2020-07-07T17:00:00+00:00
+        duration: 1
+        label: Label Noise in Context (LNiC)
+      - start: 2020-07-08T12:00:00+00:00
+        duration: 1
+        label: NLQ over BAI
+      - start: 2020-07-08T14:00:00+00:00
+        duration: 1
+        label: PARTNER
+      - start: 2020-07-08T17:00:00+00:00
+        duration: 1
+        label: GAAMA
+  - UID: '8'
+    name: Baidu
+    logo: static/images/sponsors/baidu.jpg
+    website: https://www.baidu.com/
+    channel: sponsor-baidu
+    contacts:
+      - name: Qianwei Cai
+        email: caiqianwei@baidu.com
+      - name: Dou Hong
+        email: hongdou@baidu.com
+    description:  Baidu is the leading Chinese language Internet search provider and the largest Chinese website globally. Baidu aims to make the complicated world simpler through technology.
+    youtube: https://www.youtube.com/embed/JJq2MWRIPBQ
+    downloads:
+      - label: Introduction to Baidu's Natural Language Processing
+        website: https://fanyiapp.bj.bcebos.com/cms/misc/Introduction_to_Baidu's_Natural_Language_Processing.ppsx
+      - label: Brochure of Baidu Natural Language Processing
+        website: https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Natural_Language_Processing.pdf
+      - label: Brochure of Baidu Knowledge Graph
+        website: https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Knowledge_Graph.pdf
+      - label: Brochure of PaddlePaddle
+        website: https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_PaddlePaddle.pdf
+      - label: Brochure of Baidu Research
+        website: https://fanyiapp.cdn.bcebos.com/cms/misc/Brochure_of_Baidu_Research.pdf
+    resources:
+      - label: |
+              Baidu UNIT: A Professional IDE for Dialogue System
+        website: https://youtu.be/iBqfajFcSzo
+      - label: Baidu Translation
+        website: https://youtu.be/hrlz42GQHgQ
+      - label: Automatic Simultaneous Translation
+        website: https://fanyi-api.baidu.com/simultaneous
+      - label: Industrial Practices of PaddlePaddle
+        website: https://paddle-site-web-video.cdn.bcebos.com/videoworks/mda-kdpm7e7vnti7tc47/paddle_site_video/%E6%BA%90%E6%96%87%E4%BB%B6/b%E7%99%BE%E5%BA%A6%E9%A3%9E%E6%A1%A8%E5%B7%A5%E4%B8%9A%E6%A1%88%E4%BE%8B%E8%A7%86%E9%A2%91.mp4
+    papers:
+      - label: Baidu Schedule 
+        website: https://fanyiapp.cdn.bcebos.com/cms/misc/Baidu_Schedule.pdf
+    # zoom_link: https://zoom.us/j/94458040946
+    zoom_link: https://zoom.com.cn/j/88613561875
+    schedule:
+      - start: 2020-07-06T02:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: Dialogue and Interactive Systems
+      - start: 2020-07-06T10:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: NLP Applications in Clinical Decision Support; The Algorithm, Platform and Application of ERNIE
+      - start: 2020-07-06T21:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: Computational Linguistics for Vaccine Design
+      - start: 2020-07-07T02:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: Dialogue and Interactive Systems
+      - start: 2020-07-07T10:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: NLP Applications in Clinical Decision Support; The Algorithm, Platform and Application of ERNIE
+      - start: 2020-07-07T21:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: Computational Linguistics for Vaccine Design
+      - start: 2020-07-08T02:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: NLP Applications in Clinical Decision Support; The Algorithm, Platform and Application of ERNIE
+      - start: 2020-07-08T10:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: Dialogue and Interactive Systems
+      - start: 2020-07-08T21:00:00-00:00
+        duration: 2
+        label: |
+          Tech Talk + Live Q&A: Computational Linguistics for Vaccine Design
+  - UID: '9'
+    name: Facebook AI
+    logo: static/images/sponsors/Facebook-Final2020.png
+    website: https://ai.facebook.com/research/
+    channel: sponsor-facebook
+    contacts:
+      - name: Chris Bakes, PhD Technical Sourcer, Artificial Intelligence
+        email: cbakes@fb.com
+    description: |
+        Facebook AI works with the research community to advance artificial intelligence. Our areas of research cover many fields including but not limited to speech and audio, conversational AI, ranking and recommendations, and computer vision.
+
+        Facebook AI is comprised of two core divisions – fundamental research (FAIR) and applied research. FAIR seeks to further our fundamental understanding in both new and existing domains, covering the full spectrum of topics related to AI, with the mission of advancing the state-of-the-art of AI through open research for the benefit of all. Facebook AI Applied Research engages in cutting-edge research that can improve and power new product experiences at huge scale for our community.
+
+        Facebook AI is built on the key principles of openness, collaboration, excellence, and scale. We believe the latest advancements in AI should be published and open-sourced for the community. We work openly with internal and external partners to collaborate and share knowledge. We believe there is no shortage of new areas to explore in AI, and our researchers focus on the projects we believe will have the most positive impact on society. Finally, our research must account for both large scale data and computation needs in order to bring the benefits of AI to more people and improve accessibility. 
+
+        If our mission and work intrigue you, Facebook AI is always looking to hire the best talent to our globally based teams. For information about open roles and how to apply, please visit [https://ai.facebook.com/join-us/](https://ai.facebook.com/join-us/)
+    resources: 
+      - label: Facebook AI Careers - ACL 2020
+        website: https://docs.google.com/document/d/1wYkWXqBp9mjSQJnue_eB_8dHHI5y8daBOu94QvPTt4I/edit?usp=sharing
+      - label: Facebook AI Recruiter Schedule - ACL 2020
+        website: https://docs.google.com/document/d/1UIpbzK2FR34rz_4zVpFMeD_u_rglfHobE4ZryEACTDo/edit?usp=sharing
+      - label: PyTorch Meetups - ACL 2020
+        website: https://docs.google.com/document/d/1wafTs-ls9L79LzxGTAakmQJgeNfbSScclef554JuKQA/edit?usp=sharing
+      - label: Facebook AI Publications - ACL 2020
+        website: https://docs.google.com/document/d/1GEA5WH-NbZNwhrjMye2EZslK80QhmZ74dfhV-Hy1FkA/edit?usp=sharing
+      - label: Situated Interactive MultiModal Conversations (SIMMC) Challenge 2020
+        website: static/pdf/facebook_simmc.pdf
+    youtube: https://www.youtube.com/embed/eiqUzieHu8o
+    zoom_link: https://zoom.us/j/98073902657
+- level: Gold
+  sponsors:
+  - UID: '10'
+    name: Grammarly
+    logo: static/images/sponsors/Grammarly-Final2020.png
+    website: https://www.grammarly.com
+    channel: sponsor-grammarly
+    contacts:
+      - name: Dana Schafer, Technical Recruiter
+        email: dana.schafer@grammarly.com
+    description: |
+            Grammarly’s digital writing assistant helps more than 20 million people every day write more clearly and effectively in English. In building a product that scales across multiple platforms and devices, Grammarly works to empower users whenever and wherever they communicate.
+           
+             Grammarly’s computational linguists, analytical linguists, and research scientists work on the cutting edge of natural language processing to develop the advanced AI that powers our writing assistant in delivering sophisticated, industry-leading writing suggestions. Check out our technical blog, where Grammarly’s engineers and researchers discuss the technical challenges they’re tackling: [https://gram.ly/TBlogACL](https://gram.ly/TBlogACL)
+
+            Across offices in Kyiv, San Francisco, New York, and Vancouver, Grammarly’s team is growing. And everywhere we work, we are united in our EAGER values: ethical, adaptable, gritty, empathetic, and remarkable. These values drive how we operate, make decisions, and build our product. Each team member brings something distinct to Grammarly that strengthens our team and culture. We value our differences, and we encourage all—especially those whose identities are traditionally underrepresented in tech—to join our team.
+
+            Explore open roles: [https://gram.ly/JobsACL20](https://gram.ly/JobsACL20)
+    youtube: https://www.youtube.com/embed/Dlq-knQpBzs
+    resources: 
+      - label: Technology at Grammarly
+        website: https://www.grammarly.com/jobs/technology?utm_campaign=EB&utm_content=IM&utm_source=ACL20profile&utm_medium=web&utm_id=FmjNpEiJPtpHVv
+      - label: Life at Grammarly
+        website: https://www.grammarly.com/jobs/life?utm_campaign=EB&utm_content=IM&utm_source=ACL20profile&utm_medium=web&utm_id=DFhz20DTOyOIsI
+      - label: Open roles at Grammarly
+        website: https://www.grammarly.com/jobs/openings?utm_campaign=EB&utm_content=IM&utm_source=ACL20profile&utm_medium=web&utm_id=NYqlqqIoiV7JQh#engineering:all
+    downloads: 
+      - label: |
+              GECToR – Grammatical Error Correction: Tag, Not Rewrite
+        website: https://arxiv.org/pdf/2005.12592.pdf
+    zoom_link: https://zoom.us/j/94435461571
+    schedule: 
+      - start: 2020-07-07T08:00:00-07:00
+        duration: 1
+        label: |
+                Live Q&A: Learn more about the day-to-day on Grammarly’s research team with Konstiantyn Omelianchuk 
+      - start: 2020-07-08T07:00:00-07:00
+        duration: 1
+        label: |
+                Live Q&A: Learn more about the day-to-day on Grammarly’s research team with Konstiantyn Omelianchuk
+      - start: 2020-07-09T09:30:00-07:00
+        duration: 1
+        label: |
+                Live Q&A: Learn more about how the team is growing with Grammarly technical recruiter Dana Shafer
+      - start: 2020-07-10T09:30:00-07:00
+        duration: 1
+        label: |
+                Live Q&A: Learn more about how the team is growing with Grammarly technical recruiter Dana Shafer
+  - UID: '23'
+    name: ByteDance
+    logo: static/images/sponsors/ByteDance-logo.png
+    website: https://www.bytedance.com/
+    channel: sponsor-bytedance
+    description: |
+                Our mission: Inspire Creativity, Enrich Life. Founded in 2012, ByteDance is a technology company operating a range of content platforms that inform, educate, entertain, and inspire people across languages, cultures, and geographies. Dedicated to building global platforms of creation and interaction, ByteDance now has over 60,000 global employees and a portfolio of applications available in over 150 markets and 75 languages, including Toutiao, Douyin, Xigua Video, TikTok, Helo, Lark, and more.
+    contacts:
+      - name: Alexander Lindblom
+        email: alexanderlindblom@bytedance.com
+    resources:
+      - label: Fact-based Text Editing
+        website: https://virtual.acl2020.org/paper_main.17.html
+      - label: Spelling Error Correction with Soft-Masked BERT
+        website: https://virtual.acl2020.org/paper_main.82.html
+      - label: Do you have the right scissors? Tailoring Pre-trained Language Models via Monte-Carlo Methods
+        website: https://virtual.acl2020.org/paper_main.314.html
+      - label: |
+              Xiaomingbot: A Multilingual Robot News Reporter
+        website: https://virtual.acl2020.org/paper_demo.35.html
+    downloads:
+      - label: Career opportunities
+        website: static/pdf/ByteDance-Career-opportunities.pdf
+      - label: Coding Camp
+        website: static/pdf/ByteDance-Coding-Camp.pdf
+      - label: Joint Research
+        website: static/pdf/ByteDance-Joint-Research.pdf
+  - UID: '22'
+    name: Alibaba Group
+    logo: static/images/sponsors/Alibaba-Final2020.png
+    website: https://www.alibabagroup.com/en/about/overview
+    channel: sponsor-alibaba
+    description: ALIBABA GROUP’S MISSION IS TO MAKE IT EASY TO DO BUSINESS ANYWHERE. We enable businesses to transform the way they market, sell and operate and improve their efficiencies. We provide the technology infrastructure and marketing reach to help merchants, brands and other businesses to leverage the power of new technology to engage with their users and customers and operate in a more efficient way.
+    youtube: https://www.youtube.com/embed/83UkvuyBvFs
+    contacts: 
+      - name: Shuonan Zhang
+        email: zsn118640@alibaba-inc.com
+    downloads: 
+      - label: |
+              SpanMlt: A Span-based Multi-Task Learning Framework for Pair-wise Aspect and Opinion Terms Extraction
+        website: static/pdf/Alibaba-ACL2020.pdf
+      - label: Coupling Distant Annotation and Adversarial Training for Cross-Domain Chinese Word Segmentation
+        website: static/pdf/Alibaba-CrossDomain.pdf
+      - label: Structure-Level Knowledge Distillation For Multilingual Sequence Labeling
+        website: static/pdf/Alibaba-Distillation.pdf
+      - label: Dynamic Memory Induction Networks for Few-Shot Text Classification
+        website: static/pdf/Alibaba-DMIN.pdf
+      - label: Multi-Domain Dialogue Acts and Response Co-Generation
+        website: static/pdf/Alibaba-MarCo.pdf
+      - label: Multiscale Collaborative Deep Models for Neural Machine Translation
+        website: static/pdf/Alibaba-NMT.pdf
+    zoom_link: https://zoom.us/j/98825325530
+    schedule: 
+      - start: 2020-07-08T19:30:00+08:00
+        duration: 1
+        label: NLP Research at Alibaba
+  - UID: '19'
+    name: Two Sigma
+    logo: static/images/sponsors/TwoSigma-Final2020.jpg
+    website: http://careers.twosigma.com/acl
+    channel: sponsor-two-sigma
+    contacts:
+      - name: Nicole Fuchs
+        email: Nicole.fuchs@twosigma.com
+    description: |
+            Two Sigma uses data science and technology to discover value in markets worldwide.  We’re looking for people who see beauty in data and the possibilities it reveals. Researchers who see connections and patterns in unexpected places.  Engineers who build tools that channel massive amounts of data into insights. And people across multiple disciplines to support our growth and position at the forefront of investment management, insurance, securities, private equity, and venture capital.
+    resources:
+      - label: |
+              MiSoSouP: Extracting the Most “Flavor” from a Dataset
+        website: https://www.twosigma.com/insights/article/misosoup-extracting-the-most-flavor-from-a-dataset/
+      - label: Learning and Memorization
+        website: https://www.twosigma.com/insights/article/learning-and-memorization/
+      - label: |
+              Interpretability Methods in Machine Learning: A Brief Survey
+        website: https://www.twosigma.com/insights/article/interpretability-methods-in-machine-learning-a-brief-survey/ 
+    youtube: https://www.youtube.com/embed/uq1c7nm37cc
+    zoom_link: https://zoom.us/j/96456299205
+  - UID: '20'
+    name: G-Research
+    logo: static/images/sponsors/g_research_logo.png
+    website: https://www.gresearch.co.uk/
+    description: |
+      G-Research is Europe’s leading quantitative finance research firm. We hire the brightest minds in the world to tackle some of the biggest questions in finance. We pair this expertise with machine learning, big data, and some of the most advanced technology available to predict movements in financial markets.
+      We have a team of NLP experts and quantitative researchers working on very large text corpora, applying the latest techniques for entity recognition, sentiment analysis and topic extraction, with the goal of identifying features of real time text feeds that we can use to predict the future behaviour of markets.
+    
+    youtube: https://www.youtube.com/embed/eiBHo-NWqgE
+    contacts:
+      - name: Jamie Watson
+        email: Jamie.watson@gresearch.co.uk
+    zoom_link: https://zoom.us/j/96894900249
+    schedule:
+      - start: 2020-07-06T16:00:00+01:00
+        duration: 1.5
+        label: "G-Research: Q&A with Researcher and Recruitment"
+      - start: 2020-07-07T16:00:00+01:00
+        duration: 1.5
+        label: "G-Research: Q&A with Researcher and Recruitment"
+      - start: 2020-07-08T16:00:00+01:00
+        duration: 1.5
+        label: "G-Research: Q&A with Researcher and Recruitment"
+    channel: sponsor-g-research
+- level: Silver
+  sponsors:
+  - UID: '11'
+    name: Poly AI
+    logo: static/images/sponsors/polyai-logo.png
+    website: https://www.polyai.com/
+    description: |
+      PolyAI is a leading supplier of Conversational AI for automated customer service. The company works with enterprise clients across several industries, cutting cost and radically improving consumer satisfaction. 
+
+      As a spinout from Cambridge University, PolyAI turned bleeding-edge virtual assistant technology into a superb customer-facing product used by several public companies. The company has raised over $14m in VC funding.
+
+    youtube: https://www.youtube.com/embed/bLAX7LJVWtA
+    contacts:
+      - name: Ashleigh Hazell
+        email: ash@poly-ai.com
+        phone: 07400277280 
+      - name: Ivan Vulic
+        email: ivan@poly-ai.com
+    zoom_link: https://zoom.us/j/95253632651
+    schedule:
+      - start: 2020-07-06T18:00:00+01:00
+        duration: 1
+        label: "An Introduction to PolyAI: Product, Tech, Mission"
+      - start: 2020-07-07T18:00:00+01:00
+        duration: 1
+        label: "An Introduction to PolyAI: Product, Tech, Mission"
+    channel: sponsor-poly-ai
+  - UID: '12'
+    name: Babelscape
+    logo: static/images/sponsors/babelscape.jpg
+    website: https://babelscape.com
+    description: |
+      Babelscape is a tech company founded in 2016 committed to providing strong innovation in AI at the intersection of multilingual Natural Language Processing, knowledge graphs and text analytics. 
+
+      The company's core mission is to overcome language barriers by enabling the automatic processing of text independently of the input language, and distilling and aggregating the information extracted across languages by means of a unified large-scale multilingual knowledge repository and semantically-enhanced text comprehension systems.
+
+      Thanks to technological transfer from the internationally renowned Natural Language Processing research group headed by Prof. Roberto Navigli at the Sapienza University of Rome, winner of two European Research Council grants and of several international awards, the company is positioned in the market with very high professional profiles and the ability to tailor its multilingual solutions to customers' needs.
+
+    video: https://babelscape.com/uploads/media/Babelscape-intro.mp4
+    contacts:
+      - name: Roberto Navigli
+        email: navigli@babelscape.com 
+      - name: Federico Martelli 
+        email: martelli@babelscape.com
+    zoom_link: https://zoom.us/j/97135679910
+    schedule:
+      - start: 2020-07-06T10:00:00+00:00
+        duration: 0.5
+        label: Word sense disambiguation (Comprehendo and Comprehendo domain specific) 
+      - start: 2020-07-06T16:00:00+00:00
+        duration: 0.5
+        label: Enterprise Knowledge Graphs creation and maintenance  (myKnowledgeGraphs)
+      - start: 2020-07-07T10:00:00+00:00
+        duration: 0.5
+        label: Information extraction and domain classification (Extraggo)
+      - start: 2020-07-07T15:00:00+00:00
+        duration: 0.5
+        label: "Linguistic resources: semantic networks and encyclopedic dictionaries (WordAtlas)"
+      - start: 2020-07-08T10:00:00+00:00
+        duration: 0.5
+        label: Real world applications in multilingual lexical semantics
+      - start: 2020-07-08T15:00:00+00:00
+        duration: 0.5
+        label: Word sense disambiguation (Comprehendo and Comprehendo domain specific)
+      - start: 2020-07-09T10:00:00+00:00
+        duration: 0.5
+        label: Enterprise Knowledge Graphs creation and maintenance  (myKnowledgeGraphs)
+      - start: 2020-07-09T15:00:00+00:00
+        duration: 0.5
+        label: Information extraction and domain classification (Extraggo)
+      - start: 2020-07-10T10:00:00+00:00
+        duration: 0.5
+        label: "Linguistic resources: semantic networks and encyclopedic dictionaries (WordAtlas)" 
+      - start: 2020-07-10T15:00:00+00:00
+        duration: 0.5
+        label: Real world applications in multilingual lexical semantics
+    resources:
+      - label: Products
+        website:  https://babelscape.com/uploads/product/babelscape-all-products.pdf
+      - label: NLP Pipelines
+        website:  https://babelscape.com/uploads/product/babelscape-nlp-pipeline.pdf
+      - label: WordAtlas
+        website:  https://babelscape.com/uploads/product/babelscape-wordatlas.pdf
+      - label: Comprehendo
+        website:  https://babelscape.com/uploads/product/babelscape-comprehendo.pdf
+      - label: Extraggo
+        website:  https://babelscape.com/uploads/product/babelscape-extraggo.pdf
+    channel: sponsor-babelscape
+  - UID: '13'
+    name: NAVER
+    logo: static/images/sponsors/naver.jpg
+    website: https://europe.naverlabs.com/acl2020
+    description: |
+      NAVER Corporation is Korea's premier Internet company and a global leader in online services such as NAVER search (30M daily mobile users), LINE messaging (164M monthly active users), and WEBTOON (62M monthly active users). NAVER is continuously focussed on the future and in seamlessly connecting the physical and digital worlds through advanced technology. Its AI and Robotics research in Asia and Europe are fundamental to creating this future. NAVER invests nearly 30 percent of annual revenue in R&D yet innovation is but one core value. NAVER promotes diversity on the internet, respects and connects people helping them to share knowledge, create communities and preserve culture. 
+    youtube: https://player.vimeo.com/video/432786265
+    contacts:
+      - name: Irene Maxwell
+        email: irene.maxwell@naverlabs.com
+      - name: NAVER NLP
+        email: dl_nlp_acl_2020@navercorp.com
+    zoom_link: https://zoom.us/j/93613509597
+    schedule:
+      - start: 2020-07-07T04:00:00-07:00
+        duration: 0.75
+        label: "NLP research at Naver Labs Europe, a live discussion."
+        speaker: Matthias Galle
+        description: |
+          In this session we’ll give an overview of our latest NLP activities, focusing in particular on the topic of learning with less supervision (unsupervised summarization, zero-shot NMT, etc).  A large part of the slot will be dedicated to questions. We will also present ALPS, an NLP winter school which will take place in the French alps in January 2021. NAVER LABS Europe is the largest French industrial research centre in AI. We publish and participate at top-tier conferences, co-organise events, host students and professors and liaise with product groups.
+      - start: 2020-07-08T03:00:00-07:00
+        duration: 0.5
+        label: "Papago: Machine Translation"
+        speaker: Lucy Park, Papago and NAVER LABS Europe
+        description: |
+          Papago is an online translation service provided by NAVER. The MT team within Papago focuses on advancing machine translation quality, mostly for Eastern Asian languages such as Korean, Japanese, Chinese. In this session, we will discuss some major research topics of the team and the methods we use to enhance the user experience (ex: honorific translation, translation evaluation). We’ll also share results from our collaboration with the NAVER LABS Europe machine translation team, who recently provided high-quality translations for COVID-19 related phrases.
+      - start: 2020-07-08T03:30:00-07:00
+        duration: 0.5
+        label: "Open Domain Question Answering"
+        speaker: Minjoon Seo
+        description: |
+          Clova AI is the “AI-First” team within NAVER & LINE conducting high-impact research in a wide range of domains to empower various AI-driven products in and out of the company. Clova AI publish at top-tier NLP, machine learning and computer vision conferences. In this session, we will present our recent research findings and new products in conversational agents, document information extraction and question answering.
+      - start: 2020-07-08T04:00:00-07:00
+        duration: 0.5
+        label: "Conversational AI"
+        speaker: Kyungduk Kim, Hyeon-gu Lee
+        description: |
+          NAVER focuses on both researching NLP technologies and on disseminating AI-powered products to customers. In this session, we will share our experience in deploying conversational AI technologies into commercialised AI-powered products such as smart speakers, set top boxes and vehicle infotainment systems. We’ll also briefly introduce our ongoing answer snippet extraction.
+    resources:
+      - label: Brochure NAVER
+        website: https://europe.naverlabs.com/wp-content/uploads/2020/06/Brochure_Naver.pdf
+      - label: Brochure NAVER LABS Europe
+        website:  https://europe.naverlabs.com/wp-content/uploads/2020/06/Brochure_NaverLabsEurope.pdf
+      - label: Careers at NAVER LABS Europe brochure
+        website:  https://europe.naverlabs.com/wp-content/uploads/2020/06/Careers_NaverLabsEurope.pdf
+    papers: 
+      - label: "Contextualized Sparse Representations for Real-Time Open-Domain Question Answering"
+        authors: Jinhyuk Lee, Minjoon Seo, Hannaneh Hajishirzi and Jaewoo Kang 
+        website: https://www.aclweb.org/anthology/2020.acl-main.85.pdf
+      - label: "Efficient Dialogue State Tracking by Selectively Overwriting Memory"
+        authors: Sungdong Kim, Sohee Yang, Gyuwan Kim and Sang-Woo Lee
+        website: https://www.aclweb.org/anthology/2020.acl-main.53.pdf
+    channel: sponsor-naver 
+  - UID: '21'
+    name: Adobe
+    logo: static/images/sponsors/adobe.png 
+    website: https://research.adobe.com/
+    description: |
+      Adobe is the global leader in digital marketing and digital media solutions. Our tools and services allow our customers to create groundbreaking digital content, deploy it across media and devices, measure and optimize it over time and achieve greater business success. We help our customers make, manage, measure and monetize their content across every channel and screen.
+
+    contacts:
+      - name: Trung Bui 
+        email: bui@adobe.com
+    resources:
+      - label: NLP Positions at Adobe
+        website:  https://documentcloud.adobe.com/link/review?uri=urn:aaid:scds:US:571b244c-49ed-4d98-890a-99e44d39bced#pageNum=1
+    zoom_link: https://zoom.us/j/92568563869
+    schedule:
+      - start: 2020-07-06T15:00:00-08:00
+        duration: 1
+        label: "NLP and Deep Learning @ Adobe"
+      - start: 2020-07-07T15:00:00-08:00
+        duration: 1
+        label: "NLP and Deep Learning @ Adobe"
+    channel: sponsor-adobe
+- level: Bronze
+  sponsors:
+  - UID: '14'
+    name: ISI
+    logo: static/images/sponsors/isi.jpg
+    website: https://www.isi.edu
+    channel: example_sponsor
+    contacts:
+      - name: John Doe
+        email: john.doe@example.com
+      - name: Jane Doe
+        email: jane.doe@example.com
+    description: Dummy description
+    landingpage: https://www.isi.edu/
+- level: Supporter
+  sponsors:
+  - UID: '15'
+    name: Johns Hopkins University HLTCOE
+    logo: static/images/sponsors/jhu.jpg
+    website: https://hltcoe.jhu.edu/opportunities/research-scientists/
+    channel: example_sponsor
+    contacts:
+      - name: John Doe
+        email: john.doe@example.com
+      - name: Jane Doe
+        email: jane.doe@example.com
+    description: Dummy description
+    landingpage: https://hltcoe.jhu.edu/opportunities/research-scientists/
+- level: Publisher
+  sponsors:
+  - UID: '24'
+    name: Cambridge University Press
+    logo: static/images/sponsors/CUP-logo.png
+    website: http://www.cambridge.org/acl2020
+    channel: example_sponsor
+    contacts:
+      - name: John Doe
+        email: john.doe@example.com
+      - name: Jane Doe
+        email: jane.doe@example.com
+    description: Dummy description
+    landingpage: http://www.cambridge.org/acl2020
+- level: Diversity & Inclusion Champion
+  sponsors:
+  - UID: '5'
+    name: DeepMind
+    duplicate: yes
+  - UID: '17'
+    name: Microsoft # Research / Clearwater Group
+    logo: static/images/sponsors/MSFT.jpg
+    website: https://aka.ms/acl-2020
+    channel: sponsor-microsoft
+    contacts:
+      - name: |
+              University/PhD: Amy Siebenthaler
+        email: Amy.Siebenthaler@microsoft.com
+      - name: |
+              Industry: Don Graney
+        email: dgraney@microsoft.com
+    description: |
+            Microsoft has over 50 papers accepted to ACL. Find more about our session schedule and open positions at [https://aka.ms/acl-2020](https://aka.ms/acl-2020). Chat below live with a recruiter from our team live at the these times:            
+            <ul>
+                <li> July 6: 9AM – 10AM PDT & 2PM – 3PM PDT
+                <li> July 7: 8AM – 9AM PDT & 11AM 0 12PM PDT
+                <li> July 8: 9AM – 11AM PDT
+            </ul>
+            Microsoft Research is where leading scientists and engineers have the freedom and support to propel discovery and innovation. Here, they pursue and publish curiosity-driven research in a range of scientific and technical disciplines that can be translated into products. With access to vast computing power, global multi-disciplinary teams tackle complex problems that drive breakthrough technologies and improve lives.
+    youtube: https://www.youtube.com/embed/G_v5B_gYceM
+    resources: 
+      - label: Microsoft Fellowship Program
+        website: static/pdf/MSFT-Fellowship-Program.pdf
+      - label: Microsoft Internships
+        website: static/pdf/MSFT-Internships.pdf
+      - label: MSR Resources
+        website: static/pdf/MSR_Resources.pdf
+    zoom_link: https://zoom.us/j/95985179118
+    schedule: 
+      - start: 2020-07-06T09:00:00-07:00
+        duration: 0.667
+        label: Interactive Neural Machine Translation Assisting Translators with on-the-fly Translation Suggestions
+      - start: 2020-07-06T11:20:00-07:00
+        duration: 0.667
+        label: |
+                RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers
+      - start: 2020-07-06T23:00:00-07:00
+        duration: 0.667
+        label: |
+                MIND: MIcrosoft News Dataset
+      - start: 2020-07-07T09:00:00-07:00
+        duration: 0.667
+        label: Interactive Neural Machine Translation Assisting Translators with on-the-fly Translation Suggestions
+      - start: 2020-07-07T11:20:00-07:00
+        duration: 0.667
+        label: |
+                RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers
+      - start: 2020-07-07T23:00:00-07:00
+        duration: 0.667
+        label: |
+                MIND: MIcrosoft News Dataset
+      - start: 2020-07-08T09:00:00-07:00
+        duration: 0.667
+        label: Interactive Neural Machine Translation Assisting Translators with on-the-fly Translation Suggestions
+      - start: 2020-07-08T11:20:00-07:00
+        duration: 0.667
+        label: |
+                RAT-SQL: Relation-Aware Schema Encoding and Linking for Text-to-SQL Parsers
+- level: Diversity & Inclusion In-Kind
+  sponsors:
+  - UID: '10'
+    name: Grammarly
+    duplicate: yes
+

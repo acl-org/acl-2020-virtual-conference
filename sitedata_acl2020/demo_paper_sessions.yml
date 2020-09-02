@@ -1,0 +1,218 @@
+D1A-1:
+  date: 2020-07-06_05:00:00
+  papers:
+  - demo.35
+D1B-1:
+  date: 2020-07-06_05:45:00
+  papers:
+  - demo.46
+D1C-1:
+  date: 2020-07-06_06:30:00
+  papers:
+  - demo.44
+D2A-1:
+  date: 2020-07-06_08:00:00
+  papers:
+  - demo.32
+  - demo.48
+D2B-1:
+  date: 2020-07-06_08:45:00
+  papers:
+  - demo.69
+D2C-1:
+  date: 2020-07-06_09:30:00
+  papers:
+  - demo.59
+D3A-1:
+  date: 2020-07-06_12:00:00
+  papers:
+  - demo.24
+  - demo.107
+D3B-1:
+  date: 2020-07-06_12:45:00
+  papers:
+  - demo.46
+  - demo.90
+D3C-1:
+  date: 2020-07-06_13:30:00
+  papers:
+  - demo.32
+  - demo.44
+D4A-1:
+  date: 2020-07-06_17:00:00
+  papers:
+  - demo.69
+  - demo.94
+  - demo.116
+D4B-1:
+  date: 2020-07-06_17:45:00
+  papers:
+  - demo.48
+  - demo.104
+  - demo.115
+D4C-1:
+  date: 2020-07-06_18:30:00
+  papers:
+  - demo.35
+  - demo.47
+  - demo.91
+D5A-1:
+  date: 2020-07-06_20:00:00
+  papers:
+  - demo.59
+  - demo.94
+  - demo.107
+D5B-1:
+  date: 2020-07-06_20:45:00
+  papers:
+  - demo.90
+  - demo.116
+D5C-1:
+  date: 2020-07-06_21:30:00
+  papers:
+  - demo.47
+  - demo.91
+  - demo.115
+D1A-2:
+  date: 2020-07-07_05:00:00
+  papers:
+  - demo.139
+D1B-2:
+  date: 2020-07-07_05:45:00
+  papers:
+  - demo.66
+D1C-2:
+  date: 2020-07-07_06:30:00
+  papers:
+  - demo.49
+D2A-2:
+  date: 2020-07-07_08:00:00
+  papers:
+  - demo.54
+D2B-2:
+  date: 2020-07-07_08:45:00
+  papers:
+  - demo.139
+D3A-2:
+  date: 2020-07-07_12:00:00
+  papers:
+  - demo.24
+  - demo.49
+D3B-2:
+  date: 2020-07-07_12:45:00
+  papers:
+  - demo.66
+  - demo.89
+D3C-2:
+  date: 2020-07-07_13:30:00
+  papers:
+  - demo.84
+D4A-2:
+  date: 2020-07-07_17:00:00
+  papers:
+  - demo.45
+  - demo.54
+  - demo.130
+D4B-2:
+  date: 2020-07-07_17:45:00
+  papers:
+  - demo.28
+  - demo.41
+  - demo.104
+D4C-2:
+  date: 2020-07-07_18:30:00
+  papers:
+  - demo.39
+  - demo.96
+  - demo.102
+D5A-2:
+  date: 2020-07-07_20:00:00
+  papers:
+  - demo.37
+  - demo.89
+  - demo.130
+D5B-2:
+  date: 2020-07-07_20:45:00
+  papers:
+  - demo.41
+  - demo.84
+D5C-2:
+  date: 2020-07-07_21:30:00
+  papers:
+  - demo.39
+  - demo.96
+  - demo.102
+D1A-3:
+  date: 2020-07-08_05:00:00
+  papers:
+  - demo.61
+  - demo.120
+D1B-3:
+  date: 2020-07-08_05:45:00
+  papers:
+  - demo.31
+  - demo.67
+D1C-3:
+  date: 2020-07-08_06:30:00
+  papers:
+  - demo.124
+D2A-3:
+  date: 2020-07-08_08:00:00
+  papers:
+  - demo.93
+D2B-3:
+  date: 2020-07-08_08:45:00
+  papers:
+  - demo.33
+D2C-3:
+  date: 2020-07-08_09:30:00
+  papers:
+  - demo.61
+D3A-3:
+  date: 2020-07-08_12:00:00
+  papers:
+  - demo.67
+  - demo.79
+  - demo.101
+D3B-3:
+  date: 2020-07-08_12:45:00
+  papers:
+  - demo.31
+  - demo.58
+  - demo.120
+D3C-3:
+  date: 2020-07-08_13:30:00
+  papers:
+  - demo.93
+  - demo.124
+D4A-3:
+  date: 2020-07-08_17:00:00
+  papers:
+  - demo.45
+  - demo.86
+D4B-3:
+  date: 2020-07-08_17:45:00
+  papers:
+  - demo.79
+  - demo.87
+D4C-3:
+  date: 2020-07-08_18:30:00
+  papers:
+  - demo.33
+  - demo.100
+D5A-3:
+  date: 2020-07-08_20:00:00
+  papers:
+  - demo.28
+  - demo.37
+  - demo.86
+D5B-3:
+  date: 2020-07-08_20:45:00
+  papers:
+  - demo.58
+  - demo.87
+D5C-3:
+  date: 2020-07-08_21:30:00
+  papers:
+  - demo.100
+  - demo.101

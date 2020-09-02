@@ -1,0 +1,27 @@
+UID,title,speakers,presentation_id
+37,Syntactic Parsing in Humans and Machines,Paola Merlo,38929668
+5,Distilling Neural Networks for Greener and Faster Dependency Parsing,Mark Anderson,38929669
+2,End-to-End Negation Resolution as Graph Parsing,Robin Kurtz,38929670
+6,Integrating Graph-Based and Transition-Based Dependency Parsers in the Deep Contextualized Era,Agnieszka Falenska,38929671
+4,Semi-supervised Parsing with a Variational Autoencoding Parser,Xiao Zhang,38929672
+9,Memory-bounded Neural Incremental Parsing for Psycholinguistic Prediction,Lifeng Jin,38929673
+13,Obfuscation for Privacy-preserving Syntactic Parsing,Shay B. Cohen,38929674
+18,Tensors over Semirings for Latent-Variable Weighted Logic Programs,Esma Balkir,38929675
+15,Advances in Using Grammars with Latent Annotations for Discontinuous Parsing,Kilian Gebhardt,38929676
+8,Lexicalization of Probabilistic Linear Context-free Rewriting Systems,Thomas Ruprecht,38929677
+19,Self-Training for Unsupervised Parsing with PRPN,Anhad Mohananey,38929678
+14,Span-Based LCFRS-2 Parsing,Miloš Stanojević,38929679
+24,Analysis of the Penn Korean Universal Dependency Treebank (PKT-UD): Manual Revision to Build Robust Parsing Model in Korean,Tae Hwan Oh,38929680
+10,Statistical Deep Parsing for Spanish Using Neural Networks,Luis Chiruzzo,38929681
+7,The Importance of Category Labels in Grammar Induction with Child-directed Utterances,Lifeng Jin,38929682
+36,Overview of the IWPT 2020 Shared Task on Parsing into Enhanced Universal Dependencies,Gosse Bouma,38929683
+29,Turku Enhanced Parser Pipeline: From Raw Text to Enhanced Graphs in the IWPT 2020 Shared Task,Filip Ginter,38929684
+31,Hybrid Enhanced Universal Dependencies Parsing,Johannes Heinecke,38929685
+32,Adaptation of Multilingual Transformer Encoder for Robust Enhanced Universal Dependency Parsing,Han He,38929686
+25,Efficient EUD Parsing,Mark Anderson,38929687
+33,Linear Neural Parsing and Hybrid Enhancement for Enhanced Universal Dependencies,Maria Simi,38929688
+26,Enhanced Universal Dependency Parsing with Second-Order Inference and Mixture of Training Data,Xinyu Wang,38929689
+30,How Much of Enhanced UD Is Contained in UD?,Adam Ek,38929690
+35,The ADAPT Enhanced Dependency Parser at the IWPT 2020 Shared Task,James Barry,38929691
+27,KøPsala: Transition-Based Graph Parsing via Efficient Training and Effective Encoding,Daniel Hershcovich,38929692
+28,RobertNLP at the IWPT 2020 Shared Task: Surprisingly Simple Enhanced UD Parsing for English,Stefan Grünewald,38929693

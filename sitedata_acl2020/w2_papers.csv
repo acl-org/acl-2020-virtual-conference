@@ -1,0 +1,34 @@
+UID,title,speakers,presentation_id
+7,Adapting End-to-End Speech Recognition for Readable Subtitles,Danni Liu,38929588
+23,CASIA’s System for IWSLT 2020 Open Domain Translation,Qian Wang,38929589
+21,Character Mapping and Ad-hoc Adaptation: Edinburgh’s IWSLT 2020 Open Domain Translation System,Pinzhen Chen,38929590
+41,CUNI Neural ASR with Phoneme-Level Intermediate Step for Non-Native SLT at IWSLT 2020,Peter Polák,38929591
+24,Deep Blue Sonics’ Submission to IWSLT 2020 Open Domain Translation Task,Enmin Su,38929592
+22,DiDi Labs’ End-to-end System for the IWSLT 2020 Offline Speech TranslationTask,Arkady Arkhangorodsky,38929593
+17,Efficient Automatic Punctuation Restoration Using Bidirectional Transformers with Robust Inference,Maury Courtland,38929594
+43,ELITR Non-Native Speech Translation at IWSLT 2020,Dominik Macháček,38929595
+26,End-to-End Offline Speech Translation System for IWSLT 2020 using Modality Agnostic Meta-Learning,Nikhil Kumar Lakumarapu,38929596
+40,End-to-End Simultaneous Translation System for IWSLT2020 Using Modality Agnostic Meta-Learning,Hou Jeung Han,38929597
+31,End-to-End Speech-Translation with Knowledge Distillation: FBK@IWSLT2020,Marco Gaido,38929598
+8,From Speech-to-Speech Translation to Automatic Dubbing,Marcello Federico,38929599
+34,Generating Fluent Translations from Disfluent Text Without Access to Fluent References: IIT Bombay@IWS,Nikhil Saini,38929600
+15,How Human is Machine Translationese? Comparing Human and Machine Translations of Text and Speech,Koel Dutta Chowdhury,38929601
+11,Is 42 the Answer to Everything in Subtitling-oriented Speech Translation?,Alina Karakanta,38929602
+46,ISTIC's Neural Machine Translation System for IWSLT’2020,You Pan,38929603
+14,Joint Translation and Unit Conversion for End-to-end Localization,Prashant Mathur,38929604
+44,KIT’s IWSLT 2020 SLT Translation System,Thanh-Le Ha,38929605
+42,LIT Team's System Description for Japanese-Chinese Machine Translation Task in IWSLT 2020,Yimeng Zhuang,38929606
+27,NAIST's Machine Translation Systems for IWSLT 2020 Conversational Speech Translation Task,Ryo Fukuda,38929607
+18,Neural Simultaneous Speech Translation Using Alignment-Based Chunking,Evgeny Matusov,38929608
+36,Octanove Labs' Japanese-Chinese Open Domain Translation System,Masato Hagiwara,38929609
+30,ON-TRAC Consortium for End-to-End and Simultaneous Speech Translation Challenge Tasks at IWSLT 2020,Laurent Besacier,38929610
+19,OPPO’s Machine Translation System for the IWSLT 2020 Open Domain Translation Task,Tingxun Shi,38929611
+12,Re-translation versus Streaming for Simultaneous Translation,Colin Cherry,38929612
+28,SRPOL's System for the IWSLT 2020 End-to-End Speech Translation Task,Tomasz Potapczyk,38929613
+33,Start-Before-End and End-to-End: Neural Speech Translation by AppTek and RWTH Aachen University,Parnia Bahar,38929614
+37,The AFRL IWSLT 2020 Systems: Work-From-Home Edition,Jeremy Gwinnup,38929615
+45,The HW-TSC Video Speech Translation System at IWSLT 2020,Minghan Wang,38929616
+32,The University of Helsinki Submission to the IWSLT2020 Offline SpeechTranslation Task,Raúl Vázquez,38929617
+9,Towards Stream Translation: Adaptive Computation Time for Simultaneous Machine Translation,Felix Schneider,38929618
+38,University of Tsukuba’s Machine Translation System for IWSLT20 Open Domain Translation Task,Hongyi Cui,38929619
+39,Xiaomi's Submissions for IWSLT 2020 Open Domain Translation Task,Xiang Li,38929620

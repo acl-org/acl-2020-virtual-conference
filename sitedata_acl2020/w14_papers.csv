@@ -1,0 +1,16 @@
+UID,title,speakers,presentation_id
+W1401,On Understanding Character-level Models for Representing Morphology,Clara Vania,38929866
+W1402,Recursive Schemes for Phonological Analysis,Jane Chandlee,38929867
+W1403,Inflectional data science and human/computer-aided linguistic analysis,Robert Malouf,38929868
+W1404,Modeling failure in morphophonological learning,Bruce Hayes,38929869
+ST0,SIGMORPHON 2020 Shared Task 0: Typologically Diverse Morphological Inflection,Ekaterina Vylomova,38929870
+ST1,The SIGMORPHON 2020 Shared Task on Multilingual Grapheme-to-Phoneme Conversion,Kyle Gorman,38929871
+ST2,The SIGMORPHON 2020 Shared Task on Unsupervised Morphological Paradigm Completion,Katharina Kann,38929872
+13,In search of isoglosses: continuous and discrete language embeddings in Slavic historical phonology,Chundra Cathcart,38929873
+8,Multi-Tiered Strictly Local Functions,Phillip Burness,38929874
+7,Transliteration for Cross-Lingual Morphological Inflection,Nikitha Murikinati,38929875
+11,Evaluating Neural Morphological Taggers for Sanskrit,Ashim Gupta,38929876
+14,Getting the ##life out of living: How Adequate Are Word-Pieces for Modelling Complex Morphology?,Stav Klein,38929877
+3,Induced Inflection-Set Keyword Search in Speech,Oliver Adams,38929878
+2,Representation Learning for Discovering Phonemic Tone Contours,Bai Li,38929879
+6,Joint learning of constraint weights and gradient inputs in Gradient Symbolic Computation with constrained optimization,Max Nelson,38929880

@@ -1,0 +1,137 @@
+1A:
+  date: 2020-07-06_05:00:00
+  papers:
+  - tacl.1815
+  - tacl.1915
+1B:
+  date: 2020-07-06_06:00:00
+  papers:
+  - tacl.1901
+2B:
+  date: 2020-07-06_09:00:00
+  papers:
+  - tacl.1815
+  - tacl.1915
+3B:
+  date: 2020-07-06_13:00:00
+  papers:
+  - tacl.1849
+  - tacl.1901
+4A:
+  date: 2020-07-06_17:00:00
+  papers:
+  - tacl.1720
+  - tacl.1780
+  - tacl.1834
+4B:
+  date: 2020-07-06_18:00:00
+  papers:
+  - tacl.1727
+  - tacl.1766
+  - tacl.1849
+  - tacl.1903
+5A:
+  date: 2020-07-06_20:00:00
+  papers:
+  - tacl.1720
+  - tacl.1780
+  - tacl.1834
+5B:
+  date: 2020-07-06_21:00:00
+  papers:
+  - tacl.1727
+  - tacl.1766
+  - tacl.1903
+6A:
+  date: 2020-07-07_05:00:00
+  papers:
+  - tacl.1843
+  - tacl.1876
+6B:
+  date: 2020-07-07_06:00:00
+  papers:
+  - tacl.1709
+  - tacl.1779
+7A:
+  date: 2020-07-07_08:00:00
+  papers:
+  - tacl.1843
+  - tacl.1876
+  - tacl.2001
+8A:
+  date: 2020-07-07_12:00:00
+  papers:
+  - tacl.1845
+8B:
+  date: 2020-07-07_13:00:00
+  papers:
+  - tacl.1709
+  - tacl.1756
+  - tacl.1779
+  - tacl.1852
+  - tacl.1892
+  - tacl.2001
+9A:
+  date: 2020-07-07_17:00:00
+  papers:
+  - tacl.1853
+9B:
+  date: 2020-07-07_18:00:00
+  papers:
+  - tacl.1845
+  - tacl.1882
+  - tacl.1892
+  - tacl.1929
+10A:
+  date: 2020-07-07_20:00:00
+  papers:
+  - tacl.1756
+  - tacl.1852
+  - tacl.1882
+  - tacl.1929
+10B:
+  date: 2020-07-07_21:00:00
+  papers:
+  - tacl.1853
+11B:
+  date: 2020-07-08_06:00:00
+  papers:
+  - tacl.1805
+  - tacl.1811
+12A:
+  date: 2020-07-08_08:00:00
+  papers:
+  - tacl.1805
+  - tacl.1811
+13A:
+  date: 2020-07-08_12:00:00
+  papers:
+  - tacl.1906
+  - tacl.1967
+13B:
+  date: 2020-07-08_13:00:00
+  papers:
+  - tacl.1759
+14A:
+  date: 2020-07-08_17:00:00
+  papers:
+  - tacl.1759
+  - tacl.1886
+  - tacl.1906
+  - tacl.1912
+  - tacl.1967
+14B:
+  date: 2020-07-08_18:00:00
+  papers:
+  - tacl.1743
+  - tacl.1801
+15A:
+  date: 2020-07-08_20:00:00
+  papers:
+  - tacl.1886
+  - tacl.1912
+15B:
+  date: 2020-07-08_21:00:00
+  papers:
+  - tacl.1743
+  - tacl.1801

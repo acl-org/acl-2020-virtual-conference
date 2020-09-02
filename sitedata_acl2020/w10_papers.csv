@@ -1,0 +1,35 @@
+UID,title,speakers,presentation_id
+1,Zero-Resource Cross-Domain Named Entity Recognition,"Zihan Liu, Genta Indra Winata and Pascale Fung",38929767
+2,Encodings of Source Syntax: Similarities in NMT Representations Across Target Languages,Tyler A. Chang and Anna Rafferty,38929768
+3,Learning Probabilistic Sentence Representations from Paraphrases,Mingda Chen and Kevin Gimpel,38929769
+12,Word Embeddings as Tuples of Feature Probabilities,"Siddharth Bhat, Alok Debnath, Souvik Banerjee and Manish Shrivastava",38929770
+13,Compositionality and Capacity in Emergent Languages,"Abhinav Gupta, Cinjon Resnick, Jakob Foerster, Andrew Dai and Kyunghyun Cho",38929771
+15,Learning Geometric Word Meta-Embeddings,"Pratik Jawanpuria, Satya Dev N T V, Anoop Kunchukuttan and Bamdev Mishra",38929772
+20,Improving Bilingual Lexicon Induction with Unsupervised Post-Processing of Monolingual Word Vector Spaces,"Ivan Vulić, Anna Korhonen and Goran Glavaš",38929773
+22,Adversarial Training for Commonsense Inference,"Lis Pereira, Xiaodong Liu, Fei Cheng, Masayuki Asahara and Ichiro Kobayashi",38929774
+28,Evaluating Natural Alpha Embeddings on Intrinsic and Extrinsic Tasks,Riccardo Volpi and Luigi Malagò ,38929775
+29,Exploring the Limits of Simple Learners in Knowledge Distillation for Document Classification with DocBERT,"Ashutosh Adhikari, Achyudh Ram, Raphael Tang, William L. Hamilton and Jimmy Lin",38929776
+30,Joint Training with Semantic Role Labeling for Better Generalization in Natural Language Inference,Cemil Cengiz and Deniz Yuret,38929777
+33,A Metric Learning Approach to Misogyny Categorization,"Juan Manuel Coria, Sahar Ghannay, Sophie Rosset and Hervé Bredin",38929778
+34,On the Choice of Auxiliary Languages for Improved Sequence Tagging,"Lukas Lange, Heike Adel and Jannik Strötgen",38929779
+35,Adversarial Alignment of Multilingual Models for Extracting Temporal Expressions from Text,"Lukas Lange, Anastasiia Iurshina, Heike Adel and Jannik Strötgen",38929780
+36,Contextual and Non-Contextual Word Embeddings: an in-depth Linguistic Investigation,Alessio Miaschi and Felice Dell'Orletta,38929781
+38,Are All Languages Created Equal in Multilingual BERT?,Shijie Wu and Mark Dredze,38929782
+41,Staying True to Your Word: (How) Can Attention Become Explanation?,Martin Tutek and Jan Snajder,38929783
+42,Compressing BERT: Studying the Effects of Weight Pruning on Transfer Learning,"Mitchell Gordon, Kevin Duh and Nicholas Andrews",38929784
+44,On Dimensional Linguistic Properties of the Word Embedding Space,"Vikas Raunak, Vaibhav Kumar, Vivek Gupta and Florian Metze",38929785
+48,A Cross-Task Analysis of Text Span Representations,"Shubham Toshniwal, Haoyue Shi, Bowen Shi, Lingyu Gao, Karen Livescu and Kevin Gimpel",38929786
+49,Enhancing Transformer with Sememe Knowledge,"Yuhui Zhang, Chenghao Yang, Zhengping Zhou and Zhiyuan Liu",38929787
+50,Evaluating Compositionality of Sentence Representation Models,"Hanoz Bhathena, Angelica Willis and Nathan Dass",38929788
+54,Supertagging with CCG primitives,Aditya Bhargava and Gerald Penn,38929789
+56,What's in a Name? Are BERT Named Entity Representations just as Good for any other Name?,"Sriram Balasubramanian, Naman Jain, Gaurav Jindal, Abhijeet Awasthi and Sunita Sarawagi",38929790
+W1005,On the Ability of Self-Attention Networks to Recognize Counter Languages,"Satwik Bhattamishra, Kabir Ahuja and Navin Goyal",38931233
+W1006,Variational Inference for Learning Representations of Natural Language Edits,"Edison Marrese-Taylor, Machel Reid and Yutaka Matsuo",38931234
+W1007,Predicting Sexual and Reproductive Health of Migrants using Data Science,"Amber Nigam, Pragati Jaiswal, Teertha Arora, Uma Girkar and Leo Anthony Celi",38931235
+W1008,Job Recommendation through Progression of Job Selection,"Amber Nigam, Aakash Roy, Hartaran Singh and Arpan Saxena",38931236
+W1009,A Simple Approach to Learning Unsupervised Multilingual Embeddings,"Pratik Jawanpuria, Mayank Meghwanshi and Bamdev Mishra",38931237
+W1010,AI4Bharat-IndicNLP Dataset: Monolingual Corpora and Word Embeddings for Indic Languages: Monolingual Corpora and Word Embeddings for Indic Languages,"Anoop Kunchukuttan, Divyanshu Kakwani, Satish Golla, Gokul N.C., Avik Bhattacharyya, Mitesh M. Khapra and Pratyush Kumar",38931238
+W1001,Invited Talk 1,Kristina Toutanova,38929791
+W1002,Invited Talk 2,Ellie Pavlick,38929792
+W1003,Invited Talk 3,Mike Lewis,38929793
+W1004,Invited Talk 4,Evelina Fedorenko,38929794

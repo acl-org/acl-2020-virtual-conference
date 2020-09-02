@@ -1,0 +1,172 @@
+1A:
+  date: 2020-07-06_05:00:00
+  papers:
+  - srw.16
+  - srw.17
+  - srw.19
+  - srw.35
+1B:
+  date: 2020-07-06_06:00:00
+  papers:
+  - srw.15
+  - srw.36
+  - srw.39
+  - srw.52
+2A:
+  date: 2020-07-06_08:00:00
+  papers:
+  - srw.5
+  - srw.9
+  - srw.14
+  - srw.18
+2B:
+  date: 2020-07-06_09:00:00
+  papers:
+  - srw.49
+  - srw.53
+  - srw.54
+  - srw.55
+3A:
+  date: 2020-07-06_12:00:00
+  papers:
+  - srw.22
+  - srw.46
+  - srw.49
+  - srw.69
+3B:
+  date: 2020-07-06_13:00:00
+  papers:
+  - srw.79
+  - srw.82
+  - srw.84
+  - srw.128
+4A:
+  date: 2020-07-06_17:00:00
+  papers:
+  - srw.18
+  - srw.42
+  - srw.99
+  - srw.104
+4B:
+  date: 2020-07-06_18:00:00
+  papers:
+  - srw.105
+  - srw.106
+  - srw.109
+  - srw.116
+6A:
+  date: 2020-07-07_05:00:00
+  papers:
+  - srw.58
+  - srw.90
+  - srw.98
+  - srw.115
+6B:
+  date: 2020-07-07_06:00:00
+  papers:
+  - srw.123
+  - srw.129
+  - srw.131
+7A:
+  date: 2020-07-07_08:00:00
+  papers:
+  - srw.19
+  - srw.52
+  - srw.90
+  - srw.123
+7B:
+  date: 2020-07-07_09:00:00
+  papers:
+  - srw.127
+  - srw.129
+  - srw.137
+8A:
+  date: 2020-07-07_12:00:00
+  papers:
+  - srw.127
+  - srw.135
+  - srw.137
+  - srw.144
+8B:
+  date: 2020-07-07_13:00:00
+  papers:
+  - srw.48
+  - srw.131
+9A:
+  date: 2020-07-07_17:00:00
+  papers:
+  - srw.2
+  - srw.95
+  - srw.114
+  - srw.122
+9B:
+  date: 2020-07-07_18:00:00
+  papers:
+  - srw.28
+  - srw.39
+  - srw.85
+  - srw.99
+  - srw.114
+11A:
+  date: 2020-07-08_05:00:00
+  papers:
+  - srw.35
+  - srw.55
+11B:
+  date: 2020-07-08_06:00:00
+  papers:
+  - srw.53
+  - srw.54
+12A:
+  date: 2020-07-08_08:00:00
+  papers:
+  - srw.14
+  - srw.36
+  - srw.58
+12B:
+  date: 2020-07-08_09:00:00
+  papers:
+  - srw.16
+  - srw.79
+  - srw.115
+13A:
+  date: 2020-07-08_12:00:00
+  papers:
+  - srw.48
+  - srw.82
+  - srw.95
+13B:
+  date: 2020-07-08_13:00:00
+  papers:
+  - srw.98
+  - srw.109
+  - srw.116
+  - srw.135
+14A:
+  date: 2020-07-08_17:00:00
+  papers:
+  - srw.5
+  - srw.9
+  - srw.42
+  - srw.46
+14B:
+  date: 2020-07-08_18:00:00
+  papers:
+  - srw.69
+  - srw.84
+  - srw.105
+  - srw.144
+15A:
+  date: 2020-07-08_20:00:00
+  papers:
+  - srw.2
+  - srw.17
+  - srw.22
+  - srw.28
+15B:
+  date: 2020-07-08_21:00:00
+  papers:
+  - srw.85
+  - srw.104
+  - srw.106
+  - srw.122

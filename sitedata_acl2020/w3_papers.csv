@@ -1,0 +1,22 @@
+UID,title,speakers,presentation_id
+IT01,Invited talk,Yun-Nung Chen,38929621
+IT02,Invited talk,Dilek Hakkani-Tür,38929622
+IT03,Invited talk,Jesse Thomason,38929623
+IT04,Invited talk,Antoine Bordes,38929624
+IT05,Invited talk,Jacob Andreas,38929625
+IT06,Invited talk,Jason Williams,38929626
+1,Improving Slot Filling by Utilizing Contextual Information,Amir Pouran Ben Veyseh,38929627
+2,On Incorporating Structural Information to improve Dialogue Response Generation,Nikita Moghe,38929628
+6,Sketch-Fill-A-R: A Persona-Grounded Chit-Chat Generation Framework,Michael Shum,38929629
+7,Automating Template Creation for Ranking-Based Dialogue Models,Jingxiang Chen,38929630
+8,Using Alternate Representations of Text for Natural Language Understanding,Venkat Varada,38929631
+11,Efficient Intent Detection with Dual Sentence Encoders,Iñigo Casanueva,38929632
+12,From Machine Reading Comprehension to Dialogue State Tracking: Bridging the Gap,Shuyang Gao,38929633
+13,How to Tame Your Data: Data Augmentation for Dialog State Tracking,Adam Summerville,38929634
+14,Probing Neural Dialog Models for Conversational Understanding,Abdelrhman Saleh,38929635
+19,DLGNet: A Transformer-based Model for Dialogue Response Generation,Olabiyi Oluwatobi,38929636
+20,Accelerating Task-Oriented Dialog Models,Ojas Ahuja,38929637
+21,Learning to Classify Intents and Slot Labels Given a Handful of Examples,Jason Krone,38929638
+23,Data Augmentation for Training Dialog Models Robust to Speech Recognition Errors,Longshaokan Wang,38929639
+24,CopyBERT: A Unified Approach to Question Generation with Self-Attention,Stalin Varanasi,38929640
+25,MultiWOZ 2.2 : A Dialogue Dataset with Additional Annotation Corrections and State Tracking Baselines,Xiaoxue Zang,38929641

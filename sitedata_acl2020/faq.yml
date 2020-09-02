@@ -1,0 +1,96 @@
+FAQ:
+  - Section: Getting Started
+    QA:
+      - Question: What is the recommended way of using this site and navigating the conference?
+        Answer: "All of ACL 2020 will be accessed through this webpage: [https://virtual.acl2020.org/](https://virtual.acl2020.org/). Watch the introductory video on the homepage to understand how to best navigate the website. You can access all parts of the conference using the top menu bar. Use the [Schedule](/schedule.html) to find live sessions (including Plenary sessions and the Q&A sessions for all talks) and set your timezone. You can navigate all the papers in the Papers section: you can search for keywords, authors, or tracks, looking through all papers by skimming titles, or using the visualization tab at the top. We encourage everyone to visit the virtual sponsor exhibits, participate in many socials and use the chat section to interact with other attendees."
+      - Question: How can I best plan my time and engage with the conference?
+        Answer: "You should explore the papers using the [Schedule](/schedule.html) or [Papers](/papers.html) tab to find papers you want to watch the video of, send questions to, or discuss live during a Q&A session. Each paper has a calendar link that you can use to download a reminder to your Google, Office, or iCal calendars, including a URL!"
+      - Question: How can I best engage from my timezone?
+        Answer: "Participants and authors are spread out across the world, which adds a new challenge to enjoying the conference. The calendar displayed on the website is shown in your local time, and each event has a link for copying to your personal calendar. Start with the [Schedule](/schedule.html).\n\nHere is one hypothetical day for one hypothetical ACL member at the main conference:\n\nOn the first main conference day, July 6, as with every day, all videos for that day will have been released beforehand. For the first day, this includes the pre-recorded GC and PC welcome, the first plenary talk by Kathy McKeown, pre-recorded talks for the Business meeting, and the 7 or 12-minute videos for the papers in the paper sessions for that day.\n\nA participant Maryam from Lagos (GMT+1) has bookmarked four talks she is particularly interested in today. She watches all 4 talks at 9am, and decides she would like to join the paper Q&A sessions for two of them, one at 10am and one at 2pm her time). For a paper on discourse, she asks a question of the author on the paper's RocketChat channel. At noon, she visits a sponsor booth for AwesomeCo since she is interested in an internship. At 1pm, the author of the discourse paper pops into the Rocket Chat channel and replies to Maryam's RocketChat question. At 3 pm, Maryam joins the plenary session, including watching Kathy McKeown's invited talk and participating in the live Q&A session, where she can post questions for Kathy via RocketChat that the moderator can ask live in the question session. At 7pm, she goes to a Birds of a Feather meeting."
+      - Question: What if I have a problem or have a question?
+        Answer: "If you have any technical difficulties, please use [RocketChat](/chat.html) to contact the #helpdesk. You can also email your questions to [acl2020-virtual-helpdesk@googlegroups.com](mailto:acl2020-virtual-helpdesk@googlegroups.com). If you have a problem with inappropriate conduct, please see the below about Accessibility and Safety."
+      - Question: After I login to the main site, if I click on the Login with ACL2020 account button on any page (such as Chat), the circular spinner shows up but freezes and nothing else happens.
+        Answer: "Possible reasons: The pop-up windows are blocked OR third party cookies are blocked. You might need to enable these."
+
+  - Section: Website Navigation
+    QA:
+      - Question: What tools and logins do I need?
+        Answer: "The website uses RocketChat for chat, and you can directly use it only on [our website](chat.html).
+        For Zoom, you can create an account the first time you use it.
+        For more details on specific tools, see answers to the related questions below.
+         You will not need to download any special software other than a web browser."
+      - Question: How do I register for RocketChat?
+        Answer: "You will use your ACL2020 virtual conference website account to log in to RocketChat.
+        Do not create a new account for RocketChat, the text-chat tool that is embedded throughout the site."
+        # TODO: related to https://github.com/acl-org/acl-2020-virtual-conference/issues/55
+      - Question: Which channel(s) should I join?
+        Answer: "Please see the explanation on the channels in [this document](static/pdf/rocketchat_channels.pdf)."
+      - Question: How can I find other people to chat with during the conference?
+        Answer: "The socials are one way to interact and discuss with others.
+         We will also allow participants to make channels on RocketChat.
+         You can create a channel about a topic, and post it to a general channel, so that others who are interested in discussing can join the channel.
+         You can also privately message individuals, but please be advised to be careful about harassment and follow the [Code of Conduct](/about.html#tab-code-of-conduct)."
+      - Question: How do I use Zoom in the browser instead of the App?
+        Answer: "Zoom is used for the Q&A sessions for the individual papers, which you can join using the Zoom app or within the browser. Clicking on the link will ask you to open the video in the Zoom app. If you want to use Zoom in the browser, simply wait a few seconds after clicking the Video link and it will open a browser-based session."
+      - Question: "When I use zoom on browser, I get an error message saying meeting requires registration. Why is that?"
+        Answer: "Hosts (i.e. paper authors) should disable registration required setting in their zoom account following the steps [here](https://acl2020.org/_pages/docs/zoom_browser_issue_solution.pdf). All authors are being informed, but meanwhile you may need to reach out to the paper author so that they can disable this setting."
+      - Question: What tools and systems requirements are needed?
+        Answer: "To access the site you will need a modern browser. This site has been tested with Chrome 80.0+, Brave 1.4.95, Firefox 73.0, and browsers built on Chromium 80.0+. **Currently the SlidesLive embedded video doesn't work well with Safari. This is because the cross-domain cookie is blocking the video. A workaround for Safari: right click on the blocked frame and select \"Open Frame in New Tab\".**"
+        # TODO: needs browser compatibility confirmation during the stress test (https://github.com/acl-org/acl-2020-virtual-conference/issues/90) 
+      - Question: If you're using the web browser Brave...
+        Answer: "Please turn down Shields for acl2020.org, since they interfere with the RocketChat integration."
+        # TODO: needs browser compatibility confirmation during the stress test (https://github.com/acl-org/acl-2020-virtual-conference/issues/90)
+        
+  - Section: Live Interaction
+    QA:
+      - Question: What parts of ACL are live?
+        Answer: "The individual Q&A sessions for each paper, the Q&A with Invited Speakers, Keynote Presentations, Award Sessions, Business Meetings, Tutorials, Workshops and Sponsors Booth are live. These live sessions occur at specific times, so make sure you look at the Calendar to see what is live right now (see [Schedule](/schedule.html) in menu)."
+      - Question: How do I talk to the author of a paper?
+        Answer: "To maximize the audience across the world, each paper will appear in two different Q&A sessions. Each paper thus has two associated Zoom links, one for each Q&A session. You can only talk to the authors live during these live Q&A sessions. On the page for that paper, you can click the Zoom link for the currently active paper session, and you will join the Zoom session. Please `Raise Your Hand’ to indicate that you would like to ask the author questions. This will put you in a queue, so that the author can keep track of who wants to ask a question next. We also recommend that you watch the video for the paper first. We want to remind you to be respectful during these conversations and follow the [ACL Code of Conduct](/about.html#tab-code-of-conduct)."
+      - Question: When I join a Zoom link for a paper, I am put into a waiting room instead of joining. What is wrong?
+        Answer: "If an author does not show up for their paper video session, then there is no host for the Zoom link. All non-author participants are put in the waiting room until one of the authors opens the 'start' link. If this happens, please notify #helpdesk."
+      - Question: How do I ask questions of the invited speakers, offline before their live Q&A?
+        Answer: "Each invited speaker's talk has a RocketChat channel on the talk's page. Questions for the invited speaker can be posted there."
+      - Question: Can I ask questions of the invited speakers live on Zoom?
+        Answer: "No, you should ask questions of the invited speakers only by using the chat channel. The session chair will choose and read out questions to the speaker."
+      - Question: If I watch the pre-recorded talks of tutorials, do I still need to attend the live session? What will be different there?
+        Answer: "Live sessions will include discussions with tutorial teachers and other attendes. Please visit individual tutorial website to know more."
+      - Question: What will be included in the live sessions of workshops?
+        Answer: "Each workshop format is different. Please see the schedule of each workshop to know more. But generally, workshop live sessions will include Q&A with keynote speakers and authors."
+
+  - Section: Accessibility and Safety
+    QA:
+      - Question: How do you ensure safe online engagement?
+        Answer: "All participants are bound and expected to uphold the conference’s [Code of Conduct](/about.html#tab-code-of-conduct). We have taken several steps to safeguard against 'Zoom Bombing' by changing the permissions, types of calls we use, and having moderators with ability to evict participants, amongst others. For text chat, the authors, Workshop organisers, or Social organisers are leaders of their chat and can take steps to prevent trolling, and ensure meaningful conversation. Individual chat entries can be reported as well within the RocketChat tool."
+      - Question: How do I report disrespectful engagement, trolling, or other breaches of the code of conduct?
+        Answer: "ACL2020 adheres to the ACL Anti-Harassment Policy. Any participant who experiences harassment or hostile behavior may contact the Professional Conduct Committee (PCC). During Virtual ACL, PCC members are available most hours through the RocketChat channel #professional-conduct-committee. Replying to a PCC member's post there will start a private conversation. Please be assured that if you approach the PCC, your concerns will be kept in strict confidence, and we will consult with you on any actions taken. If the problem occurs in a zoom room, please check the advice for Minimizing and handling disruptions in our [instructions to authors](https://acl2020.org/_pages/docs/zoom_documentation_for_authors.pdf). You may also always use the #incidents channel on Rocketchat to report any problems, and the volunteers will help notify the PCC."
+      - Question: Which countries is ACL accessible from?
+        Answer: "We have selected technologies we rely on to run the fully virtual ACL carefully in order to maximize its reachability. More specifically, we have used our large pool of volunteers from all over the world to check the accessibility of all four services, including Zoom, Slideslive, RocketChat and ACL Web Portal. From these tests, we have confirmed that these services largely work from any country across the globe, but as we are too well aware, the service status in each country may change overnight. If you have having difficulty accessing any of these services, please report it to us at #helpdesk channel."
+        # TODO: confirm info from the stress test (https://github.com/acl-org/acl-2020-virtual-conference/issues/90)
+      - Question:  General Data Protection and Privacy
+        Answer: "This site records a very limited amount of data. Data as text in RocketChat is accessible only to registered conference attendees and will be removed two weeks after the conference. Zoom sessions for Paper Sessions and Virtual Socials will not be recorded (other than Q&A sessions with keynote speakers). Videos are hosted by our video partner SlidesLive. For more information on privacy practices of all the conference software, we encourage all attendees to consult the statements from [Zoom](https://zoom.us/privacy), [SlidesLive](https://slideslive.com/privacy-policy), and [RocketChat](https://rocket.chat/privacy)."
+
+  - Section: For Authors
+    QA:
+      - Question: Where can I find my paper's talk?
+        Answer: "Each paper has a page of its own. You can find your pre-recorded talk on your paper's page. You can search for your paper by its title/author in the [Papers](/papers.html) section to get to your paper's page."
+      - Question: How can attendees ask questions about my paper?
+        Answer: "Attendees can ask you questions about your paper either offline using your paper's RocketChat channel (which can be found on your paper page), or using your paper's live Q&A sessions."
+      - Question: What do I need to know to about my paper's live Q&A sessions?
+        Answer: "As a paper author, you will be the host on the Zoom meetings of your paper's Q&A sessions. Please refer this detailed [Zoom documentation](https://acl2020.org/_pages/docs/zoom_documentation_for_authors.pdf) prepared for presenters. When you join, it will start the meeting and it will allow others to join. Please join the link 5 minutes early, to be ready to start the session on time. We ask that you pay attention to Raised Hands, and try to discuss with people in the order that they raised their hand. This way they have a rough estimate of how long they might have to wait, and makes for respectful interaction. If someone is monopolizing your time, and you notice many hands are raised, do feel free to say ‘Unfortunately, I have to give some of the other participants an opportunity to ask questions as well’.\n\nAs a host, you have additional privileges. If someone is being disruptive, or not muting themselves when needed, you can mute them. If someone is being inappropriate and violating the [Code of Conduct](/about.html#tab-code-of-conduct), you can eject them from the meeting. If you would like to make another author a co-host, you can do so. Additionally, only hosts can share their screens. You might find it useful to simply keep your screen shared the entire time, so that you can refer to figures in your slides."
+      - Question: What is ACL doing to mitigate Zoom bombing?
+        Answer: "All conference content is restricted to conference attendees are not meant to be shared. We have changed all the defaults for Zoom to prevent disruption to video sessions. This involves changing several settings for greater control, including host-only screen sharing, disabling joining a session before a host, disabling file transfer, and disallowing removed participants to rejoin a video call. Also see answer to question on `How do you ensure safe online engagement?’"
+        # TODO: needs confirmation about these measures
+      - Question: How can I subscribe to the RocketChat channels for all my papers so I can see if someone asks a question about one of them?
+        Answer: "Search for your papers here: [https://virtual.acl2020.org/papers.html](https://virtual.acl2020.org/papers.html) then visit each page and click Join on the Rocketchat window there."
+          
+  - Section: General
+    QA:
+      - Question: "What happens to the recorded talks and Q&A sessions after the conference?"
+        Answer: "All talk recordings will be made publicly viewable at the ACL Anthology after the conference. Q&A sessions for individual papers are not recorded; we only record the Q&A sessions for the two Invited Speakers."
+      - Question: "Will RocketChat discussions be archived?"
+        Answer: "ACL will not be archiving any of the RocketChat threads, so if there is information there you want to keep, make sure to do so before the end of the conference. For the many good suggestions for conference organization that are coming up on RocketChat, we'll have a survey at the end of the conference, and you should give lots of feedback there to help inform the next virtual conference"
+      - Question: "Where can I obtain the certificate of attendance?"
+        Answer: "For certificates of attendance, paid-in-full invoices (to use as receipts), and related documents required by your home institutions, please contact [Pat Kirby](mailto:acl.PatKirby@gmail.com). For other more general information, please contact [Priscilla Rasmusse](mailto:acl.rasmussen@gmail.com)."
+      - Question: "Other Questions?"
+        Answer: "Contact the volunteers on the #helpdesk channel on RocketChat. Alternately, you can email your questions to [acl2020-virtual-helpdesk@googlegroups.com](mailto:acl2020-virtual-helpdesk@googlegroups.com)"
