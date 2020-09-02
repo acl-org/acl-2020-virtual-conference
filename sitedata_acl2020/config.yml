@@ -1,0 +1,27 @@
+name: ACL2020
+tagline: The 58th Annual Meeting of <br> the Association for Computational Linguistics
+date: July 5 &ndash; 10 <br> 2020
+proceedings_title: Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics
+citation_date: July 2020
+analytics: UA-171494682-1
+site_url: https://virtual.acl2020.org
+logo:
+  image: static/images/acl2020/acl-logo.png
+  height: 45px
+site_title: ACL2020
+page_title:
+  prefix: 'ACL2020'
+  separator: ': '
+background_image: static/images/acl2020/ACL-Banner-5.1.jpg
+organization: Association for Computational Linguistics
+
+# Path to the folder of paper images.
+paper_images_path: https://acl2020-public.s3.amazonaws.com/papers
+default_presentation_id: 38931484
+
+# Remove or change to your chat server.
+chat_server: acl2020.rocket.chat
+
+calendar:
+  start: '2020-07-05'
+  end: '2020-07-10'

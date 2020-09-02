@@ -1,0 +1,15 @@
+UID,title,speakers,presentation_id
+W0501,Opening Remarks,FEVER Organizers,38929652
+W0502,Towards explainable fact checking,Isabelle Augenstein,38929653
+W0503,How to “inoculate” people against misinformation and online extremism,Jon Roozenbeek,38929654
+W0504,Project Debater,Noam Slonim,38929655
+W0505,Beyond Facts: The Role of Framing in Assessing What is True,Philip Resnik,38929656
+W0506,Fake Fake News and Real Fake News,Yejin Choi,38929657
+W0507,Integration of (Un)structured World Knowledge In Task Oriented Conversations,Dilek Hakkani-Tur,38929658
+1,A Probabilistic Model with Commonsense Constraints for Pattern-based Temporal Fact Extraction,Yang Zhou,38929659
+2,Stance Prediction and Claim Verification: An Arabic Perspective,Jude Khouja,38929660
+4,Developing a How-to Tip Machine Comprehension Dataset and its Evaluation in Machine Comprehension by BERT,Tengyang Chen,38929661
+7,Language Models as Fact Checkers?,Nayeon Lee,38929662
+9,Simple Compounded-Label Training for Fact Extraction and Verification, Lisa Bauer,38929663
+10,Maintaining Quality in FEVER Annotation,Leon Derczynski,38929664
+11,Distilling the Evidence to Augment Fact Verification Models,Beatrice Portelli,38929665

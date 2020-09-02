@@ -1,0 +1,25 @@
+UID,title,speakers,presentation_id
+W802,Toward Narrative Summarization of Simulated Battles,"Andrew S. Gordon, Institute for Creative Technologies, University of Southern California",38929733
+W801,LIGHT: Language in Games with Humans and Text,"Angela Fan, INRIA Nancy and Facebook AI Research Paris",38929732
+W803,Toward Narrative NLP: The Utility of Adapting Models to the Narrative Case,"Mark A. Finlayson, Eminent Scholar Chaired Assistant Professor of Computer Science, Florida International University",38929734
+W807,How is fiction predictable?,"Ted Underwood, Associate Professor of English, University of Illinois, Urbana-Champaign",38929738
+W805,Summarization of Stories and Events,"Kathleen McKeown, Henry and Gertrude Rothschild Professor of Computer Science, Columbia University",38929736
+W804,Video Analysis for Event Understanding,"Alexander G. Hauptmann, Language Technologies Institute, Carnegie Mellon University",38929735
+W806,Affective Events and Narrative Understanding,"Ellen Riloff, Professor of Computer Science, University of Utah",38929737
+1,New Insights into Cross-Document Event Coreference: Systematic Comparison and a Simplified Approach,Andres Cremisini and Mark Finlayson,38929739
+4,Screenplay Quality Assessment: Can We Predict Who Gets Nominated?,"Ming-Chang Chiu, Tiantian Feng, Xiang Ren and Shrikanth Narayanan",38929740
+7,Bringing Stories Alive: Generating Interactive Fiction Worlds,"Prithviraj Ammanabrolu, Wesley Cheung, Dan Tu, William Broniec and Mark Riedl",38929741
+9,Improving the Identification of the Discourse Function of News Article Paragraphs,"Deya Banisakher, W. Victor Yarlott, Mohammed Aldawsari, Naphtali Rishe and Mark Finlayson",38929742
+10,Systematic Evaluation of a Framework for Unsupervised Emotion Recognition for Narrative Text,Samira Zad and Mark Finlayson,38929743
+11,Extensively Matching for Few-shot Learning Event Detection,"Viet Dac Lai, Thien Huu Nguyen and Frank Dernoncourt",38929744
+12,Exploring the Effect of Author and Reader Identity in Online Story Writing: the STORIESINTHEWILD Corpus.,"Tal August, Maarten Sap, Elizabeth Clark, Katharina Reinecke and Noah A. Smith",38929745
+13,Script Induction as Association Rule Mining,Anton Belyy and Benjamin Van Durme,38929746
+14,Automatic extraction of personal events from dialogue,Joshua Eisenberg and Michael Sheriff,38929747
+15,Annotating and quantifying narrative time disruptions in modernist and hypertext fiction,Edward Kearns,38929748
+16,Exploring aspects of similarity between spoken personal narratives by disentangling them into narrative clause types,Belen Saldias and Deb Roy,38929749
+19,Extracting Message Sequence Charts from Hindi Narrative Text,"Swapnil Hingmire, Nitin Ramrakhiyani, Avinash Kumar Singh, Sangameshwar Patil, Girish Palshikar, Pushpak Bhattacharyya and Vasudeva Varma",38929750
+20,Emotion Arcs of Student Narratives,"Swapna Somasundaran, Xianyang Chen and Michael Flor",38929751
+24,Frustratingly Hard Evidence Retrieval for QA Over Books,"Xiangyang Mou, Mo Yu, Bingsheng Yao, Chenghao Yang, Xiaoxiao Guo, Saloni Potdar and Hui Su",38929752
+25,CompRes: A Dataset for Narrative Structure in News,"Effi Levi, Guy Mor, Shaul Shenhav and Tamir Sheafer",38929753
+27,On-The-Fly Information Retrieval Augmentation for Language Models,Hai Wang and David McAllester,38929754
+28,Detecting and understanding moral biases in news,"Usman Shahid, Barbara Di Eugenio, Andrew Rojecki and Elena Zheleva",38929755

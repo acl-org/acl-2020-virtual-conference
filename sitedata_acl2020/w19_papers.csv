@@ -1,0 +1,18 @@
+UID,title,speakers,presentation_id
+W1901,Opening Remarks,Amir Zadeh,38931252
+1,Keynote,Rada Mihalcea,38931253
+2,Keynote,Ruslan Salakhutdinov,38931254
+3,Keynote,M. Ehsan Hoque,38931255
+4,Keynote,Yejin Choi,38931256
+10,AI Sensing for Robotics using Deep Learning based Visual and Language Modeling,yuvaram singh,38931257
+12,Multilogue-Net: A Context-Aware RNN for Multi-modal Emotion Detection and Sentiment Analysis in Conversation,Aman Shenoy,38931258
+13,A Multi-modal Approach to Fine-grained Opinion Mining on Video Reviews,Edison Marrese-Taylor,38931259
+14,Leveraging Multimodal Behavioral Analytics for Automated Job Interview Performance Assessment and Feedback,Anumeha Agrawal,38931260
+15,Exploring Weaknesses of {VQA} Models through Attribution Driven Insights,Shaunak Halbe,38931261
+18,Unsupervised Online Grounding of Natural Language during Human-Robot Interactions,Oliver Roesler,38931262
+19,A Transformer-based joint-encoding for Emotion Recognition and Sentiment Analysis,Jean-Benoit Delbrouck,38931263
+20,Low Rank Fusion based Transformers for Multimodal Sequences,Saurav Sahay,38931264
+21,Audio-Visual Understanding of Passenger Intents for In-Cabin Conversational Agents,Eda Okur,38931265
+16,Cross-Modal Data Programming Enables Rapid Medical Machine Learning,Jared Dunnmon,38931266
+17,What Gives the Answer Away? Question Answering Bias Analysis on Video QA Datasets,Jed Yang,38931267
+W1902,Closing Remarks,Amir Zadeh,38931268

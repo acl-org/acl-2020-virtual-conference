@@ -1,0 +1,561 @@
+- UID: "black_in_ai"
+  name: Black in AI Social
+  description: >
+    The ACL BlackInAI social is an event for those who self-identify as Black and are looking for a space to socialize, share ideas and to discuss research on NLP or AI. This social will involve an ice breaker and introductions, small presentations and details about the group Black in AI.
+  image: static/images/acl2020/bai_logo.png
+  organizers:
+    members:
+      - AnnMargaret Tutu
+      - Krystal Maughan
+  rocketchat_channel: black-in-ai
+  sessions:
+    - name: S-Session A (Fireside chat with Dr. Donia Scott)
+      start_time: 2020-07-09_14:00:00
+      end_time: 2020-07-09_15:30:00    
+    - name: S-Session B (Social)
+      start_time: 2020-07-10_14:00:00
+      end_time: 2020-07-10_15:30:00
+  website: https://blackinai.github.io/
+- UID: "queer_in_ai"
+  name: Queer in AI Socials
+  description: >
+    The ACL QueerInAI social is an event for queer folks who work in NLP or AI to
+    share their experiences, network with others, and discuss queer issues in research.
+    To facilitate this, the social will involve a mix of mini-testimonials and breakout
+    discussions. All event information will remain confidential to respect the privacy
+    and safety of participants. People of all identities (including allies) are invited
+    to attend!
+  image: https://pbs.twimg.com/profile_images/1230132408244031488/PE4RgDoy_400x400.jpg
+  organizers:
+    members:
+    - Maarten Sap
+    - Pranav A
+    - Andrew McNamara
+  rocketchat_channel: queer-in-ai
+  sessions:
+    # - day: July 8th
+    #   time: 00:00-01:30 PDT
+    - name: S-Session A
+      start_time: 2020-07-08_07:00:00
+      end_time: 2020-07-08_08:30:00
+    # - day: July 8th
+    #   time: 10:00-11:30 PDT
+    - name: S-Session B
+      start_time: 2020-07-08_17:00:00
+      end_time: 2020-07-08_18:30:00
+  website: https://sites.google.com/view/queer-in-ai/acl-2020
+- UID: "group_mentoring"
+  name: Group Mentoring
+  description: >
+    Group Mentoring Sessions are round-table discussion/Q&A sessions for students
+    and early-career researchers, respectively, especially those new to ACL, providing
+    them a chance to interact with senior researchers in the field. Zoom links will
+    be emailed separately for each group.
+  image: static/images/acl2020/acl-logo.png
+  organizers: &id001
+    members:
+      - ACL D&I Academic Inclusion
+    website: https://acl2020.org/committees/diversity-inclusion
+  sessions:
+    # - day: July 6th
+    #   time: 00:00-01:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_07:00:00
+      end_time: 2020-07-06_08:00:00
+    # - day: July 6th
+    #   time: 09:00-10:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_16:00:00
+      end_time: 2020-07-06_17:00:00
+    # - day: July 7th
+    #   time: 00:00-01:00 PDT
+    - name: S-Session 3
+      start_time: 2020-07-07_07:00:00
+      end_time: 2020-07-07_08:00:00
+    # - day: July 7th
+    #   time: 09:00-10:00 PDT
+    - name: S-Session 4
+      start_time: 2020-07-07_16:00:00
+      end_time: 2020-07-07_17:00:00
+    # - day: July 8th
+    #   time: 00:00-01:00 PDT
+    - name: S-Session 5
+      start_time: 2020-07-08_07:00:00
+      end_time: 2020-07-08_08:00:00
+    # - day: July 8th
+    #   time: 09:00-10:00 PDT
+    - name: S-Session 6
+      start_time: 2020-07-08_16:00:00
+      end_time: 2020-07-08_17:00:00
+- UID: "panel_for_undergraduate_students"
+  name: Panel for Undergraduate Students
+  description: >
+    This is a panel discussion for undergraduate students, providing an opportunity
+    for an informal chat with a group of NLP/computational linguistics researchers
+    about research, graduate student life, and beyond. Zoom link will be emailed separately
+    to participants.
+  image: static/images/acl2020/acl-logo.png
+  organizers: *id001
+  sessions:
+    # - day: July 5th
+    #   time: 07:00-08:30 PDT
+    - name: S-Session 1
+      start_time: 2020-07-05_14:00:00
+      end_time: 2020-07-05_15:30:00
+- UID: "birds_of_a_feather_0"
+  name: Birds of a feather - Cognitive Modeling and Psycholinguistics
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/92838367296
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/92838367296
+- UID: "birds_of_a_feather_1"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Computational Social Science and Social Media
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/93196995719
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/93196995719
+    # - day: July 6th
+    #   link: https://zoom.us/j/94778790857
+    #   time: 22:00-23:00 PDT
+    - name: S-Session 4
+      start_time: 2020-07-07_05:00:00
+      end_time: 2020-07-07_06:00:00
+      zoom_link: https://zoom.us/j/94778790857
+- UID: "birds_of_a_feather_2"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Dialogue and Interactive Systems
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/92732662385
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/92732662385
+- UID: "birds_of_a_feather_3"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Discourse and Pragmatics
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/95067001034
+    #   time: 02:00-03:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_09:00:00
+      end_time: 2020-07-06_10:00:00
+      zoom_link: https://zoom.us/j/95067001034
+- UID: "birds_of_a_feather_4"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Ethics and NLP
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/93321025290
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/93321025290
+- UID: "birds_of_a_feather_5"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Generation
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/91003806623
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/91003806623
+    # - day: July 6th
+    #   link: https://zoom.us/j/97093664068
+    #   time: 13:00-14:00 PDT
+    - name: S-Session 3
+      start_time: 2020-07-06_20:00:00
+      end_time: 2020-07-06_21:00:00
+      zoom_link: https://zoom.us/j/97093664068
+- UID: "birds_of_a_feather_6"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Information Extraction
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/91006301601
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/91006301601
+- UID: "birds_of_a_feather_7"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Information Retrieval and Text Mining
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/99766619605
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/99766619605
+- UID: "birds_of_a_feather_8"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Interpretability and Analysis of Models for NLP
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/91067736393
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/91067736393
+- UID: "birds_of_a_feather_9"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Language Grounding to Vision, Robotics and Beyond
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/98002656601
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/98002656601
+    # - day: July 7th
+    #   link: https://zoom.us/j/97684092839
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 5
+      start_time: 2020-07-07_18:00:00
+      end_time: 2020-07-07_19:00:00
+      zoom_link: https://zoom.us/j/97684092839
+- UID: "birds_of_a_feather_10"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Theory and Formalism in NLP (Linguistic and Mathematical)
+  organizers: *id001
+  sessions:
+    # - day: July 7th
+    #   link: https://zoom.us/j/98286401497
+    #   time: 13:00-14:00 PDT
+    - name: S-Session 6
+      start_time: 2020-07-07_20:00:00
+      end_time: 2020-07-07_21:00:00
+      zoom_link: https://zoom.us/j/98286401497
+- UID: "birds_of_a_feather_11"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Machine Learning for NLP
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/99968814107
+    #   time: 02:00-03:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_09:00:00
+      end_time: 2020-07-06_10:00:00
+      zoom_link: https://zoom.us/j/99968814107
+- UID: "birds_of_a_feather_12"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Machine Translation
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/94793046035
+    #   time: 02:00-03:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_09:00:00
+      end_time: 2020-07-06_10:00:00
+      zoom_link: https://zoom.us/j/94793046035
+    # - day: July 6th
+    #   link: https://zoom.us/j/93410760228
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/93410760228
+- UID: "birds_of_a_feather_13"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - NLP Applications
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/96319542568
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/96319542568
+- UID: "birds_of_a_feather_14"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Phonology, Morphology and Word Segmentation
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/94711097897
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/94711097897
+- UID: "birds_of_a_feather_15"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Question Answering
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/93883866802
+    #   time: 02:00-03:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_09:00:00
+      end_time: 2020-07-06_10:00:00
+      zoom_link: https://zoom.us/j/93883866802
+    # - day: July 6th
+    #   link: https://zoom.us/j/99780265443
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/99780265443
+- UID: "birds_of_a_feather_16"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Resources and Evaluation
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/94110756624
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/94110756624
+    # - day: July 7th
+    #   link: https://zoom.us/j/98788965391
+    #   time: 13:00-14:00 PDT
+    - name: S-Session 6
+      start_time: 2020-07-07_20:00:00
+      end_time: 2020-07-07_21:00:00
+      zoom_link: https://zoom.us/j/98788965391
+- UID: "birds_of_a_feather_17"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: 'Birds of a feather - Semantics: Lexical'
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/93339488600
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/93339488600
+- UID: "birds_of_a_feather_18"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: 'Birds of a feather - Semantics: Sentence Level'
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/95822660821
+    #   time: 02:00-03:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_09:00:00
+      end_time: 2020-07-06_10:00:00
+      zoom_link: https://zoom.us/j/95822660821
+- UID: "birds_of_a_feather_19"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Sentiment Analysis, Stylistic Analysis, and Argument
+    Mining
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/92368256366
+    #   time: 02:00-03:00 PDT
+    - name: S-Session 1
+      start_time: 2020-07-06_09:00:00
+      end_time: 2020-07-06_10:00:00
+      zoom_link: https://zoom.us/j/92368256366
+- UID: "birds_of_a_feather_20"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Speech and Multimodality
+  organizers: *id001
+  sessions:
+    # - day: July 7th
+    #   link: https://zoom.us/j/91131151510
+    #   time: 13:00-14:00 PDT
+    - name: S-Session 6
+      start_time: 2020-07-07_20:00:00
+      end_time: 2020-07-07_21:00:00
+      zoom_link: https://zoom.us/j/91131151510
+- UID: "birds_of_a_feather_21"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: Birds of a feather - Summarization
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/94893768959
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/94893768959
+- UID: "birds_of_a_feather_22"
+  description: >
+    Birds of a feather meetups help junior researchers or researchers attending ACL
+    for the first time strike up conversations with other researchers in their areas
+    of interest. This can also be a good avenue for junior researchers to get feedback
+    on ongoing ideas and learn about relevant ongoing projects at other groups/universities
+    and facilitate more exchange of research ideas, and collaborative discussions.
+  image: static/images/acl2020/acl-logo.png
+  name: 'Birds of a feather - Syntax: Tagging, Chunking and Parsing'
+  organizers: *id001
+  sessions:
+    # - day: July 6th
+    #   link: https://zoom.us/j/99682423847
+    #   time: 11:00-12:00 PDT
+    - name: S-Session 2
+      start_time: 2020-07-06_18:00:00
+      end_time: 2020-07-06_19:00:00
+      zoom_link: https://zoom.us/j/99682423847

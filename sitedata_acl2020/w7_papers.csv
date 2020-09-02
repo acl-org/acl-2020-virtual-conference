@@ -1,0 +1,39 @@
+UID,title,speakers,presentation_id
+18,Sarcasm Detection Using an Ensemble Approach,"Jens Lemmens, Ben Burtenshaw, Ehsan Lotfi, Ilia Markov and Walter Daelemans",38929694
+19,Sarcasm Detection using Context Separators in Online Discourse,TANVI DADU and Kartikey Pant,38929695
+22,Augmenting Data for Sarcasm Detection with Unlabeled Conversation Context,"Hankyol Lee, Youngjae Yu and Gunhee Kim",38929696
+23,Sarcasm Detection in Tweets with BERT and GloVe Embeddings,Akshay Khatri and Pranav P,38929697
+25,C-Net: Contextual Network for Sarcasm Detection,"Amit Kumar Jena, Aman Sinha and Rohit Agarwal",38929698
+30,Applying Transformers and Aspect-based Sentiment Analysis approaches on Sarcasm Detection,"Taha Shangipour ataei, Soroush Javdan and Behrouz Minaei-Bidgoli",38929699
+34,Sarcasm Identification and Detection in Conversion Context using BERT,kalaivani A and Thenmozhi D,38929700
+36,Neural Sarcasm Detection using Conversation Context,Nikhil Jaiswal,38929701
+37,Context-Aware Sarcasm Detection Using BERT,"Arup Baruah, Kaushik Das, Ferdous Barbhuiya and Kuntal Dey",38929702
+38,Transformers on Sarcasm Detection with Context,Amardeep Kumar and Vivek Anand,38929703
+39,A Novel Hierarchical BERT Architecture for Sarcasm Detection,"Himani Srivastava, Vaibhav Varshney, Surabhi Kumari and Saurabh Srivastava",38929704
+43,{D}etecting {S}arcasm in {C}onversation {C}ontext {U}sing {T}ransformer-{B}ased {M}odels,"Adithya Avvaru, Sanath Vobilisetty and Radhika Mamidi",38929705
+46,A Transformer Approach to Contextual Sarcasm Detection in Twitter,"Hunter Gregory, Steven Li, Pouya Mohammadi, Natalie Tarn, Rachel Draelos and Cynthia Rudin",38929706
+50,Transformer-based Context-aware Sarcasm Detection in Conversation Threads from Social Media,"Xiangjue Dong, Changmao Li and Jinho D. Choi",38929707
+53,A Report on the 2020 Sarcasm Detection Shared Task,"Debanjan Ghosh, Avijit Vajpayee and Smaranda Muresan",38929708
+10,Adaptation of Word-Level Benchmark Datasets for Relation-Level Metaphor Identification,"Omnia Zayed, John Philip McCrae and Paul Buitelaar",38929709
+11,Context-Driven Satirical News Generation,"Zachary Horvitz, Nam Do and Michael L. Littman",38929710
+14,Generating Ethnographic Models from Communities’ Online Data,"Tomek Strzalkowski, Anna Newheiser, Nathan Kemper, Ning Sa, Bharvee Acharya and Gregorios Katsios",38929711
+15,Oxymorons: a preliminary corpus investigation,Marta La Pietra and Francesca Masini,38929712
+20,Can Humor Prediction Datasets be used for Humor Generation? Humorous Headline Generation via Style Transfer,"Orion Weller, Nancy Fulda and Kevin Seppi",38929713
+24,Sky + Fire = Sunset. Exploring Parallels between Visually Grounded Metaphors and Image Classifiers,Yuri Bizzoni and Simon Dobnik,38929714
+40,Supervised Disambiguation of German Verbal Idioms with a BiLSTM Architecture,"Rafael Ehren, Timm Lichte, Laura Kallmeyer and Jakub Waszczuk",38929715
+42,Being neighbourly: Neural metaphor identification in discourse,"Verna Dankers, Karan Malhotra, Gaurav Kudva, Volodymyr Medentsiy and Ekaterina Shutova",38929716
+44,Recognizing Euphemisms and Dysphemisms Using Sentiment Analysis,Christian Felt and Ellen Riloff,38929717
+32,ALBERT-BiLSTM for Sequential Metaphor Detection,"Shuqun Li, Jingjie Zeng, Jinhui Zhang, Tao Peng, Liang Yang and Hongfei Lin",38929718
+8,IlliniMet: Illinois System for Metaphor Detection with Contextual and Linguistic Information,"Hongyu Gong, Kshitij Gupta, Akriti Jain and Suma Bhat",38929719
+17,DeepMet: A Reading Comprehension Paradigm for Token-level Metaphor Detection,"Chuandong Su, Fumiyo Fukumoto, Xiaoxi Huang, Jiyi Li, Rongbo Wang and Zhiqun Chen",38929720
+21,Evaluating a Bi-LSTM Model for Metaphor Detection in TOEFL Essays,Kevin Kuo and Marine Carpuat,38929721
+26,Neural Metaphor Detection with a Residual biLSTM-CRF Model,"Andrés Torres Rivera, Antoni Oliver, Salvador Climent and Marta Coll-Florit",38929722
+31,Using Conceptual Norms for Metaphor Detection,"Mingyu WAN, Kathleen Ahrens, Emmanuele Chersoni, Menghan Jiang, Qi Su, Rong Xiang and Chu-Ren Huang",38929723
+33,Character aware models with similarity learning for metaphor detection,Tarun Kumar and Yashvardhan Sharma,38929724
+35,Augmenting Neural Metaphor Detection with Concreteness,"Ghadi Alnafesah, Harish Tayyar Madabushi and Mark Lee",38929725
+41,Metaphor Detection using Context and Concreteness,"Rowan Hall Maudslay, Tiago Pimentel, Ryan Cotterell and Simone Teufel",38929726
+47,Go Figure! Multi-task transformer-based architecture for metaphor detection using idioms: ETS team in 2020 metaphor shared task,"Xianyang Chen, Chee Wee (Ben) Leong, Michael Flor and Beata Beigman Klebanov",38929727
+48,Metaphor Detection using Ensembles of Bidirectional Recurrent Neural Networks,Jennifer Brooks and Abdou Youssef,38929728
+49,Metaphor Detection Using Contextual Word Embeddings From Transformers,"Jerry Liu, Nathan O'Hara, Alexander Rubin, Rachel Draelos and Cynthia Rudin",38929729
+51,Testing the role of metadata in metaphor identification,Egon Stemle and Alexander Onysko,38929730
+52,A Report on the 2020 VUA and TOEFL Metaphor Detection Shared Task,"Chee Wee (Ben) Leong, Beata Beigman Klebanov, Chris Hamill, Egon Stemle, Rutuja Ubale and Xianyang Chen",38929731

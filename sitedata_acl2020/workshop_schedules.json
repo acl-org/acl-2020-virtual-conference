@@ -1,0 +1,4292 @@
+{
+  "W1":
+  [
+      {
+        "id": "W0100",
+        "title": "Opening remarks",
+        "speakers": "Rossana Cunha, Samira Shaikh, Erika Varis, Ryan Georgi, Antonios Anastasopoulos, Khyathi Raghavi Chandu and Alicia Tsai",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "9:00 AM",
+        "endTime": "9:10 AM",
+        "subsession": "Session 1"
+      },
+      {
+        "id": "W0101",
+        "title": "Keynote 1",
+        "speakers": "Verena Rieser",
+        "type": "PRE-RECORDED",
+        "date": "Jul 5",
+        "startTime": "9:10 AM",
+        "endTime": "9:40 AM",
+        "subsession": "Session 1"
+      },
+      {
+        "id": "W0102",
+        "title": "Keynote 1 Live Q&A",
+        "speakers": "Verena Rieser",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 5",
+        "startTime": "9:40 AM",
+        "endTime": "9:50 AM",
+        "subsession": "Session 1"
+      },
+      {
+        "id": "W0103",
+        "title": "Poster Session A",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "9:50 AM",
+        "endTime": "10:30 AM",
+        "subsession": "Session 1"
+      },
+      {
+        "id": "W0104",
+        "title": "Break (sponsored)",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "10:30 AM",
+        "endTime": "10:50 AM",
+        "subsession": "Break"
+      },
+      {
+        "id": "W0105",
+        "title": "Keynote 2",
+        "speakers": "Helena Caseli",
+        "type": "PRE-RECORDED",
+        "date": "Jul 5",
+        "startTime": "10:50 AM",
+        "endTime": "11:20 AM",
+        "subsession": "Session 2"
+      },
+      {
+        "id": "W0106",
+        "title": "Keynote 2 Live Q&A",
+        "speakers": "Helena Caseli",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 5",
+        "startTime": "11:20 AM",
+        "endTime": "11:30 AM",
+        "subsession": "Session 2"
+      },
+      {
+        "id": "W0107",
+        "title": "Mentoring & Sponsor Roundtables",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "11:30 AM",
+        "endTime": "12:30 PM",
+        "subsession": "Session 2"
+      },
+      {
+        "id": "W0108",
+        "title": "Lunch Break",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "12:30 PM",
+        "endTime": "1:10 PM",
+        "subsession": "Session 2"
+      },
+      {
+        "id": "W0109",
+        "title": "Panel Discussion",
+        "speakers": "Anima Anandkumar, Jade Abbott, Luciana Benotti, and Xanda Schofield",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 5",
+        "startTime": "1:10 PM",
+        "endTime": "1:50 PM",
+        "subsession": "Break"
+      },
+      {
+        "id": "W0110",
+        "title": "Keynote 3",
+        "speakers": "José Eduardo Ochoa",
+        "type": "PRE-RECORDED",
+        "date": "Jul 5",
+        "startTime": "1:50 PM",
+        "endTime": "2:20 PM",
+        "subsession": "Session 3"
+      },
+      {
+        "id": "W0111",
+        "title": "Keynote 3 Live Q&A",
+        "speakers": "José Eduardo Ochoa",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 5",
+        "startTime": "2:20 PM",
+        "endTime": "2:30 PM",
+        "subsession": "Session 3"
+      },
+      {
+        "id": "W0112",
+        "title": "Poster Session B",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "2:30 PM",
+        "endTime": "3:10 PM",
+        "subsession": "Session 3"
+      },
+      {
+        "id": "W0113",
+        "title": "Break (sponsored)",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "3:10 PM",
+        "endTime": "3:25 PM",
+        "subsession": "Break"
+      },
+      {
+        "id": "W0114",
+        "title": "Keynote 4",
+        "speakers": "Rachael Tatman",
+        "type": "PRE-RECORDED",
+        "date": "Jul 5",
+        "startTime": "3:25 PM",
+        "endTime": "3:55 PM",
+        "subsession": "Session 4"
+      },
+      {
+        "id": "W0115",
+        "title": "Keynote 4 Live Q&A",
+        "speakers": "Rachael Tatman",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 5",
+        "startTime": "3:55 PM",
+        "endTime": "4:05 PM",
+        "subsession": "Session 4"
+      },
+      {
+        "id": "W0116",
+        "title": "Closing Remarks",
+        "speakers": "Rossana Cunha, Samira Shaikh, Erika Varis, Ryan Georgi, Antonios Anastasopoulos, Khyathi Raghavi Chandu and Alicia Tsai",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "4:05 PM",
+        "endTime": "4:15 PM",
+        "subsession": "Session 4"
+      },
+      {
+        "id": "W0117",
+        "title": "End of WiNLP 2020",
+        "speakers": "",
+        "type": "",
+        "date": "Jul 5",
+        "startTime": "4:15 PM",
+        "endTime": "4:30 PM",
+        "subsession": "Session 4"
+      }
+  ],
+  "W2":
+  [
+      {
+        "id": 101,
+        "title": "Foreword/Introduction",
+        "speakers": "Marcello Federico/Alex Waibel",
+        "type": "LIVE INTRO",
+        "date": "July 9",
+        "startTime": "9:00 AM",
+        "endTime": "9:15 AM"
+      },
+      {
+        "id": 102,
+        "title": "Keynote + Q&A",
+        "speakers": "Klaus Welle",
+        "type": "LIVE PRESENTATION",
+        "date": "July 9",
+        "startTime": "9:15 AM",
+        "endTime": "10:15 AM"
+      },
+      {
+        "id": 103,
+        "title": "Findings of IWSLT 2020 + Q&A",
+        "speakers": "Sebastian Stüker et al.",
+        "type": "LIVE PRESENTATION",
+        "date": "July 9",
+        "startTime": "10:15 AM",
+        "endTime": "11:15 AM"
+      },
+      {
+        "id": 104,
+        "title": "Panel Offline Speech Translation",
+        "speakers": "Marco Turchi et al.",
+        "type": "LIVE DISCUSSION",
+        "date": "July 9",
+        "startTime": "11:30 AM",
+        "endTime": "12:30 PM"
+      },
+      {
+        "id": 105,
+        "title": "Panel Simultanous ST",
+        "speakers": "Jiatao Gu et al.",
+        "type": "LIVE DISCUSSION",
+        "date": "July 9",
+        "startTime": "12:30 PM",
+        "endTime": "1:30 PM"
+      },
+      {
+        "id": 106,
+        "title": "Panel Open Domain MT",
+        "speakers": "Ajay Nagesh et al.",
+        "type": "LIVE DISCUSSION",
+        "date": "July 9",
+        "startTime": "5:00 PM",
+        "endTime": "6:00 PM"
+      },
+      {
+        "id": 201,
+        "title": "Opening remarks",
+        "speakers": "Marcello Federico",
+        "type": "LIVE INTRO",
+        "date": "July 10",
+        "startTime": "9:00 AM",
+        "endTime": "9:10 AM"
+      },
+      {
+        "id": 202,
+        "title": "Panel of experts",
+        "speakers": "Alex Waibel",
+        "type": "LIVE DISCUSSION",
+        "date": "July 10",
+        "startTime": "9:10 AM",
+        "endTime": "10:10 AM"
+      }
+  ],
+  "W3":
+  [
+      {
+          "id": "",
+          "title": "Opening remark",
+          "speakers": "Shawn Wen",
+          "type": "LIVE INTRO",
+          "date": "July 9th",
+          "startTime": "6:00 AM",
+          "endTime": "6:10 AM"
+      },
+      {
+          "id": "IT01",
+          "title": "Invited talk QA",
+          "speakers": "Yun-Nung Chen",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "6:10 AM",
+          "endTime": "6:40 AM"
+      },
+      {
+          "id": "IT04",
+          "title": "Invited talk QA",
+          "speakers": "Antoine Bordes",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "6:40 AM",
+          "endTime": "7:10 AM"
+      },
+      {
+          "id": "IT05",
+          "title": "Invited talk QA",
+          "speakers": "Jacob Andreas",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "7:10 AM",
+          "endTime": "7:40 AM"
+      },
+      {
+          "id": 8,
+          "title": "Using Alternate Representations of Text for Natural Language Understanding",
+          "speakers": "Venkat Varada",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "7:40 AM",
+          "endTime": "7:50 AM"
+      },
+      {
+          "id": 2,
+          "title": "On Incorporating Structural Information to improve Dialogue Response Generation",
+          "speakers": "Nikita Moghe",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "7:50 AM",
+          "endTime": "8:00 AM"
+      },
+      {
+          "id": 24,
+          "title": "CopyBERT: A Unified Approach to Question Generation with Self-Attention",
+          "speakers": "Stalin Varanasi",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "8:00 AM",
+          "endTime": "8:10 AM"
+      },
+      {
+          "id": 13,
+          "title": "How to Tame Your Data: Data Augmentation for Dialog State Tracking",
+          "speakers": "Adam Summerville",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "8:10 AM",
+          "endTime": "8:20 AM"
+      },
+      {
+          "id": 11,
+          "title": "Efficient Intent Detection with Dual Sentence Encoders",
+          "speakers": "Iñigo Casanueva",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "8:20 AM",
+          "endTime": "8:30 AM"
+      },
+      {
+          "id": 20,
+          "title": "Accelerating Task-Oriented Dialog Models",
+          "speakers": "Ojas Ahuja",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "8:30 AM",
+          "endTime": "8:40 AM"
+      },
+      {
+          "id": 19,
+          "title": "DLGNet: A Transformer-based Model for Dialogue Response Generation",
+          "speakers": "Olabiyi Oluwatobi",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "8:40 AM",
+          "endTime": "8:50 AM"
+      },
+      {
+          "id": 23,
+          "title": "Data Augmentation for Training Dialog Models Robust to Speech Recognition Errors",
+          "speakers": "Longshaokan Wang",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "8:50 AM",
+          "endTime": "9:00 AM"
+      },
+      {
+          "id": "",
+          "title": "Panel",
+          "speakers": "",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "9:00 AM",
+          "endTime": "10:00 AM"
+      },
+      {
+          "id": "IT03",
+          "title": "Invited talk QA",
+          "speakers": "Jesse Thomason",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "10:00 AM",
+          "endTime": "10:30 AM"
+      },
+      {
+          "id": "IT02",
+          "title": "Invited talk QA",
+          "speakers": "Dilek Hakkani-Tür",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "10:30 AM",
+          "endTime": "11:00 AM"
+      },
+      {
+          "id": "IT06",
+          "title": "Invited talk QA",
+          "speakers": "Jason Williams",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "11:00 AM",
+          "endTime": "11:30 AM"
+      },
+      {
+          "id": 7,
+          "title": "Automating Template Creation for Ranking-Based Dialogue Models",
+          "speakers": "Jingxiang Chen",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "11:30 AM",
+          "endTime": "11:40 AM"
+      },
+      {
+          "id": 12,
+          "title": "From Machine Reading Comprehension to Dialogue State Tracking: Bridging the Gap",
+          "speakers": "Shuyang Gao",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "11:40 AM",
+          "endTime": "11:50 AM"
+      },
+      {
+          "id": 1,
+          "title": "Improving Slot Filling by Utilizing Contextual Information",
+          "speakers": "Amir Pouran Ben Veyseh",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "11:50 AM",
+          "endTime": "12:00 PM"
+      },
+      {
+          "id": 21,
+          "title": "Learning to Classify Intents and Slot Labels Given a Handful of Examples",
+          "speakers": "Jason Krone",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "12:00 PM",
+          "endTime": "12:10 PM"
+      },
+      {
+          "id": 25,
+          "title": "MultiWOZ 2.2 : A Dialogue Dataset with Additional Annotation Corrections and State Tracking Baselines",
+          "speakers": "Xiaoxue Zang",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "12:10 PM",
+          "endTime": "12:20 PM"
+      },
+      {
+          "id": 6,
+          "title": "Sketch-Fill-A-R: A Persona-Grounded Chit-Chat Generation Framework",
+          "speakers": "Michael Shum",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "12:20 PM",
+          "endTime": "12:30 PM"
+      },
+      {
+          "id": 14,
+          "title": "Probing Neural Dialog Models for Conversational Understanding",
+          "speakers": "Abdelrhman Saleh",
+          "type": "LIVE DISCUSSION",
+          "date": "July 9th",
+          "startTime": "12:30 PM",
+          "endTime": "12:40 PM"
+      },
+      {
+          "id": "",
+          "title": "Closing remark",
+          "speakers": "",
+          "type": "LIVE INTRO",
+          "date": "July 9th",
+          "startTime": "12:40 PM",
+          "endTime": "12:50 PM"
+      }
+  ],
+  "W4":
+  [
+      {
+        "id": "",
+        "title": "Opening remarks",
+        "speakers": "Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou",
+        "type": "LIVE INTRO",
+        "date": "Jul 9",
+        "startTime": "8:30",
+        "endTime": "8:40",
+        "subsession": "Opening"
+      },
+      {
+        "id": "",
+        "title": "Biomedical Retrieval: Users, Data, and Tasks",
+        "speakers": "Kirk Roberts",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "8:40",
+        "endTime": "9:10",
+        "subsession": "Session 1"
+      },
+      {
+        "id": 56,
+        "title": "Quantifying 60 Years of Gender Bias in Biomedical Research with Word Embeddings",
+        "speakers": "Anthony Rios",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "9:10",
+        "endTime": "9:20",
+        "subsession": "Session 1"
+      },
+      {
+        "id": 7,
+        "title": "Sequence-to-Set Semantic Tagging for Complex Query Reformulation and Automated Text Categorization in Biomedical IR using Self-Attention",
+        "speakers": "Manirupa Das",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "9:20",
+        "endTime": "9:30",
+        "subsession": "Session 1"
+      },
+      {
+        "id": 53,
+        "title": "Interactive Extractive Search over Biomedical Corpora",
+        "speakers": "Hillel Taub-Tabib",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "9:30",
+        "endTime": "9:40",
+        "subsession": "Session 1"
+      },
+      {
+        "id": 66,
+        "title": "mproving Biomedical Analogical Retrieval with Embedding of Structural Dependencies",
+        "speakers": "Amandalynne Paullada",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "9:40",
+        "endTime": "9:50",
+        "subsession": "Session 1"
+      },
+      {
+        "id": 48,
+        "title": "DeSpin: a prototype system for detecting spin in biomedical publications",
+        "speakers": "Anna Koroleva",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "9:50",
+        "endTime": "10:00",
+        "subsession": "Session 1"
+      },
+      {
+        "id": "",
+        "title": "Discussion",
+        "speakers": "Kirk Roberts, Anthony Rios, Manirupa Das, Hillel Taub-Tabib, Amandalynne Paullada, Anna Koroleva, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 9",
+        "startTime": "10:00",
+        "endTime": "10:30",
+        "subsession": "Session 1"
+      },
+      {
+        "id": "",
+        "title": "Challenges in Domain Adaptation for Medical NLP",
+        "speakers": "Tim Miller",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "10:45",
+        "endTime": "11:15",
+        "subsession": "Session 2"
+      },
+      {
+        "id": 16,
+        "title": "Towards Visual Dialog for Radiology",
+        "speakers": "Olga Kovaleva",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:15",
+        "endTime": "11:25",
+        "subsession": "Session 2"
+      },
+      {
+        "id": 30,
+        "title": "A BERT-based One-Pass Multi-Task Model for Clinical Temporal Relation Extraction",
+        "speakers": "Chen Lin",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "11:25",
+        "endTime": "11:35",
+        "subsession": "Session 2"
+      },
+      {
+        "id": 11,
+        "title": "Experimental Evaluation and Development of a Silver-Standard for the MIMIC-III Clinical Coding Dataset",
+        "speakers": "Tom Searle",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:35",
+        "endTime": "11:45",
+        "subsession": "Session 2"
+      },
+      {
+        "id": 34,
+        "title": "Comparative Analysis of Text Classification Approaches in Electronic Health Records",
+        "speakers": "Aurelie Mascio",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:45",
+        "endTime": "11:55",
+        "subsession": "Session 2"
+      },
+      {
+        "id": 40,
+        "title": "Noise Pollution in Hospital Readmission Prediction: Long Document Classification with Reinforcement Learning",
+        "speakers": "Liyan Xu,",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:55",
+        "endTime": "12:05",
+        "subsession": "Session 2"
+      },
+      {
+        "id": 69,
+        "title": "Evaluating the Utility of Model Configurations and Data Augmentation on Clinical Semantic Textual Similarity",
+        "speakers": "Yuxia Wang",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "12:05",
+        "endTime": "12:15",
+        "subsession": "Session 2"
+      },
+      {
+        "id": "",
+        "title": "Discussion",
+        "speakers": "Tim Miller, Olga Kovaleva, Chen Lin, Tom Searle, Aurelie Mascio, Liyan Xu, Yuxia Wang, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 9",
+        "startTime": "12:15",
+        "endTime": "12:45",
+        "subsession": "Session 2"
+      },
+      {
+        "id": "",
+        "title": "Language Understanding",
+        "speakers": "Anna Rumshisky",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "13:30",
+        "endTime": "14:00",
+        "subsession": "Session 3"
+      },
+      {
+        "id": 62,
+        "title": "Entity-Enriched Neural Models for Clinical Question Answering",
+        "speakers": "Bhanu Pratap Singh Rawat",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "14:00",
+        "endTime": "14:10",
+        "subsession": "Session 3"
+      },
+      {
+        "id": 26,
+        "title": "Evidence Inference 2.0: More Data, Better Models",
+        "speakers": "Jay DeYoung",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "14:10",
+        "endTime": "14:20",
+        "subsession": "Session 3"
+      },
+      {
+        "id": 59,
+        "title": "Personalized Early Stage Alzheimer’s Disease Detection: A Case Study of President Reagan’s Speeches",
+        "speakers": "Ning Wang",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "14:20",
+        "endTime": "14:30",
+        "subsession": "Session 3"
+      },
+      {
+        "id": 21,
+        "title": "BioMRC: A Dataset for Biomedical Machine Reading Comprehension",
+        "speakers": "Dimitris Pappas",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "14:30",
+        "endTime": "14:40",
+        "subsession": "Session 3"
+      },
+      {
+        "id": 24,
+        "title": "Neural Transduction of Letter Position Dyslexia using an Anagram Matrix Representation",
+        "speakers": "Avi Bleiweiss",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "14:40",
+        "endTime": "14:50",
+        "subsession": "Session 3"
+      },
+      {
+        "id": 36,
+        "title": "Domain Adaptation and Instance Selection for Disease Syndrome Classification over Veterinary Clinical Notes",
+        "speakers": "Brian Hur",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "14:50",
+        "endTime": "15:00",
+        "subsession": "Session 3"
+      },
+      {
+        "id": "",
+        "title": "Discussion",
+        "speakers": "Anna Rumshisky, Jay DeYong, Ning Wang, Dimitris, Pappas, Avi Bleiweiss, Brian Hur, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 9",
+        "startTime": "15:00",
+        "endTime": "15:30",
+        "subsession": "Session 3"
+      },
+      {
+        "id": "",
+        "title": "Machine Reading for Precision Medicine",
+        "speakers": "Hoifung Poon",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "15:45",
+        "endTime": "16:25",
+        "subsession": "Session 4"
+      },
+      {
+        "id": 8,
+        "title": "Benchmark and Best Practices for Biomedical Knowledge Graph Embeddings",
+        "speakers": "David Chang",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "16:25",
+        "endTime": "16:35",
+        "subsession": "Session 4"
+      },
+      {
+        "id": 22,
+        "title": "Extensive Error Analysis and a Learning-Based Evaluation of Medical Entity Recognition Systems to Approximate User Experience",
+        "speakers": "Isar Nejadgholi",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "16:35",
+        "endTime": "16:45",
+        "subsession": "Session 4"
+      },
+      {
+        "id": 23,
+        "title": "A Data-driven Approach for Noise Reduction in Distantly Supervised Biomedical Relation Extraction",
+        "speakers": "Saadullah Amin, Katherine Ann Dunfield, Günter Neumann",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "16:45",
+        "endTime": "16:55",
+        "subsession": "Session 4"
+      },
+      {
+        "id": 46,
+        "title": "Global Locality in Biomedical Relation and Event Extraction",
+        "speakers": "Elaheh ShafieiBavani",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "16:55",
+        "endTime": "17:05",
+        "subsession": "Session 4"
+      },
+      {
+        "id": 6,
+        "title": "An Empirical Study of Multi-Task Learning on BERT for Biomedical Text Mining",
+        "speakers": "Yifan Peng",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "17:05",
+        "endTime": "17:15",
+        "subsession": "Session 4"
+      },
+      {
+        "id": "",
+        "title": "Discussion",
+        "speakers": "Hoifung Poon, David Chang, Isar Nejadgholi, Saadullah Amin, Katherine Ann Dunfield, Günter Neumann, Elaheh ShafieiBavani, Yifan Peng, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 9",
+        "startTime": "17:15",
+        "endTime": "17:45",
+        "subsession": "Session 4"
+      },
+      {
+        "id": "",
+        "title": "Closing remarks",
+        "speakers": "Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou",
+        "type": "LIVE PRESENTATION",
+        "date": "Jul 9",
+        "startTime": "17:45",
+        "endTime": "18:00",
+        "subsession": "Closing"
+      }
+  ],
+  "W5":
+  [
+      {
+        "id": "W0501",
+        "title": "Opening Remarks (TBD)",
+        "speakers": "FEVER Organizers",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "4:00",
+        "endTime": "4:15"
+      },
+      {
+        "id": "W0504",
+        "title": "Project Debater",
+        "speakers": "Noam Slonim",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "4:15",
+        "endTime": "5:00"
+      },
+      {
+        "id": "W0502",
+        "title": "Towards explainable fact checking",
+        "speakers": "Isabelle Augenstein",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "5:00",
+        "endTime": "5:45"
+      },
+      {
+        "id": 9,
+        "title": "Simple Compounded-Label Training for Fact Extraction and Verification",
+        "speakers": "Yixin Nie",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "5:45",
+        "endTime": "6:05"
+      },
+      {
+        "id": 2,
+        "title": "Stance Prediction and Claim Verification: An Arabic Perspective",
+        "speakers": "Jude Khouja",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "6:05",
+        "endTime": "6:25"
+      },
+      {
+        "id": "",
+        "title": "Live Q&A session",
+        "speakers": "Various speakers",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 9",
+        "startTime": "6:25",
+        "endTime": "7:25"
+      },
+      {
+        "id": "W0503",
+        "title": "How to “inoculate” people against misinformation and online extremism",
+        "speakers": "Jon Roozenbeek",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "9:00",
+        "endTime": "9:45"
+      },
+      {
+        "id": "W0505",
+        "title": "Beyond Facts: The Role of Framing in Assessing What is True",
+        "speakers": "Philip Resnik",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "9:45",
+        "endTime": "10:30"
+      },
+      {
+        "id": 1,
+        "title": "A Probabilistic Model with Commonsense Constraints for Pattern-based Temporal Fact Extraction",
+        "speakers": "Yang Zhou",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "10:30",
+        "endTime": "10:40"
+      },
+      {
+        "id": 4,
+        "title": "Developing a How-to Tip Machine Comprehension Dataset and its Evaluation in Machine Comprehension by BERT",
+        "speakers": "Tengyang Chen",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "10:40",
+        "endTime": "10:50"
+      },
+      {
+        "id": 7,
+        "title": "Language Models as Fact Checkers?",
+        "speakers": "Nayeon Lee",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "10:50",
+        "endTime": "11:00"
+      },
+      {
+        "id": 10,
+        "title": "Maintaining Quality in FEVER Annotation",
+        "speakers": "Leon Derczynski",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:00",
+        "endTime": "11:10"
+      },
+      {
+        "id": 11,
+        "title": "Distilling the Evidence to Augment Fact Verification Models",
+        "speakers": "Beatrice Portelli",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:10",
+        "endTime": "11:20"
+      },
+      {
+        "id": "W0507",
+        "title": "Integration of (Un)structured World Knowledge In Task Oriented Conversations",
+        "speakers": "Dilek Hakkani-Tur",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "11:20",
+        "endTime": "12:05"
+      },
+      {
+        "id": "W0506",
+        "title": "Fake Fake News and Real Fake News",
+        "speakers": "Yejin Choi",
+        "type": "PRE-RECORDED",
+        "date": "Jul 9",
+        "startTime": "12:05",
+        "endTime": "12:50"
+      },
+      {
+        "id": "",
+        "title": "Live Q&A session",
+        "speakers": "Various speakers",
+        "type": "LIVE DISCUSSION",
+        "date": "Jul 9",
+        "startTime": "12:50",
+        "endTime": "13:50"
+      }
+  ],
+  "W6":
+  [
+      {
+        "id": "",
+        "title": "Session 1: Invited Talk Q&A",
+        "speakers": "Paola Merlo",
+        "type": "LIVE DISCUSSION",
+        "date": "09-Jul",
+        "startTime": "7:00",
+        "endTime": "7:15"
+      },
+      {
+        "id": "",
+        "title": "Session 2: Regular Papers Q&A",
+        "speakers": "Mark Anderson, Robin Kurtz, Agnieszka Falenska, Xiao Zhang",
+        "type": "LIVE DISCUSSION",
+        "date": "09-Jul",
+        "startTime": "7:15",
+        "endTime": "7:40"
+      },
+      {
+        "id": "",
+        "title": "Session 3: Regular Papers Q&A",
+        "speakers": "Lifeng Jin, Shay B. Cohen, Esma Balkir",
+        "type": "LIVE DISCUSSION",
+        "date": "09-Jul",
+        "startTime": "7:40",
+        "endTime": "8:00"
+      },
+      {
+        "id": "",
+        "title": "Session 4: Regular Papers Q&A",
+        "speakers": "Kilian Gebhardt, Thomas Ruprecht, Anhad Mohananey, Miloš Stanojević, Mark Steedman",
+        "type": "LIVE DISCUSSION",
+        "date": "09-Jul",
+        "startTime": "8:10",
+        "endTime": "8:35"
+      },
+      {
+        "id": "",
+        "title": "Session 5: Regular Papers Q&A",
+        "speakers": "Tae Hwan Oh, Luis Chiruzzo, Lifeng Jin",
+        "type": "LIVE DISCUSSION",
+        "date": "09-Jul",
+        "startTime": "8:35",
+        "endTime": "9:00"
+      },
+      {
+        "id": "",
+        "title": "Session 6: Shared Task Q&A",
+        "speakers": "Gosse Bouma, Filip Ginter, Johannes Heinecke, Han He, Mark Anderson, Maria Simi, Xinyu Wang, Adam Ek, James Barry, Daniel Hershcovich, Stefan Grünewald",
+        "type": "LIVE DISCUSSION",
+        "date": "09-Jul",
+        "startTime": "9:10",
+        "endTime": "10:00"
+      }
+  ],
+  "W7":[
+    {
+      "id": "",
+      "title": "Opening Remarks",
+      "speakers": "Beata Beigman Klebanov, Ekatarina Shutova",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "6:00 AM",
+      "endTime": "6:05 AM"
+    },
+    {
+      "id": 53,
+      "title": "A Report on the 2020 Sarcasm Detection Shared Task",
+      "speakers": "Debanjan Ghosh, Avijit Vajpayee and Smaranda Muresan",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "6:05 AM",
+      "endTime": "6:17 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "6:17 AM",
+      "endTime": "6:20 AM"
+    },
+    {
+      "id": 22,
+      "title": "Augmenting Data for Sarcasm Detection with Unlabeled Conversation Context",
+      "speakers": "Hankyol Lee, Youngjae Yu and Gunhee Kim",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "6:20 AM",
+      "endTime": "6:32 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "6:32 AM",
+      "endTime": "6:35 AM"
+    },
+    {
+      "id": 52,
+      "title": "A Report on the 2020 VUA and TOEFL Metaphor Detection Shared Task",
+      "speakers": "Chee Wee (Ben) Leong, Beata Beigman Klebanov, Chris Hamill, Egon Stemle, Rutuja Ubale and Xianyang Chen",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "6:35 AM",
+      "endTime": "6:47 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "6:47 AM",
+      "endTime": "6:50 AM"
+    },
+    {
+      "id": 17,
+      "title": "DeepMet: A Reading Comprehension Paradigm for Token-level Metaphor Detection",
+      "speakers": "Chuandong Su, Fumiyo Fukumoto, Xiaoxi Huang, Jiyi Li, Rongbo Wang and Zhiqun Chen",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "6:50 AM",
+      "endTime": "7:02 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "7:02 AM",
+      "endTime": "7:05 AM"
+    },
+    {
+      "id": 11,
+      "title": "Context-Driven Satirical News Generation",
+      "speakers": "Zachary Horvitz, Nam Do and Michael L. Littman",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "7:05 AM",
+      "endTime": "7:17 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "7:17 AM",
+      "endTime": "7:20 AM"
+    },
+    {
+      "id": "",
+      "title": "Coffee Break",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "7:20 AM",
+      "endTime": "7:40 AM"
+    },
+    {
+      "id": 19,
+      "title": "Sarcasm Detection using Context Separators in Online Discourse",
+      "speakers": "TANVI DADU and Kartikey Pant",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "7:40 AM",
+      "endTime": "7:45 AM"
+    },
+    {
+      "id": 23,
+      "title": "Sarcasm Detection in Tweets with BERT and GloVe Embeddings",
+      "speakers": "Akshay Khatri and Pranav P",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "7:45 AM",
+      "endTime": "7:50 AM"
+    },
+    {
+      "id": 25,
+      "title": "C-Net: Contextual Network for Sarcasm Detection",
+      "speakers": "Amit Kumar Jena, Aman Sinha and Rohit Agarwal",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "7:50 AM",
+      "endTime": "7:55 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "7:55 AM",
+      "endTime": "8:00 AM"
+    },
+    {
+      "id": 30,
+      "title": "Applying Transformers and Aspect-based Sentiment Analysis approaches on Sarcasm Detection",
+      "speakers": "Taha Shangipour ataei, Soroush Javdan and Behrouz Minaei-Bidgoli",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "8:00 AM",
+      "endTime": "8:05 AM"
+    },
+    {
+      "id": 34,
+      "title": "Sarcasm Identification and Detection in Conversion Context using BERT",
+      "speakers": "kalaivani A and Thenmozhi D",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "8:05 AM",
+      "endTime": "8:10 AM"
+    },
+    {
+      "id": 36,
+      "title": "Neural Sarcasm Detection using Conversation Context",
+      "speakers": "Nikhil Jaiswal",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "8:10 AM",
+      "endTime": "8:15 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "8:15 AM",
+      "endTime": "8:20 AM"
+    },
+    {
+      "id": "",
+      "title": "Coffee Break",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "8:20 AM",
+      "endTime": "8:40 AM"
+    },
+    {
+      "id": 37,
+      "title": "Context-Aware Sarcasm Detection Using BERT",
+      "speakers": "Arup Baruah, Kaushik Das, Ferdous Barbhuiya and Kuntal Dey",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "8:40 AM",
+      "endTime": "8:45 AM"
+    },
+    {
+      "id": 38,
+      "title": "Transformers on Sarcasm Detection with Context",
+      "speakers": "Amardeep Kumar and Vivek Anand",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "8:45 AM",
+      "endTime": "8:50 AM"
+    },
+    {
+      "id": 39,
+      "title": "A Novel Hierarchical BERT Architecture for Sarcasm Detection",
+      "speakers": "Himani Srivastava, Vaibhav Varshney, Surabhi Kumari and Saurabh Srivastava",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "8:50 AM",
+      "endTime": "8:55 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "8:55 AM",
+      "endTime": "9:00 AM"
+    },
+    {
+      "id": 43,
+      "title": "{D}etecting {S}arcasm in {C}onversation {C}ontext {U}sing {T}ransformer-{B}ased {M}odels",
+      "speakers": "Adithya Avvaru, Sanath Vobilisetty and Radhika Mamidi",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:05 AM"
+    },
+    {
+      "id": 31,
+      "title": "Using Conceptual Norms for Metaphor Detection",
+      "speakers": "Mingyu WAN, Kathleen Ahrens, Emmanuele Chersoni, Menghan Jiang, Qi Su, Rong Xiang and Chu-Ren Huang",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "9:05 AM",
+      "endTime": "9:10 AM"
+    },
+    {
+      "id": 32,
+      "title": "ALBERT-BiLSTM for Sequential Metaphor Detection",
+      "speakers": "Shuqun Li, Jingjie Zeng, Jinhui Zhang, Tao Peng, Liang Yang and Hongfei Lin",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "9:10 AM",
+      "endTime": "9:15 AM"
+    },
+    {
+      "id": 33,
+      "title": "Character aware models with similarity learning for metaphor detection",
+      "speakers": "Tarun Kumar and Yashvardhan Sharma",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "9:15 AM",
+      "endTime": "9:20 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "9:20 AM",
+      "endTime": "9:30 AM"
+    },
+    {
+      "id": "",
+      "title": "",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "",
+      "endTime": ""
+    },
+    {
+      "id": 24,
+      "title": "Sky + Fire = Sunset. Exploring Parallels between Visually Grounded Metaphors and Image Classifiers",
+      "speakers": "Yuri Bizzoni and Simon Dobnik",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:00 AM",
+      "endTime": "10:12 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "10:12 AM",
+      "endTime": "10:15 AM"
+    },
+    {
+      "id": 44,
+      "title": "Recognizing Euphemisms and Dysphemisms Using Sentiment Analysis",
+      "speakers": "Christian Felt and Ellen Riloff",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:15 AM",
+      "endTime": "10:27 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "10:27 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": 8,
+      "title": "IlliniMet: Illinois System for Metaphor Detection with Contextual and Linguistic Information",
+      "speakers": "Hongyu Gong, Kshitij Gupta, Akriti Jain and Suma Bhat",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:30 AM",
+      "endTime": "10:35 AM"
+    },
+    {
+      "id": 10,
+      "title": "Adaptation of Word-Level Benchmark Datasets for Relation-Level Metaphor Identification",
+      "speakers": "Omnia Zayed, John Philip McCrae and Paul Buitelaar",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:35 AM",
+      "endTime": "10:40 AM"
+    },
+    {
+      "id": 14,
+      "title": "Generating Ethnographic Models from Communities’ Online Data",
+      "speakers": "Tomek Strzalkowski, Anna Newheiser, Nathan Kemper, Ning Sa, Bharvee Acharya and Gregorios Katsios",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:40 AM",
+      "endTime": "10:45 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "10:45 AM",
+      "endTime": "10:50 AM"
+    },
+    {
+      "id": 15,
+      "title": "Oxymorons: a preliminary corpus investigation",
+      "speakers": "Marta La Pietra and Francesca Masini",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:50 AM",
+      "endTime": "10:55 AM"
+    },
+    {
+      "id": 20,
+      "title": "Can Humor Prediction Datasets be used for Humor Generation? Humorous Headline Generation via Style Transfer",
+      "speakers": "Orion Weller, Nancy Fulda and Kevin Seppi",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:55 AM",
+      "endTime": "11:00 AM"
+    },
+    {
+      "id": 21,
+      "title": "Evaluating a Bi-LSTM Model for Metaphor Detection in TOEFL Essays",
+      "speakers": "Kevin Kuo and Marine Carpuat",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "11:00 AM",
+      "endTime": "11:05 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "11:05 AM",
+      "endTime": "11:10 AM"
+    },
+    {
+      "id": "",
+      "title": "Coffee Break",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "11:10 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": 26,
+      "title": "Neural Metaphor Detection with a Residual biLSTM-CRF Model",
+      "speakers": "Andrés Torres Rivera, Antoni Oliver, Salvador Climent and Marta Coll-Florit",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "11:35 AM"
+    },
+    {
+      "id": 35,
+      "title": "Augmenting Neural Metaphor Detection with Concreteness",
+      "speakers": "Ghadi Alnafesah, Harish Tayyar Madabushi and Mark Lee",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "11:35 AM",
+      "endTime": "11:40 AM"
+    },
+    {
+      "id": 40,
+      "title": "Supervised Disambiguation of German Verbal Idioms with a BiLSTM Architecture",
+      "speakers": "Rafael Ehren, Timm Lichte, Laura Kallmeyer and Jakub Waszczuk",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "11:40 AM",
+      "endTime": "11:45 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "11:45 AM",
+      "endTime": "11:50 AM"
+    },
+    {
+      "id": 41,
+      "title": "Metaphor Detection using Context and Concreteness",
+      "speakers": "Rowan Hall Maudslay, Tiago Pimentel, Ryan Cotterell and Simone Teufel",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "11:50 AM",
+      "endTime": "11:55 AM"
+    },
+    {
+      "id": 42,
+      "title": "Being neighbourly: Neural metaphor identification in discourse",
+      "speakers": "Verna Dankers, Karan Malhotra, Gaurav Kudva, Volodymyr Medentsiy and Ekaterina Shutova",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "11:55 PM",
+      "endTime": "12:00 PM"
+    },
+    {
+      "id": 47,
+      "title": "Go Figure! Multi-task transformer-based architecture for metaphor detection using idioms: ETS team in 2020 metaphor shared task",
+      "speakers": "Xianyang Chen, Chee Wee (Ben) Leong, Michael Flor and Beata Beigman Klebanov",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "12:00 PM",
+      "endTime": "12:05 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "12:05 PM",
+      "endTime": "12:10 PM"
+    },
+    {
+      "id": 48,
+      "title": "Metaphor Detection using Ensembles of Bidirectional Recurrent Neural Networks",
+      "speakers": "Jennifer Brooks and Abdou Youssef",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "12:10 PM",
+      "endTime": "12:15 PM"
+    },
+    {
+      "id": 49,
+      "title": "Metaphor Detection Using Contextual Word Embeddings From Transformers",
+      "speakers": "Jerry Liu, Nathan O'Hara, Alexander Rubin, Rachel Draelos and Cynthia Rudin",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "12:15 PM",
+      "endTime": "12:20 PM"
+    },
+    {
+      "id": 51,
+      "title": "Testing the role of metadata in metaphor identification",
+      "speakers": "Egon Stemle and Alexander Onysko",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "12:20 PM",
+      "endTime": "12:25 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "12:25 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Coffee Break",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "12:30 PM",
+      "endTime": "12:50 PM"
+    },
+    {
+      "id": 18,
+      "title": "Sarcasm Detection Using an Ensemble Approach",
+      "speakers": "Jens Lemmens, Ben Burtenshaw, Ehsan Lotfi, Ilia Markov and Walter Daelemans",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "12:50 PM",
+      "endTime": "12:55 PM"
+    },
+    {
+      "id": 46,
+      "title": "A Transformer Approach to Contextual Sarcasm Detection in Twitter",
+      "speakers": "Hunter Gregory, Steven Li, Pouya Mohammadi, Natalie Tarn, Rachel Draelos and Cynthia Rudin",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "12:55 PM",
+      "endTime": "1:00 PM"
+    },
+    {
+      "id": 50,
+      "title": "Transformer-based Context-aware Sarcasm Detection in Conversation Threads from Social Media",
+      "speakers": "Xiangjue Dong, Changmao Li and Jinho D. Choi",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "1:00 PM",
+      "endTime": "1:05 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "1:05 PM",
+      "endTime": "1:10 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing Discussion",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "1:10 PM",
+      "endTime": "1:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Invited talk: Generating Expressive Language by Mining User Reviews",
+      "speakers": "Marilyn Walker",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "2:00 PM",
+      "endTime": "3:00 PM"
+    }
+  ],
+  "W8":[
+    {
+      "id": "",
+      "title": "Opening Remarks",
+      "speakers": "",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "8:15 AM",
+      "endTime": "8:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Presentation Q&A, session one",
+      "speakers": "Script Induction as Association Rule Mining\nAnton Belyy and Benjamin Van Durme\n\nCompRes: A Dataset for Narrative Structure in News\nEffi Levi, Guy Mor, Shaul Shenhav and Tamir Sheafer\n\nNew Insights into Cross-Document Event Coreference: Systematic Comparison and a Simplified Approach\nAndres Cremisini and Mark Finlayson\n\nSystematic Evaluation of a Framework for Unsupervised Emotion Recognition for Narrative Text\nSamira Zad and Mark Finlayson\n\nEmotion Arcs of Student Narratives\nSwapna Somasundaran, Xianyang Chen and Michael Flor\n\nExploring the Effect of Author and Reader Identity in Online Story Writing: the STORIESINTHEWILD Corpus.\nTal August, Maarten Sap, Elizabeth Clark, Katharina Reinecke and Noah A. Smith\n\nFrustratingly Hard Evidence Retrieval for QA Over Books\nXiangyang Mou, Mo Yu, Bingsheng Yao, Chenghao Yang, Xiaoxiao Guo, Saloni Potdar and Hui Su\n\nAnnotating and quantifying narrative time disruptions in modernist and hypertext fiction\nEdward Kearns\n\nExtracting Message Sequence Charts from Hindi Narrative Text\nSwapnil Hingmire, Nitin Ramrakhiyani, Avinash Kumar Singh, Sangameshwar Patil, Girish Palshikar, Pushpak Bhattacharyya and Vasudeva Varma",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "9:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Invited Speaker Panel A",
+      "speakers": "Toward Narrative Summarization of Simulated Battles\nAndrew S. Gordon, Institute for Creative Technologies, University of Southern California\n\nLIGHT: Language in Games with Humans and Text\nAngela Fan, INRIA Nancy and Facebook AI Research Paris\n\nToward Narrative NLP: The Utility of Adapting Models to the Narrative Case\nMark A. Finlayson, Eminent Scholar Chaired Assistant Professor of Computer Science, Florida International University\n\nHow is fiction predictable?\nTed Underwood, Associate Professor of English, University of Illinois, Urbana-Champaign",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "9:30 AM",
+      "endTime": "11:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Annotation Exercise",
+      "speakers": "The Language of COVID-19: Narrative, Event and Storyline Understanding",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "12:00 PM",
+      "endTime": "1:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Invited Speaker Panel B",
+      "speakers": "Summarization of Stories and Events\nKathleen McKeown, Henry and Gertrude Rothschild Professor of Computer Science, Columbia University\n\nVideo Analysis for Event Understanding\nAlexander G. Hauptmann, Language Technologies Institute, Carnegie Mellon University\n\nAffective Events and Narrative Understanding\nEllen Riloff, Professor of Computer Science, University of Utah",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "2:30 PM",
+      "endTime": "4:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Presentation Q&A, session two",
+      "speakers": "Automatic extraction of personal events from dialogue\nJoshua Eisenberg and Michael Sheriff\n\nBringing Stories Alive: Generating Interactive Fiction Worlds\nPrithviraj Ammanabrolu, Wesley Cheung, Dan Tu, William Broniec and Mark Riedl\n\nExtensively Matching for Few-shot Learning Event Detection\nViet Dac Lai, Thien Huu Nguyen and Frank Dernoncourt\n\nExploring aspects of similarity between spoken personal narratives by disentangling them into narrative clause types\nBelen Saldias and Deb Roy\n\nDetecting and understanding moral biases in news\nUsman Shahid, Barbara Di Eugenio, Andrew Rojecki and Elena Zheleva\n\nImproving the Identification of the Discourse Function of News Article Paragraphs\nDeya Banisakher, W. Victor Yarlott, Mohammed Aldawsari, Naphtali Rishe and Mark Finlayson\n\nScreenplay Quality Assessment: Can We Predict Who Gets Nominated?\nMing-Chang Chiu, Tiantian Feng, Xiang Ren and Shrikanth Narayanan\n\nExtracting Message Sequence Charts from Hindi Narrative Text\nSwapnil Hingmire, Nitin Ramrakhiyani, Avinash Kumar Singh, Sangameshwar Patil, Girish Palshikar, Pushpak Bhattacharyya and Vasudeva Varma\n\nOn-The-Fly Information Retrieval Augmentation for Language Models\nHai Wang and David McAlleste",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "4:00 PM",
+      "endTime": "5:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing Remarks",
+      "speakers": "Joel Tetreault, Dataminr",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "5:00 PM",
+      "endTime": "5:15 PM"
+    }
+  ],
+  "W9":[
+    {
+      "id": "",
+      "title": "Opening Remarks",
+      "speakers": "Workshop Organizers",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "8:20 AM",
+      "endTime": "8:25 AM"
+    },
+    {
+      "id": "",
+      "title": "Grounding Natural Language to 3D",
+      "speakers": "Angel Chang",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "8:25 AM",
+      "endTime": "9:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Live QA",
+      "speakers": "Angel Chang",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:10 AM"
+    },
+    {
+      "id": "W905",
+      "title": "Challenges in Evaluating Vision and Language Tasks",
+      "speakers": "Lucia Specia",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "9:10 AM",
+      "endTime": "9:45 AM"
+    },
+    {
+      "id": "W905",
+      "title": "Live QA",
+      "speakers": "Lucia Specia",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "9:45 AM",
+      "endTime": "9:55 AM"
+    },
+    {
+      "id": "W903",
+      "title": "Multimodal AI: Understanding Human Behaviors",
+      "speakers": "Louis-Philippe Morency",
+      "type": "LIVE PRESENTATION",
+      "date": "9 Jul",
+      "startTime": "9:55 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": "W903",
+      "title": "Live QA",
+      "speakers": "Louis-Philippe Morency",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "10:30 AM",
+      "endTime": "10:40 AM"
+    },
+    {
+      "id": "W901",
+      "title": "Robot Control in Situated Instruction Following",
+      "speakers": "Yoav Artzi",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "10:50 AM",
+      "endTime": "11:25 AM"
+    },
+    {
+      "id": "W901",
+      "title": "Live QA",
+      "speakers": "Yoav Artzi",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "11:25 AM",
+      "endTime": "11:35 AM"
+    },
+    {
+      "id": "",
+      "title": "VMT Challenge",
+      "speakers": "Xin Wang",
+      "type": "LIVE PRESENTATION",
+      "date": "9 Jul",
+      "startTime": "11:35 AM",
+      "endTime": "11:45 AM"
+    },
+    {
+      "id": "",
+      "title": "VMT Challenge Talk",
+      "speakers": "VMT Challenge Winners",
+      "type": "LIVE PRESENTATION",
+      "date": "9 Jul",
+      "startTime": "11:45 AM",
+      "endTime": "12:10 PM"
+    },
+    {
+      "id": "",
+      "title": "VMT Live QA",
+      "speakers": "VMT Challenge Winners",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "12:10 PM",
+      "endTime": "12:20 PM"
+    },
+    {
+      "id": "W906",
+      "title": "Augment Machine Intelligence with Multimodal Information",
+      "speakers": "Zhou Yu",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "1:30 PM",
+      "endTime": "2:05 PM"
+    },
+    {
+      "id": "W906",
+      "title": "Live QA",
+      "speakers": "Zhou Yu",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "2:05 PM",
+      "endTime": "2:15 PM"
+    },
+    {
+      "id": "W904",
+      "title": "Dungeons and DQNs: Grounding Language in Shared Experience",
+      "speakers": "Mark Riedl",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "2:15 PM",
+      "endTime": "2:50 PM"
+    },
+    {
+      "id": "W904",
+      "title": "Live QA",
+      "speakers": "Mark Riedl",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "2:50 PM",
+      "endTime": "3:00 PM"
+    },
+    {
+      "id": "",
+      "title": "REVERIE Challenge",
+      "speakers": "Yuankai Qi",
+      "type": "LIVE PRESENTATION",
+      "date": "9 Jul",
+      "startTime": "3:00 PM",
+      "endTime": "3:15 PM"
+    },
+    {
+      "id": "",
+      "title": "REVERIE Challenge Talk",
+      "speakers": "REVERIE Challenge Winners",
+      "type": "LIVE PRESENTATION",
+      "date": "9 Jul",
+      "startTime": "3:15 PM",
+      "endTime": "3:35 PM"
+    },
+    {
+      "id": "",
+      "title": "REVIERE Live QA",
+      "speakers": "REVERIE Challenge Winners",
+      "type": "LIVE PRESENTATION",
+      "date": "9 Jul",
+      "startTime": "3:35 PM",
+      "endTime": "3:45 PM"
+    },
+    {
+      "id": "W902",
+      "title": "Vision+Language Research: Self-supervised Learning, Adversarial Training,\nMultimodal Inference and Explainability",
+      "speakers": "Jingjing (JJ) Liu",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "4:00 PM",
+      "endTime": "4:35 PM"
+    },
+    {
+      "id": "W902",
+      "title": "Live QA",
+      "speakers": "Jingjing (JJ) Liu",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "4:35 PM",
+      "endTime": "4:45 PM"
+    },
+    {
+      "id": 16,
+      "title": "On the role of effective and Referring questions in GuessWhat!?",
+      "speakers": "Mauricio Mazuecos",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "4:45 PM",
+      "endTime": "4:50 PM"
+    },
+    {
+      "id": 2,
+      "title": "Extending ImageNet to Arabic using Arabic WordNet",
+      "speakers": "Extending ImageNet to Arabic using Arabic WordNet",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "4:50 PM",
+      "endTime": "4:55 PM"
+    },
+    {
+      "id": 6,
+      "title": "Toward General Scene Graph: Integration of Visual Semantic Knowledge with Entity Synset Alignment",
+      "speakers": "Woo Suk Choi",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "4:55 PM",
+      "endTime": "5:00 PM"
+    },
+    {
+      "id": 22,
+      "title": "Latent Alignment of Procedural Concepts in Multimodal Recipes",
+      "speakers": "Hossein Faghihi",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "5:00 PM",
+      "endTime": "5:05 PM"
+    },
+    {
+      "id": 15,
+      "title": "Visual Question Generation from Radiology Images",
+      "speakers": "Mourad Sarrouti",
+      "type": "PRE-RECORDED",
+      "date": "9 Jul",
+      "startTime": "5:05 PM",
+      "endTime": "5:10 PM"
+    },
+    {
+      "id": "",
+      "title": "Poster Session and QA",
+      "speakers": "All Participants",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "5:10 PM",
+      "endTime": "5:45 PM"
+    }
+  ],
+  "W10":[
+    {
+      "id": "",
+      "title": "Session 1 - Welcome and Opening Remarks",
+      "speakers": "",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "1:00 AM",
+      "endTime": "1:15 AM"
+    },
+    {
+      "id": "",
+      "title": "Poster Session 1",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "1:15 AM",
+      "endTime": "2:45 AM"
+    },
+    {
+      "id": "",
+      "title": "Session 2 - Welcome and Opening Remarks",
+      "speakers": "",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "7:00 AM",
+      "endTime": "7:15 AM"
+    },
+    {
+      "id": "",
+      "title": "Invited talk Q&A",
+      "speakers": "Ellie Pavlick",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "7:15 AM",
+      "endTime": "7:45 AM"
+    },
+    {
+      "id": "",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "7:45 AM",
+      "endTime": "8:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Invited talk Q&A",
+      "speakers": "Evelina Fedorenko",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "8:00 AM",
+      "endTime": "8:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Poster Session 2",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "10:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Session 3 - Welcome and Opening Remarks",
+      "speakers": "",
+      "type": "LIVE INTRO",
+      "date": "9 Jul",
+      "startTime": "5:00 PM",
+      "endTime": "5:15 PM"
+    },
+    {
+      "id": "",
+      "title": "Invited talk Q&A",
+      "speakers": "Kristina Toutanova",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "5:15 PM",
+      "endTime": "5:45 PM"
+    },
+    {
+      "id": "",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "9 Jul",
+      "startTime": "5:45 PM",
+      "endTime": "6:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Invited talk Q&A",
+      "speakers": "Mike Lewis",
+      "type": "LIVE DISCUSSION",
+      "date": "9 Jul",
+      "startTime": "6:00 PM",
+      "endTime": "6:30 PM"
+    }
+  ],
+  "W11":[
+    {
+      "id": "",
+      "title": "Opening Remarks",
+      "speakers": "Ahmed Awadallah, Yu Su, Huan Sun, Scot Yih",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "8:15 AM",
+      "endTime": "8:30 AM"
+    },
+    {
+      "id": "W1101",
+      "title": "Situated Human-Machine Communication",
+      "speakers": "Joyce Y. Chai",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "9:15 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Joyce Y. Chai",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "9:15 AM",
+      "endTime": "9:30 AM"
+    },
+    {
+      "id": "W1106",
+      "title": "On the Path to Billion Skills: Turning Documents into Actions",
+      "speakers": "Imed Zitouni",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:30 AM",
+      "endTime": "10:15 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Imed Zitouni",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:15 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "10:30 AM",
+      "endTime": "10:45 AM"
+    },
+    {
+      "id": 6,
+      "title": "Answering Complex Questions by Combining Information from Curated and Extracted Knowledge Bases",
+      "speakers": "Nikita Bhutani, Xinyi Zheng, Kun Qian, Yunyao Li and H. Jagadish",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:45 AM",
+      "endTime": "10:55 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Nikita Bhutani, Xinyi Zheng, Kun Qian, Yunyao Li and H. Jagadish",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:55 AM",
+      "endTime": "11:00 AM"
+    },
+    {
+      "id": 10,
+      "title": "Unnatural Language Processing: Bridging the Gap Between Synthetic and Natural Language Data",
+      "speakers": "Alana Marzoev, Samuel Madden, M. Frans Kaashoek, Michael Cafarella and Jacob Andreas",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:00 AM",
+      "endTime": "11:10 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Alana Marzoev, Samuel Madden, M. Frans Kaashoek, Michael Cafarella and Jacob Andreas",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:10 AM",
+      "endTime": "11:15 AM"
+    },
+    {
+      "id": 2,
+      "title": "Towards Reversal-Based Textual Data Augmentation for NLI Problems with Opposable Classes",
+      "speakers": "Alexey Tarasov",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:15 AM",
+      "endTime": "11:25 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Alexey Tarasov",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:25 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": "W1103",
+      "title": "Let's Build an Open Programmable Virtual Assistant with Privacy",
+      "speakers": "Monica Lam",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "12:15 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Monica Lam",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "12:15 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "12:30 PM",
+      "endTime": "1:30 PM"
+    },
+    {
+      "id": "W1104",
+      "title": "Reflections on Semantic Parsing and Learning from Users",
+      "speakers": "Percy Liang",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "1:30 PM",
+      "endTime": "2:15 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Percy Liang",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:15 PM",
+      "endTime": "2:30 PM"
+    },
+    {
+      "id": 9,
+      "title": "Examination and Extension of Strategies for Improving Personalized Language Modeling via Interpolation",
+      "speakers": "Liqun Shao, Sahitya Mantravadi, Tom Manzini, Alejandro Buendia, Manon Knoertzer, Soundar Srinivasan and Chris Quirk",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:30 PM",
+      "endTime": "2:40 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Liqun Shao, Sahitya Mantravadi, Tom Manzini, Alejandro Buendia, Manon Knoertzer, Soundar Srinivasan and Chris Quirk",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:40 PM",
+      "endTime": "2:45 PM"
+    },
+    {
+      "id": 8,
+      "title": "A Multi-Modal Agent that Learns Concepts and Conditionals from Natural Language and Demonstrations",
+      "speakers": "Toby Jia-Jun Li, Marissa Radensky, Justin Jia, Kirielle Singarajah, Tom Mitchell and Brad Myers",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:45 PM",
+      "endTime": "2:55 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Toby Jia-Jun Li, Marissa Radensky, Justin Jia, Kirielle Singarajah, Tom Mitchell and Brad Myers",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:55 PM",
+      "endTime": "3:00 PM"
+    },
+    {
+      "id": 7,
+      "title": "Efficient Deployment of Conversational Natural Language Interfaces over Databases",
+      "speakers": "Anthony Colas, Trung Bui, Franck Dernoncourt, Moumita Sinha and Doo Soon Kim",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:00 PM",
+      "endTime": "3:10 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Anthony Colas, Trung Bui, Franck Dernoncourt, Moumita Sinha and Doo Soon Kim",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:10 PM",
+      "endTime": "3:15 PM"
+    },
+    {
+      "id": 4,
+      "title": "Neural Multi-task Text Normalization and Sanitization with Pointer-Generator",
+      "speakers": "Hoang Nguyen and Sandro Cavallari",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:15 PM",
+      "endTime": "3:25 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Hoang Nguyen and Sandro Cavallari",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:25 PM",
+      "endTime": "3:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "3:30 PM",
+      "endTime": "3:45 PM"
+    },
+    {
+      "id": "W1102",
+      "title": "Natural Language In A Database Management System",
+      "speakers": "H V Jagadish",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "3:45 PM",
+      "endTime": "4:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "H V Jagadish",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "4:30 PM",
+      "endTime": "4:45 PM"
+    },
+    {
+      "id": "W1105",
+      "title": "Denoising Sequence-to-Sequence Pre-training",
+      "speakers": "Luke Zettlemoyer",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "4:45 PM",
+      "endTime": "5:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "Luke Zettlemoyer",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "5:30 PM",
+      "endTime": "5:45 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing remarks",
+      "speakers": "Ahmed Awadallah, Yu Su, Huan Sun, Scot Yih",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "5:45 PM",
+      "endTime": "5:50 PM"
+    }
+  ],
+  "W12":[
+    {
+      "id": "W1202",
+      "title": "Findings of the Efficiency Task",
+      "speakers": "Kenneth Heafield",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "9:00 AM"
+    },
+    {
+      "id": "W1203",
+      "title": "Findings of the STAPLE Task",
+      "speakers": "Stephen Mayhew",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:40 AM"
+    },
+    {
+      "id": "W1204",
+      "title": "Live invited talk: Generating Long Form Text from Long Form Document Input",
+      "speakers": "Claire Gardent",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "9:45 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": "W1205",
+      "title": "Live Q&A",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "10:30 AM",
+      "endTime": "10:45 AM"
+    },
+    {
+      "id": "W1206",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "10:45 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": "W1207",
+      "title": "Live invited talk: On Analysing and Generating Faithful Text",
+      "speakers": "Shashi Narayan",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "12:15 PM"
+    },
+    {
+      "id": "",
+      "title": "Live Q&A",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "12:15 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Video of best paper talk: Meta-Learning for Few-Shot NMT Adaptation",
+      "speakers": "Amr Sharaf, Hany Hassan and Hal Daumé III ",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "12:30 PM",
+      "endTime": "12:40 PM"
+    },
+    {
+      "id": "",
+      "title": "Live Best Paper Prize giving and Q&A",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "12:40 PM",
+      "endTime": "12:50 PM"
+    },
+    {
+      "id": "",
+      "title": "Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "12:50 PM",
+      "endTime": "1:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Live paper presentation session",
+      "speakers": "Parallel sessions with prerecorded 5-10 min videos and live chat for each paper (Please visit 'External Website' for RockectChat links to each paper).",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "1:30 PM",
+      "endTime": "3:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Live invited talk: Text Generation by Offline Reinforcement Learning",
+      "speakers": "He He",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "3:00 PM",
+      "endTime": "3:45 PM"
+    },
+    {
+      "id": "",
+      "title": "Live Q&A",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "3:45 PM",
+      "endTime": "4:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Live invited talk: Multilingual Denoising Pre-training for Neural Machine Translation",
+      "speakers": "Jiatao Gu",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "4:00 PM",
+      "endTime": "4:45 PM"
+    },
+    {
+      "id": "",
+      "title": "Live Q&A",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "4:45 PM",
+      "endTime": "5:00 PM"
+    }
+  ],
+  "W15":[
+    {
+      "id": "W1506",
+      "title": "Opening",
+      "speakers": "Parminder Bhatia",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:15 AM"
+    },
+    {
+      "id": "W1501",
+      "title": "NLPMC",
+      "speakers": "Tanuj Gupta",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:15 AM",
+      "endTime": "9:50 AM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Tanuj Gupta",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "9:50 AM",
+      "endTime": "10:00 AM"
+    },
+    {
+      "id": 11,
+      "title": "Methods for Extracting Information from Messages from Primary Care Providers to Specialists",
+      "speakers": "Xiyu Ding",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:00 AM",
+      "endTime": "10:12 AM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Xiyu Ding",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:12 AM",
+      "endTime": "10:15 AM"
+    },
+    {
+      "id": 18,
+      "title": "Towards Understanding ASR Error Correction for Medical Conversations",
+      "speakers": "Anirudh Mani",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:15 AM",
+      "endTime": "10:27 AM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Anirudh Mani",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:27 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": "W1505",
+      "title": "NLPMC",
+      "speakers": "Anitha Kannan",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:00 AM",
+      "endTime": "11:35 AM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Anitha Kannan",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:35 AM",
+      "endTime": "11:45 AM"
+    },
+    {
+      "id": "W1504",
+      "title": "NLPMC",
+      "speakers": "Steven Bedrick",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:45 AM",
+      "endTime": "12:20 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Steven Bedrick",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "12:20 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "W1509",
+      "title": "Medical Conversations: Challenges and Future",
+      "speakers": "Zachary Lipton",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "1:00 PM",
+      "endTime": "1:25 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Zachary Lipton",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "1:25 PM",
+      "endTime": "1:30 PM"
+    },
+    {
+      "id": "W1503",
+      "title": "NLPMC",
+      "speakers": "Judy Chang",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "1:30 PM",
+      "endTime": "2:05 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Judy Chang",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:05 PM",
+      "endTime": "2:15 PM"
+    },
+    {
+      "id": 7,
+      "title": "Studying Challenges in Medical Conversation with Structured Annotation",
+      "speakers": "Nan Wang",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:15 PM",
+      "endTime": "2:27 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Nan Wang",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:27 PM",
+      "endTime": "2:30 PM"
+    },
+    {
+      "id": 6,
+      "title": "Generating Medical Reports from Patient-Doctor Conversations Using Sequence-to-Sequence Models",
+      "speakers": "Seppo Enarvi",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:30 PM",
+      "endTime": "2:42 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Seppo Enarvi",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:42 PM",
+      "endTime": "2:45 PM"
+    },
+    {
+      "id": 3,
+      "title": "Towards an Ontology-based Medication Conversational Agent for PrEP and PEP",
+      "speakers": "Muhammad (Tuan) Amith",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:45 PM",
+      "endTime": "2:57 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Muhammad (Tuan) Amith",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:57 PM",
+      "endTime": "3:00 PM"
+    },
+    {
+      "id": 5,
+      "title": "Heart Failure Education of African American and Hispanic/Latino Patients: Data Collection and Analysis",
+      "speakers": "Itika Gupta",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:00 PM",
+      "endTime": "3:12 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Itika Gupta",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:12 PM",
+      "endTime": "3:15 PM"
+    },
+    {
+      "id": 14,
+      "title": "On the Utility of Audiovisual Dialog Technologies and Signal Analytics for Real-time Remote Monitoring of Depression Biomarkers",
+      "speakers": "Oliver Roesler",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:15 PM",
+      "endTime": "3:27 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Oliver Roesler",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:27 PM",
+      "endTime": "3:30 PM"
+    },
+    {
+      "id": "W1502",
+      "title": "NLPMC",
+      "speakers": "Adam Miner",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "4:00 PM",
+      "endTime": "4:35 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Adam Miner",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "4:35 PM",
+      "endTime": "4:45 PM"
+    },
+    {
+      "id": "W1508",
+      "title": "Dragon Ambient eXperience",
+      "speakers": "Guido Gallopyn",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "4:45 PM",
+      "endTime": "5:10 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Guido Gallopyn",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "5:10 PM",
+      "endTime": "5:15 PM"
+    },
+    {
+      "id": 12,
+      "title": "Robust Prediction of Punctuation and Truecasing for Medical ASR",
+      "speakers": "Monica Sunkara",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "5:15 PM",
+      "endTime": "5:27 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Monica Sunkara",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "5:27 PM",
+      "endTime": "5:30 PM"
+    },
+    {
+      "id": 19,
+      "title": "Topic-Based Measures of Conversation for Detecting Mild CognitiveImpairment",
+      "speakers": "Liu Chen",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "5:30 PM",
+      "endTime": "5:42 PM"
+    },
+    {
+      "id": "",
+      "title": "QA",
+      "speakers": "Liu Chen",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "5:42 PM",
+      "endTime": "5:45 PM"
+    },
+    {
+      "id": "W1507",
+      "title": "Closing",
+      "speakers": "Parminder Bhatia",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "5:45 PM",
+      "endTime": "6:00 PM"
+    }
+  ],
+  "W16":[
+    {
+      "id": "",
+      "title": "Opening ECNLP - East",
+      "speakers": "Ido Guy",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "5:30 AM",
+      "endTime": "5:40 AM"
+    },
+    {
+      "id": 2,
+      "title": "Paper 2- Bootstrapping Named Entity Recognition in E-Commerce with Positive Unlabeled Learning",
+      "speakers": "Hanchu Zhang",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "5:40 AM",
+      "endTime": "6:00 AM"
+    },
+    {
+      "id": 5,
+      "title": "Paper 5 - Semi-supervised Category-specific Review Tagging on Indonesian E-Commerce Product Reviews",
+      "speakers": "Meng Sun",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "6:00 AM",
+      "endTime": "6:20 AM"
+    },
+    {
+      "id": 9,
+      "title": "Paper 9 - Using Large Pretrained Language Models for Answering User Queries from Product Specifications",
+      "speakers": "Kalyani Roy",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "6:20 AM",
+      "endTime": "6:40 AM"
+    },
+    {
+      "id": 12,
+      "title": "Paper 12 - On Application of Bayesian Parametric and Non-parametric Methods for User Cohorting in Product Search",
+      "speakers": "Shashank Gupta",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "6:40 AM",
+      "endTime": "7:00 AM"
+    },
+    {
+      "id": 15,
+      "title": "Paper 15 - Semi-Supervised Iterative Approach for Domain-Specific Complaint Detection in Social Media",
+      "speakers": "Akash Kumar Gautam",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:00 AM",
+      "endTime": "7:20 AM"
+    },
+    {
+      "id": 17,
+      "title": "Paper  17 - Item-based Collaborative Filtering with BERT",
+      "speakers": "Yuyangzi Fu, Tian Wang",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "7:20 AM",
+      "endTime": "7:40 AM"
+    },
+    {
+      "id": 13,
+      "title": "Paper 13 - Deep Hierarchical Classification for Category Prediction in E-commerce System",
+      "speakers": "Dehong Gao",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "7:40 AM",
+      "endTime": "8:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Paper WWW 1 - Effective Identification of Distinctive Wordmarks",
+      "speakers": "Sujatha Das Gollapalli",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "8:00 AM",
+      "endTime": "8:20 AM"
+    },
+    {
+      "id": "",
+      "title": "Coffee Break",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "8:20 AM",
+      "endTime": "9:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Open ECNLP",
+      "speakers": "chairs",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:10 AM"
+    },
+    {
+      "id": 3,
+      "title": "Paper 3 - Deep Learning-based Online Alternative Product Recommendations at Scale",
+      "speakers": "Mingming Guo",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:10 AM",
+      "endTime": "9:30 AM"
+    },
+    {
+      "id": 6,
+      "title": "Paper 6 - How to Grow a (Product) Tree: Personalized Category Suggestions for eCommerce Type-Ahead",
+      "speakers": "Bingqing Yu",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "9:30 AM",
+      "endTime": "9:50 AM"
+    },
+    {
+      "id": "",
+      "title": "Keynote 1",
+      "speakers": "Julian McAuley",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "9:50 AM",
+      "endTime": "10:40 AM"
+    },
+    {
+      "id": "",
+      "title": "Coffee Break",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "",
+      "endTime": ""
+    },
+    {
+      "id": "",
+      "title": "Keynote 2",
+      "speakers": "Heng Ji",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "11:00 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Paper WWW 2 - Study on Price Consistency regarding Pack Size via Product Variant Retrieval and Pack Size Extraction",
+      "speakers": "Yang Liu",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "11:50 AM"
+    },
+    {
+      "id": 8,
+      "title": "Paper 8 - A Deep Learning System for Sentiment Analysis of Service Calls",
+      "speakers": "Yanan Jia",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:50 AM",
+      "endTime": "12:10 PM"
+    },
+    {
+      "id": 16,
+      "title": "Paper 16 - Improving Intent Classification in an E-commerce Voice Assistant by Using Inter-Utterance Context",
+      "speakers": "Arpit Sharma",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "12:10 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Lunch",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "",
+      "endTime": ""
+    },
+    {
+      "id": 18,
+      "title": "Paper 18 - Simster{Q}: {A} Similarity based Clustering Approach to Opinion Question Answering",
+      "speakers": "Aishwarya Ashok",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "13:30 PM",
+      "endTime": "13:50 PM"
+    },
+    {
+      "id": 21,
+      "title": "Paper 21- e-Commerce and Sentiment Analysis: Predicting Outcomes of Class Action Lawsuits",
+      "speakers": "Stacey Taylor",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "13:50 PM",
+      "endTime": "14:10 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing ECNLP",
+      "speakers": "chairs",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "14:10 PM",
+      "endTime": "14:15 PM"
+    }
+  ],
+  "W13":[
+    {
+      "id": "",
+      "title": "Opening Remarks",
+      "speakers": "BEA Organizers",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "6:00 AM",
+      "endTime": "6:10 AM"
+    },
+    {
+      "id": 7,
+      "title": "Linguistic Features for Readability Assessment",
+      "speakers": "Tovly Deutsch (Masoud Jasbi and Stuart Shieber)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "6:10 AM",
+      "endTime": "6:30 AM"
+    },
+    {
+      "id": 8,
+      "title": "Using PRMSE to evaluate automated scoring systems in the presence of label noise",
+      "speakers": "Anastassia Loukina (Nitin Madnani, Aoife Cahill, Lili Yao, Matthew S. Johnson, Brian Riordan, Daniel F. McCaffrey)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "6:30 AM",
+      "endTime": "6:50 AM"
+    },
+    {
+      "id": 28,
+      "title": "Multiple Instance Learning for Content Feedback Localization without Annotation",
+      "speakers": "Scott Hellman (William Murray, Adam Wiemerslage, Mark Rosenstein, Peter Foltz, Lee Becker, Marcia Derr)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "6:50 AM",
+      "endTime": "7:10 AM"
+    },
+    {
+      "id": 31,
+      "title": "Complementary Systems for Off-topic Spoken Response Detection",
+      "speakers": "Vatsal Raina (Mark Gales, Kate Knill)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:10 AM",
+      "endTime": "7:30 AM"
+    },
+    {
+      "id": "",
+      "title": "",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "",
+      "endTime": ""
+    },
+    {
+      "id": 18,
+      "title": "CIMA: A Large Open Access Dialogue Dataset for Tutoring",
+      "speakers": "Katherine Stasaski (Kimberly Kao, Marti A. Hearst)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:00 AM",
+      "endTime": "8:10 AM"
+    },
+    {
+      "id": 29,
+      "title": "Becoming Linguistically Mature: Modeling English and German Children’s Writing Development Across School Grades",
+      "speakers": "Elma Kerz (Yu Qiao, Daniel Wiechmann and Marcus Ströbel)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:10 AM",
+      "endTime": "8:20 AM"
+    },
+    {
+      "id": 20,
+      "title": "Annotation and Classification of Evidence and Reasoning Revisions in Argumentative Writing",
+      "speakers": "Tazin Afrin (Elaine Lin Wang, Diane Litman, Lindsay Clare Matsumura, Richard Correnti)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:20 AM",
+      "endTime": "8:30 AM"
+    },
+    {
+      "id": 35,
+      "title": "Can Neural Networks Automatically Score Essay Traits?",
+      "speakers": "Sandeep Mathias (Pushpak Bhattacharyya)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "8:40 AM"
+    },
+    {
+      "id": 22,
+      "title": "Tracking the Evolution of Written Language Competence in L2 Spanish Learners",
+      "speakers": "Alessio Miaschi (Sam Davidson, Dominique Brunato, Felice Dell'Orletta, Kenji Sagae, Claudia Helena Sanchez-Gutierrez, Giulia Venturi)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:40 AM",
+      "endTime": "8:50 AM"
+    },
+    {
+      "id": 44,
+      "title": "Distractor Analysis and Selection for Multiple-Choice Cloze Questions for Second-Language Learners",
+      "speakers": "Lingyu Gao (Kevin Gimpel, Arnar Jensson)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:50 AM",
+      "endTime": "9:00 AM"
+    },
+    {
+      "id": 1,
+      "title": "Assisting Undergraduate Students in Writing Spanish Methodology Sections",
+      "speakers": "Samuel González-López (Steven Bethard and Aurelio Lopez-Lopez)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:10 AM"
+    },
+    {
+      "id": "",
+      "title": "",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "",
+      "endTime": ""
+    },
+    {
+      "id": 3,
+      "title": "Applications of Natural Language Processing in Bilingual Language Teaching: An Indonesian-English Case Study",
+      "speakers": "Zara Maxwelll-Smith (Simón González Ochoa, Ben Foley and Hanna Suominen)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:10 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": 36,
+      "title": "An Empirical Investigation of Neural Methods for Content Scoring of Science Explanations",
+      "speakers": "Brian Riordan (Sarah Bichler, Allison Bradford, Jennifer King Chen, Korah Wiley, Libby Gerard and Marcia C. Linn)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:30 AM",
+      "endTime": "10:50 AM"
+    },
+    {
+      "id": 19,
+      "title": "An Exploratory Study of Argumentative Writing by Young Students: A transformer-based Approach",
+      "speakers": "Debanjan Ghosh (Beata Beigman Klebanov and Yi Song)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:50 AM",
+      "endTime": "11:10 AM"
+    },
+    {
+      "id": 32,
+      "title": "Should You Fine-Tune BERT for Automated Essay Scoring?",
+      "speakers": "Elijah Mayfield (Alan W Black)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:10 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": "",
+      "title": "",
+      "speakers": "",
+      "type": "",
+      "date": "",
+      "startTime": "",
+      "endTime": ""
+    },
+    {
+      "id": 9,
+      "title": "GECToR – Grammatical Error Correction: Tag, Not Rewrite",
+      "speakers": "Kostiantyn Omelianchuk (Vitaliy Atrasevych, Artem Chernodub and Oleksandr Skurzhanskyi)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:00 PM",
+      "endTime": "12:10 PM"
+    },
+    {
+      "id": 51,
+      "title": "Interpreting Neural CWI Classifiers’ Weights as Vocabulary Size",
+      "speakers": "Yo Ehara",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:10 PM",
+      "endTime": "12:20 PM"
+    },
+    {
+      "id": 50,
+      "title": "Automated Scoring of Clinical Expressive Language Evaluation Tasks",
+      "speakers": "Yiyi Wang (Emily Prud'hommeaux, Meysam Asgari, Jill Dolata)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:20 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": 40,
+      "title": "Context-based Automated Scoring of Complex Mathematical Responses",
+      "speakers": "Aoife Cahill, James H Fife, Brian Riordan, Avijit Vajpayee and Dmytro Galochkin.",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:30 PM",
+      "endTime": "12:40 PM"
+    },
+    {
+      "id": 41,
+      "title": "Predicting the Difficulty and Response Time of Multiple Choice Questions Using Transfer Learning",
+      "speakers": "Kang Xue (Victoria Yaneva, Christopher Runyon and Peter Baldwin)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:40 PM",
+      "endTime": "12:50 PM"
+    },
+    {
+      "id": 42,
+      "title": "A Comparative Study of Synthetic Data Generation Methods for Grammatical Error Correction",
+      "speakers": "Max White (Alla Rozovskaya)",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:50 PM",
+      "endTime": "1:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Modeling Individual Differences in Second-Language Reading Skill using Language Experience, Executive Attention, and Cross-Linguistic Interactions",
+      "speakers": "Brianna L. Yamasaki",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "1:00 PM",
+      "endTime": "1:20 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing Remarks",
+      "speakers": "BEA Organizers",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "1:20 PM",
+      "endTime": "1:30 PM"
+    }
+  ],
+  "W14":[
+    {
+      "id": "",
+      "title": "Opening Comments",
+      "speakers": "SIGMORPHON Organizers",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "8:25 AM",
+      "endTime": "8:30 AM"
+    },
+    {
+      "id": "W1401",
+      "title": "On Understanding Character-level Models for Representing Morphology",
+      "speakers": "Clara Vania",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "9:20 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "9:20 AM",
+      "endTime": "9:30 AM"
+    },
+    {
+      "id": "W1402",
+      "title": "Recursive Schemes for Phonological Analysis",
+      "speakers": "Jane Chandlee",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:30 AM",
+      "endTime": "10:20 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:20 AM",
+      "endTime": "10:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Morning Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "10:30 AM",
+      "endTime": "10:45 AM"
+    },
+    {
+      "id": "ST0",
+      "title": "SIGMORPHON 2020 Shared Task 0: Typologically Diverse Morphological Inflection",
+      "speakers": "Ekaterina Vylomova",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:45 AM",
+      "endTime": "11:00 AM"
+    },
+    {
+      "id": "ST1",
+      "title": "The SIGMORPHON 2020 Shared Task on Multilingual Grapheme-to-Phoneme Conversion",
+      "speakers": "Kyle Gorman",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:00 AM",
+      "endTime": "11:15 AM"
+    },
+    {
+      "id": "ST2",
+      "title": "The SIGMORPHON 2020 Shared Task on Unsupervised Morphological Paradigm Completion",
+      "speakers": "Katharina Kann",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:15 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": "",
+      "title": "Shared Task Poster Session",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Lunch",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "12:30 PM",
+      "endTime": "2:00 PM"
+    },
+    {
+      "id": 7,
+      "title": "Transliteration for Cross-Lingual Morphological Inflection",
+      "speakers": "Nikitha Murikinati",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:00 PM",
+      "endTime": "2:08 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:08 PM",
+      "endTime": "2:10 PM"
+    },
+    {
+      "id": 11,
+      "title": "Evaluating Neural Morphological Taggers for Sanskrit",
+      "speakers": "Ashim Gupta",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:11 PM",
+      "endTime": "2:19 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:19 PM",
+      "endTime": "2:21 PM"
+    },
+    {
+      "id": 14,
+      "title": "Getting the ##life out of living: How Adequate Are Word-Pieces for Modelling Complex Morphology?",
+      "speakers": "Stav Klein",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:22 PM",
+      "endTime": "2:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:30 PM",
+      "endTime": "2:32 PM"
+    },
+    {
+      "id": 3,
+      "title": "Induced Inflection-Set Keyword Search in Speech",
+      "speakers": "Oliver Adams",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:33 PM",
+      "endTime": "2:41 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:41 PM",
+      "endTime": "2:43 PM"
+    },
+    {
+      "id": 2,
+      "title": "Representation Learning for Discovering Phonemic Tone Contours",
+      "speakers": "Bai Li",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:44 PM",
+      "endTime": "2:52 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:52 PM",
+      "endTime": "2:54 PM"
+    },
+    {
+      "id": 6,
+      "title": "Joint learning of constraint weights and gradient inputs in Gradient Symbolic Computation with constrained optimization",
+      "speakers": "Max Nelson",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:55 PM",
+      "endTime": "3:03 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:03 PM",
+      "endTime": "3:05 PM"
+    },
+    {
+      "id": 13,
+      "title": "In search of isoglosses: continuous and discrete language embeddings in Slavic historical phonology",
+      "speakers": "Chundra Cathcart",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:06 PM",
+      "endTime": "3:16 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:16 PM",
+      "endTime": "3:18 PM"
+    },
+    {
+      "id": 8,
+      "title": "Multi-Tiered Strictly Local Functions",
+      "speakers": "Phillip Burness",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:18 PM",
+      "endTime": "3:28 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:28 PM",
+      "endTime": "3:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Afternoon Break",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "3:30 PM",
+      "endTime": "4:00 PM"
+    },
+    {
+      "id": "W1403",
+      "title": "Inflectional data science and human/computer-aided linguistic analysis",
+      "speakers": "Robert Malouf",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "4:00 PM",
+      "endTime": "4:50 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "4:50 PM",
+      "endTime": "5:00 PM"
+    },
+    {
+      "id": "W1404",
+      "title": "Modeling failure in morphophonological learning",
+      "speakers": "Bruce Hayes",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "5:00 PM",
+      "endTime": "5:50 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "5:50 PM",
+      "endTime": "6:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing Statements",
+      "speakers": "SIGMORPHON Organizers",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "6:00 PM",
+      "endTime": "6:05 PM"
+    }
+  ],
+  "W17":[
+    {
+      "id": "W1701",
+      "title": "Openinig",
+      "speakers": "Lun-Wei Ku",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "9:05 AM",
+      "endTime": "9:10 AM"
+    },
+    {
+      "id": "W1702",
+      "title": "Managing Information and Debunking Misinformation in the Time of Covid-19",
+      "speakers": "Pascale Fung",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:10 AM",
+      "endTime": "10:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:00 AM",
+      "endTime": "10:10 AM"
+    },
+    {
+      "id": 6,
+      "title": "Enhancing Bias Detection in Political News using Pragmatic Presupposition",
+      "speakers": "Lalitha Kameswari",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:50 AM",
+      "endTime": "11:08 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:08 AM",
+      "endTime": "11:10 AM"
+    },
+    {
+      "id": 13,
+      "title": "Demoting Racial Bias in Hate Speech Detection",
+      "speakers": "Mengzhou Xia",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:10 AM",
+      "endTime": "11:28 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:28 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": 19,
+      "title": "NARMADA: Need and Available Resource Managing Assistant for Disasters and Adversities",
+      "speakers": "Sayan Sinha",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "11:48 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:48 AM",
+      "endTime": "11:50 AM"
+    },
+    {
+      "id": 18,
+      "title": "BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection",
+      "speakers": "Jihyung Moon",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "11:50 AM",
+      "endTime": "12:08 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "12:08 PM",
+      "endTime": "12:10 PM"
+    },
+    {
+      "id": 7,
+      "title": "Stance Prediction for Contemporary Issues: Data and Experiments",
+      "speakers": "Marjan Hosseinia",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:10 PM",
+      "endTime": "12:28 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "12:28 PM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": "W1703",
+      "title": "EmotionGIF Challenge",
+      "speakers": "Boaz Shmueli",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "2:00 PM",
+      "endTime": "2:15 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:15 PM",
+      "endTime": "2:20 PM"
+    },
+    {
+      "id": "",
+      "title": "Participants Flash",
+      "speakers": "",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "2:20 PM",
+      "endTime": "3:00 PM"
+    },
+    {
+      "id": 1,
+      "title": "Challenges in Emotion Style Transfer: An Exploration with a Lexical Substitution Pipeline",
+      "speakers": "David Helbig",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:30 PM",
+      "endTime": "3:48 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "3:48 PM",
+      "endTime": "3:50 PM"
+    },
+    {
+      "id": 2,
+      "title": "Incorporating Uncertain Segmentation Information into Chinese NER for Social Media Text",
+      "speakers": "Shengbin Jia",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:50 PM",
+      "endTime": "4:08 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "4:08 PM",
+      "endTime": "4:10 PM"
+    },
+    {
+      "id": 15,
+      "title": "Multi-Task Supervised Pretraining for Neural Domain Adaptation",
+      "speakers": "Sara Meftah",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "4:10 PM",
+      "endTime": "4:28 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "4:28 PM",
+      "endTime": "4:30 PM"
+    },
+    {
+      "id": "W1704",
+      "title": "Closing",
+      "speakers": "Lun-Wei Ku",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "4:30 PM",
+      "endTime": "4:35 PM"
+    }
+  ],
+  "W18":[
+    {
+      "id": "",
+      "title": "Opening Remarks",
+      "speakers": "Hua Wu",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "7:20 AM",
+      "endTime": "7:30 AM"
+    },
+    {
+      "id": "W1805",
+      "title": "Research stories from Google Translate’s Transcribe Mode",
+      "speakers": "Colin Cherry",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:30 AM",
+      "endTime": "8:00 AM"
+    },
+    {
+      "id": "W1802",
+      "title": "Human Interpreter Training and Practice: Insights for Simultaneous Machine Translation Research",
+      "speakers": "Barry Slaughter Olsen",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:00 AM",
+      "endTime": "8:30 AM"
+    },
+    {
+      "id": "W1804",
+      "title": "Evaluating Human-Computer Simultaneous Interpretation",
+      "speakers": "Jordan Boyd-Graber",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "8:30 AM",
+      "endTime": "9:00 AM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "9:00 AM",
+      "endTime": "9:30 AM"
+    },
+    {
+      "id": 6,
+      "title": "Dynamic Sentence Boundary Detection for Simultaneous Translation",
+      "speakers": "Ruiqing Zhang",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:00 PM",
+      "endTime": "3:10 PM"
+    },
+    {
+      "id": 7,
+      "title": "End-to-End Speech Translation with Adversarial Training",
+      "speakers": "Xuancai Li",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:10 PM",
+      "endTime": "3:20 PM"
+    },
+    {
+      "id": 4,
+      "title": "Robust Neural Machine Translation with ASR Errors",
+      "speakers": "Haiyang Xue",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:20 PM",
+      "endTime": "3:30 PM"
+    },
+    {
+      "id": 2,
+      "title": "Improving Autoregressive NMT with Non-Autoregressive Model",
+      "speakers": "Long Zhou",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:30 PM",
+      "endTime": "3:40 PM"
+    },
+    {
+      "id": 9,
+      "title": "Modeling Discourse Structure for Document-level Neural Machine Translation",
+      "speakers": "Junxuan Chen",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:40 PM",
+      "endTime": "3:50 PM"
+    },
+    {
+      "id": 5,
+      "title": "BIT’s system for the AutoSimTrans 2020",
+      "speakers": "Minqin Li",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "3:50 PM",
+      "endTime": "4:00 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "4:00 PM",
+      "endTime": "4:10 PM"
+    },
+    {
+      "id": "W1801",
+      "title": "Baidu Simultaneous Translation: Research and Applications",
+      "speakers": "Hua Wu",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "4:20 PM",
+      "endTime": "4:50 PM"
+    },
+    {
+      "id": "W1806",
+      "title": "Machine-aided simultaneous interpreting: An experiment",
+      "speakers": "Kay-Fan Cheung",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "4:50 PM",
+      "endTime": "5:20 PM"
+    },
+    {
+      "id": "W1803",
+      "title": "Research and Practice of Simultaneous Machine Translation in Huawei Noah's Ark Lab",
+      "speakers": "Qun Liu",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "5:20 PM",
+      "endTime": "5:50 PM"
+    },
+    {
+      "id": "",
+      "title": "Q&A",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "5:50 PM",
+      "endTime": "6:20 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing Remarks",
+      "speakers": "",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "6:20 PM",
+      "endTime": "6:30 PM"
+    }
+  ],
+  "W19":[
+    {
+      "id": "W1901",
+      "title": "Opening Remarks",
+      "speakers": "Amir Zadeh",
+      "type": "LIVE INTRO",
+      "date": "10 Jul",
+      "startTime": "6:00 AM",
+      "endTime": "6:10 AM"
+    },
+    {
+      "id": 1,
+      "title": "Keynote for Second Grand-Challenge and Workshop on Multimodal Language",
+      "speakers": "Ruslan Salakhutdinov",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "6:10 AM",
+      "endTime": "6:50 AM"
+    },
+    {
+      "id": "",
+      "title": "QA For Keynote Ruslan Salakhutdinov",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "6:50 AM",
+      "endTime": "7:05 AM"
+    },
+    {
+      "id": 10,
+      "title": "AI Sensing for Robotics using Deep Learning based Visual and Language Modeling",
+      "speakers": "yuvaram singh",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:05 AM",
+      "endTime": "7:20 AM"
+    },
+    {
+      "id": 12,
+      "title": "Multilogue-Net: A Context-Aware RNN for Multi-modal Emotion Detection and Sentiment Analysis in Conversation",
+      "speakers": "Aman Shenoy",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:20 AM",
+      "endTime": "7:35 AM"
+    },
+    {
+      "id": 13,
+      "title": "A Multi-modal Approach to Fine-grained Opinion Mining on Video Reviews",
+      "speakers": "Edison Marrese-Taylor",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:35 AM",
+      "endTime": "7:50 AM"
+    },
+    {
+      "id": 14,
+      "title": "Leveraging Multimodal Behavioral Analytics for Automated Job Interview Performance Assessment and Feedback",
+      "speakers": "Anumeha Agrawal",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "7:50 AM",
+      "endTime": "8:05 AM"
+    },
+    {
+      "id": "",
+      "title": "QA Session 1 - Yuvaram, Aman, Edison, Anumeha",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "8:05 AM",
+      "endTime": "8:25 AM"
+    },
+    {
+      "id": "",
+      "title": "Break 1",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "8:25 AM",
+      "endTime": "8:40 AM"
+    },
+    {
+      "id": 2,
+      "title": "Keynote for Second Grand-Challenge and Workshop on Multimodal Language",
+      "speakers": "Rada Mihalcea",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "8:40 AM",
+      "endTime": "9:20 AM"
+    },
+    {
+      "id": "",
+      "title": "QA For Keynote Rada Mihalcea",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "9:20 AM",
+      "endTime": "9:35 AM"
+    },
+    {
+      "id": 15,
+      "title": "Exploring Weaknesses of {VQA} Models through Attribution Driven Insights",
+      "speakers": "Shaunak Halbe",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:35 AM",
+      "endTime": "9:50 AM"
+    },
+    {
+      "id": 18,
+      "title": "Unsupervised Online Grounding of Natural Language during Human-Robot Interactions",
+      "speakers": "Oliver Roesler",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "9:50 AM",
+      "endTime": "10:05 AM"
+    },
+    {
+      "id": 19,
+      "title": "A Transformer-based joint-encoding for Emotion Recognition and Sentiment Analysis",
+      "speakers": "Jean-Benoit Delbrouck",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:05 AM",
+      "endTime": "10:20 AM"
+    },
+    {
+      "id": "",
+      "title": "QA Session 2 - Shaunak, Oliver, Jean-Benoit",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "10:20 AM",
+      "endTime": "10:35 AM"
+    },
+    {
+      "id": "",
+      "title": "Break 2",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "10:35 AM",
+      "endTime": "10:50 AM"
+    },
+    {
+      "id": 3,
+      "title": "Keynote for Second Grand-Challenge and Workshop on Multimodal Language",
+      "speakers": "Yejin Choi",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "10:50 AM",
+      "endTime": "11:30 AM"
+    },
+    {
+      "id": "",
+      "title": "QA For Keynote Yejin Choi",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "11:30 AM",
+      "endTime": "11:45 AM"
+    },
+    {
+      "id": "",
+      "title": "Break 3",
+      "speakers": "",
+      "type": "",
+      "date": "10 Jul",
+      "startTime": "11:45 AM",
+      "endTime": "12:30 PM"
+    },
+    {
+      "id": 20,
+      "title": "Low Rank Fusion based Transformers for Multimodal Sequences",
+      "speakers": "Saurav Sahay",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:30 PM",
+      "endTime": "12:45 PM"
+    },
+    {
+      "id": 21,
+      "title": "Audio-Visual Understanding of Passenger Intents for In-Cabin Conversational Agents",
+      "speakers": "Eda Okur",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "12:45 PM",
+      "endTime": "1:00 PM"
+    },
+    {
+      "id": 16,
+      "title": "Cross-Modal Data Programming Enables Rapid Medical Machine Learning",
+      "speakers": "Jared Dunnmon",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "1:00 PM",
+      "endTime": "1:15 PM"
+    },
+    {
+      "id": 17,
+      "title": "What Gives the Answer Away? Question Answering Bias Analysis on Video QA Datasets",
+      "speakers": "Jed Yang",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "1:15 PM",
+      "endTime": "1:30 PM"
+    },
+    {
+      "id": "",
+      "title": "QA Session 3 - Saurav, Eda, Jared, Jed",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "1:30 PM",
+      "endTime": "1:45 PM"
+    },
+    {
+      "id": 4,
+      "title": "Keynote for Second Grand-Challenge and Workshop on Multimodal Language",
+      "speakers": "M. Ehsan Hoque",
+      "type": "PRE-RECORDED",
+      "date": "10 Jul",
+      "startTime": "1:45 PM",
+      "endTime": "2:25 PM"
+    },
+    {
+      "id": "",
+      "title": "QA For Keynote Ehsan Hoque",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "10 Jul",
+      "startTime": "2:25 PM",
+      "endTime": "2:40 PM"
+    },
+    {
+      "id": "W1902",
+      "title": "Closing Remarks",
+      "speakers": "Amir Zadeh",
+      "type": "LIVE PRESENTATION",
+      "date": "10 Jul",
+      "startTime": "2:40 PM",
+      "endTime": "2:50 PM"
+    }
+  ],
+  "W20":[
+    {
+      "id": "",
+      "title": "Welcome & Intro to the workshop",
+      "speakers": "",
+      "type": "LIVE INTRO",
+      "date": "July 09",
+      "startTime": "5:30 PM",
+      "endTime": "5:35 PM"
+    },
+    {
+      "id": 1,
+      "title": "CORD-19: The COVID-19 Open Research Dataset",
+      "speakers": "Lucy Lu Wang, Kyle Lo, Yoganand Chandrasekhar, Russell Reas, Jiangjiang Yang, Doug Burdick, Darrin Eidedarrine, Kathryn Funk, Yannis Katsis, Rodney Kinney, Yunyao Li, Ziyang Liu, William Merrill, Paul Mooney, Dewey Murdick, Devvret Rishi, Jerry Sheehan, Zhihong Shenzhihosh, Brandon Stilson, Alex Wade, Kuansan Wang, Nancy Xin Ru Wang, Chris Wilhelm, Boya Xie, Douglas Raymond, Daniel S Weld, Oren Etzioni, Sebastian Kohlmeier",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "5:35 PM",
+      "endTime": "5:45 PM"
+    },
+    {
+      "id": 2,
+      "title": "Rapidly Deploying a Neural Search Engine for the COVID-19 Open Research Dataset: Preliminary Thoughts and Lessons Learned",
+      "speakers": "Edwin Zhang, Nikhil Gupta, Rodrigo Nogueira, Kyunghyun Cho, Jimmy Lin",
+      "type": "PRE-RECORDED",
+      "date": "July 09",
+      "startTime": "5:45 PM",
+      "endTime": "5:55 PM"
+    },
+    {
+      "id": 3,
+      "title": "Document Classification for COVID-19 Literature",
+      "speakers": "Bernal Jimenez Gutierrez, Juncheng Zeng, Dongdong Zhang, Ping Zhang, Yu Su",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "5:55 PM",
+      "endTime": "6:05 PM"
+    },
+    {
+      "id": 4,
+      "title": "Enabling Low-Resource Transfer Learning across COVID-19 Corpora by Combining Event-Extraction and Co-Training",
+      "speakers": "Alexander Spangher, Nanyun Peng, Jonathan May, Emilio Ferrara",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "6:05 PM",
+      "endTime": "6:15 PM"
+    },
+    {
+      "id": 5,
+      "title": "Self-supervised context-aware Covid-19 document exploration through atlas grounding",
+      "speakers": "Dusan Grujicic, Gorjan Radevski, Tinne Tuytelaars, Matthew B. Blaschko",
+      "type": "PRE-RECORDED",
+      "date": "July 09",
+      "startTime": "6:15 PM",
+      "endTime": "6:25 PM"
+    },
+    {
+      "id": 6,
+      "title": "CODA-19: Reliably Annotating Research Aspects on 10,000+ CORD-19 Abstracts Using a Non-Expert Crowd",
+      "speakers": "Ting-Hao (Kenneth) Huang, Chieh-Yang Huang, Chien-Kuang Cornelia Ding, Yen-Chia Hsu, C. Lee Giles",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "6:25 PM",
+      "endTime": "6:35 PM"
+    },
+    {
+      "id": 6.1,
+      "title": "Session 1 Q&A (15 minutes)",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "July 09",
+      "startTime": "6:35 PM",
+      "endTime": "6:45 PM"
+    },
+    {
+      "id": 6.2,
+      "title": "Break (10 minutes)",
+      "speakers": "",
+      "type": "BREAK",
+      "date": "July 09",
+      "startTime": "6:50 PM",
+      "endTime": "7:00 PM"
+    },
+    {
+      "id": 7,
+      "title": "Information Retrieval and Extraction on COVID-19 Clinical Articles Using Graph Community Detection and Bio-BERT Embeddings",
+      "speakers": "Debasmita Das, Yatin Katyal, Janu Verma, Rajesh Kumar Ranjan, Shashank Dubey, Aakash Deep Singh, Sourojit Bhaduri, Kushagra Agarwal",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "7:00 PM",
+      "endTime": "7:10 PM"
+    },
+    {
+      "id": 8,
+      "title": "What Are People Asking About COVID-19? A Question Classification Dataset",
+      "speakers": "Jerry Wei, Chengyu Huang, Soroush Vosoughi, Jason Wei",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "7:10 PM",
+      "endTime": "7:20 PM"
+    },
+    {
+      "id": 9,
+      "title": "Jennifer for COVID-19: An NLP-Powered Chatbot Built for the People and by the People to Combat Misinformation",
+      "speakers": "Yunyao Li, Tyrone Grandison, Patricia Silveyra, Ali Douraghy, Xinyu Guan, Thomas Kieselbach, Chengkai Li, Haiqi Zhang",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "7:20 PM",
+      "endTime": "7:30 PM"
+    },
+    {
+      "id": 10,
+      "title": "A Natural Language Processing System for National COVID-19 Surveillance in the US Department of Veterans Affairs",
+      "speakers": "Alec B Chapman, Kelly S Peterson, Augie Turano, Tamára L Box, Katherine S Wallace, Makoto Jones",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "7:30 PM",
+      "endTime": "7:40 PM"
+    },
+    {
+      "id": 11,
+      "title": "Measuring Emotions in the COVID-19 Real World Worry Dataset",
+      "speakers": "Bennett Kleinberg, Isabelle van der Vegt, Maximilian Mozes",
+      "type": "PRE-RECORDED",
+      "date": "July 09",
+      "startTime": "7:40 PM",
+      "endTime": "7:50 PM"
+    },
+    {
+      "id": 12,
+      "title": "Estimating the effect of COVID-19 on mental health: Linguistic indicators of depression during a global pandemic",
+      "speakers": "JT Wolohan",
+      "type": "PRE-RECORDED",
+      "date": "July 09",
+      "startTime": "7:50 PM",
+      "endTime": "8:00 PM"
+    },
+    {
+      "id": 12.1,
+      "title": "Session 2 Q&A (15 minutes)",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "July 09",
+      "startTime": "8:00 PM",
+      "endTime": "8:15 PM"
+    },
+    {
+      "id": 12.2,
+      "title": "Break (10 minutes)",
+      "speakers": "",
+      "type": "BREAK",
+      "date": "July 09",
+      "startTime": "8:15 PM",
+      "endTime": "8:25 PM"
+    },
+    {
+      "id": 13,
+      "title": "Exploration of Gender Differences in COVID-19 Discourse on Reddit",
+      "speakers": "Jai Aggarwal, Ella Rabinovich, Suzanne Stevenson",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "8:25 PM",
+      "endTime": "8:35 PM"
+    },
+    {
+      "id": 14,
+      "title": "Cross-language sentiment analysis of European Twitter messages during the COVID-19 pandemic",
+      "speakers": "Anna Kruspe, Matthias Haeberle, Xiao Xiang Zhu",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "8:35 PM",
+      "endTime": "8:45 PM"
+    },
+    {
+      "id": 15,
+      "title": "Cross-lingual Transfer Learning for COVID-19 Outbreak Alignment",
+      "speakers": "Sharon Levy, William Yang Wang",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "8:45 PM",
+      "endTime": "8:55 PM"
+    },
+    {
+      "id": 16,
+      "title": "COVID-19 and Arabic Twitter: How can Arab World Governments and Public Health Organizations Learn from Social Media?",
+      "speakers": "Lama Alsudias, Paul Rayson",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "8:55 PM",
+      "endTime": "9:05 PM"
+    },
+    {
+      "id": 17,
+      "title": "NLP-based Feature Extraction for the Detection of COVID-19 Misinformation Videos on YouTube",
+      "speakers": "Juan Carlos Medina Serrano, Orestis Papakyriakopoulos, Simon Hegelich",
+      "type": "LIVE PRESENTATION",
+      "date": "July 09",
+      "startTime": "9:05 PM",
+      "endTime": "9:15 PM"
+    },
+    {
+      "id": 17.1,
+      "title": "Session 3 Q&A (15 minutes)",
+      "speakers": "",
+      "type": "LIVE DISCUSSION",
+      "date": "July 09",
+      "startTime": "9:15 PM",
+      "endTime": "9:30 PM"
+    },
+    {
+      "id": "",
+      "title": "Closing",
+      "speakers": "",
+      "type": "",
+      "date": "July 09",
+      "startTime": "9:30 PM",
+      "endTime": ""
+    }
+  ]
+}

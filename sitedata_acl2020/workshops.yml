@@ -1,0 +1,490 @@
+- abstract: >
+    The Fourth Widening NLP Workshop focuses on efforts to promote and support
+    ideas and voices of underrepresented groups in Natural Language Processing. The
+    2020 iteration of the workshop will, in particular, seek to highlight diversity
+    in scientific background, discipline, training, obtained degrees, and seniority.
+  day: 'July 5'
+  livestream: 38931669
+  website: http://www.winlp.org/winlp-2020-workshop/
+  organizers:
+    - Rossana Cunha
+    - Samira Shaikh
+    - Erika Varis
+    - Ryan Georgi
+    - Antonios Anastasopoulos
+    - Khyathi Raghavi Chandu
+    - Alicia Tsai
+  rocketchat_channel: workshop-1-winlp
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-05_16:00:00
+      end_time: 2020-07-05_23:00:00
+      # zoom_link: https://zoom.us/j/94127596366?pwd=WDIwWjY3ZmgxbGdPbXVKZm5hNUNlZz09
+  title: 'W1: WiNLP 2020 Workshop'
+  UID: W1
+- abstract: >
+    The 17th International Conference on Spoken Language Translation (IWSLT)
+    is an annual scientific conference for the study, development and evaluation of
+    spoken language translation technology: speech-to-text, speech-to-speech translation,
+    simultaneous and consecutive translation, speech dubbing, cross-lingual communication
+    including all multimodal, emotional, para-linguistic, and stylistic aspects and
+    their applications in the field. The conference organizes evaluations and workshop
+    sessions around challenge areas, and presents scientific work and system descriptions.
+  day: 'July 9'
+  # livestream: 38931790
+  livestream: 38931791
+  website: http://www.iwslt.org/doku.php
+  organizers:
+    - Marcello Federico
+    - Alexander Waibel
+    - Jiatao Gu
+    - Kevin Knight
+    - Will Lewis
+    - Satoshi Nakamura
+    - Hermann Ney
+    - Jan Niehues
+    - Sebastian Stüker
+    - Marco Turchi
+  rocketchat_channel: workshop-2-iwslt
+  sessions:
+    - name: W-Live Session 1
+      start_time: 2020-07-09_16:00:00
+      end_time: 2020-07-09_20:30:00
+      # zoom_link: https://zoom.us/j/97408179428?pwd=MW1mam8vSC9ZYm1qRURRSHhtNExUUT09
+    - name: W-Live Session 2
+      start_time: 2020-07-10_00:00:00
+      end_time: 2020-07-10_01:00:00
+      # zoom_link: https://zoom.us/j/97408179428?pwd=MW1mam8vSC9ZYm1qRURRSHhtNExUUT09
+    - name: W-Live Session 3
+      start_time: 2020-07-10_16:00:00
+      end_time: 2020-07-10_17:10:00
+      # zoom_link: https://zoom.us/j/97408179428?pwd=MW1mam8vSC9ZYm1qRURRSHhtNExUUT09
+  title: 'W2: The International Conference on Spoken Language Translation (IWSLT) '
+  UID: W2
+- abstract: >
+    NLP for Conversational AI workshop aims at building a ConvAI community
+    where ideas and latest progresses can be shared freely and openly.
+  day: 'July 9'
+  livestream: 38931792
+  website: https://sites.google.com/view/2ndnlp4convai/home
+  organizers:
+    - Tsung-Hsien Wen
+    - Asli Celikyilmaz
+    - Iñigo Casanueva
+    - Mihail Eric
+    - Anuj Kumar
+    - Alexandros Papangelis
+    - Rushin Shah
+    - Zhou Yu
+  rocketchat_channel: workshop-3-nlp4convai
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-09_13:00:00
+      end_time: 2020-07-09_19:50:00
+      # zoom_link: https://slideslive.zoom.us/j/94679166486
+  title: 'W3: NLP for Conversational Al (NLP4ConvAI)'
+  UID: W3
+- abstract: >
+    NLP can help improve health and BioNLP is the best venue for biomedical
+    & clinical language processing researchers to learn how.
+  day: 'July 9'
+  livestream: 38931793
+  website: https://www.aclweb.org/portal/content/bionlp-2020-workshop-biomedical-natural-language-processing
+  organizers:
+    - Dina Demner-Fushman
+    - Kevin Cohen
+    - Sophia Ananiadou
+    - Jun'ichi Tsujii
+  rocketchat_channel: workshop-4-bionlp
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-09_15:30:00
+      end_time: 2020-07-10_01:00:00
+      # zoom_link: https://zoom.us/j/94184270491?pwd=QUNYSHM4TGRmaWgyeC9MR3dhZ2NUQT09
+  title: 'W4: Workshop on Biomedical Natural Language Processing (BioNLP)'
+  UID: W4
+- abstract: >
+    The Third workshop on Fact Extraction and VERification continues the discussion on fact verification
+    and presents results from ongoing shared tasks.
+  day: 'July 9'
+  livestream: 38931794
+  website: https://fever.ai/
+  organizers:
+    - Christos Christodoulopoulos
+    - James Thorne
+    - Andreas Vlachos
+    - Oana Cocarascu
+    - Arpit Mittal
+  rocketchat_channel: workshop-5-fever
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-09_11:00:00
+      end_time: 2020-07-09_20:50:00
+      # zoom_link: https://zoom.us/j/92558020343?pwd=OERHb2NoS1lCdldieS9idmlIa01CZz09
+  title: 'W5: Fact Extraction and Verification (FEVER)'
+  UID: W5
+- abstract: >
+    The 16th International Conference on Parsing Technologies oriented towards
+    the things related to the analysis of language structure, with a shared task on
+    Multilingual Parsing to Enhanced Universal Dependencies.
+  day: 'July 9'
+  livestream: 38931795
+  website: https://iwpt20.sigparse.org/
+  organizers:
+    - Yuji Matsumoto
+    - Stephan Oepen
+    - Kenji Sagae
+    - Anders Søgaard
+    - Weiwei Sun
+    - Reut Tsarfaty
+  rocketchat_channel: workshop-6-iwpt
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-09_14:00:00
+      end_time: 2020-07-09_17:00:00
+      # zoom_link: https://zoom.us/j/98331713380?pwd=SDdqNEd5cmc1bi9DVzM0T2VZcmorQT09
+  title: 'W6: International Conference on Parsing Technologies (IWPT)'
+  UID: W6
+- abstract: >
+    The 2nd Workshop on Figurative Language Processing aims to discuss computational
+    approaches to figurative language (e.g., metaphors, puns, sarcasm). Shared tasks:
+    one on metaphor and one on sarcasm detection.
+  day: 'July 9'
+  livestream: 38931796
+  website: https://sites.google.com/view/figlang2020/
+  organizers:
+    - Beata Beigman Klebanov
+    - Ekaterina Shutova
+    - Patricia Lichtenstein
+    - Smaranda Muresan
+    - Anna Feldman
+    - Chee Wee (Ben) Leong
+    - Debanjan Ghosh
+  rocketchat_channel: workshop-7-flp
+  sessions:
+    - name: W-Live Session 1
+      start_time: 2020-07-09_13:00:00
+      end_time: 2020-07-09_20:30:00
+      # zoom_link: https://zoom.us/j/92588829409?pwd=bHM3cFd5QjcrN0NmZHVVNzdEem9HQT09
+    - name: W-Live Session 2 (Invited talk by Marilyn Walker)
+      start_time: 2020-07-09_21:00:00
+      end_time: 2020-07-09_22:00:00
+      # zoom_link: https://columbiauniversity.zoom.us/j/97020720427?pwd=R0JmVlk4bTZkMmhsbUN0ZkxZMExtUT09#success
+  title: 'W7: Figurative Language Processing (FLP)'
+  UID: W7
+- abstract: >
+    The 1st Joint Workshop on Narrative Understanding, Storylines, and Events
+    invites researchers in AI/NLP/Vision/DH & beyond to discuss methods/fiction/news/social
+    media.
+  day: 'July 9'
+  livestream: 38931797
+  website: https://sites.google.com/view/nuse
+  organizers:
+    - Claire Bonial
+    - Tommaso Caselli
+    - Snigdha Chaturvedi
+    - Elizabeth Clark
+    - Ruihong Huang
+    - Ben Miller
+    - Mohit Iyyer
+    - Alejandro Jaimes
+    - Heng Ji
+    - Lara Martin
+    - Teruko Mitamura
+    - Nanyun Peng
+    - Joel Tetreault
+  rocketchat_channel: workshop-8-nuse
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-09_15:15:00
+      end_time: 2020-07-10_00:15:00
+      # zoom_link: https://zoom.us/j/98016971488?pwd=Sml3RkVSdWlFSk5tZG5JNUZVaEhVUT09
+  title: 'W8: Narrative Understanding, Storylines, and Events (NUSE)'
+  UID: W8
+- abstract: >
+    Workshop on Advances in Language and Vision Research. Promoting the frontier
+    of language and vision research and bringing researchers together to discuss real-world
+    solutions in this area.
+  day: 'July 9'
+  livestream: 38931798
+  website: https://alvr-workshop.github.io/
+  organizers:
+    - Xin Wang
+    - Jesse Thomason
+    - Ronghang Hu
+    - Xinlei Chen
+    - Peter Anderson
+    - Qi Wu
+    - Asli Celikyilmaz
+    - Jason Baldridge
+    - William Yang Wang
+  rocketchat_channel: workshop-9-alvr
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-09_15:20:00
+      end_time: 2020-07-10_00:10:00
+      # zoom_link: https://slideslive.zoom.us/j/97050705227
+    - name: W-Live Session
+      start_time: 2020-07-10_00:10:00
+      end_time: 2020-07-10_00:45:00
+      # zoom_link: https://berkeley.zoom.us/j/4368174663
+  title: 'W9: Advances in Language and Vision Research (ALVR)'
+  UID: W9
+- abstract: >
+    The 5th Workshop on Representation Learning for NLP is a large workshop
+    on vector space models of meaning, neural networks, spectral methods, with interdisciplinary
+    keynotes, posters, panel.
+  day: 'July 9'
+  livestream: 38931799
+  website: https://sites.google.com/view/repl4nlp2020/home
+  organizers:
+    - Emma Strubell
+    - Spandana Gella
+    - Marek Rei
+    - Johannes Welbl
+    - Fabio Petroni
+    - Patrick Lewis
+    - Hannaneh Hajishirzi
+    - Kyunghyun Cho
+    - Edward Grefenstette
+    - Karl Moritz Hermann
+    - Laura Rimell
+    - Chris Dyer
+    - Isabelle Augenstein
+  rocketchat_channel: workshop-10-repl4nlp
+  sessions:
+    - name: W-Live Session 1
+      start_time: 2020-07-09_08:00:00
+      end_time: 2020-07-09_09:45:00
+      # zoom_link: https://zoom.us/j/95100402006?pwd=WXJpdVpvOEZyYTJWOHIyY1lpMFVSQT09
+    - name: W-Live Session 2
+      start_time: 2020-07-09_14:00:00
+      end_time: 2020-07-09_17:00:00
+      # zoom_link: https://zoom.us/j/95100402006?pwd=WXJpdVpvOEZyYTJWOHIyY1lpMFVSQT09
+    - name: W-Live Session 3
+      start_time: 2020-07-10_00:00:00
+      end_time: 2020-07-10_03:00:00
+      # zoom_link: https://zoom.us/j/95100402006?pwd=WXJpdVpvOEZyYTJWOHIyY1lpMFVSQT09
+  title: 'W10: Representation Learning for NLP (RepL4NLP)'
+  UID: W10
+- abstract: >
+    Natural Language Interfaces: Challenges and Promises. This multidisciplinary
+    workshop retrospectively and prospectively discusses the challenges and promises
+    of natural language interfaces.
+  day: 'July 10'
+  livestream: 38931800
+  website: https://nli-acl2020.github.io/
+  organizers:
+    - Ahmed Hassan Awadallah
+    - Yu Su
+    - Huan Sun
+    - Scott Wen-tau Yih
+  rocketchat_channel: workshop-11-nli
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_15:30:00
+      end_time: 2020-07-11_00:50:00
+      # zoom_link: https://zoom.us/j/97367426114?pwd=T0VRT2NIRWYyZTRWKzJkZW9nL0QyUT09
+  title: 'W11: Natural Language Interfaces (NLI)'
+  UID: W11
+- abstract: >
+    The 4th Workshop on Neural Generation and Translation provides a forum
+    for research in applications of neural models to language generation and translation
+    tasks.
+  day: 'July 10'
+  livestream: 38931801
+  website: https://sites.google.com/view/wngt20/home
+  organizers:
+    - Alexandra Birch
+    - Graham Neubig
+    - Andrew Finch
+    - Hiroaki Hayashi
+    - Kenneth Heafield
+    - Ioannis Konstas
+    - Yusuke Oda
+    - Xian Li
+  rocketchat_channel: workshop-12-wngt
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_15:30:00
+      end_time: 2020-07-11_00:00:00
+      # zoom_link: https://zoom.us/j/98312984000?pwd=WUFCd0FNTDA2NnNGbUt6emlPZlVhQT09
+  title: 'W12: Workshop on Neural Generation and Translation (WNGT)'
+  UID: W12
+- abstract: >
+    The 15th Workshop on Innovative Use of NLP for Building Educational Applications.
+    The BEA Workshop is a leading venue for NLP innovation in educational applications
+    and one of the largest one-day workshops in ACL.
+  day: 'July 10'
+  livestream: 38931802
+  website: https://sig-edu.org/bea/current
+  organizers:
+    - Jill Burstein
+    - Ekaterina Kochmar
+    - Claudia Leacock
+    - Nitin Madnani
+    - Ildikó Pilán
+    - Helen Yannakoudakis
+    - Torsten Zesch
+  rocketchat_channel: workshop-13-bea
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_13:00:00
+      end_time: 2020-07-10_20:30:00
+      # zoom_link: https://zoom.us/j/94613041576?pwd=Mmd0Z1M0aGkzM24xTGRoTGFObWtaQT09
+  title: 'W13: Building Educational Applications (BEA)'
+  UID: W13
+- abstract: >
+    SIGMORPHON brings together researchers interested in applying computational
+    techniques to problems in morphology, phonology, and phonetics.
+  day: 'July 10'
+  livestream: 38931803
+  website: https://sigmorphon.github.io/workshops/2020/
+  organizers:
+    - Garrett Nicolai
+    - Kyle Gorman
+    - Ryan Cotterell
+  rocketchat_channel: workshop-14-sigmorphon
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_15:25:00
+      end_time: 2020-07-11_01:05:00
+      # zoom_link: https://zoom.us/j/94822830379?pwd=WEpTU3c1UGJTNjNhdGFKQzJBRko2QT09
+  title: 'W14: 17th SIGMORPHON Workshop on Computational Research in Phonetics, Phonology, and Morphology'
+  UID: W14
+- abstract: >
+    NLP for Medical Conversations aims to Build the clinical decision support
+    systems as cognitive assistants by bridging the gap between NLP research and medical
+    practice.
+  day: 'July 10'
+  livestream: 38931804
+  website: https://sites.google.com/view/nlp4medicalconversations/home
+  organizers:
+    - Parminder Bhatia
+    - Chaitanya Shivade
+    - Mona Diab
+    - Byron Wallace
+    - Rashmi Gangadharaiah
+    - Nan Du
+    - Izhak Shafran
+    - Steven Lin
+  rocketchat_channel: workshop-15-nlpmc
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_16:00:00
+      end_time: 2020-07-11_01:00:00
+      # zoom_link: https://zoom.us/j/96514648801?pwd=VVducEs3YjBmYWQrdk04S21qSVJndz09
+  title: 'W15: NLP for Medical Conversations (NLPMC)'
+  UID: W15
+- abstract: >
+    The Third Workshop on e-Commerce and NLP focuses on NLP for e-Commerce
+    and online shopping applications. Shared tasks on classification and Question
+    Answering are included.
+  day: 'July 10'
+  livestream: 38931805
+  website: https://sites.google.com/view/ecnlp/acl-2020
+  organizers:
+    - Shervin Malmasi
+    - Eugene Agichtein
+    - Surya Kallumadi
+    - Oleg Rokhlenko
+    - Nicola Ueffing
+    - Ido Guy
+  rocketchat_channel: workshop-16-ecnlp
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_12:30:00
+      end_time: 2020-07-10_21:15:00
+      # zoom_link: https://zoom.us/j/99325519599?pwd=N2JRNkRXdUJoNFBmMWszVzFJTmpJUT09
+  title: 'W16: E-Commerce and NLP (ECNLP)'
+  UID: W16
+- abstract: >
+    The Eighth International Workshop on Natural Language Processing for
+    Social Media (SocialNLP 2020). Check out social NLP tech from experts, researches
+    and applications, plus resources for you to play in challenge EmotionX from SocialNLP!
+  day: 'July 10'
+  livestream: 38931806
+  website: https://sites.google.com/site/socialnlp2020/
+  organizers:
+    - Lun-Wei Ku
+    - Cheng-Te Li
+  rocketchat_channel: workshop-17-socialnlp
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_16:05:00
+      end_time: 2020-07-10_23:35:00
+      # zoom_link: https://zoom.us/j/93846772934?pwd=c29zQkxCNzRsSjYvUkFSd1pDQXoydz09
+  title: 'W17: Natural Language Processing for Social Media (SocialNLP)'
+  UID: W17
+- abstract: >
+    The 1st Workshop on Automatic Simultaneous Translation: challenges, recent
+    advances,and future directions.
+  day: 'July 10'
+  livestream: 38931807
+  website: https://autosimtrans.github.io/
+  organizers:
+    - Hua Wu
+    - Colin Cherry
+    - James Cross
+    - Liang Huang
+    - Zhongjun He
+    - Mark Liberman
+    - Yang Liu
+  rocketchat_channel: workshop-18-autosimtrans
+  sessions:
+    - name: W-Live Session 1
+      start_time: 2020-07-10_14:20:00
+      end_time: 2020-07-10_16:30:00
+      # zoom_link: https://zoom.us/j/98148211958?pwd=UFBoUll3Z2VMb3NyRXVMdlJtSjlBdz09
+    - name: W-Live Session 2
+      start_time: 2020-07-10_22:00:00
+      end_time: 2020-07-11_01:30:00
+      # zoom_link: https://zoom.us/j/98148211958?pwd=UFBoUll3Z2VMb3NyRXVMdlJtSjlBdz09
+  title: 'W18: Automatic Simultaneous Translation (AutoSimTrans)'
+  UID: W18
+- abstract: >
+    The Second Grand-Challenge and Workshop on Human Multimodal Language
+    promotes the growth of modeling multimodal language (language, vision, acoustic)
+    as a fundamental research area in NLP.
+  day: 'July 10'
+  livestream: 38931808
+  website: http://multicomp.cs.cmu.edu/acl2020multimodalworkshop/
+  organizers:
+    - AmirAli Bagher Zadeh
+    - Louis-Philippe Morency
+    - Paul Pu Liang
+    - Soujanya Poria
+    - Ying Shen
+  rocketchat_channel: workshop-19-challenge-hml
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_13:00:00
+      end_time: 2020-07-10_21:40:00
+      # zoom_link: https://zoom.us/j/93889043395?pwd=SWIxNWN4WElmakRFVFlpSG5EWlVYQT09
+  title: 'W19: The Second Grand-Challenge and Workshop on Human Multimodal Language (Challenge-HML)'
+  UID: W19
+- abstract: >
+    NLPCovid invite submissions related to any aspect of natural language
+    processing (NLP) applied to combat the COVID-19 pandemic, in an open, rapid review
+    format that will allow this active and late-breaking research to be shared and
+    discussed.
+  day: 'July 10'
+  livestream: 38931809
+  website: https://www.nlpcovid19workshop.org/
+  organizers:
+    - Karin Verspoor
+    - Kevin Cohen
+    - Mark Dredze
+    - Emilio Ferrara
+    - Jonathan May
+    - Robert Munro
+    - Cecile Paris
+    - Byron Wallace
+  rocketchat_channel: workshop-20-nlpcovid
+  sessions:
+    - name: W-Live Session
+      start_time: 2020-07-10_00:30:00
+      end_time: 2020-07-10_04:30:00
+      # zoom_link: https://zoom.us/j/99553236003?pwd=RklwdmJHNGpqTHNidHJldEE0WFl2QT09
+  title: 'W20: NLP COVID-19 Workshop (NLPCovid)'
+  UID: W20

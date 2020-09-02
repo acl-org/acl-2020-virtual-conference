@@ -1,0 +1,52 @@
+UID,title,speakers,presentation_id
+1,Corpus based Amharic sentiment lexicon generation,"Girma Neshir Alemneh, Andreas Rauber and Solomon Atnafu",38929537
+3,Negation handling for Amharic sentiment classification,"Girma Neshir Alemneh, Andreas Rauber and Solomon Atnafu",38929538
+8,Embedding Oriented Adaptable Semantic Annotation Framework for Amharic Web Documents,Kidane Woldemariyam and Dr. Fekade Getahun,38929539
+9,Similarity and Farness Based Bidirectional Neural Co-Attention for Amharic Natural Language Inference,"Abebaw Eshetu, Getenesh Teshome and Ribka Alemayehu",38929540
+10,"Large Vocabulary Read Speech Corpora for Four Ethiopian Languages: Amharic, Tigrigna, Oromo, and Wolaytta","Solomon Teferra Abate, Martha Yifiru Tachbelie, Michael Melese, Hafte Abera, Tewodros Gebreselassie, Wondwossen Mulugeta, Yaregal Assabie, Million Meshesha Beyene, Solomon Atinafu and Binyam Ephrem Seyoum",38929541
+11,SIMPLEX-PB 2.0: A Reliable Dataset for Lexical Simplification in Brazilian Portuguese,"Nathan Hartmann, Gustavo Henrique Paetzold and Sandra Aluísio",38929542
+12,Token Level Identification of Multiword Expressions Using Contextual Information,REYHANEH HASHEMPOUR and Aline Villavicencio,38929543
+13,Bi-directional Answer-to-Answer Co-attention for Short Answer Grading using Deep Learning,"Abebaw Eshetu, Getenesh Teshome and Ribka Alemahu",38929544
+14,Effective questions in referential visual dialog,"Mauricio Mazuecos, Alberto Testoni, Raffaella Bernardi and Luciana Benotti",38929545
+15,A Translation-Based Approach to Morphology Learning for Low Resource Languages,"Tewodros Gebreselassie, Amanuel Mersha and Michael Gasser",38929546
+16,Monolingual corpus creation and evaluation of truly low-resource languages from Peru,Gina Bustamante and Arturo Oncevay,38929547
+22,Tigrinya Automatic Speech recognition with Morpheme based recognition units,Hafte Abera and sebsibe hailemariam,38929548
+24,Variants of Vector Space Reductions for Predicting the Compositionality of English Noun Compounds,Pegah Alipoormolabashi and Sabine Schulte im Walde,38929549
+25,Targeted Aspect-Based Sentiment Analysis for Ugandan Telecom Reviews from Twitter,David Kabiito and Joyce Nakatumba Nabende,38929550
+28,An Assessment of Language Identification Methods on Tweets and Wikipedia Articles,Pedro Vernetti and Larissa Freitas,38929551
+29,A Comparison of Identification Methods of Brazilian Music Styles by Lyrics,"Patrick Guimarães, Jader Froes, Douglas Costa and Larissa Freitas",38929552
+30,Enabling fast and correct typing in 'Leichte Sprache' (Easy Language),Ina Steinmetz and Karin Harbusch,38929553
+31,"SkillBERT: ""Skilling"" the BERT to classify skills!","Amber Nigam, Shikha Tyagi, Kuldeep Dhakar and Arpan Saxena",38929554
+32,AI4D - African Language Dataset Challenge,Kathleen Siminyu and Sackey Freshia,38929555
+33,Can Wikipedia Categories Improve Masked Language Model Pretraining?,"Diksha Meghwal, Katharina Kann, Iacer Calixto and Stanislaw Jastrzebski",38929556
+34,Adversarial Evaluation of BERT for Biomedical Named Entity Recognition,"Vladimir Araujo, Andrés Carvallo and Denis Parra",38929557
+36,FFR v1.1 : Fon-French Neural Machine Translation,Chris Chinenye Emezue and Femi Pancrace Bonaventure Dossou,38929558
+37,Corpus Development for Indonesian Product Named Entity Recognition using Semi-supervised Approach,Muhammad Akmal and Ade Romadhony,38929559
+38,Classification and Analysis of Neologisms Produced by Learners of Spanish: Effects of Proficiency and Task,Shira Wein,38929560
+39,Developing a Monolingual Sentence Simplification Corpus for Urdu,"Yusra Anees, Sadaf Abdul Rauf, Nauman Iqbal and Abdul Basit Siddiqi",38929561
+40,Personality Trait Detection Using Bagged SVM over BERT Word Embedding Ensembles,"Amirmohammad Kazemeinizadeh, Samin Fatehi, Yash Mehta, Sauleh Eetemadi and Erik Cambria",38929562
+41,Translating Natural Language Instructions for Behavioral Robot Navigation with a Multi-Head Attention Mechanism,"Patricio Cerda-Mardini, Vladimir Araujo and Álvaro Soto",38929563
+42,Towards Mitigating Gender Bias in a decoder-based Neural Machine Translation model by Adding Contextual Information,"Christine Basta, Marta R. Costa-jussà and José A. R. Fonollosa",38929564
+44,Predicting and Analyzing Law-Making in Kenya,Oyinlola Babafemi and Adewale Akinfaderin,38929565
+45,Defining and Evaluating Fair Natural Language Generation,Catherine Yeo and Alyssa Chen,38929566
+46,Political Advertising Dataset: the use case of the Polish 2020 Presidential Elections,"Lukasz Augustyniak, Krzysztof Rajda, Tomasz Kajdanowicz and Michał Bernaczyk",38929567
+47,Towards the First Inuktitut-English Neural Machine Translation,Tan Ngoc Le and Fatiha Sadat,38929568
+49,A Study on the Influence of Architecture Complexity of RNNs for Intent Classification in E-Commerce Chats in Bahasa Indonesia,Renny Pradina Kusumawardani and Muhammad Azzam,38929569
+48,The human unlikeness of neural language models in next-word prediction,Cassandra L. Jacobs and Arya D. McCarthy,38929570
+50,Long-Tail Predictions with Continuous-Output Language Models,Shiran Dudy and Steven Bedrick,38929571
+51,Analyzing the Framing of 2020 Presidential Candidates in the News,Audrey Acken and Dorottya Demszky,38929572
+52,Understanding the Impact of Experiment Design for Evaluating Dialogue System Output,Sashank Santhanam and Samira Shaikh,38929573
+54,Studying The Effect of Emotional and Moral Language on Information Contagion during the Charlottesville Event,Khyati Mahajan and Samira Shaikh,38929574
+55,Mapping of Narrative Text Fields To ICD-10 Codes Using Natural Language Processing and Machine Learning,Risuna Nkolele,38929575
+57,Multitask Models for Controlling the Complexity of Neural Machine Translation,Sweta Agrawal and Marine Carpuat,38929576
+59,Using Social Media For Bitcoin Day Trading Behavior Prediction,Anna Paula Pawlicka Maule and Kristen Johnson,38929577
+60,HausaMT v1.0: Towards English–Hausa Neural Machine Translation,Adewale Akinfaderin,38929578
+61,Outcomes of coming out: Analyzing stories of LGBTQ+,Krithika Ramesh and Tanvi Anand,38929579
+62,An Evaluation of Subword Segmentation Strategies for Neural Machine Translation of Morphologically Rich Languages,"Aquia Richburg, Ramy Eskander, Smaranda Muresan and Marine Carpuat",38929580
+63,Audio-Visual Understanding of Passenger Intents for In-Cabin Conversational Agents,"Eda Okur, Shachi H Kumar, Saurav Sahay and Lama Nachman",38931265
+65,Enhanced Urdu Word Segmentation using Conditional Random Fields and Morphological Context Features,"Aamir Farhan, Mashrukh Islam and Dipti Misra Sharma",38929582
+66,Flexible Neural Text Generation via Insertion and Reordering Operations,Weijia Xu and Marine Carpuat,38929583
+W0101,Keynote,Verena Rieser,38929584
+W0102,Keynote,Rachel Tatman,38929585
+W0103,Keynote,Jose Eduardo Ochoa Luna,38929586
+W0104,Keynote,Helena Caseli,38929587

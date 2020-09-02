@@ -1,0 +1,22 @@
+UID,title,speakers,presentation_id
+7,Linguistic Features for Readability Assessment,"Tovly Deutsch (Masoud Jasbi, Stuart Shieber)",38929846
+8,Using PRMSE to Evaluate Automated Scoring Systems in the Presence Of Label Noise ,"Anastassia Loukina (Nitin Madnani, Aoife Cahill, Lili Yao, Matthew S. Johnson, Brian Riordan, Daniel F. McCaffrey)",38929847
+28,Multiple Instance Learning for Content Feedback Localization without Annotation ,"Scott Hellman (William Murray, Adam Wiemerslage, Mark Rosenstein, Peter Foltz, Lee Becker, Marcia Derr)",38929849
+31,Complementary Systems for Off-topic Spoken Response Detection ,"Vatsal Raina (Mark Gales, Kate Knill)",38929850
+18,CIMA: A Large Open Access Dialogue Dataset for Tutoring ,"Katherine Stasaski (Kimberly Kao, Marti A. Hearst)",38929855
+29,Becoming Linguistically Mature: Modeling English and German Children’s Writing Development Across School Grades ,"Daniel Wiechmann (Elma Kerz, Yu Qiao, Marcus Ströbel)",38929858
+20,Annotation and Classification of Evidence and Reasoning Revisions in Argumentative Writing,"Tazin Afrin (Elaine Lin Wang, Diane Litman, Lindsay Clare Matsumura, Richard Correnti)",38929856
+35,Can Neural Networks Automatically Score Essay Traits? ,Sandeep Mathias (Pushpak Bhattacharyya),38929859
+22,Tracking the Evolution of Written Language Competence in L2 Spanish Learners ,"Alessio Miaschi (Sam Davidson, Dominique Brunato, Felice Dell'Orletta, Kenji Sagae, Claudia Helena Sanchez-Gutierrez, Giulia Venturi)",38929857
+44,Distractor Analysis and Selection for Multiple-Choice Cloze Questions for Second-Language Learners ,"Lingyu Gao (Kevin Gimpel, Arnar Jensson)",38929863
+1,Assisting Undergraduate Students in Writing Spanish Methodology Sections,"Samuel González-López (Steven Bethard, Aurelio Lopez-Lopez)",38929853
+3,Applications of Natural Language Processing in Bilingual Language Teaching: An Indonesian-English Case Study ,"Hanna Suominen (Zara Maxwelll-Smith, Simón González Ochoa, Ben Foley)",38929845
+36,An Empirical Investigation of Neural Methods for Content Scoring of Science Explanations ,"Brian Riordan (Sarah Bichler, Allison Bradford, Jennifer King Chen, Korah Wiley, Libby Gerard, Marcia C. Linn)",38929852
+19,An Exploratory Study of Argumentative Writing by Young Students: A transformer-based Approach ,"Debanjan Ghosh (Beata Beigman Klebanov, Yi Song)",38929848
+32,Should You Fine-Tune BERT for Automated Essay Scoring? ,Elijah Mayfield (Alan W Black),38929851
+9,"GECToR – Grammatical Error Correction: Tag, Not Rewrite ","Kostiantyn Omelianchuk, Vitaliy Atrasevych, Artem Chernodub, Oleksandr Skurzhanskyi",38929854
+51,Interpreting Neural CWI Classifiers' Weights as Vocabulary Size ,Yo Ehara,38929865
+50,Automated Scoring of Clinical Expressive Language Evaluation Tasks ,"Yiyi Wang (Emily Prud'hommeaux, Meysam Asgari, Jill Dolata)",38929864
+40,Context-based Automated Scoring of Complex Mathematical Responses ,"Aoife Cahill (James H Fife, Brian Riordan, Avijit Vajpayee, Dmytro Galochkin)",38929860
+41,Predicting the Difficulty and Response Time of Multiple Choice Questions Using Transfer Learning ,"Victoria Yaneva (Kang Xue, Christopher Runyon, Peter Baldwin)",38929861
+42,A Comparative Study of Synthetic Data Generation Methods for Grammatical Error Correction ,Alla Rozovskaya (Max White),38929862

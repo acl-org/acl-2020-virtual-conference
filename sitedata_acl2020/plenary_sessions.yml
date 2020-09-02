@@ -1,0 +1,207 @@
+- UID: "opening_remarks"
+  title: "Opening Remarks"
+  image: static/images/acl2020/acl-logo.png
+  date: July 6
+  day: Monday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-06_14:00:00
+      end_time: 2020-07-06_14:15:00
+  presenter: Dan Jurafsky, Joyce Chai, Natalie Schluter, Joel Tetreault
+  presentation_id: 38929463
+- UID: "presidential_address"
+  title: "Presidential Address"
+  image: static/images/acl2020/acl-logo.png
+  date: July 6
+  day: Monday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-06_14:15:00
+      end_time: 2020-07-06_14:30:00
+  presenter: "Hinrich Schütze"
+  presentation_id: 38929465
+- UID: "keynote_kathy_mckeown"
+  title: "Rewriting the Past: Assessing the Field through the Lens of Language Generation"
+  image: https://acl2020.org/assets/images/keynotes/kathleen.jpg
+  date: July 6
+  day: Monday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-06_14:30:00
+      end_time: 2020-07-06_15:15:00
+    - name: P-Live QA
+      start_time: 2020-07-06_15:15:00
+      end_time: 2020-07-06_15:45:00
+  presenter: Prof. Kathleen R. McKeown
+  institution: Columbia University, New York
+  abstract: |
+    In recent years, we have seen tremendous advances in the field of natural language processing through the
+    use of neural networks. In fact, they have done so well, that they have almost succeeded in rewriting the field as we knew it.
+    In this talk, I examine the state of the field and its link to the past, with a focus on language generation of many forms.
+    I ask where neural networks have been particularly successful, where approaches from the past might still be valuable, and where
+    we need to turn in the future if we are to go beyond our current success. To answer these questions, this talk will feature clips
+    from a series of interviews I carried out with experts in the field.
+  bio: |
+    Kathleen R. McKeown is the Henry and Gertrude Rothschild Professor of Computer Science at Columbia University and
+    the Founding Director of the Data Science Institute, serving as Director from 2012 to 2017. She is also an Amazon Scholar.
+    In earlier years, she served as Department Chair (1998-2003) and as Vice Dean for Research for the School of Engineering and
+    Applied Science (2010-2012). A leading scholar and researcher in the field of natural language processing,
+    McKeown focuses her research on the use of data for societal problems; her interests include text summarization, question answering,
+    natural language generation, social media analysis and multilingual applications. She has received numerous honors and awards,
+    including American Academy of Arts and Science elected member, American Association of Artificial Intelligence Fellow,
+    a Founding Fellow of the Association for Computational Linguistics and an Association for Computing Machinery Fellow.
+    Early on she received the National Science Foundation Presidential Young Investigator Award, and a National Science Foundation
+    Faculty Award for Women. In 2010, she won both the Columbia Great Teacher Award—an honor bestowed by the students—and the Anita
+    Borg Woman of Vision Award for Innovation.
+  presentation_id: 38929460
+  rocketchat_channel: keynote-kathy-mckeown
+- UID: "business_meeting"
+  title: "Business Meeting"
+  image: static/images/acl2020/acl-logo.png
+  date: July 6
+  day: Monday
+  presenter: "Host: Natalie Schluter, Hinrich Schütze, Shiqi Zhao"
+  presentation_id: 38931397
+  rocketchat_channel: business-meeting
+  sessions:
+    - name: P-Live QA
+      start_time: 2020-07-06_15:45:00
+      end_time: 2020-07-06_16:15:00
+- UID: "lifetime_achievement_award"
+  title: "Lifetime Achievement Award"
+  image: static/images/acl2020/acl-logo.png
+  date: July 7
+  day: Tuesday
+  time: 14:00-14:30 GMT / 07:00-07:30 PDT
+  presenter: "Presenter: Hinrich Schütze"
+  presentation_id: 38929472
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-07_14:00:00
+      end_time: 2020-07-07_14:30:00
+    - name: P-Live QA
+      start_time: 2020-07-07_14:30:00
+      end_time: 2020-07-07_14:45:00
+- UID: "distinguished_service_award"
+  title: "Distinguished Service Award"
+  image: static/images/acl2020/acl-logo.png
+  date: July 7
+  day: Tuesday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-07_14:45:00
+      end_time: 2020-07-07_14:55:00
+    - name: P-Live QA
+      start_time: 2020-07-06_14:55:00
+      end_time: 2020-07-06_15:00:00
+  presenter: "Presenter: Hinrich Schütze"
+  presentation_id: 38929474
+- UID: "test_of_time_awards"
+  title: "Test of Time Awards"
+  image: static/images/acl2020/acl-logo.png
+  date: July 7
+  day: Tuesday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-07_15:00:00
+      end_time: 2020-07-07_15:10:00
+    - name: P-Live QA
+      start_time: 2020-07-07_15:10:00
+      end_time: 2020-07-07_15:15:00
+  presenter: "Presenter: Barbara Di Eugenio"
+  # surprise
+  presentation_id: 38929462
+- UID: "review_meeting"
+  title: "Review Meeting"
+  image: static/images/acl2020/acl-logo.png
+  date: July 7
+  day: Tuesday
+  sessions:
+    - name: P-Live QA
+      start_time: 2020-07-07_15:15:00
+      end_time: 2020-07-07_16:00:00
+  presenter: "Host: Hinrich Schütze, Amanda Stent"
+  abstract: |
+    * Short-term proposal: [link](https://www.aclweb.org/adminwiki/index.php?title=Short-Term_Reform_Proposals_for_ACL_Reviewing)
+    * Long-term proposal: [link](https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal)
+  presentation_id: 38931398
+  rocketchat_channel: review-meeting
+- UID: "keynote_josh_tenenbaum"
+  title: Cognitive and computational building blocks for more human-like language in machines
+  image: https://acl2020.org/assets/images/keynotes/josh.jpg
+  date: July 8
+  day: Wednesday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-08_14:00:00
+      end_time: 2020-07-08_14:45:00
+    - name: P-Live QA
+      start_time: 2020-07-08_14:45:00
+      end_time: 2020-07-08_15:15:00
+  presenter: Prof. Josh Tenenbaum
+  institution: Massachusetts Institute of Technology
+  abstract: |
+    Humans learn language building on more basic conceptual and computational resources that we can already see
+    precursors of in infancy.  These include capacities for causal reasoning, symbolic rule formation, rapid
+    abstraction, and commonsense representations of events in terms of objects, agents and their interactions.
+    I will talk about steps towards capturing these abilities in engineering terms, using tools from hierarchical
+    Bayesian models, probabilistic programs, program induction, and neuro-symbolic architectures.
+    I will show examples of how these tools have been applied in both cognitive science and AI contexts, and point
+    to ways they might be useful in building more human-like language, learning and reasoning in machines.
+  bio: |
+    Josh Tenenbaum is Professor of Computational Cognitive Science at MIT in the Department of Brain and Cognitive Sciences, 
+    the Computer Science and Artificial Intelligence Laboratory (CSAIL) and the Center for Brains, Minds and Machines (CBMM). 
+    He received his PhD from MIT in 1999, and taught at Stanford from 1999 to 2002. His long-term goal is to reverse-engineer
+    intelligence in the human mind and brain, and use these insights to engineer more human-like machine intelligence.  His 
+    current research focuses on the development of common sense in children and machines, the neural basis of common sense, 
+    and models of learning as Bayesian program synthesis. His work has been published in Science, Nature, PNAS, and many 
+    other leading journals, and recognized with awards at conferences in Cognitive Science, Computer Vision, Neural Information 
+    Processing Systems, Reinforcement Learning and Decision Making, and Robotics. He is the recipient of the Distinguished 
+    Scientific Award for Early Career Contributions in Psychology from the American Psychological Association (2008), the 
+    Troland Research Award from the National Academy of Sciences (2011), the Howard Crosby Warren Medal from the Society of 
+    Experimental Psychologists (2016), the R&D Magazine Innovator of the Year award (2018), and a MacArthur Fellowship (2019). 
+    He is a fellow of the Cognitive Science Society, the Society for Experimental Psychologists, and a member of the American 
+    Academy of Arts and Sciences. 
+  presentation_id: 38929461
+  rocketchat_channel: keynote-josh-tenenbaum
+- UID: "best_paper_award"
+  title: "Best Paper Award Ceremony"
+  image: static/images/acl2020/acl-logo.png
+  date: July 8
+  day: Wednesday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-08_15:15:00
+      end_time: 2020-07-08_15:25:00
+  presenter: "Presenters: Joyce Chai, Natalie Schluter, Joel Tetreault"
+  # surprise
+  presentation_id: 38929475
+- UID: "future_conferences"
+  title: "Future Conferences"
+  image: static/images/acl2020/acl-logo.png
+  date: July 8
+  day: Wednesday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-08_15:25:00
+      end_time: 2020-07-08_15:45:00
+  abstract: |
+    * EMNLP 2020: Bonnie Webber, Trevor Cohn, Yulan He, Yang Liu
+    * AACL 2020: Kam-Fai Wong, Kevin Knight, Hua Wu
+    * COLING 2020: Donia Scott, Nuria Bel, Chengqing Zong
+    * EACL 2021: Paola Merlo, Jorg Tiedemann, Reut Tsarfaty
+    * NAACL 2021: Kristina Toutanova, Luke Zettlemoyer, Anna Rumshisky, Saif Mohammad
+    * ACL 2021: Chengqing Zong, Thepchai Supnithi
+    * ACL 2023 Call for Bids: Tim Baldwin
+  presentation_id: 38931399
+- UID: "closing_remarks"
+  title: "Closing Remarks"
+  image: static/images/acl2020/acl-logo.png
+  date: July 8
+  day: Wednesday
+  sessions:
+    - name: P-Live Presentation
+      start_time: 2020-07-08_15:45:00
+      end_time: 2020-07-08_15:50:00
+  presenter: Dan Jurafsky
+  presentation_id: 38929464
