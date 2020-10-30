@@ -1,0 +1,1452 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W7: Figurative Language Processing (FLP)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W7: Figurative Language Processing (FLP)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Beata Beigman Klebanov, Ekaterina Shutova, Patricia Lichtenstein, Smaranda Muresan, Anna Feldman, Chee Wee (Ben) Leong, Debanjan Ghosh
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://sites.google.com/view/figlang2020/" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session 1: Jul 9
+  <span class="session_times">(13:00-20:30 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session 2 (Invited talk by Marilyn Walker): Jul 9
+  <span class="session_times">(21:00-22:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-2"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W7: Figurative Language Processing (FLP)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-09T13:00:00"),
+        end: new Date("2020-07-09T20:30:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W7.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W7: Figurative Language Processing (FLP)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-09T21:00:00"),
+        end: new Date("2020-07-09T22:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W7.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-2');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The 2nd Workshop on Figurative Language Processing aims to discuss computational approaches to figurative language (e.g., metaphors, puns, sarcasm). Shared tasks: one on metaphor and one on sarcasm detection.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:00 AM-6:05 AM</td>
+          
+          <td scope="row">Opening Remarks</td>
+          <td style="white-space: pre-wrap;">Beata Beigman Klebanov, Ekatarina Shutova</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:05 AM-6:17 AM</td>
+          
+          <td scope="row">A Report on the 2020 Sarcasm Detection Shared Task</td>
+          <td style="white-space: pre-wrap;">Debanjan Ghosh, Avijit Vajpayee and Smaranda Muresan</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:17 AM-6:20 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:20 AM-6:32 AM</td>
+          
+          <td scope="row">Augmenting Data for Sarcasm Detection with Unlabeled Conversation Context</td>
+          <td style="white-space: pre-wrap;">Hankyol Lee, Youngjae Yu and Gunhee Kim</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:32 AM-6:35 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:35 AM-6:47 AM</td>
+          
+          <td scope="row">A Report on the 2020 VUA and TOEFL Metaphor Detection Shared Task</td>
+          <td style="white-space: pre-wrap;">Chee Wee (Ben) Leong, Beata Beigman Klebanov, Chris Hamill, Egon Stemle, Rutuja Ubale and Xianyang Chen</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:47 AM-6:50 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 6:50 AM-7:02 AM</td>
+          
+          <td scope="row">DeepMet: A Reading Comprehension Paradigm for Token-level Metaphor Detection</td>
+          <td style="white-space: pre-wrap;">Chuandong Su, Fumiyo Fukumoto, Xiaoxi Huang, Jiyi Li, Rongbo Wang and Zhiqun Chen</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:02 AM-7:05 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:05 AM-7:17 AM</td>
+          
+          <td scope="row">Context-Driven Satirical News Generation</td>
+          <td style="white-space: pre-wrap;">Zachary Horvitz, Nam Do and Michael L. Littman</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:17 AM-7:20 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:20 AM-7:40 AM</td>
+          
+          <td scope="row">Coffee Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:40 AM-7:45 AM</td>
+          
+          <td scope="row">Sarcasm Detection using Context Separators in Online Discourse</td>
+          <td style="white-space: pre-wrap;">TANVI DADU and Kartikey Pant</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:45 AM-7:50 AM</td>
+          
+          <td scope="row">Sarcasm Detection in Tweets with BERT and GloVe Embeddings</td>
+          <td style="white-space: pre-wrap;">Akshay Khatri and Pranav P</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:50 AM-7:55 AM</td>
+          
+          <td scope="row">C-Net: Contextual Network for Sarcasm Detection</td>
+          <td style="white-space: pre-wrap;">Amit Kumar Jena, Aman Sinha and Rohit Agarwal</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 7:55 AM-8:00 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:00 AM-8:05 AM</td>
+          
+          <td scope="row">Applying Transformers and Aspect-based Sentiment Analysis approaches on Sarcasm Detection</td>
+          <td style="white-space: pre-wrap;">Taha Shangipour ataei, Soroush Javdan and Behrouz Minaei-Bidgoli</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:05 AM-8:10 AM</td>
+          
+          <td scope="row">Sarcasm Identification and Detection in Conversion Context using BERT</td>
+          <td style="white-space: pre-wrap;">kalaivani A and Thenmozhi D</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:10 AM-8:15 AM</td>
+          
+          <td scope="row">Neural Sarcasm Detection using Conversation Context</td>
+          <td style="white-space: pre-wrap;">Nikhil Jaiswal</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:15 AM-8:20 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:20 AM-8:40 AM</td>
+          
+          <td scope="row">Coffee Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:40 AM-8:45 AM</td>
+          
+          <td scope="row">Context-Aware Sarcasm Detection Using BERT</td>
+          <td style="white-space: pre-wrap;">Arup Baruah, Kaushik Das, Ferdous Barbhuiya and Kuntal Dey</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:45 AM-8:50 AM</td>
+          
+          <td scope="row">Transformers on Sarcasm Detection with Context</td>
+          <td style="white-space: pre-wrap;">Amardeep Kumar and Vivek Anand</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:50 AM-8:55 AM</td>
+          
+          <td scope="row">A Novel Hierarchical BERT Architecture for Sarcasm Detection</td>
+          <td style="white-space: pre-wrap;">Himani Srivastava, Vaibhav Varshney, Surabhi Kumari and Saurabh Srivastava</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:55 AM-9:00 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 9:00 AM-9:05 AM</td>
+          
+          <td scope="row">{D}etecting {S}arcasm in {C}onversation {C}ontext {U}sing {T}ransformer-{B}ased {M}odels</td>
+          <td style="white-space: pre-wrap;">Adithya Avvaru, Sanath Vobilisetty and Radhika Mamidi</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 9:05 AM-9:10 AM</td>
+          
+          <td scope="row">Using Conceptual Norms for Metaphor Detection</td>
+          <td style="white-space: pre-wrap;">Mingyu WAN, Kathleen Ahrens, Emmanuele Chersoni, Menghan Jiang, Qi Su, Rong Xiang and Chu-Ren Huang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 9:10 AM-9:15 AM</td>
+          
+          <td scope="row">ALBERT-BiLSTM for Sequential Metaphor Detection</td>
+          <td style="white-space: pre-wrap;">Shuqun Li, Jingjie Zeng, Jinhui Zhang, Tao Peng, Liang Yang and Hongfei Lin</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 9:15 AM-9:20 AM</td>
+          
+          <td scope="row">Character aware models with similarity learning for metaphor detection</td>
+          <td style="white-space: pre-wrap;">Tarun Kumar and Yashvardhan Sharma</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 9:20 AM-9:30 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+          
+            <td>, </td>
+          
+          <td scope="row"></td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:00 AM-10:12 AM</td>
+          
+          <td scope="row">Sky + Fire = Sunset. Exploring Parallels between Visually Grounded Metaphors and Image Classifiers</td>
+          <td style="white-space: pre-wrap;">Yuri Bizzoni and Simon Dobnik</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:12 AM-10:15 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:15 AM-10:27 AM</td>
+          
+          <td scope="row">Recognizing Euphemisms and Dysphemisms Using Sentiment Analysis</td>
+          <td style="white-space: pre-wrap;">Christian Felt and Ellen Riloff</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:27 AM-10:30 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:30 AM-10:35 AM</td>
+          
+          <td scope="row">IlliniMet: Illinois System for Metaphor Detection with Contextual and Linguistic Information</td>
+          <td style="white-space: pre-wrap;">Hongyu Gong, Kshitij Gupta, Akriti Jain and Suma Bhat</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:35 AM-10:40 AM</td>
+          
+          <td scope="row">Adaptation of Word-Level Benchmark Datasets for Relation-Level Metaphor Identification</td>
+          <td style="white-space: pre-wrap;">Omnia Zayed, John Philip McCrae and Paul Buitelaar</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:40 AM-10:45 AM</td>
+          
+          <td scope="row">Generating Ethnographic Models from Communities’ Online Data</td>
+          <td style="white-space: pre-wrap;">Tomek Strzalkowski, Anna Newheiser, Nathan Kemper, Ning Sa, Bharvee Acharya and Gregorios Katsios</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:45 AM-10:50 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:50 AM-10:55 AM</td>
+          
+          <td scope="row">Oxymorons: a preliminary corpus investigation</td>
+          <td style="white-space: pre-wrap;">Marta La Pietra and Francesca Masini</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 10:55 AM-11:00 AM</td>
+          
+          <td scope="row">Can Humor Prediction Datasets be used for Humor Generation? Humorous Headline Generation via Style Transfer</td>
+          <td style="white-space: pre-wrap;">Orion Weller, Nancy Fulda and Kevin Seppi</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:00 AM-11:05 AM</td>
+          
+          <td scope="row">Evaluating a Bi-LSTM Model for Metaphor Detection in TOEFL Essays</td>
+          <td style="white-space: pre-wrap;">Kevin Kuo and Marine Carpuat</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:05 AM-11:10 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:10 AM-11:30 AM</td>
+          
+          <td scope="row">Coffee Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:30 AM-11:35 AM</td>
+          
+          <td scope="row">Neural Metaphor Detection with a Residual biLSTM-CRF Model</td>
+          <td style="white-space: pre-wrap;">Andrés Torres Rivera, Antoni Oliver, Salvador Climent and Marta Coll-Florit</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:35 AM-11:40 AM</td>
+          
+          <td scope="row">Augmenting Neural Metaphor Detection with Concreteness</td>
+          <td style="white-space: pre-wrap;">Ghadi Alnafesah, Harish Tayyar Madabushi and Mark Lee</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:40 AM-11:45 AM</td>
+          
+          <td scope="row">Supervised Disambiguation of German Verbal Idioms with a BiLSTM Architecture</td>
+          <td style="white-space: pre-wrap;">Rafael Ehren, Timm Lichte, Laura Kallmeyer and Jakub Waszczuk</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:45 AM-11:50 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:50 AM-11:55 AM</td>
+          
+          <td scope="row">Metaphor Detection using Context and Concreteness</td>
+          <td style="white-space: pre-wrap;">Rowan Hall Maudslay, Tiago Pimentel, Ryan Cotterell and Simone Teufel</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 11:55 PM-12:00 PM</td>
+          
+          <td scope="row">Being neighbourly: Neural metaphor identification in discourse</td>
+          <td style="white-space: pre-wrap;">Verna Dankers, Karan Malhotra, Gaurav Kudva, Volodymyr Medentsiy and Ekaterina Shutova</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:00 PM-12:05 PM</td>
+          
+          <td scope="row">Go Figure! Multi-task transformer-based architecture for metaphor detection using idioms: ETS team in 2020 metaphor shared task</td>
+          <td style="white-space: pre-wrap;">Xianyang Chen, Chee Wee (Ben) Leong, Michael Flor and Beata Beigman Klebanov</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:05 PM-12:10 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:10 PM-12:15 PM</td>
+          
+          <td scope="row">Metaphor Detection using Ensembles of Bidirectional Recurrent Neural Networks</td>
+          <td style="white-space: pre-wrap;">Jennifer Brooks and Abdou Youssef</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:15 PM-12:20 PM</td>
+          
+          <td scope="row">Metaphor Detection Using Contextual Word Embeddings From Transformers</td>
+          <td style="white-space: pre-wrap;">Jerry Liu, Nathan O&#39;Hara, Alexander Rubin, Rachel Draelos and Cynthia Rudin</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:20 PM-12:25 PM</td>
+          
+          <td scope="row">Testing the role of metadata in metaphor identification</td>
+          <td style="white-space: pre-wrap;">Egon Stemle and Alexander Onysko</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:25 PM-12:30 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:30 PM-12:50 PM</td>
+          
+          <td scope="row">Coffee Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:50 PM-12:55 PM</td>
+          
+          <td scope="row">Sarcasm Detection Using an Ensemble Approach</td>
+          <td style="white-space: pre-wrap;">Jens Lemmens, Ben Burtenshaw, Ehsan Lotfi, Ilia Markov and Walter Daelemans</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:55 PM-1:00 PM</td>
+          
+          <td scope="row">A Transformer Approach to Contextual Sarcasm Detection in Twitter</td>
+          <td style="white-space: pre-wrap;">Hunter Gregory, Steven Li, Pouya Mohammadi, Natalie Tarn, Rachel Draelos and Cynthia Rudin</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 1:00 PM-1:05 PM</td>
+          
+          <td scope="row">Transformer-based Context-aware Sarcasm Detection in Conversation Threads from Social Media</td>
+          <td style="white-space: pre-wrap;">Xiangjue Dong, Changmao Li and Jinho D. Choi</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 1:05 PM-1:10 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 1:10 PM-1:30 PM</td>
+          
+          <td scope="row">Closing Discussion</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 2:00 PM-3:00 PM</td>
+          
+          <td scope="row">Invited talk: Generating Expressive Language by Mining User Reviews</td>
+          <td style="white-space: pre-wrap;">Marilyn Walker</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931796" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931796',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929694" target="_blank"><b>Sarcasm Detection Using an Ensemble Approach</b></a>
+        </p>
+        <p>
+          <i>Jens Lemmens, Ben Burtenshaw, Ehsan Lotfi, Ilia Markov and Walter Daelemans</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929695" target="_blank"><b>Sarcasm Detection using Context Separators in Online Discourse</b></a>
+        </p>
+        <p>
+          <i>TANVI DADU and Kartikey Pant</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929696" target="_blank"><b>Augmenting Data for Sarcasm Detection with Unlabeled Conversation Context</b></a>
+        </p>
+        <p>
+          <i>Hankyol Lee, Youngjae Yu and Gunhee Kim</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929697" target="_blank"><b>Sarcasm Detection in Tweets with BERT and GloVe Embeddings</b></a>
+        </p>
+        <p>
+          <i>Akshay Khatri and Pranav P</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929698" target="_blank"><b>C-Net: Contextual Network for Sarcasm Detection</b></a>
+        </p>
+        <p>
+          <i>Amit Kumar Jena, Aman Sinha and Rohit Agarwal</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929699" target="_blank"><b>Applying Transformers and Aspect-based Sentiment Analysis approaches on Sarcasm Detection</b></a>
+        </p>
+        <p>
+          <i>Taha Shangipour ataei, Soroush Javdan and Behrouz Minaei-Bidgoli</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929700" target="_blank"><b>Sarcasm Identification and Detection in Conversion Context using BERT</b></a>
+        </p>
+        <p>
+          <i>kalaivani A and Thenmozhi D</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929701" target="_blank"><b>Neural Sarcasm Detection using Conversation Context</b></a>
+        </p>
+        <p>
+          <i>Nikhil Jaiswal</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929702" target="_blank"><b>Context-Aware Sarcasm Detection Using BERT</b></a>
+        </p>
+        <p>
+          <i>Arup Baruah, Kaushik Das, Ferdous Barbhuiya and Kuntal Dey</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929703" target="_blank"><b>Transformers on Sarcasm Detection with Context</b></a>
+        </p>
+        <p>
+          <i>Amardeep Kumar and Vivek Anand</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929704" target="_blank"><b>A Novel Hierarchical BERT Architecture for Sarcasm Detection</b></a>
+        </p>
+        <p>
+          <i>Himani Srivastava, Vaibhav Varshney, Surabhi Kumari and Saurabh Srivastava</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929705" target="_blank"><b>{D}etecting {S}arcasm in {C}onversation {C}ontext {U}sing {T}ransformer-{B}ased {M}odels</b></a>
+        </p>
+        <p>
+          <i>Adithya Avvaru, Sanath Vobilisetty and Radhika Mamidi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929706" target="_blank"><b>A Transformer Approach to Contextual Sarcasm Detection in Twitter</b></a>
+        </p>
+        <p>
+          <i>Hunter Gregory, Steven Li, Pouya Mohammadi, Natalie Tarn, Rachel Draelos and Cynthia Rudin</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929707" target="_blank"><b>Transformer-based Context-aware Sarcasm Detection in Conversation Threads from Social Media</b></a>
+        </p>
+        <p>
+          <i>Xiangjue Dong, Changmao Li and Jinho D. Choi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929708" target="_blank"><b>A Report on the 2020 Sarcasm Detection Shared Task</b></a>
+        </p>
+        <p>
+          <i>Debanjan Ghosh, Avijit Vajpayee and Smaranda Muresan</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929709" target="_blank"><b>Adaptation of Word-Level Benchmark Datasets for Relation-Level Metaphor Identification</b></a>
+        </p>
+        <p>
+          <i>Omnia Zayed, John Philip McCrae and Paul Buitelaar</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929710" target="_blank"><b>Context-Driven Satirical News Generation</b></a>
+        </p>
+        <p>
+          <i>Zachary Horvitz, Nam Do and Michael L. Littman</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929711" target="_blank"><b>Generating Ethnographic Models from Communities’ Online Data</b></a>
+        </p>
+        <p>
+          <i>Tomek Strzalkowski, Anna Newheiser, Nathan Kemper, Ning Sa, Bharvee Acharya and Gregorios Katsios</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929712" target="_blank"><b>Oxymorons: a preliminary corpus investigation</b></a>
+        </p>
+        <p>
+          <i>Marta La Pietra and Francesca Masini</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929713" target="_blank"><b>Can Humor Prediction Datasets be used for Humor Generation? Humorous Headline Generation via Style Transfer</b></a>
+        </p>
+        <p>
+          <i>Orion Weller, Nancy Fulda and Kevin Seppi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929714" target="_blank"><b>Sky + Fire = Sunset. Exploring Parallels between Visually Grounded Metaphors and Image Classifiers</b></a>
+        </p>
+        <p>
+          <i>Yuri Bizzoni and Simon Dobnik</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929715" target="_blank"><b>Supervised Disambiguation of German Verbal Idioms with a BiLSTM Architecture</b></a>
+        </p>
+        <p>
+          <i>Rafael Ehren, Timm Lichte, Laura Kallmeyer and Jakub Waszczuk</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929716" target="_blank"><b>Being neighbourly: Neural metaphor identification in discourse</b></a>
+        </p>
+        <p>
+          <i>Verna Dankers, Karan Malhotra, Gaurav Kudva, Volodymyr Medentsiy and Ekaterina Shutova</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929717" target="_blank"><b>Recognizing Euphemisms and Dysphemisms Using Sentiment Analysis</b></a>
+        </p>
+        <p>
+          <i>Christian Felt and Ellen Riloff</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929718" target="_blank"><b>ALBERT-BiLSTM for Sequential Metaphor Detection</b></a>
+        </p>
+        <p>
+          <i>Shuqun Li, Jingjie Zeng, Jinhui Zhang, Tao Peng, Liang Yang and Hongfei Lin</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929719" target="_blank"><b>IlliniMet: Illinois System for Metaphor Detection with Contextual and Linguistic Information</b></a>
+        </p>
+        <p>
+          <i>Hongyu Gong, Kshitij Gupta, Akriti Jain and Suma Bhat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929720" target="_blank"><b>DeepMet: A Reading Comprehension Paradigm for Token-level Metaphor Detection</b></a>
+        </p>
+        <p>
+          <i>Chuandong Su, Fumiyo Fukumoto, Xiaoxi Huang, Jiyi Li, Rongbo Wang and Zhiqun Chen</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929721" target="_blank"><b>Evaluating a Bi-LSTM Model for Metaphor Detection in TOEFL Essays</b></a>
+        </p>
+        <p>
+          <i>Kevin Kuo and Marine Carpuat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929722" target="_blank"><b>Neural Metaphor Detection with a Residual biLSTM-CRF Model</b></a>
+        </p>
+        <p>
+          <i>Andrés Torres Rivera, Antoni Oliver, Salvador Climent and Marta Coll-Florit</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929723" target="_blank"><b>Using Conceptual Norms for Metaphor Detection</b></a>
+        </p>
+        <p>
+          <i>Mingyu WAN, Kathleen Ahrens, Emmanuele Chersoni, Menghan Jiang, Qi Su, Rong Xiang and Chu-Ren Huang</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929724" target="_blank"><b>Character aware models with similarity learning for metaphor detection</b></a>
+        </p>
+        <p>
+          <i>Tarun Kumar and Yashvardhan Sharma</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929725" target="_blank"><b>Augmenting Neural Metaphor Detection with Concreteness</b></a>
+        </p>
+        <p>
+          <i>Ghadi Alnafesah, Harish Tayyar Madabushi and Mark Lee</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929726" target="_blank"><b>Metaphor Detection using Context and Concreteness</b></a>
+        </p>
+        <p>
+          <i>Rowan Hall Maudslay, Tiago Pimentel, Ryan Cotterell and Simone Teufel</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929727" target="_blank"><b>Go Figure! Multi-task transformer-based architecture for metaphor detection using idioms: ETS team in 2020 metaphor shared task</b></a>
+        </p>
+        <p>
+          <i>Xianyang Chen, Chee Wee (Ben) Leong, Michael Flor and Beata Beigman Klebanov</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929728" target="_blank"><b>Metaphor Detection using Ensembles of Bidirectional Recurrent Neural Networks</b></a>
+        </p>
+        <p>
+          <i>Jennifer Brooks and Abdou Youssef</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929729" target="_blank"><b>Metaphor Detection Using Contextual Word Embeddings From Transformers</b></a>
+        </p>
+        <p>
+          <i>Jerry Liu, Nathan O&#39;Hara, Alexander Rubin, Rachel Draelos and Cynthia Rudin</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929730" target="_blank"><b>Testing the role of metadata in metaphor identification</b></a>
+        </p>
+        <p>
+          <i>Egon Stemle and Alexander Onysko</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929731" target="_blank"><b>A Report on the 2020 VUA and TOEFL Metaphor Detection Shared Task</b></a>
+        </p>
+        <p>
+          <i>Chee Wee (Ben) Leong, Beata Beigman Klebanov, Chris Hamill, Egon Stemle, Rutuja Ubale and Xianyang Chen</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

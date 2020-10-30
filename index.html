@@ -1,0 +1,332 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+    
+<style>
+  .back {
+    background: url("static/images/acl2020/ACL-Banner-5.1.jpg") no-repeat center;
+    background-size: cover;
+  }
+  .back h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+  }
+  .page__hero-caption {
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 2px 10px;
+    color: #fff;
+    font-family: Georgia,Times,serif;
+    font-size: 0.9em;
+    text-align: right;
+    z-index: 5;
+    opacity: 0.5;
+    border-radius: 4px 0 0 0;
+  }
+</style>
+
+<div class="jumbotron jumbotron-fluid back" style="padding-bottom: 5px;">
+  <div class="row header p-6 m-5">
+    <div class="p-1 mx-auto text-center text-white col-md-9 col-sm-12">
+      <h2>
+        The 58th Annual Meeting of <br> the Association for Computational Linguistics
+      </h2>
+      <h2 class="p-5">
+        July 5 &ndash; 10 <br> 2020
+      </h2>
+    </div>
+  </div>
+  <div class="page__hero-caption">Design by Jingya Chen</div>
+</div>
+
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="row">
+  <div class="col-md-7 col-sm-12 pr-5 lead">
+    <p>Welcome to ACL2020!<br><br>
+      Here is how to use this website to find live events (at fixed times) plus pre-recorded talks you can watch anytime.
+    </p>
+    <dl>
+      <dt>Schedule</dt>
+      <dd>Use the <a class="text" href="schedule.html" target="_blank">Schedule</a> to find live sessions and set your timezone.
+      </dd>
+      <dt>Plenary Sessions</dt>
+      <dd>Plenary Sessions include Keynote Talks and the Business and Review meetings (pre-recorded talks + live Q&A), plus Awards ceremonies.
+        Use the <a class="text" href="livestream.html" target="_blank">Livestream</a> to watch live sessions in real time. Pre-recorded videos are available under <a class="text" href="plenary_sessions.html" target="_blank">Plenary Sessions</a>.
+      </dd>
+      <dt>Main Conference Papers</dt>
+      <dd>Each <a class="text" href="papers.html" target="_blank">paper</a> has a pre-recorded 7-12 minute talk,
+        two live Q&A video sessions (on Zoom) at different times, and a linked RocketChat channel (for chatting anytime with the author).
+        This includes <a class="text" href="papers.html?filter=titles&track=Demo" target="_blank">System Demonstrations</a> and <a class="text" href="papers.html?filter=titles&track=Student+Research+Workshop" target="_blank">Student Research Workshop papers</a>.
+      </dd>
+      <dt>Tutorials and Workshops</dt>
+      <dd>The 8 <a class="text" href="tutorials.html" target="_blank">tutorials</a> (July 5) and 20 <a class="text" href="workshops.html" target="_blank">workshops</a> (July 5/9/10) are all included under conference registration.
+        Some are fully pre-recorded, others include live sessions as well!
+      </dd>
+      <dt> Sponsors</dt>
+      <dd>Meet our <a class="text" href="sponsors.html" target="_blank">sponsors</a>.</dd>
+      
+      <dt> Help</dt>
+      <dd> Look under <a class="text" href="about.html" target="_blank">Help</a> for FAQs and technical support.</dd>
+      <dt> Social Media</dt>
+      <dd> Use the hashtag  <span style="font-weight: bold; font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;">#acl2020nlp</span></dd>
+    </dl>
+  </div>
+  <!-- <div class="col-md-1"></div> -->
+  <div class="col-md-5 col-sm-12">
+    
+    <div class="text-center mt-4">
+      <br/>
+      <h5> Introduction to the Virtual Conference Website </h5>
+      (by Hao Fang and Sudha Rao)
+      <div id="presentation-embed" class="slp embed-responsive embed-responsive-16by9">
+        <script src='https://slideslive.com/embed_presentation.js'></script>
+        <script>
+          embed = new SlidesLiveEmbed('presentation-embed', {
+          presentationId: '38931552',
+          autoPlay: false, // change to true to autoplay the embedded presentation
+          verticalEnabled: true,
+          verticalWhenWidthLte: 2000,
+          allowHiddenControlsWhenPaused: true,
+          hideTitle: true
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+
+
+<p class="text-muted">
+The <a href="https://github.com/acl-org/acl-2020-virtual-conference" target="_blank">ACL2020 virtual conference website</a>
+uses <a href="https://github.com/Mini-Conf/Mini-Conf" target="_blank">MiniConf</a> built by Hendrik Strobelt and Sasha Rush.
+The ACL2020 infrastructure committee is very grateful to the
+<a href="https://acl2020-public.s3.amazonaws.com/virtual_infrastructure_volunteers.pdf" target="_blank">volunteers</a>
+and contributors whose valuable contributions to building the virtual infrastructure made the conference possible.
+We would also like to thank Lee Campbell and Nitin Madnani for their additional advice
+on the virtual infrastructure, and John Wieting and Graham Neubig for contributing the model used in the "Similar Papers" feature.
+</p>
+
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

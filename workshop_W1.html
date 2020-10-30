@@ -1,0 +1,1183 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W1: WiNLP 2020 Workshop</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W1: WiNLP 2020 Workshop
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Rossana Cunha, Samira Shaikh, Erika Varis, Ryan Georgi, Antonios Anastasopoulos, Khyathi Raghavi Chandu, Alicia Tsai
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="http://www.winlp.org/winlp-2020-workshop/" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 5
+  <span class="session_times">(16:00-23:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W1: WiNLP 2020 Workshop'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-05T16:00:00"),
+        end: new Date("2020-07-05T23:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W1.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The Fourth Widening NLP Workshop focuses on efforts to promote and support ideas and voices of underrepresented groups in Natural Language Processing. The 2020 iteration of the workshop will, in particular, seek to highlight diversity in scientific background, discipline, training, obtained degrees, and seniority.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>Jul 5, 9:00 AM-9:10 AM</td>
+          
+          <td scope="row">Opening remarks</td>
+          <td style="white-space: pre-wrap;">Rossana Cunha, Samira Shaikh, Erika Varis, Ryan Georgi, Antonios Anastasopoulos, Khyathi Raghavi Chandu and Alicia Tsai</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 9:10 AM-9:40 AM</td>
+          
+          <td scope="row">Keynote 1</td>
+          <td style="white-space: pre-wrap;">Verena Rieser</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 9:40 AM-9:50 AM</td>
+          
+          <td scope="row">Keynote 1 Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;">Verena Rieser</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 9:50 AM-10:30 AM</td>
+          
+          <td scope="row">Poster Session A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 10:30 AM-10:50 AM</td>
+          
+          <td scope="row">Break (sponsored)</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 10:50 AM-11:20 AM</td>
+          
+          <td scope="row">Keynote 2</td>
+          <td style="white-space: pre-wrap;">Helena Caseli</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 11:20 AM-11:30 AM</td>
+          
+          <td scope="row">Keynote 2 Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;">Helena Caseli</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 11:30 AM-12:30 PM</td>
+          
+          <td scope="row">Mentoring &amp; Sponsor Roundtables</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 12:30 PM-1:10 PM</td>
+          
+          <td scope="row">Lunch Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 1:10 PM-1:50 PM</td>
+          
+          <td scope="row">Panel Discussion</td>
+          <td style="white-space: pre-wrap;">Anima Anandkumar, Jade Abbott, Luciana Benotti, and Xanda Schofield</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 1:50 PM-2:20 PM</td>
+          
+          <td scope="row">Keynote 3</td>
+          <td style="white-space: pre-wrap;">José Eduardo Ochoa</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 2:20 PM-2:30 PM</td>
+          
+          <td scope="row">Keynote 3 Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;">José Eduardo Ochoa</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 2:30 PM-3:10 PM</td>
+          
+          <td scope="row">Poster Session B</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 3:10 PM-3:25 PM</td>
+          
+          <td scope="row">Break (sponsored)</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 3:25 PM-3:55 PM</td>
+          
+          <td scope="row">Keynote 4</td>
+          <td style="white-space: pre-wrap;">Rachael Tatman</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 3:55 PM-4:05 PM</td>
+          
+          <td scope="row">Keynote 4 Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;">Rachael Tatman</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 4:05 PM-4:15 PM</td>
+          
+          <td scope="row">Closing Remarks</td>
+          <td style="white-space: pre-wrap;">Rossana Cunha, Samira Shaikh, Erika Varis, Ryan Georgi, Antonios Anastasopoulos, Khyathi Raghavi Chandu and Alicia Tsai</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 5, 4:15 PM-4:30 PM</td>
+          
+          <td scope="row">End of WiNLP 2020</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931669" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931669',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929537" target="_blank"><b>Corpus based Amharic sentiment lexicon generation</b></a>
+        </p>
+        <p>
+          <i>Girma Neshir Alemneh, Andreas Rauber and Solomon Atnafu</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929538" target="_blank"><b>Negation handling for Amharic sentiment classification</b></a>
+        </p>
+        <p>
+          <i>Girma Neshir Alemneh, Andreas Rauber and Solomon Atnafu</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929539" target="_blank"><b>Embedding Oriented Adaptable Semantic Annotation Framework for Amharic Web Documents</b></a>
+        </p>
+        <p>
+          <i>Kidane Woldemariyam and Dr. Fekade Getahun</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929540" target="_blank"><b>Similarity and Farness Based Bidirectional Neural Co-Attention for Amharic Natural Language Inference</b></a>
+        </p>
+        <p>
+          <i>Abebaw Eshetu, Getenesh Teshome and Ribka Alemayehu</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929541" target="_blank"><b>Large Vocabulary Read Speech Corpora for Four Ethiopian Languages: Amharic, Tigrigna, Oromo, and Wolaytta</b></a>
+        </p>
+        <p>
+          <i>Solomon Teferra Abate, Martha Yifiru Tachbelie, Michael Melese, Hafte Abera, Tewodros Gebreselassie, Wondwossen Mulugeta, Yaregal Assabie, Million Meshesha Beyene, Solomon Atinafu and Binyam Ephrem Seyoum</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929542" target="_blank"><b>SIMPLEX-PB 2.0: A Reliable Dataset for Lexical Simplification in Brazilian Portuguese</b></a>
+        </p>
+        <p>
+          <i>Nathan Hartmann, Gustavo Henrique Paetzold and Sandra Aluísio</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929543" target="_blank"><b>Token Level Identification of Multiword Expressions Using Contextual Information</b></a>
+        </p>
+        <p>
+          <i>REYHANEH HASHEMPOUR and Aline Villavicencio</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929544" target="_blank"><b>Bi-directional Answer-to-Answer Co-attention for Short Answer Grading using Deep Learning</b></a>
+        </p>
+        <p>
+          <i>Abebaw Eshetu, Getenesh Teshome and Ribka Alemahu</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929545" target="_blank"><b>Effective questions in referential visual dialog</b></a>
+        </p>
+        <p>
+          <i>Mauricio Mazuecos, Alberto Testoni, Raffaella Bernardi and Luciana Benotti</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929546" target="_blank"><b>A Translation-Based Approach to Morphology Learning for Low Resource Languages</b></a>
+        </p>
+        <p>
+          <i>Tewodros Gebreselassie, Amanuel Mersha and Michael Gasser</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929547" target="_blank"><b>Monolingual corpus creation and evaluation of truly low-resource languages from Peru</b></a>
+        </p>
+        <p>
+          <i>Gina Bustamante and Arturo Oncevay</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929548" target="_blank"><b>Tigrinya Automatic Speech recognition with Morpheme based recognition units</b></a>
+        </p>
+        <p>
+          <i>Hafte Abera and sebsibe hailemariam</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929549" target="_blank"><b>Variants of Vector Space Reductions for Predicting the Compositionality of English Noun Compounds</b></a>
+        </p>
+        <p>
+          <i>Pegah Alipoormolabashi and Sabine Schulte im Walde</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929550" target="_blank"><b>Targeted Aspect-Based Sentiment Analysis for Ugandan Telecom Reviews from Twitter</b></a>
+        </p>
+        <p>
+          <i>David Kabiito and Joyce Nakatumba Nabende</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929551" target="_blank"><b>An Assessment of Language Identification Methods on Tweets and Wikipedia Articles</b></a>
+        </p>
+        <p>
+          <i>Pedro Vernetti and Larissa Freitas</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929552" target="_blank"><b>A Comparison of Identification Methods of Brazilian Music Styles by Lyrics</b></a>
+        </p>
+        <p>
+          <i>Patrick Guimarães, Jader Froes, Douglas Costa and Larissa Freitas</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929553" target="_blank"><b>Enabling fast and correct typing in &#39;Leichte Sprache&#39; (Easy Language)</b></a>
+        </p>
+        <p>
+          <i>Ina Steinmetz and Karin Harbusch</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929554" target="_blank"><b>SkillBERT: &#34;Skilling&#34; the BERT to classify skills!</b></a>
+        </p>
+        <p>
+          <i>Amber Nigam, Shikha Tyagi, Kuldeep Dhakar and Arpan Saxena</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929555" target="_blank"><b>AI4D - African Language Dataset Challenge</b></a>
+        </p>
+        <p>
+          <i>Kathleen Siminyu and Sackey Freshia</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929556" target="_blank"><b>Can Wikipedia Categories Improve Masked Language Model Pretraining?</b></a>
+        </p>
+        <p>
+          <i>Diksha Meghwal, Katharina Kann, Iacer Calixto and Stanislaw Jastrzebski</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929557" target="_blank"><b>Adversarial Evaluation of BERT for Biomedical Named Entity Recognition</b></a>
+        </p>
+        <p>
+          <i>Vladimir Araujo, Andrés Carvallo and Denis Parra</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929558" target="_blank"><b>FFR v1.1 : Fon-French Neural Machine Translation</b></a>
+        </p>
+        <p>
+          <i>Chris Chinenye Emezue and Femi Pancrace Bonaventure Dossou</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929559" target="_blank"><b>Corpus Development for Indonesian Product Named Entity Recognition using Semi-supervised Approach</b></a>
+        </p>
+        <p>
+          <i>Muhammad Akmal and Ade Romadhony</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929560" target="_blank"><b>Classification and Analysis of Neologisms Produced by Learners of Spanish: Effects of Proficiency and Task</b></a>
+        </p>
+        <p>
+          <i>Shira Wein</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929561" target="_blank"><b>Developing a Monolingual Sentence Simplification Corpus for Urdu</b></a>
+        </p>
+        <p>
+          <i>Yusra Anees, Sadaf Abdul Rauf, Nauman Iqbal and Abdul Basit Siddiqi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929562" target="_blank"><b>Personality Trait Detection Using Bagged SVM over BERT Word Embedding Ensembles</b></a>
+        </p>
+        <p>
+          <i>Amirmohammad Kazemeinizadeh, Samin Fatehi, Yash Mehta, Sauleh Eetemadi and Erik Cambria</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929563" target="_blank"><b>Translating Natural Language Instructions for Behavioral Robot Navigation with a Multi-Head Attention Mechanism</b></a>
+        </p>
+        <p>
+          <i>Patricio Cerda-Mardini, Vladimir Araujo and Álvaro Soto</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929564" target="_blank"><b>Towards Mitigating Gender Bias in a decoder-based Neural Machine Translation model by Adding Contextual Information</b></a>
+        </p>
+        <p>
+          <i>Christine Basta, Marta R. Costa-jussà and José A. R. Fonollosa</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929565" target="_blank"><b>Predicting and Analyzing Law-Making in Kenya</b></a>
+        </p>
+        <p>
+          <i>Oyinlola Babafemi and Adewale Akinfaderin</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929566" target="_blank"><b>Defining and Evaluating Fair Natural Language Generation</b></a>
+        </p>
+        <p>
+          <i>Catherine Yeo and Alyssa Chen</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929567" target="_blank"><b>Political Advertising Dataset: the use case of the Polish 2020 Presidential Elections</b></a>
+        </p>
+        <p>
+          <i>Lukasz Augustyniak, Krzysztof Rajda, Tomasz Kajdanowicz and Michał Bernaczyk</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929568" target="_blank"><b>Towards the First Inuktitut-English Neural Machine Translation</b></a>
+        </p>
+        <p>
+          <i>Tan Ngoc Le and Fatiha Sadat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929569" target="_blank"><b>A Study on the Influence of Architecture Complexity of RNNs for Intent Classification in E-Commerce Chats in Bahasa Indonesia</b></a>
+        </p>
+        <p>
+          <i>Renny Pradina Kusumawardani and Muhammad Azzam</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929570" target="_blank"><b>The human unlikeness of neural language models in next-word prediction</b></a>
+        </p>
+        <p>
+          <i>Cassandra L. Jacobs and Arya D. McCarthy</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929571" target="_blank"><b>Long-Tail Predictions with Continuous-Output Language Models</b></a>
+        </p>
+        <p>
+          <i>Shiran Dudy and Steven Bedrick</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929572" target="_blank"><b>Analyzing the Framing of 2020 Presidential Candidates in the News</b></a>
+        </p>
+        <p>
+          <i>Audrey Acken and Dorottya Demszky</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929573" target="_blank"><b>Understanding the Impact of Experiment Design for Evaluating Dialogue System Output</b></a>
+        </p>
+        <p>
+          <i>Sashank Santhanam and Samira Shaikh</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929574" target="_blank"><b>Studying The Effect of Emotional and Moral Language on Information Contagion during the Charlottesville Event</b></a>
+        </p>
+        <p>
+          <i>Khyati Mahajan and Samira Shaikh</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929575" target="_blank"><b>Mapping of Narrative Text Fields To ICD-10 Codes Using Natural Language Processing and Machine Learning</b></a>
+        </p>
+        <p>
+          <i>Risuna Nkolele</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929576" target="_blank"><b>Multitask Models for Controlling the Complexity of Neural Machine Translation</b></a>
+        </p>
+        <p>
+          <i>Sweta Agrawal and Marine Carpuat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929577" target="_blank"><b>Using Social Media For Bitcoin Day Trading Behavior Prediction</b></a>
+        </p>
+        <p>
+          <i>Anna Paula Pawlicka Maule and Kristen Johnson</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929578" target="_blank"><b>HausaMT v1.0: Towards English–Hausa Neural Machine Translation</b></a>
+        </p>
+        <p>
+          <i>Adewale Akinfaderin</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929579" target="_blank"><b>Outcomes of coming out: Analyzing stories of LGBTQ+</b></a>
+        </p>
+        <p>
+          <i>Krithika Ramesh and Tanvi Anand</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929580" target="_blank"><b>An Evaluation of Subword Segmentation Strategies for Neural Machine Translation of Morphologically Rich Languages</b></a>
+        </p>
+        <p>
+          <i>Aquia Richburg, Ramy Eskander, Smaranda Muresan and Marine Carpuat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38931265" target="_blank"><b>Audio-Visual Understanding of Passenger Intents for In-Cabin Conversational Agents</b></a>
+        </p>
+        <p>
+          <i>Eda Okur, Shachi H Kumar, Saurav Sahay and Lama Nachman</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929582" target="_blank"><b>Enhanced Urdu Word Segmentation using Conditional Random Fields and Morphological Context Features</b></a>
+        </p>
+        <p>
+          <i>Aamir Farhan, Mashrukh Islam and Dipti Misra Sharma</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929583" target="_blank"><b>Flexible Neural Text Generation via Insertion and Reordering Operations</b></a>
+        </p>
+        <p>
+          <i>Weijia Xu and Marine Carpuat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929584" target="_blank"><b>Keynote</b></a>
+        </p>
+        <p>
+          <i>Verena Rieser</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929585" target="_blank"><b>Keynote</b></a>
+        </p>
+        <p>
+          <i>Rachel Tatman</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929586" target="_blank"><b>Keynote</b></a>
+        </p>
+        <p>
+          <i>Jose Eduardo Ochoa Luna</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929587" target="_blank"><b>Keynote</b></a>
+        </p>
+        <p>
+          <i>Helena Caseli</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

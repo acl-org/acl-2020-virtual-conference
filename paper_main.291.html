@@ -1,0 +1,632 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Enhancing Cross-target Stance Detection with Transferable Semantic-Emotion Knowledge</title>
+    
+<meta name="citation_title" content="Enhancing Cross-target Stance Detection with Transferable Semantic-Emotion Knowledge" />
+
+<meta name="citation_author" content="Bowen Zhang" />
+
+<meta name="citation_author" content="Min Yang" />
+
+<meta name="citation_author" content="Xutao Li" />
+
+<meta name="citation_author" content="Yunming Ye" />
+
+<meta name="citation_author" content="Xiaofei Xu" />
+
+<meta name="citation_author" content="Kuai Dai" />
+
+<meta name="citation_publication_date" content="July 2020" />
+<meta name="citation_conference_title" content="The 58th Annual Meeting Of The Association For Computational Linguistics" />
+<meta name="citation_inbook_title" content="Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics" />
+<meta name="citation_abstract" content="Stance detection is an important task, which aims to classify the attitude of an opinionated text towards a given target. Remarkable success has been achieved when sufficient labeled training data is available. However, annotating sufficient data is labor-intensive, which establishes significant barriers for generalizing the stance classifier to the data with new targets. In this paper, we proposed a Semantic-Emotion Knowledge Transferring (SEKT) model for cross-target stance detection, which uses the external knowledge (semantic and emotion lexicons) as a bridge to enable knowledge transfer across different targets. Specifically, a semantic-emotion heterogeneous graph is constructed from external semantic and emotion lexicons, which is then fed into a graph convolutional network to learn multi-hop semantic connections between words and emotion tags. Then, the learned semantic-emotion graph representation, which serves as prior knowledge bridging the gap between the source and target domains, is fully integrated into the bidirectional long short-term memory (BiLSTM) stance classifier by adding a novel knowledge-aware memory unit to the BiLSTM cell. Extensive experiments on a large real-world dataset demonstrate the superiority of SEKT against the state-of-the-art baseline methods." />
+
+<meta name="citation_keywords" content="Cross-target Detection" />
+
+<meta name="citation_keywords" content="Stance detection" />
+
+<meta name="citation_keywords" content="knowledge transfer" />
+
+<meta name="citation_keywords" content="stance classifier" />
+
+<meta name="citation_pdf_url" content="https://www.aclweb.org/anthology/2020.acl-main.291.pdf" />
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<!-- Title -->
+<div class="pp-card m-3">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="color: black">
+      Enhancing Cross-target Stance Detection with Transferable Semantic-Emotion Knowledge
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      
+      <a href="papers.html?filter=authors&search=Bowen Zhang" class="text-primary"
+        >Bowen Zhang</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Min Yang" class="text-primary"
+        >Min Yang</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Xutao Li" class="text-primary"
+        >Xutao Li</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Yunming Ye" class="text-primary"
+        >Yunming Ye</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Xiaofei Xu" class="text-primary"
+        >Xiaofei Xu</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Kuai Dai" class="text-primary"
+        >Kuai Dai</a
+      >
+      
+    </h3>
+   
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
+      <a class="card-link" target="_blank" href="https://www.aclweb.org/anthology/2020.acl-main.291.pdf">
+        Paper
+      </a>
+      
+      
+      
+      
+      <!-- Sharing options -->
+      <a class="a2a_dd card-link" data-a2a-url="https://www.aclweb.org/anthology/2020.acl-main.291">Share</a>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.onclick = 1;
+    a2a_config.num_services = 6;
+    a2a_config.prioritize = ["twitter", "email", "facebook", "reddit", "linkedin", "copy_link"];
+    a2a_config.no3p = true; //disable 3rd party cookies-limits some functionality
+    a2a_config.templates.twitter = {hashtags: "acl2020nlp,ACL2020"};
+  </script>
+      
+    </div>
+    <p class="card-text text-center h5">
+
+     <a href="papers.html?track=Sentiment Analysis, Stylistic Analysis, and Argument Mining" class ="badge badge-pill badge-primary" target="_blank">Sentiment Analysis, Stylistic Analysis, and Argument Mining</a>
+     <span class="badge badge-secondary">Long Paper</span>
+    </p>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 6A: Jul 7
+  <span class="session_times">(05:00-06:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 7A: Jul 7
+  <span class="session_times">(08:00-09:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-2"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Enhancing Cross-target Stance Detection with Transferable Semantic-Emotion Knowledge'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-07T05:00:00"),
+        end: new Date("2020-07-07T06:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.291.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Enhancing Cross-target Stance Detection with Transferable Semantic-Emotion Knowledge'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-07T08:00:00"),
+        end: new Date("2020-07-07T09:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.291.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-2');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        Stance detection is an important task, which aims to classify the attitude of an opinionated text towards a given target. Remarkable success has been achieved when sufficient labeled training data is available. However, annotating sufficient data is labor-intensive, which establishes significant barriers for generalizing the stance classifier to the data with new targets. In this paper, we proposed a Semantic-Emotion Knowledge Transferring (SEKT) model for cross-target stance detection, which uses the external knowledge (semantic and emotion lexicons) as a bridge to enable knowledge transfer across different targets. Specifically, a semantic-emotion heterogeneous graph is constructed from external semantic and emotion lexicons, which is then fed into a graph convolutional network to learn multi-hop semantic connections between words and emotion tags. Then, the learned semantic-emotion graph representation, which serves as prior knowledge bridging the gap between the source and target domains, is fully integrated into the bidirectional long short-term memory (BiLSTM) stance classifier by adding a novel knowledge-aware memory unit to the BiLSTM cell. Extensive experiments on a large real-world dataset demonstrate the superiority of SEKT against the state-of-the-art baseline methods.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://slideslive.com/38929329" target="_blank">pre-recorded video</a>
+    
+    in a separate window.
+    
+
+  </div>
+  <div class="row m-2">
+    <!-- Slides Live-->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38929329',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+
+      <div class="text-muted">
+      NOTE: The SlidesLive video may display a random order of the authors.
+      The correct author list is shown at the top of this webpage.
+      </div>
+    </div>
+
+    <!-- Chat (disabled) -->
+    
+  </div>
+</div>
+
+
+
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Similar Papers</h1>
+  </div>
+</div>
+<p></p>
+<div class="container" >
+  <div class="row">
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.588.html" class="text-muted">
+            <h5 class="card-title" align="center">Dependency Graph Enhanced Dual-transformer Structure for Aspect-based Sentiment Classification</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Hao Tang,
+             
+             Donghong Ji,
+             
+             Chenliang Li,
+             
+             Qiji Zhou,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.588.png" alt="A representative figure from paper main.588" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.157.html" class="text-muted">
+            <h5 class="card-title" align="center">Will-They-Won&#39;t-They: A Very Large Dataset for Stance Detection on Twitter</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Costanza Conforti,
+             
+             Jakob Berndt,
+             
+             Mohammad Taher Pilehvar,
+             
+             Chryssi Giannitsarou,
+             
+             Flavio Toxvaerd,
+             
+             Nigel Collier,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.157.png" alt="A representative figure from paper main.157" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.565.html" class="text-muted">
+            <h5 class="card-title" align="center">Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Libo Qin,
+             
+             Xiao Xu,
+             
+             Wanxiang Che,
+             
+             Yue Zhang,
+             
+             Ting Liu,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.565.png" alt="A representative figure from paper main.565" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.58.html" class="text-muted">
+            <h5 class="card-title" align="center">Learning to Tag OOV Tokens by Integrating Contextual Representation and Background Knowledge</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Keqing He,
+             
+             Yuanmeng Yan,
+             
+             Weiran XU,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.58.png" alt="A representative figure from paper main.58" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

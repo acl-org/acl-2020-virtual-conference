@@ -1,0 +1,622 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Learning to Faithfully Rationalize by Construction</title>
+    
+<meta name="citation_title" content="Learning to Faithfully Rationalize by Construction" />
+
+<meta name="citation_author" content="Sarthak Jain" />
+
+<meta name="citation_author" content="Sarah Wiegreffe" />
+
+<meta name="citation_author" content="Yuval Pinter" />
+
+<meta name="citation_author" content="Byron C. Wallace" />
+
+<meta name="citation_publication_date" content="July 2020" />
+<meta name="citation_conference_title" content="The 58th Annual Meeting Of The Association For Computational Linguistics" />
+<meta name="citation_inbook_title" content="Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics" />
+<meta name="citation_abstract" content="In many settings it is important for one to be able to understand why a model made a particular prediction. In NLP this often entails extracting snippets of an input text &#39;responsible for&#39; corresponding model output; when such a snippet comprises tokens that indeed informed the model&#39;s prediction, it is a faithful explanation. In some settings, faithfulness may be critical to ensure transparency. Lei et al. (2016) proposed a model to produce faithful rationales for neural text classification by defining independent snippet extraction and prediction modules. However, the discrete selection over input tokens performed by this method complicates training, leading to high variance and requiring careful hyperparameter tuning. We propose a simpler variant of this approach that provides faithful explanations by construction. In our scheme, named FRESH, arbitrary feature importance scores (e.g., gradients from a trained model) are used to induce binary labels over token inputs, which an extractor can be trained to predict. An independent classifier module is then trained exclusively on snippets provided by the extractor; these snippets thus constitute faithful explanations, even if the classifier is arbitrarily complex. In both automatic and manual evaluations we find that variants of this simple framework yield predictive performance superior to &#39;end-to-end&#39; approaches, while being more general and easier to train. Code is available at https://github.com/successar/FRESH." />
+
+<meta name="citation_keywords" content="NLP" />
+
+<meta name="citation_keywords" content="neural classification" />
+
+<meta name="citation_keywords" content="training" />
+
+<meta name="citation_keywords" content="automatic evaluations" />
+
+<meta name="citation_pdf_url" content="https://www.aclweb.org/anthology/2020.acl-main.409.pdf" />
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<!-- Title -->
+<div class="pp-card m-3">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="color: black">
+      Learning to Faithfully Rationalize by Construction
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      
+      <a href="papers.html?filter=authors&search=Sarthak Jain" class="text-primary"
+        >Sarthak Jain</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Sarah Wiegreffe" class="text-primary"
+        >Sarah Wiegreffe</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Yuval Pinter" class="text-primary"
+        >Yuval Pinter</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Byron C. Wallace" class="text-primary"
+        >Byron C. Wallace</a
+      >
+      
+    </h3>
+   
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
+      <a class="card-link" target="_blank" href="https://www.aclweb.org/anthology/2020.acl-main.409.pdf">
+        Paper
+      </a>
+      
+      
+      
+      
+      <!-- Sharing options -->
+      <a class="a2a_dd card-link" data-a2a-url="https://www.aclweb.org/anthology/2020.acl-main.409">Share</a>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.onclick = 1;
+    a2a_config.num_services = 6;
+    a2a_config.prioritize = ["twitter", "email", "facebook", "reddit", "linkedin", "copy_link"];
+    a2a_config.no3p = true; //disable 3rd party cookies-limits some functionality
+    a2a_config.templates.twitter = {hashtags: "acl2020nlp,ACL2020"};
+  </script>
+      
+    </div>
+    <p class="card-text text-center h5">
+
+     <a href="papers.html?track=Interpretability and Analysis of Models for NLP" class ="badge badge-pill badge-primary" target="_blank">Interpretability and Analysis of Models for NLP</a>
+     <span class="badge badge-secondary">Long Paper</span>
+    </p>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 8A: Jul 7
+  <span class="session_times">(12:00-13:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 10B: Jul 7
+  <span class="session_times">(21:00-22:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-2"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Learning to Faithfully Rationalize by Construction'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-07T12:00:00"),
+        end: new Date("2020-07-07T13:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.409.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Learning to Faithfully Rationalize by Construction'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-07T21:00:00"),
+        end: new Date("2020-07-07T22:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.409.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-2');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        In many settings it is important for one to be able to understand why a model made a particular prediction. In NLP this often entails extracting snippets of an input text &#39;responsible for&#39; corresponding model output; when such a snippet comprises tokens that indeed informed the model&#39;s prediction, it is a faithful explanation. In some settings, faithfulness may be critical to ensure transparency. Lei et al. (2016) proposed a model to produce faithful rationales for neural text classification by defining independent snippet extraction and prediction modules. However, the discrete selection over input tokens performed by this method complicates training, leading to high variance and requiring careful hyperparameter tuning. We propose a simpler variant of this approach that provides faithful explanations by construction. In our scheme, named FRESH, arbitrary feature importance scores (e.g., gradients from a trained model) are used to induce binary labels over token inputs, which an extractor can be trained to predict. An independent classifier module is then trained exclusively on snippets provided by the extractor; these snippets thus constitute faithful explanations, even if the classifier is arbitrarily complex. In both automatic and manual evaluations we find that variants of this simple framework yield predictive performance superior to &#39;end-to-end&#39; approaches, while being more general and easier to train. Code is available at https://github.com/successar/FRESH.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://slideslive.com/38929220" target="_blank">pre-recorded video</a>
+    
+    in a separate window.
+    
+
+  </div>
+  <div class="row m-2">
+    <!-- Slides Live-->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38929220',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+
+      <div class="text-muted">
+      NOTE: The SlidesLive video may display a random order of the authors.
+      The correct author list is shown at the top of this webpage.
+      </div>
+    </div>
+
+    <!-- Chat (disabled) -->
+    
+  </div>
+</div>
+
+
+
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Similar Papers</h1>
+  </div>
+</div>
+<p></p>
+<div class="container" >
+  <div class="row">
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.408.html" class="text-muted">
+            <h5 class="card-title" align="center">ERASER: A Benchmark to Evaluate Rationalized NLP Models</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Jay DeYoung,
+             
+             Sarthak Jain,
+             
+             Nazneen Fatema Rajani,
+             
+             Eric Lehman,
+             
+             Caiming Xiong,
+             
+             Richard Socher,
+             
+             Byron C. Wallace,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.408.png" alt="A representative figure from paper main.408" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.771.html" class="text-muted">
+            <h5 class="card-title" align="center">NILE : Natural Language Inference with Faithful Natural Language Explanations</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Sawan Kumar,
+             
+             Partha Talukdar,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.771.png" alt="A representative figure from paper main.771" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.449.html" class="text-muted">
+            <h5 class="card-title" align="center">A Transformer-based Approach for Source Code Summarization</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Wasi Ahmad,
+             
+             Saikat Chakraborty,
+             
+             Baishakhi Ray,
+             
+             Kai-Wei Chang,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.449.png" alt="A representative figure from paper main.449" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.387.html" class="text-muted">
+            <h5 class="card-title" align="center">Towards Transparent and Explainable Attention Models</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Akash Kumar Mohankumar,
+             
+             Preksha Nema,
+             
+             Sharan Narasimhan,
+             
+             Mitesh M. Khapra,
+             
+             Balaji Vasan Srinivasan,
+             
+             Balaraman Ravindran,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.387.png" alt="A representative figure from paper main.387" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

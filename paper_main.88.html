@@ -1,0 +1,646 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading</title>
+    
+<meta name="citation_title" content="Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading" />
+
+<meta name="citation_author" content="Yifan Gao" />
+
+<meta name="citation_author" content="Chien-Sheng Wu" />
+
+<meta name="citation_author" content="Shafiq Joty" />
+
+<meta name="citation_author" content="Caiming Xiong" />
+
+<meta name="citation_author" content="Richard Socher" />
+
+<meta name="citation_author" content="Irwin King" />
+
+<meta name="citation_author" content="Michael Lyu" />
+
+<meta name="citation_author" content="Steven C.H. Hoi" />
+
+<meta name="citation_publication_date" content="July 2020" />
+<meta name="citation_conference_title" content="The 58th Annual Meeting Of The Association For Computational Linguistics" />
+<meta name="citation_inbook_title" content="Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics" />
+<meta name="citation_abstract" content="The goal of conversational machine reading is to answer user questions given a knowledge base text which may require asking clarification questions. Existing approaches are limited in their decision making due to struggles in extracting question-related rules and reasoning about them. In this paper, we present a new framework of conversational machine reading that comprises a novel Explicit Memory Tracker (EMT) to track whether conditions listed in the rule text have already been satisfied to make a decision. Moreover, our framework generates clarification questions by adopting a coarse-to-fine reasoning strategy, utilizing sentence-level entailment scores to weight token-level distributions. On the ShARC benchmark (blind, held-out) testset, EMT achieves new state-of-the-art results of 74.6% micro-averaged decision accuracy and 49.5 BLEU4. We also show that EMT is more interpretable by visualizing the entailment-oriented reasoning process as the conversation flows. Code and models are released at https://github.com/Yifan-Gao/explicit_memory_tracker." />
+
+<meta name="citation_keywords" content="Conversational Reading" />
+
+<meta name="citation_keywords" content="decision making" />
+
+<meta name="citation_keywords" content="Explicit Tracker" />
+
+<meta name="citation_keywords" content="Coarse-to-Fine Reasoning" />
+
+<meta name="citation_pdf_url" content="https://www.aclweb.org/anthology/2020.acl-main.88.pdf" />
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<!-- Title -->
+<div class="pp-card m-3">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="color: black">
+      Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      
+      <a href="papers.html?filter=authors&search=Yifan Gao" class="text-primary"
+        >Yifan Gao</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Chien-Sheng Wu" class="text-primary"
+        >Chien-Sheng Wu</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Shafiq Joty" class="text-primary"
+        >Shafiq Joty</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Caiming Xiong" class="text-primary"
+        >Caiming Xiong</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Richard Socher" class="text-primary"
+        >Richard Socher</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Irwin King" class="text-primary"
+        >Irwin King</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Michael Lyu" class="text-primary"
+        >Michael Lyu</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Steven C.H. Hoi" class="text-primary"
+        >Steven C.H. Hoi</a
+      >
+      
+    </h3>
+   
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
+      <a class="card-link" target="_blank" href="https://www.aclweb.org/anthology/2020.acl-main.88.pdf">
+        Paper
+      </a>
+      
+      
+      
+      
+      <!-- Sharing options -->
+      <a class="a2a_dd card-link" data-a2a-url="https://www.aclweb.org/anthology/2020.acl-main.88">Share</a>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.onclick = 1;
+    a2a_config.num_services = 6;
+    a2a_config.prioritize = ["twitter", "email", "facebook", "reddit", "linkedin", "copy_link"];
+    a2a_config.no3p = true; //disable 3rd party cookies-limits some functionality
+    a2a_config.templates.twitter = {hashtags: "acl2020nlp,ACL2020"};
+  </script>
+      
+    </div>
+    <p class="card-text text-center h5">
+
+     <a href="papers.html?track=Question Answering" class ="badge badge-pill badge-primary" target="_blank">Question Answering</a>
+     <span class="badge badge-secondary">Long Paper</span>
+    </p>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 1B: Jul 6
+  <span class="session_times">(06:00-07:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 2A: Jul 6
+  <span class="session_times">(08:00-09:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-2"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-06T06:00:00"),
+        end: new Date("2020-07-06T07:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.88.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'Explicit Memory Tracker with Coarse-to-Fine Reasoning for Conversational Machine Reading'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-06T08:00:00"),
+        end: new Date("2020-07-06T09:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.88.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-2');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        The goal of conversational machine reading is to answer user questions given a knowledge base text which may require asking clarification questions. Existing approaches are limited in their decision making due to struggles in extracting question-related rules and reasoning about them. In this paper, we present a new framework of conversational machine reading that comprises a novel Explicit Memory Tracker (EMT) to track whether conditions listed in the rule text have already been satisfied to make a decision. Moreover, our framework generates clarification questions by adopting a coarse-to-fine reasoning strategy, utilizing sentence-level entailment scores to weight token-level distributions. On the ShARC benchmark (blind, held-out) testset, EMT achieves new state-of-the-art results of 74.6% micro-averaged decision accuracy and 49.5 BLEU4. We also show that EMT is more interpretable by visualizing the entailment-oriented reasoning process as the conversation flows. Code and models are released at https://github.com/Yifan-Gao/explicit_memory_tracker.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://slideslive.com/38928988" target="_blank">pre-recorded video</a>
+    
+    in a separate window.
+    
+
+  </div>
+  <div class="row m-2">
+    <!-- Slides Live-->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38928988',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+
+      <div class="text-muted">
+      NOTE: The SlidesLive video may display a random order of the authors.
+      The correct author list is shown at the top of this webpage.
+      </div>
+    </div>
+
+    <!-- Chat (disabled) -->
+    
+  </div>
+</div>
+
+
+
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Similar Papers</h1>
+  </div>
+</div>
+<p></p>
+<div class="container" >
+  <div class="row">
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.135.html" class="text-muted">
+            <h5 class="card-title" align="center">Semantic Graphs for Generating Deep Questions</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Liangming Pan,
+             
+             Yuxi Xie,
+             
+             Yansong Feng,
+             
+             Tat-Seng Chua,
+             
+             Min-Yen Kan,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.135.png" alt="A representative figure from paper main.135" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.586.html" class="text-muted">
+            <h5 class="card-title" align="center">Words Aren&#39;t Enough, Their Order Matters: On the Robustness of Grounding Visual Referring Expressions</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Arjun Akula,
+             
+             Spandana Gella,
+             
+             Yaser Al-Onaizan,
+             
+             Song-Chun Zhu,
+             
+             Siva Reddy,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.586.png" alt="A representative figure from paper main.586" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.100.html" class="text-muted">
+            <h5 class="card-title" align="center">Expertise Style Transfer: A New Task Towards Better Communication between Experts and Laymen</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Yixin Cao,
+             
+             Ruihao Shui,
+             
+             Liangming Pan,
+             
+             Min-Yen Kan,
+             
+             Zhiyuan Liu,
+             
+             Tat-Seng Chua,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.100.png" alt="A representative figure from paper main.100" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.105.html" class="text-muted">
+            <h5 class="card-title" align="center">Keyphrase Generation for Scientific Document Retrieval</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Florian Boudin,
+             
+             Ygor Gallina,
+             
+             Akiko Aizawa,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.105.png" alt="A representative figure from paper main.105" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,411 @@
+body a {
+  color: #2294e0;
+}
+
+body a:hover {
+  color: #2294e0;
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  font-family: "Lato";
+}
+
+label:text-muted,
+.nav-link {
+  font-family: "Lato";
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.container a:hover {
+  text-decoration: none;
+}
+
+.jumbotron {
+  font-family: "Lato", sans-serif;
+  background-color: rgba(236, 241, 246, 1);
+}
+
+#main-nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header {
+  font: "Montserrat";
+}
+
+.pp-card {
+  font-family: "Lato";
+  box-shadow: 0 0 14px 0 rgba(204, 204, 204, 1);
+  margin-bottom: 1em;
+  display: block;
+  overflow: hidden;
+}
+
+.pp-card-header {
+  border: 4px solid #eee;
+  font-family: "Lato";
+  height: 340px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.pp-mode-list .pp-card-header {
+  height: 175px;
+  border: 1px solid #eee;
+}
+
+.pp-card-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 3px;
+}
+
+.pp-mode-list .pp-card-header .card-title {
+  font-size: 17px;
+}
+
+.cards_img {
+  margin-top: 20px;
+  border-radius: 2px;
+  max-height: 130px;
+  object-fit: scale-down;
+}
+
+body .nav-pills .nav-link.active {
+  background-color: #ee353a;
+  color: white;
+}
+
+.container {
+  margin-top: 10px;
+}
+
+.card {
+  font-family: "Lato";
+}
+
+.card-header {
+  font-family: "Lato";
+}
+
+.card-header .card-title {
+  font-family: "Lato";
+}
+
+.cards.myCard {
+  display: flex;
+  flex-flow: wrap;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.cards {
+  margin-top: 10px;
+}
+
+.card-title {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+h2.card-title {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+h3.card-subtitle.text-muted {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.card-subtitle.text-muted {
+  text-align: center;
+  font-size: 13px;
+}
+
+.main-title {
+  font-weight: 700;
+  color: #2294e0;
+  font-family: "Lato";
+}
+
+.myAccordion {
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 18px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.sponsorSubtitle {
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.sponsorLevel {
+  border-bottom: 1px solid;
+  bottom: 15px;
+  padding-top: 15px;
+}
+
+.sponsorLogo {
+  width: 250px;
+  height: 250px;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  white-space: nowrap;
+  background: white;
+}
+
+.sponsorHelper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-left: -4px;
+}
+
+.sponsorImg {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sponsorLogo:hover {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.slp iframe {
+  background: #fff;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* .carousel-inner .carousel-item-right.active, */
+
+/* .carousel-inner .carousel-item-next { */
+
+/*   transform: translateX(25%); */
+
+/* } */
+
+/* .carousel-inner .carousel-item-left.active, */
+
+/* .carousel-inner .carousel-item-prev { */
+
+/*   transform: translateX(-25%); */
+
+/* } */
+
+/* .carousel-inner .carousel-item-right, */
+
+/* .carousel-inner .carousel-item-left{ */
+
+/*   transform: translateX(0); */
+
+/* } */
+
+.carousel-control-prev-icon {
+  filter: invert(1);
+  transform: translateX(-200%);
+}
+
+div.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+
+.carousel-control-next-icon {
+  filter: invert(1);
+  transform: translateX(200%);
+}
+
+.border {
+  background: #fff;
+  padding: 10px;
+  border: 4px solid #eee;
+  box-shadow: rgb(204, 204, 204) 2px 2px 14px 0;
+}
+
+tr.fc-list-item {
+  cursor: pointer;
+}
+
+.details {
+  font-family: "Lato", sans-serif;
+}
+
+#abstractExample.collapse:not(.show) {
+  display: block;
+
+  /* height = lineheight * no of lines to display */
+  height: 4.5em;
+  overflow: hidden;
+}
+
+#abstractExample.collapsing {
+  height: 4.5em;
+}
+
+#absShow.collapsed::after {
+  content: "+ Show More";
+}
+
+#absShow:not(.collapsed)::after {
+  content: "- Show Less";
+}
+
+body .carousel-control-next,
+body .carousel-control-prev {
+  width: 5%;
+}
+
+.icon_video,
+.icon_cal {
+  fill: #6c757d;
+}
+
+.icon_video:hover,
+.icon_cal:hover {
+  fill: #000;
+}
+
+.checkbox-paper {
+  opacity: 0.5;
+  color: gray;
+  font-size: 18pt;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.checkbox-paper.selected {
+  opacity: 1;
+  color: green;
+}
+
+.greenbox-paper.selected {
+  background-color: rgb(245, 256, 245);
+}
+
+@supports (-webkit-text-stroke: 1px gray) {
+  .checkbox-paper {
+    opacity: 0.5;
+    -webkit-text-stroke: 1px gray;
+    -webkit-text-fill-color: white;
+  }
+
+  .checkbox-paper.selected {
+    opacity: 1;
+    -webkit-text-fill-color: green;
+  }
+}
+
+.fc-v-event.calendar-event-plenary {
+  background-color: #82b74b;
+  border-color: #82b74b;
+}
+
+.fc-v-event.calendar-event-tutorial {
+  background-color: #b8a9c9;
+}
+
+.fc-v-event.calendar-event-workshops {
+  background-color: #fe9f6d;
+}
+
+/* background-color: #d64161;*/
+.fc-v-event.calendar-event-qa {
+  background-color: #86989b;
+}
+
+.fc-v-event.calendar-event-socials {
+  background-color: #00a1f1;
+}
+
+.fc-v-event.calendar-event-other {
+  background-color: #6699ff;
+}
+
+.fc-v-event.calendar-event {
+  border-color: transparent;
+}
+
+.deco-none {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.deco-none:link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.deco-none:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.twitter-typeahead {
+  flex-grow: 100;
+}
+
+div#papers_options > div {
+  margin-bottom: 5px;
+}
+
+#papers_options {
+  justify-content: center;
+}
+
+.paper-detail-calendar {
+  position: relative;
+  top: -1px;
+  left: 10px;
+}
+
+.fc-v-event {
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Manipulate calendar event on hover */
+.fc-v-event:hover {
+  background: rgb(234, 33, 45);
+}

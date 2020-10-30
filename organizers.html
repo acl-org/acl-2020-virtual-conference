@@ -1,0 +1,1211 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Organizers</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Organizers</h1>
+  </div>
+</div>
+<div class="text-muted text-center">
+Also check out our
+<a href="https://acl2020.org/committees/program" target="_blank">Senior Program Committee</a>
+and
+<a href="https://acl2020.org/committees/diversity-inclusion" target="_blank">Diversity & Inclusion Committee</a>.
+</div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="row">
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Dan Jurafsky</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            General Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Stanford University
+          </h6>
+        </div>
+        <center>
+          <img src="https://web.stanford.edu/~jurafsky/danfall13.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Joyce Chai</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Program Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Michigan
+          </h6>
+        </div>
+        <center>
+          <img src="https://www.cse.msu.edu/~jchai/joycechai.jpeg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Natalie Schluter</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Program Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Google Brain and IT University of Copenhagen /
+            <a class="text-muted" href="http://twitter.com/natschluter" target="_blank"
+              >@natschluter</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/natalie-schluter.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Joel Tetreault</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Program Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Dataminr /
+            <a class="text-muted" href="http://twitter.com/Tetreault_NLP" target="_blank"
+              >@Tetreault_NLP</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/joel-tetreault.png" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Jianfeng Gao</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Local Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft Research /
+            <a class="text-muted" href="http://twitter.com/JianfengGao0217" target="_blank"
+              >@JianfengGao0217</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/09/avatar_user__1474328665-180x180.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Priscilla Rasmussen</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Local Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            ACL
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/priscilla-rasmussen.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Luke Zettlemoyer</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Local Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Washington /
+            <a class="text-muted" href="http://twitter.com/LukeZettlemoyer" target="_blank"
+              >@LukeZettlemoyer</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://s3-us-west-2.amazonaws.com/www-cse-public/images/portraits/lsz_sm.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Agata Savary</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Tutorial Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Tours /
+            <a class="text-muted" href="http://twitter.com/AgataSavary" target="_blank"
+              >@AgataSavary</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/agata-savary.JPG" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Yue Zhang</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Tutorial Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Westlake University
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/yue-zhang.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Milica Gašić</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Heinrich Heine University of Düsseldorf
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/milica-gasic.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Dilek Hakkani-Tur</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Amazon Alexa AI /
+            <a class="text-muted" href="http://twitter.com/dilekhakkanitur" target="_blank"
+              >@dilekhakkanitur</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/dilek-hakkani-tur.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Saif M. Mohammad</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            National Research Council Canada /
+            <a class="text-muted" href="http://twitter.com/SaifMMohammad" target="_blank"
+              >@SaifMMohammad</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://pbs.twimg.com/profile_images/1188178214016950273/znJnf3I-_400x400.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Ves Stoyanov</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Facebook AI /
+            <a class="text-muted" href="http://twitter.com/vesko_st" target="_blank"
+              >@vesko_st</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/ves-stoyanov.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Rotem Dror</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Student Research Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Technion - Israel Institute of Technology
+          </h6>
+        </div>
+        <center>
+          <img src="https://rtmdrr.github.io/images/profile.png" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Jiangming Liu</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Student Research Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            The University of Edinburgh /
+            <a class="text-muted" href="http://twitter.com/jiangming_liu" target="_blank"
+              >@jiangming_liu</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://leoncrashcode.github.io/images/WechatIMG5.jpeg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Shruti Rijhwani</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Student Research Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Carnegie Mellon University /
+            <a class="text-muted" href="http://twitter.com/shrutirij" target="_blank"
+              >@shrutirij</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/shruti-rijhwani.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Yizhong Wang</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Student Research Workshop Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Washington /
+            <a class="text-muted" href="http://twitter.com/yizhongwyz" target="_blank"
+              >@yizhongwyz</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://yizhong-wang.com/assets/selfie.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Omri Abend</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Faculty Advisor to the Student Research Workshop
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Hebrew University of Jerusalem /
+            <a class="text-muted" href="http://twitter.com/AbendOmri" target="_blank"
+              >@AbendOmri</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://www.cse.huji.ac.il/~oabend/photo.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Sujian Li</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Faculty Advisor to the Student Research Workshop
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Peking University
+          </h6>
+        </div>
+        <center>
+          <img src="https://eecs.pku.edu.cn/__local/3/94/F7/40202A8B6BC480A619E18D543FF_6BE0C929_6FB8.jpg?e=.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Zhou Yu</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Faculty Advisor to the Student Research Workshop
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of California, Davis /
+            <a class="text-muted" href="http://twitter.com/Zhou_Yu_AI" target="_blank"
+              >@Zhou_Yu_AI</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://www.cs.cmu.edu/afs/cs/user/zhouyu/www/007.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Nanyun Peng</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Conference Handbook Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Southern California /
+            <a class="text-muted" href="http://twitter.com/VioletNPeng" target="_blank"
+              >@VioletNPeng</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/nanyun-peng.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Asli Celikyilmaz</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Demonstration Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft Research, Redmond /
+            <a class="text-muted" href="http://twitter.com/real_asli" target="_blank"
+              >@real_asli</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/asli-celikyilmaz.png" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Shawn Wen</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Demonstration Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            PolyAI
+          </h6>
+        </div>
+        <center>
+          <img src="https://shawnwun.github.io/img/personal/personal-big.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Cecilia Ovesdotter Alm</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Diversity &amp; Inclusion (D&amp;I) Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Rochester Institute of Technology
+          </h6>
+        </div>
+        <center>
+          <img src="https://pht180.rit.edu/ceciliaovesdotteralm/wp-content/uploads/sites/11/2020/03/3407_Wild_Overdotter_HR_03.jpg-682x1024.jpeg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Vinodkumar Prabhakaran</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Diversity &amp; Inclusion (D&amp;I) Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Google /
+            <a class="text-muted" href="http://twitter.com/vinodkpg" target="_blank"
+              >@vinodkpg</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/vinodkumar-prabhakaran.png" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Hoifung Poon</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Local Sponsorship Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft /
+            <a class="text-muted" href="http://twitter.com/hoifungpoon" target="_blank"
+              >@hoifungpoon</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://www.microsoft.com/en-us/research/wp-content/uploads/2017/07/avatar_user_32016_1499797906-180x180.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Kristina Toutanova</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Local Sponsorship Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Google /
+            <a class="text-muted" href="http://twitter.com/toutanova" target="_blank"
+              >@toutanova</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/kristina-toutanova.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Steven Bethard</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Publication Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Arizona
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/steven-bethard.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Ryan Cotterell</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Publication Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Cambridge /
+            <a class="text-muted" href="http://twitter.com/ryandcotterell" target="_blank"
+              >@ryandcotterell</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/ryan-cotterell.png" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Rui Yan</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Publication Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Peking University
+          </h6>
+        </div>
+        <center>
+          <img src="http://www.ruiyan.me/img/me.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Emily M. Bender</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Publicity Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Washington /
+            <a class="text-muted" href="http://twitter.com/emilymbender" target="_blank"
+              >@emilymbender</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/emily-bender.jpeg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Esther Seyffarth</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Publicity Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Düsseldorf /
+            <a class="text-muted" href="http://twitter.com/ojahnn" target="_blank"
+              >@ojahnn</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://user.phil.hhu.de/~seyffarth/esther_avatar_small.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Zhiyuan Liu</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Publicity Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Tsinghua University /
+            <a class="text-muted" href="http://twitter.com/zibuyu9" target="_blank"
+              >@zibuyu9</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/zhiyuan-liu.png" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Ananya Ganesh</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Sustainability Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Educational Testing Service /
+            <a class="text-muted" href="http://twitter.com/ananya__g" target="_blank"
+              >@ananya__g</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://ananyaganesh.github.io/lake.jpeg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Klaus Zechner</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Sustainability Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Educational Testing Service
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/klaus-zechner.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Marjan Ghazvininejad</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Student Volunteer Coordinator
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Facebook AI Lab /
+            <a class="text-muted" href="http://twitter.com/gh_marjan" target="_blank"
+              >@gh_marjan</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="https://scholar.googleusercontent.com/citations?view_op=view_photo&amp;user=IRTtnAIAAAAJ&amp;citpid=1" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Hao Fang</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Virtual Infrastructure Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft Semantic Machines
+          </h6>
+        </div>
+        <center>
+          <img src="https://hao-fang.github.io/res/profile_photo_2019.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Yi Luan</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Virtual Infrastructure Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Google AI Language
+          </h6>
+        </div>
+        <center>
+          <img src="https://luanyi.github.io/YiLuan_files/yiluan.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Hamid Palangi</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Virtual Infrastructure Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft Research, Redmond /
+            <a class="text-muted" href="http://twitter.com/hmd_palangi" target="_blank"
+              >@hmd_palangi</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/hamid-palangi.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Lianhui Qin</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Virtual Infrastructure Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            University of Washington /
+            <a class="text-muted" href="http://twitter.com/Lianhuiq" target="_blank"
+              >@Lianhuiq</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/lianhui-qin.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Sudha Rao</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Virtual Infrastructure Chair &amp; Website Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft Research, Redmond /
+            <a class="text-muted" href="http://twitter.com/raosudha89" target="_blank"
+              >@raosudha89</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/sudha-rao.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4 col-xs-6">
+    <div class="card text-center shadow p-2 my-5 bg-light rounded" style="height:90%">
+      <div class="text-muted">
+        <h5 class="card-title" align="center">Yizhe Zhang</h5>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Virtual Infrastructure Chair &amp; Website Chair
+          </h6>
+        </div>
+        <div>
+          <h6 class="card-subtitle text-muted m-1" align="center">
+            Microsoft Research, Redmond /
+            <a class="text-muted" href="http://twitter.com/icaruszyz" target="_blank"
+              >@icaruszyz</a
+            >
+          </h6>
+        </div>
+        <center>
+          <img src="static/images/committee/yizhe-zhang.jpg" class="rounded" style="height: 150px;" />
+        </center>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

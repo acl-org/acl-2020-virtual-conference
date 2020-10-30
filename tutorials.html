@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Tutorials</title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script>
+<script>
+  var events = JSON.parse('[{"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorials.html", "location": "tutorials.html", "start": "2020-07-05T13:00:00+00:00", "title": "Tutorials", "type": "Tutorials", "url": "tutorials.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorials.html", "location": "tutorials.html", "start": "2020-07-05T17:30:00+00:00", "title": "Tutorials", "type": "Tutorials", "url": "tutorials.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorials.html", "location": "tutorials.html", "start": "2020-07-05T22:00:00+00:00", "title": "Tutorials", "type": "Tutorials", "url": "tutorials.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T1.html", "location": "tutorial_T1.html", "start": "2020-07-05T17:30:00+00:00", "title": "T1: Interpretability and Analysis in Neural NLP \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eYonatan Belinkov, Sebastian Gehrmann and Ellie Pavlick\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T1.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorial_T1.html", "location": "tutorial_T1.html", "start": "2020-07-05T13:00:00+00:00", "title": "T1: Interpretability and Analysis in Neural NLP \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eYonatan Belinkov, Sebastian Gehrmann and Ellie Pavlick\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T1.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T2.html", "location": "tutorial_T2.html", "start": "2020-07-05T22:00:00+00:00", "title": "T2: Multi-modal Information Extraction from Text, Semi-structured, and Tabular Data on the Web \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eXin Luna Dong, Hannaneh Hajishirzi, Colin Lockard and Prashant Shiralkar\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T2.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T3.html", "location": "tutorial_T3.html", "start": "2020-07-05T17:30:00+00:00", "title": "T3: Reviewing Natural Language Processing Research \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eKevin Cohen, Kar\u00ebn Fort, Margot Mieskes and Aur\u00e9lie N\u00e9v\u00e9ol\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T3.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T4.html", "location": "tutorial_T4.html", "start": "2020-07-05T17:30:00+00:00", "title": "T4: Stylized Text Generation: Approaches and Applications \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eLili Mou and Olga Vechtomova\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T4.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorial_T5.html", "location": "tutorial_T5.html", "start": "2020-07-05T13:00:00+00:00", "title": "T5: Achieving Common Ground in Multi-modal Dialogue \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMalihe Alikhani and Matthew Stone\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T5.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T5.html", "location": "tutorial_T5.html", "start": "2020-07-05T22:00:00+00:00", "title": "T5: Achieving Common Ground in Multi-modal Dialogue \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMalihe Alikhani and Matthew Stone\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T5.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T6.html", "location": "tutorial_T6.html", "start": "2020-07-05T22:00:00+00:00", "title": "T6: Commonsense Reasoning for Natural Language Processing \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMaarten Sap, Vered Shwartz, Antoine Bosselut, Yejin Choi, Dan Roth\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T6.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorial_T7.html", "location": "tutorial_T7.html", "start": "2020-07-05T13:00:00+00:00", "title": "T7: Integrating Ethics into the NLP Curriculum \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmily M. Bender, Dirk Hovy and Alexandra Schofield\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T7.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T7.html", "location": "tutorial_T7.html", "start": "2020-07-05T17:30:00+00:00", "title": "T7: Integrating Ethics into the NLP Curriculum \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmily M. Bender, Dirk Hovy and Alexandra Schofield\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T7.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T8.html", "location": "tutorial_T8.html", "start": "2020-07-05T22:00:00+00:00", "title": "T8: Open-Domain Question Answering \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eDanqi Chen and Scott Wen-tau Yih\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T8.html", "view": "day"}]');
+ 
+  // We use https://fullcalendar.io/
+  document.addEventListener('DOMContentLoaded', function() {
+      var initialTimeZone = moment.tz.guess();
+      var timeZoneSelectorEl = document.getElementById('time-zone-selector');
+
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'timeGridDay',
+        initialDate: '2020-07-05',
+        timeZone: initialTimeZone,
+        allDaySlot: false,
+        slotLabelFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          meridiem: false,
+          hour12: false
+        },
+        eventTimeFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          meridiem: false,
+          timeZoneName: 'short',
+          hour12: false
+        },
+        visibleRange: {
+          start: '2020-07-05',
+          end: '2020-07-05'
+        },
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'timeGridWeek,timeGridDay'
+        },
+        height: "auto",
+        events: function(info, successCallback, failureCallback) {
+            // We need to change the time zone manually,
+            // we cannot use static event data
+            // Deep copy
+            let tz = info.timeZone;
+            if (tz === "Local") {
+                tz = moment.tz.guess();
+            }
+            let zoned_events = JSON.parse(JSON.stringify(events));
+              for (var i = 0; i < zoned_events.length; i++){
+                var obj = zoned_events[i];
+                obj["start"] = moment(obj["start"]).tz(tz).format();
+                obj["end"] = moment(obj["end"]).tz(tz).format();
+
+                if (obj["view"] === "week") {
+                  obj["display"] = "none";
+                }
+              }
+            successCallback(zoned_events);
+        },
+        eventClick: function(eventClickInfo) {
+            var e = eventClickInfo.event;
+            // Prevent reloading the current page, as we clicked
+            // on a hyperlink on the current page
+            eventClickInfo.jsEvent.preventDefault();
+
+            if (e.url) {
+                window.open(e.url, "_blank");
+                return false;
+            }
+        },
+        eventDidMount: function(info) {
+          $(info.el).popover({
+            title: info.event.title,
+            html: true,
+            content: info.timeText,
+            placement: 'top',
+            trigger:'hover',
+            container:'body'
+          })
+        },
+        // Render HTML from title as HTML
+        eventContent: function( arg ) {
+ 	        return { html: arg.event.title }
+        }
+      });
+
+      moment.tz.names().forEach(function(timeZone) {
+        var optionEl;
+
+        if (timeZone !== 'UTC') { // UTC is already in the list
+          optionEl = document.createElement('option');
+          optionEl.value = timeZone;
+          optionEl.innerText = timeZone;
+          timeZoneSelectorEl.appendChild(optionEl);
+        }
+      });
+
+    // when the timezone selector changes, dynamically change the calendar option
+    timeZoneSelectorEl.addEventListener('change', function() {
+      calendar.setOption('timeZone', this.value);
+    });
+
+    calendar.render();
+  });
+</script>
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Tutorial</h1>
+  </div>
+</div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="row">
+  <div class="col-12 pb-4">
+    <p class="lead">
+    Below is the schedule of the tutorial to be held on Sunday, July 5th, 2020. Hover over a tutorial to view full details and click on it to access its material. <br/>
+    Tutorials held in parallel are shown one besides the other in the calendar.
+    Some tutorials are held twice and some are held once.
+    Checkout <a href="https://acl2020.org/blog/detailed-modalities-of-tutorials/">this blogpost</a> by tutorial chairs to know about the modalities of differnt tutorials in three stages: before, during and after the tutorial. 
+    </p>
+  </div>
+</div>
+
+<div>
+  <div class="form-group col">
+    <label for="time-zone-selector">Timezone:</label>
+    <select id="time-zone-selector" class="selectpicker" data-live-search="true">
+      <option value="local" selected>Local</option>
+      <option value="UTC">UTC</option>
+    </select>
+  </div>
+  <div id="calendar"></div>
+</div>
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

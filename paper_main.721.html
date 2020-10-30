@@ -1,0 +1,634 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: ZeroShotCeres: Zero-Shot Relation Extraction from Semi-Structured Webpages</title>
+    
+<meta name="citation_title" content="ZeroShotCeres: Zero-Shot Relation Extraction from Semi-Structured Webpages" />
+
+<meta name="citation_author" content="Colin Lockard" />
+
+<meta name="citation_author" content="Prashant Shiralkar" />
+
+<meta name="citation_author" content="Xin Luna Dong" />
+
+<meta name="citation_author" content="Hannaneh Hajishirzi" />
+
+<meta name="citation_publication_date" content="July 2020" />
+<meta name="citation_conference_title" content="The 58th Annual Meeting Of The Association For Computational Linguistics" />
+<meta name="citation_inbook_title" content="Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics" />
+<meta name="citation_abstract" content="In many documents, such as semi-structured webpages, textual semantics are augmented with additional information conveyed using visual elements including layout, font size, and color. Prior work on information extraction from semi-structured websites has required learning an extraction model specific to a given template via either manually labeled or distantly supervised data from that template. In this work, we propose a solution for &#34;zero-shot&#34; open-domain relation extraction from webpages with a previously unseen template, including from websites with little overlap with existing sources of knowledge for distant supervision and websites in entirely new subject verticals. Our model uses a graph neural network-based approach to build a rich representation of text fields on a webpage and the relationships between them, enabling generalization to new templates. Experiments show this approach provides a 31% F1 gain over a baseline for zero-shot extraction in a new subject vertical." />
+
+<meta name="citation_keywords" content="Zero-Shot Extraction" />
+
+<meta name="citation_keywords" content="information extraction" />
+
+<meta name="citation_keywords" content="distant supervision" />
+
+<meta name="citation_keywords" content="generalization" />
+
+<meta name="citation_pdf_url" content="https://www.aclweb.org/anthology/2020.acl-main.721.pdf" />
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<!-- Title -->
+<div class="pp-card m-3">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="color: black">
+      ZeroShotCeres: Zero-Shot Relation Extraction from Semi-Structured Webpages
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      
+      <a href="papers.html?filter=authors&search=Colin Lockard" class="text-primary"
+        >Colin Lockard</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Prashant Shiralkar" class="text-primary"
+        >Prashant Shiralkar</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Xin Luna Dong" class="text-primary"
+        >Xin Luna Dong</a
+      >,
+      
+      <a href="papers.html?filter=authors&search=Hannaneh Hajishirzi" class="text-primary"
+        >Hannaneh Hajishirzi</a
+      >
+      
+    </h3>
+   
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Abstract
+      </a>
+      
+      <a class="card-link" target="_blank" href="https://www.aclweb.org/anthology/2020.acl-main.721.pdf">
+        Paper
+      </a>
+      
+      
+      
+      
+      <!-- Sharing options -->
+      <a class="a2a_dd card-link" data-a2a-url="https://www.aclweb.org/anthology/2020.acl-main.721">Share</a>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.onclick = 1;
+    a2a_config.num_services = 6;
+    a2a_config.prioritize = ["twitter", "email", "facebook", "reddit", "linkedin", "copy_link"];
+    a2a_config.no3p = true; //disable 3rd party cookies-limits some functionality
+    a2a_config.templates.twitter = {hashtags: "acl2020nlp,ACL2020"};
+  </script>
+      
+    </div>
+    <p class="card-text text-center h5">
+
+     <a href="papers.html?track=Information Extraction" class ="badge badge-pill badge-primary" target="_blank">Information Extraction</a>
+     <span class="badge badge-secondary">Long Paper</span>
+    </p>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 14A: Jul 8
+  <span class="session_times">(17:00-18:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Session 15A: Jul 8
+  <span class="session_times">(20:00-21:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-2"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'ZeroShotCeres: Zero-Shot Relation Extraction from Semi-Structured Webpages'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-08T17:00:00"),
+        end: new Date("2020-07-08T18:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.721.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'ZeroShotCeres: Zero-Shot Relation Extraction from Semi-Structured Webpages'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-08T20:00:00"),
+        end: new Date("2020-07-08T21:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/paper_main.721.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-2');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        <span class="font-weight-bold">Abstract:</span>
+        In many documents, such as semi-structured webpages, textual semantics are augmented with additional information conveyed using visual elements including layout, font size, and color. Prior work on information extraction from semi-structured websites has required learning an extraction model specific to a given template via either manually labeled or distantly supervised data from that template. In this work, we propose a solution for &#34;zero-shot&#34; open-domain relation extraction from webpages with a previously unseen template, including from websites with little overlap with existing sources of knowledge for distant supervision and websites in entirely new subject verticals. Our model uses a graph neural network-based approach to build a rich representation of text fields on a webpage and the relationships between them, enabling generalization to new templates. Experiments show this approach provides a 31% F1 gain over a baseline for zero-shot extraction in a new subject vertical.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+    You can open the
+    <a href="https://slideslive.com/38929243" target="_blank">pre-recorded video</a>
+    
+    in a separate window.
+    
+
+  </div>
+  <div class="row m-2">
+    <!-- Slides Live-->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38929243',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+
+      <div class="text-muted">
+      NOTE: The SlidesLive video may display a random order of the authors.
+      The correct author list is shown at the top of this webpage.
+      </div>
+    </div>
+
+    <!-- Chat (disabled) -->
+    
+  </div>
+</div>
+
+
+
+
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Similar Papers</h1>
+  </div>
+</div>
+<p></p>
+<div class="container" >
+  <div class="row">
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.148.html" class="text-muted">
+            <h5 class="card-title" align="center">Improving Massively Multilingual Neural Machine Translation and Zero-Shot Translation</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Biao Zhang,
+             
+             Philip Williams,
+             
+             Ivan Titov,
+             
+             Rico Sennrich,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.148.png" alt="A representative figure from paper main.148" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.531.html" class="text-muted">
+            <h5 class="card-title" align="center">Improving Neural Machine Translation with Soft Template Prediction</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Jian Yang,
+             
+             Shuming Ma,
+             
+             Dongdong Zhang,
+             
+             Zhoujun Li,
+             
+             Ming Zhou,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.531.png" alt="A representative figure from paper main.531" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.128.html" class="text-muted">
+            <h5 class="card-title" align="center">Few-shot Slot Tagging with Collapsed Dependency Transfer and Label-enhanced Task-adaptive Projection Network</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Yutai Hou,
+             
+             Wanxiang Che,
+             
+             Yongkui Lai,
+             
+             Zhihan Zhou,
+             
+             Yijia Liu,
+             
+             Han Liu,
+             
+             Ting Liu,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.128.png" alt="A representative figure from paper main.128" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4 col-xs-6">
+      <div class="pp-card" >
+        <div class="pp-card-header" class="text-muted">
+          <a href="paper_main.272.html" class="text-muted">
+            <h5 class="card-title" align="center">Zero-shot Text Classification via Reinforced Self-training</h5>
+          </a>
+          <h6 class="card-subtitle text-muted" align="center">
+             
+             Zhiquan Ye,
+             
+             Yuxia Geng,
+             
+             Jiaoyan Chen,
+             
+             Jingmin Chen,
+             
+             Xiaoxiao Xu,
+             
+             Suhang Zheng,
+             
+             Feng Wang,
+             
+             Jun Zhang,
+             
+             Huajun Chen,
+             
+          </h6>
+          <center><img class="cards_img" src="https://acl2020-public.s3.amazonaws.com/papers/main.272.png" alt="A representative figure from paper main.272" width="80%"/></center>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

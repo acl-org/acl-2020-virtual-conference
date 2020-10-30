@@ -1,0 +1,755 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W17: Natural Language Processing for Social Media (SocialNLP)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W17: Natural Language Processing for Social Media (SocialNLP)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Lun-Wei Ku, Cheng-Te Li
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://sites.google.com/site/socialnlp2020/" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 10
+  <span class="session_times">(16:05-23:35 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W17: Natural Language Processing for Social Media (SocialNLP)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-10T16:05:00"),
+        end: new Date("2020-07-10T23:35:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W17.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The Eighth International Workshop on Natural Language Processing for Social Media (SocialNLP 2020). Check out social NLP tech from experts, researches and applications, plus resources for you to play in challenge EmotionX from SocialNLP!
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:05 AM-9:10 AM</td>
+          
+          <td scope="row">Openinig</td>
+          <td style="white-space: pre-wrap;">Lun-Wei Ku</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:10 AM-10:00 AM</td>
+          
+          <td scope="row">Managing Information and Debunking Misinformation in the Time of Covid-19</td>
+          <td style="white-space: pre-wrap;">Pascale Fung</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:00 AM-10:10 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:50 AM-11:08 AM</td>
+          
+          <td scope="row">Enhancing Bias Detection in Political News using Pragmatic Presupposition</td>
+          <td style="white-space: pre-wrap;">Lalitha Kameswari</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:08 AM-11:10 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:10 AM-11:28 AM</td>
+          
+          <td scope="row">Demoting Racial Bias in Hate Speech Detection</td>
+          <td style="white-space: pre-wrap;">Mengzhou Xia</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:28 AM-11:30 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:30 AM-11:48 AM</td>
+          
+          <td scope="row">NARMADA: Need and Available Resource Managing Assistant for Disasters and Adversities</td>
+          <td style="white-space: pre-wrap;">Sayan Sinha</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:48 AM-11:50 AM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:50 AM-12:08 PM</td>
+          
+          <td scope="row">BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection</td>
+          <td style="white-space: pre-wrap;">Jihyung Moon</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:08 PM-12:10 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:10 PM-12:28 PM</td>
+          
+          <td scope="row">Stance Prediction for Contemporary Issues: Data and Experiments</td>
+          <td style="white-space: pre-wrap;">Marjan Hosseinia</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:28 PM-12:30 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:00 PM-2:15 PM</td>
+          
+          <td scope="row">EmotionGIF Challenge</td>
+          <td style="white-space: pre-wrap;">Boaz Shmueli</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:15 PM-2:20 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:20 PM-3:00 PM</td>
+          
+          <td scope="row">Participants Flash</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:30 PM-3:48 PM</td>
+          
+          <td scope="row">Challenges in Emotion Style Transfer: An Exploration with a Lexical Substitution Pipeline</td>
+          <td style="white-space: pre-wrap;">David Helbig</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:48 PM-3:50 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:50 PM-4:08 PM</td>
+          
+          <td scope="row">Incorporating Uncertain Segmentation Information into Chinese NER for Social Media Text</td>
+          <td style="white-space: pre-wrap;">Shengbin Jia</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:08 PM-4:10 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:10 PM-4:28 PM</td>
+          
+          <td scope="row">Multi-Task Supervised Pretraining for Neural Domain Adaptation</td>
+          <td style="white-space: pre-wrap;">Sara Meftah</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:28 PM-4:30 PM</td>
+          
+          <td scope="row">Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:30 PM-4:35 PM</td>
+          
+          <td scope="row">Closing</td>
+          <td style="white-space: pre-wrap;">Lun-Wei Ku</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931806" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931806',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929899" target="_blank"><b>Opening</b></a>
+        </p>
+        <p>
+          <i>Lun-Wei Ku</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929900" target="_blank"><b>Managing Information and Debunking Misinformation in the Time of Covid-19</b></a>
+        </p>
+        <p>
+          <i>Pascale Fung</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929901" target="_blank"><b>Enhancing Bias Detection in Political News using Pragmatic Presupposition</b></a>
+        </p>
+        <p>
+          <i>Lalitha Kameswari</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929902" target="_blank"><b>Demoting Racial Bias in Hate Speech Detection</b></a>
+        </p>
+        <p>
+          <i>Mengzhou Xia</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929903" target="_blank"><b>NARMADA: Need and Available Resource Managing Assistant for Disasters and Adversities</b></a>
+        </p>
+        <p>
+          <i>Sayan Sinha</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929904" target="_blank"><b>BEEP! Korean Corpus of Online News Comments for Toxic Speech Detection</b></a>
+        </p>
+        <p>
+          <i>Jihyung Moon</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929905" target="_blank"><b>Stance Prediction for Contemporary Issues: Data and Experiments</b></a>
+        </p>
+        <p>
+          <i>Marjan Hosseinia</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929906" target="_blank"><b>EmotionGIF Challenge</b></a>
+        </p>
+        <p>
+          <i>Boaz Shmueli</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929907" target="_blank"><b>Challenges in Emotion Style Transfer: An Exploration with a Lexical Substitution Pipeline</b></a>
+        </p>
+        <p>
+          <i>Roman Klinger</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929908" target="_blank"><b>Incorporating Uncertain Segmentation Information into Chinese NER for Social Media Text</b></a>
+        </p>
+        <p>
+          <i>Shengbin Jia</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929909" target="_blank"><b>Multi-Task Supervised Pretraining for Neural Domain Adaptation</b></a>
+        </p>
+        <p>
+          <i>Sara Meftah</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929910" target="_blank"><b>Closing</b></a>
+        </p>
+        <p>
+          <i>Lun-Wei Ku</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

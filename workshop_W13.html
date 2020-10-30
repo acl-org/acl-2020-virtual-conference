@@ -1,0 +1,895 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W13: Building Educational Applications (BEA)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W13: Building Educational Applications (BEA)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Jill Burstein, Ekaterina Kochmar, Claudia Leacock, Nitin Madnani, Ildikó Pilán, Helen Yannakoudakis, Torsten Zesch
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://sig-edu.org/bea/current" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 10
+  <span class="session_times">(13:00-20:30 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W13: Building Educational Applications (BEA)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-10T13:00:00"),
+        end: new Date("2020-07-10T20:30:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W13.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The 15th Workshop on Innovative Use of NLP for Building Educational Applications. The BEA Workshop is a leading venue for NLP innovation in educational applications and one of the largest one-day workshops in ACL.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>10 Jul, 6:00 AM-6:10 AM</td>
+          
+          <td scope="row">Opening Remarks</td>
+          <td style="white-space: pre-wrap;">BEA Organizers</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 6:10 AM-6:30 AM</td>
+          
+          <td scope="row">Linguistic Features for Readability Assessment</td>
+          <td style="white-space: pre-wrap;">Tovly Deutsch (Masoud Jasbi and Stuart Shieber)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 6:30 AM-6:50 AM</td>
+          
+          <td scope="row">Using PRMSE to evaluate automated scoring systems in the presence of label noise</td>
+          <td style="white-space: pre-wrap;">Anastassia Loukina (Nitin Madnani, Aoife Cahill, Lili Yao, Matthew S. Johnson, Brian Riordan, Daniel F. McCaffrey)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 6:50 AM-7:10 AM</td>
+          
+          <td scope="row">Multiple Instance Learning for Content Feedback Localization without Annotation</td>
+          <td style="white-space: pre-wrap;">Scott Hellman (William Murray, Adam Wiemerslage, Mark Rosenstein, Peter Foltz, Lee Becker, Marcia Derr)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 7:10 AM-7:30 AM</td>
+          
+          <td scope="row">Complementary Systems for Off-topic Spoken Response Detection</td>
+          <td style="white-space: pre-wrap;">Vatsal Raina (Mark Gales, Kate Knill)</td>
+        </tr>
+        
+        <tr>
+          
+            <td>, </td>
+          
+          <td scope="row"></td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:00 AM-8:10 AM</td>
+          
+          <td scope="row">CIMA: A Large Open Access Dialogue Dataset for Tutoring</td>
+          <td style="white-space: pre-wrap;">Katherine Stasaski (Kimberly Kao, Marti A. Hearst)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:10 AM-8:20 AM</td>
+          
+          <td scope="row">Becoming Linguistically Mature: Modeling English and German Children’s Writing Development Across School Grades</td>
+          <td style="white-space: pre-wrap;">Elma Kerz (Yu Qiao, Daniel Wiechmann and Marcus Ströbel)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:20 AM-8:30 AM</td>
+          
+          <td scope="row">Annotation and Classification of Evidence and Reasoning Revisions in Argumentative Writing</td>
+          <td style="white-space: pre-wrap;">Tazin Afrin (Elaine Lin Wang, Diane Litman, Lindsay Clare Matsumura, Richard Correnti)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:30 AM-8:40 AM</td>
+          
+          <td scope="row">Can Neural Networks Automatically Score Essay Traits?</td>
+          <td style="white-space: pre-wrap;">Sandeep Mathias (Pushpak Bhattacharyya)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:40 AM-8:50 AM</td>
+          
+          <td scope="row">Tracking the Evolution of Written Language Competence in L2 Spanish Learners</td>
+          <td style="white-space: pre-wrap;">Alessio Miaschi (Sam Davidson, Dominique Brunato, Felice Dell&#39;Orletta, Kenji Sagae, Claudia Helena Sanchez-Gutierrez, Giulia Venturi)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:50 AM-9:00 AM</td>
+          
+          <td scope="row">Distractor Analysis and Selection for Multiple-Choice Cloze Questions for Second-Language Learners</td>
+          <td style="white-space: pre-wrap;">Lingyu Gao (Kevin Gimpel, Arnar Jensson)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:00 AM-9:10 AM</td>
+          
+          <td scope="row">Assisting Undergraduate Students in Writing Spanish Methodology Sections</td>
+          <td style="white-space: pre-wrap;">Samuel González-López (Steven Bethard and Aurelio Lopez-Lopez)</td>
+        </tr>
+        
+        <tr>
+          
+            <td>, </td>
+          
+          <td scope="row"></td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:10 AM-10:30 AM</td>
+          
+          <td scope="row">Applications of Natural Language Processing in Bilingual Language Teaching: An Indonesian-English Case Study</td>
+          <td style="white-space: pre-wrap;">Zara Maxwelll-Smith (Simón González Ochoa, Ben Foley and Hanna Suominen)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:30 AM-10:50 AM</td>
+          
+          <td scope="row">An Empirical Investigation of Neural Methods for Content Scoring of Science Explanations</td>
+          <td style="white-space: pre-wrap;">Brian Riordan (Sarah Bichler, Allison Bradford, Jennifer King Chen, Korah Wiley, Libby Gerard and Marcia C. Linn)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:50 AM-11:10 AM</td>
+          
+          <td scope="row">An Exploratory Study of Argumentative Writing by Young Students: A transformer-based Approach</td>
+          <td style="white-space: pre-wrap;">Debanjan Ghosh (Beata Beigman Klebanov and Yi Song)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:10 AM-11:30 AM</td>
+          
+          <td scope="row">Should You Fine-Tune BERT for Automated Essay Scoring?</td>
+          <td style="white-space: pre-wrap;">Elijah Mayfield (Alan W Black)</td>
+        </tr>
+        
+        <tr>
+          
+            <td>, </td>
+          
+          <td scope="row"></td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:00 PM-12:10 PM</td>
+          
+          <td scope="row">GECToR – Grammatical Error Correction: Tag, Not Rewrite</td>
+          <td style="white-space: pre-wrap;">Kostiantyn Omelianchuk (Vitaliy Atrasevych, Artem Chernodub and Oleksandr Skurzhanskyi)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:10 PM-12:20 PM</td>
+          
+          <td scope="row">Interpreting Neural CWI Classifiers’ Weights as Vocabulary Size</td>
+          <td style="white-space: pre-wrap;">Yo Ehara</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:20 PM-12:30 PM</td>
+          
+          <td scope="row">Automated Scoring of Clinical Expressive Language Evaluation Tasks</td>
+          <td style="white-space: pre-wrap;">Yiyi Wang (Emily Prud&#39;hommeaux, Meysam Asgari, Jill Dolata)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:30 PM-12:40 PM</td>
+          
+          <td scope="row">Context-based Automated Scoring of Complex Mathematical Responses</td>
+          <td style="white-space: pre-wrap;">Aoife Cahill, James H Fife, Brian Riordan, Avijit Vajpayee and Dmytro Galochkin.</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:40 PM-12:50 PM</td>
+          
+          <td scope="row">Predicting the Difficulty and Response Time of Multiple Choice Questions Using Transfer Learning</td>
+          <td style="white-space: pre-wrap;">Kang Xue (Victoria Yaneva, Christopher Runyon and Peter Baldwin)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:50 PM-1:00 PM</td>
+          
+          <td scope="row">A Comparative Study of Synthetic Data Generation Methods for Grammatical Error Correction</td>
+          <td style="white-space: pre-wrap;">Max White (Alla Rozovskaya)</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 1:00 PM-1:20 PM</td>
+          
+          <td scope="row">Modeling Individual Differences in Second-Language Reading Skill using Language Experience, Executive Attention, and Cross-Linguistic Interactions</td>
+          <td style="white-space: pre-wrap;">Brianna L. Yamasaki</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 1:20 PM-1:30 PM</td>
+          
+          <td scope="row">Closing Remarks</td>
+          <td style="white-space: pre-wrap;">BEA Organizers</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931802" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931802',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929846" target="_blank"><b>Linguistic Features for Readability Assessment</b></a>
+        </p>
+        <p>
+          <i>Tovly Deutsch (Masoud Jasbi, Stuart Shieber)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929847" target="_blank"><b>Using PRMSE to Evaluate Automated Scoring Systems in the Presence Of Label Noise </b></a>
+        </p>
+        <p>
+          <i>Anastassia Loukina (Nitin Madnani, Aoife Cahill, Lili Yao, Matthew S. Johnson, Brian Riordan, Daniel F. McCaffrey)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929849" target="_blank"><b>Multiple Instance Learning for Content Feedback Localization without Annotation </b></a>
+        </p>
+        <p>
+          <i>Scott Hellman (William Murray, Adam Wiemerslage, Mark Rosenstein, Peter Foltz, Lee Becker, Marcia Derr)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929850" target="_blank"><b>Complementary Systems for Off-topic Spoken Response Detection </b></a>
+        </p>
+        <p>
+          <i>Vatsal Raina (Mark Gales, Kate Knill)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929855" target="_blank"><b>CIMA: A Large Open Access Dialogue Dataset for Tutoring </b></a>
+        </p>
+        <p>
+          <i>Katherine Stasaski (Kimberly Kao, Marti A. Hearst)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929858" target="_blank"><b>Becoming Linguistically Mature: Modeling English and German Children’s Writing Development Across School Grades </b></a>
+        </p>
+        <p>
+          <i>Daniel Wiechmann (Elma Kerz, Yu Qiao, Marcus Ströbel)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929856" target="_blank"><b>Annotation and Classification of Evidence and Reasoning Revisions in Argumentative Writing</b></a>
+        </p>
+        <p>
+          <i>Tazin Afrin (Elaine Lin Wang, Diane Litman, Lindsay Clare Matsumura, Richard Correnti)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929859" target="_blank"><b>Can Neural Networks Automatically Score Essay Traits? </b></a>
+        </p>
+        <p>
+          <i>Sandeep Mathias (Pushpak Bhattacharyya)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929857" target="_blank"><b>Tracking the Evolution of Written Language Competence in L2 Spanish Learners </b></a>
+        </p>
+        <p>
+          <i>Alessio Miaschi (Sam Davidson, Dominique Brunato, Felice Dell&#39;Orletta, Kenji Sagae, Claudia Helena Sanchez-Gutierrez, Giulia Venturi)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929863" target="_blank"><b>Distractor Analysis and Selection for Multiple-Choice Cloze Questions for Second-Language Learners </b></a>
+        </p>
+        <p>
+          <i>Lingyu Gao (Kevin Gimpel, Arnar Jensson)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929853" target="_blank"><b>Assisting Undergraduate Students in Writing Spanish Methodology Sections</b></a>
+        </p>
+        <p>
+          <i>Samuel González-López (Steven Bethard, Aurelio Lopez-Lopez)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929845" target="_blank"><b>Applications of Natural Language Processing in Bilingual Language Teaching: An Indonesian-English Case Study </b></a>
+        </p>
+        <p>
+          <i>Hanna Suominen (Zara Maxwelll-Smith, Simón González Ochoa, Ben Foley)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929852" target="_blank"><b>An Empirical Investigation of Neural Methods for Content Scoring of Science Explanations </b></a>
+        </p>
+        <p>
+          <i>Brian Riordan (Sarah Bichler, Allison Bradford, Jennifer King Chen, Korah Wiley, Libby Gerard, Marcia C. Linn)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929848" target="_blank"><b>An Exploratory Study of Argumentative Writing by Young Students: A transformer-based Approach </b></a>
+        </p>
+        <p>
+          <i>Debanjan Ghosh (Beata Beigman Klebanov, Yi Song)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929851" target="_blank"><b>Should You Fine-Tune BERT for Automated Essay Scoring? </b></a>
+        </p>
+        <p>
+          <i>Elijah Mayfield (Alan W Black)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929854" target="_blank"><b>GECToR – Grammatical Error Correction: Tag, Not Rewrite </b></a>
+        </p>
+        <p>
+          <i>Kostiantyn Omelianchuk, Vitaliy Atrasevych, Artem Chernodub, Oleksandr Skurzhanskyi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929865" target="_blank"><b>Interpreting Neural CWI Classifiers&#39; Weights as Vocabulary Size </b></a>
+        </p>
+        <p>
+          <i>Yo Ehara</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929864" target="_blank"><b>Automated Scoring of Clinical Expressive Language Evaluation Tasks </b></a>
+        </p>
+        <p>
+          <i>Yiyi Wang (Emily Prud&#39;hommeaux, Meysam Asgari, Jill Dolata)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929860" target="_blank"><b>Context-based Automated Scoring of Complex Mathematical Responses </b></a>
+        </p>
+        <p>
+          <i>Aoife Cahill (James H Fife, Brian Riordan, Avijit Vajpayee, Dmytro Galochkin)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929861" target="_blank"><b>Predicting the Difficulty and Response Time of Multiple Choice Questions Using Transfer Learning </b></a>
+        </p>
+        <p>
+          <i>Victoria Yaneva (Kang Xue, Christopher Runyon, Peter Baldwin)</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929862" target="_blank"><b>A Comparative Study of Synthetic Data Generation Methods for Grammatical Error Correction </b></a>
+        </p>
+        <p>
+          <i>Alla Rozovskaya (Max White)</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

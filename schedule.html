@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Schedule</title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.css" integrity="sha256-9MlAyIRO5KwspHZOm6FYcUOV7kcRUu+O26UKUP0/LC0=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.0.0/main.min.js" integrity="sha256-sXsoUUVbxnobZrwPZiGFeJrOUKZBoxXkWl0JXXdQp/o=" crossorigin="anonymous"></script>
+<script>
+  var events = JSON.parse('[{"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorials.html", "location": "tutorials.html", "start": "2020-07-05T13:00:00+00:00", "title": "Tutorials", "type": "Tutorials", "url": "tutorials.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorials.html", "location": "tutorials.html", "start": "2020-07-05T17:30:00+00:00", "title": "Tutorials", "type": "Tutorials", "url": "tutorials.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorials.html", "location": "tutorials.html", "start": "2020-07-05T22:00:00+00:00", "title": "Tutorials", "type": "Tutorials", "url": "tutorials.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T1.html", "location": "tutorial_T1.html", "start": "2020-07-05T17:30:00+00:00", "title": "T1: Interpretability and Analysis in Neural NLP \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eYonatan Belinkov, Sebastian Gehrmann and Ellie Pavlick\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T1.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorial_T1.html", "location": "tutorial_T1.html", "start": "2020-07-05T13:00:00+00:00", "title": "T1: Interpretability and Analysis in Neural NLP \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eYonatan Belinkov, Sebastian Gehrmann and Ellie Pavlick\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T1.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T2.html", "location": "tutorial_T2.html", "start": "2020-07-05T22:00:00+00:00", "title": "T2: Multi-modal Information Extraction from Text, Semi-structured, and Tabular Data on the Web \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eXin Luna Dong, Hannaneh Hajishirzi, Colin Lockard and Prashant Shiralkar\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T2.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T3.html", "location": "tutorial_T3.html", "start": "2020-07-05T17:30:00+00:00", "title": "T3: Reviewing Natural Language Processing Research \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eKevin Cohen, Kar\u00ebn Fort, Margot Mieskes and Aur\u00e9lie N\u00e9v\u00e9ol\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T3.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T4.html", "location": "tutorial_T4.html", "start": "2020-07-05T17:30:00+00:00", "title": "T4: Stylized Text Generation: Approaches and Applications \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eLili Mou and Olga Vechtomova\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T4.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorial_T5.html", "location": "tutorial_T5.html", "start": "2020-07-05T13:00:00+00:00", "title": "T5: Achieving Common Ground in Multi-modal Dialogue \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMalihe Alikhani and Matthew Stone\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T5.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T5.html", "location": "tutorial_T5.html", "start": "2020-07-05T22:00:00+00:00", "title": "T5: Achieving Common Ground in Multi-modal Dialogue \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMalihe Alikhani and Matthew Stone\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T5.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T6.html", "location": "tutorial_T6.html", "start": "2020-07-05T22:00:00+00:00", "title": "T6: Commonsense Reasoning for Natural Language Processing \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMaarten Sap, Vered Shwartz, Antoine Bosselut, Yejin Choi, Dan Roth\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T6.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T16:30:00+00:00", "link": "tutorial_T7.html", "location": "tutorial_T7.html", "start": "2020-07-05T13:00:00+00:00", "title": "T7: Integrating Ethics into the NLP Curriculum \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmily M. Bender, Dirk Hovy and Alexandra Schofield\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T7.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-05T21:00:00+00:00", "link": "tutorial_T7.html", "location": "tutorial_T7.html", "start": "2020-07-05T17:30:00+00:00", "title": "T7: Integrating Ethics into the NLP Curriculum \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmily M. Bender, Dirk Hovy and Alexandra Schofield\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T7.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-tutorial", "calendar-event"], "end": "2020-07-06T01:30:00+00:00", "link": "tutorial_T8.html", "location": "tutorial_T8.html", "start": "2020-07-05T22:00:00+00:00", "title": "T8: Open-Domain Question Answering \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eDanqi Chen and Scott Wen-tau Yih\u003c/i\u003e", "type": "Tutorials", "url": "tutorial_T8.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-06T16:00:00+00:00", "link": "plenary_sessions.html#tab-july6", "location": "plenary_sessions.html#tab-july6", "start": "2020-07-06T14:00:00+00:00", "title": "Plenary Session", "type": "Plenary Sessions", "url": "plenary_sessions.html#tab-july6", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-06T14:15:00+00:00", "link": "plenary_session_opening_remarks.html", "location": "plenary_session_opening_remarks.html", "start": "2020-07-06T14:00:00+00:00", "title": "Opening Remarks", "type": "Plenary Sessions", "url": "plenary_session_opening_remarks.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-06T14:30:00+00:00", "link": "plenary_session_presidential_address.html", "location": "plenary_session_presidential_address.html", "start": "2020-07-06T14:15:00+00:00", "title": "Presidential Address", "type": "Plenary Sessions", "url": "plenary_session_presidential_address.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-06T15:45:00+00:00", "link": "plenary_session_keynote_kathy_mckeown.html", "location": "plenary_session_keynote_kathy_mckeown.html", "start": "2020-07-06T14:30:00+00:00", "title": "Keynote by Prof. Kathleen R. McKeown", "type": "Plenary Sessions", "url": "plenary_session_keynote_kathy_mckeown.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-06T16:15:00+00:00", "link": "plenary_session_business_meeting.html", "location": "plenary_session_business_meeting.html", "start": "2020-07-06T15:45:00+00:00", "title": "Business Meeting Q\u0026A", "type": "Plenary Sessions", "url": "plenary_session_business_meeting.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-07T16:00:00+00:00", "link": "plenary_sessions.html#tab-july7", "location": "plenary_sessions.html#tab-july7", "start": "2020-07-07T14:00:00+00:00", "title": "Plenary Session", "type": "Plenary Sessions", "url": "plenary_sessions.html#tab-july7", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-07T14:45:00+00:00", "link": "plenary_session_lifetime_achievement_award.html", "location": "plenary_session_lifetime_achievement_award.html", "start": "2020-07-07T14:00:00+00:00", "title": "Lifetime Achievement Award", "type": "Plenary Sessions", "url": "plenary_session_lifetime_achievement_award.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-07T15:00:00+00:00", "link": "plenary_session_distinguished_service_award.html", "location": "plenary_session_distinguished_service_award.html", "start": "2020-07-07T14:45:00+00:00", "title": "Distinguished Service Award", "type": "Plenary Sessions", "url": "plenary_session_distinguished_service_award.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-07T15:15:00+00:00", "link": "plenary_session_test_of_time_awards.html", "location": "plenary_session_test_of_time_awards.html", "start": "2020-07-07T15:00:00+00:00", "title": "Test of Time Awards", "type": "Plenary Sessions", "url": "plenary_session_test_of_time_awards.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-07T16:00:00+00:00", "link": "plenary_session_review_meeting.html", "location": "plenary_session_review_meeting.html", "start": "2020-07-07T15:15:00+00:00", "title": "Review Meeting Q\u0026A", "type": "Plenary Sessions", "url": "plenary_session_review_meeting.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-08T15:48:00+00:00", "link": "plenary_sessions.html#tab-july8", "location": "plenary_sessions.html#tab-july8", "start": "2020-07-08T14:00:00+00:00", "title": "Plenary Session", "type": "Plenary Sessions", "url": "plenary_sessions.html#tab-july8", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-08T15:15:00+00:00", "link": "plenary_session_keynote_josh_tenenbaum.html", "location": "plenary_session_keynote_josh_tenenbaum.html", "start": "2020-07-08T14:00:00+00:00", "title": "Keynote by Prof. Josh Tenenbaum", "type": "Plenary Sessions", "url": "plenary_session_keynote_josh_tenenbaum.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-08T15:25:00+00:00", "link": "plenary_session_best_paper_award.html", "location": "plenary_session_best_paper_award.html", "start": "2020-07-08T15:15:00+00:00", "title": "Best Paper Award Ceremony", "type": "Plenary Sessions", "url": "plenary_session_best_paper_award.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-08T15:45:00+00:00", "link": "plenary_session_future_conferences.html", "location": "plenary_session_future_conferences.html", "start": "2020-07-08T15:25:00+00:00", "title": "Future Conferences", "type": "Plenary Sessions", "url": "plenary_session_future_conferences.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-plenary", "calendar-event"], "end": "2020-07-08T15:50:00+00:00", "link": "plenary_session_closing_remarks.html", "location": "plenary_session_closing_remarks.html", "start": "2020-07-08T15:45:00+00:00", "title": "Closing Remarks", "type": "Plenary Sessions", "url": "plenary_session_closing_remarks.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-05T23:30:00+00:00", "link": "workshops.html", "location": "workshops.html", "start": "2020-07-05T16:00:00+00:00", "title": "Workshops", "type": "Workshops", "url": "workshops.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T04:30:00+00:00", "link": "workshops.html", "location": "workshops.html", "start": "2020-07-09T08:00:00+00:00", "title": "Workshops", "type": "Workshops", "url": "workshops.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-11T01:30:00+00:00", "link": "workshops.html", "location": "workshops.html", "start": "2020-07-10T13:00:00+00:00", "title": "Workshops", "type": "Workshops", "url": "workshops.html", "view": "week"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-05T23:30:00+00:00", "link": "workshop_W1.html", "location": "workshop_W1.html", "start": "2020-07-05T16:00:00+00:00", "title": "W1: Widening NLP (WiNLP)", "type": "Workshops", "url": "workshop_W1.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T20:30:00+00:00", "link": "workshop_W2.html", "location": "workshop_W2.html", "start": "2020-07-09T16:00:00+00:00", "title": "W2: The International Conference on Spoken Language Translation (IWSLT) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMarcello Federico, Alexander Waibel, Jiatao Gu, Kevin Knight, Will Lewis, Satoshi Nakamura, Hermann Ney, Jan Niehues, Sebastian St\u00fcker and Marco Turchi\u003c/i\u003e", "type": "Workshops", "url": "workshop_W2.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T01:00:00+00:00", "link": "workshop_W2.html", "location": "workshop_W2.html", "start": "2020-07-10T00:00:00+00:00", "title": "W2: The International Conference on Spoken Language Translation (IWSLT) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMarcello Federico, Alexander Waibel, Jiatao Gu, Kevin Knight, Will Lewis, Satoshi Nakamura, Hermann Ney, Jan Niehues, Sebastian St\u00fcker and Marco Turchi\u003c/i\u003e", "type": "Workshops", "url": "workshop_W2.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T19:50:00+00:00", "link": "workshop_W3.html", "location": "workshop_W3.html", "start": "2020-07-09T13:00:00+00:00", "title": "W3: NLP for Conversational Al (NLP4ConvAI) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eTsung-Hsien Wen, Asli Celikyilmaz, I\u00f1igo Casanueva, Mihail Eric, Anuj Kumar, Alexandros Papangelis, Rushin Shah and Zhou Yu\u003c/i\u003e", "type": "Workshops", "url": "workshop_W3.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T01:00:00+00:00", "link": "workshop_W4.html", "location": "workshop_W4.html", "start": "2020-07-09T15:30:00+00:00", "title": "W4: Workshop on Biomedical Natural Language Processing (BioNLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eDina Demner-Fushman, Kevin Cohen, Sophia Ananiadou and Jun\u2019ichi Tsujii\u003c/i\u003e", "type": "Workshops", "url": "workshop_W4.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T20:50:00+00:00", "link": "workshop_W5.html", "location": "workshop_W5.html", "start": "2020-07-09T11:00:00+00:00", "title": "W5: Fact Extraction and Verification (FEVER) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eChristos Christodoulopoulos, James Thorne, Andreas Vlachos, Oana Cocarascu and Arpit Mittal\u003c/i\u003e", "type": "Workshops", "url": "workshop_W5.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T17:00:00+00:00", "link": "workshop_W6.html", "location": "workshop_W6.html", "start": "2020-07-09T14:00:00+00:00", "title": "W6: International Conference on Parsing Technologies (IWPT) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eYuji Matsumoto, Stephan Oepen, Kenji Sagae, Anders S\u00f8gaard, Weiwei Sun and Reut Tsarfaty\u003c/i\u003e", "type": "Workshops", "url": "workshop_W6.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T22:00:00+00:00", "link": "workshop_W7.html", "location": "workshop_W7.html", "start": "2020-07-09T13:00:00+00:00", "title": "W7: Figurative Language Processing (FLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eBeata Beigman Klebanov, Ekaterina Shutova, Patricia Lichtenstein, Smaranda Muresan, Anna Feldman, Chee Wee (Ben) Leong and Debanjan Ghosh\u003c/i\u003e", "type": "Workshops", "url": "workshop_W7.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T00:15:00+00:00", "link": "workshop_W8.html", "location": "workshop_W8.html", "start": "2020-07-09T15:15:00+00:00", "title": "W8: Narrative Understanding, Storylines, and Events (NUSE) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eClaire Bonial, Tommaso Caselli, Snigdha Chaturvedi, Elizabeth Clark, Ruihong Huang, Ben Miller, Mohit Iyyer, Alejandro Jaimes, Heng Ji, Lara Martin, Teruko Mitamura, Nanyun Peng and Joel Tetreault\u003c/i\u003e", "type": "Workshops", "url": "workshop_W8.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T00:45:00+00:00", "link": "workshop_W9.html", "location": "workshop_W9.html", "start": "2020-07-09T15:20:00+00:00", "title": "W9: Advances in Language and Vision Research (ALVR) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eXin Wang, Jesse Thomason, Ronghang Hu, Xinlei Chen, Peter Anderson, Qi Wu, Asli Celikyilmaz, Jason Baldridge and William Yang Wang\u003c/i\u003e", "type": "Workshops", "url": "workshop_W9.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T09:45:00+00:00", "link": "workshop_W10.html", "location": "workshop_W10.html", "start": "2020-07-09T08:00:00+00:00", "title": "W10: Representation Learning for NLP (RepL4NLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmma Strubell, Spandana Gella, Marek Rei, Johannes Welbl, Fabio Petroni, Patrick Lewis, Hannaneh Hajishirzi, Kyunghyun Cho, Edward Grefenstette, Karl Moritz Hermann, Laura Rimell, Chris Dyer and Isabelle Augenstein\u003c/i\u003e", "type": "Workshops", "url": "workshop_W10.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T03:00:00+00:00", "link": "workshop_W10.html", "location": "workshop_W10.html", "start": "2020-07-10T00:00:00+00:00", "title": "W10: Representation Learning for NLP (RepL4NLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmma Strubell, Spandana Gella, Marek Rei, Johannes Welbl, Fabio Petroni, Patrick Lewis, Hannaneh Hajishirzi, Kyunghyun Cho, Edward Grefenstette, Karl Moritz Hermann, Laura Rimell, Chris Dyer and Isabelle Augenstein\u003c/i\u003e", "type": "Workshops", "url": "workshop_W10.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-09T17:00:00+00:00", "link": "workshop_W10.html", "location": "workshop_W10.html", "start": "2020-07-09T14:00:00+00:00", "title": "W10: Representation Learning for NLP (RepL4NLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEmma Strubell, Spandana Gella, Marek Rei, Johannes Welbl, Fabio Petroni, Patrick Lewis, Hannaneh Hajishirzi, Kyunghyun Cho, Edward Grefenstette, Karl Moritz Hermann, Laura Rimell, Chris Dyer and Isabelle Augenstein\u003c/i\u003e", "type": "Workshops", "url": "workshop_W10.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T04:30:00+00:00", "link": "workshop_W20.html", "location": "workshop_W20.html", "start": "2020-07-10T00:30:00+00:00", "title": "W20: NLP COVID-19 Workshop (NLPCovid) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eKarin Verspoor, Kevin Cohen, Mark Dredze, Emilio Ferrara, Raina MacIntyre, Jonathan May, Robert Munro, Cecile Paris, Byron Wallace\u003c/i\u003e", "type": "Workshops", "url": "workshop_W20.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T17:10:00+00:00", "link": "workshop_W2.html", "location": "workshop_W2.html", "start": "2020-07-10T16:00:00+00:00", "title": "W2: The International Conference on Spoken Language Translation (IWSLT) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eMarcello Federico, Alexander Waibel, Jiatao Gu, Kevin Knight, Will Lewis, Satoshi Nakamura, Hermann Ney, Jan Niehues, Sebastian St\u00fcker and Marco Turchi\u003c/i\u003e", "type": "Workshops", "url": "workshop_W2.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-11T00:50:00+00:00", "link": "workshop_W11.html", "location": "workshop_W11.html", "start": "2020-07-10T15:30:00+00:00", "title": "W11: Natural Language Interfaces (NLI) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eAhmed Hassan Awadallah, Yu Su, Huan Sun and Scott Wen-tau Yih\u003c/i\u003e", "type": "Workshops", "url": "workshop_W11.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-11T00:00:00+00:00", "link": "workshop_W12.html", "location": "workshop_W12.html", "start": "2020-07-10T15:30:00+00:00", "title": "W12: Workshop on Neural Generation and Translation (WNGT) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eAlexandra Birch, Graham Neubig, Andrew Finch, Hiroaki Hayashi, Kenneth Heafield, Ioannis Konstas, Yusuke Oda and Xian Li\u003c/i\u003e", "type": "Workshops", "url": "workshop_W12.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T20:30:00+00:00", "link": "workshop_W13.html", "location": "workshop_W13.html", "start": "2020-07-10T13:00:00+00:00", "title": "W13: Building Educational Applications (BEA) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eEkaterina Kochmar, Jill Burstein, Claudia Leacock, Nitin Madnani, Ildiko Pilan, Helen Yannakoudakis and Torsten Zesch\u003c/i\u003e", "type": "Workshops", "url": "workshop_W13.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-11T01:05:00+00:00", "link": "workshop_W14.html", "location": "workshop_W14.html", "start": "2020-07-10T15:25:00+00:00", "title": "W14: 17th SIGMORPHON Workshop on Computational Research in Phonetics, Phonology, and Morphology \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eGarrett Nicolai, Kyle Gorman and Ryan Cotterell\u003c/i\u003e", "type": "Workshops", "url": "workshop_W14.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-11T01:00:00+00:00", "link": "workshop_W15.html", "location": "workshop_W15.html", "start": "2020-07-10T16:00:00+00:00", "title": "W15: NLP for Medical Conversations (NLPMC) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eParminder Bhatia, Chaitanya Shivade, Mona Diab, Byron Wallace, Rashmi Gangadharaiah, Nan Du, Izhak Shafran and Steven Lin\u003c/i\u003e", "type": "Workshops", "url": "workshop_W15.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T21:15:00+00:00", "link": "workshop_W16.html", "location": "workshop_W16.html", "start": "2020-07-10T12:30:00+00:00", "title": "W16: E-Commerce and NLP (ECNLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eShervin Malmasi, Eugene Agichtein, Surya Kallumadi, Oleg Rokhlenko, Nicola Ueffing and Ido Guy\u003c/i\u003e", "type": "Workshops", "url": "workshop_W16.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T23:35:00+00:00", "link": "workshop_W17.html", "location": "workshop_W17.html", "start": "2020-07-10T16:05:00+00:00", "title": "W17: Natural Language Processing for Social Media (SocialNLP) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eLun-Wei Ku and Cheng-Te Li\u003c/i\u003e", "type": "Workshops", "url": "workshop_W17.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T16:30:00+00:00", "link": "workshop_W18.html", "location": "workshop_W18.html", "start": "2020-07-10T14:20:00+00:00", "title": "W18: Automatic Simultaneous Translation (AutoSimTrans) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eHua Wu, Colin Cherry, James Cross, Liang Huang, Zhongjun He, Mark Liberman and Yang Liu\u003c/i\u003e", "type": "Workshops", "url": "workshop_W18.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-11T01:30:00+00:00", "link": "workshop_W18.html", "location": "workshop_W18.html", "start": "2020-07-10T22:00:00+00:00", "title": "W18: Automatic Simultaneous Translation (AutoSimTrans) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eHua Wu, Colin Cherry, James Cross, Liang Huang, Zhongjun He, Mark Liberman and Yang Liu\u003c/i\u003e", "type": "Workshops", "url": "workshop_W18.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-workshops", "calendar-event"], "end": "2020-07-10T21:40:00+00:00", "link": "workshop_W19.html", "location": "workshop_W19.html", "start": "2020-07-10T13:00:00+00:00", "title": "W19: The Second Grand-Challenge and Workshop on Human Multimodal Language (Challenge-HML) \u003cbr/\u003e \u003cbr/\u003e \u003ci\u003eAmirAli Bagher Zadeh, Louis-Philippe Morency, Paul Pu Liang, Soujanya Poria and Ying Shen\u003c/i\u003e", "type": "Workshops", "url": "workshop_W19.html", "view": "day"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T21:00:00+00:00", "link": "papers.html?session=10A", "location": "", "start": "2020-07-07T20:00:00+00:00", "title": "QA Session 10A", "type": "QA Sessions", "url": "papers.html?session=10A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T09:00:00+00:00", "link": "papers.html?session=2A", "location": "", "start": "2020-07-06T08:00:00+00:00", "title": "QA Session 2A", "type": "QA Sessions", "url": "papers.html?session=2A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T18:00:00+00:00", "link": "papers.html?session=14A", "location": "", "start": "2020-07-08T17:00:00+00:00", "title": "QA Session 14A", "type": "QA Sessions", "url": "papers.html?session=14A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T14:00:00+00:00", "link": "papers.html?session=13B", "location": "", "start": "2020-07-08T13:00:00+00:00", "title": "QA Session 13B", "type": "QA Sessions", "url": "papers.html?session=13B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T10:00:00+00:00", "link": "papers.html?session=7B", "location": "", "start": "2020-07-07T09:00:00+00:00", "title": "QA Session 7B", "type": "QA Sessions", "url": "papers.html?session=7B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T07:00:00+00:00", "link": "papers.html?session=6B", "location": "", "start": "2020-07-07T06:00:00+00:00", "title": "QA Session 6B", "type": "QA Sessions", "url": "papers.html?session=6B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T06:00:00+00:00", "link": "papers.html?session=1A", "location": "", "start": "2020-07-06T05:00:00+00:00", "title": "QA Session 1A", "type": "QA Sessions", "url": "papers.html?session=1A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T14:00:00+00:00", "link": "papers.html?session=3B", "location": "", "start": "2020-07-06T13:00:00+00:00", "title": "QA Session 3B", "type": "QA Sessions", "url": "papers.html?session=3B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T09:00:00+00:00", "link": "papers.html?session=7A", "location": "", "start": "2020-07-07T08:00:00+00:00", "title": "QA Session 7A", "type": "QA Sessions", "url": "papers.html?session=7A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T10:00:00+00:00", "link": "papers.html?session=2B", "location": "", "start": "2020-07-06T09:00:00+00:00", "title": "QA Session 2B", "type": "QA Sessions", "url": "papers.html?session=2B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T21:00:00+00:00", "link": "papers.html?session=15A", "location": "", "start": "2020-07-08T20:00:00+00:00", "title": "QA Session 15A", "type": "QA Sessions", "url": "papers.html?session=15A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T13:00:00+00:00", "link": "papers.html?session=3A", "location": "", "start": "2020-07-06T12:00:00+00:00", "title": "QA Session 3A", "type": "QA Sessions", "url": "papers.html?session=3A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T21:00:00+00:00", "link": "papers.html?session=5A", "location": "", "start": "2020-07-06T20:00:00+00:00", "title": "QA Session 5A", "type": "QA Sessions", "url": "papers.html?session=5A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T22:00:00+00:00", "link": "papers.html?session=10B", "location": "", "start": "2020-07-07T21:00:00+00:00", "title": "QA Session 10B", "type": "QA Sessions", "url": "papers.html?session=10B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T18:00:00+00:00", "link": "papers.html?session=4A", "location": "", "start": "2020-07-06T17:00:00+00:00", "title": "QA Session 4A", "type": "QA Sessions", "url": "papers.html?session=4A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T19:00:00+00:00", "link": "papers.html?session=4B", "location": "", "start": "2020-07-06T18:00:00+00:00", "title": "QA Session 4B", "type": "QA Sessions", "url": "papers.html?session=4B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T10:00:00+00:00", "link": "papers.html?session=12B", "location": "", "start": "2020-07-08T09:00:00+00:00", "title": "QA Session 12B", "type": "QA Sessions", "url": "papers.html?session=12B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T06:00:00+00:00", "link": "papers.html?session=11A", "location": "", "start": "2020-07-08T05:00:00+00:00", "title": "QA Session 11A", "type": "QA Sessions", "url": "papers.html?session=11A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T13:00:00+00:00", "link": "papers.html?session=8A", "location": "", "start": "2020-07-07T12:00:00+00:00", "title": "QA Session 8A", "type": "QA Sessions", "url": "papers.html?session=8A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T19:00:00+00:00", "link": "papers.html?session=9B", "location": "", "start": "2020-07-07T18:00:00+00:00", "title": "QA Session 9B", "type": "QA Sessions", "url": "papers.html?session=9B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T09:00:00+00:00", "link": "papers.html?session=12A", "location": "", "start": "2020-07-08T08:00:00+00:00", "title": "QA Session 12A", "type": "QA Sessions", "url": "papers.html?session=12A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T19:00:00+00:00", "link": "papers.html?session=14B", "location": "", "start": "2020-07-08T18:00:00+00:00", "title": "QA Session 14B", "type": "QA Sessions", "url": "papers.html?session=14B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T18:00:00+00:00", "link": "papers.html?session=9A", "location": "", "start": "2020-07-07T17:00:00+00:00", "title": "QA Session 9A", "type": "QA Sessions", "url": "papers.html?session=9A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T07:00:00+00:00", "link": "papers.html?session=1B", "location": "", "start": "2020-07-06T06:00:00+00:00", "title": "QA Session 1B", "type": "QA Sessions", "url": "papers.html?session=1B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T14:00:00+00:00", "link": "papers.html?session=8B", "location": "", "start": "2020-07-07T13:00:00+00:00", "title": "QA Session 8B", "type": "QA Sessions", "url": "papers.html?session=8B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T07:00:00+00:00", "link": "papers.html?session=11B", "location": "", "start": "2020-07-08T06:00:00+00:00", "title": "QA Session 11B", "type": "QA Sessions", "url": "papers.html?session=11B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T22:00:00+00:00", "link": "papers.html?session=15B", "location": "", "start": "2020-07-08T21:00:00+00:00", "title": "QA Session 15B", "type": "QA Sessions", "url": "papers.html?session=15B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T22:00:00+00:00", "link": "papers.html?session=5B", "location": "", "start": "2020-07-06T21:00:00+00:00", "title": "QA Session 5B", "type": "QA Sessions", "url": "papers.html?session=5B"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T13:00:00+00:00", "link": "papers.html?session=13A", "location": "", "start": "2020-07-08T12:00:00+00:00", "title": "QA Session 13A", "type": "QA Sessions", "url": "papers.html?session=13A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T06:00:00+00:00", "link": "papers.html?session=6A", "location": "", "start": "2020-07-07T05:00:00+00:00", "title": "QA Session 6A", "type": "QA Sessions", "url": "papers.html?session=6A"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T05:45:00+00:00", "link": "papers.html?session=D1A-1", "location": "", "start": "2020-07-06T05:00:00+00:00", "title": "Demo Session 1A-1", "type": "QA Sessions", "url": "papers.html?session=D1A-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T06:30:00+00:00", "link": "papers.html?session=D1B-1", "location": "", "start": "2020-07-06T05:45:00+00:00", "title": "Demo Session 1B-1", "type": "QA Sessions", "url": "papers.html?session=D1B-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T07:15:00+00:00", "link": "papers.html?session=D1C-1", "location": "", "start": "2020-07-06T06:30:00+00:00", "title": "Demo Session 1C-1", "type": "QA Sessions", "url": "papers.html?session=D1C-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T08:45:00+00:00", "link": "papers.html?session=D2A-1", "location": "", "start": "2020-07-06T08:00:00+00:00", "title": "Demo Session 2A-1", "type": "QA Sessions", "url": "papers.html?session=D2A-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T09:30:00+00:00", "link": "papers.html?session=D2B-1", "location": "", "start": "2020-07-06T08:45:00+00:00", "title": "Demo Session 2B-1", "type": "QA Sessions", "url": "papers.html?session=D2B-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T10:15:00+00:00", "link": "papers.html?session=D2C-1", "location": "", "start": "2020-07-06T09:30:00+00:00", "title": "Demo Session 2C-1", "type": "QA Sessions", "url": "papers.html?session=D2C-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T12:45:00+00:00", "link": "papers.html?session=D3A-1", "location": "", "start": "2020-07-06T12:00:00+00:00", "title": "Demo Session 3A-1", "type": "QA Sessions", "url": "papers.html?session=D3A-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T13:30:00+00:00", "link": "papers.html?session=D3B-1", "location": "", "start": "2020-07-06T12:45:00+00:00", "title": "Demo Session 3B-1", "type": "QA Sessions", "url": "papers.html?session=D3B-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T14:15:00+00:00", "link": "papers.html?session=D3C-1", "location": "", "start": "2020-07-06T13:30:00+00:00", "title": "Demo Session 3C-1", "type": "QA Sessions", "url": "papers.html?session=D3C-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T17:45:00+00:00", "link": "papers.html?session=D4A-1", "location": "", "start": "2020-07-06T17:00:00+00:00", "title": "Demo Session 4A-1", "type": "QA Sessions", "url": "papers.html?session=D4A-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T18:30:00+00:00", "link": "papers.html?session=D4B-1", "location": "", "start": "2020-07-06T17:45:00+00:00", "title": "Demo Session 4B-1", "type": "QA Sessions", "url": "papers.html?session=D4B-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T19:15:00+00:00", "link": "papers.html?session=D4C-1", "location": "", "start": "2020-07-06T18:30:00+00:00", "title": "Demo Session 4C-1", "type": "QA Sessions", "url": "papers.html?session=D4C-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T20:45:00+00:00", "link": "papers.html?session=D5A-1", "location": "", "start": "2020-07-06T20:00:00+00:00", "title": "Demo Session 5A-1", "type": "QA Sessions", "url": "papers.html?session=D5A-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T21:30:00+00:00", "link": "papers.html?session=D5B-1", "location": "", "start": "2020-07-06T20:45:00+00:00", "title": "Demo Session 5B-1", "type": "QA Sessions", "url": "papers.html?session=D5B-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-06T22:15:00+00:00", "link": "papers.html?session=D5C-1", "location": "", "start": "2020-07-06T21:30:00+00:00", "title": "Demo Session 5C-1", "type": "QA Sessions", "url": "papers.html?session=D5C-1"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T05:45:00+00:00", "link": "papers.html?session=D1A-2", "location": "", "start": "2020-07-07T05:00:00+00:00", "title": "Demo Session 1A-2", "type": "QA Sessions", "url": "papers.html?session=D1A-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T06:30:00+00:00", "link": "papers.html?session=D1B-2", "location": "", "start": "2020-07-07T05:45:00+00:00", "title": "Demo Session 1B-2", "type": "QA Sessions", "url": "papers.html?session=D1B-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T07:15:00+00:00", "link": "papers.html?session=D1C-2", "location": "", "start": "2020-07-07T06:30:00+00:00", "title": "Demo Session 1C-2", "type": "QA Sessions", "url": "papers.html?session=D1C-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T08:45:00+00:00", "link": "papers.html?session=D2A-2", "location": "", "start": "2020-07-07T08:00:00+00:00", "title": "Demo Session 2A-2", "type": "QA Sessions", "url": "papers.html?session=D2A-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T09:30:00+00:00", "link": "papers.html?session=D2B-2", "location": "", "start": "2020-07-07T08:45:00+00:00", "title": "Demo Session 2B-2", "type": "QA Sessions", "url": "papers.html?session=D2B-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T12:45:00+00:00", "link": "papers.html?session=D3A-2", "location": "", "start": "2020-07-07T12:00:00+00:00", "title": "Demo Session 3A-2", "type": "QA Sessions", "url": "papers.html?session=D3A-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T13:30:00+00:00", "link": "papers.html?session=D3B-2", "location": "", "start": "2020-07-07T12:45:00+00:00", "title": "Demo Session 3B-2", "type": "QA Sessions", "url": "papers.html?session=D3B-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T14:15:00+00:00", "link": "papers.html?session=D3C-2", "location": "", "start": "2020-07-07T13:30:00+00:00", "title": "Demo Session 3C-2", "type": "QA Sessions", "url": "papers.html?session=D3C-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T17:45:00+00:00", "link": "papers.html?session=D4A-2", "location": "", "start": "2020-07-07T17:00:00+00:00", "title": "Demo Session 4A-2", "type": "QA Sessions", "url": "papers.html?session=D4A-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T18:30:00+00:00", "link": "papers.html?session=D4B-2", "location": "", "start": "2020-07-07T17:45:00+00:00", "title": "Demo Session 4B-2", "type": "QA Sessions", "url": "papers.html?session=D4B-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T19:15:00+00:00", "link": "papers.html?session=D4C-2", "location": "", "start": "2020-07-07T18:30:00+00:00", "title": "Demo Session 4C-2", "type": "QA Sessions", "url": "papers.html?session=D4C-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T20:45:00+00:00", "link": "papers.html?session=D5A-2", "location": "", "start": "2020-07-07T20:00:00+00:00", "title": "Demo Session 5A-2", "type": "QA Sessions", "url": "papers.html?session=D5A-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T21:30:00+00:00", "link": "papers.html?session=D5B-2", "location": "", "start": "2020-07-07T20:45:00+00:00", "title": "Demo Session 5B-2", "type": "QA Sessions", "url": "papers.html?session=D5B-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-07T22:15:00+00:00", "link": "papers.html?session=D5C-2", "location": "", "start": "2020-07-07T21:30:00+00:00", "title": "Demo Session 5C-2", "type": "QA Sessions", "url": "papers.html?session=D5C-2"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T05:45:00+00:00", "link": "papers.html?session=D1A-3", "location": "", "start": "2020-07-08T05:00:00+00:00", "title": "Demo Session 1A-3", "type": "QA Sessions", "url": "papers.html?session=D1A-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T06:30:00+00:00", "link": "papers.html?session=D1B-3", "location": "", "start": "2020-07-08T05:45:00+00:00", "title": "Demo Session 1B-3", "type": "QA Sessions", "url": "papers.html?session=D1B-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T07:15:00+00:00", "link": "papers.html?session=D1C-3", "location": "", "start": "2020-07-08T06:30:00+00:00", "title": "Demo Session 1C-3", "type": "QA Sessions", "url": "papers.html?session=D1C-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T08:45:00+00:00", "link": "papers.html?session=D2A-3", "location": "", "start": "2020-07-08T08:00:00+00:00", "title": "Demo Session 2A-3", "type": "QA Sessions", "url": "papers.html?session=D2A-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T09:30:00+00:00", "link": "papers.html?session=D2B-3", "location": "", "start": "2020-07-08T08:45:00+00:00", "title": "Demo Session 2B-3", "type": "QA Sessions", "url": "papers.html?session=D2B-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T10:15:00+00:00", "link": "papers.html?session=D2C-3", "location": "", "start": "2020-07-08T09:30:00+00:00", "title": "Demo Session 2C-3", "type": "QA Sessions", "url": "papers.html?session=D2C-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T12:45:00+00:00", "link": "papers.html?session=D3A-3", "location": "", "start": "2020-07-08T12:00:00+00:00", "title": "Demo Session 3A-3", "type": "QA Sessions", "url": "papers.html?session=D3A-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T13:30:00+00:00", "link": "papers.html?session=D3B-3", "location": "", "start": "2020-07-08T12:45:00+00:00", "title": "Demo Session 3B-3", "type": "QA Sessions", "url": "papers.html?session=D3B-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T14:15:00+00:00", "link": "papers.html?session=D3C-3", "location": "", "start": "2020-07-08T13:30:00+00:00", "title": "Demo Session 3C-3", "type": "QA Sessions", "url": "papers.html?session=D3C-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T17:45:00+00:00", "link": "papers.html?session=D4A-3", "location": "", "start": "2020-07-08T17:00:00+00:00", "title": "Demo Session 4A-3", "type": "QA Sessions", "url": "papers.html?session=D4A-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T18:30:00+00:00", "link": "papers.html?session=D4B-3", "location": "", "start": "2020-07-08T17:45:00+00:00", "title": "Demo Session 4B-3", "type": "QA Sessions", "url": "papers.html?session=D4B-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T19:15:00+00:00", "link": "papers.html?session=D4C-3", "location": "", "start": "2020-07-08T18:30:00+00:00", "title": "Demo Session 4C-3", "type": "QA Sessions", "url": "papers.html?session=D4C-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T20:45:00+00:00", "link": "papers.html?session=D5A-3", "location": "", "start": "2020-07-08T20:00:00+00:00", "title": "Demo Session 5A-3", "type": "QA Sessions", "url": "papers.html?session=D5A-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T21:30:00+00:00", "link": "papers.html?session=D5B-3", "location": "", "start": "2020-07-08T20:45:00+00:00", "title": "Demo Session 5B-3", "type": "QA Sessions", "url": "papers.html?session=D5B-3"}, {"calendarId": "---", "category": "time", "classNames": ["calendar-event-qa", "calendar-event"], "end": "2020-07-08T22:15:00+00:00", "link": "papers.html?session=D5C-3", "location": "", "start": "2020-07-08T21:30:00+00:00", "title": "Demo Session 5C-3", "type": "QA Sessions", "url": "papers.html?session=D5C-3"}]');
+  var initial_view = 'timeGridWeek';
+  window.fc_current_view = initial_view;
+  
+  // We use https://fullcalendar.io/
+  document.addEventListener('DOMContentLoaded', function() {
+      var initialTimeZone = moment.tz.guess();
+      var timeZoneSelectorEl = document.getElementById('time-zone-selector');
+      var eventTypeSelectorEl = document.getElementById('event-type-selector');
+      // get event types
+      // var uniqEvents = [...new Set(events.map(x=>x.type))]
+      //  ["Tutorials", "Plenary Sessions", "Workshops", "Socials", "QA Sessions"]
+
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: initial_view,
+        initialDate: '2020-07-05',
+        timeZone: initialTimeZone,
+        allDaySlot: false,
+        nowIndicator: true,
+        slotLabelFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          meridiem: false,
+          hour12: false
+        },
+        eventTimeFormat: {
+          hour: '2-digit',
+          minute: '2-digit',
+          meridiem: false,
+          timeZoneName: 'short',
+          hour12: false
+        },
+        visibleRange: {
+          start: '2020-07-05',
+          end: '2020-07-10'
+        },
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'timeGridWeek,timeGridDay'
+        },
+        slotEventOverlap: false,
+        height: "auto",
+        events: function(info, successCallback, failureCallback) {
+            // We need to change the time zone manually,
+            // we cannot use static event data
+            // Deep copy
+            let tz = info.timeZone;
+            //get selected event types
+            let eventTypes = [...eventTypeSelectorEl.options].filter(option => option.selected).map(option => option.value);
+
+            if (tz === "Local") {
+                tz = moment.tz.guess();
+            }
+
+            let view = window.fc_current_view;
+
+            let zoned_events = JSON.parse(JSON.stringify(events));
+            for (var i = 0; i < zoned_events.length; i++){
+              var obj = zoned_events[i];
+              obj["start"] = moment(obj["start"]).tz(tz).format();
+              obj["end"] = moment(obj["end"]).tz(tz).format();
+
+              if (obj["view"] === "day" && view !== "timeGridDay" ||
+                  obj["view"] === "week" && view !== "timeGridWeek" ||
+                  !eventTypes.includes(obj["type"])) {
+                obj["display"] = "none";
+              }
+            }
+            successCallback(zoned_events);
+        },
+        eventClick: function(eventClickInfo) {
+            var e = eventClickInfo.event;
+            // Prevent reloading the current page, as we clicked
+            // on a hyperlink on the current page
+            eventClickInfo.jsEvent.preventDefault();
+
+            if (e.url) {
+                window.open(e.url, "_blank");
+                return false;
+            }
+        },
+        eventDidMount: function(info) {
+          $(info.el).popover({
+            title: info.event.title,
+            html: true,
+            content: info.timeText,
+            placement: 'top',
+            trigger:'hover',
+            container:'body'
+          })
+        },
+        // Render HTML from title as HTML
+        eventContent: function( arg ) {
+ 	        return { html: arg.event.title }
+        },
+        datesSet: function( dateInfo ) {
+            window.fc_current_view = dateInfo.view.type;
+            dateInfo.view.calendar.refetchEvents();
+        },
+        
+      });
+
+      moment.tz.names().forEach(function(timeZone) {
+        var optionEl;
+
+        if (timeZone !== 'UTC') { // UTC is already in the list
+          optionEl = document.createElement('option');
+          optionEl.value = timeZone;
+          optionEl.innerText = timeZone;
+          timeZoneSelectorEl.appendChild(optionEl);
+        }
+      });
+
+    // when the timezone selector changes, dynamically change the calendar option
+    timeZoneSelectorEl.addEventListener('change', function() {
+      calendar.setOption('timeZone', this.value);
+    });
+
+    // when eventype changes, refetch and hide unselected events
+    eventTypeSelectorEl.addEventListener('change', function(){
+      calendar.refetchEvents();
+    })
+
+    // I did not find a better way than using global variables
+    window.fc_current_view = calendar.view.type;
+    calendar.render();
+  });
+
+</script>
+<script src="static/js/lazy_load.js"></script>
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+  <div class="text-muted text-center">
+  Click each QA/Demo session card to find out all papers in the specific session.
+  <br/>
+  Use "day" view to show more details about tutorials and workshops on each day.
+  </div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+  <div class="form-group col">
+    <label for="time-zone-selector">Timezone:</label>
+    <select id="time-zone-selector" class="selectpicker" data-live-search="true">
+      <option value="local" selected>Local</option>
+      <option value="UTC">UTC</option>
+    </select>
+    <label for="event-type-selector">&nbsp;Event type:</label>
+    <select id="event-type-selector" class="selectpicker" multiple>
+        <option value="Tutorials" selected>Tutorials</option>
+        <option value="Plenary Sessions" selected>Plenary Sessions</option>
+        <option value="Workshops" selected>Workshops</option>
+        <option value="Socials" selected>Socials</option>
+        <option value="QA Sessions" selected>QA Sessions</option>
+    </select>
+    <div id='calendar'></div>
+  </div>
+  
+
+<script type="text/javascript">
+  lazyLoader();
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

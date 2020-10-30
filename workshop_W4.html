@@ -1,0 +1,815 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W4: Workshop on Biomedical Natural Language Processing (BioNLP)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W4: Workshop on Biomedical Natural Language Processing (BioNLP)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou, Jun&#39;ichi Tsujii
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://www.aclweb.org/portal/content/bionlp-2020-workshop-biomedical-natural-language-processing" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 9
+  <span class="session_times">(15:30-01:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W4: Workshop on Biomedical Natural Language Processing (BioNLP)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-09T15:30:00"),
+        end: new Date("2020-07-10T01:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W4.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        NLP can help improve health and BioNLP is the best venue for biomedical & clinical language processing researchers to learn how.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>Jul 9, 8:30-8:40</td>
+          
+          <td scope="row">Opening remarks</td>
+          <td style="white-space: pre-wrap;">Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 8:40-9:10</td>
+          
+          <td scope="row">Biomedical Retrieval: Users, Data, and Tasks</td>
+          <td style="white-space: pre-wrap;">Kirk Roberts</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 9:10-9:20</td>
+          
+          <td scope="row">Quantifying 60 Years of Gender Bias in Biomedical Research with Word Embeddings</td>
+          <td style="white-space: pre-wrap;">Anthony Rios</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 9:20-9:30</td>
+          
+          <td scope="row">Sequence-to-Set Semantic Tagging for Complex Query Reformulation and Automated Text Categorization in Biomedical IR using Self-Attention</td>
+          <td style="white-space: pre-wrap;">Manirupa Das</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 9:30-9:40</td>
+          
+          <td scope="row">Interactive Extractive Search over Biomedical Corpora</td>
+          <td style="white-space: pre-wrap;">Hillel Taub-Tabib</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 9:40-9:50</td>
+          
+          <td scope="row">mproving Biomedical Analogical Retrieval with Embedding of Structural Dependencies</td>
+          <td style="white-space: pre-wrap;">Amandalynne Paullada</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 9:50-10:00</td>
+          
+          <td scope="row">DeSpin: a prototype system for detecting spin in biomedical publications</td>
+          <td style="white-space: pre-wrap;">Anna Koroleva</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 10:00-10:30</td>
+          
+          <td scope="row">Discussion</td>
+          <td style="white-space: pre-wrap;">Kirk Roberts, Anthony Rios, Manirupa Das, Hillel Taub-Tabib, Amandalynne Paullada, Anna Koroleva, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 10:45-11:15</td>
+          
+          <td scope="row">Challenges in Domain Adaptation for Medical NLP</td>
+          <td style="white-space: pre-wrap;">Tim Miller</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 11:15-11:25</td>
+          
+          <td scope="row">Towards Visual Dialog for Radiology</td>
+          <td style="white-space: pre-wrap;">Olga Kovaleva</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 11:25-11:35</td>
+          
+          <td scope="row">A BERT-based One-Pass Multi-Task Model for Clinical Temporal Relation Extraction</td>
+          <td style="white-space: pre-wrap;">Chen Lin</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 11:35-11:45</td>
+          
+          <td scope="row">Experimental Evaluation and Development of a Silver-Standard for the MIMIC-III Clinical Coding Dataset</td>
+          <td style="white-space: pre-wrap;">Tom Searle</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 11:45-11:55</td>
+          
+          <td scope="row">Comparative Analysis of Text Classification Approaches in Electronic Health Records</td>
+          <td style="white-space: pre-wrap;">Aurelie Mascio</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 11:55-12:05</td>
+          
+          <td scope="row">Noise Pollution in Hospital Readmission Prediction: Long Document Classification with Reinforcement Learning</td>
+          <td style="white-space: pre-wrap;">Liyan Xu,</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 12:05-12:15</td>
+          
+          <td scope="row">Evaluating the Utility of Model Configurations and Data Augmentation on Clinical Semantic Textual Similarity</td>
+          <td style="white-space: pre-wrap;">Yuxia Wang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 12:15-12:45</td>
+          
+          <td scope="row">Discussion</td>
+          <td style="white-space: pre-wrap;">Tim Miller, Olga Kovaleva, Chen Lin, Tom Searle, Aurelie Mascio, Liyan Xu, Yuxia Wang, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 13:30-14:00</td>
+          
+          <td scope="row">Language Understanding</td>
+          <td style="white-space: pre-wrap;">Anna Rumshisky</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 14:00-14:10</td>
+          
+          <td scope="row">Entity-Enriched Neural Models for Clinical Question Answering</td>
+          <td style="white-space: pre-wrap;">Bhanu Pratap Singh Rawat</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 14:10-14:20</td>
+          
+          <td scope="row">Evidence Inference 2.0: More Data, Better Models</td>
+          <td style="white-space: pre-wrap;">Jay DeYoung</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 14:20-14:30</td>
+          
+          <td scope="row">Personalized Early Stage Alzheimer’s Disease Detection: A Case Study of President Reagan’s Speeches</td>
+          <td style="white-space: pre-wrap;">Ning Wang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 14:30-14:40</td>
+          
+          <td scope="row">BioMRC: A Dataset for Biomedical Machine Reading Comprehension</td>
+          <td style="white-space: pre-wrap;">Dimitris Pappas</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 14:40-14:50</td>
+          
+          <td scope="row">Neural Transduction of Letter Position Dyslexia using an Anagram Matrix Representation</td>
+          <td style="white-space: pre-wrap;">Avi Bleiweiss</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 14:50-15:00</td>
+          
+          <td scope="row">Domain Adaptation and Instance Selection for Disease Syndrome Classification over Veterinary Clinical Notes</td>
+          <td style="white-space: pre-wrap;">Brian Hur</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 15:00-15:30</td>
+          
+          <td scope="row">Discussion</td>
+          <td style="white-space: pre-wrap;">Anna Rumshisky, Jay DeYong, Ning Wang, Dimitris, Pappas, Avi Bleiweiss, Brian Hur, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 15:45-16:25</td>
+          
+          <td scope="row">Machine Reading for Precision Medicine</td>
+          <td style="white-space: pre-wrap;">Hoifung Poon</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 16:25-16:35</td>
+          
+          <td scope="row">Benchmark and Best Practices for Biomedical Knowledge Graph Embeddings</td>
+          <td style="white-space: pre-wrap;">David Chang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 16:35-16:45</td>
+          
+          <td scope="row">Extensive Error Analysis and a Learning-Based Evaluation of Medical Entity Recognition Systems to Approximate User Experience</td>
+          <td style="white-space: pre-wrap;">Isar Nejadgholi</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 16:45-16:55</td>
+          
+          <td scope="row">A Data-driven Approach for Noise Reduction in Distantly Supervised Biomedical Relation Extraction</td>
+          <td style="white-space: pre-wrap;">Saadullah Amin, Katherine Ann Dunfield, Günter Neumann</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 16:55-17:05</td>
+          
+          <td scope="row">Global Locality in Biomedical Relation and Event Extraction</td>
+          <td style="white-space: pre-wrap;">Elaheh ShafieiBavani</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 17:05-17:15</td>
+          
+          <td scope="row">An Empirical Study of Multi-Task Learning on BERT for Biomedical Text Mining</td>
+          <td style="white-space: pre-wrap;">Yifan Peng</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 17:15-17:45</td>
+          
+          <td scope="row">Discussion</td>
+          <td style="white-space: pre-wrap;">Hoifung Poon, David Chang, Isar Nejadgholi, Saadullah Amin, Katherine Ann Dunfield, Günter Neumann, Elaheh ShafieiBavani, Yifan Peng, Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>Jul 9, 17:45-18:00</td>
+          
+          <td scope="row">Closing remarks</td>
+          <td style="white-space: pre-wrap;">Dina Demner-Fushman, Kevin Cohen, Sophia Ananiadou</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931793" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931793',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929642" target="_blank"><b>Evaluating the Utility of Model Configurations and Data Augmentation on Clinical Semantic Textual Similarity</b></a>
+        </p>
+        <p>
+          <i>Yuxia Wang</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929643" target="_blank"><b>Interactive Extractive Search over Biomedical Corpora</b></a>
+        </p>
+        <p>
+          <i>Hillel Taub-Tabib</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929644" target="_blank"><b>A Data-driven Approach for Noise Reduction in Distantly Supervised Biomedical Relation Extraction</b></a>
+        </p>
+        <p>
+          <i>Saadullah Amin, Katherine Ann Dunfield, Günter Neumann</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929645" target="_blank"><b>Personalized Early Stage Alzheimer’s Disease Detection: A Case Study of President Reagan’s Speeches</b></a>
+        </p>
+        <p>
+          <i>Ning Wang</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929646" target="_blank"><b>Entity-Enriched Neural Models for Clinical Question Answering</b></a>
+        </p>
+        <p>
+          <i>Bhanu Pratap Singh Rawat</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929647" target="_blank"><b>Evidence Inference V2.0: More Data, Better Models</b></a>
+        </p>
+        <p>
+          <i>Jay DeYoung</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929648" target="_blank"><b>Comparative Analysis of Text Classification Approaches in Electronic Health Records</b></a>
+        </p>
+        <p>
+          <i>Aurelie Mascio</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929649" target="_blank"><b>Experimental Evaluation and Development of a Silver-Standard for the MIMIC-III Clinical Coding Dataset</b></a>
+        </p>
+        <p>
+          <i>Tom Searle</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929650" target="_blank"><b>Domain Adaptation and Instance Selection for Disease Syndrome Classification over Veterinary Clinical Notes</b></a>
+        </p>
+        <p>
+          <i>Brian Hur</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929651" target="_blank"><b>Sequence-to-Set Semantic Tagging for Complex Query Reformulation in Biomedical IR using Self-Attention</b></a>
+        </p>
+        <p>
+          <i>Manirupa Das</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38931232" target="_blank"><b>Noise Pollution in Hospital Readmission Prediction: Classification with RL</b></a>
+        </p>
+        <p>
+          <i>Liyan Xu</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

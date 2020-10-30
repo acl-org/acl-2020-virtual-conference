@@ -1,0 +1,907 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W12: Workshop on Neural Generation and Translation (WNGT)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W12: Workshop on Neural Generation and Translation (WNGT)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Alexandra Birch, Graham Neubig, Andrew Finch, Hiroaki Hayashi, Kenneth Heafield, Ioannis Konstas, Yusuke Oda, Xian Li
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://sites.google.com/view/wngt20/home" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 10
+  <span class="session_times">(15:30-00:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W12: Workshop on Neural Generation and Translation (WNGT)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-10T15:30:00"),
+        end: new Date("2020-07-11T00:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W12.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The 4th Workshop on Neural Generation and Translation provides a forum for research in applications of neural models to language generation and translation tasks.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>10 Jul, 8:30 AM-9:00 AM</td>
+          
+          <td scope="row">Findings of the Efficiency Task</td>
+          <td style="white-space: pre-wrap;">Kenneth Heafield</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:00 AM-9:40 AM</td>
+          
+          <td scope="row">Findings of the STAPLE Task</td>
+          <td style="white-space: pre-wrap;">Stephen Mayhew</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:45 AM-10:30 AM</td>
+          
+          <td scope="row">Live invited talk: Generating Long Form Text from Long Form Document Input</td>
+          <td style="white-space: pre-wrap;">Claire Gardent</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:30 AM-10:45 AM</td>
+          
+          <td scope="row">Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:45 AM-11:30 AM</td>
+          
+          <td scope="row">Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:30 AM-12:15 PM</td>
+          
+          <td scope="row">Live invited talk: On Analysing and Generating Faithful Text</td>
+          <td style="white-space: pre-wrap;">Shashi Narayan</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:15 PM-12:30 PM</td>
+          
+          <td scope="row">Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:30 PM-12:40 PM</td>
+          
+          <td scope="row">Video of best paper talk: Meta-Learning for Few-Shot NMT Adaptation</td>
+          <td style="white-space: pre-wrap;">Amr Sharaf, Hany Hassan and Hal Daumé III </td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:40 PM-12:50 PM</td>
+          
+          <td scope="row">Live Best Paper Prize giving and Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:50 PM-1:30 PM</td>
+          
+          <td scope="row">Break</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 1:30 PM-3:00 PM</td>
+          
+          <td scope="row">Live paper presentation session</td>
+          <td style="white-space: pre-wrap;">Parallel sessions with prerecorded 5-10 min videos and live chat for each paper (Please visit &#39;External Website&#39; for RockectChat links to each paper).</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:00 PM-3:45 PM</td>
+          
+          <td scope="row">Live invited talk: Text Generation by Offline Reinforcement Learning</td>
+          <td style="white-space: pre-wrap;">He He</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:45 PM-4:00 PM</td>
+          
+          <td scope="row">Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:00 PM-4:45 PM</td>
+          
+          <td scope="row">Live invited talk: Multilingual Denoising Pre-training for Neural Machine Translation</td>
+          <td style="white-space: pre-wrap;">Jiatao Gu</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:45 PM-5:00 PM</td>
+          
+          <td scope="row">Live Q&amp;A</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931801" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931801',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929815" target="_blank"><b>Learning to Generate Multiple Style Transfer Outputs for an Input Sentence</b></a>
+        </p>
+        <p>
+          <i>Kevin Lin</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929816" target="_blank"><b>Balancing Cost and Benefit with Tied-Multi Transformers</b></a>
+        </p>
+        <p>
+          <i>Raj Dabre</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929817" target="_blank"><b>Compressing Neural Machine Translation Models with 4-bit Precision</b></a>
+        </p>
+        <p>
+          <i>Alham Fikri Aji </i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929818" target="_blank"><b>Meta-Learning for Few-Shot NMT Adaptation</b></a>
+        </p>
+        <p>
+          <i>Amr Sharaf</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929819" target="_blank"><b>Automatically Ranked Russian Paraphrase Corpus for Text Generation</b></a>
+        </p>
+        <p>
+          <i>Vadim Gudkov</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929820" target="_blank"><b>A Deep Reinforced Model for Zero-Shot Cross-Lingual Summarization with Bilingual Semantic Similarity Rewards</b></a>
+        </p>
+        <p>
+          <i>Zi-Yi Dou</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929821" target="_blank"><b>A Question Type Driven and Copy Loss Enhanced Framework for Answer-Agnostic Neural Question Generation</b></a>
+        </p>
+        <p>
+          <i>Xiuyu Wu</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929822" target="_blank"><b>A Generative Approach to Titling and Clustering Wikipedia Sections</b></a>
+        </p>
+        <p>
+          <i>Anjalie Field</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929823" target="_blank"><b>The Unreasonable Volatility of Neural Machine Translation Models</b></a>
+        </p>
+        <p>
+          <i>Marzieh Fadaee</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929824" target="_blank"><b>Leveraging Sentence Similarity in Natural Language Generation: Improving Beam Search using Range Voting</b></a>
+        </p>
+        <p>
+          <i>Sebastian Borgeaud</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929825" target="_blank"><b>Distill, Adapt, Distill: Training Small, In-Domain Models for Neural Machine Translation</b></a>
+        </p>
+        <p>
+          <i>Mitchell A. Gordon</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929826" target="_blank"><b>Improving Neural Machine Translation Using Energy-Based Models</b></a>
+        </p>
+        <p>
+          <i>Subhajit Naskar</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929827" target="_blank"><b>Training and Inference Methods for High-Coverage Neural Machine Translation</b></a>
+        </p>
+        <p>
+          <i>Michael Yang</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929828" target="_blank"><b>Meeting the 2020 Duolingo Challenge on a Shoestring</b></a>
+        </p>
+        <p>
+          <i>Tadashi Nomoto</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929829" target="_blank"><b>English-to-Japanese Diverse Translation by Combining Forward and Backward Outputs</b></a>
+        </p>
+        <p>
+          <i>Masahiro Kaneko</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929830" target="_blank"><b>POSTECH Submission on Duolingo Shared Task</b></a>
+        </p>
+        <p>
+          <i>Junsu Park</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929831" target="_blank"><b>The ADAPT System Description for the STAPLE 2020 English-to-Portuguese Translation Task</b></a>
+        </p>
+        <p>
+          <i>Rejwanul Haque</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929832" target="_blank"><b>Expand and Filter: CUNI and LMU Systems for the WNGT 2020 Duolingo Shared Task</b></a>
+        </p>
+        <p>
+          <i>Jindřich Libovický</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929833" target="_blank"><b>Exploring Model Consensus to Generate Translation Paraphrases</b></a>
+        </p>
+        <p>
+          <i>Zhenhao Li</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929834" target="_blank"><b>Growing Together: Modeling Human Language Learning With n-Best Multi-Checkpoint Machine Translation</b></a>
+        </p>
+        <p>
+          <i>El Moatez Billah Nagoudi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929835" target="_blank"><b>Generating Diverse Translations via Weighted Fine-tuning and Hypotheses Filtering for the Duolingo STAPLE Task</b></a>
+        </p>
+        <p>
+          <i>Sweta Agrawal</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929836" target="_blank"><b>The JHU Submission to the 2020 Duolingo Shared Task on Simultaneous Translation and Paraphrase for Language Education</b></a>
+        </p>
+        <p>
+          <i>Huda Khayrallah</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929837" target="_blank"><b>Simultaneous paraphrasing and translation by fine-tuning Transformer models</b></a>
+        </p>
+        <p>
+          <i>Rakesh Chada</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929838" target="_blank"><b>The NiuTrans System for WNGT 2020 Efficiency Task</b></a>
+        </p>
+        <p>
+          <i>Chi Hu</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929839" target="_blank"><b>Efficient and High-Quality Neural Machine Translation with OpenNMT</b></a>
+        </p>
+        <p>
+          <i>Guillaume Klein</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929840" target="_blank"><b>Edinburgh’s Submissions to the 2020 Machine Translation Efficiency Task</b></a>
+        </p>
+        <p>
+          <i>Nikolay Bogoychev</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929841" target="_blank"><b>Increasing Lexical Diversity in Plug and Play Language Models</b></a>
+        </p>
+        <p>
+          <i>Soham Parikh</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929842" target="_blank"><b>When and Why is Unsupervised Neural Machine Translation Useless?</b></a>
+        </p>
+        <p>
+          <i>Yunsu Kim</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929843" target="_blank"><b>Transformers without Tears: Improving the Normalization of Self-Attention</b></a>
+        </p>
+        <p>
+          <i>Toan Q. Nguyen</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929844" target="_blank"><b>Masked Language Model Scoring</b></a>
+        </p>
+        <p>
+          <i>Julian Salazar</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,915 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W15: NLP for Medical Conversations (NLPMC)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W15: NLP for Medical Conversations (NLPMC)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Parminder Bhatia, Chaitanya Shivade, Mona Diab, Byron Wallace, Rashmi Gangadharaiah, Nan Du, Izhak Shafran, Steven Lin
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://sites.google.com/view/nlp4medicalconversations/home" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 10
+  <span class="session_times">(16:00-01:00 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W15: NLP for Medical Conversations (NLPMC)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-10T16:00:00"),
+        end: new Date("2020-07-11T01:00:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W15.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        NLP for Medical Conversations aims to Build the clinical decision support systems as cognitive assistants by bridging the gap between NLP research and medical practice.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:00 AM-9:15 AM</td>
+          
+          <td scope="row">Opening</td>
+          <td style="white-space: pre-wrap;">Parminder Bhatia</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:15 AM-9:50 AM</td>
+          
+          <td scope="row">NLPMC</td>
+          <td style="white-space: pre-wrap;">Tanuj Gupta</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 9:50 AM-10:00 AM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Tanuj Gupta</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:00 AM-10:12 AM</td>
+          
+          <td scope="row">Methods for Extracting Information from Messages from Primary Care Providers to Specialists</td>
+          <td style="white-space: pre-wrap;">Xiyu Ding</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:12 AM-10:15 AM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Xiyu Ding</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:15 AM-10:27 AM</td>
+          
+          <td scope="row">Towards Understanding ASR Error Correction for Medical Conversations</td>
+          <td style="white-space: pre-wrap;">Anirudh Mani</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 10:27 AM-10:30 AM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Anirudh Mani</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:00 AM-11:35 AM</td>
+          
+          <td scope="row">NLPMC</td>
+          <td style="white-space: pre-wrap;">Anitha Kannan</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:35 AM-11:45 AM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Anitha Kannan</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 11:45 AM-12:20 PM</td>
+          
+          <td scope="row">NLPMC</td>
+          <td style="white-space: pre-wrap;">Steven Bedrick</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 12:20 PM-12:30 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Steven Bedrick</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 1:00 PM-1:25 PM</td>
+          
+          <td scope="row">Medical Conversations: Challenges and Future</td>
+          <td style="white-space: pre-wrap;">Zachary Lipton</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 1:25 PM-1:30 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Zachary Lipton</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 1:30 PM-2:05 PM</td>
+          
+          <td scope="row">NLPMC</td>
+          <td style="white-space: pre-wrap;">Judy Chang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:05 PM-2:15 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Judy Chang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:15 PM-2:27 PM</td>
+          
+          <td scope="row">Studying Challenges in Medical Conversation with Structured Annotation</td>
+          <td style="white-space: pre-wrap;">Nan Wang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:27 PM-2:30 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Nan Wang</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:30 PM-2:42 PM</td>
+          
+          <td scope="row">Generating Medical Reports from Patient-Doctor Conversations Using Sequence-to-Sequence Models</td>
+          <td style="white-space: pre-wrap;">Seppo Enarvi</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:42 PM-2:45 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Seppo Enarvi</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:45 PM-2:57 PM</td>
+          
+          <td scope="row">Towards an Ontology-based Medication Conversational Agent for PrEP and PEP</td>
+          <td style="white-space: pre-wrap;">Muhammad (Tuan) Amith</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 2:57 PM-3:00 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Muhammad (Tuan) Amith</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:00 PM-3:12 PM</td>
+          
+          <td scope="row">Heart Failure Education of African American and Hispanic/Latino Patients: Data Collection and Analysis</td>
+          <td style="white-space: pre-wrap;">Itika Gupta</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:12 PM-3:15 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Itika Gupta</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:15 PM-3:27 PM</td>
+          
+          <td scope="row">On the Utility of Audiovisual Dialog Technologies and Signal Analytics for Real-time Remote Monitoring of Depression Biomarkers</td>
+          <td style="white-space: pre-wrap;">Oliver Roesler</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 3:27 PM-3:30 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Oliver Roesler</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:00 PM-4:35 PM</td>
+          
+          <td scope="row">NLPMC</td>
+          <td style="white-space: pre-wrap;">Adam Miner</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:35 PM-4:45 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Adam Miner</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 4:45 PM-5:10 PM</td>
+          
+          <td scope="row">Dragon Ambient eXperience</td>
+          <td style="white-space: pre-wrap;">Guido Gallopyn</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 5:10 PM-5:15 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Guido Gallopyn</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 5:15 PM-5:27 PM</td>
+          
+          <td scope="row">Robust Prediction of Punctuation and Truecasing for Medical ASR</td>
+          <td style="white-space: pre-wrap;">Monica Sunkara</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 5:27 PM-5:30 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Monica Sunkara</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 5:30 PM-5:42 PM</td>
+          
+          <td scope="row">Topic-Based Measures of Conversation for Detecting Mild CognitiveImpairment</td>
+          <td style="white-space: pre-wrap;">Liu Chen</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 5:42 PM-5:45 PM</td>
+          
+          <td scope="row">QA</td>
+          <td style="white-space: pre-wrap;">Liu Chen</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>10 Jul, 5:45 PM-6:00 PM</td>
+          
+          <td scope="row">Closing</td>
+          <td style="white-space: pre-wrap;">Parminder Bhatia</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931804" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931804',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929881" target="_blank"><b>Practical Applications of NLP for Clinical Documentation</b></a>
+        </p>
+        <p>
+          <i>Tanuj Gupta</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929882" target="_blank"><b>Computational Language Analysis: Towards Improved Psychotherapy and Conversational AI</b></a>
+        </p>
+        <p>
+          <i>Adam Miner</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929883" target="_blank"><b>Learning from listening: Patient-Provider Communication Research and Practice</b></a>
+        </p>
+        <p>
+          <i>Judy Chang</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929884" target="_blank"><b>NLPMC</b></a>
+        </p>
+        <p>
+          <i>Steven Bedrick</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929885" target="_blank"><b>AI-powered (chat-based) best healtchare for everyone</b></a>
+        </p>
+        <p>
+          <i>Anitha Kannan</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929886" target="_blank"><b>Heart Failure Education of African American and Hispanic/Latino Patients: Data Collection and Analysis</b></a>
+        </p>
+        <p>
+          <i>Itika Gupta</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929887" target="_blank"><b>Towards an Ontology-based Medication Conversational Agent for PrEP and PEP</b></a>
+        </p>
+        <p>
+          <i>Muhammad (Tuan) Amith</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929888" target="_blank"><b>Generating Medical Reports from Patient-Doctor Conversations Using Sequence-to-Sequence Models</b></a>
+        </p>
+        <p>
+          <i>Seppo Enarvi</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929889" target="_blank"><b>Studying Challenges in Medical Conversation with Structured Annotation</b></a>
+        </p>
+        <p>
+          <i>Nan Wang</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929890" target="_blank"><b>Methods for Extracting Information from Messages from Primary Care Providers to Specialists</b></a>
+        </p>
+        <p>
+          <i>Xiyu Ding</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929891" target="_blank"><b>Robust Prediction of Punctuation and Truecasing for Medical ASR</b></a>
+        </p>
+        <p>
+          <i>Monica Sunkara</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929892" target="_blank"><b>On the Utility of Audiovisual Dialog Technologies and Signal Analytics for Real-time Remote Monitoring of Depression Biomarkers</b></a>
+        </p>
+        <p>
+          <i>Oliver Roesler</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929893" target="_blank"><b>Towards Understanding ASR Error Correction for Medical Conversations</b></a>
+        </p>
+        <p>
+          <i>Anirudh Mani</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929894" target="_blank"><b>Topic-Based Measures of Conversation for Detecting Mild CognitiveImpairment</b></a>
+        </p>
+        <p>
+          <i>Liu Chen</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929895" target="_blank"><b>Opening</b></a>
+        </p>
+        <p>
+          <i>Parminder Bhatia</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929896" target="_blank"><b>Closing</b></a>
+        </p>
+        <p>
+          <i>Parminder Bhatia</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929897" target="_blank"><b>Dragon Ambient eXperience</b></a>
+        </p>
+        <p>
+          <i>Guido Gallopyn</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929898" target="_blank"><b>Medical Conversations: Challenges and Future</b></a>
+        </p>
+        <p>
+          <i>Kass-hout Taha</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

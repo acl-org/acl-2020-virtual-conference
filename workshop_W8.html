@@ -1,0 +1,838 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: W8: Narrative Understanding, Storylines, and Events (NUSE)</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+         
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+         
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<script src='https://slideslive.com/embed_presentation.js'></script>
+<!-- Title -->
+<div class="pp-card m-3" style="">
+  <div class="card-header">
+    <h2 class="card-title main-title text-center" style="">
+      W8: Narrative Understanding, Storylines, and Events (NUSE)
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-center">
+      Claire Bonial, Tommaso Caselli, Snigdha Chaturvedi, Elizabeth Clark, Ruihong Huang, Ben Miller, Mohit Iyyer, Alejandro Jaimes, Heng Ji, Lara Martin, Teruko Mitamura, Nanyun Peng, Joel Tetreault
+    </h3>
+
+    <div class="text-center p-3">
+      <a class="card-link" data-toggle="collapse" role="button" href="#details">
+        Description
+      </a>
+
+      
+      <a class="card-link" data-toggle="collapse" role="button" href="#schedule">
+        Schedule
+      </a>
+      
+
+      <a href="https://sites.google.com/view/nuse" target="_blank"  class="card-link">
+        External Website
+      </a>
+    </div>
+
+    
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-session-times">
+  Live Session: Jul 9
+  <span class="session_times">(15:15-00:15 GMT)</span>
+
+  
+
+  
+  </div>
+  </div>
+
+  <div class="text-center text-muted text-monospace">
+  <div class="paper-cal-links">
+  <img src="static/images/calendar.svg" class="paper-detail-calendar" height="24px">
+  <span id="session-cal-link-1"></span>
+  </div>
+  </div>
+
+
+<script src="static/js/add-to-calendar.js"></script>
+<script>
+
+  let ouicalData;
+  let targetNode;
+  let calendarNodeInner;
+  let calendarNodeSpan;
+  let parser = new DOMParser();
+  let calendarNames = Array("google", "off365", "outlook", "ical");
+
+  
+    // create a calendar by hand
+    ouicalData = addToCalendarData({
+      options: {
+        class: 'my-class',
+        id: 'my-id'                               // If you don't pass an id, one will be generated for you.
+      },
+      data: {
+        title: 'W8: Narrative Understanding, Storylines, and Events (NUSE)'.replace("#", " "),
+
+        // Event start date
+        start: new Date("2020-07-09T15:15:00"),
+        end: new Date("2020-07-10T00:15:00"),
+        // duration: 120,                           // Event duration (IN MINUTES)
+        // allday: true,														// Override end time, duration and timezone, triggers 'all day'
+
+        // Event timezone. Will convert the given time to that zone
+        timezone: 'UTC',
+        // Event Address
+        
+
+        // Event Description
+        // NOTE: Cannot use abstract because of it is multi-line. Need to format it.
+        description: 'https://virtual.acl2020.org/workshop_W8.html'
+      }
+    });
+
+    targetNode = document.querySelector('#session-cal-link-1');
+    for (const name of calendarNames) {
+      calendarNodeInner = parser.parseFromString(ouicalData[name], "text/html");
+      calendarNodeSpan = document.createElement("span");
+      calendarNodeSpan.setAttribute("style", "padding: 2px");
+
+      const openBracket = document.createElement("span");
+      openBracket.setAttribute("aria-hidden","true");
+      openBracket.innerHTML = "[";
+      calendarNodeSpan.appendChild(openBracket);
+
+      calendarNodeSpan.appendChild(calendarNodeInner.getElementsByTagName("a")[0]);
+
+      const closeBracket = document.createElement("span");
+      closeBracket.setAttribute("aria-hidden","true");
+      closeBracket.innerHTML = "]";
+      calendarNodeSpan.appendChild(closeBracket);
+
+      targetNode.appendChild(calendarNodeSpan);
+    }
+  
+</script>
+
+  </div>
+</div>
+
+<div id="details" class="pp-card m-3 collapse hide">
+  <div class="card-body">
+    <div class="card-text">
+      <div id="abstractExample">
+        The 1st Joint Workshop on Narrative Understanding, Storylines, and Events invites researchers in AI/NLP/Vision/DH & beyond to discuss methods/fiction/news/social media.
+
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+<!-- Schedule -->
+
+<div id="schedule" class="collapse" aria-labelledby="schedule">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" style="font-size: small;">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 20%;">Time (PDT)</th>
+          <th scope="col" style="width: 40%;">Event</th>
+          <th scope="col">Speakers</th>          
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:15 AM-8:30 AM</td>
+          
+          <td scope="row">Opening Remarks</td>
+          <td style="white-space: pre-wrap;"></td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 8:30 AM-9:30 AM</td>
+          
+          <td scope="row">Presentation Q&amp;A, session one</td>
+          <td style="white-space: pre-wrap;">Script Induction as Association Rule Mining
+Anton Belyy and Benjamin Van Durme
+
+CompRes: A Dataset for Narrative Structure in News
+Effi Levi, Guy Mor, Shaul Shenhav and Tamir Sheafer
+
+New Insights into Cross-Document Event Coreference: Systematic Comparison and a Simplified Approach
+Andres Cremisini and Mark Finlayson
+
+Systematic Evaluation of a Framework for Unsupervised Emotion Recognition for Narrative Text
+Samira Zad and Mark Finlayson
+
+Emotion Arcs of Student Narratives
+Swapna Somasundaran, Xianyang Chen and Michael Flor
+
+Exploring the Effect of Author and Reader Identity in Online Story Writing: the STORIESINTHEWILD Corpus.
+Tal August, Maarten Sap, Elizabeth Clark, Katharina Reinecke and Noah A. Smith
+
+Frustratingly Hard Evidence Retrieval for QA Over Books
+Xiangyang Mou, Mo Yu, Bingsheng Yao, Chenghao Yang, Xiaoxiao Guo, Saloni Potdar and Hui Su
+
+Annotating and quantifying narrative time disruptions in modernist and hypertext fiction
+Edward Kearns
+
+Extracting Message Sequence Charts from Hindi Narrative Text
+Swapnil Hingmire, Nitin Ramrakhiyani, Avinash Kumar Singh, Sangameshwar Patil, Girish Palshikar, Pushpak Bhattacharyya and Vasudeva Varma</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 9:30 AM-11:00 AM</td>
+          
+          <td scope="row">Invited Speaker Panel A</td>
+          <td style="white-space: pre-wrap;">Toward Narrative Summarization of Simulated Battles
+Andrew S. Gordon, Institute for Creative Technologies, University of Southern California
+
+LIGHT: Language in Games with Humans and Text
+Angela Fan, INRIA Nancy and Facebook AI Research Paris
+
+Toward Narrative NLP: The Utility of Adapting Models to the Narrative Case
+Mark A. Finlayson, Eminent Scholar Chaired Assistant Professor of Computer Science, Florida International University
+
+How is fiction predictable?
+Ted Underwood, Associate Professor of English, University of Illinois, Urbana-Champaign</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 12:00 PM-1:30 PM</td>
+          
+          <td scope="row">Annotation Exercise</td>
+          <td style="white-space: pre-wrap;">The Language of COVID-19: Narrative, Event and Storyline Understanding</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 2:30 PM-4:00 PM</td>
+          
+          <td scope="row">Invited Speaker Panel B</td>
+          <td style="white-space: pre-wrap;">Summarization of Stories and Events
+Kathleen McKeown, Henry and Gertrude Rothschild Professor of Computer Science, Columbia University
+
+Video Analysis for Event Understanding
+Alexander G. Hauptmann, Language Technologies Institute, Carnegie Mellon University
+
+Affective Events and Narrative Understanding
+Ellen Riloff, Professor of Computer Science, University of Utah</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 4:00 PM-5:00 PM</td>
+          
+          <td scope="row">Presentation Q&amp;A, session two</td>
+          <td style="white-space: pre-wrap;">Automatic extraction of personal events from dialogue
+Joshua Eisenberg and Michael Sheriff
+
+Bringing Stories Alive: Generating Interactive Fiction Worlds
+Prithviraj Ammanabrolu, Wesley Cheung, Dan Tu, William Broniec and Mark Riedl
+
+Extensively Matching for Few-shot Learning Event Detection
+Viet Dac Lai, Thien Huu Nguyen and Frank Dernoncourt
+
+Exploring aspects of similarity between spoken personal narratives by disentangling them into narrative clause types
+Belen Saldias and Deb Roy
+
+Detecting and understanding moral biases in news
+Usman Shahid, Barbara Di Eugenio, Andrew Rojecki and Elena Zheleva
+
+Improving the Identification of the Discourse Function of News Article Paragraphs
+Deya Banisakher, W. Victor Yarlott, Mohammed Aldawsari, Naphtali Rishe and Mark Finlayson
+
+Screenplay Quality Assessment: Can We Predict Who Gets Nominated?
+Ming-Chang Chiu, Tiantian Feng, Xiang Ren and Shrikanth Narayanan
+
+Extracting Message Sequence Charts from Hindi Narrative Text
+Swapnil Hingmire, Nitin Ramrakhiyani, Avinash Kumar Singh, Sangameshwar Patil, Girish Palshikar, Pushpak Bhattacharyya and Vasudeva Varma
+
+On-The-Fly Information Retrieval Augmentation for Language Models
+Hai Wang and David McAlleste</td>
+        </tr>
+        
+        <tr>
+                    
+            <td>9 Jul, 5:00 PM-5:15 PM</td>
+          
+          <td scope="row">Closing Remarks</td>
+          <td style="white-space: pre-wrap;">Joel Tetreault, Dataminr</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="static/js/time-extend.js"></script>
+
+<div class="container" style="background-color:white; padding: 0px;">
+  <div class="text-muted text-center">
+  You can open the
+  
+  <a href="https://slideslive.com/38931797" target="_blank">livestream video</a>
+  and
+  
+  
+  
+  in a separate window.
+  
+
+  </div>
+
+  <div class="row m-2">    
+    
+    <!-- Livestreaming -->
+    <div class="col-md-12 col-xs-12 my-auto p-2" >
+      <div id="presentation-embed" class="slp my-auto"></div>
+      <script src='https://slideslive.com/embed_presentation.js'></script>
+      <script>
+        embed = new SlidesLiveEmbed('presentation-embed', {
+        presentationId: '38931797',
+        autoPlay: false, // change to true to autoplay the embedded presentation
+        verticalEnabled: true,
+        verticalWhenWidthLte: 500,
+        allowHiddenControlsWhenPaused: true,
+        hideTitle: true
+        });
+      </script>
+    </div>
+    
+
+    <!-- Chat -->
+    
+  </div>
+</div>
+
+
+
+  <!-- Prerecorded Talk -->
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Pre-recorded Talks</h1>
+  </div>
+</div>
+<div id="accordion">
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929733" target="_blank"><b>Toward Narrative Summarization of Simulated Battles</b></a>
+        </p>
+        <p>
+          <i>Andrew S. Gordon, Institute for Creative Technologies, University of Southern California</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929732" target="_blank"><b>LIGHT: Language in Games with Humans and Text</b></a>
+        </p>
+        <p>
+          <i>Angela Fan, INRIA Nancy and Facebook AI Research Paris</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929734" target="_blank"><b>Toward Narrative NLP: The Utility of Adapting Models to the Narrative Case</b></a>
+        </p>
+        <p>
+          <i>Mark A. Finlayson, Eminent Scholar Chaired Assistant Professor of Computer Science, Florida International University</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929738" target="_blank"><b>How is fiction predictable?</b></a>
+        </p>
+        <p>
+          <i>Ted Underwood, Associate Professor of English, University of Illinois, Urbana-Champaign</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929736" target="_blank"><b>Summarization of Stories and Events</b></a>
+        </p>
+        <p>
+          <i>Kathleen McKeown, Henry and Gertrude Rothschild Professor of Computer Science, Columbia University</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929735" target="_blank"><b>Video Analysis for Event Understanding</b></a>
+        </p>
+        <p>
+          <i>Alexander G. Hauptmann, Language Technologies Institute, Carnegie Mellon University</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929737" target="_blank"><b>Affective Events and Narrative Understanding</b></a>
+        </p>
+        <p>
+          <i>Ellen Riloff, Professor of Computer Science, University of Utah</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929739" target="_blank"><b>New Insights into Cross-Document Event Coreference: Systematic Comparison and a Simplified Approach</b></a>
+        </p>
+        <p>
+          <i>Andres Cremisini and Mark Finlayson</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929740" target="_blank"><b>Screenplay Quality Assessment: Can We Predict Who Gets Nominated?</b></a>
+        </p>
+        <p>
+          <i>Ming-Chang Chiu, Tiantian Feng, Xiang Ren and Shrikanth Narayanan</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929741" target="_blank"><b>Bringing Stories Alive: Generating Interactive Fiction Worlds</b></a>
+        </p>
+        <p>
+          <i>Prithviraj Ammanabrolu, Wesley Cheung, Dan Tu, William Broniec and Mark Riedl</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929742" target="_blank"><b>Improving the Identification of the Discourse Function of News Article Paragraphs</b></a>
+        </p>
+        <p>
+          <i>Deya Banisakher, W. Victor Yarlott, Mohammed Aldawsari, Naphtali Rishe and Mark Finlayson</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929743" target="_blank"><b>Systematic Evaluation of a Framework for Unsupervised Emotion Recognition for Narrative Text</b></a>
+        </p>
+        <p>
+          <i>Samira Zad and Mark Finlayson</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929744" target="_blank"><b>Extensively Matching for Few-shot Learning Event Detection</b></a>
+        </p>
+        <p>
+          <i>Viet Dac Lai, Thien Huu Nguyen and Frank Dernoncourt</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929745" target="_blank"><b>Exploring the Effect of Author and Reader Identity in Online Story Writing: the STORIESINTHEWILD Corpus.</b></a>
+        </p>
+        <p>
+          <i>Tal August, Maarten Sap, Elizabeth Clark, Katharina Reinecke and Noah A. Smith</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929746" target="_blank"><b>Script Induction as Association Rule Mining</b></a>
+        </p>
+        <p>
+          <i>Anton Belyy and Benjamin Van Durme</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929747" target="_blank"><b>Automatic extraction of personal events from dialogue</b></a>
+        </p>
+        <p>
+          <i>Joshua Eisenberg and Michael Sheriff</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929748" target="_blank"><b>Annotating and quantifying narrative time disruptions in modernist and hypertext fiction</b></a>
+        </p>
+        <p>
+          <i>Edward Kearns</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929749" target="_blank"><b>Exploring aspects of similarity between spoken personal narratives by disentangling them into narrative clause types</b></a>
+        </p>
+        <p>
+          <i>Belen Saldias and Deb Roy</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929750" target="_blank"><b>Extracting Message Sequence Charts from Hindi Narrative Text</b></a>
+        </p>
+        <p>
+          <i>Swapnil Hingmire, Nitin Ramrakhiyani, Avinash Kumar Singh, Sangameshwar Patil, Girish Palshikar, Pushpak Bhattacharyya and Vasudeva Varma</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929751" target="_blank"><b>Emotion Arcs of Student Narratives</b></a>
+        </p>
+        <p>
+          <i>Swapna Somasundaran, Xianyang Chen and Michael Flor</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929752" target="_blank"><b>Frustratingly Hard Evidence Retrieval for QA Over Books</b></a>
+        </p>
+        <p>
+          <i>Xiangyang Mou, Mo Yu, Bingsheng Yao, Chenghao Yang, Xiaoxiao Guo, Saloni Potdar and Hui Su</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929753" target="_blank"><b>CompRes: A Dataset for Narrative Structure in News</b></a>
+        </p>
+        <p>
+          <i>Effi Levi, Guy Mor, Shaul Shenhav and Tamir Sheafer</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929754" target="_blank"><b>On-The-Fly Information Retrieval Augmentation for Language Models</b></a>
+        </p>
+        <p>
+          <i>Hai Wang and David McAllester</i>
+        </p>
+    </div>
+  </div>
+  
+  <div class="row m-2">
+    <div class="card col-md-12 col-xs-12 my-auto mp-2 bg-light">
+        <br/>
+        <p>
+          <a href="https://slideslive.com/38929755" target="_blank"><b>Detecting and understanding moral biases in news</b></a>
+        </p>
+        <p>
+          <i>Usman Shahid, Barbara Di Eugenio, Andrew Rojecki and Elena Zheleva</i>
+        </p>
+    </div>
+  </div>
+  
+</div>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,896 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Plenary Sessions</title>
+    
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="socials.html">Socials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="chat.html">Chat</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Plenary Sessions</h1>
+  </div>
+</div>
+<div class="text-muted text-center">
+  You can now watch recorded livestream <a href="livestream.html" target="_blank">here</a>.
+</div>
+<!--
+<div class="text-muted text-center">
+  The recorded livestream videos available:
+  <a href="https://slideslive.com/38931670" target="_blank">[July 6]</a>
+  and
+  <a href="https://slideslive.com/38931671" target="_blank">[July 7]</a>.
+</div>
+-->
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs">
+        
+<ul class="nav nav-pills justify-content-center">
+  
+  <li class="nav-item">
+    <a
+      class="nav-link active"
+      data-toggle="tab"
+      href="#tab-july6"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >July 6
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link "
+      data-toggle="tab"
+      href="#tab-july7"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >July 7
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link "
+      data-toggle="tab"
+      href="#tab-july8"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >July 8
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+
+<div class="tab-content" id="nav-tabContent">
+
+  <!-- Day Tab -->
+  <div
+      class="tab-pane active show"
+      id="tab-july6"
+      role="tabpanel"
+      aria-labelledby="nav-profile-tab"
+  >
+    
+    <div id="july6">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_opening_remarks.html" class="main-title" target="_blank">
+                  Opening Remarks
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Dan Jurafsky, Joyce Chai, Natalie Schluter, Joel Tetreault
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 6
+              <span class="session_times">(14:00-14:15 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_presidential_address.html" class="main-title" target="_blank">
+                  Presidential Address
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Hinrich Schütze
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 6
+              <span class="session_times">(14:15-14:30 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="https://acl2020.org/assets/images/keynotes/kathleen.jpg" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_keynote_kathy_mckeown.html" class="main-title" target="_blank">
+                  Rewriting the Past: Assessing the Field through the Lens of Language Generation
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Prof. Kathleen R. McKeown
+                
+                / Columbia University, New York
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 6
+              <span class="session_times">(14:30-15:15 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 6
+              <span class="session_times">(15:15-15:45 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+            <div class="m-3">
+              <p>In recent years, we have seen tremendous advances in the field of natural language processing through the
+use of neural networks. In fact, they have done so well, that they have almost succeeded in rewriting the field as we knew it.
+In this talk, I examine the state of the field and its link to the past, with a focus on language generation of many forms.
+I ask where neural networks have been particularly successful, where approaches from the past might still be valuable, and where
+we need to turn in the future if we are to go beyond our current success. To answer these questions, this talk will feature clips
+from a series of interviews I carried out with experts in the field.</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_business_meeting.html" class="main-title" target="_blank">
+                  Business Meeting
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Host: Natalie Schluter, Hinrich Schütze, Shiqi Zhao
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 6
+              <span class="session_times">(15:45-16:15 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="tab-july7"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    
+    <div id="july7">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_lifetime_achievement_award.html" class="main-title" target="_blank">
+                  Lifetime Achievement Award
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Presenter: Hinrich Schütze
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 7
+              <span class="session_times">(14:00-14:30 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 7
+              <span class="session_times">(14:30-14:45 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_distinguished_service_award.html" class="main-title" target="_blank">
+                  Distinguished Service Award
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Presenter: Hinrich Schütze
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 7
+              <span class="session_times">(14:45-14:55 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 6
+              <span class="session_times">(14:55-15:00 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_test_of_time_awards.html" class="main-title" target="_blank">
+                  Test of Time Awards
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Presenter: Barbara Di Eugenio
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 7
+              <span class="session_times">(15:00-15:10 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 7
+              <span class="session_times">(15:10-15:15 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_review_meeting.html" class="main-title" target="_blank">
+                  Review Meeting
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Host: Hinrich Schütze, Amanda Stent
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 7
+              <span class="session_times">(15:15-16:00 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+            <div class="m-3">
+              <ul>
+<li>Short-term proposal: <a href="https://www.aclweb.org/adminwiki/index.php?title=Short-Term_Reform_Proposals_for_ACL_Reviewing">link</a></li>
+<li>Long-term proposal: <a href="https://www.aclweb.org/adminwiki/index.php?title=ACL_Rolling_Review_Proposal">link</a></li>
+</ul>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="tab-pane fade"
+    id="tab-july8"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    
+    <div id="july8">
+      <div class="plenary_sessions">
+        
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="https://acl2020.org/assets/images/keynotes/josh.jpg" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_keynote_josh_tenenbaum.html" class="main-title" target="_blank">
+                  Cognitive and computational building blocks for more human-like language in machines
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Prof. Josh Tenenbaum
+                
+                / Massachusetts Institute of Technology
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 8
+              <span class="session_times">(14:00-14:45 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+            <div class="m-3 text-muted">
+              Live QA: Jul 8
+              <span class="session_times">(14:45-15:15 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+            <div class="m-3">
+              <p>Humans learn language building on more basic conceptual and computational resources that we can already see
+precursors of in infancy.  These include capacities for causal reasoning, symbolic rule formation, rapid
+abstraction, and commonsense representations of events in terms of objects, agents and their interactions.
+I will talk about steps towards capturing these abilities in engineering terms, using tools from hierarchical
+Bayesian models, probabilistic programs, program induction, and neuro-symbolic architectures.
+I will show examples of how these tools have been applied in both cognitive science and AI contexts, and point
+to ways they might be useful in building more human-like language, learning and reasoning in machines.</p>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_best_paper_award.html" class="main-title" target="_blank">
+                  Best Paper Award Ceremony
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Presenters: Joyce Chai, Natalie Schluter, Joel Tetreault
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 8
+              <span class="session_times">(15:15-15:25 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_future_conferences.html" class="main-title" target="_blank">
+                  Future Conferences
+                </a>
+              </h4>
+            </div>
+
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 8
+              <span class="session_times">(15:25-15:45 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+            <div class="m-3">
+              <ul>
+<li>EMNLP 2020: Bonnie Webber, Trevor Cohn, Yulan He, Yang Liu</li>
+<li>AACL 2020: Kam-Fai Wong, Kevin Knight, Hua Wu</li>
+<li>COLING 2020: Donia Scott, Nuria Bel, Chengqing Zong</li>
+<li>EACL 2021: Paola Merlo, Jorg Tiedemann, Reut Tsarfaty</li>
+<li>NAACL 2021: Kristina Toutanova, Luke Zettlemoyer, Anna Rumshisky, Saif Mohammad</li>
+<li>ACL 2021: Chengqing Zong, Thepchai Supnithi</li>
+<li>ACL 2023 Call for Bids: Tim Baldwin</li>
+</ul>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="row p-4">
+  <div class="col-md-12">
+    <div class="card p-3 shadow bg-light rounded">
+        <div class="row">
+          <div class="col-md-2 col-sm-5">
+            <img src="static/images/acl2020/acl-logo.png" width="100%" class="mt-3" />
+          </div>
+          <div class="col-md-10 col-sm-6">
+            <div class="m-3 text-muted">
+              <h4>
+                <a href="plenary_session_closing_remarks.html" class="main-title" target="_blank">
+                  Closing Remarks
+                </a>
+              </h4>
+            </div>
+
+            
+            <div class="m-3 text-muted">
+              <span class="card-title h3">
+                Dan Jurafsky
+                
+              </span>
+            </div>
+            
+
+            
+            <div class="m-3 text-muted">
+              Live Presentation: Jul 8
+              <span class="session_times">(15:45-15:50 GMT)</span>
+              [<a href="livestream.html" target="_blank"  class="card-link">Join Livestream</a>]
+            </div>
+            
+
+            
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="static/js/lazy_load.js"></script>
+<script type="text/javascript">
+  lazyLoader();
+</script>
+
+<script src="static/js/time-extend.js"></script>
+<script>
+  $(document).ready(()=>{
+    add_local_tz('.session_times');
+  })
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+        window.scrollTo(0,0);
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>

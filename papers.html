@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Papers</title>
+    
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+<script src="static/js/icons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+  <div class="text-muted text-center">
+  The <a href="schedule.html" target="_blank">Schedule</a> page shows the timing of QA/Demo sessions.
+  </div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+        
+  <ul class="nav nav-pills justify-content-center pb-3">
+    <li class="nav-item">
+      <a
+          class="nav-link active"
+          data-toggle="tab"
+          href="papers.html"
+          role="tab"
+          aria-controls="nav-home"
+          aria-selected="true"
+      >Browse
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="papers_vis.html">Visualization</a>
+    </li>
+  </ul>
+
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+<!-- Session -->
+<div class="row d-none session_notice">
+  <div
+      class="alert alert-warning alert-dismissible fade show col-12"
+      role="alert"
+  >
+  Showing papers for
+  <span id="session_name" style="font-weight: bold;"></span>.
+  <button
+      type="button"
+      class="close remove_session"
+      data-dismiss="alert"
+      aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+</div>
+
+<!-- Buttons -->
+<div id="papers_options" class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="input-group mr-3 flex-fill">
+    <input
+      type="text"
+      class="form-control typeahead_all"
+      placeholder="Search"
+    />
+    <!-- <div class="input-group-append">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Dropdown</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">by title</a>
+        <a class="dropdown-item" href="#">by author</a>
+      </div>
+    </div> -->
+    <div class="input-group-append mr-3 btn-group-toggle filter_option">
+      <label class="btn btn-outline-primary" data-tippy-content="Search for papers titles">
+        <input type="radio" name="options" value="titles" autocomplete="off" checked />
+        by title
+      </label>
+      <!--
+      <label
+        class="btn btn-outline-secondary"
+        data-tippy-content="Search for papers with specific keywords"
+      >
+        <input
+          type="radio"
+          name="options"
+          value="keywords"
+          autocomplete="off"
+        />
+        keyword
+      </label>
+      -->
+      <label class="btn btn-outline-primary" data-tippy-content="Search for papers from specific authors">
+        <input type="radio" name="options" value="authors" autocomplete="off" />
+        by author
+      </label>
+
+      <button class="btn btn btn-outline-danger typeahead_all_clear" type="button">
+        &times;
+      </button>
+    </div>
+  </div>
+
+  
+
+  <!-- Compact/Detail -->
+  <div
+    class="btn-group btn-group-toggle render_option mr-3"
+    data-toggle="buttons">
+
+    <label class="btn btn-outline-secondary active">
+      <input
+          type="radio"
+          name="options"
+          value="list"
+          autocomplete="off"
+          checked
+      />
+      compact
+    </label>
+    <label class="btn btn-outline-secondary">
+      <input
+        type="radio"
+        name="options"
+        value="compact"
+        autocomplete="off"
+      />
+      medium
+    </label>
+    <label class="btn btn-outline-secondary">
+      <input
+        type="radio"
+        name="options"
+        value="detail"
+        autocomplete="off"
+      />
+      detail
+    </label>
+  </div>
+
+  <!-- Papers/Visualization -->
+  <!--
+  <div
+    class="btn-group btn-group-toggle mr-3 render_option"
+    data-toggle="buttons">
+
+    <label class="btn btn-outline-secondary active">
+      <input
+        type="radio"
+        name="options"
+        value="paper"
+        autocomplete="off"
+        checked
+      />
+      paper
+    </label>
+    <label class="btn btn-outline-secondary">
+      <input
+        type="radio"
+        name="options"
+        value="visualization"
+        autocomplete="off"
+      />
+      <a href="papers_vis.html" class="deco-none">visualization</a>
+    </label>
+  </div>
+  -->
+
+  <!-- Shuffle -->
+  <div class="btn-group mr-3">
+    <button class="btn btn-outline-secondary reshuffle">shuffle</button>
+    <button class="btn btn-outline-secondary visited">visited</button>
+  </div>
+
+  <div class="bootstrap-select">
+      <select id="track_selector" class="selectpicker" data-live-search="true" data-style="btn-light">
+        <option>All tracks</option>
+      
+        <option>Cognitive Modeling and Psycholinguistics</option>
+      
+        <option>Computational Social Science and Social Media</option>
+      
+        <option>Dialogue and Interactive Systems</option>
+      
+        <option>Discourse and Pragmatics</option>
+      
+        <option>Ethics and NLP</option>
+      
+        <option>Generation</option>
+      
+        <option>Information Extraction</option>
+      
+        <option>Information Retrieval and Text Mining</option>
+      
+        <option>Interpretability and Analysis of Models for NLP</option>
+      
+        <option>Language Grounding to Vision, Robotics and Beyond</option>
+      
+        <option>Machine Learning for NLP</option>
+      
+        <option>Machine Translation</option>
+      
+        <option>NLP Applications</option>
+      
+        <option>Phonology, Morphology and Word Segmentation</option>
+      
+        <option>Question Answering</option>
+      
+        <option>Resources and Evaluation</option>
+      
+        <option>Semantics: Lexical</option>
+      
+        <option>Semantics: Sentence Level</option>
+      
+        <option>Semantics: Textual Inference and Other Areas of Semantics</option>
+      
+        <option>Sentiment Analysis, Stylistic Analysis, and Argument Mining</option>
+      
+        <option>Speech and Multimodality</option>
+      
+        <option>Summarization</option>
+      
+        <option>Syntax: Tagging, Chunking and Parsing</option>
+      
+        <option>Theme</option>
+      
+        <option>Theory and Formalism in NLP (Linguistic and Mathematical)</option>
+      
+        <option>System Demonstrations</option>
+      
+        <option>Student Research Workshop</option>
+      
+      </select>
+  </div>
+</div>
+
+<!-- Cards -->
+<div class="cards row"></div>
+<script src="static/js/little_helpers.js"></script>
+<script src="static/js/lazy_load.js"></script>
+<script src="static/js/persistor.js"></script>
+<script src="static/js/papers.js"></script>
+<script>
+  $(document).ready(function () {
+    tippy("[data-tippy-content]", { trigger: "mouseenter focus" });
+    const track = getUrlParameter("track") || "All tracks";
+
+    start(track);
+    $('#track_selector').selectpicker('val', track);
+  });
+
+  $('#track_selector').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+    let track = e.target.value;
+    setQueryStringParameter("track", track);
+    start(track);
+  });
+</script>
+
+
+      </div>
+    </div>
+    
+    
+
+<div
+  class="gdpr bg-dark text-light"
+  style="padding: 10pt; position: fixed; bottom: 0; display: none;"
+>
+  We use cookies to store which papers have been visited.
+  <div class="gdpr-btn btn btn-sm btn-info" style="margin-left: 15pt;">
+    I agree
+  </div>
+</div>
+<script src="static/js/gdpr_cookies.js"></script>
+
+
+  </body>
+</html>

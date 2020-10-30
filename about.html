@@ -1,0 +1,1331 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- External Javascript libs  -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@5/dist/d3.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.3/dist/handlebars.min.js" integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/moment-timezone@0.5.28/builds/moment-timezone-with-data.min.js" integrity="sha256-IWYg4uIC8/erItNXYvLtyYHioRi2zT1TFva8qaAU/ww=" crossorigin="anonymous"></script>
+
+    <!-- https://developer.snapappointments.com/bootstrap-select/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Library libs -->
+    <script src="static/js/typeahead.bundle.js"></script>
+
+    
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous">
+
+    <!-- External Fonts (no google for china) -->
+    <link
+      href="static/css/Lato.css"
+      rel="stylesheet"
+    />
+    <link href="static/css/Exo.css" rel="stylesheet" />
+    <link
+      href="static/css/Cuprum.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/lazy_load.css" />
+    <link rel="stylesheet" href="static/css/typeahead.css" />
+
+    <title>ACL2020: Help</title>
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="static/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <!-- NAV -->
+    
+    
+
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+      id="main-nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+             class="logo" src="static/images/acl2020/acl-logo.png"
+             height="45px"
+             width="auto"
+          />
+        </a>
+        
+        <a class="navbar-brand" href="index.html">ACL2020</a>
+        
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse text-right flex-grow-1"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="livestream.html">Livestream</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="plenary_sessions.html">Plenary</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="papers.html">Papers</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="tutorials.html">Tutorials</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="workshops.html">Workshops</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="sponsors.html">Sponsors</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link" href="organizers.html">Organizers</a>
+            </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link" href="about.html">Help</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- User Overrides -->
+     
+
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        
+<div class="my-3"></div>
+<div class="row p-4">
+  <div class="col-12 bd-content">
+    <h1 class="text-center">Help</h1>
+  </div>
+</div>
+
+      </div>
+      <div class="tabs pt-3">
+      <!-- Tabs -->
+      <div class="tabs pt-3">
+        
+<ul class="nav nav-pills justify-content-center">
+  
+  <li class="nav-item">
+    <a
+      class="nav-link active"
+      data-toggle="tab"
+      href="#tab-faq"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >Frequently Asked Questions
+    </a>
+  </li>
+  
+  <li class="nav-item">
+    <a
+      class="nav-link "
+      data-toggle="tab"
+      href="#tab-code-of-conduct"
+      role="tab"
+      aria-controls="nav-home"
+      aria-selected="true"
+      >ACL Code of Conduct
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+      <!-- Content -->
+      <div class="content">
+        
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+  <!-- FAQ -->
+  <div
+    class="tab-pane active tab-switching-link"
+    id="tab-faq"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">Frequently Asked Questions</h3>
+  </div>
+</div>
+
+    
+<div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">Getting Started</h3>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse1-1"
+          aria-expanded="true"
+          aria-controls="collapse1-1"
+        >
+          What is the recommended way of using this site and navigating the conference?
+        </a>
+      </div>
+      <div
+        id="collapse1-1"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>All of ACL 2020 will be accessed through this webpage: <a href="https://virtual.acl2020.org/">https://virtual.acl2020.org/</a>. Watch the introductory video on the homepage to understand how to best navigate the website. You can access all parts of the conference using the top menu bar. Use the <a href="/schedule.html">Schedule</a> to find live sessions (including Plenary sessions and the Q&amp;A sessions for all talks) and set your timezone. You can navigate all the papers in the Papers section: you can search for keywords, authors, or tracks, looking through all papers by skimming titles, or using the visualization tab at the top. We encourage everyone to visit the virtual sponsor exhibits, participate in many socials and use the chat section to interact with other attendees.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse1-2"
+          aria-expanded="true"
+          aria-controls="collapse1-2"
+        >
+          How can I best plan my time and engage with the conference?
+        </a>
+      </div>
+      <div
+        id="collapse1-2"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>You should explore the papers using the <a href="/schedule.html">Schedule</a> or <a href="/papers.html">Papers</a> tab to find papers you want to watch the video of, send questions to, or discuss live during a Q&amp;A session. Each paper has a calendar link that you can use to download a reminder to your Google, Office, or iCal calendars, including a URL!</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse1-3"
+          aria-expanded="true"
+          aria-controls="collapse1-3"
+        >
+          How can I best engage from my timezone?
+        </a>
+      </div>
+      <div
+        id="collapse1-3"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Participants and authors are spread out across the world, which adds a new challenge to enjoying the conference. The calendar displayed on the website is shown in your local time, and each event has a link for copying to your personal calendar. Start with the <a href="/schedule.html">Schedule</a>.</p>
+<p>Here is one hypothetical day for one hypothetical ACL member at the main conference:</p>
+<p>On the first main conference day, July 6, as with every day, all videos for that day will have been released beforehand. For the first day, this includes the pre-recorded GC and PC welcome, the first plenary talk by Kathy McKeown, pre-recorded talks for the Business meeting, and the 7 or 12-minute videos for the papers in the paper sessions for that day.</p>
+<p>A participant Maryam from Lagos (GMT+1) has bookmarked four talks she is particularly interested in today. She watches all 4 talks at 9am, and decides she would like to join the paper Q&amp;A sessions for two of them, one at 10am and one at 2pm her time). For a paper on discourse, she asks a question of the author on the paper's RocketChat channel. At noon, she visits a sponsor booth for AwesomeCo since she is interested in an internship. At 1pm, the author of the discourse paper pops into the Rocket Chat channel and replies to Maryam's RocketChat question. At 3 pm, Maryam joins the plenary session, including watching Kathy McKeown's invited talk and participating in the live Q&amp;A session, where she can post questions for Kathy via RocketChat that the moderator can ask live in the question session. At 7pm, she goes to a Birds of a Feather meeting.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse1-4"
+          aria-expanded="true"
+          aria-controls="collapse1-4"
+        >
+          What if I have a problem or have a question?
+        </a>
+      </div>
+      <div
+        id="collapse1-4"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>If you have any technical difficulties, please use <a href="/chat.html">RocketChat</a> to contact the #helpdesk. You can also email your questions to <a href="mailto:acl2020-virtual-helpdesk@googlegroups.com">acl2020-virtual-helpdesk@googlegroups.com</a>. If you have a problem with inappropriate conduct, please see the below about Accessibility and Safety.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse1-5"
+          aria-expanded="true"
+          aria-controls="collapse1-5"
+        >
+          After I login to the main site, if I click on the Login with ACL2020 account button on any page (such as Chat), the circular spinner shows up but freezes and nothing else happens.
+        </a>
+      </div>
+      <div
+        id="collapse1-5"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Possible reasons: The pop-up windows are blocked OR third party cookies are blocked. You might need to enable these.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">Website Navigation</h3>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-1"
+          aria-expanded="true"
+          aria-controls="collapse2-1"
+        >
+          What tools and logins do I need?
+        </a>
+      </div>
+      <div
+        id="collapse2-1"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>The website uses RocketChat for chat, and you can directly use it only on <a href="chat.html">our website</a>. For Zoom, you can create an account the first time you use it. For more details on specific tools, see answers to the related questions below. You will not need to download any special software other than a web browser.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-2"
+          aria-expanded="true"
+          aria-controls="collapse2-2"
+        >
+          How do I register for RocketChat?
+        </a>
+      </div>
+      <div
+        id="collapse2-2"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>You will use your ACL2020 virtual conference website account to log in to RocketChat. Do not create a new account for RocketChat, the text-chat tool that is embedded throughout the site.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-3"
+          aria-expanded="true"
+          aria-controls="collapse2-3"
+        >
+          Which channel(s) should I join?
+        </a>
+      </div>
+      <div
+        id="collapse2-3"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Please see the explanation on the channels in <a href="static/pdf/rocketchat_channels.pdf">this document</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-4"
+          aria-expanded="true"
+          aria-controls="collapse2-4"
+        >
+          How can I find other people to chat with during the conference?
+        </a>
+      </div>
+      <div
+        id="collapse2-4"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>The socials are one way to interact and discuss with others. We will also allow participants to make channels on RocketChat. You can create a channel about a topic, and post it to a general channel, so that others who are interested in discussing can join the channel. You can also privately message individuals, but please be advised to be careful about harassment and follow the <a href="/about.html#tab-code-of-conduct">Code of Conduct</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-5"
+          aria-expanded="true"
+          aria-controls="collapse2-5"
+        >
+          How do I use Zoom in the browser instead of the App?
+        </a>
+      </div>
+      <div
+        id="collapse2-5"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Zoom is used for the Q&amp;A sessions for the individual papers, which you can join using the Zoom app or within the browser. Clicking on the link will ask you to open the video in the Zoom app. If you want to use Zoom in the browser, simply wait a few seconds after clicking the Video link and it will open a browser-based session.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-6"
+          aria-expanded="true"
+          aria-controls="collapse2-6"
+        >
+          When I use zoom on browser, I get an error message saying meeting requires registration. Why is that?
+        </a>
+      </div>
+      <div
+        id="collapse2-6"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Hosts (i.e. paper authors) should disable registration required setting in their zoom account following the steps <a href="https://acl2020.org/_pages/docs/zoom_browser_issue_solution.pdf">here</a>. All authors are being informed, but meanwhile you may need to reach out to the paper author so that they can disable this setting.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-7"
+          aria-expanded="true"
+          aria-controls="collapse2-7"
+        >
+          What tools and systems requirements are needed?
+        </a>
+      </div>
+      <div
+        id="collapse2-7"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>To access the site you will need a modern browser. This site has been tested with Chrome 80.0+, Brave 1.4.95, Firefox 73.0, and browsers built on Chromium 80.0+. <strong>Currently the SlidesLive embedded video doesn't work well with Safari. This is because the cross-domain cookie is blocking the video. A workaround for Safari: right click on the blocked frame and select "Open Frame in New Tab".</strong></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse2-8"
+          aria-expanded="true"
+          aria-controls="collapse2-8"
+        >
+          If you&#39;re using the web browser Brave...
+        </a>
+      </div>
+      <div
+        id="collapse2-8"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Please turn down Shields for acl2020.org, since they interfere with the RocketChat integration.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">Live Interaction</h3>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-1"
+          aria-expanded="true"
+          aria-controls="collapse3-1"
+        >
+          What parts of ACL are live?
+        </a>
+      </div>
+      <div
+        id="collapse3-1"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>The individual Q&amp;A sessions for each paper, the Q&amp;A with Invited Speakers, Keynote Presentations, Award Sessions, Business Meetings, Tutorials, Workshops and Sponsors Booth are live. These live sessions occur at specific times, so make sure you look at the Calendar to see what is live right now (see <a href="/schedule.html">Schedule</a> in menu).</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-2"
+          aria-expanded="true"
+          aria-controls="collapse3-2"
+        >
+          How do I talk to the author of a paper?
+        </a>
+      </div>
+      <div
+        id="collapse3-2"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>To maximize the audience across the world, each paper will appear in two different Q&amp;A sessions. Each paper thus has two associated Zoom links, one for each Q&amp;A session. You can only talk to the authors live during these live Q&amp;A sessions. On the page for that paper, you can click the Zoom link for the currently active paper session, and you will join the Zoom session. Please `Raise Your Hand’ to indicate that you would like to ask the author questions. This will put you in a queue, so that the author can keep track of who wants to ask a question next. We also recommend that you watch the video for the paper first. We want to remind you to be respectful during these conversations and follow the <a href="/about.html#tab-code-of-conduct">ACL Code of Conduct</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-3"
+          aria-expanded="true"
+          aria-controls="collapse3-3"
+        >
+          When I join a Zoom link for a paper, I am put into a waiting room instead of joining. What is wrong?
+        </a>
+      </div>
+      <div
+        id="collapse3-3"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>If an author does not show up for their paper video session, then there is no host for the Zoom link. All non-author participants are put in the waiting room until one of the authors opens the 'start' link. If this happens, please notify #helpdesk.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-4"
+          aria-expanded="true"
+          aria-controls="collapse3-4"
+        >
+          How do I ask questions of the invited speakers, offline before their live Q&amp;A?
+        </a>
+      </div>
+      <div
+        id="collapse3-4"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Each invited speaker's talk has a RocketChat channel on the talk's page. Questions for the invited speaker can be posted there.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-5"
+          aria-expanded="true"
+          aria-controls="collapse3-5"
+        >
+          Can I ask questions of the invited speakers live on Zoom?
+        </a>
+      </div>
+      <div
+        id="collapse3-5"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>No, you should ask questions of the invited speakers only by using the chat channel. The session chair will choose and read out questions to the speaker.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-6"
+          aria-expanded="true"
+          aria-controls="collapse3-6"
+        >
+          If I watch the pre-recorded talks of tutorials, do I still need to attend the live session? What will be different there?
+        </a>
+      </div>
+      <div
+        id="collapse3-6"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Live sessions will include discussions with tutorial teachers and other attendes. Please visit individual tutorial website to know more.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse3-7"
+          aria-expanded="true"
+          aria-controls="collapse3-7"
+        >
+          What will be included in the live sessions of workshops?
+        </a>
+      </div>
+      <div
+        id="collapse3-7"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Each workshop format is different. Please see the schedule of each workshop to know more. But generally, workshop live sessions will include Q&amp;A with keynote speakers and authors.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">Accessibility and Safety</h3>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse4-1"
+          aria-expanded="true"
+          aria-controls="collapse4-1"
+        >
+          How do you ensure safe online engagement?
+        </a>
+      </div>
+      <div
+        id="collapse4-1"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>All participants are bound and expected to uphold the conference’s <a href="/about.html#tab-code-of-conduct">Code of Conduct</a>. We have taken several steps to safeguard against 'Zoom Bombing' by changing the permissions, types of calls we use, and having moderators with ability to evict participants, amongst others. For text chat, the authors, Workshop organisers, or Social organisers are leaders of their chat and can take steps to prevent trolling, and ensure meaningful conversation. Individual chat entries can be reported as well within the RocketChat tool.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse4-2"
+          aria-expanded="true"
+          aria-controls="collapse4-2"
+        >
+          How do I report disrespectful engagement, trolling, or other breaches of the code of conduct?
+        </a>
+      </div>
+      <div
+        id="collapse4-2"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>ACL2020 adheres to the ACL Anti-Harassment Policy. Any participant who experiences harassment or hostile behavior may contact the Professional Conduct Committee (PCC). During Virtual ACL, PCC members are available most hours through the RocketChat channel #professional-conduct-committee. Replying to a PCC member's post there will start a private conversation. Please be assured that if you approach the PCC, your concerns will be kept in strict confidence, and we will consult with you on any actions taken. If the problem occurs in a zoom room, please check the advice for Minimizing and handling disruptions in our <a href="https://acl2020.org/_pages/docs/zoom_documentation_for_authors.pdf">instructions to authors</a>. You may also always use the #incidents channel on Rocketchat to report any problems, and the volunteers will help notify the PCC.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse4-3"
+          aria-expanded="true"
+          aria-controls="collapse4-3"
+        >
+          Which countries is ACL accessible from?
+        </a>
+      </div>
+      <div
+        id="collapse4-3"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>We have selected technologies we rely on to run the fully virtual ACL carefully in order to maximize its reachability. More specifically, we have used our large pool of volunteers from all over the world to check the accessibility of all four services, including Zoom, Slideslive, RocketChat and ACL Web Portal. From these tests, we have confirmed that these services largely work from any country across the globe, but as we are too well aware, the service status in each country may change overnight. If you have having difficulty accessing any of these services, please report it to us at #helpdesk channel.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse4-4"
+          aria-expanded="true"
+          aria-controls="collapse4-4"
+        >
+          General Data Protection and Privacy
+        </a>
+      </div>
+      <div
+        id="collapse4-4"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>This site records a very limited amount of data. Data as text in RocketChat is accessible only to registered conference attendees and will be removed two weeks after the conference. Zoom sessions for Paper Sessions and Virtual Socials will not be recorded (other than Q&amp;A sessions with keynote speakers). Videos are hosted by our video partner SlidesLive. For more information on privacy practices of all the conference software, we encourage all attendees to consult the statements from <a href="https://zoom.us/privacy">Zoom</a>, <a href="https://slideslive.com/privacy-policy">SlidesLive</a>, and <a href="https://rocket.chat/privacy">RocketChat</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">For Authors</h3>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse5-1"
+          aria-expanded="true"
+          aria-controls="collapse5-1"
+        >
+          Where can I find my paper&#39;s talk?
+        </a>
+      </div>
+      <div
+        id="collapse5-1"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Each paper has a page of its own. You can find your pre-recorded talk on your paper's page. You can search for your paper by its title/author in the <a href="/papers.html">Papers</a> section to get to your paper's page.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse5-2"
+          aria-expanded="true"
+          aria-controls="collapse5-2"
+        >
+          How can attendees ask questions about my paper?
+        </a>
+      </div>
+      <div
+        id="collapse5-2"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Attendees can ask you questions about your paper either offline using your paper's RocketChat channel (which can be found on your paper page), or using your paper's live Q&amp;A sessions.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse5-3"
+          aria-expanded="true"
+          aria-controls="collapse5-3"
+        >
+          What do I need to know to about my paper&#39;s live Q&amp;A sessions?
+        </a>
+      </div>
+      <div
+        id="collapse5-3"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>As a paper author, you will be the host on the Zoom meetings of your paper's Q&amp;A sessions. Please refer this detailed <a href="https://acl2020.org/_pages/docs/zoom_documentation_for_authors.pdf">Zoom documentation</a> prepared for presenters. When you join, it will start the meeting and it will allow others to join. Please join the link 5 minutes early, to be ready to start the session on time. We ask that you pay attention to Raised Hands, and try to discuss with people in the order that they raised their hand. This way they have a rough estimate of how long they might have to wait, and makes for respectful interaction. If someone is monopolizing your time, and you notice many hands are raised, do feel free to say ‘Unfortunately, I have to give some of the other participants an opportunity to ask questions as well’.</p>
+<p>As a host, you have additional privileges. If someone is being disruptive, or not muting themselves when needed, you can mute them. If someone is being inappropriate and violating the <a href="/about.html#tab-code-of-conduct">Code of Conduct</a>, you can eject them from the meeting. If you would like to make another author a co-host, you can do so. Additionally, only hosts can share their screens. You might find it useful to simply keep your screen shared the entire time, so that you can refer to figures in your slides.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse5-4"
+          aria-expanded="true"
+          aria-controls="collapse5-4"
+        >
+          What is ACL doing to mitigate Zoom bombing?
+        </a>
+      </div>
+      <div
+        id="collapse5-4"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>All conference content is restricted to conference attendees are not meant to be shared. We have changed all the defaults for Zoom to prevent disruption to video sessions. This involves changing several settings for greater control, including host-only screen sharing, disabling joining a session before a host, disabling file transfer, and disallowing removed participants to rejoin a video call. Also see answer to question on `How do you ensure safe online engagement?’</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse5-5"
+          aria-expanded="true"
+          aria-controls="collapse5-5"
+        >
+          How can I subscribe to the RocketChat channels for all my papers so I can see if someone asks a question about one of them?
+        </a>
+      </div>
+      <div
+        id="collapse5-5"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Search for your papers here: <a href="https://virtual.acl2020.org/papers.html">https://virtual.acl2020.org/papers.html</a> then visit each page and click Join on the Rocketchat window there.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">General</h3>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse6-1"
+          aria-expanded="true"
+          aria-controls="collapse6-1"
+        >
+          What happens to the recorded talks and Q&amp;A sessions after the conference?
+        </a>
+      </div>
+      <div
+        id="collapse6-1"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>All talk recordings will be made publicly viewable at the ACL Anthology after the conference. Q&amp;A sessions for individual papers are not recorded; we only record the Q&amp;A sessions for the two Invited Speakers.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse6-2"
+          aria-expanded="true"
+          aria-controls="collapse6-2"
+        >
+          Will RocketChat discussions be archived?
+        </a>
+      </div>
+      <div
+        id="collapse6-2"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>ACL will not be archiving any of the RocketChat threads, so if there is information there you want to keep, make sure to do so before the end of the conference. For the many good suggestions for conference organization that are coming up on RocketChat, we'll have a survey at the end of the conference, and you should give lots of feedback there to help inform the next virtual conference</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse6-3"
+          aria-expanded="true"
+          aria-controls="collapse6-3"
+        >
+          Where can I obtain the certificate of attendance?
+        </a>
+      </div>
+      <div
+        id="collapse6-3"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>For certificates of attendance, paid-in-full invoices (to use as receipts), and related documents required by your home institutions, please contact <a href="mailto:acl.PatKirby@gmail.com">Pat Kirby</a>. For other more general information, please contact <a href="mailto:acl.rasmussen@gmail.com">Priscilla Rasmusse</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12" id="accordionExample">
+    <div class="card m-2">
+      <div class="card-header">
+        <a
+          class=""
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapse6-4"
+          aria-expanded="true"
+          aria-controls="collapse6-4"
+        >
+          Other Questions?
+        </a>
+      </div>
+      <div
+        id="collapse6-4"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <div><p>Contact the volunteers on the #helpdesk channel on RocketChat. Alternately, you can email your questions to <a href="mailto:acl2020-virtual-helpdesk@googlegroups.com">acl2020-virtual-helpdesk@googlegroups.com</a></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- Code of Conduct -->
+  <div
+    class="tab-pane fade"
+    id="tab-code-of-conduct"
+    role="tabpanel"
+    aria-labelledby="nav-profile-tab"
+  >
+    <div class="row p-3">
+  <div class="col-12 bd-content">
+    <h3 class="text-center">ACL Code of Conduct</h3>
+  </div>
+</div>
+    <div class="row p-3">
+      <div class="col-12 bd-content">
+        <div><p>The open exchange of ideas, the freedom of thought and expression, and respectful scientific debate are central to the aims and goals of the ACL. These require a community and an environment that recognizes the inherent worth of every person and group, that fosters dignity, understanding, and mutual respect, and that embraces diversity. For these reasons, ACL is dedicated to providing a harassment-free experience for all the members, as well as participants at our events and in our programs.</p>
+<p>Harassment and hostile behavior are unwelcome at any ACL conference, associated event, or in ACL-affiliated on-line discussions. This includes: speech or behavior that intimidates, creates discomfort, or interferes with a person's participation or opportunity for participation in a conference or an event. We aim for ACL-related activities to be an environment where harassment in any form does not happen, including but not limited to: harassment based on race, gender, religion, age, color, appearance, national origin, ancestry, disability, sexual orientation, or gender identity. Harassment includes degrading verbal comments, deliberate intimidation, stalking, harassing photography or recording, inappropriate physical contact, and unwelcome sexual attention. The policy is not intended to inhibit challenging scientific debate, but rather to promote it through ensuring that all are welcome to participate in shared spirit of scientific inquiry. Vexatious complaints and willful misuse of this procedure will render the complainant subject to the same sanctions as a violation of the anti-harassment policy.</p>
+<p>It is the responsibility of the community as a whole to promote an inclusive and positive environment for our scholarly activities. In addition, anyone who experiences harassment or hostile behavior may contact any current member of the <a href="https://www.aclweb.org/portal/about">ACL Executive Committee</a> or contact <a href="mailto:acl@aclweb.org">Priscilla Rasmussen</a>, who is usually available at the registration desk during ACL conferences. Members of the executive committee will be instructed to keep any such contact in strict confidence, and those who approach the committee will be consulted before any actions are taken.</p>
+<h3>Implementation</h3>
+<p>This policy should be posted prominently on all ACL conference and workshop webpages, with a notice of a list of people who can be contacted by community members with concerns or complaints, which will be forwarded to the Professional Conduct Committee for investigation.</p>
+<p>Approved by ACL Executive Committee, 2016</p>
+<p>Revised by ACL Executive Committee, July 15, 2018</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enable Code of Conduct tab switch from FAQ hyperlinks -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.tab-switching-link a[href="/about.html#tab-code-of-conduct"]').click(function(){
+        window.scrollTo({top: 0});
+        window.location = '/about.html#tab-code-of-conduct';
+        window.location.reload();
+      });
+    });
+  </script>
+
+</div>
+
+      </div>
+    </div>
+    
+    
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171494682-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-171494682-1");
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer bg-light p-4">
+      <div class="container">
+        <p class="float-right"><a href="#">Back to Top</a></p>
+        <p class="text-center">© 2020 Association for Computational Linguistics</p>
+      </div>
+    </footer>
+
+    <!-- Code for hash tags -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (location.hash !== "") {
+          $('a[href="' + location.hash + '"]').tab("show");
+        }
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function (e) {
+          var hash = $(e.target).attr("href");
+          if (hash.substr(0, 1) == "#") {
+            var position = $(window).scrollTop();
+            location.replace("#" + hash.substr(1));
+            $(window).scrollTop(position);
+          }
+        });
+      });
+    </script>
+    <script src="static/js/lazy_load.js"></script>
+    
+  </body>
+</html>
