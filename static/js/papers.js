@@ -253,13 +253,13 @@ const keyword = kw => `<a href="papers.html?filter=keywords&search=${kw}"
                        class="text-secondary text-decoration-none">${kw.toLowerCase()}</a>`;
 
 const card_image = (openreview, show) => {
-    if (show) return ` <center><img class="lazy-load-img cards_img" data-src="${openreview.card_image_path} alt="${openreview.card_image_alt_text}" width="80%"/></center>`
+    if (show) return ` <center><img class="lazy-load-img cards_img" data-src="${openreview.card_image_path}" alt="${openreview.card_image_alt_text}" width="80%"/></center>`
     else return ''
 };
 
 const card_detail = (openreview, show) => {
     if (show)
-        return ` 
+        return `
      <div class="pp-card-header" style="background-color:rgb(240, 240, 240)">
         <p class="card-text"> ${openreview.content.tldr}</p>
         <p class="card-text"><span class="font-weight-bold">Keywords:</span>
@@ -275,9 +275,9 @@ const card_html = openreview => `
         <div class="pp-card pp-mode-` + render_mode + ` ">
             <div class="pp-card-header greenbox-paper ${openreview.content.read ? 'selected' : ''}">
             <div class="" style="position: relative; height:100%">
-                <div style="display: block;position: absolute; bottom:35px;left: 0px;"> 
-                    <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div> 
-                </div>   
+                <div style="display: block;position: absolute; bottom:35px;left: 0px;">
+                    <div class="checkbox-paper ${openreview.content.read ? 'selected' : ''}">✓</div>
+                </div>
                 <a href="paper_${openreview.id}.html"
                 target="_blank"
                    class="text-muted">
@@ -288,7 +288,7 @@ const card_html = openreview => `
                 ${card_image(openreview, render_mode !== 'list')}
             </div>
             </div>
-               
+
                 ${card_detail(openreview, (render_mode === 'detail'))}
         </div>`
 
