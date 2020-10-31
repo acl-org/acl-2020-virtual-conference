@@ -16,7 +16,7 @@ background_image: static/images/acl2020/ACL-Banner-5.1.jpg
 organization: Association for Computational Linguistics
 
 # Path to the folder of paper images.
-paper_images_path: https://acl2020-public.s3.amazonaws.com/papers
+paper_images_path: static/images/papers
 default_presentation_id: 38931484
 
 # Remove or change to your chat server.
